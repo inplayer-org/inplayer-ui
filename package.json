@@ -9,10 +9,10 @@
   "scripts": {
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
-    "lint": "npm run lint:js && npm run lint:style",
+    "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint lib/**; exit 0",
     "lint:js:watch": "esw -w lib/**",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "yarn build",
     "review": "run-s lint test:clean test test:coverage:report",
     "lint:style": "stylelint -- \"./lib/**/*.js\"",
     "styleguide": "styleguidist server",
@@ -71,7 +71,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run styleguide:build && git add docs && git commit --amend --no-edit"
+      "pre-push": "yarn styleguide:build && git add docs && git commit --amend --no-edit"
     }
   },
   "peerDependencies": {
