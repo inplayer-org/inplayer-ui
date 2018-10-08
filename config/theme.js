@@ -1,23 +1,23 @@
-const { rem } = require("polished");
+const { rem } = require('polished');
 
 // common colors
-const chrome000 = "#fff";
-const chrome050 = "#f9f9fa";
-const chrome100 = "#ecedf0";
-const chrome200 = "#d0d3d9";
-const chrome300 = "#c0c4cb";
-const chrome400 = "#aeb3bd";
-const chrome500 = "#9aa0ac";
-const chrome600 = "#818998";
-const chrome700 = "#636d7f";
-const chrome800 = "#323f58";
-const chrome900 = "#24324C";
-const blue = "#0975E0";
-const green = "#008900";
-const lightBlue = "#318CE5";
-const purple = "#4F40F0";
-const red = "#DD3800";
-const yellow = "#967100";
+const chrome000 = '#fff';
+const chrome050 = '#f9f9fa';
+const chrome100 = '#ecedf0';
+const chrome200 = '#d0d3d9';
+const chrome300 = '#c0c4cb';
+const chrome400 = '#aeb3bd';
+const chrome500 = '#9aa0ac';
+const chrome600 = '#818998';
+const chrome700 = '#636d7f';
+const chrome800 = '#323f58';
+const chrome900 = '#24324C';
+const blue = '#0975E0';
+const green = '#008900';
+const lightBlue = '#318CE5';
+const purple = '#4F40F0';
+const red = '#DD3800';
+const yellow = '#967100';
 
 module.exports = {
   colors: {
@@ -45,13 +45,13 @@ module.exports = {
       chrome600,
       chrome700,
       chrome800,
-      chrome900
+      chrome900,
     },
     // brand colors
     brand: {
       primary: chrome900,
       secondary: red,
-      tertiary: yellow
+      tertiary: yellow,
     },
     // status colors
     status: {
@@ -59,21 +59,21 @@ module.exports = {
       default: chrome300,
       info: blue,
       success: green,
-      warning: yellow
-    }
+      warning: yellow,
+    },
   },
   dimensions: {
     baseGrid: 8,
-    borderRadius: "2px"
+    borderRadius: '2px',
   },
   font: {
-    primary: "Open Sans",
-    primaryFallback: "Helvetica, Arial, sans-serif",
+    primary: 'Open Sans',
+    primaryFallback: 'Helvetica, Arial, sans-serif',
     weights: {
       light: 300,
       normal: 400,
       semiBold: 600,
-      bold: 700
+      bold: 700,
     },
     sizes: {
       extraSmall: rem(12),
@@ -85,7 +85,7 @@ module.exports = {
       h3: rem(32),
       h4: rem(28),
       h5: rem(24),
-      h6: rem(20)
-    }
-  }
+      h6: rem(20),
+    },
+  },
 };
