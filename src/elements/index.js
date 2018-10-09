@@ -1,6 +1,6 @@
 // this is the primary export for Elements
 // the main export for this lib is `src/index.js`
 
-module.exports = {
+export default {
   // elements go here
 };

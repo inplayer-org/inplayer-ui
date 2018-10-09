@@ -4,6 +4,6 @@ const positionRelative = () => `
   position: relative;
 `;
 
-module.exports = {
+export default {
   positionRelative,
 };

@@ -6,7 +6,7 @@ const fontSource = 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,60
 module.exports = {
   skipComponentsWithoutExample: true,
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper')
+    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
   },
   styleguideDir: 'docs',
   template: {
@@ -19,7 +19,7 @@ module.exports = {
         },
         {
           rel: 'stylesheet',
-          href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+          href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
         },
       ],
     },
@@ -37,7 +37,7 @@ module.exports = {
       ignore: ['**/__tests__/**', '**/blocks/index.js'],
       components: 'lib/blocks/**/index.js',
       description:
-        'Blocks are the highest level of abstraction in the Blocks, Elements, Modifiers concept. They are responsible for providing the context for Elements, handling UI logic, and rendering the Elements within the Block. They are not connected to application state, nor do they handle any business logic.'
+        'Blocks are the highest level of abstraction in the Blocks, Elements, Modifiers concept. They are responsible for providing the context for Elements, handling UI logic, and rendering the Elements within the Block. They are not connected to application state, nor do they handle any business logic.',
     },
     {
       name: 'Elements',
