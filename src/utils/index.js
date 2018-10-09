@@ -5,10 +5,4 @@ import gridScale from './gridScale';
 import statusColors from './statusColors';
 import uiColors from './uiColors';
 
-export default {
-  fontSizes,
-  fontWeights,
-  gridScale,
-  statusColors,
-  uiColors,
-};
+export { fontSizes, fontWeights, gridScale, statusColors, uiColors };
