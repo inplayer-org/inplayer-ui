@@ -19,7 +19,7 @@ const purple = '#4F40F0';
 const red = '#DD3800';
 const yellow = '#967100';
 
-export default {
+module.exports = {
   colors: {
     blue,
     green,
