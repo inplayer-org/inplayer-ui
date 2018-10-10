@@ -1,5 +1,5 @@
 // @flow
-import styled from 'styled-components';
+import styled, { type ReactComponentStyled } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { positionRelative } from 'modifiers';
 import { gridScale } from 'utils';
@@ -12,9 +12,9 @@ type Props = {
   flex: string,
 };
 
-const Column = styled.div`
+const Column: ReactComponentStyled<Props> = styled.div`
   display: flex;
-  flex: ${(props: Props) => props.flex};
+  flex: ${props => props.flex};
   padding: ${gridScale(0.5)};
   ${applyStyleModifiers(modifiers)};
 `;

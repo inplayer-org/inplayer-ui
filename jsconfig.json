@@ -22,6 +22,9 @@
             "helpers/*": [
                 "tests/helpers/*"
             ],
+            "config/*": [
+                "config/*"
+            ],
         }
     },
     "exclude": [

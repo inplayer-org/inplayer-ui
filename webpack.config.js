@@ -19,6 +19,7 @@ module.exports = {
       modifiers: path.resolve(__dirname, './src/modifiers'),
       utils: path.resolve(__dirname, './src/utils'),
       helpers: path.resolve(__dirname, 'tests/helpers'),
+      config: path.resolve(__dirname, 'config'),
     },
   },
   output: {

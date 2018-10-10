@@ -44,7 +44,8 @@
       "^blocks(.*)$": "<rootDir>/src/blocks$1",
       "^modifiers(.*)$": "<rootDir>/src/modifiers$1",
       "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^helpers(.*)$": "<rootDir>/tests/helpers$1"
+      "^helpers(.*)$": "<rootDir>/tests/helpers$1",
+      "^config(.*)$": "<rootDir>/config$1"
     },
     "collectCoverageFrom": [
       "src/**",
