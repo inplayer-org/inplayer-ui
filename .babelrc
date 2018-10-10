@@ -7,9 +7,18 @@
         "debug": true
       }
     ],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ],
   "plugins": [
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ]
+      }
+    ]
   ]
 }

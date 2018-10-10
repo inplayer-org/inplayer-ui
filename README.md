@@ -57,7 +57,7 @@ These common modifiers live in `src/modifiers`
 |   └── index.js        // <- export for all Blocks
 ├── elements/
 |   ├── A
-|   |   ├── __tests__
+|   |   ├── tests
 |   |   |   ├── __snapshots__
 |   |   |   |   └── index.js.snap   // <- Snapshot Test
 |   |   |   └── index.js            // <- Test
@@ -121,7 +121,7 @@ $ yarn lint
 
 An initial test suite has been setup with two tests (one passing and one intentionally failing).
 We're using Jest Snapshots for our initial test setup, though Enzyme and Expect are also available.
-The basic test setup lives in `./__tests__`. The main configuration for Jest lives at the bottom
+The basic test setup lives in `./tests`. The main configuration for Jest lives at the bottom
 of `package.json`. Jest also gives us a test coverage tool for free. The setup is at the bottom of
 `package.json`. Everything is set to 90% coverage, but your welcome to update that to whatever
 you'd like.
