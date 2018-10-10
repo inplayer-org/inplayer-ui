@@ -1,4 +1,4 @@
-import { uiColors } from '../utils';
+import { uiColors } from 'utils';
 
 const fontColorModifiers = {
   text: ({ theme }) => `

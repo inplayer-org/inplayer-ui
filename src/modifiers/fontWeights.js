@@ -1,4 +1,4 @@
-import { fontWeights } from '../utils';
+import { fontWeights } from 'utils';
 
 const fontWeightModifiers = {
   light: ({ theme }) => `

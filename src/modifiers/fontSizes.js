@@ -1,4 +1,4 @@
-import { fontSizes } from '../utils';
+import { fontSizes } from 'utils';
 
 const fontSizeModifiers = {
   extraSmall: ({ theme }) => `

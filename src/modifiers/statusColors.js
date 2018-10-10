@@ -1,4 +1,4 @@
-import { statusColors } from '../utils';
+import { statusColors } from 'utils';
 
 const statusColorModifiers = {
   statusColorDanger: ({ theme }) => `

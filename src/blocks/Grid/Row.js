@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { positionRelative } from '../../modifiers';
+import { positionRelative } from 'modifiers';
 
 const modifiers = {
   positionRelative,
