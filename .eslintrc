@@ -39,6 +39,7 @@
   },
   "rules": {
     "react/no-danger": 0,
+    "react/prop-types": "warn",
     "react/no-did-update-set-state": 0,
     "jsx-a11y/mouse-events-have-key-events": 0,
     "jsx-a11y/label-has-associated-control": 0,
