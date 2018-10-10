@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid.Column Element applies the correct style with the \`flex\` prop 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0.25rem;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Grid.Column Element applies the correct style with the \`position\` modifier 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: initial;
+  -ms-flex: initial;
+  flex: initial;
+  padding: 0.25rem;
+  position: relative;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Grid.Column Element renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: initial;
+  -ms-flex: initial;
+  flex: initial;
+  padding: 0.25rem;
+}
+
+<div
+  className="c0"
+/>
+`;
