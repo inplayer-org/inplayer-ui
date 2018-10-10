@@ -10,7 +10,7 @@ module.exports = {
     rules: [{ test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ }],
   },
   resolve: {
-    modules: [path.resolve('./src'), path.resolve('./node_modules')],
+    modules: [path.resolve('./'), path.resolve('./node_modules')],
     extensions: ['.js'],
     alias: {
       components: path.resolve(__dirname, './src/components'),
@@ -18,7 +18,7 @@ module.exports = {
       elements: path.resolve(__dirname, './src/elements'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
       utils: path.resolve(__dirname, './src/utils'),
-      helpers: path.resolve(__dirname, './src/helpers'),
+      helpers: path.resolve(__dirname, 'tests/helpers'),
     },
   },
   output: {

@@ -44,7 +44,7 @@
       "^blocks(.*)$": "<rootDir>/src/blocks$1",
       "^modifiers(.*)$": "<rootDir>/src/modifiers$1",
       "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^helpers(.*)$": "<rootDir>/src/helpers$1"
+      "^helpers(.*)$": "<rootDir>/tests/helpers$1"
     },
     "collectCoverageFrom": [
       "src/**",
@@ -70,7 +70,7 @@
     ],
     "setupFiles": [
       "raf/polyfill",
-      "./__tests__/config"
+      "./tests/config"
     ]
   },
   "husky": {
