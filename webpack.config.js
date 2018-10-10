@@ -10,8 +10,16 @@ module.exports = {
     rules: [{ test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ }],
   },
   resolve: {
-    modules: [path.resolve('./'), path.resolve('./node_modules')],
+    modules: [path.resolve('./src'), path.resolve('./node_modules')],
     extensions: ['.js'],
+    alias: {
+      components: path.resolve(__dirname, './src/components'),
+      blocks: path.resolve(__dirname, './src/blocks'),
+      elements: path.resolve(__dirname, './src/elements'),
+      modifiers: path.resolve(__dirname, './src/modifiers'),
+      utils: path.resolve(__dirname, './src/utils'),
+      helpers: path.resolve(__dirname, './src/helpers'),
+    },
   },
   output: {
     path: path.join(__dirname, '/docs'),

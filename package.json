@@ -37,6 +37,14 @@
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "jest": {
     "collectCoverage": true,
+    "moduleNameMapper": {
+      "^components(.*)$": "<rootDir>/src/components$1",
+      "^elements(.*)$": "<rootDir>/src/elements$1",
+      "^blocks(.*)$": "<rootDir>/src/blocks$1",
+      "^modifiers(.*)$": "<rootDir>/src/modifiers$1",
+      "^utils(.*)$": "<rootDir>/src/utils$1",
+      "^helpers(.*)$": "<rootDir>/src/helpers$1"
+    },
     "collectCoverageFrom": [
       "src/**",
       "!src/**/*.snap",
@@ -92,6 +100,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-react-app": "^3.0.3",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.14.0",

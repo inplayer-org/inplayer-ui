@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
@@ -28,6 +29,13 @@
     "node": true,
     "jquery": true,
     "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
   },
   "rules": {
     "react/no-danger": 0,
