@@ -37,6 +37,10 @@
   },
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "jest": {
+    "testMatch": [
+      "**/tests/**/*.js?(x)",
+      "**/?(*.)+(spec|test).js?(x)"
+    ],
     "collectCoverage": true,
     "moduleNameMapper": {
       "^components(.*)$": "<rootDir>/src/components$1",
