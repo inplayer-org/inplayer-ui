@@ -1,44 +1,44 @@
 const { rem } = require('polished');
 
 //used as background for code snippets
-const coderBlue = rgb(39, 43, 56);
+const coderBlue = "#272B38";
 
 //dark blue colors
-const performance = rgb(42, 77, 142);
-const performanceFilter = rgba(42, 77, 142, 0.55);
-const performanceFilterLight = rgba(42, 77, 142, 0.35);
-const performanceDark = rgb(37, 58, 102);
+const performance = "#2a4d8e";
+const performanceFilter = "#2a4d8e8c";
+const performanceFilterLight = "#2a4d8e59";
+const performanceDark = "#253a66";
 
 //primary accent colors
-const accentBlue = rgb(0, 170, 230);
-const accentBlueFade = rgba(0, 170, 230, 0.06);
-const accentDark = rgb(10, 140, 210);
-const accentPink = rgb(252, 200, 190);
+const accentBlue = "#00aae6";
+const accentBlueFade = "#00aae60f";
+const accentDark = "#0a8cd2";
+const accentPink = "#fcc8be";
 
 //used for info boxes and warnings
-const warning = rgb(242, 111, 89);
-const pig = rgb(249, 236, 232);
-const honey = rgb(244, 202, 25);
-const honeyLight = rgb(255, 252, 238);
-const success = rgb(93, 198, 163);
-const successLight = rgb(228, 249, 242);
+const warning = "#f26f59";
+const pig = "#f9ece8";
+const honey = "#f4ca19";
+const honeyLight = "#fffcee";
+const success = "#5dc6a3";
+const successLight = "#e4f9f2";
 
 //secondary accent colors
 const lemon = rgb(252, 243, 192);
 const mint = rgb(200, 232, 222);
 
 //basic grays
-const background = rgb(240, 243, 246);
-const lines = rgb(215, 221, 229);
-const icons = rgb(185, 193, 203);
+const background = "#f0f3f6";
+const lines = "#d7dde5";
+const icons = "#b9c1cb";
 
 //extra light background color only for tables
-const tablebg = rgb(246, 248, 251);
+const tablebg = "#f6f8fb";
 
 // font colors
-const fontcolorPrim = rgb(68, 73, 78);
-const fontcolorSec = rgb(160, 163, 170);
-const fontcolorDis = rgb(200, 204, 212);
+const fontcolorPrim = "#44494e";
+const fontcolorSec = "#a0a3aa";
+const fontcolorDis = "#c8ccd4";
 
 const white = '#fff';
 
@@ -50,44 +50,25 @@ export default {
     performanceFilterLight,
     performanceDark,
     coderBlue,
-    // ui colors
-    ui: {
-      background,
-      lines,
-      icons,
-      link: accentBlue,
-    },
-    // font colors
-    fontColor: {
-      fontcolorPrim,
-      fontcolorSec,
-      fontcolorDis
-    },
-    // brand colors
-    brand: {
-      accentBlue,
-      accentBlueFade,
-      accentDark,
-      accentPink
-    },
-    // secondary colors
-    secondary: {
-      lemon,
-      mint
-    },
-    // table background
-    table: {
-      tablebg
-    },
-    // status colors
-    status: {
-      danger: warning,
-      info: pig,
-      yellow: honey,
-      yellowLight: honeyLight,
-      success: success,
-      successLight,
-    },
+    background,
+    lines,
+    icons,
+    fontcolorPrim,
+    fontcolorSec,
+    fontcolorDis,
+    accentBlue,
+    accentBlueFade,
+    accentDark,
+    accentPink,
+    lemon,
+    mint,
+    tablebg,
+    danger: warning,
+    info: pig,
+    yellow: honey,
+    yellowLight: honeyLight,
+    success: success,
+    successLight,
   },
   dimensions: {
     baseGrid: 8,
