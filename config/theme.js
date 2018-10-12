@@ -1,65 +1,92 @@
 const { rem } = require('polished');
 
-// common colors
-const chrome000 = '#fff';
-const chrome050 = '#f9f9fa';
-const chrome100 = '#ecedf0';
-const chrome200 = '#d0d3d9';
-const chrome300 = '#c0c4cb';
-const chrome400 = '#aeb3bd';
-const chrome500 = '#9aa0ac';
-const chrome600 = '#818998';
-const chrome700 = '#636d7f';
-const chrome800 = '#323f58';
-const chrome900 = '#24324C';
-const blue = '#0975E0';
-const green = '#008900';
-const lightBlue = '#318CE5';
-const purple = '#4F40F0';
-const red = '#DD3800';
-const yellow = '#967100';
+//used as background for code snippets
+const coderBlue = rgb(39, 43, 56);
+
+//dark blue colors
+const performance = rgb(42, 77, 142);
+const performanceFilter = rgba(42, 77, 142, 0.55);
+const performanceFilterLight = rgba(42, 77, 142, 0.35);
+const performanceDark = rgb(37, 58, 102);
+
+//primary accent colors
+const accentBlue = rgb(0, 170, 230);
+const accentBlueFade = rgba(0, 170, 230, 0.06);
+const accentDark = rgb(10, 140, 210);
+const accentPink = rgb(252, 200, 190);
+
+//used for info boxes and warnings
+const warning = rgb(242, 111, 89);
+const pig = rgb(249, 236, 232);
+const honey = rgb(244, 202, 25);
+const honeyLight = rgb(255, 252, 238);
+const success = rgb(93, 198, 163);
+const successLight = rgb(228, 249, 242);
+
+//secondary accent colors
+const lemon = rgb(252, 243, 192);
+const mint = rgb(200, 232, 222);
+
+//basic grays
+const background = rgb(240, 243, 246);
+const lines = rgb(215, 221, 229);
+const icons = rgb(185, 193, 203);
+
+//extra light background color only for tables
+const tablebg = rgb(246, 248, 251);
+
+// font colors
+const fontcolorPrim = rgb(68, 73, 78);
+const fontcolorSec = rgb(160, 163, 170);
+const fontcolorDis = rgb(200, 204, 212);
+
+const white = '#fff';
 
 export default {
   colors: {
-    blue,
-    green,
-    lightBlue,
-    purple,
-    red,
+    white,
+    performance,
+    performanceFilter,
+    performanceFilterLight,
+    performanceDark,
+    coderBlue,
     // ui colors
     ui: {
-      background: chrome000,
-      link: blue,
-      linkHover: lightBlue,
-      linkVisited: purple,
-      text: chrome800,
-      textLight: chrome700,
-      // grayscale
-      chrome000,
-      chrome050,
-      chrome100,
-      chrome200,
-      chrome300,
-      chrome400,
-      chrome500,
-      chrome600,
-      chrome700,
-      chrome800,
-      chrome900,
+      background,
+      lines,
+      icons,
+      link: accentBlue,
+    },
+    // font colors
+    fontColor: {
+      fontcolorPrim,
+      fontcolorSec,
+      fontcolorDis
     },
     // brand colors
     brand: {
-      primary: chrome900,
-      secondary: red,
-      tertiary: yellow,
+      accentBlue,
+      accentBlueFade,
+      accentDark,
+      accentPink
+    },
+    // secondary colors
+    secondary: {
+      lemon,
+      mint
+    },
+    // table background
+    table: {
+      tablebg
     },
     // status colors
     status: {
-      danger: red,
-      default: chrome300,
-      info: blue,
-      success: green,
-      warning: yellow,
+      danger: warning,
+      info: pig,
+      yellow: honey,
+      yellowLight: honeyLight,
+      success: success,
+      successLight,
     },
   },
   dimensions: {

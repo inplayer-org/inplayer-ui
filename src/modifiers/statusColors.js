@@ -14,7 +14,7 @@ const statusColorModifiers = {
     color: ${statusColors('success', theme)};
   `,
   statusColorWarning: ({ theme }) => `
-    color: ${statusColors('warning', theme)};
+    color: ${statusColors('yellow', theme)};
   `,
 };
 
