@@ -1,4 +1,4 @@
-const { rem } = require('polished');
+import { rem } from 'polished';
 
 //used as background for code snippets
 const coderBlue = "#272B38";
@@ -16,10 +16,10 @@ const accentDark = "#0a8cd2";
 const accentPink = "#fcc8be";
 
 //used for info boxes and warnings
-const warning = "#f26f59";
-const pig = "#f9ece8";
-const honey = "#f4ca19";
-const honeyLight = "#fffcee";
+const danger = "#f26f59";
+const info = "#f9ece8";
+const yellow = "#f4ca19";
+const yellowLight = "#fffcee";
 const success = "#5dc6a3";
 const successLight = "#e4f9f2";
 
@@ -33,7 +33,7 @@ const lines = "#d7dde5";
 const icons = "#b9c1cb";
 
 //extra light background color only for tables
-const tablebg = "#f6f8fb";
+const tableBg = "#f6f8fb";
 
 // font colors
 const fontcolorPrim = "#44494e";
@@ -62,12 +62,12 @@ export default {
     accentPink,
     lemon,
     mint,
-    tablebg,
-    danger: warning,
-    info: pig,
-    yellow: honey,
-    yellowLight: honeyLight,
-    success: success,
+    tableBg,
+    danger,
+    info,
+    yellow,
+    yellowLight,
+    success,
     successLight,
   },
   dimensions: {
