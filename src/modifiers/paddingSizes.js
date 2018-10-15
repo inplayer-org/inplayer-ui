@@ -2,10 +2,10 @@ import { paddingSizes } from 'utils';
 
 const paddingSizeModifiers = {
   extraSmall: ({ theme }) => `
-    font-size: ${paddingSizes('smaill', theme)};
+    padding: ${paddingSizes('smaill', theme)};
   `,
   small: ({ theme }) => `
-    font-size: ${paddingSizes('medium', theme)};
+    padding: ${paddingSizes('medium', theme)};
   `,
 };
 

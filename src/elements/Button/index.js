@@ -1,33 +1,33 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { fontSizes, uiColors, statusColors, fontWeights } from 'utils';
+import { fontSizes, uiColors, fontWeights, paddingSizes } from 'utils';
 
 const modifiers = {
   hoverDanger: ({ theme }) => `
     &:hover, &:focus {
       span {
-        color: ${statusColors('danger', theme)};
+        color: ${uiColors('red', theme)};
       }
     }
   `,
   hoverInfo: ({ theme }) => `
     &:hover, &:focus {
       span {
-        color: ${statusColors('info', theme)};
+        color: ${uiColors('pink', theme)};
       }
     }
   `,
   hoverSuccess: ({ theme }) => `
     &:hover, &:focus {
       span {
-        color: ${statusColors('success', theme)};
+        color: ${uiColors('green', theme)};
       }
     }
   `,
   hoverWarning: ({ theme }) => `
       &:hover, &:focus {
       span {
-        color: ${statusColors('warning', theme)};
+        color: ${uiColors('yellow', theme)};
       }
     }
   `,
@@ -35,12 +35,12 @@ const modifiers = {
 
 const Button = styled.button`
   display: flex;
-  background: ${uiColors('lines')};
+  background: ${uiColors('gray')};
   align-items: center;
-  color: ${uiColors('fontcolorSec')};
+  color: ${uiColors('fontGray')};
   font-weight: ${fontWeights('semiBold')};
-  border: 1px solid ${uiColors('lines')};
-  padding: 10px 20px 11px;
+  border: 1px solid ${uiColors('gray')};
+  padding: ${paddingSizes('small')};
   border-radius: 3px;
   height: ${fontSizes('large')};
   justify-content: center;
@@ -55,7 +55,7 @@ const Button = styled.button`
     transform: scale(1.2);
 
     span {
-      color: ${statusColors('default')};
+      color: ${uiColors('accentBlue')};
     }
   }
 

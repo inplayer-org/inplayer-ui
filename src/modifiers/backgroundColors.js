@@ -2,10 +2,10 @@ import { uiColors } from '../utils';
 
 const backgroundColorModifiers = {
   blue: ({ theme }) => `
-    color: ${uiColors('accentBlueFade', theme)};
+    background: ${uiColors('accentBlueFade', theme)};
   `,
   disabled: ({ theme }) => `
-    color: ${uiColors('tableBg', theme)};
+    background: ${uiColors('tableBg', theme)};
   `,
 };
 

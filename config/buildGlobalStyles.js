@@ -4,8 +4,8 @@ function buildGlobalStyles(theme) {
       height: 100%;
     }
     body {
-      background-color: ${theme.colors.ui.background};
-      color: ${theme.colors.ui.text};
+      background-color: ${theme.colors.lightGray};
+      color: ${theme.colors.fontDarkGray};
       font-family: ${theme.font.primaryFallback};
       font-size: ${theme.font.sizes.medium}px;
       font-weight: 400;

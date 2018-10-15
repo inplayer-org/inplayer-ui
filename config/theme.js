@@ -4,71 +4,71 @@ import { rem } from 'polished';
 const coderBlue = '#272B38';
 
 // dark blue colors
-const performance = '#2a4d8e';
-const performanceFilter = '#2a4d8e8c';
-const performanceFilterLight = '#2a4d8e59';
-const performanceDark = '#253a66';
+const blue = '#2a4d8e'; // performance
+const darkBlueFilter = '#2a4d8e8c'; // performanceFilter
+const darkBlueFilterLight = '#2a4d8e59'; // performanceFilter
+const darkBlue = '#253a66'; // performanceDark
 
 // primary accent colors
 const accentBlue = '#00aae6';
 const accentBlueFade = '#00aae60f';
-const accentDark = '#0a8cd2';
+const accentDarkBlue = '#0a8cd2';
 const accentPink = '#fcc8be';
 
 // used for info boxes and warnings
-const danger = '#f26f59';
-const info = '#f9ece8';
+const red = '#f26f59'; // danger
+const pink = '#f9ece8'; // info
 const yellow = '#f4ca19';
 const yellowLight = '#fffcee';
-const success = '#5dc6a3';
-const successLight = '#e4f9f2';
+const green = '#5dc6a3'; // success
+const greenLight = '#e4f9f2'; // successLight
 
 // secondary accent colors
 const lemon = '#fcf3c0';
 const mint = '#c8e8de';
 
 // basic grays
-const background = '#f0f3f6';
-const lines = '#d7dde5';
-const icons = '#b9c1cb';
+const lightGray = '#f0f3f6'; // background
+const gray = '#d7dde5'; // lines
+const darkGray = '#b9c1cb'; // icons
 
 // extra light background color only for tables
-const tableBg = '#f6f8fb';
+const neutralGray = '#f6f8fb'; //
 
 // font colors
-const fontcolorPrim = '#44494e';
-const fontcolorSec = '#a0a3aa';
-const fontcolorDis = '#c8ccd4';
+const fontDarkGray = '#44494e'; // fontcolorPrim
+const fontGray = '#a0a3aa'; // fontcolorSec
+const fontLightGray = '#c8ccd4'; // fontcolorDis
 
 const white = '#fff';
 
 export default {
   colors: {
     white,
-    performance,
-    performanceFilter,
-    performanceFilterLight,
-    performanceDark,
+    blue,
+    darkBlueFilter,
+    darkBlueFilterLight,
+    darkBlue,
     coderBlue,
-    background,
-    lines,
-    icons,
-    fontcolorPrim,
-    fontcolorSec,
-    fontcolorDis,
+    lightGray,
+    gray,
+    darkGray,
+    fontDarkGray,
+    fontGray,
+    fontLightGray,
     accentBlue,
     accentBlueFade,
-    accentDark,
+    accentDarkBlue,
     accentPink,
     lemon,
     mint,
-    tableBg,
-    danger,
-    info,
+    neutralGray,
+    red,
+    pink,
     yellow,
     yellowLight,
-    success,
-    successLight,
+    green,
+    greenLight,
   },
   dimensions: {
     baseGrid: 8,
