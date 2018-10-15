@@ -3,33 +3,30 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import { fontSizes, uiColors, fontWeights, paddingSizes } from 'utils';
 
 const modifiers = {
-  hoverDanger: ({ theme }) => `
+  hoverDefault: () => `
+    border-color: ${uiColors('accentBlue')};
     &:hover, &:focus {
       span {
-        color: ${uiColors('red', theme)};
+        color: ${uiColors('accentBlue')};
+      },
+      i {
+        color: ${uiColors('accentBlue')};
       }
     }
   `,
-  hoverInfo: ({ theme }) => `
+  hoverBlue: () => `
+    background: ${uiColors('accentBlue')};
     &:hover, &:focus {
       span {
-        color: ${uiColors('pink', theme)};
+        color: ${uiColors('white')};
+      },
+      i {
+        color: ${uiColors('white')};
       }
     }
   `,
-  hoverSuccess: ({ theme }) => `
-    &:hover, &:focus {
-      span {
-        color: ${uiColors('green', theme)};
-      }
-    }
-  `,
-  hoverWarning: ({ theme }) => `
-      &:hover, &:focus {
-      span {
-        color: ${uiColors('yellow', theme)};
-      }
-    }
+  hoverRed: () => `
+    background: ${uiColors('pink')};
   `,
 };
 
