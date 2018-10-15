@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { positionRelative } from 'modifiers';
-import { gridScale } from 'utils';
+import { positionRelative } from '../../modifiers';
+import { gridScale } from '../../utils';
 
 const modifiers = {
   fluid: () => `padding: 0;`,

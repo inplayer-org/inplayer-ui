@@ -1,8 +1,8 @@
 // @flow
 import styled, { type ReactComponentStyled } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { positionRelative } from 'modifiers';
-import { gridScale } from 'utils';
+import { positionRelative } from '../../modifiers';
+import { gridScale } from '../../utils';
 
 const modifiers = {
   positionRelative,

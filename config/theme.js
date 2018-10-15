@@ -1,44 +1,44 @@
 import { rem } from 'polished';
 
-//used as background for code snippets
-const coderBlue = "#272B38";
+// used as background for code snippets
+const coderBlue = '#272B38';
 
-//dark blue colors
-const performance = "#2a4d8e";
-const performanceFilter = "#2a4d8e8c";
-const performanceFilterLight = "#2a4d8e59";
-const performanceDark = "#253a66";
+// dark blue colors
+const performance = '#2a4d8e';
+const performanceFilter = '#2a4d8e8c';
+const performanceFilterLight = '#2a4d8e59';
+const performanceDark = '#253a66';
 
-//primary accent colors
-const accentBlue = "#00aae6";
-const accentBlueFade = "#00aae60f";
-const accentDark = "#0a8cd2";
-const accentPink = "#fcc8be";
+// primary accent colors
+const accentBlue = '#00aae6';
+const accentBlueFade = '#00aae60f';
+const accentDark = '#0a8cd2';
+const accentPink = '#fcc8be';
 
-//used for info boxes and warnings
-const danger = "#f26f59";
-const info = "#f9ece8";
-const yellow = "#f4ca19";
-const yellowLight = "#fffcee";
-const success = "#5dc6a3";
-const successLight = "#e4f9f2";
+// used for info boxes and warnings
+const danger = '#f26f59';
+const info = '#f9ece8';
+const yellow = '#f4ca19';
+const yellowLight = '#fffcee';
+const success = '#5dc6a3';
+const successLight = '#e4f9f2';
 
-//secondary accent colors
-const lemon = rgb(252, 243, 192);
-const mint = rgb(200, 232, 222);
+// secondary accent colors
+const lemon = '#fcf3c0';
+const mint = '#c8e8de';
 
-//basic grays
-const background = "#f0f3f6";
-const lines = "#d7dde5";
-const icons = "#b9c1cb";
+// basic grays
+const background = '#f0f3f6';
+const lines = '#d7dde5';
+const icons = '#b9c1cb';
 
-//extra light background color only for tables
-const tableBg = "#f6f8fb";
+// extra light background color only for tables
+const tableBg = '#f6f8fb';
 
 // font colors
-const fontcolorPrim = "#44494e";
-const fontcolorSec = "#a0a3aa";
-const fontcolorDis = "#c8ccd4";
+const fontcolorPrim = '#44494e';
+const fontcolorSec = '#a0a3aa';
+const fontcolorDis = '#c8ccd4';
 
 const white = '#fff';
 
