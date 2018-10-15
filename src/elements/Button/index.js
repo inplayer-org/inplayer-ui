@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { fontColorModifiers } from '../../modifiers';
+import {
+  fontColorModifiers,
+  borderColorModifiers,
+  fontSizeModifiers,
+  paddingSizeModifiers,
+  backgroundColorModifiers,
+} from '../../modifiers';
 import theme from '../../../config/theme';
 
 const {
@@ -12,6 +18,10 @@ const {
 
 const modifiers = {
   ...fontColorModifiers,
+  ...borderColorModifiers,
+  ...fontSizeModifiers,
+  ...paddingSizeModifiers,
+  ...backgroundColorModifiers,
 };
 
 const Button = styled.button`
@@ -28,6 +38,7 @@ const Button = styled.button`
   transition: all ease 300ms;
   cursor: pointer;
   vertical-align: middle;
+
   ${applyStyleModifiers(modifiers)};
 `;
 
