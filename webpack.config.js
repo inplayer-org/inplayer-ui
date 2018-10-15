@@ -1,8 +1,10 @@
-const webpack = require('webpack');
-const path = require('path');
 // React v.16 uses some newer JS functionality, so to ensure everything
 // works across all browsers, we're adding babel-polyfill here.
+// The polyfill must be at the top of the entry point to ensure the polyfills are loaded first.
 require('@babel/polyfill');
+
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: ['./src/index'],

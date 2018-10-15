@@ -38,7 +38,6 @@ const Button = styled.button`
   transition: all ease 300ms;
   cursor: pointer;
   vertical-align: middle;
-
   ${applyStyleModifiers(modifiers)};
 `;
 
