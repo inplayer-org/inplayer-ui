@@ -1,66 +1,74 @@
-const { rem } = require('polished');
+import { rem } from 'polished';
 
-// common colors
-const chrome000 = '#fff';
-const chrome050 = '#f9f9fa';
-const chrome100 = '#ecedf0';
-const chrome200 = '#d0d3d9';
-const chrome300 = '#c0c4cb';
-const chrome400 = '#aeb3bd';
-const chrome500 = '#9aa0ac';
-const chrome600 = '#818998';
-const chrome700 = '#636d7f';
-const chrome800 = '#323f58';
-const chrome900 = '#24324C';
-const blue = '#0975E0';
-const green = '#008900';
-const lightBlue = '#318CE5';
-const purple = '#4F40F0';
-const red = '#DD3800';
-const yellow = '#967100';
+//used as background for code snippets
+const coderBlue = "#272B38";
+
+//dark blue colors
+const performance = "#2a4d8e";
+const performanceFilter = "#2a4d8e8c";
+const performanceFilterLight = "#2a4d8e59";
+const performanceDark = "#253a66";
+
+//primary accent colors
+const accentBlue = "#00aae6";
+const accentBlueFade = "#00aae60f";
+const accentDark = "#0a8cd2";
+const accentPink = "#fcc8be";
+
+//used for info boxes and warnings
+const danger = "#f26f59";
+const info = "#f9ece8";
+const yellow = "#f4ca19";
+const yellowLight = "#fffcee";
+const success = "#5dc6a3";
+const successLight = "#e4f9f2";
+
+//secondary accent colors
+const lemon = rgb(252, 243, 192);
+const mint = rgb(200, 232, 222);
+
+//basic grays
+const background = "#f0f3f6";
+const lines = "#d7dde5";
+const icons = "#b9c1cb";
+
+//extra light background color only for tables
+const tableBg = "#f6f8fb";
+
+// font colors
+const fontcolorPrim = "#44494e";
+const fontcolorSec = "#a0a3aa";
+const fontcolorDis = "#c8ccd4";
+
+const white = '#fff';
 
 export default {
   colors: {
-    blue,
-    green,
-    lightBlue,
-    purple,
-    red,
-    // ui colors
-    ui: {
-      background: chrome000,
-      link: blue,
-      linkHover: lightBlue,
-      linkVisited: purple,
-      text: chrome800,
-      textLight: chrome700,
-      // grayscale
-      chrome000,
-      chrome050,
-      chrome100,
-      chrome200,
-      chrome300,
-      chrome400,
-      chrome500,
-      chrome600,
-      chrome700,
-      chrome800,
-      chrome900,
-    },
-    // brand colors
-    brand: {
-      primary: chrome900,
-      secondary: red,
-      tertiary: yellow,
-    },
-    // status colors
-    status: {
-      danger: red,
-      default: chrome300,
-      info: blue,
-      success: green,
-      warning: yellow,
-    },
+    white,
+    performance,
+    performanceFilter,
+    performanceFilterLight,
+    performanceDark,
+    coderBlue,
+    background,
+    lines,
+    icons,
+    fontcolorPrim,
+    fontcolorSec,
+    fontcolorDis,
+    accentBlue,
+    accentBlueFade,
+    accentDark,
+    accentPink,
+    lemon,
+    mint,
+    tableBg,
+    danger,
+    info,
+    yellow,
+    yellowLight,
+    success,
+    successLight,
   },
   dimensions: {
     baseGrid: 8,
