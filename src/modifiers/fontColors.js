@@ -2,19 +2,19 @@ import { uiColors } from '../utils';
 
 const fontColorModifiers = {
   text: ({ theme }) => `
-    color: ${uiColors('text', theme)};
+    color: ${uiColors('fontDarkGray', theme)};
   `,
   textLight: ({ theme }) => `
-    color: ${uiColors('textLight', theme)};
+    color: ${uiColors('fontLightGray', theme)};
   `,
   blue: ({ theme }) => `
     color: ${uiColors('accentBlue', theme)};
   `,
   red: ({ theme }) => `
-    color: ${uiColors('danger', theme)};
+    color: ${uiColors('red', theme)};
   `,
   disabled: ({ theme }) => `
-    color: ${uiColors('fontcolorSec', theme)};
+    color: ${uiColors('fontGray', theme)};
   `,
 };
 

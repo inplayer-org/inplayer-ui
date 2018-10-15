@@ -33,7 +33,7 @@ const gray = '#d7dde5'; // lines
 const darkGray = '#b9c1cb'; // icons
 
 // extra light background color only for tables
-const neutralGray = '#f6f8fb'; //
+const neutralGray = '#f6f8fb'; // tableBg
 
 // font colors
 const fontDarkGray = '#44494e'; // fontcolorPrim

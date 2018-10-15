@@ -5,10 +5,10 @@ const borderColorModifiers = {
     border: 1px solid ${uiColors('accentBlue', theme)};
   `,
   red: ({ theme }) => `
-    border: 1px solid ${uiColors('danger', theme)};
+    border: 1px solid ${uiColors('red', theme)};
   `,
   disabled: ({ theme }) => `
-    border: 1px solid ${uiColors('fontcolorSec', theme)};
+    border: 1px solid ${uiColors('fontGray', theme)};
   `,
 };
 

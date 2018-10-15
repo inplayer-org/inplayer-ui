@@ -5,7 +5,7 @@ const backgroundColorModifiers = {
     background: ${uiColors('accentBlueFade', theme)};
   `,
   disabled: ({ theme }) => `
-    background: ${uiColors('tableBg', theme)};
+    background: ${uiColors('neutralGray', theme)};
   `,
 };
 
