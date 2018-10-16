@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
+const modifiers = {
+  hoverDisabled: () => `
+    &:hover {
+      background: ${uiColors('lightGray')};
+      border: 1px solid ${uiColors('gray')};
+      pointer-events: none;
+    }
+  `,
+};
 
 const Checkbox = styled.input`
   vertical-align: middle;
@@ -51,6 +62,8 @@ const Checkbox = styled.input`
   &:checked:hover {
     border: 1px solid ${uiColors('gray')};
   }
+
+  ${applyStyleModifiers(modifiers)};
 `;
 
 /** @component */

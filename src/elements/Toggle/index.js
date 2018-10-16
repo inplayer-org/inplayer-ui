@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
+const modifiers = {
+  hoverDisabled: () => `
+    &:hover {
+      background: ${uiColors('lightGray')};
+      border: 1px solid ${uiColors('gray')};
+      pointer-events: none;
+    }
+  `,
+};
 
 const Toggle = styled.input`
   width: 34px;
@@ -44,6 +55,8 @@ const Toggle = styled.input`
   &:checked::after {
     left: 13px;
   }
+
+  ${applyStyleModifiers(modifiers)};
 `;
 
 /** @component */

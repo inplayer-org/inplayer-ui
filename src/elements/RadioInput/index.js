@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
+const modifiers = {
+  hoverDisabled: () => `
+    &:hover {
+      background: ${uiColors('lightGray')};
+      border: 1px solid ${uiColors('gray')};
+      pointer-events: none;
+    }
+  `,
+};
 
 const RadioInput = styled.input`
   display: inline-block;
@@ -39,6 +50,8 @@ const RadioInput = styled.input`
     background: ${uiColors('accentBlueFade')};
     border: 1px solid ${uiColors('accentBlue')};
   }
+
+  ${applyStyleModifiers(modifiers)};
 `;
 
 /** @component */
