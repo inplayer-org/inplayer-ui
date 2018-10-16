@@ -1,4 +1,4 @@
-Button is a component with a few modifiers: button--blue, button--red, button--disabled. You can use them directly like this:
+Button is a component with a few modifiers: button--blue, button--red, button--disabled. You can use it directly like this:
 
 ```jsx static
 import { Button } from 'inplayer-ui';
