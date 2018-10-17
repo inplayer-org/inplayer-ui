@@ -19,7 +19,7 @@ const Checkbox = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  display: inline-block;
+  display: flex;
   background: ${uiColors('white')};
   font-weight: 300;
   border: 1px solid ${uiColors('gray')};

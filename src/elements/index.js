@@ -6,6 +6,7 @@ import TextArea from './TextArea';
 import Checkbox from './Checkbox';
 import Toggle from './Toggle';
 import RadioInput from './RadioInput';
+import Notification from './Notification';
 
 export default {
   Button,
@@ -14,4 +15,5 @@ export default {
   Checkbox,
   Toggle,
   RadioInput,
+  Notification,
 };

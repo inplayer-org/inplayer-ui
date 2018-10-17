@@ -5,7 +5,7 @@ export const TabSwitchContainer = styled.div`
   border: 1px solid ${uiColors('gray')};
   border-radius: 3px;
   margin: 0 auto;
-  display: inline-block;
+  display: flex;
   overflow: hidden;
   text-align: center;
 `;
