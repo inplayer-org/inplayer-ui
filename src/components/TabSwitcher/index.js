@@ -1,5 +1,4 @@
 // @flow
-import _map from 'lodash/map';
 import Tab from './Tab';
 import TabSwitchContainer from './TabSwitchContainer';
 
@@ -10,7 +9,7 @@ type Props = {
 };
 
 const renderTabs = (tabs, selectedTabIndex, onTabClick) =>
-  _map(tabs, ({ name }, index) => (
+  tabs.map(({ name }, index) => (
     <Tab
       selected={selectedTabIndex === index}
       key={name}
