@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
 
-export const Tab = styled.a`
+const Tab = styled.a`
   font-size: 14px;
   letter-spacing: 0.05em;
   padding: 3px 20px;
@@ -16,3 +16,5 @@ export const Tab = styled.a`
     color: ${uiColors('fontDarkGray')};
   }
 `;
+
+export default Tab;

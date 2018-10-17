@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab renders correctly 1`] = `
+.c0 {
+  font-size: 14px;
+  -webkit-letter-spacing: 0.05em;
+  -moz-letter-spacing: 0.05em;
+  -ms-letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
+  padding: 3px 20px;
+  border-right: 1px solid #d7dde5;
+  display: inline-block;
+  margin: 0;
+  width: auto;
+  background: #f0f3f6;
+  color: #a0a3aa;
+}
+
+.c0:hover {
+  color: #44494e;
+}
+
+<a
+  className="c0"
+/>
+`;
