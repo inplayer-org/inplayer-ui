@@ -5,6 +5,7 @@ require('@babel/polyfill');
 
 const webpack = require('webpack');
 const path = require('path');
+const pkg = require('./package.json');
 
 module.exports = {
   entry: ['./src/index'],
@@ -25,13 +26,16 @@ module.exports = {
     },
   },
   output: {
-    path: path.join(__dirname, '/docs'),
+    path: path.join(__dirname, '/build'),
+    library: pkg.name,
+    libraryTarget: 'commonjs2',
     publicPath: '/',
     filename: 'bundle.js',
+    umdNamedDefine: true,
   },
   devtool: 'eval',
   devServer: {
-    contentBase: './docs',
+    contentBase: './build',
     hot: true,
   },
   plugins: [
