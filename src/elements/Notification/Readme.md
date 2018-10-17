@@ -1,4 +1,4 @@
-RadioInput is a component to displat notification. You can use it directly like this:
+Notification is a component to display notification. You can use it directly like this:
 
 ```jsx static
 import { Notification } from 'inplayer-ui';
