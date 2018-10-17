@@ -1,4 +1,4 @@
-import { rem } from 'polished';
+const { rem } = require('polished');
 
 // used as background for code snippets
 const coderBlue = '#272B38';
@@ -42,7 +42,7 @@ const fontLightGray = '#c8ccd4'; // fontcolorDis
 
 const white = '#fff';
 
-export default {
+module.exports = {
   colors: {
     white,
     blue,
