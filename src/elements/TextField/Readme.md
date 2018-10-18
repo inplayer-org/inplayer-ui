@@ -1,15 +1,15 @@
 Text input is a input component for text. You can use it directly like this:
 
 ```jsx static
-import { TextInput } from 'inplayer-ui';
+import { TextField } from 'inplayer-ui';
 
 function Page(props) {
-  return <TextInput />;
+  return <TextField />;
 }
 ```
 
 ### Demo
 
 ```jsx
-<TextInput placeholder="text" />
+<TextField placeholder="text" />
 ```

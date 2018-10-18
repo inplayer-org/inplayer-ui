@@ -1,4 +1,5 @@
 // @flow
+// import React from 'react';
 import Tab from './Tab';
 import TabSwitchContainer from './TabSwitchContainer';
 

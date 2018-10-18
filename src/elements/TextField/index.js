@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
 
-const TextInput = styled.input`
+const TextField = styled.input`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -27,4 +27,4 @@ const TextInput = styled.input`
 `;
 
 /** @component */
-export default TextInput;
+export default TextField;

@@ -4,12 +4,14 @@ Text area is a input component for text area. You can use it directly like this:
 import { TextArea } from 'inplayer-ui';
 
 function Page(props) {
-  return <TextArea>Buy now</TextArea>;
+  return <TextArea value="text goes here" />;
 }
 ```
 
 ### Demo
 
+<!-- Add onChange function -->
+
 ```jsx
-<TextArea>Buy now</TextArea>
+<TextArea value="text goes here" />
 ```

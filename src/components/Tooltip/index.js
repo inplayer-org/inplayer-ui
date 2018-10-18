@@ -1,13 +1,14 @@
 // @flow
+// import React from 'react';
 import TooltipHolder from './TooltipHolder';
 import TooltipInfo from './TooltipInfo';
 import Tipneed from './Tipneed';
 
 type Props = {
-  info: string,
+  info: object,
 };
 
-const Tooltip = (info: Props) =>
+const Tooltip = ({ info }: Props) =>
   info ? (
     <TooltipHolder>
       <Tipneed>
