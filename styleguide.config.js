@@ -1,6 +1,6 @@
 const path = require('path');
-const theme = require('./config/theme');
-const colors = require('./config/colors');
+const theme = require('./src/config/theme');
+const colors = require('./src/config/colors');
 const { version } = require('./package.json');
 
 const fontSource = 'https://fonts.googleapis.com/css?family=Roboto:300,400,600,700';
@@ -9,7 +9,7 @@ module.exports = {
   title: `InPlayer UI | ${version}`,
   skipComponentsWithoutExample: true,
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
+    Wrapper: path.join(__dirname, 'src/theme/ThemeWrapper'),
   },
   styleguideDir: 'docs',
   template: {
