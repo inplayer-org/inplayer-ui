@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { fontSizes, uiColors, fontWeights, paddingSizes } from 'utils';
+import { uiColors, fontWeights, paddingSizes } from 'utils';
 
 const modifiers = {
   hoverBlue: () => `
