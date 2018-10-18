@@ -3,17 +3,6 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import { fontSizes, uiColors, fontWeights, paddingSizes } from 'utils';
 
 const modifiers = {
-  hoverDefault: () => `
-    border-color: ${uiColors('accentBlue')};
-    &:hover, &:focus {
-      span {
-        color: ${uiColors('accentBlue')};
-      },
-      i {
-        color: ${uiColors('accentBlue')};
-      }
-    }
-  `,
   hoverBlue: () => `
     background: ${uiColors('accentBlue')};
     &:hover, &:focus {
@@ -32,26 +21,31 @@ const modifiers = {
 
 const Button = styled.button`
   display: flex;
-  background: ${uiColors('gray')};
+  background: ${uiColors('white')};
   align-items: center;
   color: ${uiColors('fontGray')};
-  font-weight: ${fontWeights('semiBold')};
+  font-weight: ${fontWeights('light')};
   border: 1px solid ${uiColors('gray')};
   padding: ${paddingSizes('small')};
   border-radius: 3px;
-  height: ${fontSizes('large')};
+  font-size: 15px;
   justify-content: center;
   outline: none;
-  transition: all 200ms ease;
-  width: ${fontSizes('large')};
+  transition: all ease 300ms;
   cursor: pointer;
   vertical-align: middle;
+  letter-spacing: 0.015em;
+  line-height: 1;
 
-  &:hover,
-  &:focus {
-    transform: scale(1.2);
+  &:hover {
+    border-color: ${uiColors('accentBlue')};
 
     span {
+      color: ${uiColors('accentBlue')};
+    }
+
+    ,
+    i {
       color: ${uiColors('accentBlue')};
     }
   }

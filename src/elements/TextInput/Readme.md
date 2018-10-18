@@ -4,12 +4,12 @@ Text input is a input component for text. You can use it directly like this:
 import { TextInput } from 'inplayer-ui';
 
 function Page(props) {
-  return <TextInput>Buy now</TextInput>;
+  return <TextInput />;
 }
 ```
 
 ### Demo
 
 ```jsx
-<TextInput>Buy now</TextInput>
+<TextInput placeholder="text" />
 ```
