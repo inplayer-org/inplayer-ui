@@ -1,7 +1,7 @@
 Button is a component with a few modifiers: button--blue, button--red, button--disabled. You can use it directly like this:
 
 ```jsx static
-import { Button } from 'inplayer-ui';
+import { Button } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
   return <Button>Buy now</Button>;

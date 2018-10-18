@@ -1,8 +1,7 @@
 Toggle is a input component for flipswitch. You can use it directly like this:
 
 ```jsx static
-import { Toggle } from 'inplayer-ui';
-import { Label } from 'inplayer-ui';
+import { Label, Toggle } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
   return <Toggle id="toggle1" type="checkbox" />

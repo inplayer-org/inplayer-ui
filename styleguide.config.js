@@ -1,5 +1,6 @@
 const path = require('path');
 const theme = require('./config/theme');
+const colors = require('./config/colors');
 const { version } = require('./package.json');
 
 const fontSource = 'https://fonts.googleapis.com/css?family=Roboto:300,400,600,700';
@@ -50,8 +51,8 @@ module.exports = {
   ],
   theme: {
     color: {
-      link: theme.colors.accentDarkBlue,
-      linkHover: theme.colors.accentBlue,
+      link: colors.accentDarkBlue,
+      linkHover: colors.accentBlue,
     },
     fontFamily: {
       base: theme.font.primary,
@@ -75,7 +76,7 @@ module.exports = {
     },
     Heading: {
       heading1: {
-        color: theme.colors.accentDarkBlue,
+        color: colors.accentDarkBlue,
         fontWeight: 'bold',
         fontSize: '2.5rem',
         margin: '0.7em 0',
