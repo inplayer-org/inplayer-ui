@@ -1,8 +1,8 @@
 function uiColors(color, theme) {
   if (theme) {
-    return theme.colors[color];
+    return theme.palette[color];
   }
-  return props => props.theme.colors[color];
+  return props => props.theme.palette[color];
 }
 
 export default uiColors;
