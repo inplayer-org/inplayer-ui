@@ -13,6 +13,6 @@ function Page(props) {
 ### Demo
 
 ```jsx
-  <RadioInput id="radio1" />
+  <RadioInput type="radio" id="radio1" />
   <Label htmlFor="radio1">Radio1</Label>
 ```

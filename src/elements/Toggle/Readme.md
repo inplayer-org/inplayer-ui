@@ -5,7 +5,7 @@ import { Toggle } from 'inplayer-ui';
 import { Label } from 'inplayer-ui';
 
 function Page(props) {
-  return <Toggle id="toggle1" />
+  return <Toggle id="toggle1" type="checkbox" />
 <Label htmlFor="toggle1">Checkbox1</Label>
 }
 ```
@@ -13,6 +13,6 @@ function Page(props) {
 ### Demo
 
 ```jsx
-<Toggle id="toggle1" />
-<Label htmlFor="toggle1">Checkbox1</Label>
+<Toggle id="toggle1" type="checkbox" />
+<Label htmlFor="toggle1">Toggle11</Label>
 ```

@@ -59,5 +59,6 @@ const Toggle = styled.input`
   ${applyStyleModifiers(modifiers)};
 `;
 
+// Fix css
 /** @component */
 export default Toggle;

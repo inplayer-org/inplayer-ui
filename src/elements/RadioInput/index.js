@@ -13,7 +13,7 @@ const modifiers = {
 };
 
 const RadioInput = styled.input`
-  display: flex;
+  display: inline-block;
   background: ${uiColors('white')};
   font-weight: 300;
   border: 1px solid ${uiColors('gray')};

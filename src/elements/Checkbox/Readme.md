@@ -5,7 +5,7 @@ import { Checkbox } from 'inplayer-ui';
 import { Label } from 'inplayer-ui';
 
 function Page(props) {
-  return <Checkbox id="checkbox1" />
+  return <Checkbox type="checkbox" id="checkbox1" />
 <Label htmlFor="checkbox1">Checkbox1</Label>
 }
 ```
@@ -13,6 +13,6 @@ function Page(props) {
 ### Demo
 
 ```jsx
-  <Checkbox id="checkbox1" />
+  <Checkbox type="checkbox" id="checkbox1" />
   <Label htmlFor="checkbox1">Checkbox1</Label>
 ```
