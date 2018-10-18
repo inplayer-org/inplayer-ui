@@ -1,15 +1,15 @@
 Text area is a input component for text area. You can use it directly like this:
 
 ```jsx static
-import { TextArea } from 'inplayer-ui';
+import { TextArea } from '@inplayer-org/inplayer-ui'
 
 function Page(props) {
-  return <TextArea>Buy now</TextArea>;
+  return <TextArea value="Buy now" />;
 }
 ```
 
 ### Demo
 
 ```jsx
-<TextArea>Buy now</TextArea>
+<TextArea defaultValue="Buy now" />
 ```

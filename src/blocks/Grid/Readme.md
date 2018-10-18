@@ -1,7 +1,7 @@
 Grid, itself, is not a component, you can import several components from it. `Container`, `Row`, and `Column`, all live within Grid. Each of these components is Flexbox-based. You can either use them directly like this:
 
 ```jsx static
-import { Grid } from "inplayer-ui";
+import { Grid } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
   return (
@@ -19,7 +19,7 @@ function Page(props) {
 Or you can deconstruct them like this:
 
 ```jsx static
-import { Grid } from "inplayer-ui";
+import { Grid } from '@inplayer-org/inplayer-ui';;
 
 const { Column, Container, Row } = Grid;
 

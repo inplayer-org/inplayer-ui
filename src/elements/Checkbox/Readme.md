@@ -1,8 +1,7 @@
 Checkbox input is a input component for checkbox. You can use it directly like this:
 
 ```jsx static
-import { Checkbox } from 'inplayer-ui';
-import { Label } from 'inplayer-ui';
+import { Checkbox, Label } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
   return <Checkbox type="checkbox" id="checkbox1" />

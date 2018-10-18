@@ -1,7 +1,7 @@
 Notification is a component to display notification. You can use it directly like this:
 
 ```jsx static
-import { Notification } from 'inplayer-ui';
+import { Notification } from '@inplayer-org/inplayer-ui'
 
 function Page(props) {
   return <Notification>Buy now</Notification>;

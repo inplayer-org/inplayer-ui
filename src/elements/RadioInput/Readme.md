@@ -1,8 +1,7 @@
 RadioInput is a input component for radio. You can use it directly like this:
 
 ```jsx static
-import { RadioInput } from 'inplayer-ui';
-import { Label } from 'inplayer-ui';
+import { Label, RadioInput } from '@inplayer-org/inplayer-ui'
 
 function Page(props) {
   return <RadioInput id="radio1" />
