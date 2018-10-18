@@ -75,7 +75,7 @@ module.exports = {
     borderRadius: '2px',
   },
   font: {
-    primary: 'Open Sans',
+    primary: 'Roboto',
     primaryFallback: 'Helvetica, Arial, sans-serif',
     weights: {
       light: 300,

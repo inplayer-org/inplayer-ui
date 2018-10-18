@@ -1,9 +1,11 @@
 const path = require('path');
 const theme = require('./config/theme');
+const { version } = require('./package.json');
 
-const fontSource = 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+const fontSource = 'https://fonts.googleapis.com/css?family=Roboto:300,400,600,700';
 
 module.exports = {
+  title: `InPlayer UI | ${version}`,
   skipComponentsWithoutExample: true,
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
@@ -30,7 +32,6 @@ module.exports = {
       name: 'Components',
       ignore: ['**/tests/**', '**/components/index.js'],
       components: 'src/components/**/index.js',
-      description: 'Components are cool.',
     },
     {
       name: 'Blocks',
@@ -49,32 +50,46 @@ module.exports = {
   ],
   theme: {
     color: {
-      base: theme.colors.fontDarkGray,
-      light: theme.colors.fontGray,
-      lightest: theme.colors.fontLightGray,
-      link: theme.colors.accentBlue,
-      linkHover: theme.colors.accentDarkBlue,
-      border: theme.colors.gray,
-      name: theme.colors.green,
-      type: theme.colors.pink,
-      error: theme.colors.red,
-      baseBackground: theme.colors.lightGray,
-      codeBackground: theme.colors.coderBlue,
-      sidebarBackground: theme.colors.gray,
+      link: theme.colors.accentDarkBlue,
+      linkHover: theme.colors.accentBlue,
     },
     fontFamily: {
       base: theme.font.primary,
     },
-    fontSize: {
-      base: 12,
-      text: 16,
-      small: 14,
-      h1: 40,
-      h2: 36,
-      h3: 32,
-      h4: 28,
-      h5: 24,
-      h6: 20,
+  },
+  styles: {
+    StyleGuide: {
+      sidebar: {
+        width: 240,
+      },
+      hasSidebar: {
+        paddingLeft: 240,
+      },
+    },
+    SectionHeading: {
+      sectionName: {
+        color: 'inherit',
+        fontWeight: 'inherit',
+        fontSize: 'inherit',
+      },
+    },
+    Heading: {
+      heading1: {
+        color: theme.colors.accentDarkBlue,
+        fontWeight: 'bold',
+        fontSize: '2.5rem',
+        margin: '0.7em 0',
+      },
+      heading2: {
+        fontWeight: 500,
+        fontSize: '1.75rem',
+        margin: '2rem 0 0.5rem',
+      },
+      heading3: {
+        fontWeight: 500,
+        fontSize: '1.25rem',
+        margin: '2rem 0 1.25rem',
+      },
     },
   },
 };
