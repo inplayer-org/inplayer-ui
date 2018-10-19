@@ -1,5 +1,5 @@
 // @flow
-// import React from 'react';
+import React from 'react';
 import TooltipHolder from './TooltipHolder';
 import TooltipInfo from './TooltipInfo';
 import Tipneed from './Tipneed';
