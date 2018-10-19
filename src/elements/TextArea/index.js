@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const TextArea = styled.textarea`
   vertical-align: middle;
@@ -7,11 +8,11 @@ const TextArea = styled.textarea`
   overflow: hidden;
   outline: none;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: ${uiColors('fontDarkGray')};
+  color: ${uiColors('text.main')};
   transition: all ease 300ms;
-  background: ${uiColors('white')};
+  background: ${colors.white};
   font-weight: 300;
-  border: 1px solid ${uiColors('gray')};
+  border: 1px solid ${colors.gray};
   border-radius: 3px;
   font-size: 15px;
   line-height: 1.4em;
@@ -23,7 +24,7 @@ const TextArea = styled.textarea`
   padding: 12px 18px;
 
   &:focus {
-    border-bottom: 1px solid ${uiColors('accentBlue')};
+    border-bottom: 1px solid ${uiColors('primary.main')};
   }
 `;
 

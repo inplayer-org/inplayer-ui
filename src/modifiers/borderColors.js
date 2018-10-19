@@ -1,14 +1,15 @@
+import colors from 'config/colors';
 import { uiColors } from '../utils';
 
 const borderColorModifiers = {
-  blue: ({ theme }) => `
-    border: 1px solid ${uiColors('accentBlue', theme)};
+  blue: () => `
+    border: 1px solid ${colors.blue})};
   `,
-  red: ({ theme }) => `
-    border: 1px solid ${uiColors('red', theme)};
+  red: () => `
+    border: 1px solid ${colors.red};
   `,
   disabled: ({ theme }) => `
-    border: 1px solid ${uiColors('fontGray', theme)};
+    border: 1px solid ${uiColors('text.disabled', theme)};
   `,
 };
 

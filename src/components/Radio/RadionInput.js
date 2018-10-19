@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import colors from 'config/colors';
 
 const modifiers = {
   hoverDisabled: () => `
     &:hover {
-      background: ${uiColors('lightGray')};
-      border: 1px solid ${uiColors('gray')};
+      background: ${colors.lightGray};
+      border: 1px solid ${colors.gray};
       pointer-events: none;
     }
   `,
@@ -14,9 +15,9 @@ const modifiers = {
 
 const RadioInput = styled.input`
   display: inline-block;
-  background: ${uiColors('white')};
+  background: ${colors.white};
   font-weight: 300;
-  border: 1px solid ${uiColors('gray')};
+  border: 1px solid ${colors.white};
   width: 16px;
   height: 16px;
   border-radius: 14px;
@@ -28,7 +29,7 @@ const RadioInput = styled.input`
     content: '';
     display: block;
     position: absolute;
-    background: ${uiColors('white')};
+    background: ${colors.white};
     transform: rotate(45deg);
     top: 2px;
     left: 2px;
@@ -39,16 +40,16 @@ const RadioInput = styled.input`
   }
 
   &:checked {
-    border: 1px solid ${uiColors('accentBlue')};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   &:checked::after {
-    background: ${uiColors('accentBlue')};
+    background: ${uiColors('primary.main')};
   }
 
   &:hover {
-    background: ${uiColors('accentBlueFade')};
-    border: 1px solid ${uiColors('accentBlue')};
+    background: ${uiColors(colors.accentBlueFade)};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   ${applyStyleModifiers(modifiers)};

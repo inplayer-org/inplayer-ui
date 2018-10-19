@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import colors from 'config/colors';
+import { uiColors } from 'utils';
 
 const modifiers = {
   hoverDisabled: () => `
         &:hover {
-            color: ${uiColors('fontLightGray')};
+            color: ${uiColors('text.disabled')};
             cursor: default;
         }
     `,
@@ -16,7 +17,7 @@ const Label = styled.label`
   font-weight: 300;
   cursor: pointer;
   vertical-align: middle;
-  color: ${uiColors('fontGray')};
+  color: ${uiColors('text.main')};
   transition: all ease 300ms;
   line-height: 20px;
   margin: 0 20px 0 -14px;
@@ -24,11 +25,11 @@ const Label = styled.label`
   position: relative;
 
   &:hover {
-    color: ${uiColors('fontDarkGray')};
+    color: ${uiColors('text.light')};
   }
 
   &:disabled {
-    color: ${uiColors('fontLightGray')};
+    color: ${uiColors('text.disabled')};
     cursor: default;
   }
 

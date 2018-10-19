@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import colors from 'config/colors';
 
 const modifiers = {
   hoverDisabled: () => `
     &:hover {
-      background: ${uiColors('lightGray')};
-      border: 1px solid ${uiColors('gray')};
+      background: ${colors.lightGray};
+      border: 1px solid ${colors.gray};
       pointer-events: none;
     }
   `,
@@ -20,9 +21,9 @@ const Checkbox = styled.input`
   overflow: hidden;
   outline: none;
   display: inline-block;
-  background: ${uiColors('white')};
+  background: ${colors.white};
   font-weight: 300;
-  border: 1px solid ${uiColors('gray')};
+  border: 1px solid ${colors.gray};
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -34,8 +35,8 @@ const Checkbox = styled.input`
     content: '';
     display: block;
     position: absolute;
-    border-right: 2px solid ${uiColors('white')};
-    border-bottom: 2px solid ${uiColors('white')};
+    border-right: 2px solid ${colors.white};
+    border-bottom: 2px solid ${colors.white};
     transform: rotate(45deg);
     top: 0;
     left: 3px;
@@ -46,21 +47,21 @@ const Checkbox = styled.input`
   }
 
   &:checked {
-    border: 1px solid ${uiColors('accentBlueFade')};
+    border: 1px solid ${colors.accentBlueFade};
   }
 
   &:hover {
-    background: ${uiColors('accentBlueFade')};
-    border: 1px solid ${uiColors('accentBlue')};
+    background: ${colors.accentBlueFade};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   &:checked::after {
-    border-right: 2px solid ${uiColors('accentBlue')};
-    border-bottom: 2px solid ${uiColors('accentBlue')};
+    border-right: 2px solid ${uiColors('primary.main')};
+    border-bottom: 2px solid ${uiColors('primary.main')};
   }
 
   &:checked:hover {
-    border: 1px solid ${uiColors('gray')};
+    border: 1px solid ${colors.gray};
   }
 
   ${applyStyleModifiers(modifiers)};

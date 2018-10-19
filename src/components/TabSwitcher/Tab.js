@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const Tab = styled.a`
   font-size: 14px;
   letter-spacing: 0.05em;
   padding: 3px 20px;
-  border-right: 1px solid ${uiColors('gray')};
+  border-right: 1px solid ${colors.gray};
   display: flex;
   margin: 0;
   width: auto;
-  background: ${uiColors('lightGray')};
-  color: ${uiColors('fontGray')};
+  background: ${colors.lightGray};
+  color: ${uiColors('text.main')};
 
   &:hover {
-    color: ${uiColors('fontDarkGray')};
+    color: ${colors.fontDarkGray};
   }
 `;
 

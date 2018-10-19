@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { uiColors } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import colors from 'config/colors';
 
 const modifiers = {
   hoverDisabled: () => `
     &:hover {
-      background: ${uiColors('lightGray')};
-      border: 1px solid ${uiColors('gray')};
+      background: ${colors.lightGray};
+      border: 1px solid ${colors.gray};
       pointer-events: none;
     }
   `,
@@ -14,8 +15,8 @@ const modifiers = {
 
 const Toggle = styled.input`
   width: 34px;
-  background: ${uiColors('lightGray')};
-  border: 1px solid ${uiColors('gray')};
+  background: ${colors.lightGray};
+  border: 1px solid ${colors.gray};
   border-radius: 50px;
   padding: 9px;
   margin: 12px 0;
@@ -23,21 +24,21 @@ const Toggle = styled.input`
   overflow: visible;
 
   &:checked {
-    border: 1px solid ${uiColors('accentBlue')};
-    background: ${uiColors('accentBlue')};
+    border: 1px solid ${uiColors('primary.main')};
+    background: ${uiColors('primary.main')};
   }
 
   &:hover,
   &:checked:hover {
-    background: ${uiColors('accentBlueFade')};
-    border: 1px solid ${uiColors('accentBlue')};
+    background: ${uiColors('primary.light')};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   &::after {
     content: '';
     display: block;
     position: absolute;
-    border: 1px solid ${uiColors('gray')};
+    border: 1px solid ${colors.gray};
     top: -2px;
     left: -2px;
     width: 20px;
@@ -49,7 +50,7 @@ const Toggle = styled.input`
   }
 
   &:hover::after {
-    border: 1px solid ${uiColors('accentBlue')};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   &:checked::after {

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const TooltipInfo = styled.div`
   position: absolute;
   top: -100%;
-  background: ${uiColors('lightGray')};
-  border: 1px solid ${uiColors('gray')};
+  background: ${colors.lightGray};
+  border: 1px solid ${colors.gray};
   text-align: center;
   display: none;
   width: auto;
