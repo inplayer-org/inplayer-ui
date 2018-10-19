@@ -1,65 +1,24 @@
-import styled from 'styled-components';
-import { uiColors } from 'utils';
-import { applyStyleModifiers } from 'styled-components-modifiers';
-import colors from 'config/colors';
+// @flow
+import React from 'react';
+import Switcher from './Switch';
+import Label from '../Label';
 
-const modifiers = {
-  hoverDisabled: () => `
-    &:hover {
-      background: ${colors.lightGray};
-      border: 1px solid ${colors.gray};
-      pointer-events: none;
-    }
-  `,
+type Props = {
+  value: boolean,
+  id: string,
+  label: string,
+  onChange: (checked: boolean) => any,
 };
 
-const Toggle = styled.input`
-  width: 34px;
-  background: ${colors.lightGray};
-  border: 1px solid ${colors.gray};
-  border-radius: 50px;
-  padding: 9px;
-  margin: 12px 0;
-  transition: all ease 500ms;
-  overflow: visible;
+const Toggle = ({ id, value, label, onChange }: Props) => {
+  const onToggleChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
+  return (
+    <div>
+      <Switcher checked={value} onChange={onToggleChange} id={id} />
+      <Label htmlFor={id}>{label}</Label>
+    </div>
+  );
+};
 
-  &:checked {
-    border: 1px solid ${uiColors('primary.main')};
-    background: ${uiColors('primary.main')};
-  }
-
-  &:hover,
-  &:checked:hover {
-    background: ${uiColors('primary.light')};
-    border: 1px solid ${uiColors('primary.main')};
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border: 1px solid ${colors.gray};
-    top: -2px;
-    left: -2px;
-    width: 20px;
-    height: 20px;
-    z-index: 2;
-    background: #fff;
-    border-radius: 50px;
-    transition: all ease 300ms;
-  }
-
-  &:hover::after {
-    border: 1px solid ${uiColors('primary.main')};
-  }
-
-  &:checked::after {
-    left: 13px;
-  }
-
-  ${applyStyleModifiers(modifiers)};
-`;
-
-// Fix css
 /** @component */
 export default Toggle;

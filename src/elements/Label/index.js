@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import colors from 'config/colors';
 import { uiColors } from 'utils';
 
 const modifiers = {
