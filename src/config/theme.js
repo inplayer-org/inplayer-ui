@@ -14,9 +14,9 @@ module.exports = {
       dark: colors.darkBlue,
     },
     text: {
-      main: colors.gray,
-      light: colors.lightGray,
-      disabled: colors.darkGray,
+      main: colors.fontDarkGray,
+      light: colors.fontGray,
+      disabled: colors.fontLightGray,
     },
   },
   dimensions: {

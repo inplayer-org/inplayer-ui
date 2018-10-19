@@ -14,6 +14,7 @@ const modifiers = {
 };
 
 const Checkbox = styled.input`
+  opacity: 0;
   vertical-align: middle;
   padding: 0;
   margin: 0;
@@ -21,7 +22,7 @@ const Checkbox = styled.input`
   overflow: hidden;
   outline: none;
   display: inline-block;
-  background: ${colors.white};
+  background-color: ${colors.white};
   font-weight: 300;
   border: 1px solid ${colors.gray};
   width: 16px;

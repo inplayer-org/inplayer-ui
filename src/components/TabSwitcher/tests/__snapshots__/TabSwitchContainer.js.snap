@@ -2,10 +2,13 @@
 
 exports[`TabSwitchContainer renders correctly 1`] = `
 .c0 {
-  border: 1px solid #d7dde5;
+  border: 1px solid;
   border-radius: 3px;
   margin: 0 auto;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   overflow: hidden;
   text-align: center;
 }

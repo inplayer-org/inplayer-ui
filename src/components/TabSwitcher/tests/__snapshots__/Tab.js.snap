@@ -9,11 +9,14 @@ exports[`Tab renders correctly 1`] = `
   letter-spacing: 0.05em;
   padding: 3px 20px;
   border-right: 1px solid #d7dde5;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0;
   width: auto;
   background: #f0f3f6;
-  color: #a0a3aa;
+  color: #44494e;
 }
 
 .c0:hover {
