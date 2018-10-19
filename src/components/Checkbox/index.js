@@ -7,12 +7,13 @@ type Props = {
   label: Object,
   id: string,
   name: string,
-  value: string,
+  value: boolean,
+  onChange: { checked: boolean },
 };
 
-const Checkbox = ({ label, id, name, value }: Props) => (
+const Checkbox = ({ label, id, value, ...rest }: Props) => (
   <div>
-    <CheckboxInput type="checkbox" name={name} id={id} value={value} />
+    <CheckboxInput type="checkbox" id={id} checked={value} {...rest} />
     <Label htmlFor={id}>{label}</Label>
   </div>
 );

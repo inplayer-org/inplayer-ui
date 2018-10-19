@@ -11,6 +11,7 @@ function Page(props) {
       id="checkbox1"
       label="label"
       value="checkbox1"
+      onChange={e => console.log(e)}
     />
   );
 }
@@ -25,5 +26,6 @@ function Page(props) {
   id="checkbox1"
   label="label"
   value="checkbox1"
+  onChange={e => console.log(e)}
 />
 ```

@@ -7,12 +7,13 @@ type Props = {
   label: Object,
   id: string,
   name: string,
-  value: string,
+  value: boolean,
+  onChange: { checked: boolean },
 };
 
-const Radio = ({ label, id, name, value }: Props) => (
+const Radio = ({ label, id, value, ...rest }: Props) => (
   <div>
-    <RadioInput type="radio" name={name} id={id} value={value} />
+    <RadioInput type="radio" id={id} checked={value} {...rest} />
     <Label htmlFor={id}>{label}</Label>
   </div>
 );
