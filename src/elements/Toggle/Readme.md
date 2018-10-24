@@ -14,17 +14,12 @@ class Page extends React.Component {
     });
   };
 
-  return <Toggle value={value} id="toggle1" label="swipe" onToggleChange={this.onToggleChange} />
+  return <Toggle checked={value} id="toggle1" label="swipe" onChange={this.onToggleChange} />
 }
 ```
 
 ### Demo
 
 ```jsx
-<Toggle
-  value="true"
-  id="toggle1"
-  label="swipe"
-  onChange={e => console.log(e)}
-/>
+<Toggle checked={true} id="toggle1" label="swipe" onChange={console.log} />
 ```

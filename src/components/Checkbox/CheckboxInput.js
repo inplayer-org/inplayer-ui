@@ -13,7 +13,7 @@ const modifiers = {
   `,
 };
 
-const Checkbox = styled.input`
+const CheckboxInput = styled.input`
   opacity: 0;
   vertical-align: middle;
   padding: 0;
@@ -69,4 +69,4 @@ const Checkbox = styled.input`
 `;
 
 /** @component */
-export default Checkbox;
+export default CheckboxInput;

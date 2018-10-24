@@ -18,6 +18,7 @@ const Checkbox = ({ label, id, onChange, ...rest }: Props) => {
     <Label htmlFor={id}>
       <Checkmark />
       <CheckboxInput type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
+      {label}
     </Label>
   );
 };
