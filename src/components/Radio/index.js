@@ -1,23 +1,23 @@
 // @flow
 import React from 'react';
-import RadioInput from './RadionInput';
+import RadioWrapper from './RadioWrapper';
 import Label from '../../elements/Label';
 
 type Props = {
   label: Object,
   id: string,
   name: ?string,
-  value: boolean,
+  checked: boolean,
   onChange: (checked: boolean) => any,
 };
 
-const Radio = ({ label, id, value, onChange, ...rest }: Props) => {
+const Radio = ({ label, id, checked, onChange, ...rest }: Props) => {
   const onRadioChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
   return (
-    <div>
-      <RadioInput type="radio" id={id} checked={value} onChange={onRadioChange} {...rest} />
+    <RadioWrapper>
+      <input type="radio" id={id} checked={checked} onChange={onRadioChange} {...rest} />
       <Label htmlFor={id}>{label}</Label>
-    </div>
+    </RadioWrapper>
   );
 };
 

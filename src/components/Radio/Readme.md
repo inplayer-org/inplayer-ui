@@ -24,5 +24,5 @@ class Page extends React.Component {
 ### Demo
 
 ```jsx
-<Radio type="radio" id="radio1" label="label" onChange={e => console.log(e)} />
+<Radio type="radio" id="radio1" label="apple" onChange={e => console.log(e)} />
 ```

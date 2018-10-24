@@ -22,6 +22,7 @@ const Label = styled.label`
   margin: 0 20px 0 -14px;
   left: 24px;
   position: relative;
+  display: inline-flex;
 
   &:hover {
     color: ${uiColors('text.light')};

@@ -21,5 +21,11 @@ class Page extends React.Component {
 ### Demo
 
 ```jsx
-<Toggle checked={true} id="toggle1" label="swipe" onChange={console.log} />
+<Toggle
+  disabled={false}
+  checked={true}
+  id="toggle1"
+  label="swipe"
+  onChange={console.log}
+/>
 ```
