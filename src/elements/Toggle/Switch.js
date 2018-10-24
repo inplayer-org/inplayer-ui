@@ -1,98 +1,145 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { uiColors } from 'utils';
 
 import colors from 'config/colors';
-import Switch from 'react-switch';
+import Toggle from 'react-toggle';
 
 type Props = {
   checked: boolean,
   onChange: Function,
-  id: number,
+  disabled: boolean,
 };
 
-// const modifiers = {
-//   hoverDisabled: () => `
-//     &:hover {
-//       background: ${colors.lightGray};
-//       border: 1px solid ${colors.gray};
-//       pointer-events: none;
-//     }
-//   `,
-// };
+const ToggleContainer = styled.span`
+  margin-right: 8px;
 
-const SwitchContainer = styled.span`
-  .react-switch-bg {
-    background: ${colors.lightGray};
-    border: 1px solid ${colors.gray};
-    transition: all ease 500ms;
-    overflow: visible;
-
-    &:checked {
-      border: 1px solid ${uiColors('primary.main')};
-      background: ${uiColors('primary.main')};
-    }
-
-    &:hover,
-    &:checked:hover {
-      background: ${uiColors('primary.light')};
-      border: 1px solid ${uiColors('primary.main')};
-    }
-  }
-
-  .react-switch-handle {
-    height: 20px !important;
-    width: 20px !important;
-    margin: 1px;
-    position: absolute;
-    z-index: 2;
-    background: ${uiColors('white')};
-    border-radius: 50px;
-    top: -3px !important;
-    left: -4px !important;
+  .react-toggle {
+    touch-action: pan-x;
+    display: inline-block;
+    position: relative;
     cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    user-select: none;
+  }
+
+  .react-toggle-screenreader-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .react-toggle-thumb {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid ${colors.gray};
+    background: ${colors.white};
+    box-sizing: border-box;
+  }
+
+  .react-toggle-track {
+    width: 34px;
+    height: 18px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: ${colors.lightGray};
+    transition: all 0.2s ease;
+    border: 1px solid ${colors.gray};
+  }
+
+  .react-toggle--disabled {
+    background: #00000005 !important;
+    cursor: auto;
+  }
+
+  .react-toggle--disabled .react-toggle-track {
+    background: #00000005 !important;
     border: 1px solid #d7dde5 !important;
-    transition: all ease 300ms;
-
-    &:hover {
-      border: 1px solid #00aae6 !important;
-    }
   }
 
-  .react-switch-bg:hover ~ .react-switch-handle {
-    border: 1px solid #00aae6 !important;
+  .react-toggle--disabled .react-toggle-thumb {
+    background: #f0f3f6;
+    border: 1px solid #d7dde5;
   }
 
-  .react-switch-handle:hover ~ .react-switch-bg {
-    background: #00aae60f !important;
-    border: 1px solid ##00aae6 !important;
+  .react-toggle--checked .react-toggle-track {
+    border: 1px solid ${colors.accentBlue};
+    background: ${colors.accentBlue};
+  }
+
+  .react-toggle--checked .react-toggle-thumb {
+    left: 14px;
+  }
+
+  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: ${colors.accentBlueFade};
+    border: 1px solid ${colors.accentBlue};
+  }
+
+  .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: rgba(0, 170, 230, 0.06);
+    border: 1px solid ${colors.accentBlue};
+  }
+
+  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-thumb {
+    border: 1px solid ${colors.accentBlue};
+  }
+
+  .react-toggle-track-check {
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    left: 8px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .react-toggle--checked .react-toggle-track-check {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .react-toggle-track-x {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    right: 10px;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  .react-toggle--checked .react-toggle-track-x {
+    opacity: 0;
   }
 `;
 
-const Switcher = ({ checked, onChange, id }: Props) => {
-  const { accentBlue, lightGray, white } = colors;
-
-  return (
-    <SwitchContainer>
-      <Switch
-        id={id}
-        checked={checked}
-        onColor={accentBlue}
-        offColor={lightGray}
-        offHandleColor={white}
-        onHandleColor={white}
-        uncheckedIcon={false}
-        checkedIcon={false}
-        height={16}
-        width={34}
-        boxShadow="null"
-        activeBoxShadow="null"
-        onChange={onChange}
-      />
-    </SwitchContainer>
-  );
-};
+const Switcher = ({ checked, onChange, disabled }: Props) => (
+  <ToggleContainer>
+    <Toggle disabled={disabled} defaultChecked={checked} onChange={onChange} icons={false} />
+  </ToggleContainer>
+);
 
 /** @component */
 export default Switcher;
