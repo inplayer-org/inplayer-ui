@@ -10,24 +10,19 @@ const modifiers = {
 };
 
 const CheckboxWrapper = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
   > input {
     display: none;
   }
 
   > input + label {
     position: relative;
-    padding-left: 25px;
+    padding-left: 1.5rem;
     cursor: pointer;
 
     &::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 1px;
       width: 1rem;
       height: 1rem;
       border: 1px solid ${colors.gray};
@@ -75,7 +70,7 @@ const CheckboxWrapper = styled.div`
 
   > input:checked + label:hover {
     ::before {
-      border: 1px solid ${colors.gray};
+      border-color: ${colors.gray};
       background: ${uiColors('primary.light')};
     }
 
