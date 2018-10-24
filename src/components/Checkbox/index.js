@@ -1,8 +1,7 @@
 // @flow
 import React from 'react';
-import CheckboxInput from './CheckboxInput';
 import Label from '../../elements/Label';
-import Checkmark from './Checkmark';
+import CheckboxWrapper from './CheckboxWrapper';
 
 type Props = {
   label: Object,
@@ -14,12 +13,12 @@ type Props = {
 
 const Checkbox = ({ label, id, onChange, ...rest }: Props) => {
   const onCheckboxChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
+
   return (
-    <Label htmlFor={id}>
-      <Checkmark />
-      <CheckboxInput type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
-      {label}
-    </Label>
+    <CheckboxWrapper>
+      <input type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
+      <Label htmlFor={id}>{label}</Label>
+    </CheckboxWrapper>
   );
 };
 

@@ -11,5 +11,5 @@ function Page(props) {
 ### Demo
 
 ```jsx
-<Button>Buy now</Button>
+<Button modifiers={['hoverGreen']}>Buy now</Button>
 ```

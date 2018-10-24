@@ -5,18 +5,21 @@ import colors from 'config/colors';
 
 const modifiers = {
   hoverBlue: () => `
-    background: ${uiColors('primary.main')};
     &:hover, &:focus {
-      span {
-        color: ${colors.white};
-      },
-      i {
-        color: ${colors.white};
-      }
+      color: ${colors.accentBlue};
     }
   `,
   hoverRed: () => `
-    background: ${colors.red};
+    &:hover, &:focus {
+      color: ${colors.red};
+      border-color: ${colors.red};
+    }
+  `,
+  hoverGreen: () => `
+    &:hover, &:focus {
+      color: ${colors.green};
+      border-color: ${colors.green};
+    }
   `,
 };
 
@@ -40,14 +43,7 @@ const Button = styled.button`
 
   &:hover {
     border-color: ${uiColors('primary.main')};
-
-    span {
-      color: ${uiColors('primary.main')};
-    }
-
-    i {
-      color: ${uiColors('text.main')};
-    }
+    color: ${uiColors('primary.main')};
   }
 
   ${applyStyleModifiers(modifiers)};
