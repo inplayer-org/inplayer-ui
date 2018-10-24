@@ -5,20 +5,21 @@ import Label from '../Label';
 
 type Props = {
   checked: boolean,
+  disabled: boolean,
   id: string,
   label: string,
   onChange: (checked: boolean) => any,
 };
 
-const Toggle = ({ id, checked, label, onChange }: Props) => {
+const Toggle = ({ id, checked, label, disabled, onChange }: Props) => {
   const onToggleChange = toggleChecked => {
     onChange(toggleChecked);
   };
   return (
-    <div>
-      <Switcher checked={checked} onChange={onToggleChange} id={id} />
-      <Label htmlFor={id}>{label}</Label>
-    </div>
+    <Label>
+      <Switcher disabled={disabled} checked={checked} id={id} onChange={onToggleChange} />
+      {label}
+    </Label>
   );
 };
 
