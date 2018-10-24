@@ -1,7 +1,7 @@
 Toggle is a input component for flipswitch. You can use it directly like this:
 
 ```jsx static
-import { Label, Toggle } from '@inplayer-org/inplayer-ui';
+import { Label, Switcher } from '@inplayer-org/inplayer-ui';
 
 class Page extends React.Component {
    state = {
@@ -14,14 +14,14 @@ class Page extends React.Component {
     });
   };
 
-  return <Toggle checked={value} id="toggle1" label="swipe" onChange={this.onToggleChange} />
+  return <Switcher checked={value} id="toggle1" label="swipe" onChange={this.onToggleChange} />
 }
 ```
 
 ### Demo
 
 ```jsx
-<Toggle
+<Switcher
   disabled={false}
   checked={true}
   id="toggle1"
