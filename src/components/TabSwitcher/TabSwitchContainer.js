@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const TabSwitchContainer = styled.div`
-  border: 1px solid ${uiColors('gray')};
+  border: 1px solid ${colors.gray};
   border-radius: 3px;
   margin: 0 auto;
   display: flex;
