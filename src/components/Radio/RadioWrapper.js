@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
+import { uiColors, fontSizes } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import colors from 'config/colors';
 

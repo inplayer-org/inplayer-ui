@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiColors, fontWeights } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 
 const TextField = styled.input`
@@ -15,7 +15,7 @@ const TextField = styled.input`
   border: 1px solid ${colors.gray};
   padding: 10px 18px 11px;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: ${fontSizes('medium')};
   line-height: 1;
   min-width: 260px;
   max-width: 560px;
