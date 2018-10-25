@@ -20,6 +20,5 @@ function Page(props) {
         <Button modifiers={['hoverBlue']}>Hover Blue</Button> <br />
         <Button modifiers={['hoverRed']}>Hover Red</Button> <br />
         <Button modifiers={['hoverGreen']}>Hover Green</Button>
-
     </div>
 ```
