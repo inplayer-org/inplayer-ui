@@ -1,3 +1,6 @@
-const getDescendantProp = (prop, theme) => prop.split('.').reduce((a, b) => a[b], theme);
+// @flow
+import type { Theme } from 'types/Theme';
 
-export default getDescendantProp;
+const getProp = (prop: string, theme: Theme) => prop.split('.').reduce((a, b) => a[b], theme);
+
+export default getProp;

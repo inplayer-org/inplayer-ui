@@ -1,13 +1,6 @@
 import styled from 'styled-components';
-import { applyStyleModifiers } from 'styled-components-modifiers';
 import colors from 'config/colors';
 import uiColors from 'utils/uiColors';
-
-const modifiers = {
-  hoverDisabled: () => `
-     background-color: red;
-  `,
-};
 
 const CheckboxWrapper = styled.div`
   > input {
@@ -115,8 +108,6 @@ const CheckboxWrapper = styled.div`
       background: transparent;
     }
   }
-
-  ${applyStyleModifiers(modifiers)};
 `;
 
 /** @component */

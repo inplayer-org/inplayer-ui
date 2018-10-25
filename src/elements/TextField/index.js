@@ -7,7 +7,6 @@ const TextField = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: ${uiColors('text.main')};
   transition: all ease 300ms;
   background: ${colors.white};

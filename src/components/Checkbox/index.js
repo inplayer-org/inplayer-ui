@@ -4,10 +4,10 @@ import Label from '../../elements/Label';
 import CheckboxWrapper from './CheckboxWrapper';
 
 type Props = {
-  label: Object,
+  label: string,
   id: string,
   name: ?string,
-  checked: string,
+  checked: boolean,
   onChange: (checked: boolean) => any,
 };
 
