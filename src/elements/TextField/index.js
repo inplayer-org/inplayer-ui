@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 import colors from 'config/colors';
 
 const TextField = styled.input`
@@ -11,7 +11,7 @@ const TextField = styled.input`
   color: ${uiColors('text.main')};
   transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   padding: 10px 18px 11px;
   border-radius: 3px;

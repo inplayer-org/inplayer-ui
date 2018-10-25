@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 
 const modifiers = {
   hoverDisabled: () => `
@@ -13,7 +13,7 @@ const modifiers = {
 
 const Label = styled.label`
   text-decoration: none;
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   cursor: pointer;
   vertical-align: middle;
   color: ${uiColors('text.main')};
