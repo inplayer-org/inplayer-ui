@@ -7,6 +7,7 @@ const modifiers = {
   hoverBlue: () => `
     &:hover, &:focus {
       color: ${colors.accentBlue};
+      border-color: ${colors.accentBlue};
     }
   `,
   hoverRed: () => `

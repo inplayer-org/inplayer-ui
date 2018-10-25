@@ -14,7 +14,7 @@ type Props = {
 };
 
 const Switcher = ({ id, checked, label, disabled, onChange }: Props) => {
-  const onToggleChange = toggleChecked => {
+  const onToggleChange = (toggleChecked: boolean) => {
     onChange(toggleChecked);
   };
   return (
