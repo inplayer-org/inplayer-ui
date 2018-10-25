@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import colors from 'config/colors';
 
+import { fontSizes } from 'utils';
+
 const TooltipInfo = styled.div`
   position: absolute;
   top: -100%;
@@ -9,7 +11,7 @@ const TooltipInfo = styled.div`
   text-align: center;
   display: none;
   width: auto;
-  font-size: 15px;
+  font-size: ${fontSizes('medium')};
   line-height: 21px;
 `;
 

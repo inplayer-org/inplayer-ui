@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiColors, fontWeights } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 
 const TextArea = styled.textarea`
@@ -13,7 +13,7 @@ const TextArea = styled.textarea`
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
-  font-size: 15px;
+  font-size: ${fontSizes('medium')};
   line-height: 1.4em;
   min-height: 7em;
   min-width: 260px;
