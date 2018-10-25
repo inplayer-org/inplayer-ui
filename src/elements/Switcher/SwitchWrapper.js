@@ -1,40 +1,11 @@
-// @flow
-import React from 'react';
 import styled from 'styled-components';
 
 import colors from 'config/colors';
-import Toggle from 'react-toggle';
 
-type Props = {
-  checked: boolean,
-  onChange: Function,
-  disabled: boolean,
-};
-
-const ToggleContainer = styled.span`
-  margin-right: 8px;
-
-  .react-toggle {
-    touch-action: pan-x;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    user-select: none;
-  }
-
-  .react-toggle-screenreader-only {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+const SwitchWrapper = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   .react-toggle-thumb {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -59,6 +30,28 @@ const ToggleContainer = styled.span`
     border: 1px solid ${colors.gray};
   }
 
+  .react-toggle {
+    touch-action: pan-x;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    user-select: none;
+  }
+
+  .react-toggle-screenreader-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
   .react-toggle--disabled {
     background: #00000005 !important;
     cursor: auto;
@@ -66,12 +59,12 @@ const ToggleContainer = styled.span`
 
   .react-toggle--disabled .react-toggle-track {
     background: #00000005 !important;
-    border: 1px solid #d7dde5 !important;
+    border: 1px solid ${colors.gray} !important;
   }
 
   .react-toggle--disabled .react-toggle-thumb {
     background: #f0f3f6;
-    border: 1px solid #d7dde5;
+    border: 1px solid ${colors.gray};
   }
 
   .react-toggle--checked .react-toggle-track {
@@ -83,13 +76,18 @@ const ToggleContainer = styled.span`
     left: 14px;
   }
 
-  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: ${colors.accentBlueFade};
-    border: 1px solid ${colors.accentBlue};
+  &:hover .react-toggle-track {
+    background: rgba(0, 170, 230, 0.06);
+    border: 1px solid #00aae6;
   }
 
+  &:hover .react-toggle-thumb {
+    border: 1px solid #00aae6;
+  }
+
+  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track,
   .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: rgba(0, 170, 230, 0.06);
+    background: ${colors.accentBlueFade};
     border: 1px solid ${colors.accentBlue};
   }
 
@@ -135,11 +133,5 @@ const ToggleContainer = styled.span`
   }
 `;
 
-const Switcher = ({ checked, onChange, disabled }: Props) => (
-  <ToggleContainer>
-    <Toggle disabled={disabled} defaultChecked={checked} onChange={onChange} icons={false} />
-  </ToggleContainer>
-);
-
 /** @component */
-export default Switcher;
+export default SwitchWrapper;
