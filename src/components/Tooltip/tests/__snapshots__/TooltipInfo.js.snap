@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TooltipInfo renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  top: -100%;
+  background: #f0f3f6;
+  border: 1px solid #d7dde5;
+  text-align: center;
+  display: none;
+  width: auto;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+<div
+  className="c0"
+/>
+`;

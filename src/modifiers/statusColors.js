@@ -1,20 +1,14 @@
-import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const statusColorModifiers = {
-  statusColorDanger: ({ theme }) => `
-    color: ${uiColors('danger', theme)};
+  statusColorRed: () => `
+    color: ${colors.red};
   `,
-  statusColorDefault: ({ theme }) => `
-    color: ${uiColors('default', theme)};
+  statusColorBlue: () => `
+    color: ${colors.blue};
   `,
-  statusColorInfo: ({ theme }) => `
-    color: ${uiColors('info', theme)};
-  `,
-  statusColorSuccess: ({ theme }) => `
-    color: ${uiColors('success', theme)};
-  `,
-  statusColorWarning: ({ theme }) => `
-    color: ${uiColors('yellow', theme)};
+  statusColorGreen: () => `
+   color: ${colors.green};
   `,
 };
 

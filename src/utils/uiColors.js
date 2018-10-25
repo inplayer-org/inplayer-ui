@@ -1,8 +1,5 @@
-function uiColors(color, theme) {
-  if (theme) {
-    return theme.colors[color];
-  }
-  return props => props.theme.colors[color];
-}
+import getProp from './getProp';
+
+const uiColors = color => props => getProp(`palette.${color}`, props.theme);
 
 export default uiColors;

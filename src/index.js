@@ -1,9 +1,5 @@
-import blocks from './blocks';
-import components from './components';
-import elements from './elements';
-
-module.exports = {
-  ...blocks,
-  ...components,
-  ...elements,
-};
+export * from './blocks';
+export * from './components';
+export * from './elements';
+export { default as ThemeWrapper } from 'theme/ThemeWrapper';
+export { default as Colors } from 'config/colors';

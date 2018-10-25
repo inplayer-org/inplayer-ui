@@ -23,8 +23,14 @@
                 "tests/helpers/*"
             ],
             "config/*": [
-                "config/*"
+                "src/config/*"
             ],
+            "types/*": [
+                "src/types/*"
+            ],
+            "theme/*": [
+                "src/theme/*"
+            ]
         }
     },
     "exclude": [

@@ -3,6 +3,9 @@ import fontColorModifiers from './fontColors';
 import fontSizeModifiers from './fontSizes';
 import fontWeightModifiers from './fontWeights';
 import statusColorModifiers from './statusColors';
+import paddingSizeModifiers from './paddingSizes';
+import borderColorModifiers from './borderColors';
+import backgroundColorModifiers from './backgroundColors';
 
 const positionRelative = () => `
   position: relative;
@@ -14,4 +17,7 @@ export {
   fontSizeModifiers,
   fontWeightModifiers,
   statusColorModifiers,
+  paddingSizeModifiers,
+  borderColorModifiers,
+  backgroundColorModifiers,
 };
