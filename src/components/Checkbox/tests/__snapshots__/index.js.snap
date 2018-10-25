@@ -1,64 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`undefined renders correctly 1`] = `
-.c2 {
-  opacity: 0;
-  vertical-align: middle;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  outline: none;
-  display: inline-block;
-  background-color: #fff;
-  font-weight: 300;
-  border: 1px solid #d7dde5;
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  cursor: pointer;
-  position: relative;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c2::after {
-  content: '';
-  display: block;
-  position: absolute;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 0;
-  left: 3px;
-  width: 6px;
-  height: 9px;
-  border-radius: 2px;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c2:checked {
-  border: 1px solid #00aae60f;
-}
-
-.c2:hover {
-  background: #00aae60f;
-  border: 1px solid #00aae6;
-}
-
-.c2:checked::after {
-  border-right: 2px solid #00aae6;
-  border-bottom: 2px solid #00aae6;
-}
-
-.c2:checked:hover {
-  border: 1px solid #d7dde5;
-}
-
-.c0 {
+.c1 {
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 300;
@@ -71,42 +14,130 @@ exports[`undefined renders correctly 1`] = `
   margin: 0 20px 0 -14px;
   left: 24px;
   position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.c0:hover {
+.c1:hover {
   color: #a0a3aa;
 }
 
-.c0:disabled {
+.c1:disabled {
   color: #c8ccd4;
   cursor: default;
 }
 
-.c1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-}
-
-.c1::after {
-  content: '';
-  position: absolute;
+.c0 > input {
   display: none;
 }
 
-<label
+.c0 > input + label {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
+.c0 > input + label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #d7dde5;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.c0 > input + label::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.c0 > input:checked + label::before {
+  border: 1px solid #00aae6;
+}
+
+.c0 > input:checked + label::after {
+  border: 2px solid #00aae6;
+  border-top: none;
+  border-right: none;
+  width: 0.5rem;
+  height: 0.25rem;
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(-45deg);
+  -ms-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg);
+}
+
+.c0 > input:not(:checked) + label::after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  width: 0.5rem;
+  height: 0.25rem;
+  opacity: 1;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 > input:checked + label:hover::before {
+  border-color: #d7dde5;
+  background: #00aae60f;
+}
+
+.c0 > input:checked + label:hover::after {
+  border-color: #fff;
+}
+
+.c0 > input:not(:checked) + label:hover::before {
+  border: 1px solid #00aae6;
+  background-color: transparent;
+}
+
+.c0 > input:not(:checked) + label:hover::after {
+  -webkit-transform: scale(1) rotate(-45deg);
+  -ms-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg);
+}
+
+.c0 > input:checked:focus + label::before,
+.c0 input:not(:checked):focus + label::before {
+  border: 1px dotted #00aae60f;
+}
+
+.c0 > input:disabled:checked + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
+}
+
+.c0 > input:disabled:checked + label::after {
+  border-color: #d7dde5;
+  background: transparent;
+}
+
+.c0 > input:disabled:not(:checked) + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
+}
+
+<div
   className="c0"
 >
-  <span
-    className="c1"
-  />
   <input
-    className="c2"
     onChange={[Function]}
     type="checkbox"
   />
-</label>
+  <label
+    className="c1"
+  />
+</div>
 `;
