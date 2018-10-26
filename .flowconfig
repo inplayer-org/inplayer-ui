@@ -1,3 +1,6 @@
+[libs]
+flow-typed
+
 [ignore]
 <PROJECT_ROOT>/node_modules/.*
 

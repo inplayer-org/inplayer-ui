@@ -27,6 +27,7 @@ module.exports = {
     primary: 'Roboto',
     primaryFallback: 'Helvetica, Arial, sans-serif',
     weights: {
+      thin: 100,
       light: 300,
       normal: 400,
       semiBold: 600,
