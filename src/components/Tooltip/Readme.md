@@ -2,7 +2,6 @@ Tooltip a is a component for displaying additional information on hover some ele
 
 ```jsx static
 import { Tooltip } from 'inplayer-ui';
-const { TooltipHolder, Tipneed, TooltipInfo } = Tooltip;
 
 function Page(props) {
   return (
