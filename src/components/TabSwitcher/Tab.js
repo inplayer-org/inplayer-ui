@@ -8,7 +8,7 @@ const Tab = styled.div`
   padding: 0.5rem 0;
   display: flex;
   border-right: 1px solid ${colors.gray};
-  font-weight: ${fontWeights('semiBold')};
+  font-weight: ${fontWeights('light')};
   justify-content: center;
   align-items: center;
   flex: 1;
