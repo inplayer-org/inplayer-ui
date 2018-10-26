@@ -1,20 +1,22 @@
 // @flow
 import React from 'react';
-import TooltipHolder from './TooltipHolder';
-import TooltipInfo from './TooltipInfo';
-import Tipneed from './Tipneed';
+import TooltipWrapper from './TooltipWrapper';
 
 type Props = {
   info: object,
+  position: string,
+  dataTooltip: string,
 };
 
-const Tooltip = ({ info }: Props) =>
+const Tooltip = ({ info, position, dataTooltip }: Props) =>
   info ? (
-    <TooltipHolder>
-      <Tipneed>
-        <TooltipInfo>{info}</TooltipInfo>
-      </Tipneed>
-    </TooltipHolder>
+    <TooltipWrapper position={position}>
+      <p>
+        <span tooltip={dataTooltip} flow={position}>
+          {info}
+        </span>
+      </p>
+    </TooltipWrapper>
   ) : null;
 
 export default Tooltip;
