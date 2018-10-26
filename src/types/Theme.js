@@ -25,6 +25,7 @@ export type Theme = {
     primary: string,
     primaryFallback: string,
     weights: {
+      thin: ?number,
       light: ?number,
       normal: number,
       semiBold: ?number,
