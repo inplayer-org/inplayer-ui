@@ -14,8 +14,10 @@ type Props = {
 };
 
 const Switcher = ({ id, checked, label, disabled, onChange }: Props) => {
-  const onToggleChange = (toggleChecked: boolean) => {
-    onChange(toggleChecked);
+  const onToggleChange = (e: SyntheticInputEvent<*>) => {
+    if (e.target) {
+      onChange(e.target.checked);
+    }
   };
   return (
     <SwitchWrapper>
