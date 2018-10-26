@@ -1,16 +1,18 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import TooltipWrapper from './TooltipWrapper';
 
 type Props = {
   placement: string,
   dataTip: string,
-  info: string,
+  children: Node,
 };
 
-const Tooltip = ({ placement, dataTip, ...rest }: Props) => (
+const Tooltip = ({ placement, dataTip, children }: Props) => (
   <TooltipWrapper>
-    <span tooltip={dataTip} flow={placement} {...rest} />
+    <span tooltip={dataTip} flow={placement}>
+      {children}
+    </span>
   </TooltipWrapper>
 );
 

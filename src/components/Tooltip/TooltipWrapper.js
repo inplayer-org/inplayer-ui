@@ -3,9 +3,8 @@ import colors from 'config/colors';
 import { fontSizes } from 'utils';
 
 const TooltipWrapper = styled.div`
-  p {
-    color: ${colors.fontDarkGray};
-  }
+  color: ${colors.fontDarkGray};
+  cursor: pointer;
 
   @-webkit-keyframes tips-vert {
     to {
