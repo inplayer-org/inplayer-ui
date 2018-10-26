@@ -3,17 +3,17 @@ import React from 'react';
 import TooltipWrapper from './TooltipWrapper';
 
 type Props = {
-  info: object,
-  position: string,
-  dataTooltip: string,
+  spanText: object,
+  placement: string,
+  dataTip: string,
 };
 
-const Tooltip = ({ info, position, dataTooltip }: Props) =>
-  info ? (
-    <TooltipWrapper position={position}>
+const Tooltip = ({ spanText, placement, dataTip }: Props) =>
+  spanText ? (
+    <TooltipWrapper>
       <p>
-        <span tooltip={dataTooltip} flow={position}>
-          {info}
+        <span tooltip={dataTip} flow={placement}>
+          {spanText}
         </span>
       </p>
     </TooltipWrapper>
