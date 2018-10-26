@@ -5,12 +5,18 @@ import { Tooltip } from 'inplayer-ui';
 const { TooltipHolder, Tipneed, TooltipInfo } = Tooltip;
 
 function Page(props) {
-  return <Tooltip spanText="Hover me!" placement="up" dataTip="hello world" />;
+  return (
+    <Tooltip placement="up" dataTip="hello world">
+      Hover me!
+    </Tooltip>
+  );
 }
 ```
 
 ### Demo
 
 ```jsx
-<Tooltip spanText="Hover me!" placement="up" dataTip="hello world" />
+<Tooltip placement="up" dataTip="hello world">
+  Hover me!
+</Tooltip>
 ```
