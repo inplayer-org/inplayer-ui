@@ -7,6 +7,8 @@ module.exports = {
   darkBlue: '#253a66', // performanceDark
   // used as background for code snippets
   coderBlue: '#272B38',
+  // Tooltip background
+  navyBlue: '#1c739a',
   // basic grays
   gray: '#d7dde5', // lines
   lightGray: '#f0f3f6', // background
