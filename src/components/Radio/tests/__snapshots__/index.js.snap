@@ -1,97 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioInput renders correctly 1`] = `
-.c0 {
-  display: inline-block;
-  background: #fff;
-  font-weight: 300;
-  border: 1px solid #d7dde5;
-  width: 16px;
-  height: 16px;
-  border-radius: 14px;
-  cursor: pointer;
-  position: relative;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c0::after {
-  content: '';
-  display: block;
-  position: absolute;
-  background: #fff;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 14px;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c0:checked {
-  border: 1px solid #00aae6;
-}
-
-.c0:checked::after {
-  background: #00aae6;
-}
-
-.c0:hover {
-  background: #00aae60f;
-  border: 1px solid #00aae6;
-}
-
-<input
-  className="c0"
-/>
-`;
-
 exports[`undefined renders correctly 1`] = `
 .c0 {
-  display: inline-block;
-  background: #fff;
-  font-weight: 300;
-  border: 1px solid #fff;
-  width: 16px;
-  height: 16px;
-  border-radius: 14px;
-  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 > input {
+  display: none;
+}
+
+.c0 > input + label {
   position: relative;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
+  padding-left: 25px;
+  cursor: pointer;
 }
 
-.c0::after {
+.c0 > input + label::before {
   content: '';
-  display: block;
   position: absolute;
+  left: 0;
+  top: 1px;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #d7dde5;
   background: #fff;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 2px;
-  left: 2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 14px;
+  border-radius: 50%;
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
 }
 
-.c0:checked {
+.c0 > input + label::after {
+  content: '●';
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  font-size: 1.7rem;
+  color: #00aae6;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.c0 > input:checked + label::before {
   border: 1px solid #00aae6;
 }
 
-.c0:checked::after {
-  background: #00aae6;
+.c0 > input:checked + label:hover::before {
+  border: 1px solid #d7dde5;
+  background: #00aae60f;
 }
 
-.c0:hover {
+.c0 > input:checked + label::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0 > input:not(:checked) + label:hover::before {
   border: 1px solid #00aae6;
+  background-color: transparent;
+}
+
+.c0 > input:not(:checked) + label::after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c0 > input:checked:focus + label::before,
+.c0 input:not(:checked):focus + label::before {
+  border: 1px dotted #00aae6;
+}
+
+.c0 > input:disabled:checked + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
+}
+
+.c0 > input:disabled:checked + label::after {
+  color: #d7dde5;
+  background: transparent;
+}
+
+.c0 > input:disabled:not(:checked) + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
 }
 
 .c1 {
@@ -107,6 +112,10 @@ exports[`undefined renders correctly 1`] = `
   margin: 0 20px 0 -14px;
   left: 24px;
   position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c1:hover {
@@ -118,9 +127,10 @@ exports[`undefined renders correctly 1`] = `
   cursor: default;
 }
 
-<div>
+<div
+  className="c0"
+>
   <input
-    className="c0"
     onChange={[Function]}
     type="radio"
   />

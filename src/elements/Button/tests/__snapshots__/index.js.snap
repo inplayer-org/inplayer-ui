@@ -35,14 +35,7 @@ exports[`Button renders correctly 1`] = `
 
 .c0:hover {
   border-color: #00aae6;
-}
-
-.c0:hover span {
   color: #00aae6;
-}
-
-.c0:hover i {
-  color: #44494e;
 }
 
 <button

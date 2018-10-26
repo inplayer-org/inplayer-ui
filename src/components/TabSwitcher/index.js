@@ -3,13 +3,21 @@ import React from 'react';
 import Tab from './Tab';
 import TabSwitchContainer from './TabSwitchContainer';
 
+type TabInfo = {
+  name: string,
+};
+
 type Props = {
-  tabs: Object,
+  tabs: Array<TabInfo>,
   selectedTabIndex: number,
   onTabClick: (index: number) => void,
 };
 
-const renderTabs = (tabs, selectedTabIndex, onTabClick) =>
+const renderTabs = (
+  tabs: Array<TabInfo>,
+  selectedTabIndex: number,
+  onTabClick: (index: number) => void
+) =>
   tabs.map(({ name }, index) => (
     <Tab
       selected={selectedTabIndex === index}

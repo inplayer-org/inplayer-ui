@@ -1,11 +1,14 @@
-import { uiColors } from '../utils';
+import colors from 'config/colors';
 
 const backgroundColorModifiers = {
-  blue: ({ theme }) => `
-    background: ${uiColors('primary.light', theme)};
+  backgroundBlue: () => `
+    background: ${colors.blue};
   `,
-  disabled: ({ theme }) => `
-    background: ${uiColors('primary.light', theme)};
+  backgroundRed: () => `
+    background: ${colors.red}};
+  `,
+  backgroundGreen: () => `
+    background: ${colors.green}};
   `,
 };
 

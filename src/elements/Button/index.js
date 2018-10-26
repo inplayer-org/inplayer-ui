@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, paddingSizes } from 'utils';
+import { uiColors, fontWeights, paddingSizes, fontSizes } from 'utils';
 import colors from 'config/colors';
 
 const modifiers = {
   hoverBlue: () => `
     &:hover, &:focus {
       color: ${colors.accentBlue};
+      border-color: ${colors.accentBlue};
     }
   `,
   hoverRed: () => `
@@ -32,7 +33,7 @@ const Button = styled.button`
   border: 1px solid ${colors.gray};
   padding: ${paddingSizes('small')};
   border-radius: 3px;
-  font-size: 15px;
+  font-size: ${fontSizes('medium')};
   justify-content: center;
   outline: none;
   transition: all ease 300ms;

@@ -1,19 +1,9 @@
 import styled from 'styled-components';
-import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors } from 'utils';
-
-const modifiers = {
-  hoverDisabled: () => `
-        &:hover {
-            color: ${uiColors('text.disabled')};
-            cursor: default;
-        }
-    `,
-};
+import { uiColors, fontWeights } from 'utils';
 
 const Label = styled.label`
   text-decoration: none;
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   cursor: pointer;
   vertical-align: middle;
   color: ${uiColors('text.main')};
@@ -32,8 +22,6 @@ const Label = styled.label`
     color: ${uiColors('text.disabled')};
     cursor: default;
   }
-
-  ${applyStyleModifiers(modifiers)};
 `;
 
 export default Label;

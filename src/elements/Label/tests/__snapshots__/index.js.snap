@@ -14,6 +14,10 @@ exports[`Label renders correctly 1`] = `
   margin: 0 20px 0 -14px;
   left: 24px;
   position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c0:hover {

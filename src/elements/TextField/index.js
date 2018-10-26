@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 
 const TextField = styled.input`
@@ -7,15 +7,14 @@ const TextField = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: ${uiColors('text.main')};
   transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   padding: 10px 18px 11px;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: ${fontSizes('medium')};
   line-height: 1;
   min-width: 260px;
   max-width: 560px;

@@ -2,7 +2,7 @@
 
 exports[`TabSwitchContainer renders correctly 1`] = `
 .c0 {
-  border: 1px solid;
+  border: 1px solid #d7dde5;
   border-radius: 3px;
   margin: 0 auto;
   display: -webkit-box;
