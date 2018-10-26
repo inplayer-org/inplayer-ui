@@ -26,7 +26,7 @@
     "flow": "flow",
     "flow:watch": "flow-watch",
     "generate:docs": "yarn styleguide:build && git add docs && git commit --amend --no-edit",
-    "preinstall": "flow-typed install"
+    "postinstall": "flow-typed install"
   },
   "repository": {
     "type": "git",
