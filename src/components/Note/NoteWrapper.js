@@ -16,6 +16,12 @@ const NoteWrapper = styled.p`
     padding-right: 5px;
   }
 
+  i {
+    margin-right: 12px;
+    position: relative;
+    top: 2px;
+  }
+
   ${switchProp('type', {
     success: css`
       border: 1px solid ${colors.accentBlue};
@@ -32,11 +38,19 @@ const NoteWrapper = styled.p`
     warning: css`
       border: 1px solid ${colors.yellow};
       background: ${colors.yellowLight};
+
+      i {
+        color: ${colors.yellow};
+      }
     `,
 
     danger: css`
       border: 1px solid ${colors.red};
       background: ${colors.pink};
+
+      i {
+        color: ${colors.red};
+      }
     `,
 
     transparentInformative: css`
