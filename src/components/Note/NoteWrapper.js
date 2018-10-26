@@ -9,7 +9,7 @@ const NoteWrapper = styled.p`
   padding: 18px 2%;
   border-radius: 3px;
   background: ${colors.white};
-  color: ${colors.fontDarkGray};
+  color: ${uiColors('text.main')};
   font-weight: ${fontWeights('light')};
 
   strong {
@@ -24,14 +24,14 @@ const NoteWrapper = styled.p`
 
   ${switchProp('type', {
     success: css`
-      border-color: ${uiColors('primary.main')};
+      border-color: ${colors.accentBlue};
 
       strong {
-        color: ${uiColors('primary.main')};
+        color: ${colors.accentBlue};
       }
 
       i {
-        color: ${uiColors('primary.main')};
+        color: ${colors.accentBlue};
       }
     `,
 
