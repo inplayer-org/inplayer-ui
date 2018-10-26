@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { switchProp } from 'styled-tools';
-import { fontWeights } from 'utils';
+import { fontWeights, uiColors } from 'utils';
 
 const NoteWrapper = styled.p`
   box-sizing: border-box;
@@ -24,19 +24,19 @@ const NoteWrapper = styled.p`
 
   ${switchProp('type', {
     success: css`
-      border: 1px solid ${colors.accentBlue};
+      border-color: ${uiColors('primary.main')};
 
       strong {
-        color: ${colors.accentBlue};
+        color: ${uiColors('primary.main')};
       }
 
       i {
-        color: ${colors.accentBlue};
+        color: ${uiColors('primary.main')};
       }
     `,
 
     warning: css`
-      border: 1px solid ${colors.yellow};
+      border-color: ${colors.yellow};
       background: ${colors.yellowLight};
 
       i {
@@ -45,7 +45,7 @@ const NoteWrapper = styled.p`
     `,
 
     danger: css`
-      border: 1px solid ${colors.red};
+      border-color: ${colors.red};
       background: ${colors.pink};
 
       i {
@@ -53,7 +53,7 @@ const NoteWrapper = styled.p`
       }
     `,
 
-    transparentInformative: css`
+    informative: css`
       background: ${colors.lightGray};
     `,
   })};

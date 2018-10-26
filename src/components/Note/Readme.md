@@ -1,5 +1,5 @@
 Note is a component for displaying information for notification. <br />
-The `type` attribute can be: informative, transparentInformative, success, warning, danger. <br />
+The `type` attribute can be: informative, success, warning, danger. If not of the above is added, the default note with white background will be displayed. <br />
 The `title` attribute is the string to be set as title for the notification. <br />
 The `text` attribute is the actual notification that needs to be displayed to the user. <br />
 The `icon` attribute is string to display the icon from icon fonts: done, info, danger, warning. <br />
@@ -25,14 +25,13 @@ function Page(props) {
 
 ```jsx
 <Note
-  type="informative"
   title="Just so you know!"
   text="This block indicates a neutral informative note."
   icon="info"
 />
 
 <Note
-  type="transparentInformative"
+  type="informative"
   title="Just so you know!"
   text="This is used as a note on white backgrounds to give it a little contrast."
   icon="info"
