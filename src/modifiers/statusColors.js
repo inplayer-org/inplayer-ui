@@ -1,15 +1,13 @@
 import colors from 'config/colors';
 
-const statusColorModifiers = {
-  statusColorRed: () => `
-    color: ${colors.red};
-  `,
-  statusColorBlue: () => `
-    color: ${colors.blue};
-  `,
-  statusColorGreen: () => `
-   color: ${colors.green};
-  `,
-};
+export const statusColorRed = () => `
+   color: ${colors.red};
+`;
 
-export default statusColorModifiers;
+export const statusColorBlue = () => `
+   color: ${colors.blue};
+`;
+
+export const statusColorGreen = () => `
+   color: ${colors.green};
+`;

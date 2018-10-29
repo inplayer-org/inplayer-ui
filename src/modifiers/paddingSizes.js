@@ -1,12 +1,9 @@
 import { paddingSizes } from 'utils';
 
-const paddingSizeModifiers = {
-  extraSmall: ({ theme }) => `
-    padding: ${paddingSizes('smaill', theme)};
-  `,
-  small: ({ theme }) => `
-    padding: ${paddingSizes('medium', theme)};
-  `,
-};
+export const paddingSmall = ({ theme }) => `
+   padding: ${paddingSizes('small', theme)};
+`;
 
-export default paddingSizeModifiers;
+export const paddingMedium = ({ theme }) => `
+   cpadding: ${paddingSizes('medium', theme)};
+`;

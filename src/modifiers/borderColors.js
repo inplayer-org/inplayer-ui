@@ -1,15 +1,13 @@
 import colors from 'config/colors';
 
-const borderColorModifiers = {
-  borderBlue: () => `
-    border: 1px solid ${colors.blue})};
-  `,
-  borderRed: () => `
-    border: 1px solid ${colors.red};
-  `,
-  borderGreen: () => `
-    border: 1px solid ${colors.green};
-  `,
-};
+export const borderBlue = () => `
+  border: 1px solid ${colors.blue};
+`;
 
-export default borderColorModifiers;
+export const borderRed = () => `
+   border: 1px solid ${colors.red};
+`;
+
+export const borderGreen = () => `
+  border: 1px solid ${colors.green};
+`;

@@ -1,28 +1,30 @@
 import colors from 'config/colors';
 import { uiColors } from '../utils';
 
-const fontColorModifiers = {
-  textMain: () => `
-    color: ${uiColors('text.main')};
-  `,
-  textLight: () => `
-    color: ${uiColors('text.light')};
-  `,
-  textBold: () => `
-    color: ${uiColors('text.bold')};
-  `,
-  textBlue: () => `
-    color: ${colors.blue};
-  `,
-  textRed: () => `
-    color: ${colors.red};
-  `,
-  textGreen: () => `
-    color: ${colors.green};
-  `,
-  textDisabled: () => `
-    color: ${uiColors('text.disabled')};
-  `,
-};
+export const textMain = () => `
+  color: ${uiColors('text.main')};
+`;
 
-export default fontColorModifiers;
+export const textLight = () => `
+  color: ${uiColors('text.light')};
+`;
+
+export const textBold = () => `
+  color: ${uiColors('text.bold')};
+`;
+
+export const textBlue = () => `
+  color: ${colors.blue};
+`;
+
+export const textRed = () => `
+  color: ${colors.red};
+`;
+
+export const textGreen = () => `
+    color: ${colors.green};
+`;
+
+export const textDisabled = () => `
+    color: ${uiColors('text.disabled')};
+`;
