@@ -11,7 +11,7 @@ const modifiers = {
 };
 
 const Icon = styled(FA)`
-  color: ${uiColors('textLight')};
+  color: ${uiColors('text.light')};
   display: inline-block;
   font-size: ${fontSizes('medium')};
   ${applyStyleModifiers(modifiers)};
