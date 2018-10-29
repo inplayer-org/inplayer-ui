@@ -6,3 +6,4 @@ export { default as TextArea } from './TextArea';
 export { default as Switcher } from './Switcher';
 export { default as Notification } from './Notification';
 export { default as Typography } from './Typography';
+export { default as Icon } from './Typography';
