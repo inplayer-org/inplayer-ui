@@ -167,7 +167,7 @@ const TooltipWrapper = styled.div`
     top: 50%;
     border-right-width: 0;
     border-left-color: ${colors.navyBlue};
-    left: calc(0 - 5px);
+    left: -5px;
     transform: translate(0.5em, -50%);
   }
 
@@ -181,7 +181,7 @@ const TooltipWrapper = styled.div`
     top: 50%;
     border-left-width: 0;
     border-right-color: ${colors.navyBlue};
-    right: calc(0 - 5px);
+    right: -5px;
     transform: translate(-0.5em, -50%);
   }
 
