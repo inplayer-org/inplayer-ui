@@ -68,8 +68,8 @@ const SwitchWrapper = styled.span`
   }
 
   .react-toggle--checked .react-toggle-track {
-    border: 1px solid ${colors.accentBlue};
-    background: ${colors.accentBlue};
+    border: 1px solid ${colors.skyBlue};
+    background: ${colors.skyBlue};
   }
 
   .react-toggle--checked .react-toggle-thumb {
@@ -87,12 +87,12 @@ const SwitchWrapper = styled.span`
 
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track,
   .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: ${colors.accentBlueFade};
-    border: 1px solid ${colors.accentBlue};
+    background: ${colors.deepSkyBlue};
+    border: 1px solid ${colors.skyBlue};
   }
 
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-thumb {
-    border: 1px solid ${colors.accentBlue};
+    border: 1px solid ${colors.skyBlue};
   }
 
   .react-toggle-track-check {

@@ -4,13 +4,13 @@ const colors = require('./colors');
 module.exports = {
   palette: {
     primary: {
-      main: colors.accentBlue,
-      light: colors.accentBlueFade,
-      dark: colors.accentDarkBlue,
+      main: colors.deepSkyBlue,
+      light: colors.skyBlue,
+      dark: colors.navy,
     },
     secondary: {
       main: colors.blue,
-      light: colors.darkBlueFilterLight,
+      light: colors.mediumBlue,
       dark: colors.darkBlue,
     },
     text: {
