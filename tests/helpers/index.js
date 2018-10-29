@@ -10,7 +10,7 @@ export function renderWithTheme(component) {
 }
 
 export function generateSnapshots(Component, props = {}) {
-  describe(`${Component.displayName}`, () => {
+  describe(`${Component.displayName || Component.name}`, () => {
     it('renders correctly', () => {
       const tree = renderWithTheme(<Component {...props} />).toJSON();
       expect(tree).toMatchSnapshot();
