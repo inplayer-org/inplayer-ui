@@ -17,6 +17,8 @@ type State = {
 };
 
 class Navbar extends Component<Props, State> {
+  static MenuItem: Element<typeof MenuItem>;
+
   state = {
     open: false,
   };
