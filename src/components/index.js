@@ -4,4 +4,4 @@ export { default as TabSwitcher } from './TabSwitcher';
 export { default as Checkbox } from './Checkbox';
 export { default as Tooltip } from './Tooltip';
 export { default as Note } from './Note';
-export { default as Navbar } from './Navbar';
+export { default as Navbar } from './NavBar';
