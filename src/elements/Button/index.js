@@ -12,10 +12,19 @@ type Props = {
   iconModifiers: Array,
   size: Size,
   className: ?string,
+  onClick: (e: SyntheticEvent<HTMLElement>) => any,
 };
 
-const Button = ({ size, icon, buttonModifiers, iconModifiers, children, className }: Props) => (
-  <ButtonWrapper className={className} size={size} modifiers={buttonModifiers}>
+const Button = ({
+  size,
+  icon,
+  buttonModifiers,
+  iconModifiers,
+  children,
+  className,
+  ...rest
+}: Props) => (
+  <ButtonWrapper className={className} size={size} modifiers={buttonModifiers} {...rest}>
     {icon && <Icon name={icon} modifiers={iconModifiers} />}
     <span>{children}</span>
   </ButtonWrapper>

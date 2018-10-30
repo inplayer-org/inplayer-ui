@@ -37,7 +37,7 @@ const NoteWrapper = styled.p`
 
     warning: css`
       border-color: ${colors.yellow};
-      background: ${colors.lightYellow};
+      background: ${colors.paleYellow};
 
       i {
         color: ${colors.yellow};
@@ -46,7 +46,7 @@ const NoteWrapper = styled.p`
 
     danger: css`
       border-color: ${colors.red};
-      background: ${colors.pink};
+      background: ${colors.paleRed};
 
       i {
         color: ${colors.red};
