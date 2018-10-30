@@ -1,13 +1,13 @@
 import colors from 'config/colors';
 
-export const borderBlue = () => `
+export const borderInfo = () => `
   border: 1px solid ${colors.blue};
 `;
 
-export const borderRed = () => `
+export const borderWarning = () => `
    border: 1px solid ${colors.red};
 `;
 
-export const borderGreen = () => `
+export const borderSuccess = () => `
   border: 1px solid ${colors.green};
 `;

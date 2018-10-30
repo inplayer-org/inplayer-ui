@@ -46,10 +46,4 @@ module.exports = {
       h6: rem(20),
     },
   },
-  padding: {
-    sizes: {
-      small: '10px 20px 11px',
-      medium: '13px 22px 14px',
-    },
-  },
 };

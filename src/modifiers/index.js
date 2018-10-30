@@ -8,6 +8,5 @@ export * from './fontColors';
 export * from './fontSizes';
 export * from './fontWeights';
 export * from './statusColors';
-export * from './paddingSizes';
 export * from './borderColors';
 export * from './backgroundColors';

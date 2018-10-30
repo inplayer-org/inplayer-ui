@@ -1,13 +1,13 @@
 import colors from 'config/colors';
 
-export const backgroundBlue = () => `
+export const backgroundInfo = () => `
   background: ${colors.blue};
 `;
 
-export const backgroundRed = () => `
+export const backgroundWarning = () => `
    background: ${colors.red};
 `;
 
-export const backgroundGreen = () => `
+export const backgroundSuccess = () => `
   background: ${colors.green};
 `;
