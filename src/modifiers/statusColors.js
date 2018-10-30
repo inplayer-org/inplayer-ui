@@ -1,11 +1,12 @@
 import colors from 'config/colors';
+import { uiColors } from '../utils';
+
+export const statusColorPrimary = () => `
+   color: ${uiColors('primary.main')};
+`;
 
 export const statusColorWarning = () => `
    color: ${colors.yellow};
-`;
-
-export const statusColorPrimary = () => `
-   color: ${colors.blue};
 `;
 
 export const statusColorInfo = () => `

@@ -1,7 +1,8 @@
 import colors from 'config/colors';
+import { uiColors } from '../utils';
 
 export const backgroundPrimary = () => `
-  background: ${colors.blue};
+  background: ${uiColors('primary.main')};
 `;
 
 export const backgroundInfo = () => `

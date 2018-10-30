@@ -1,11 +1,11 @@
 import colors from 'config/colors';
 
-export const borderInfo = () => `
-  background: ${colors.skyBlue};
+export const borderPrimary = ({ theme }) => `
+  border: 1px solid ${theme.palette.primary.main};
 `;
 
-export const borderPrimary = () => `
-  border: 1px solid ${colors.blue};
+export const borderInfo = () => `
+  background: ${colors.skyBlue};
 `;
 
 export const borderWarning = () => `

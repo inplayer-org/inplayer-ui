@@ -5,32 +5,28 @@ import { switchProp } from 'styled-tools';
 import colors from 'config/colors';
 
 const modifiers = {
-  hoverBlue: () => `
+  hoverInfo: () => `
     &:hover, &:focus {
       color: ${colors.skyBlue};
       border-color: ${colors.skyBlue};
     }
   `,
-  hoverRed: () => `
+  hoverDanger: () => `
     &:hover, &:focus {
       color: ${colors.red};
       border-color: ${colors.red};
     }
   `,
-  hoverGreen: () => `
+  hoverWarning: () => `
+    &:hover, &:focus {
+      color: ${colors.yellow};
+      border-color: ${colors.yellow};
+    }
+  `,
+  hoverSuccess: () => `
     &:hover, &:focus {
       color: ${colors.green};
       border-color: ${colors.green};
-    }
-  `,
-  buttonPrimary: () => `
-    background: ${colors.lightSkyBlue}
-    color: ${colors.blue};
-    border-color: ${colors.blue};
-
-    &:hover, &:focus {
-      color: ${colors.white};
-      background: ${colors.blue};
     }
   `,
   buttonInfo: () => `
