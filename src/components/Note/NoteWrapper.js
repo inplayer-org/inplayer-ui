@@ -24,14 +24,14 @@ const NoteWrapper = styled.p`
 
   ${switchProp('type', {
     success: css`
-      border-color: ${colors.accentBlue};
+      border-color: ${colors.skyBlue};
 
       strong {
-        color: ${colors.accentBlue};
+        color: ${colors.skyBlue};
       }
 
       i {
-        color: ${colors.accentBlue};
+        color: ${colors.skyBlue};
       }
     `,
 
