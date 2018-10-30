@@ -15,7 +15,7 @@ module.exports = {
   fontGray: '#a0a3aa', // fontcolorSec
   fontLightGray: '#c8ccd4', // fontcolorDis
   // primary accent colors
-  lightSkyBlue: 'rgba(0, 170, 230, 0.06)',
+  lightSkyBlue: '#00aae60f',
   skyBlue: '#07AAE6', // accentBlue
   deepSkyBlue: '#00AAE6', // accentBlueFade
   dodgerBlue: '#0a8cd2', // accentDarkBlue
