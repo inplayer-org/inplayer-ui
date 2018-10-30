@@ -17,8 +17,24 @@ function Page(props) {
 ### Button Modifiers
 ```jsx
     <div>
-        <Button modifiers={['hoverBlue']}>Hover Blue</Button> <br />
-        <Button modifiers={['hoverRed']}>Hover Red</Button> <br />
-        <Button modifiers={['hoverGreen']}>Hover Green</Button>
+        <Button size="xs">Button XS</Button> <br />
+        <Button size="sm">Button SM</Button> <br />
+        <Button size="md">Button MD</Button> <br />
+        <Button size="lg">Button LG</Button> <br />
+
+        <Button buttonModifiers={['hoverBlue']}>Hover Blue</Button> <br />
+        <Button buttonModifiers={['hoverRed']}>Hover Red</Button> <br />
+        <Button buttonModifiers={['hoverGreen']}>Hover Green</Button> <br />
+
+        <Button buttonModifiers={['buttonInfo']}>Button Info</Button> <br />
+        <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
+        <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
+
+        <Button buttonModifiers={['buttonWarning']}
+                iconModifiers={['statusColorWarning']}
+                icon="exclamation-circle"
+        >
+          Button with Icon
+        </Button>
     </div>
 ```
