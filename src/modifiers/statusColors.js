@@ -9,7 +9,7 @@ export const statusColorWarning = () => `
 `;
 
 export const statusColorInfo = () => `
-   color: ${colors.skyBlue};
+   color: ${colors.blue};
 `;
 
 export const statusColorSuccess = () => `
