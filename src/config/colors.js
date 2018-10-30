@@ -1,8 +1,8 @@
 module.exports = {
   white: '#fff',
   // dark blue colors
-  blue: '#0002C6', // performance
-  darkBlue: '#01017B', // performanceFilter
+  blue: '#286090', // performance
+  darkBlue: '#253a66', // performanceFilter
   mediumBlue: '#010185', // darkBlueFilterLight,
   // used as background for code snippets
   midnightBlue: '#272B38', // coderBlue

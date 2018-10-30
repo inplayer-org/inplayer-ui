@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 import FA from 'react-fontawesome';
-import { statusColorWarning, statusColorInfo, statusColorSuccess } from 'modifiers';
+import {
+  statusColorPrimary,
+  statusColorWarning,
+  statusColorInfo,
+  statusColorSuccess,
+  statusColorDanger,
+} from 'modifiers';
 import { fontSizes, uiColors } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const modifiers = {
-  statusColorWarning,
+  statusColorPrimary,
   statusColorInfo,
+  statusColorWarning,
   statusColorSuccess,
+  statusColorDanger,
 };
 
 const Icon = styled(FA)`

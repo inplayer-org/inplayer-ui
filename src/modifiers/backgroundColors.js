@@ -1,7 +1,11 @@
 import colors from 'config/colors';
 
-export const backgroundInfo = () => `
+export const backgroundPrimary = () => `
   background: ${colors.blue};
+`;
+
+export const backgroundInfo = () => `
+  background: ${colors.skyBlue};
 `;
 
 export const backgroundWarning = () => `
@@ -10,4 +14,8 @@ export const backgroundWarning = () => `
 
 export const backgroundSuccess = () => `
   background: ${colors.green};
+`;
+
+export const backgroundDanger = () => `
+  background: ${colors.red};
 `;

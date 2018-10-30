@@ -23,6 +23,16 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
+  buttonPrimary: () => `
+    background: ${colors.lightSkyBlue}
+    color: ${colors.blue};
+    border-color: ${colors.blue};
+
+    &:hover, &:focus {
+      color: ${colors.white};
+      background: ${colors.blue};
+    }
+  `,
   buttonInfo: () => `
     background: ${colors.lightSkyBlue};
     color: ${colors.skyBlue};
@@ -34,6 +44,16 @@ const modifiers = {
     }
   `,
   buttonWarning: () => `
+    color: ${colors.yellow};
+    border-color: ${colors.yellow};
+
+    &:hover, &:focus {
+      color: ${colors.white};
+      background: ${colors.yellow};
+      border-color: ${colors.yellow};
+    }
+  `,
+  buttonDanger: () => `
     color: ${colors.red};
     border-color: ${colors.red};
 

@@ -9,22 +9,22 @@ export const textLight = () => `
   color: ${uiColors('text.light')};
 `;
 
-export const textBold = () => `
-  color: ${uiColors('text.bold')};
+export const textDisabled = () => `
+    color: ${uiColors('text.disabled')};
 `;
 
-export const textBlue = () => `
+export const textPrimary = () => `
   color: ${colors.blue};
 `;
 
-export const textRed = () => `
+export const textDanger = () => `
   color: ${colors.red};
 `;
 
-export const textGreen = () => `
-    color: ${colors.green};
+export const textSuccess = () => `
+  color: ${colors.green};
 `;
 
-export const textDisabled = () => `
-    color: ${uiColors('text.disabled')};
+export const textWarning = () => `
+  color: ${colors.yellow};
 `;

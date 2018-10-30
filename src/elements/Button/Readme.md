@@ -26,12 +26,15 @@ function Page(props) {
         <Button buttonModifiers={['hoverRed']}>Hover Red</Button> <br />
         <Button buttonModifiers={['hoverGreen']}>Hover Green</Button> <br />
 
+
         <Button buttonModifiers={['buttonInfo']}>Button Info</Button> <br />
+        <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> <br />
         <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
         <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
+        <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> <br />
 
-        <Button buttonModifiers={['buttonWarning']}
-                iconModifiers={['statusColorWarning']}
+        <Button buttonModifiers={['buttonDanger']}
+                iconModifiers={['statusColorDanger']}
                 icon="exclamation-circle"
         >
           Button with Icon
