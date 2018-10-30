@@ -29,9 +29,9 @@ module.exports = {
   neutralGray: '#f6f8fb', // tableBg
   // used for info boxes and warnings
   red: '#f26f59', // danger
-  pink: '#f9ece8', // info
+  paleRed: '#f9ece8',
   yellow: '#f4ca19',
-  yellowLight: '#fffcee',
+  paleYellow: '#fffcee',
   green: '#5dc6a3', // success
-  greenLight: '#e4f9f2', // successLight
+  paleGreen: '#e4f9f2',
 };
