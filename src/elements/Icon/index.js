@@ -7,7 +7,7 @@ import {
   statusColorSuccess,
   statusColorDanger,
 } from 'modifiers';
-import { fontSizes, uiColors } from 'utils';
+import { fontSizes } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const modifiers = {
@@ -19,7 +19,6 @@ const modifiers = {
 };
 
 const Icon = styled(FA)`
-  color: ${uiColors('text.light')};
   display: inline-block;
   font-size: ${fontSizes('medium')};
   ${applyStyleModifiers(modifiers)};

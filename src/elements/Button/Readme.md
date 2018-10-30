@@ -43,10 +43,16 @@ function Page(props) {
 
         <h3>Button with icon:</h3>
         <Button buttonModifiers={['buttonDanger']}
-                iconModifiers={['statusColorDanger']}
                 icon="exclamation-circle"
         >
           Button with Icon
+        </Button>
+        <br/>
+        <Button buttonModifiers={['buttonDanger']}
+                iconModifiers={['statusColorWarning']}
+                icon="exclamation-circle"
+        >
+          Button with Icon Modifier
         </Button>
     </div>
 ```

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { uiColors, fontWeights, fontSizes } from 'utils';
+import { transparentize } from 'polished';
 import { switchProp } from 'styled-tools';
 import colors from 'config/colors';
 
@@ -32,6 +33,7 @@ const modifiers = {
   buttonPrimary: ({ theme }) => `
     color: ${theme.palette.primary.main};
     border-color: ${theme.palette.primary.main};
+    background: ${transparentize(0.94, theme.palette.primary.main)};
 
     &:hover, &:focus {
       color: ${colors.white};
@@ -41,6 +43,7 @@ const modifiers = {
   buttonInfo: () => `
     color: ${colors.blue};
     border-color: ${colors.blue};
+    background: ${transparentize(0.94, colors.blue)};
 
     &:hover, &:focus {
       color: ${colors.white};
@@ -51,6 +54,7 @@ const modifiers = {
   buttonWarning: () => `
     color: ${colors.yellow};
     border-color: ${colors.yellow};
+    background: ${transparentize(0.94, colors.yellow)};
 
     &:hover, &:focus {
       color: ${colors.white};
@@ -61,16 +65,18 @@ const modifiers = {
   buttonDanger: () => `
     color: ${colors.red};
     border-color: ${colors.red};
+    background: ${transparentize(0.94, colors.red)};
 
     &:hover, &:focus {
-      color: ${colors.red};
-      background: ${colors.pink};
+      color: ${colors.white};
+      background: ${colors.red};
       border-color: ${colors.red};
     }
   `,
   buttonSuccess: () => `
     color: ${colors.green};
     border-color: ${colors.green};
+     background: ${transparentize(0.94, colors.green)};
 
     &:hover, &:focus {
       color: ${colors.white};

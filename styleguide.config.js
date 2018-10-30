@@ -76,7 +76,7 @@ module.exports = {
     },
     Heading: {
       heading1: {
-        color: colors.deepSkyBlue,
+        color: colors.skyBlue,
         fontWeight: 'bold',
         fontSize: '2.5rem',
         margin: '0.7em 0',

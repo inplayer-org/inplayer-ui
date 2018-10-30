@@ -15,10 +15,9 @@ module.exports = {
   fontGray: '#a0a3aa', // fontcolorSec
   fontLightGray: '#c8ccd4', // fontcolorDis
   // primary accent colors
-  lightSkyBlue: '#00aae60f',
+  lightSkyBlue: '#97CCF6',
   skyBlue: '#07AAE6', // accentBlue
-  deepSkyBlue: '#00AAE6', // accentBlueFade
-  dodgerBlue: '#0a8cd2', // accentDarkBlue
+  deepSkyBlue: '#0a8cd2', // accentBlueFade
   navy: '#2A4D8E', // performanceDark
   accentPink: '#fcc8be',
   // secondary accent colors

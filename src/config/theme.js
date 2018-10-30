@@ -4,8 +4,8 @@ const colors = require('./colors');
 module.exports = {
   palette: {
     primary: {
-      main: colors.deepSkyBlue,
-      light: colors.skyBlue,
+      main: colors.skyBlue,
+      light: colors.lightSkyBlue,
       dark: colors.navy,
     },
     secondary: {
