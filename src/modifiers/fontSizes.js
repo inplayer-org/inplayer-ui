@@ -1,18 +1,15 @@
-import { fontSizes } from 'utils';
+export const fontSizeExtraSmall = ({ theme }) => `
+  font-size: ${theme.font.sizes.extraSmall};
+`;
 
-const fontSizeModifiers = {
-  extraSmall: ({ theme }) => `
-    font-size: ${fontSizes('extraSmall', theme)};
-  `,
-  small: ({ theme }) => `
-    font-size: ${fontSizes('small', theme)};
-  `,
-  medium: ({ theme }) => `
-    font-size: ${fontSizes('medium', theme)};
-  `,
-  large: ({ theme }) => `
-    font-size: ${fontSizes('large', theme)};
-  `,
-};
+export const fontSizeSmall = ({ theme }) => `
+  font-size: ${theme.font.sizes.small};
+`;
 
-export default fontSizeModifiers;
+export const fontSizeMedium = ({ theme }) => `
+  font-size: ${theme.font.sizes.medium};
+`;
+
+export const fontSizeLarge = ({ theme }) => `
+  font-size: ${theme.font.sizes.large};
+`;

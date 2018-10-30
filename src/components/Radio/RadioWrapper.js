@@ -47,7 +47,7 @@ const RadioWrapper = styled.div`
 
     &:hover::before {
       border: 1px solid ${colors.gray};
-      background: ${colors.accentBlueFade};
+      background: ${uiColors('primary.main')};
     }
 
     &::after {

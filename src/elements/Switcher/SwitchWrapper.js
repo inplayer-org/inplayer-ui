@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import uiColors from 'utils/uiColors';
 import colors from 'config/colors';
 
 const SwitchWrapper = styled.span`
@@ -68,8 +68,8 @@ const SwitchWrapper = styled.span`
   }
 
   .react-toggle--checked .react-toggle-track {
-    border: 1px solid ${colors.accentBlue};
-    background: ${colors.accentBlue};
+    border: 1px solid ${uiColors('primary.main')};
+    background: ${uiColors('primary.main')};
   }
 
   .react-toggle--checked .react-toggle-thumb {
@@ -87,12 +87,12 @@ const SwitchWrapper = styled.span`
 
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track,
   .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: ${colors.accentBlueFade};
-    border: 1px solid ${colors.accentBlue};
+    background: ${uiColors('primary.main')};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-thumb {
-    border: 1px solid ${colors.accentBlue};
+    border: 1px solid ${uiColors('primary.main')};
   }
 
   .react-toggle-track-check {
