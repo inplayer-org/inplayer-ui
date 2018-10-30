@@ -35,6 +35,7 @@ function Page(props) {
         <Button buttonModifiers={['hoverSuccess']}>Hover Success</Button> <br />
 
         <h3>Button types:</h3>
+        <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> <br />
         <Button buttonModifiers={['buttonInfo']}>Button Info</Button> <br />
         <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
         <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />

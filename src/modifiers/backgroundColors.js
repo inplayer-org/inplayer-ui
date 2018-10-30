@@ -1,8 +1,7 @@
 import colors from 'config/colors';
-import { uiColors } from '../utils';
 
-export const backgroundPrimary = () => `
-  background: ${uiColors('primary.main')};
+export const backgroundPrimary = ({ theme }) => `
+  background: ${theme.palette.primary.main};
 `;
 
 export const backgroundInfo = () => `

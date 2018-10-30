@@ -1,8 +1,7 @@
 import colors from 'config/colors';
-import { uiColors } from '../utils';
 
-export const statusColorPrimary = () => `
-   color: ${uiColors('primary.main')};
+export const statusColorPrimary = ({ theme }) => `
+   color: ${theme.palette.primary.main};
 `;
 
 export const statusColorWarning = () => `

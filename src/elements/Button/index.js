@@ -11,10 +11,11 @@ type Props = {
   buttonModifiers: Array,
   iconModifiers: Array,
   size: Size,
+  className: ?string,
 };
 
-const Button = ({ size, icon, buttonModifiers, iconModifiers, children }: Props) => (
-  <ButtonWrapper size={size} modifiers={buttonModifiers}>
+const Button = ({ size, icon, buttonModifiers, iconModifiers, children, className }: Props) => (
+  <ButtonWrapper className={className} size={size} modifiers={buttonModifiers}>
     {icon && <Icon name={icon} modifiers={iconModifiers} />}
     <span>{children}</span>
   </ButtonWrapper>

@@ -7,8 +7,8 @@ import colors from 'config/colors';
 const modifiers = {
   hoverInfo: () => `
     &:hover, &:focus {
-      color: ${colors.skyBlue};
-      border-color: ${colors.skyBlue};
+      color: ${colors.blue};
+      border-color: ${colors.blue};
     }
   `,
   hoverDanger: () => `
@@ -29,14 +29,23 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
-  buttonInfo: () => `
-    background: ${colors.lightSkyBlue};
-    color: ${colors.skyBlue};
-    border-color: ${colors.skyBlue};
+  buttonPrimary: ({ theme }) => `
+    color: ${theme.palette.primary.main};
+    border-color: ${theme.palette.primary.main};
 
     &:hover, &:focus {
       color: ${colors.white};
-      background: ${colors.skyBlue};
+      background: ${theme.palette.primary.main};
+    }
+  `,
+  buttonInfo: () => `
+    color: ${colors.blue};
+    border-color: ${colors.blue};
+
+    &:hover, &:focus {
+      color: ${colors.white};
+      background: ${colors.blue};
+      border-color: ${colors.blue};
     }
   `,
   buttonWarning: () => `
