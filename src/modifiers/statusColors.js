@@ -1,15 +1,21 @@
 import colors from 'config/colors';
 
-const statusColorModifiers = {
-  statusColorRed: () => `
-    color: ${colors.red};
-  `,
-  statusColorBlue: () => `
-    color: ${colors.blue};
-  `,
-  statusColorGreen: () => `
-   color: ${colors.green};
-  `,
-};
+export const statusColorPrimary = ({ theme }) => `
+   color: ${theme.palette.primary.main};
+`;
 
-export default statusColorModifiers;
+export const statusColorWarning = () => `
+   color: ${colors.yellow};
+`;
+
+export const statusColorInfo = () => `
+   color: ${colors.blue};
+`;
+
+export const statusColorSuccess = () => `
+   color: ${colors.green};
+`;
+
+export const statusColorDanger = () => `
+   color: ${colors.red};
+`;

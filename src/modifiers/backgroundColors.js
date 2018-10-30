@@ -1,15 +1,21 @@
 import colors from 'config/colors';
 
-const backgroundColorModifiers = {
-  backgroundBlue: () => `
-    background: ${colors.blue};
-  `,
-  backgroundRed: () => `
-    background: ${colors.red}};
-  `,
-  backgroundGreen: () => `
-    background: ${colors.green}};
-  `,
-};
+export const backgroundPrimary = ({ theme }) => `
+  background: ${theme.palette.primary.main};
+`;
 
-export default backgroundColorModifiers;
+export const backgroundInfo = () => `
+  background: ${colors.skyBlue};
+`;
+
+export const backgroundWarning = () => `
+   background: ${colors.red};
+`;
+
+export const backgroundSuccess = () => `
+  background: ${colors.green};
+`;
+
+export const backgroundDanger = () => `
+  background: ${colors.red};
+`;

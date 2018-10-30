@@ -51,8 +51,8 @@ module.exports = {
   ],
   theme: {
     color: {
-      link: colors.accentDarkBlue,
-      linkHover: colors.accentBlue,
+      link: colors.deepSkyBlue,
+      linkHover: colors.skyBlue,
     },
     fontFamily: {
       base: theme.font.primary,
@@ -76,7 +76,7 @@ module.exports = {
     },
     Heading: {
       heading1: {
-        color: colors.accentDarkBlue,
+        color: colors.skyBlue,
         fontWeight: 'bold',
         fontSize: '2.5rem',
         margin: '0.7em 0',

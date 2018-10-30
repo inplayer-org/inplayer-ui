@@ -9,7 +9,7 @@ type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 const Paragraph = styled.p`
   max-width: 720px;
   font-size: ${fontSizes('medium')};
-  color: ${uiColors('text.main ')};
+  color: ${uiColors('text.main')};
   ${ifProp(
     'description',
     css`
