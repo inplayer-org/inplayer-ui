@@ -87,9 +87,8 @@ const TooltipWrapper = styled.div`
   [tooltip]::after {
     content: attr(tooltip);
     text-align: center;
-    min-width: 3em;
+    min-width: 16em;
     max-width: 21em;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 1ch 1.5ch;

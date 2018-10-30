@@ -11,6 +11,8 @@ const NoteWrapper = styled.p`
   background: ${colors.white};
   color: ${uiColors('text.main')};
   font-weight: ${fontWeights('light')};
+  letter-spacing: 0.01em;
+  line-height: 1.8;
 
   strong {
     padding-right: 5px;
