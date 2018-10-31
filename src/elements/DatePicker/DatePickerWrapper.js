@@ -109,6 +109,7 @@ const DatePickerWrapper = styled.span`
     color: ${uiColors('primary.main')};
     background: ${transparentize(0.94, colors.lightSkyBlue)};
   }
+
   .CalendarDay__hovered_span:active {
     border: 1px double ${colors.gray};
     color: ${uiColors('primary.main')};
