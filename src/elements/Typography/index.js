@@ -31,14 +31,28 @@ export type TypographyProps = {
   variant: TypographyVariant,
   description: ?boolean,
   children: Node,
+  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  className?: string,
 };
 
-const Typography = ({ variant, children, description }: TypographyProps) => {
+const Typography = ({ variant, children, description, className }: TypographyProps) => {
   if (variant === 'p') {
-    return <Paragraph description={description}>{children}</Paragraph>;
+    return (
+      <Paragraph className={className} description={description}>
+        {children}
+      </Paragraph>
+    );
   }
   const Component = Heading.withComponent(variant);
-  return <Component variant={variant}>{children}</Component>;
+  return (
+    <Component className={className} variant={variant}>
+      {children}
+    </Component>
+  );
+};
+
+Typography.defaultProps = {
+  className: '',
 };
 
 export default Typography;
