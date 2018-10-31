@@ -112,15 +112,6 @@ const ButtonWrapper = styled.button`
     padding: 0.2rem;
   }
 
-  ${ifProp(
-    'disabled',
-    css`
-      color: ${uiColors('text.light')};
-      background-color: ${colors.lightGray};
-      border-color: ${colors.gray};
-      pointer-events: none;
-    `
-  )};
   ${switchProp('size', {
     xs: css`
       font-size: ${fontSizes('extraSmall')};
@@ -140,6 +131,15 @@ const ButtonWrapper = styled.button`
     `,
   })};
   ${applyStyleModifiers(modifiers)};
+  ${ifProp(
+    'disabled',
+    css`
+      color: ${uiColors('text.light')};
+      background-color: ${colors.lightGray};
+      border-color: ${colors.gray};
+      pointer-events: none;
+    `
+  )};
 `;
 
 ButtonWrapper.defaultProps = {
