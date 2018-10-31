@@ -8,7 +8,7 @@ module.exports = {
   midnightBlue: '#272B38', // coderBlue
   // basic grays
   gray: '#d7dde5', // lines
-  lightGray: '#f0f3f6', // background
+  lightGray: '#F6F8FB', // background
   darkGray: '#b9c1cb', // icons
   // font colors
   fontDarkGray: '#44494e', // fontcolorPrim
