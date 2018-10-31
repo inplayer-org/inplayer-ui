@@ -103,6 +103,18 @@ const DatePickerWrapper = styled.span`
     font-weight: 500;
   }
 
+  .CalendarDay__hovered_span,
+  .CalendarDay__hovered_span:hover {
+    border: 1px double ${colors.gray};
+    color: ${uiColors('primary.main')};
+    background: ${transparentize(0.94, colors.lightSkyBlue)};
+  }
+  .CalendarDay__hovered_span:active {
+    border: 1px double ${colors.gray};
+    color: ${uiColors('primary.main')};
+    background: ${transparentize(0.94, colors.lightSkyBlue)};
+  }
+
   .CalendarDay__blocked_calendar,
   .CalendarDay__blocked_calendar:active,
   .CalendarDay__blocked_calendar:hover {

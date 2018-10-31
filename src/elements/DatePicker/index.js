@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import 'react-dates/initialize';
-import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 
 import DatePickerWrapper from './DatePickerWrapper';
@@ -30,7 +29,7 @@ const DatePicker = ({
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
-          <label key={i} onClick={e => handleRangeClick(text)}>
+          <label key={i} onClick={() => handleRangeClick(text)}>
             {text}
           </label>
         ))}
