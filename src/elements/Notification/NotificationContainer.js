@@ -26,7 +26,7 @@ const NotificationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 2% 18px 2%;
+  padding: 18px 2%;
   min-height: 10%;
   left: 15%;
   right: 15%;
