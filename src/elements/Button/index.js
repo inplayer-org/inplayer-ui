@@ -1,18 +1,16 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
-type Props = {
-  icon: ?string,
-  children: string,
-  buttonModifiers: Array,
-  iconModifiers: Array,
-  size: Size,
-  className: ?string,
-  onClick: (e: SyntheticEvent<HTMLElement>) => any,
+type Props = HTMLButtonElement & {
+  icon?: string,
+  children: Node,
+  buttonModifiers?: Array<string>,
+  iconModifiers?: Array<string>,
+  size?: Size,
 };
 
 const Button = ({
@@ -29,6 +27,10 @@ const Button = ({
     <span>{children}</span>
   </ButtonWrapper>
 );
+
+Button.defaultProps = {
+  size: 'md',
+};
 
 /** @component */
 export default Button;
