@@ -26,20 +26,20 @@ const NoteWrapper = styled.p`
 
   ${switchProp('type', {
     success: css`
-      border-color: ${colors.accentBlue};
+      border-color: ${colors.skyBlue};
 
       strong {
-        color: ${colors.accentBlue};
+        color: ${colors.skyBlue};
       }
 
       i {
-        color: ${colors.accentBlue};
+        color: ${colors.skyBlue};
       }
     `,
 
     warning: css`
       border-color: ${colors.yellow};
-      background: ${colors.yellowLight};
+      background: ${colors.paleYellow};
 
       i {
         color: ${colors.yellow};
@@ -48,7 +48,7 @@ const NoteWrapper = styled.p`
 
     danger: css`
       border-color: ${colors.red};
-      background: ${colors.pink};
+      background: ${colors.paleRed};
 
       i {
         color: ${colors.red};

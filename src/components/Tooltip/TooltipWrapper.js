@@ -94,7 +94,7 @@ const TooltipWrapper = styled.div`
     padding: 1ch 1.5ch;
     border-radius: 0.3em;
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
-    background: ${colors.navyBlue};
+    background: ${colors.navy};
     color: ${colors.white};
     z-index: 1000;
     opacity: 0.8;
@@ -109,7 +109,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='up']::before {
     bottom: 100%;
     border-bottom-width: 0;
-    border-top-color: ${colors.navyBlue};
+    border-top-color: ${colors.navy};
   }
 
   [tooltip]:not([flow])::after,
@@ -128,7 +128,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='down']::before {
     top: 100%;
     border-top-width: 0;
-    border-bottom-color: ${colors.navyBlue};
+    border-bottom-color: ${colors.navy};
   }
 
   [tooltip][flow^='down']::after {
@@ -165,7 +165,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='left']::before {
     top: 50%;
     border-right-width: 0;
-    border-left-color: ${colors.navyBlue};
+    border-left-color: ${colors.navy};
     left: -5px;
     transform: translate(0.5em, -50%);
   }
@@ -179,7 +179,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='right']::before {
     top: 50%;
     border-left-width: 0;
-    border-right-color: ${colors.navyBlue};
+    border-right-color: ${colors.navy};
     right: -5px;
     transform: translate(-0.5em, -50%);
   }

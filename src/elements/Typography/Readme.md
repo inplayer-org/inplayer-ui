@@ -6,7 +6,17 @@ using styled-components.
 ```jsx static
 import { Typography } from '@inplayer-org/inplayer-ui';
 
-<Typography variant="h1">Heading H1</Typography>
+<div>
+  <Typography variant="h1">Heading H1</Typography>
+  <Typography variant="h2">Heading H2</Typography>
+  <Typography variant="h3">Heading H3</Typography>
+  <Typography variant="h4">Heading H4</Typography>
+  <Typography variant="h5">Heading H5</Typography>
+  <Typography variant="h6">Heading H6</Typography>
+  <Typography variant="p">Paragraph</Typography>
+  <Typography variant="p" description>Paragraph as description</Typography>
+</div>
+
 ```
 
 ### Demo

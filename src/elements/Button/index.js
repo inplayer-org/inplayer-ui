@@ -1,54 +1,34 @@
-import styled from 'styled-components';
-import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, paddingSizes, fontSizes } from 'utils';
-import colors from 'config/colors';
+// @flow
+import React from 'react';
+import Icon from '../Icon';
+import ButtonWrapper from './ButtonWrapper';
 
-const modifiers = {
-  hoverBlue: () => `
-    &:hover, &:focus {
-      color: ${colors.accentBlue};
-      border-color: ${colors.accentBlue};
-    }
-  `,
-  hoverRed: () => `
-    &:hover, &:focus {
-      color: ${colors.red};
-      border-color: ${colors.red};
-    }
-  `,
-  hoverGreen: () => `
-    &:hover, &:focus {
-      color: ${colors.green};
-      border-color: ${colors.green};
-    }
-  `,
+type Size = 'xs' | 'sm' | 'md' | 'lg';
+
+type Props = {
+  icon: ?string,
+  children: string,
+  buttonModifiers: Array,
+  iconModifiers: Array,
+  size: Size,
+  className: ?string,
+  onClick: (e: SyntheticEvent<HTMLElement>) => any,
 };
 
-const Button = styled.button`
-  display: flex;
-  background: ${colors.white};
-  align-items: center;
-  color: ${uiColors('text.main')};
-  font-weight: ${fontWeights('light')};
-  border: 1px solid ${colors.gray};
-  padding: ${paddingSizes('small')};
-  border-radius: 3px;
-  font-size: ${fontSizes('medium')};
-  justify-content: center;
-  outline: none;
-  transition: all ease 300ms;
-  cursor: pointer;
-  vertical-align: middle;
-  letter-spacing: 0.015em;
-  line-height: 1;
-
-  &:hover {
-    border-color: ${uiColors('primary.main')};
-    color: ${uiColors('primary.main')};
-  }
-
-  ${applyStyleModifiers(modifiers)};
-`;
+const Button = ({
+  size,
+  icon,
+  buttonModifiers,
+  iconModifiers,
+  children,
+  className,
+  ...rest
+}: Props) => (
+  <ButtonWrapper className={className} size={size} modifiers={buttonModifiers} {...rest}>
+    {icon && <Icon name={icon} modifiers={iconModifiers} />}
+    <span>{children}</span>
+  </ButtonWrapper>
+);
 
 /** @component */
 export default Button;
