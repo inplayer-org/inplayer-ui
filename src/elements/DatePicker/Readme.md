@@ -30,6 +30,7 @@ class Page extends React.Component {
     onDateChange={(startDate, endDate)=>{ console.log(startDate, endDate); }}
   	onFocChange={(focusedInput)=>{ console.log(focusedInput); }}
     focusedInput={moment()}
+    calendarInfo={true}
   />
 }
 ```
@@ -49,5 +50,6 @@ class Page extends React.Component {
     console.log(focusedInput);
   }}
   focusedInput={'endDate'}
+  calendarInfo={true}
 />
 ```

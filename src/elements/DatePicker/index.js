@@ -9,11 +9,19 @@ type Props = {
   focusedInput: string,
   startDate: string,
   endDate: string,
+  calendarInfo: boolean,
   onDateChange: Function,
   onFocChange: Function,
 };
 
-const DatePicker = ({ focusedInput, startDate, endDate, onDateChange, onFocChange }: Props) => {
+const DatePicker = ({
+  focusedInput,
+  startDate,
+  endDate,
+  calendarInfo,
+  onDateChange,
+  onFocChange,
+}: Props) => {
   const onDatesChange = ({ startValue, endValue }) => {
     onDateChange({ startValue, endValue });
   };
@@ -54,7 +62,7 @@ const DatePicker = ({ focusedInput, startDate, endDate, onDateChange, onFocChang
         endDate={endDate}
         endDateId="2"
         customArrowIcon="to"
-        calendarInfoPosition="before"
+        calendarInfoPosition={calendarInfo && 'before'}
       />
     </DatePickerWrapper>
   );
