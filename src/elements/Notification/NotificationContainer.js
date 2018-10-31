@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 import { switchProp, prop } from 'styled-tools';
 import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 const notify = keyframes`
   0%,
@@ -22,7 +23,11 @@ const NotificationContainer = styled.div`
   border-radius: 3px;
   background: ${colors.lightGray};
   color: ${colors.fontDarkGray};
-  padding: 18px 4% 18px 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 2% 18px 2%;
+  min-height: 10%;
   left: 15%;
   right: 15%;
   position: fixed;
@@ -67,6 +72,29 @@ const NotificationContainer = styled.div`
   p {
     margin: 0;
     max-width: none;
+  }
+`;
+
+export const CloseIcon = styled.div`
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  align-self: flex-start;
+  color: ${transparentize(0.4, colors.fontDarkGray)};
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &::before {
+    content: '✕';
+    position: relative;
+    left: 5px;
+    font-size: 0.75rem;
+    top: -1px;
+  }
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.fontDarkGray};
   }
 `;
 
