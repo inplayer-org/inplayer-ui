@@ -13,7 +13,7 @@ exports[`TextArea renders correctly 1`] = `
   font-weight: 300;
   border: 1px solid #d7dde5;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 1.4em;
   min-height: 7em;
   min-width: 260px;
@@ -24,7 +24,7 @@ exports[`TextArea renders correctly 1`] = `
 }
 
 .c0:focus {
-  border-bottom: 1px solid #00aae6;
+  border-bottom: 1px solid #07AAE6;
 }
 
 <textarea

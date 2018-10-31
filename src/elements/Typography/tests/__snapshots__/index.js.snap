@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography renders correctly 1`] = `
+.c0 {
+  font-family: Roboto;
+  font-weight: 100;
+  margin: 1.7em 0 1em;
+  color: #286090;
+  font-size: 2.5rem;
+}
+
+<h1
+  className="-h1 c0"
+/>
+`;
