@@ -1,66 +1,38 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import colors from 'config/colors';
-import { fontSizes } from 'utils';
+import { fontSizes, uiColors } from 'utils';
+
+const tipsVertical = keyframes`
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+`;
+
+const tipsHorizontal = keyframes`
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
+`;
+
+const tipsDiagonalRight = keyframes`
+  to {
+    opacity: 0.9;
+    transform: translate(-1em, 0);
+  }
+`;
+
+const tipsDiagonalLeft = keyframes`
+  to {
+    opacity: 0.9;
+    transform: translate(1em, 0);
+  }
+`;
 
 const TooltipWrapper = styled.div`
-  color: ${colors.fontDarkGray};
+  color: ${uiColors('text.main')};
   cursor: pointer;
-
-  @-webkit-keyframes tips-vert {
-    to {
-      opacity: 0.9;
-      transform: translate(-50%, 0);
-    }
-  }
-
-  @keyframes tips-vert {
-    to {
-      opacity: 0.9;
-      transform: translate(-50%, 0);
-    }
-  }
-
-  @-webkit-keyframes tips-horz {
-    to {
-      opacity: 0.9;
-      transform: translate(0, -50%);
-    }
-  }
-
-  @keyframes tips-horz {
-    to {
-      opacity: 0.9;
-      transform: translate(0, -50%);
-    }
-  }
-
-  @-webkit-keyframes tips-diag-right {
-    to {
-      opacity: 0.9;
-      transform: translate(-1em, 0);
-    }
-  }
-
-  @keyframes tips-diag-right {
-    to {
-      opacity: 0.9;
-      transform: translate(-1em, 0);
-    }
-  }
-
-  @-webkit-keyframes tips-diag-left {
-    to {
-      opacity: 0.9;
-      transform: translate(1em, 0);
-    }
-  }
-
-  @keyframes tips-diag-left {
-    to {
-      opacity: 0.9;
-      transform: translate(1em, 0);
-    }
-  }
 
   [tooltip] {
     position: relative;
@@ -94,7 +66,7 @@ const TooltipWrapper = styled.div`
     padding: 1ch 1.5ch;
     border-radius: 0.3em;
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
-    background: ${colors.navy};
+    background: ${uiColors('secondary.main')};
     color: ${colors.white};
     z-index: 1000;
     opacity: 0.8;
@@ -109,7 +81,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='up']::before {
     bottom: 100%;
     border-bottom-width: 0;
-    border-top-color: ${colors.navy};
+    border-top-color: ${uiColors('secondary.main')};
   }
 
   [tooltip]:not([flow])::after,
@@ -128,7 +100,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='down']::before {
     top: 100%;
     border-top-width: 0;
-    border-bottom-color: ${colors.navy};
+    border-bottom-color: ${uiColors('secondary.main')};
   }
 
   [tooltip][flow^='down']::after {
@@ -165,7 +137,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='left']::before {
     top: 50%;
     border-right-width: 0;
-    border-left-color: ${colors.navy};
+    border-left-color: ${uiColors('secondary.main')};
     left: -5px;
     transform: translate(0.5em, -50%);
   }
@@ -179,7 +151,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='right']::before {
     top: 50%;
     border-left-width: 0;
-    border-right-color: ${colors.navy};
+    border-right-color: ${uiColors('secondary.main')};
     right: -5px;
     transform: translate(-0.5em, -50%);
   }
@@ -196,22 +168,22 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='up']:hover::after,
   [tooltip][flow^='down']:hover::before,
   [tooltip][flow^='down']:hover::after {
-    animation: tips-vert 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
+    animation: ${tipsVertical} 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
   }
 
   [tooltip][flow$='-right']:hover::after {
-    animation: tips-diag-right 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
+    animation: ${tipsDiagonalRight} 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
   }
 
   [tooltip][flow$='-left']:hover::after {
-    animation: tips-diag-left 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
+    animation: ${tipsDiagonalLeft} 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
   }
 
   [tooltip][flow='left']:hover::before,
   [tooltip][flow='left']:hover::after,
   [tooltip][flow='right']:hover::before,
   [tooltip][flow='right']:hover::after {
-    animation: tips-horz 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
+    animation: ${tipsHorizontal} 150ms cubic-bezier(0.5, 0, 0.6, 1.3) 1ms forwards;
   }
 
   [tooltip='']::after,
