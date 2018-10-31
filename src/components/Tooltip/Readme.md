@@ -30,4 +30,8 @@ function Page(props) {
 <Tooltip placement="left" dataTip="hello world on the left">
   Hover me!
 </Tooltip>
+
+<Tooltip color="#0da" placement="down" dataTip="custom color tooltip">
+  Hover me!
+</Tooltip>
 ```
