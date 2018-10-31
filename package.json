@@ -137,7 +137,7 @@
     "raf": "^3.4.0",
     "react": "^16.4.0",
     "react-addons-shallow-compare": "^15.6.2",
-    "react-dates": "12.7.0",
+    "react-dates": "^18.1.1",
     "react-dom": "^16.4.0",
     "react-fontawesome": "^1.6.1",
     "react-styleguidist": "^7.3.10",
