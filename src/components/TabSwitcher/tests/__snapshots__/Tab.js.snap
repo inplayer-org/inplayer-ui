@@ -9,7 +9,7 @@ exports[`Tab renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   border-right: 1px solid #d7dde5;
-  font-weight: 600;
+  font-weight: 300;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

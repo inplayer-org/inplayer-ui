@@ -2,4 +2,4 @@ import { generateSnapshots } from 'helpers';
 
 import Typography from '../index';
 
-generateSnapshots(Typography);
+generateSnapshots(Typography, { variant: 'h1' });
