@@ -1,4 +1,4 @@
-DatePicker is a componet for picking range for dates.
+DatePicker is a componet for picking range for dates. It takes a `startDate` and `endDate` as a prop( momentPropTypes.momentObj or null), `startDateId` and `endDateId`, `calendarInfo` prop which can be a boolean (if true, the presets are shown).
 
 ```jsx static
 import { DatePicker } from '@inplayer-org/inplayer-ui';

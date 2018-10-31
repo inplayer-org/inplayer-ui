@@ -62,6 +62,7 @@ const DatePicker = ({
         endDate={endDate}
         endDateId="2"
         customArrowIcon="to"
+        readOnly
         calendarInfoPosition={calendarInfo && 'before'}
       />
     </DatePickerWrapper>

@@ -589,7 +589,7 @@ const DatePickerWrapper = styled.span`
       transition: ease 200ms color;
       cursor: pointer;
       font-weight: ${fontWeights('light')};
-      padding: 5px;
+      padding: 7px;
 
       &:hover {
         color: ${uiColors('text.main')};
