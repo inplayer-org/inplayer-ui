@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import 'react-dates/initialize';
+import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 
 import DatePickerWrapper from './DatePickerWrapper';
@@ -12,6 +13,7 @@ type Props = {
   calendarInfo: boolean,
   onDateChange: Function,
   onFocChange: Function,
+  handleRangeClick: Function,
 };
 
 const DatePicker = ({
@@ -21,29 +23,16 @@ const DatePicker = ({
   calendarInfo,
   onDateChange,
   onFocChange,
+  handleRangeClick,
 }: Props) => {
-  const onDatesChange = ({ startValue, endValue }) => {
-    onDateChange({ startValue, endValue });
-  };
-
-  const onFocusChange = input => {
-    onFocChange(input);
-  };
-
   const renderDatePresets = () => {
-    const presets = [
-      'this week',
-      'last week',
-      'last 7 days',
-      'this month',
-      'last month',
-      'last 30 days',
-      'this year',
-    ];
+    const presets = ['this week', 'last week', 'this month', 'last month', 'this year'];
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
-          <label key={i}>{text}</label>
+          <label key={i} onClick={e => handleRangeClick(text)}>
+            {text}
+          </label>
         ))}
       </div>
     );
@@ -53,8 +42,8 @@ const DatePicker = ({
     <DatePickerWrapper>
       <DateRangePicker
         isOutsideRange={() => false}
-        onDatesChange={onDatesChange}
-        onFocusChange={onFocusChange}
+        onDatesChange={onDateChange}
+        onFocusChange={onFocChange}
         renderCalendarInfo={renderDatePresets}
         focusedInput={focusedInput}
         startDate={startDate}

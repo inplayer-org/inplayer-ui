@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 
 import colors from 'config/colors';
 import { uiColors, fontWeights, fontSizes } from 'utils';
@@ -79,13 +80,13 @@ const DatePickerWrapper = styled.span`
 
   .CalendarDay__selected_span {
     color: ${uiColors('primary.main')};
-    background: ${uiColors('primary.light')};
+    background: ${transparentize(0.94, colors.lightSkyBlue)};
   }
 
   .CalendarDay__selected_span:active,
   .CalendarDay__selected_span:hover {
-    background: ${uiColors('primary.light')};
-    color: ${uiColors('primary.main')};
+    background: ${transparentize(0.94, colors.lightSkyBlue)};
+    color: ${colors.navy};
   }
 
   .CalendarDay__last_in_range,
@@ -99,6 +100,7 @@ const DatePickerWrapper = styled.span`
     background: ${uiColors('primary.main')};
     border: 1px double ${uiColors('primary.main')};
     color: ${colors.white};
+    font-weight: 500;
   }
 
   .CalendarDay__blocked_calendar,
@@ -420,7 +422,7 @@ const DatePickerWrapper = styled.span`
     background: ${colors.white};
     position: relative;
     display: inline-block;
-    width: 80px;
+    width: 85px;
     vertical-align: middle;
   }
 

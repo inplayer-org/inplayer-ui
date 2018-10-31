@@ -38,18 +38,88 @@ class Page extends React.Component {
 ### Demo
 
 ```jsx
-<DatePicker
-  startDate={null}
-  startDateId={1}
-  endDate={null}
-  endDateId={2}
-  onDateChange={(startDate, endDate) => {
-    console.log(startDate, endDate);
-  }}
-  onFocChange={focusedInput => {
-    console.log(focusedInput);
-  }}
-  focusedInput={'endDate'}
-  calendarInfo={true}
-/>
+const moment = require('moment');
+
+const THIS_WEEK = 'this week';
+const LAST_WEEK = 'last week';
+const THIS_MONTH = 'this month';
+const LAST_MONTH = 'last month';
+const SIX_MONTHS = 'last half year';
+const THIS_YEAR = 'this year';
+
+class DatePickerExample extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      startDate: moment().subtract(1, 'month'),
+      endDate: moment(),
+      focusedInput: null,
+      activePeriod: THIS_WEEK,
+    };
+
+    this.onDateChange = this.onDateChange.bind(this);
+    this.onFocChange = this.onFocChange.bind(this);
+    this.handleRangeClick = this.handleRangeClick.bind(this);
+  }
+
+  onDateChange({ startDate, endDate }) {
+    this.setState({
+      startDate,
+      endDate,
+    });
+  }
+
+  onFocChange(focusedInput) {
+    this.setState({
+      focusedInput,
+    });
+  }
+
+  handleRangeClick(activePeriod) {
+    let startDate = moment().startOf('day');
+    let interval = 'day';
+    switch (activePeriod) {
+      case THIS_WEEK:
+        startDate = startDate.add(7, 'days');
+      case LAST_WEEK:
+        startDate = startDate.subtract(7, 'days');
+        break;
+      case THIS_MONTH:
+        startDate = startDate.add(1, 'months');
+        break;
+      case LAST_MONTH:
+        startDate = startDate.subtract(1, 'months');
+        break;
+      case SIX_MONTHS:
+        startDate = startDate.subtract(6, 'months');
+        break;
+      case THIS_YEAR:
+        startDate = startDate.subtract(1, 'year');
+        break;
+      default:
+        break;
+    }
+
+    const endDate = moment().endOf('day');
+    this.onDateChange({ startDate, endDate });
+  }
+
+  render() {
+    return (
+      <DatePicker
+        startDate={this.state.startDate}
+        startDateId={1}
+        endDate={this.state.endDate}
+        focusedInput={this.state.focusedInput}
+        endDateId={2}
+        onDateChange={this.onDateChange}
+        onFocChange={this.onFocChange}
+        handleRangeClick={this.handleRangeClick}
+        calendarInfo={true}
+      />
+    );
+  }
+}
+<DatePickerExample />;
 ```
