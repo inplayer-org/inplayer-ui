@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import NotificationContainer from './NotificationContainer';
+import NotificationContainer, { CloseIcon } from './NotificationContainer';
 
 type NotificationVariant = 'success' | 'danger' | 'warning';
 
@@ -12,16 +12,36 @@ type NotificationProps = {
   variant: ?NotificationVariant,
   duration: ?number,
   className: ?string,
+  close: () => void,
 };
 
-const Notification = ({ title, content, variant, duration, className }: NotificationProps) => (
+const divs: Array<HTMLDivElement> = [];
+
+const Notification = ({
+  title,
+  content,
+  variant,
+  duration,
+  className,
+  close,
+}: NotificationProps) => (
   <NotificationContainer variant={variant} duration={duration} className={className}>
-    <strong>{title}</strong> {content}
+    <div>
+      <strong>{title}</strong> {content}
+    </div>
+    <CloseIcon onClick={close} />
   </NotificationContainer>
 );
 
+function destroy(index) {
+  if (divs[index]) {
+    ReactDOM.unmountComponentAtNode(divs[index]);
+  }
+}
+
 function create(props: NotificationProps, parentDiv: ?HTMLDivElement) {
-  const notificationInstance = <Notification {...props} />;
+  const divIndex = divs.length;
+  const notificationInstance = <Notification {...props} close={() => destroy(divIndex)} />;
   const div = document.createElement('div');
   if (parentDiv) {
     parentDiv.appendChild(div);
@@ -30,6 +50,7 @@ function create(props: NotificationProps, parentDiv: ?HTMLDivElement) {
   }
 
   ReactDOM.render(notificationInstance, div);
+  divs.push(div);
 }
 
 Notification.create = create;
