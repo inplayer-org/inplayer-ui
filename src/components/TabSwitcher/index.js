@@ -11,6 +11,8 @@ type Props = {
   tabs: Array<TabInfo>,
   selectedTabIndex: number,
   onTabClick: (index: number) => void,
+  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  className?: string,
 };
 
 const renderTabs = (
@@ -32,9 +34,15 @@ const renderTabs = (
     </Tab>
   ));
 
-const TabSwitcher = ({ tabs, selectedTabIndex, onTabClick }: Props) =>
+const TabSwitcher = ({ tabs, selectedTabIndex, onTabClick, className }: Props) =>
   tabs ? (
-    <TabSwitchContainer>{renderTabs(tabs, selectedTabIndex, onTabClick)}</TabSwitchContainer>
+    <TabSwitchContainer className={className}>
+      {renderTabs(tabs, selectedTabIndex, onTabClick)}
+    </TabSwitchContainer>
   ) : null;
+
+TabSwitcher.defaultProps = {
+  className: '',
+};
 
 export default TabSwitcher;
