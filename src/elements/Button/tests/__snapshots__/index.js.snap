@@ -14,9 +14,8 @@ exports[`Button renders correctly 1`] = `
   color: #44494e;
   font-weight: 300;
   border: 1px solid #d7dde5;
-  padding: 10px 20px 11px;
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 1rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -31,14 +30,23 @@ exports[`Button renders correctly 1`] = `
   -ms-letter-spacing: 0.015em;
   letter-spacing: 0.015em;
   line-height: 1;
+  font-size: 1rem;
+  padding: 9px 12px;
 }
 
 .c0:hover {
-  border-color: #00aae6;
-  color: #00aae6;
+  border-color: #07AAE6;
+  color: #07AAE6;
+}
+
+.c0 span {
+  padding: 0.2rem;
 }
 
 <button
   className="c0"
-/>
+  size="md"
+>
+  <span />
+</button>
 `;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Arrow renders correctly 1`] = `
+.c0 {
+  width: 18px;
+  margin: 0 17px 16px 15px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+}
+
+.c0:hover i {
+  border-color: #fff;
+}
+
+.c1 {
+  border: solid rgba(255,255,255,0.4);
+  border-width: 1px 0 0 1px;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+<div
+  className="c0"
+>
+  <i
+    className="c1"
+  />
+</div>
+`;

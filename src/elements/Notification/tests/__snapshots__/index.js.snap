@@ -4,12 +4,36 @@ exports[`Notification renders correctly 1`] = `
 .c0 {
   box-sizing: border-box;
   border: 1px solid #d7dde5;
-  padding: 18px 2%;
   border-radius: 3px;
-  background: #fff;
+  background: #f0f3f6;
+  color: #44494e;
+  padding: 18px 4% 18px 2%;
+  left: 15%;
+  right: 15%;
+  position: fixed;
+  top: 80px;
+  z-index: 120;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  -webkit-animation: njGPL 8s ease-in-out 1s 1;
+  animation: njGPL 8s ease-in-out 1s 1;
 }
 
-<p
+.c0 i {
+  margin-right: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.c0 p {
+  margin: 0;
+  max-width: none;
+}
+
+<div
   className="c0"
-/>
+>
+  <strong />
+   
+</div>
 `;
