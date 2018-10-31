@@ -10,6 +10,8 @@ import MenuWithLogo from './MenuWithLogo';
 type Props = {
   children: Node,
   logo: ?Element<*> | ?string,
+  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  className?: string,
 };
 
 type State = {
@@ -19,6 +21,10 @@ type State = {
 class Navbar extends Component<Props, State> {
   static MenuItem: Element<typeof MenuItem>;
 
+  static defaultProps: {
+    className: string,
+  };
+
   state = {
     open: false,
   };
@@ -26,16 +32,20 @@ class Navbar extends Component<Props, State> {
   toggleOpen = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
-    const { children, logo } = this.props;
+    const { children, logo, className } = this.props;
     const { open } = this.state;
     return (
-      <NavbarContainer open={open} onClick={this.toggleOpen}>
+      <NavbarContainer className={className} open={open} onClick={this.toggleOpen}>
         <MenuWithLogo logo={logo}>{children}</MenuWithLogo>
         <Arrow open={open} />
       </NavbarContainer>
     );
   }
 }
+
+Navbar.defaultProps = {
+  className: '',
+};
 
 Navbar.MenuItem = MenuItem;
 

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import { transparentize } from 'polished';
-import { switchProp } from 'styled-tools';
+import { ifProp, switchProp } from 'styled-tools';
 import colors from 'config/colors';
 
 const modifiers = {
@@ -131,6 +131,15 @@ const ButtonWrapper = styled.button`
     `,
   })};
   ${applyStyleModifiers(modifiers)};
+  ${ifProp(
+    'disabled',
+    css`
+      color: ${uiColors('text.light')};
+      background-color: ${colors.lightGray};
+      border-color: ${colors.gray};
+      pointer-events: none;
+    `
+  )};
 `;
 
 ButtonWrapper.defaultProps = {

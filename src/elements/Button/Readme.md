@@ -40,6 +40,7 @@ function Page(props) {
         <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
         <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
         <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> <br />
+        <Button disabled>Button Disabled</Button>
 
         <h3>Button with icon:</h3>
         <Button buttonModifiers={['buttonDanger']}
@@ -51,6 +52,7 @@ function Page(props) {
         <Button buttonModifiers={['buttonDanger']}
                 iconModifiers={['statusColorWarning']}
                 icon="exclamation-circle"
+                iconRight
         >
           Button with Icon Modifier
         </Button>

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { ifProp, prop } from 'styled-tools';
 import colors from 'config/colors';
 import { fontSizes, uiColors } from 'utils';
 
@@ -66,7 +67,7 @@ const TooltipWrapper = styled.div`
     padding: 1ch 1.5ch;
     border-radius: 0.3em;
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
-    background: ${uiColors('secondary.main')};
+    background: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
     color: ${colors.white};
     z-index: 1000;
     opacity: 0.8;
@@ -81,7 +82,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='up']::before {
     bottom: 100%;
     border-bottom-width: 0;
-    border-top-color: ${uiColors('secondary.main')};
+    border-top-color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
   }
 
   [tooltip]:not([flow])::after,
@@ -100,7 +101,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow^='down']::before {
     top: 100%;
     border-top-width: 0;
-    border-bottom-color: ${uiColors('secondary.main')};
+    border-bottom-color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
   }
 
   [tooltip][flow^='down']::after {
@@ -137,7 +138,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='left']::before {
     top: 50%;
     border-right-width: 0;
-    border-left-color: ${uiColors('secondary.main')};
+    border-left-color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
     left: -5px;
     transform: translate(0.5em, -50%);
   }
@@ -151,7 +152,7 @@ const TooltipWrapper = styled.div`
   [tooltip][flow='right']::before {
     top: 50%;
     border-left-width: 0;
-    border-right-color: ${uiColors('secondary.main')};
+    border-right-color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
     right: -5px;
     transform: translate(-0.5em, -50%);
   }
