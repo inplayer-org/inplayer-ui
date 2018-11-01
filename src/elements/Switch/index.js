@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import Toggle from 'react-toggle';
-
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
 
@@ -15,7 +14,7 @@ type Props = {
   className?: string,
 };
 
-const Switcher = ({ id, checked, label, disabled, onChange, className }: Props) => {
+const Switch = ({ id, checked, label, disabled, onChange, className }: Props) => {
   const onToggleChange = (e: SyntheticInputEvent<*>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -35,9 +34,9 @@ const Switcher = ({ id, checked, label, disabled, onChange, className }: Props) 
   );
 };
 
-Switcher.defaultProps = {
+Switch.defaultProps = {
   className: '',
 };
 
 /** @component */
-export default Switcher;
+export default Switch;

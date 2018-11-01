@@ -192,6 +192,7 @@ exports[`Tooltip renders correctly 1`] = `
 
 <div
   className="c0"
+  color={null}
 >
   <span />
 </div>
