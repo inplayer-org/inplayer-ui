@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { uiColors, fontWeights } from 'utils';
+import { ifProp } from 'styled-tools';
 
 const Label = styled.label`
   text-decoration: none;
@@ -14,14 +15,17 @@ const Label = styled.label`
   position: relative;
   display: inline-flex;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: ${uiColors('text.light')};
   }
 
-  &:disabled {
-    color: ${uiColors('text.disabled')};
-    cursor: default;
-  }
+  ${ifProp(
+    'disabled',
+    css`
+      color: ${uiColors('text.disabled')};
+      pointer-events: none;
+    `
+  )};
 `;
 
 export default Label;
