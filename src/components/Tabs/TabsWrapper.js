@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from 'config/colors';
 
-const TabSwitchContainer = styled.div`
+const TabsWrapper = styled.div`
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   margin: 0 auto;
@@ -10,4 +10,4 @@ const TabSwitchContainer = styled.div`
   text-align: center;
 `;
 
-export default TabSwitchContainer;
+export default TabsWrapper;

@@ -5,26 +5,41 @@ import ButtonWrapper from './ButtonWrapper';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
-type Props = HTMLButtonElement & {
+type ContentProps = {
   icon?: string,
-  children: Node,
-  buttonModifiers?: Array<string>,
+  iconPosition?: string,
   iconModifiers?: Array<string>,
-  size?: Size,
+  children: Node,
 };
 
-const Button = ({
-  size,
-  icon,
-  buttonModifiers,
-  iconModifiers,
-  children,
-  className,
-  ...rest
-}: Props) => (
+type Props = HTMLButtonElement &
+  ContentProps & {
+    buttonModifiers?: Array<string>,
+    size?: Size,
+  };
+
+const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
+  iconPosition === 'right' ? (
+    <React.Fragment>
+      <span>{children}</span>
+      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      <span>{children}</span>
+    </React.Fragment>
+  );
+
+Content.defaultProps = {
+  icon: null,
+  iconPosition: 'left',
+  iconModifiers: [],
+};
+
+const Button = ({ size, buttonModifiers, className, ...rest }: Props) => (
   <ButtonWrapper className={className} size={size} modifiers={buttonModifiers} {...rest}>
-    {icon && <Icon name={icon} modifiers={iconModifiers} />}
-    <span>{children}</span>
+    <Content {...rest} />
   </ButtonWrapper>
 );
 

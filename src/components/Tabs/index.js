@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import Tab from './Tab';
-import TabSwitchContainer from './TabSwitchContainer';
+import TabsWrapper from './TabsWrapper';
 
 type TabInfo = {
   name: string,
@@ -34,15 +34,15 @@ const renderTabs = (
     </Tab>
   ));
 
-const TabSwitcher = ({ tabs, selectedTabIndex, onTabClick, className }: Props) =>
+const Tabs = ({ tabs, selectedTabIndex, onTabClick, className }: Props) =>
   tabs ? (
-    <TabSwitchContainer className={className}>
+    <TabsWrapper className={className}>
       {renderTabs(tabs, selectedTabIndex, onTabClick)}
-    </TabSwitchContainer>
+    </TabsWrapper>
   ) : null;
 
-TabSwitcher.defaultProps = {
+Tabs.defaultProps = {
   className: '',
 };
 
-export default TabSwitcher;
+export default Tabs;
