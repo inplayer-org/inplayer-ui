@@ -16,11 +16,13 @@ const THIS_YEAR = 'this year';
 type Props = {
   startDate: string,
   endDate: string,
-  startDateId: string,
-  endDateId: string,
+  startDateId?: string,
+  endDateId?: string,
   calendarInfo: boolean,
   onDateChange: Function,
 };
+
+type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
 
 class DatePicker extends React.Component<Props> {
   constructor(props) {
@@ -31,13 +33,13 @@ class DatePicker extends React.Component<Props> {
     };
   }
 
-  onFocChange = focusedInput => {
+  onFocusedInputChange = focusedInput => {
     this.setState({
       focusedInput,
     });
   };
 
-  handleRangeClick = activePeriod => {
+  handleRangeClick = (activePeriod: Period) => {
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
 
@@ -88,7 +90,7 @@ class DatePicker extends React.Component<Props> {
         <DateRangePicker
           isOutsideRange={() => false}
           onDatesChange={onDateChange}
-          onFocusChange={this.onFocChange}
+          onFocusChange={this.onFocusedInputChange}
           renderCalendarInfo={this.renderDatePresets}
           focusedInput={focusedInput}
           startDate={startDate}
@@ -103,5 +105,10 @@ class DatePicker extends React.Component<Props> {
     );
   }
 }
+
+DatePicker.defaultProps = {
+  startDateId: 'startDate',
+  endDateId: 'endDate',
+};
 
 export default DatePicker;

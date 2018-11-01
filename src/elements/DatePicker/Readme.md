@@ -10,7 +10,6 @@ class DatePicker extends React.Component {
     this.state = {
       startDate: moment().subtract(1, 'month'),
       endDate: moment(),
-      focusedInput: null,
     };
   }
 
