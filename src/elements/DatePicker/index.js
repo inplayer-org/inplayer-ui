@@ -9,6 +9,7 @@ type Props = {
   focusedInput: string,
   startDate: string,
   endDate: string,
+  activePeriod: string,
   calendarInfo: boolean,
   onDateChange: Function,
   onFocChange: Function,
@@ -20,6 +21,7 @@ const DatePicker = ({
   startDate,
   endDate,
   calendarInfo,
+  activePeriod,
   onDateChange,
   onFocChange,
   handleRangeClick,
@@ -29,7 +31,11 @@ const DatePicker = ({
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
-          <label key={i} onClick={() => handleRangeClick(text)}>
+          <label
+            className={activePeriod === text ? 'active' : ''}
+            key={i}
+            onClick={() => handleRangeClick(text)}
+          >
             {text}
           </label>
         ))}

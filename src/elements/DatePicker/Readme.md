@@ -8,7 +8,8 @@ class Page extends React.Component {
     state = {
     startDate: null,
     endDate: null,
-    focusedInput: null
+    focusedInput: null,
+    activePeriod: ''
   };
 
   onDateChange = ({ startDate, endDate }) => {
@@ -55,7 +56,7 @@ class DatePickerExample extends React.Component {
       startDate: moment().subtract(1, 'month'),
       endDate: moment(),
       focusedInput: null,
-      activePeriod: THIS_WEEK,
+      activePeriod: LAST_MONTH,
     };
 
     this.onDateChange = this.onDateChange.bind(this);
@@ -77,6 +78,7 @@ class DatePickerExample extends React.Component {
   }
 
   handleRangeClick(activePeriod) {
+    this.setState({ activePeriod });
     let startDate = moment().startOf('day');
     let interval = 'day';
     switch (activePeriod) {
@@ -117,6 +119,7 @@ class DatePickerExample extends React.Component {
         onFocChange={this.onFocChange}
         handleRangeClick={this.handleRangeClick}
         calendarInfo={true}
+        activePeriod={this.state.activePeriod}
       />
     );
   }
