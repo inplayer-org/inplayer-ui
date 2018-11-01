@@ -76,6 +76,8 @@ const RadioWrapper = styled.div`
   }
 
   > input:disabled:checked + label {
+    color: ${uiColors('text.disabled')};
+
     &::before {
       border: 1px solid ${colors.gray};
       background: transparent;
@@ -88,6 +90,8 @@ const RadioWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
+    color: ${uiColors('text.disabled')};
+
     &::before {
       border: 1px solid ${colors.gray};
       background: transparent;
