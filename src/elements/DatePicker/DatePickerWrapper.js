@@ -14,7 +14,7 @@ const DatePickerWrapper = styled.span`
     height: 100%;
     text-align: center;
     background: 0 0;
-    border: 2px solid ${uiColors('primary.main')};
+    /* border: 2px solid ${uiColors('primary.main')}; */
     color: ${uiColors('primary.main')};
     padding: 4px 12px;
     margin-right: 8px;
@@ -94,13 +94,16 @@ const DatePickerWrapper = styled.span`
     border-style: solid;
   }
 
-  .CalendarDay__selected,
-  .CalendarDay__selected:active,
-  .CalendarDay__selected:hover {
+  .CalendarDay__selected {
     background: ${uiColors('primary.main')};
-    border: 1px double ${uiColors('primary.main')};
     color: ${colors.white};
     font-weight: 500;
+  }
+
+  .CalendarDay__selected:hover {
+    background: rgba(151, 204, 246, 0.06);
+    color: #2a4d8e;
+    border: 1px solid ${colors.lightGray};
   }
 
   .CalendarDay__hovered_span,

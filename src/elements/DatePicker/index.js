@@ -4,6 +4,7 @@ import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 
 import DatePickerWrapper from './DatePickerWrapper';
+import Label from '../Label';
 
 type Props = {
   focusedInput: string,
@@ -31,13 +32,9 @@ const DatePicker = ({
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
-          <label
-            className={activePeriod === text ? 'active' : ''}
-            key={i}
-            onClick={() => handleRangeClick(text)}
-          >
+          <Label key={i} onClick={() => handleRangeClick(text)}>
             {text}
-          </label>
+          </Label>
         ))}
       </div>
     );
