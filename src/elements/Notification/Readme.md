@@ -64,17 +64,17 @@ function Page(props) {
     title: 'Notification',
     content: 'This is a regular notification',
     duration: 3,
-  })}>Show notification</Button>
+  })}>Show notification</Button> <br />
   <Button onClick={() => Notification.success({
     title: 'Hooray!',
     content: 'This is a success notification',
     duration: 3,
-  })}>Show success notification</Button>
+  })}>Show success notification</Button> <br />
   <Button onClick={() => Notification.danger({
     title: 'Oh no!',
     content: 'This is a danger notification',
     duration: 3,
-  })}>Show danger notification</Button>
+  })}>Show danger notification</Button> <br />
   <Button onClick={() => Notification.warning({
     title: 'Careful!',
     content: 'This is a warning notification',
