@@ -27,34 +27,30 @@ function Page(props) {
 <Note
   title="Just so you know!"
   text="This block indicates a neutral informative note."
-  icon="info"
+  icon="info-circle"
 />
 
 <Note
   type="informative"
   title="Just so you know!"
   text="This is used as a note on white backgrounds to give it a little contrast."
-  icon="info"
 />
 
 <Note
   type="success"
   title="Done!"
   text="This box indicates a successful or positive action."
-  icon="done"
 />
 
 <Note
   type="warning"
   title="Important note!"
   text="This box indicates a warning that might need attention."
-  icon="info"
 />
 
 <Note
   type="danger"
   title="Danger!"
   text="This box indicates a dangerous or potentially negative action."
-  icon="warning"
 />
 ```
