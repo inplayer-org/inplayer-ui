@@ -609,22 +609,22 @@ const DatePickerWrapper = styled.span`
       &:hover {
         color: ${uiColors('text.main')};
       }
+    }
 
-      .active {
-        color: ${uiColors('primary.dark')};
+    label.active {
+      color: ${uiColors('primary.dark')};
 
-        &::before {
-          height: 6px;
-          width: 6px;
-          content: '';
-          display: inline-block;
-          border-right: 1px solid ${uiColors('primary.dark')};
-          border-top: 1px solid ${uiColors('primary.dark')};
-          transform: rotate(45deg);
-          margin-right: 8px;
-          position: relative;
-          top: -2px;
-        }
+      &::before {
+        height: 6px;
+        width: 6px;
+        content: '';
+        display: inline-block;
+        border-right: 1px solid ${uiColors('primary.dark')};
+        border-top: 1px solid ${uiColors('primary.dark')};
+        transform: rotate(45deg);
+        margin-right: 8px;
+        position: relative;
+        top: -2px;
       }
     }
   }
