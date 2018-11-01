@@ -92,9 +92,9 @@ class DatePicker extends React.Component<Props> {
           renderCalendarInfo={this.renderDatePresets}
           focusedInput={focusedInput}
           startDate={startDate}
-          startDateId={startDateId || 'startDateId'}
-          endDate={endDate || 'endDate'}
-          endDateId="2"
+          startDateId={startDateId || 'startDate'}
+          endDate={endDate}
+          endDateId={endDateId || 'endDate'}
           customArrowIcon="to"
           readOnly
           calendarInfoPosition={calendarInfo && 'before'}
