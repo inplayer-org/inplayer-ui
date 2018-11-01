@@ -2,7 +2,7 @@ Note is a component for displaying information for notification. <br />
 The `type` attribute can be: informative, success, warning, danger. If not of the above is added, the default note with white background will be displayed. <br />
 The `title` attribute is the string to be set as title for the notification. <br />
 The `text` attribute is the actual notification that needs to be displayed to the user. <br />
-The `icon` attribute is string to display the icon from icon fonts: done, info, danger, warning. <br />
+The `icon` attribute is a string which represents a FontAwesome icon. It is not considered when there is a `type` prop passed. <br />
 
 You can use it directly like this:
 
