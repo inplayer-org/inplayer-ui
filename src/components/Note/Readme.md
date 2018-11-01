@@ -15,7 +15,6 @@ function Page(props) {
       type="success"
       title="Done!"
       text="This box indicates a successful or positive action."
-      icon="done"
     />
   );
 }
