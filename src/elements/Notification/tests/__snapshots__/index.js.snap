@@ -5,9 +5,22 @@ exports[`Notification renders correctly 1`] = `
   box-sizing: border-box;
   border: 1px solid #d7dde5;
   border-radius: 3px;
-  background: #f0f3f6;
+  background: #F6F8FB;
   color: #44494e;
-  padding: 18px 4% 18px 2%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 18px 2%;
+  min-height: 10%;
   left: 15%;
   right: 15%;
   position: fixed;
@@ -30,10 +43,41 @@ exports[`Notification renders correctly 1`] = `
   max-width: none;
 }
 
+.c1 {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: rgba(68,73,78,0.6);
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.c1::before {
+  content: '✕';
+  position: relative;
+  left: 5px;
+  font-size: 0.75rem;
+  top: -1px;
+}
+
+.c1:hover {
+  background: #fff;
+  color: #44494e;
+}
+
 <div
   className="c0"
 >
-  <strong />
-   
+  <div>
+    <strong />
+     
+  </div>
+  <div
+    className="c1"
+  />
 </div>
 `;
