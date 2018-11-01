@@ -33,7 +33,7 @@ class DatePicker extends React.Component<Props> {
     };
   }
 
-  onFocusedInputChange = focusedInput => {
+  onFocusedInputChange = (focusedInput: string) => {
     this.setState({
       focusedInput,
     });
@@ -69,7 +69,7 @@ class DatePicker extends React.Component<Props> {
   };
 
   renderDatePresets = () => {
-    const presets = ['this week', 'last week', 'this month', 'last month', 'this year'];
+    const presets = [THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR];
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
