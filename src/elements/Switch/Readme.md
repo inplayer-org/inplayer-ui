@@ -23,9 +23,33 @@ class Page extends React.Component {
 ```jsx
 <Switch
   disabled={false}
+  checked={false}
+  id="unchecked"
+  label="Swipe me!"
+  onChange={console.log}
+/>
+<br />
+<Switch
+  disabled={false}
   checked={true}
-  id="toggle1"
-  label="swipe"
+  id="checkedByDefault"
+  label="Checked by default!"
+  onChange={console.log}
+/>
+<br />
+<Switch
+  disabled={true}
+  checked={false}
+  id="disabledUnchecked"
+  label="Disabled!"
+  onChange={console.log}
+/>
+<br />
+<Switch
+  disabled={true}
+  checked={true}
+  id="disabledChecked"
+  label="Disabled and checked!"
   onChange={console.log}
 />
 ```
