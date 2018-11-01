@@ -91,6 +91,8 @@ const CheckboxWrapper = styled.div`
   }
 
   > input:disabled:checked + label {
+    color: ${uiColors('text.disabled')};
+
     &::before {
       border: 1px solid ${colors.gray};
       background: transparent;
@@ -103,6 +105,8 @@ const CheckboxWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
+    color: ${uiColors('text.disabled')};
+
     &::before {
       border: 1px solid ${colors.gray};
       background: transparent;

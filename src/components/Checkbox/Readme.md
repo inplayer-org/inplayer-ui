@@ -32,9 +32,31 @@ class Page extends React.Component {
 
 ```jsx
 <Checkbox
-  name="checkbox1"
-  id="checkbox1"
+  name="checkboxUnchecked"
+  id="checkboxUnchecked"
   label="Check me!"
+  onChange={e => console.log(e)}
+/>
+<Checkbox
+  checked
+  name="checkboxChecked"
+  id="checkboxChecked"
+  label="Checked by default!"
+  onChange={e => console.log(e)}
+/>
+<Checkbox
+  disabled
+  name="checkboxDisabledUnchecked"
+  id="checkboxDisabledUnchecked"
+  label="Disabled and unchecked!"
+  onChange={e => console.log(e)}
+/>
+<Checkbox
+  checked
+  disabled
+  name="checkboxDisabledChecked"
+  id="checkboxDisabledChecked"
+  label="Disabled and checked!"
   onChange={e => console.log(e)}
 />
 ```
