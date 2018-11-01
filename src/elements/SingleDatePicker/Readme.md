@@ -9,16 +9,14 @@ class SinglePicker extends React.Component {
     super();
 
     this.state = {
-      startDate: moment().subtract(1, 'month'),
-      endDate: moment(),
-      focusedInput: null,
+      date: moment(),
+      focusedInput: false,
     };
   }
 
-  onDateChange = ({ startDate, endDate }) => {
+  onDateChange = date => {
     this.setState({
-      startDate,
-      endDate,
+      date,
     });
   };
 
@@ -54,23 +52,21 @@ class SinglePickerExample extends React.Component {
     super();
 
     this.state = {
-      startDate: moment().subtract(1, 'month'),
-      endDate: moment(),
-      focusedInput: null,
+      date: moment(),
+      focusedInput: false,
     };
 
     this.onDateChange = this.onDateChange.bind(this);
-    this.onFocChange = this.onFocChange.bind(this);
+    this.onFocusedInputChange = this.onFocusedInputChange.bind(this);
   }
 
-  onDateChange({ startDate, endDate }) {
+  onDateChange(date) {
     this.setState({
-      startDate,
-      endDate,
+      date,
     });
   }
 
-  onFocChange(focusedInput) {
+  onFocusedInputChange(focusedInput) {
     this.setState({
       focusedInput,
     });
@@ -82,7 +78,7 @@ class SinglePickerExample extends React.Component {
         date={this.state.date}
         focusedInput={this.state.focusedInput}
         onDateChange={this.onDateChange}
-        onFocChange={this.onFocChange}
+        onFocusedInputChange={this.onFocusedInputChange}
       />
     );
   }

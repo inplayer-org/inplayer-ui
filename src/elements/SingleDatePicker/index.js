@@ -6,7 +6,7 @@ import SingleDatePickerWrapper from './SingleDatePickerWrapper';
 
 type Props = {
   onDateChange: Function,
-  onFocChange: Fucntion,
+  onFocusedInputChange: Function,
   renderDatePresets: Function,
   focusedInput: string,
   date: string,
@@ -14,7 +14,7 @@ type Props = {
 
 const SinglePicker = ({
   onDateChange,
-  onFocChange,
+  onFocusedInputChange,
   renderDatePresets,
   focusedInput,
   date,
@@ -23,9 +23,11 @@ const SinglePicker = ({
     <SingleDatePicker
       date={date}
       onDateChange={onDateChange}
-      onFocusChange={onFocChange}
+      onFocusChange={onFocusedInputChange}
       focused={focusedInput}
-      id="1"
+      numberOfMonths={1}
+      id="date"
+      readOnly
     />
   </SingleDatePickerWrapper>
 );
