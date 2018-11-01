@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TabSwitchContainer renders correctly 1`] = `
+exports[`TabsWrapper renders correctly 1`] = `
 .c0 {
   border: 1px solid #d7dde5;
   border-radius: 3px;
