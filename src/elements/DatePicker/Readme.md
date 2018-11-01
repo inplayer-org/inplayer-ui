@@ -25,9 +25,9 @@ class DatePicker extends React.Component {
     return (
       <DatePicker
         startDate={this.state.startDate}
-        startDateId={1}
+        startDateId="startDate"
         endDate={this.state.endDate}
-        endDateId={2}
+        endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
       />
@@ -65,9 +65,9 @@ class DatePickerExample extends React.Component {
     return (
       <DatePicker
         startDate={this.state.startDate}
-        startDateId={1}
+        startDateId="startDate"
         endDate={this.state.endDate}
-        endDateId={2}
+        endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
       />

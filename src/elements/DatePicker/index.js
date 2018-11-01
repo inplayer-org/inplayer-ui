@@ -16,6 +16,8 @@ const THIS_YEAR = 'this year';
 type Props = {
   startDate: string,
   endDate: string,
+  startDateId: string,
+  endDateId: string,
   calendarInfo: boolean,
   onDateChange: Function,
 };
@@ -78,7 +80,7 @@ class DatePicker extends React.Component<Props> {
   };
 
   render() {
-    const { onDateChange, startDate, endDate, calendarInfo } = this.props;
+    const { onDateChange, startDate, endDate, calendarInfo, startDateId, endDateId } = this.props;
 
     const { focusedInput } = this.state;
     return (
@@ -90,8 +92,8 @@ class DatePicker extends React.Component<Props> {
           renderCalendarInfo={this.renderDatePresets}
           focusedInput={focusedInput}
           startDate={startDate}
-          startDateId="1"
-          endDate={endDate}
+          startDateId={startDateId || 'startDateId'}
+          endDate={endDate || 'endDate'}
           endDateId="2"
           customArrowIcon="to"
           readOnly
