@@ -3,7 +3,7 @@
 export { default as Button } from './Button';
 export { default as TextField } from './TextField';
 export { default as TextArea } from './TextArea';
-export { default as Switcher } from './Switcher';
+export { default as Switch } from './Switch';
 export { default as Notification } from './Notification';
 export { default as Typography } from './Typography';
 export { default as Icon } from './Typography';
