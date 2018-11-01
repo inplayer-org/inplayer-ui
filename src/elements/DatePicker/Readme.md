@@ -29,7 +29,6 @@ class DatePicker extends React.Component {
   };
 
   handleRangeClick = activePeriod => {
-    this.setState({ activePeriod });
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
 
@@ -69,7 +68,6 @@ class DatePicker extends React.Component {
         onFocChange={this.onFocChange}
         handleRangeClick={this.handleRangeClick}
         calendarInfo={true}
-        activePeriod={this.state.activePeriod}
       />
     );
   }
