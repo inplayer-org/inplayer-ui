@@ -50,9 +50,15 @@ function Page(props) {
         </Button>
         <br/>
         <Button buttonModifiers={['buttonDanger']}
+                icon="exclamation-circle"
+                iconPosition="right"
+        >
+          Button with Icon on Right
+        </Button>
+        <br/>
+        <Button buttonModifiers={['buttonDanger']}
                 iconModifiers={['statusColorWarning']}
                 icon="exclamation-circle"
-                iconRight
         >
           Button with Icon Modifier
         </Button>
