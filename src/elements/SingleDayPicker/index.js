@@ -3,6 +3,7 @@ import React from 'react';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import SingleDayPickerWrapper from './SingleDayPickerWrapper';
+import DatePickerWrapper from '../DatePickerWrapper';
 
 type Props = {
   onDateChange: Function,
@@ -26,16 +27,18 @@ class SingleDayPicker extends React.Component<Props> {
 
     return (
       <SingleDayPickerWrapper>
-        <SingleDatePicker
-          isOutsideRange={isOutsideRange}
-          id={id || 'date'}
-          date={date}
-          onDateChange={onDateChange}
-          onFocusChange={({ focused }) => this.setState({ focusedInput: focused })}
-          focused={focusedInput}
-          numberOfMonths={1}
-          readOnly
-        />
+        <DatePickerWrapper>
+          <SingleDatePicker
+            isOutsideRange={isOutsideRange}
+            id={id || 'date'}
+            date={date}
+            onDateChange={onDateChange}
+            onFocusChange={({ focused }) => this.setState({ focusedInput: focused })}
+            focused={focusedInput}
+            numberOfMonths={1}
+            readOnly
+          />
+        </DatePickerWrapper>
       </SingleDayPickerWrapper>
     );
   }

@@ -2,9 +2,10 @@
 import React from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
-
 import moment from 'moment';
-import DatePickerWrapper from './DatePickerWrapper';
+
+import DateRangePickerWrapper from './DateRangePickerWrapper';
+import DatePickerWrapper from '../DatePickerWrapper';
 import Label from '../Label';
 
 const THIS_WEEK = 'this week';
@@ -96,22 +97,24 @@ class DatePicker extends React.Component<Props> {
     const { focusedInput } = this.state;
 
     return (
-      <DatePickerWrapper>
-        <DateRangePicker
-          isOutsideRange={isOutsideRange}
-          onDatesChange={onDateChange}
-          onFocusChange={this.onFocusedInputChange}
-          renderCalendarInfo={this.renderDatePresets}
-          focusedInput={focusedInput}
-          startDate={startDate}
-          startDateId={startDateId || 'startDate'}
-          endDate={endDate}
-          endDateId={endDateId || 'endDate'}
-          customArrowIcon="to"
-          readOnly
-          calendarInfoPosition={calendarInfo && 'before'}
-        />
-      </DatePickerWrapper>
+      <DateRangePickerWrapper>
+        <DatePickerWrapper>
+          <DateRangePicker
+            isOutsideRange={isOutsideRange}
+            onDatesChange={onDateChange}
+            onFocusChange={this.onFocusedInputChange}
+            renderCalendarInfo={this.renderDatePresets}
+            focusedInput={focusedInput}
+            startDate={startDate}
+            startDateId={startDateId || 'startDate'}
+            endDate={endDate}
+            endDateId={endDateId || 'endDate'}
+            customArrowIcon="to"
+            readOnly
+            calendarInfoPosition={calendarInfo && 'before'}
+          />
+        </DatePickerWrapper>
+      </DateRangePickerWrapper>
     );
   }
 }
