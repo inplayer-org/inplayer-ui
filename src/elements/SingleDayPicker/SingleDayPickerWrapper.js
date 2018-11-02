@@ -70,12 +70,6 @@ const SingleDatePickerWrapper = styled.span`
     font-weight: 500;
   }
 
-  .CalendarDay__selected:hover {
-    background: rgba(151, 204, 246, 0.06);
-    color: #2a4d8e;
-    border: 1px solid ${colors.lightGray};
-  }
-
   .CalendarDay__hovered_span,
   .CalendarDay__hovered_span:hover {
     border: 1px double ${colors.gray};
