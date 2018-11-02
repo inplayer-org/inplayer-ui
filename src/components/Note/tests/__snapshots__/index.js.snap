@@ -29,9 +29,7 @@ exports[`Note renders correctly 1`] = `
 <p
   className="c0"
 >
-  <i
-    className="ipic_undefined"
-  />
+   
   <strong />
 </p>
 `;

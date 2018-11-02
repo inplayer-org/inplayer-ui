@@ -11,5 +11,6 @@ exports[`Typography renders correctly 1`] = `
 
 <h1
   className="-h1 c0"
+  color=""
 />
 `;
