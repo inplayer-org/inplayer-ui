@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 import colors from 'config/colors';
 import { uiColors } from 'utils';
+import DatePickerWrapper from '../DatePickerWrapper';
 
-const SingleDatePickerWrapper = styled.span`
+const SingleDatePickerWrapper = styled(DatePickerWrapper)`
   .DateInput {
     width: 100px !important;
   }

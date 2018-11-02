@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 import { uiColors, fontSizes, fontWeights } from 'utils';
+import DatePickerWrapper from '../DatePickerWrapper';
 
-const DateRangePickerWrapper = styled.span`
+const DateRangePickerWrapper = styled(DatePickerWrapper)`
   .datepreset {
     width: 96px;
     padding: 64px 20px 10px;

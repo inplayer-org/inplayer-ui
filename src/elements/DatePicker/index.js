@@ -5,7 +5,6 @@ import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 
 import DateRangePickerWrapper from './DateRangePickerWrapper';
-import DatePickerWrapper from '../DatePickerWrapper';
 import Label from '../Label';
 
 const THIS_WEEK = 'this week';
@@ -98,22 +97,20 @@ class DatePicker extends React.Component<Props> {
 
     return (
       <DateRangePickerWrapper>
-        <DatePickerWrapper>
-          <DateRangePicker
-            isOutsideRange={isOutsideRange}
-            onDatesChange={onDateChange}
-            onFocusChange={this.onFocusedInputChange}
-            renderCalendarInfo={this.renderDatePresets}
-            focusedInput={focusedInput}
-            startDate={startDate}
-            startDateId={startDateId || 'startDate'}
-            endDate={endDate}
-            endDateId={endDateId || 'endDate'}
-            customArrowIcon="to"
-            readOnly
-            calendarInfoPosition={calendarInfo && 'before'}
-          />
-        </DatePickerWrapper>
+        <DateRangePicker
+          isOutsideRange={isOutsideRange}
+          onDatesChange={onDateChange}
+          onFocusChange={this.onFocusedInputChange}
+          renderCalendarInfo={this.renderDatePresets}
+          focusedInput={focusedInput}
+          startDate={startDate}
+          startDateId={startDateId || 'startDate'}
+          endDate={endDate}
+          endDateId={endDateId || 'endDate'}
+          customArrowIcon="to"
+          readOnly
+          calendarInfoPosition={calendarInfo && 'before'}
+        />
       </DateRangePickerWrapper>
     );
   }
