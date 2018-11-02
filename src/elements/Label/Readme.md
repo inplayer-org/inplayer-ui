@@ -15,3 +15,15 @@ function Page(props) {
 <br />
 <Label disabled>Label Disabled</Label>
 ```
+
+### Label with font size Modifiers
+
+```jsx
+<Label modifiers={['fontSizeExtraSmall']}>Extra Small</Label>
+<br />
+<Label modifiers={['fontSizeSmall']}>Small</Label>
+<br />
+<Label modifiers={['fontSizeMedium']}>Medium</Label>
+<br />
+<Label modifiers={['fontSizeLarge']}>Large</Label>
+```

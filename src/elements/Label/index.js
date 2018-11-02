@@ -1,6 +1,15 @@
 import styled, { css } from 'styled-components';
 import { uiColors, fontWeights } from 'utils';
 import { ifProp } from 'styled-tools';
+import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
+const typographyModifiers = {
+  fontSizeExtraSmall,
+  fontSizeSmall,
+  fontSizeMedium,
+  fontSizeLarge,
+};
 
 const Label = styled.label`
   text-decoration: none;
@@ -26,6 +35,7 @@ const Label = styled.label`
       pointer-events: none;
     `
   )};
+  ${applyStyleModifiers(typographyModifiers)};
 `;
 
 export default Label;
