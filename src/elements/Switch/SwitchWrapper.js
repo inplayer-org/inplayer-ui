@@ -59,7 +59,7 @@ const SwitchWrapper = styled.span`
   }
 
   &:hover .react-toggle-track {
-    background: ${transparentize(0.94, '#07AAE6')};
+    background: ${transparentize(0.94, colors.skyBlue)};
     border: 1px solid ${uiColors('primary.main')};
   }
 
