@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import uiColors from 'utils/uiColors';
 import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 const SwitchWrapper = styled.span`
   display: inline-flex;
@@ -58,7 +59,7 @@ const SwitchWrapper = styled.span`
   }
 
   &:hover .react-toggle-track {
-    background: rgba(0, 170, 230, 0.06);
+    background: ${transparentize(0.94, '#07AAE6')};
     border: 1px solid ${uiColors('primary.main')};
   }
 
@@ -66,7 +67,7 @@ const SwitchWrapper = styled.span`
     pointer-events: none;
 
     .react-toggle-track {
-      background: #00000005 !important;
+      background: ${transparentize(0.94, '#000')} !important;
       border: 1px solid ${colors.gray} !important;
     }
   }
