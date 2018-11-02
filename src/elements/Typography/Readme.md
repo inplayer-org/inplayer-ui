@@ -14,14 +14,17 @@ import { Typography } from '@inplayer-org/inplayer-ui';
   <Typography variant="h5">Heading H5</Typography>
   <Typography variant="h6">Heading H6</Typography>
   <Typography variant="p">Paragraph</Typography>
-  <Typography variant="p" description>Paragraph as description</Typography>
-</div>
-
+  <Typography variant="p" description>
+    Paragraph as description
+  </Typography>
+</div>;
 ```
 
 ### Demo
 
 ```jsx
+<Typography variant="h1" modifiers={['textSuccess']}>Heading H1 with modifiers</Typography>
+<Typography variant="h1" color="red">Heading H1 with custom color</Typography>
 <Typography variant="h1">Heading H1</Typography>
 <Typography variant="h2">Heading H2</Typography>
 <Typography variant="h3">Heading H3</Typography>
