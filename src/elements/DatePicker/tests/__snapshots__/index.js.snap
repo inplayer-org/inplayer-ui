@@ -10,7 +10,6 @@ exports[`DatePicker renders correctly 1`] = `
   height: 100%;
   text-align: center;
   background: 0 0;
-  border: 2px solid #07AAE6;
   color: #07AAE6;
   padding: 4px 12px;
   margin-right: 8px;
@@ -69,20 +68,20 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .CalendarDay__hovered_offset {
-  background: #f0f3f6;
-  border: 1px double #f0f3f6;
+  background: #F6F8FB;
+  border: 1px double #F6F8FB;
   color: inherit;
 }
 
 .c0 .CalendarDay__selected_span {
   color: #07AAE6;
-  background: #97CCF6;
+  background: rgba(151,204,246,0.06);
 }
 
 .c0 .CalendarDay__selected_span:active,
 .c0 .CalendarDay__selected_span:hover {
-  background: #97CCF6;
-  color: #07AAE6;
+  background: rgba(151,204,246,0.06);
+  color: #2A4D8E;
 }
 
 .c0 .CalendarDay__last_in_range,
@@ -90,19 +89,36 @@ exports[`DatePicker renders correctly 1`] = `
   border-style: solid;
 }
 
-.c0 .CalendarDay__selected,
-.c0 .CalendarDay__selected:active,
-.c0 .CalendarDay__selected:hover {
+.c0 .CalendarDay__selected {
   background: #07AAE6;
-  border: 1px double #07AAE6;
   color: #fff;
+  font-weight: 500;
+}
+
+.c0 .CalendarDay__selected:hover {
+  background: rgba(151,204,246,0.06);
+  color: #2a4d8e;
+  border: 1px solid #F6F8FB;
+}
+
+.c0 .CalendarDay__hovered_span,
+.c0 .CalendarDay__hovered_span:hover {
+  border: 1px double #d7dde5;
+  color: #07AAE6;
+  background: rgba(151,204,246,0.06);
+}
+
+.c0 .CalendarDay__hovered_span:active {
+  border: 1px double #d7dde5;
+  color: #07AAE6;
+  background: rgba(151,204,246,0.06);
 }
 
 .c0 .CalendarDay__blocked_calendar,
 .c0 .CalendarDay__blocked_calendar:active,
 .c0 .CalendarDay__blocked_calendar:hover {
-  background: #f0f3f6;
-  border: 1px solid #f0f3f6;
+  background: #F6F8FB;
+  border: 1px solid #F6F8FB;
   color: #c8ccd4;
 }
 
@@ -110,7 +126,7 @@ exports[`DatePicker renders correctly 1`] = `
 .c0 .CalendarDay__blocked_out_of_range:active,
 .c0 .CalendarDay__blocked_out_of_range:hover {
   background: #fff;
-  border: 1px solid #f0f3f6;
+  border: 1px solid #F6F8FB;
   color: #c8ccd4;
 }
 
@@ -425,7 +441,7 @@ exports[`DatePicker renders correctly 1`] = `
   background: #fff;
   position: relative;
   display: inline-block;
-  width: 80px;
+  width: 85px;
   vertical-align: middle;
 }
 
@@ -438,7 +454,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DateInput__disabled {
-  background: #f0f3f6;
+  background: #F6F8FB;
   color: #c8ccd4;
 }
 
@@ -486,7 +502,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DateInput_input__disabled {
-  background: #f0f3f6;
+  background: #F6F8FB;
   font-style: italic;
 }
 
@@ -518,7 +534,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DateRangePickerInput__disabled {
-  background: #f0f3f6;
+  background: #F6F8FB;
 }
 
 .c0 .DateRangePickerInput__withBorder {
@@ -578,7 +594,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DateRangePicker_picker__portal {
-  background-color: #f0f3f6;
+  background-color: #F6F8FB;
   position: fixed;
   top: 0;
   left: 0;
@@ -610,11 +626,11 @@ exports[`DatePicker renders correctly 1`] = `
   color: #44494e;
 }
 
-.c0 .datepreset label .active {
+.c0 .datepreset label.active {
   color: #2A4D8E;
 }
 
-.c0 .datepreset label .active::before {
+.c0 .datepreset label.active::before {
   height: 6px;
   width: 6px;
   content: '';
@@ -643,13 +659,13 @@ exports[`DatePicker renders correctly 1`] = `
           className="DateInput DateInput_1"
         >
           <input
-            aria-describedby="DateInput__screen-reader-message-1"
+            aria-describedby="DateInput__screen-reader-message-startDate"
             aria-label="Start Date"
             autoComplete="off"
             className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
             disabled={false}
-            id="1"
-            name="1"
+            id="startDate"
+            name="startDate"
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
@@ -661,7 +677,7 @@ exports[`DatePicker renders correctly 1`] = `
           />
           <p
             className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-            id="DateInput__screen-reader-message-1"
+            id="DateInput__screen-reader-message-startDate"
           >
             Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
@@ -678,13 +694,13 @@ exports[`DatePicker renders correctly 1`] = `
           className="DateInput DateInput_1"
         >
           <input
-            aria-describedby="DateInput__screen-reader-message-2"
+            aria-describedby="DateInput__screen-reader-message-endDate"
             aria-label="End Date"
             autoComplete="off"
             className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
             disabled={false}
-            id="2"
-            name="2"
+            id="endDate"
+            name="endDate"
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
@@ -696,7 +712,7 @@ exports[`DatePicker renders correctly 1`] = `
           />
           <p
             className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-            id="DateInput__screen-reader-message-2"
+            id="DateInput__screen-reader-message-endDate"
           >
             Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.

@@ -5,11 +5,11 @@ export const backgroundPrimary = ({ theme }) => `
 `;
 
 export const backgroundInfo = () => `
-  background: ${colors.skyBlue};
+  background: ${colors.blue};
 `;
 
 export const backgroundWarning = () => `
-   background: ${colors.red};
+   background: ${colors.yellow};
 `;
 
 export const backgroundSuccess = () => `

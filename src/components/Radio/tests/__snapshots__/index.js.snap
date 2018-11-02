@@ -84,6 +84,10 @@ exports[`Radio renders correctly 1`] = `
   border: 1px dotted #07AAE6;
 }
 
+.c0 > input:disabled:checked + label {
+  color: #c8ccd4;
+}
+
 .c0 > input:disabled:checked + label::before {
   border: 1px solid #d7dde5;
   background: transparent;
@@ -92,6 +96,10 @@ exports[`Radio renders correctly 1`] = `
 .c0 > input:disabled:checked + label::after {
   color: #d7dde5;
   background: transparent;
+}
+
+.c0 > input:disabled:not(:checked) + label {
+  color: #c8ccd4;
 }
 
 .c0 > input:disabled:not(:checked) + label::before {
@@ -118,153 +126,8 @@ exports[`Radio renders correctly 1`] = `
   display: inline-flex;
 }
 
-.c1:hover {
+.c1:not(:disabled):hover {
   color: #a0a3aa;
-}
-
-.c1:disabled {
-  color: #c8ccd4;
-  cursor: default;
-}
-
-<div
-  className="c0"
->
-  <input
-    onChange={[Function]}
-    type="radio"
-  />
-  <label
-    className="c1"
-  />
-</div>
-`;
-
-exports[`undefined renders correctly 1`] = `
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 > input {
-  display: none;
-}
-
-.c0 > input + label {
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-}
-
-.c0 > input + label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 1px;
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid #d7dde5;
-  background: #fff;
-  border-radius: 50%;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c0 > input + label::after {
-  content: '●';
-  position: absolute;
-  bottom: 1px;
-  left: 1px;
-  font-size: 1.7rem;
-  color: #00aae6;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c0 > input:checked + label::before {
-  border: 1px solid #00aae6;
-}
-
-.c0 > input:checked + label:hover::before {
-  border: 1px solid #d7dde5;
-  background: #00aae60f;
-}
-
-.c0 > input:checked + label::after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c0 > input:not(:checked) + label:hover::before {
-  border: 1px solid #00aae6;
-  background-color: transparent;
-}
-
-.c0 > input:not(:checked) + label::after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.c0 > input:checked:focus + label::before,
-.c0 input:not(:checked):focus + label::before {
-  border: 1px dotted #00aae6;
-}
-
-.c0 > input:disabled:checked + label::before {
-  border: 1px solid #d7dde5;
-  background: transparent;
-}
-
-.c0 > input:disabled:checked + label::after {
-  color: #d7dde5;
-  background: transparent;
-}
-
-.c0 > input:disabled:not(:checked) + label::before {
-  border: 1px solid #d7dde5;
-  background: transparent;
-}
-
-.c1 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-weight: 300;
-  cursor: pointer;
-  vertical-align: middle;
-  color: #44494e;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-  line-height: 20px;
-  margin: 0 20px 0 -14px;
-  left: 24px;
-  position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.c1:hover {
-  color: #a0a3aa;
-}
-
-.c1:disabled {
-  color: #c8ccd4;
-  cursor: default;
 }
 
 <div
