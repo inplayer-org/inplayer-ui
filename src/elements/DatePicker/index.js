@@ -94,7 +94,7 @@ class DatePicker extends React.Component<Props> {
     } = this.props;
 
     const { focusedInput } = this.state;
-    console.log(isOutsideRange, 'range');
+
     return (
       <DatePickerWrapper>
         <DateRangePicker
