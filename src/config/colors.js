@@ -32,4 +32,5 @@ module.exports = {
   paleYellow: '#fffcee',
   green: '#5dc6a3', // success
   paleGreen: '#e4f9f2',
+  black: '#000',
 };

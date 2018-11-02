@@ -67,7 +67,7 @@ const SwitchWrapper = styled.span`
     pointer-events: none;
 
     .react-toggle-track {
-      background: ${transparentize(0.94, '#000')} !important;
+      background: ${transparentize(0.94, colors.black)} !important;
       border: 1px solid ${colors.gray} !important;
     }
   }
