@@ -38,8 +38,9 @@ const SingleDatePickerWrapper = styled.span`
   }
 
   .CalendarDay__default:hover {
-    background: rgba(0, 170, 230, 0.06);
-    color: ${colors.navy};
+    background: rgba(151, 204, 246, 0.06);
+    color: #2a4d8e;
+    border: 1px solid ${colors.gray};
   }
 
   .CalendarDay__hovered_offset {

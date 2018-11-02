@@ -98,12 +98,13 @@ const DatePickerWrapper = styled.span`
     background: ${uiColors('primary.main')};
     color: ${colors.white};
     font-weight: 500;
+    cursor: pointer;
   }
 
   .CalendarDay__selected:hover {
     background: rgba(151, 204, 246, 0.06);
     color: #2a4d8e;
-    border: 1px solid ${colors.lightGray};
+    border: 1px solid ${colors.gray};
   }
 
   .CalendarDay__hovered_span,

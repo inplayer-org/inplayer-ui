@@ -7,7 +7,7 @@ import SingleDayPickerWrapper from './SingleDayPickerWrapper';
 type Props = {
   onDateChange: Function,
   date: string,
-  isOutsideRange: boolean,
+  isOutsideRange: Function,
   id?: string,
 };
 
@@ -27,7 +27,7 @@ class SingleDayPicker extends React.Component<Props> {
     return (
       <SingleDayPickerWrapper>
         <SingleDatePicker
-          isOutsideRange={() => isOutsideRange}
+          isOutsideRange={isOutsideRange}
           id={id || 'date'}
           date={date}
           onDateChange={onDateChange}
