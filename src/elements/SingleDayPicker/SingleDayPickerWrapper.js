@@ -402,7 +402,7 @@ const SingleDatePickerWrapper = styled.span`
     background: ${colors.white};
     position: relative;
     display: inline-block;
-    width: 87px;
+    width: 100px;
     vertical-align: middle;
   }
 
@@ -434,6 +434,7 @@ const SingleDatePickerWrapper = styled.span`
     line-height: 28px;
     cursor: pointer;
     color: ${uiColors('text.main')};
+    text-align: center;
   }
 
   .DateInput_input__small {

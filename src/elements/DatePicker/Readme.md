@@ -29,6 +29,7 @@ class DatePicker extends React.Component {
         endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
+        isOutsideRange={false}
       />
     );
   }
@@ -69,6 +70,7 @@ class DatePickerExample extends React.Component {
         endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
+        isOutsideRange={false}
       />
     );
   }

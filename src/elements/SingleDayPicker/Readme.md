@@ -24,6 +24,7 @@ class SingleDayPicker extends React.Component {
         date={this.state.date}
         id="date"
         onDateChange={this.onDateChange}
+        isOutsideRange={false}
       />
     );
   }
@@ -58,6 +59,7 @@ class SinglePickerExample extends React.Component {
         id="date"
         date={this.state.date}
         onDateChange={this.onDateChange}
+        isOutsideRange={false}
       />
     );
   }
