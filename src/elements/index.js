@@ -8,3 +8,4 @@ export { default as Notification } from './Notification';
 export { default as Typography } from './Typography';
 export { default as DatePicker } from './DatePicker';
 export { default as Icon } from './Typography';
+export { default as SingleDayPicker } from './SingleDayPicker';
