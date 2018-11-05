@@ -5,6 +5,10 @@ import { prop } from 'styled-tools';
 import colors from 'config/colors';
 import { uiColors } from 'utils';
 
+// Components
+import UserMenu, { type UserMenuProps } from 'components/UserMenu';
+import TabNavigation, { type TabNavigationProps } from 'components/TabNavigation';
+
 const Container = styled.header`
   align-items: center;
   background: ${colors.white};
@@ -13,7 +17,6 @@ const Container = styled.header`
   height: ${prop('height', 50)}px;
   justify-content: space-between;
   margin: 0;
-  padding: 0 2%;
   width: 100%;
   z-index: 3;
 `;
@@ -26,12 +29,22 @@ const Title = styled.h3`
 
 type HeaderProps = {
   title?: string,
+  userMenuProps?: UserMenuProps,
+  tabNavigationProps?: TabNavigationProps,
 };
 
-const Header = ({ title }: HeaderProps) => <Container>{title && <Title>{title}</Title>}</Container>;
+const Header = ({ title, userMenuProps, tabNavigationProps }: HeaderProps) => (
+  <Container>
+    {title && <Title>{title}</Title>}
+    {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
+    {userMenuProps && <UserMenu {...userMenuProps} />}
+  </Container>
+);
 
 Header.defaultProps = {
   title: null,
+  userMenuProps: null,
+  tabNavigationProps: null,
 };
 
 export default Header;
