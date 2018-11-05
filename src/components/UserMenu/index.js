@@ -23,7 +23,7 @@ const MenuButton = styled.div`
   transition: all 0.5s ease;
 
   &:hover {
-    background: #f0f3f6;
+    background: ${colors.lightGray};
   }
 `;
 
