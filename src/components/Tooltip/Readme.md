@@ -15,23 +15,27 @@ function Page(props) {
 ### Demo
 
 ```jsx
-<Tooltip placement="up" dataTip="hello world">
-  Hover me!
+<Tooltip placement="up" dataTip="Lorem Ipsum">
+  Tooltip top!
 </Tooltip>
-
-<Tooltip placement="down" dataTip="hello world over here" >
-  Hover me!
+<br />
+<Tooltip placement="down" dataTip="Lorem Ipsum" >
+  Tooltip down!
 </Tooltip>
-
-<Tooltip placement="right" dataTip="hello world on the right">
-  Hover me!
+<br />
+<Tooltip placement="left" dataTip="Lorem Ipsum">
+  Tooltip left!
 </Tooltip>
-
-<Tooltip placement="left" dataTip="hello world on the left">
-  Hover me!
+<br />
+<Tooltip placement="right" dataTip="Lorem Ipsum">
+  Tooltip right!
 </Tooltip>
+```
 
+### Tooltip with Custom Color
+
+```jsx
 <Tooltip color="#0da" placement="down" dataTip="custom color tooltip">
-  Hover me!
+  Tooltip with custom color!
 </Tooltip>
 ```

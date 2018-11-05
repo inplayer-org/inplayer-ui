@@ -20,13 +20,8 @@ exports[`Label renders correctly 1`] = `
   display: inline-flex;
 }
 
-.c0:hover {
+.c0:not(:disabled):hover {
   color: #a0a3aa;
-}
-
-.c0:disabled {
-  color: #c8ccd4;
-  cursor: default;
 }
 
 <label

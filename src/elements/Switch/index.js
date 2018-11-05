@@ -29,7 +29,9 @@ const Switch = ({ id, checked, label, disabled, onChange, className }: Props) =>
         onChange={onToggleChange}
         icons={false}
       />
-      <Label htmlFor={id}>{label}</Label>
+      <Label disabled={disabled} htmlFor={id}>
+        {label}
+      </Label>
     </SwitchWrapper>
   );
 };

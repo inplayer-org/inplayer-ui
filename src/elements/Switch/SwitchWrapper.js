@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import uiColors from 'utils/uiColors';
 import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 const SwitchWrapper = styled.span`
   display: inline-flex;
@@ -52,46 +53,34 @@ const SwitchWrapper = styled.span`
     width: 1px;
   }
 
-  .react-toggle--disabled {
-    background: #00000005 !important;
-    cursor: auto;
-  }
-
-  .react-toggle--disabled .react-toggle-track {
-    background: #00000005 !important;
-    border: 1px solid ${colors.gray} !important;
-  }
-
-  .react-toggle--disabled .react-toggle-thumb {
-    background: #f0f3f6;
-    border: 1px solid ${colors.gray};
-  }
-
   .react-toggle--checked .react-toggle-track {
     border: 1px solid ${uiColors('primary.main')};
     background: ${uiColors('primary.main')};
+  }
+
+  &:hover .react-toggle-track {
+    background: ${transparentize(0.94, colors.skyBlue)};
+    border: 1px solid ${uiColors('primary.main')};
+  }
+
+  .react-toggle.react-toggle--disabled {
+    pointer-events: none;
+
+    .react-toggle-track {
+      background: ${transparentize(0.94, colors.black)} !important;
+      border: 1px solid ${colors.gray} !important;
+    }
   }
 
   .react-toggle--checked .react-toggle-thumb {
     left: 14px;
   }
 
-  &:hover .react-toggle-track {
-    background: rgba(0, 170, 230, 0.06);
-    border: 1px solid #00aae6;
+  &:hover .react-toggle--disabled .react-toggle-track .react-toggle-thumb {
+    border: none;
   }
 
-  &:hover .react-toggle-thumb {
-    border: 1px solid #00aae6;
-  }
-
-  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track,
-  .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: ${uiColors('primary.main')};
-    border: 1px solid ${uiColors('primary.main')};
-  }
-
-  .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-thumb {
+  &:hover .react-toggle:not(.react-toggle--disabled) .react-toggle-thumb {
     border: 1px solid ${uiColors('primary.main')};
   }
 

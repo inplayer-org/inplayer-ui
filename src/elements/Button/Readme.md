@@ -15,52 +15,54 @@ function Page(props) {
 ```
 
 ### Button Sizes
+
 ```jsx
-    <div>
-        <Button size="xs">Button XS</Button> <br />
-        <Button size="sm">Button SM</Button> <br />
-        <Button size="md">Button MD</Button> <br />
-        <Button size="lg">Button LG</Button> <br />
-    </div>
+<div>
+  <Button size="xs">Button XS</Button> <br />
+  <Button size="sm">Button SM</Button> <br />
+  <Button size="md">Button MD</Button> <br />
+  <Button size="lg">Button LG</Button> <br />
+</div>
 ```
 
-### Button Modifiers
+### Button with Modifiers
+
 ```jsx
-    <div>
-        <h3>Button hover:</h3>
-        <Button>No Modifier</Button> <br />
-        <Button buttonModifiers={['hoverInfo']}>Hover Info</Button> <br />
-        <Button buttonModifiers={['hoverDanger']}>Hover Danger</Button> <br />
-        <Button buttonModifiers={['hoverWarning']}>Hover Warning</Button> <br />
-        <Button buttonModifiers={['hoverSuccess']}>Hover Success</Button> <br />
+<div>
+  <h3>Button hover:</h3>
+  <Button>No Modifier</Button> <br />
+  <Button buttonModifiers={['hoverInfo']}>Hover Info</Button> <br />
+  <Button buttonModifiers={['hoverDanger']}>Hover Danger</Button> <br />
+  <Button buttonModifiers={['hoverWarning']}>Hover Warning</Button> <br />
+  <Button buttonModifiers={['hoverSuccess']}>Hover Success</Button> <br />
+  <h3>Button types:</h3>
+  <Button buttonModifiers={['buttonInfo']}>Button Info</Button> <br />
+  <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> <br />
+  <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
+  <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
+  <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> <br />
+  <Button disabled>Button Disabled</Button>
+</div>
+```
 
-        <h3>Button types:</h3>
-        <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> <br />
-        <Button buttonModifiers={['buttonInfo']}>Button Info</Button> <br />
-        <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
-        <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
-        <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> <br />
-        <Button disabled>Button Disabled</Button>
+### Button with Icon
 
-        <h3>Button with icon:</h3>
-        <Button buttonModifiers={['buttonDanger']}
-                icon="exclamation-circle"
-        >
-          Button with Icon
-        </Button>
-        <br/>
-        <Button buttonModifiers={['buttonDanger']}
-                icon="exclamation-circle"
-                iconPosition="right"
-        >
-          Button with Icon on Right
-        </Button>
-        <br/>
-        <Button buttonModifiers={['buttonDanger']}
-                iconModifiers={['statusColorWarning']}
-                icon="exclamation-circle"
-        >
-          Button with Icon Modifier
-        </Button>
-    </div>
+```jsx
+<div>
+  <Button
+    buttonModifiers={['buttonDanger']}
+    icon="exclamation-circle"
+    iconPosition="right"
+  >
+    Button with Icon on Right
+  </Button>
+  <br />
+  <Button
+    buttonModifiers={['buttonDanger']}
+    iconModifiers={['statusColorWarning']}
+    icon="exclamation-circle"
+  >
+    Button with Icon Color Modifier
+  </Button>
+</div>
 ```

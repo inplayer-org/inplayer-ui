@@ -1,4 +1,9 @@
-DatePicker is a component for picking range for dates. It takes a `startDate` and `endDate` as a prop( momentPropTypes.momentObj or null), `startDateId` and `endDateId`, `calendarInfo` prop which can be a boolean (if true, the presets are shown).
+DatePicker is a component for picking range for dates. It takes:
+<br>-`startDate` and `endDate` as a prop( momentPropTypes.momentObj or null)
+<br>- `startDateId` and `endDateId`
+<br>- `onDateChange` function for setting the state for the dates
+<br>- `calendarInfo` prop which can be a boolean (if true, the presets are shown),
+<br>- `isOutsideRange` a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}).
 
 ```jsx static
 const moment = require('moment');
@@ -29,6 +34,7 @@ class DatePicker extends React.Component {
         endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
+        isOutsideRange={() => false}
       />
     );
   }
@@ -69,6 +75,7 @@ class DatePickerExample extends React.Component {
         endDateId="endDate"
         onDateChange={this.onDateChange}
         calendarInfo={true}
+        isOutsideRange={() => false}
       />
     );
   }

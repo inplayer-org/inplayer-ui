@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { uiColors, fontWeights } from 'utils';
+import { ifProp } from 'styled-tools';
+import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
+import { applyStyleModifiers } from 'styled-components-modifiers';
+
+const typographyModifiers = {
+  fontSizeExtraSmall,
+  fontSizeSmall,
+  fontSizeMedium,
+  fontSizeLarge,
+};
 
 const Label = styled.label`
   text-decoration: none;
@@ -14,14 +24,18 @@ const Label = styled.label`
   position: relative;
   display: inline-flex;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: ${uiColors('text.light')};
   }
 
-  &:disabled {
-    color: ${uiColors('text.disabled')};
-    cursor: default;
-  }
+  ${ifProp(
+    'disabled',
+    css`
+      color: ${uiColors('text.disabled')};
+      pointer-events: none;
+    `
+  )};
+  ${applyStyleModifiers(typographyModifiers)};
 `;
 
 export default Label;
