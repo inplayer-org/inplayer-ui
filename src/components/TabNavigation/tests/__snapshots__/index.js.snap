@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabNavigation renders correctly 1`] = `
+.c1 {
+  border-bottom: 2px solid transparent;
+  color: #a0a3aa;
+  cursor: pointer;
+  font-weight: 300;
+  line-height: 2rem;
+  margin-right: 1em;
+  padding: 0 4px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  border-color: #07AAE6;
+  color: #44494e;
+}
+
+.c1:hover {
+  color: #44494e;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    Hello
+  </a>
+</div>
+`;
