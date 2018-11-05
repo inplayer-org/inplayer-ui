@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 
+import UserMenuDropdown, { type UserMenuDropdownProps } from './UserMenuDropdown';
+
 const ProfileImage = styled.img`
   border-radius: 50%;
   height: 30px;
@@ -40,10 +42,12 @@ const UserMenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 10%;
+  position: relative;
 `;
 
-type UserMenuProps = {
+export type UserMenuProps = UserMenuDropdownProps & {
   image: Element<*> | string,
+  className?: string,
 };
 
 type UserMenuState = {
@@ -51,6 +55,10 @@ type UserMenuState = {
 };
 
 class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
+  static defaultProps: {
+    className: string,
+  };
+
   state = {
     open: false,
   };
@@ -58,18 +66,23 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
   toggleMenuOpen = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
-    const { image } = this.props;
+    const { image, menuItems, actionItem, className } = this.props;
     const { open } = this.state;
 
     return (
-      <UserMenuContainer onClick={this.toggleMenuOpen}>
+      <UserMenuContainer className={className} onClick={this.toggleMenuOpen}>
         <ProfileImage src={image} />
         <MenuButton>
           <MenuArrow open={open} />
         </MenuButton>
+        {open && <UserMenuDropdown open={open} menuItems={menuItems} actionItem={actionItem} />}
       </UserMenuContainer>
     );
   }
 }
+
+UserMenu.defaultProps = {
+  className: '',
+};
 
 export default UserMenu;
