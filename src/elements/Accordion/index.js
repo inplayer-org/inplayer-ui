@@ -1,8 +1,10 @@
 // @flow
-import React, { Component } from 'react';
+import React, { Component, type Element } from 'react';
 
 // Components
 import { AccordionWrapper } from './styled';
+import AccordionPanel from './AccordionPanel';
+import AccordionPanelDetails from './AccordionPanelDetails';
 
 type Props = {
   open: boolean,
@@ -12,6 +14,10 @@ type Props = {
 type State = { name: string };
 
 class Accordion extends Component<Props, State> {
+  static AccordionPanelDetails: Element<typeof AccordionPanelDetails>;
+
+  static AccordionPanel: Element<typeof AccordionPanel>;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -63,6 +69,9 @@ class Accordion extends Component<Props, State> {
     );
   }
 }
+
+Accordion.AccordionPanel = AccordionPanel;
+Accordion.AccordionPanelDetails = AccordionPanelDetails;
 
 /** @component */
 export default Accordion;
