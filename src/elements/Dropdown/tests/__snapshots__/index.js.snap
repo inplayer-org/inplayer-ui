@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown renders correctly 1`] = `
+.c0 {
+  border: 1px solid #d7dde5;
+  border-radius: 2px;
+  color: #a0a3aa;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 300;
+  outline: none;
+  padding: 0.2em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c0:hover {
+  color: #07AAE6;
+}
+
+.c0:hover,
+.c0:focus {
+  border-color: #07AAE6;
+}
+
+.c0 > option {
+  color: #a0a3aa;
+  font-weight: 300;
+}
+
+<select
+  className="c0"
+  onChange={[Function]}
+  value="loremIpsum"
+>
+  <option
+    value="loremIpsum"
+  >
+    Lorem Ipsum
+  </option>
+</select>
+`;
