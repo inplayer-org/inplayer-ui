@@ -10,6 +10,7 @@ type Props = {
   children: Node,
   open: boolean,
   toggleClose: Function,
+  saveAction: Function,
 };
 type State = {};
 
@@ -21,31 +22,40 @@ class Accordion extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: -1,
+      name: '',
     };
   }
 
-  activateTab = index => {
-    this.setState(prev => ({
-      activeTab: prev.activeTab === index ? -1 : index,
-    }));
+  toggleOpen = name => {
+    this.setState({ [name]: true });
+  };
+
+  toggleClose = name => {
+    const { saveAction } = this.props;
+    if (saveAction) saveAction();
+    this.setState({ [name]: false });
   };
 
   render() {
     const { panels } = this.props;
-    const { activeTab } = this.state;
+
+    const { state } = this;
 
     return (
       <AccordionWrapper>
         {panels.map((panel, index) => (
           <Accordion.AccordionPanel
             key={index}
-            activeTab={activeTab}
+            activeTab={state[panel.label]}
             index={index}
             {...panel}
-            activateTab={e => {
+            toggleOpen={e => {
               e.preventDefault();
-              this.activateTab(index);
+              this.toggleOpen(panel.label);
+            }}
+            toggleClose={e => {
+              e.preventDefault();
+              this.toggleClose(panel.label);
             }}
           />
         ))}

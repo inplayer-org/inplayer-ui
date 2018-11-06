@@ -27,7 +27,7 @@ const AccordionPanelContainer = styled.div`
       top: 0;
       z-index: 30;
       border-bottom: none;
-      overflow: auto;
+      overflow: visible;
     `
   )};
 `;
@@ -44,7 +44,7 @@ const AccordionPanelHeader = styled.header`
 
 const AccordionTitle = styled(Typography)`
   font-weight: 100 !important;
-  color: #286090 !important;
+  color: ${uiColors('text.main')} !important;
   margin: 0 !important;
   font-size: 22px !important;
 `;
@@ -60,19 +60,18 @@ type Props = {
   label: string,
   content: string,
   activeTab: string,
-  index: number,
-  activateTab: Function,
-  saveAction: Function,
+  toggleOpen: Function,
+  toggleClose: Function,
 };
 
-const AccordionPanel = ({ activateTab, label, content, activeTab, index, saveAction }: Props) => (
-  <AccordionPanelContainer onClick={activateTab} open={activeTab === index}>
-    <AccordionPanelHeader>
+const AccordionPanel = ({ toggleOpen, label, content, activeTab, toggleClose }: Props) => (
+  <AccordionPanelContainer open={activeTab}>
+    <AccordionPanelHeader onClick={toggleOpen}>
       <AccordionTitle variant="h3">{label}</AccordionTitle>
       <AccordionIcon name="info-circle" />
     </AccordionPanelHeader>
     <AccordionPanelDetails content={content} />
-    {activeTab === index && <AccordionFooter open={activeTab === index} saveAction={saveAction} />}
+    {activeTab && <AccordionFooter open={activeTab} toggleClose={toggleClose} />}
   </AccordionPanelContainer>
 );
 
