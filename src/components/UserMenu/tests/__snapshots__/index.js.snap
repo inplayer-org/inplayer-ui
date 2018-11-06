@@ -29,7 +29,7 @@ exports[`UserMenu renders correctly 1`] = `
 }
 
 .c2:hover {
-  background: #f0f3f6;
+  background: #F6F8FB;
 }
 
 .c3 {
