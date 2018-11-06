@@ -1,45 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DatePicker renders correctly 1`] = `
-.c0 .datepreset {
-  width: 96px;
-  padding: 64px 20px 10px;
-}
-
-.c0 .datepreset label {
-  display: block;
-  color: #a0a3aa;
-  font-size: 0.875rem;
-  -webkit-transition: ease 200ms color;
-  transition: ease 200ms color;
-  cursor: pointer;
-  font-weight: 300;
-  padding: 7px;
-}
-
-.c0 .datepreset label:hover {
-  color: #44494e;
-}
-
-.c0 .datepreset label.active {
-  color: #2A4D8E;
-}
-
-.c0 .datepreset label.active::before {
-  height: 6px;
-  width: 6px;
-  content: '';
-  display: inline-block;
-  border-right: 1px solid #2A4D8E;
-  border-top: 1px solid #2A4D8E;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-right: 8px;
-  position: relative;
-  top: -2px;
-}
-
 .c1 .PresetDateRangePicker_panel {
   padding: 0 22px 11px;
 }
@@ -646,85 +607,120 @@ exports[`DatePicker renders correctly 1`] = `
   background-color: #fff;
 }
 
+.c0 .datepreset {
+  width: 96px;
+  padding: 64px 20px 10px;
+}
+
+.c0 .datepreset label {
+  display: block;
+  color: #a0a3aa;
+  font-size: 0.875rem;
+  -webkit-transition: ease 200ms color;
+  transition: ease 200ms color;
+  cursor: pointer;
+  font-weight: 300;
+  padding: 7px;
+}
+
+.c0 .datepreset label:hover {
+  color: #44494e;
+}
+
+.c0 .datepreset label.active {
+  color: #2A4D8E;
+}
+
+.c0 .datepreset label.active::before {
+  height: 6px;
+  width: 6px;
+  content: '';
+  display: inline-block;
+  border-right: 1px solid #2A4D8E;
+  border-top: 1px solid #2A4D8E;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+
 <span
-  className="c0"
+  className="c0 c1"
 >
-  <span
-    className="c1"
+  <div
+    className="DateRangePicker DateRangePicker_1"
   >
-    <div
-      className="DateRangePicker DateRangePicker_1"
-    >
-      <div>
+    <div>
+      <div
+        className="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
+      >
         <div
-          className="DateRangePickerInput DateRangePickerInput_1 DateRangePickerInput__withBorder DateRangePickerInput__withBorder_2"
+          className="DateInput DateInput_1"
         >
-          <div
-            className="DateInput DateInput_1"
+          <input
+            aria-describedby="DateInput__screen-reader-message-startDate"
+            aria-label="Start Date"
+            autoComplete="off"
+            className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+            disabled={false}
+            id="startDate"
+            name="startDate"
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Start Date"
+            readOnly={true}
+            required={false}
+            type="text"
+            value=""
+          />
+          <p
+            className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+            id="DateInput__screen-reader-message-startDate"
           >
-            <input
-              aria-describedby="DateInput__screen-reader-message-startDate"
-              aria-label="Start Date"
-              autoComplete="off"
-              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
-              disabled={false}
-              id="startDate"
-              name="startDate"
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              placeholder="Start Date"
-              readOnly={true}
-              required={false}
-              type="text"
-              value=""
-            />
-            <p
-              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-startDate"
-            >
-              Press the down arrow key to interact with the calendar and
+            Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-            </p>
-          </div>
-          <div
-            aria-hidden="true"
-            className="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
-            role="presentation"
+          </p>
+        </div>
+        <div
+          aria-hidden="true"
+          className="DateRangePickerInput_arrow DateRangePickerInput_arrow_1"
+          role="presentation"
+        >
+          to
+        </div>
+        <div
+          className="DateInput DateInput_1"
+        >
+          <input
+            aria-describedby="DateInput__screen-reader-message-endDate"
+            aria-label="End Date"
+            autoComplete="off"
+            className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
+            disabled={false}
+            id="endDate"
+            name="endDate"
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="End Date"
+            readOnly={true}
+            required={false}
+            type="text"
+            value=""
+          />
+          <p
+            className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
+            id="DateInput__screen-reader-message-endDate"
           >
-            to
-          </div>
-          <div
-            className="DateInput DateInput_1"
-          >
-            <input
-              aria-describedby="DateInput__screen-reader-message-endDate"
-              aria-label="End Date"
-              autoComplete="off"
-              className="DateInput_input DateInput_input_1 DateInput_input__readOnly DateInput_input__readOnly_2"
-              disabled={false}
-              id="endDate"
-              name="endDate"
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              placeholder="End Date"
-              readOnly={true}
-              required={false}
-              type="text"
-              value=""
-            />
-            <p
-              className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
-              id="DateInput__screen-reader-message-endDate"
-            >
-              Press the down arrow key to interact with the calendar and
+            Press the down arrow key to interact with the calendar and
   select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
-            </p>
-          </div>
+          </p>
         </div>
       </div>
     </div>
-  </span>
+  </div>
 </span>
 `;
