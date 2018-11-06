@@ -1,24 +1,17 @@
 // @flow
-import React, { Component, type Element, type Node } from 'react';
+import React, { Component } from 'react';
 
 // Components
 import { AccordionWrapper } from './styled';
-import AccordionPanel from './AccordionPanel';
-import AccordionPanelDetails from './AccordionPanelDetails';
 
 type Props = {
-  children: Node,
   open: boolean,
   toggleClose: Function,
   saveAction: Function,
 };
-type State = {};
+type State = { name: string };
 
 class Accordion extends Component<Props, State> {
-  static AccordionPanelDetails: Element<typeof AccordionPanelDetails>;
-
-  static AccordionPanel: Element<typeof AccordionPanel>;
-
   constructor(props) {
     super(props);
     this.state = {
@@ -26,13 +19,16 @@ class Accordion extends Component<Props, State> {
     };
   }
 
-  toggleOpen = name => {
+  toggleOpen = (name: string) => {
     this.setState({ [name]: true });
   };
 
-  toggleClose = name => {
-    const { saveAction } = this.props;
-    if (saveAction) saveAction();
+  toggleClose = (name: string) => {
+    this.setState({ [name]: false });
+  };
+
+  save = (name: string, saveAction: Function) => {
+    saveAction();
     this.setState({ [name]: false });
   };
 
@@ -57,15 +53,16 @@ class Accordion extends Component<Props, State> {
               e.preventDefault();
               this.toggleClose(panel.label);
             }}
+            save={e => {
+              e.preventDefault();
+              this.save(panel.label, panel.saveAction);
+            }}
           />
         ))}
       </AccordionWrapper>
     );
   }
 }
-
-Accordion.AccordionPanel = AccordionPanel;
-Accordion.AccordionPanelDetails = AccordionPanelDetails;
 
 /** @component */
 export default Accordion;

@@ -60,19 +60,33 @@ type Props = {
   label: string,
   content: string,
   activeTab: string,
+  icon?: string,
   toggleOpen: Function,
   toggleClose: Function,
+  save: Function,
 };
 
-const AccordionPanel = ({ toggleOpen, label, content, activeTab, toggleClose }: Props) => (
+const AccordionPanel = ({
+  toggleOpen,
+  label,
+  content,
+  activeTab,
+  toggleClose,
+  save,
+  icon,
+}: Props) => (
   <AccordionPanelContainer open={activeTab}>
     <AccordionPanelHeader onClick={toggleOpen}>
       <AccordionTitle variant="h3">{label}</AccordionTitle>
-      <AccordionIcon name="info-circle" />
+      <AccordionIcon name={icon} />
     </AccordionPanelHeader>
     <AccordionPanelDetails content={content} />
-    {activeTab && <AccordionFooter open={activeTab} toggleClose={toggleClose} />}
+    {activeTab && <AccordionFooter open={activeTab} toggleClose={toggleClose} save={save} />}
   </AccordionPanelContainer>
 );
+
+AccordionPanel.defaultProps = {
+  icon: '',
+};
 
 export default AccordionPanel;

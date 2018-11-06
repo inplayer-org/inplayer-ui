@@ -9,6 +9,7 @@ import Button from '../Button';
 
 type Props = {
   toggleClose: Function,
+  save: Function,
 };
 
 const AccordionFooterContainer = styled.footer`
@@ -35,10 +36,10 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ toggleClose }: Props) => (
+const AccordionFooter = ({ toggleClose, save }: Props) => (
   <AccordionFooterContainer>
     <AccordionFooterLink onClick={toggleClose}>Close without saving</AccordionFooterLink>
-    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose}>
+    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={save}>
       Save
     </Button>
   </AccordionFooterContainer>
