@@ -7,7 +7,11 @@ const AccordionPanelDetailsContainer = styled.div`
   padding: 10px 6% 26px;
 `;
 
-const AccordionPanelDetails = ({ content }) => (
+type Props = {
+  content: string,
+};
+
+const AccordionPanelDetails = ({ content }: Props) => (
   <AccordionPanelDetailsContainer>
     <Typography variant="p">{content}</Typography>
   </AccordionPanelDetailsContainer>
