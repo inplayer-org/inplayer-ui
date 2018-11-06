@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 import colors from 'config/colors';
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const Container = styled.div`
 const Item = styled.a`
   color: ${uiColors('text.light')};
   box-sizing: border-box;
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
   line-height: 1.75rem;
   padding: 6px 22px;

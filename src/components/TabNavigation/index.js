@@ -2,13 +2,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 
 const Tab = styled.a`
   border-bottom: 2px solid transparent;
   color: ${uiColors('text.light')};
   cursor: pointer;
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   line-height: 2rem;
   margin-right: 1em;
   padding: 0 4px;

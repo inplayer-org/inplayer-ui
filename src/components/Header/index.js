@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import colors from 'config/colors';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 
 // Components
 import UserMenu, { type UserMenuProps } from 'components/UserMenu';
@@ -23,7 +23,7 @@ const Container = styled.header`
 
 const Title = styled.h3`
   color: ${uiColors('text.main')};
-  font-weight: 300;
+  font-weight: ${fontWeights('light')};
   margin: 0;
 `;
 
