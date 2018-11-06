@@ -7,9 +7,9 @@ const AccordionPanelDetailsContainer = styled.div`
   padding: 10px 6% 26px;
 `;
 
-const AccordionPanelDetails = () => (
+const AccordionPanelDetails = ({ content }) => (
   <AccordionPanelDetailsContainer>
-    <Typography variant="p">The asset</Typography>
+    <Typography variant="p">{content}</Typography>
   </AccordionPanelDetailsContainer>
 );
 

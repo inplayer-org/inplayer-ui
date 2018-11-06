@@ -1,78 +1,47 @@
 Accordion is a component used in creating asset.
 
 ```jsx static
-import { Accordion } from '@inplayer-org/inplayer-ui';
-import { Typography } from '@inplayer-org/inplayer-ui';
-
-function Page(props) {
-  return <Accordion>label</Accordion>;
-}
+const panels = [
+  {
+    label: 'Accordion1',
+    icon: '',
+    content: 'Some text for the accordion',
+    saveAction: () => {
+      console.log('saveAction');
+    },
+  },
+  {
+    label: 'Accordion2',
+    icon: '',
+    content: 'Other text for this accordion.',
+    saveAction: () => {
+      console.log('saveAction2');
+    },
+  },
+];
+<Accordion panels={panels} />;
 ```
 
 ### Demo
 
 ```jsx
-class AccordionExample extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      open: {},
-    };
-
-    this.toggleOpen = this.toggleOpen.bind(this);
-    this.toggleClose = this.toggleClose.bind(this);
-  }
-
-  toggleOpen(name) {
-    this.setState({ [name]: true });
-  }
-
-  toggleClose(name) {
-    this.setState({ [name]: false });
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Accordion
-          toggleClose={e => {
-            e.preventDefault();
-            this.toggleClose('accordion1');
-          }}
-          open={this.state.accordion1}
-        >
-          <Accordion.AccordionPanel
-            toggleOpen={e => {
-              e.preventDefault();
-              this.toggleOpen('accordion1');
-            }}
-            open={this.state.accordion1}
-          >
-            <Accordion.AccordionPanelDetails />
-          </Accordion.AccordionPanel>
-        </Accordion>
-
-        <Accordion
-          toggleClose={e => {
-            e.preventDefault();
-            this.toggleClose('accordion2');
-          }}
-          open={this.state.accordion2}
-        >
-          <Accordion.AccordionPanel
-            toggleOpen={e => {
-              e.preventDefault();
-              this.toggleOpen('accordion2');
-            }}
-            open={this.state.accordion2}
-          >
-            <Accordion.AccordionPanelDetails />
-          </Accordion.AccordionPanel>
-        </Accordion>
-      </React.Fragment>
-    );
-  }
-}
-<AccordionExample />;
+const panels = [
+  {
+    label: 'Accordion1',
+    icon: '',
+    content: 'Some text for the accordion',
+    saveAction: () => {
+      console.log('saveAction');
+    },
+  },
+  {
+    label: 'Accordion2',
+    icon: '',
+    content: 'Other text for this accordion.',
+    saveAction: () => {
+      console.log('saveAction2');
+    },
+  },
+];
+<Accordion panels={panels} />;
 ```

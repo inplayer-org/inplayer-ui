@@ -8,7 +8,7 @@ import { ifProp } from 'styled-tools';
 import Button from '../Button';
 
 type Props = {
-  toggleClose: Function,
+  saveAction: Function,
 };
 
 const AccordionFooterContainer = styled.footer`
@@ -35,10 +35,10 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ toggleClose }: Props) => (
+const AccordionFooter = ({ saveAction }: Props) => (
   <AccordionFooterContainer>
-    <AccordionFooterLink onClick={toggleClose}>Close without saving</AccordionFooterLink>
-    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose}>
+    <AccordionFooterLink>Close without saving</AccordionFooterLink>
+    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={saveAction}>
       Save
     </Button>
   </AccordionFooterContainer>

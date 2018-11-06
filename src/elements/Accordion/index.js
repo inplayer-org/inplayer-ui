@@ -5,7 +5,6 @@ import React, { Component, type Element, type Node } from 'react';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
 import AccordionPanelDetails from './AccordionPanelDetails';
-import AccordionFooter from './AccordionFooter';
 
 type Props = {
   children: Node,
@@ -15,17 +14,41 @@ type Props = {
 type State = {};
 
 class Accordion extends Component<Props, State> {
-  static AccordionPanel: Element<typeof AccordionPanel>;
-
   static AccordionPanelDetails: Element<typeof AccordionPanelDetails>;
 
+  static AccordionPanel: Element<typeof AccordionPanel>;
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: -1,
+    };
+  }
+
+  activateTab = index => {
+    this.setState(prev => ({
+      activeTab: prev.activeTab === index ? -1 : index,
+    }));
+  };
+
   render() {
-    const { children, toggleClose, open } = this.props;
+    const { panels } = this.props;
+    const { activeTab } = this.state;
 
     return (
       <AccordionWrapper>
-        {children}
-        {open && <AccordionFooter toggleClose={toggleClose} />}
+        {panels.map((panel, index) => (
+          <Accordion.AccordionPanel
+            key={index}
+            activeTab={activeTab}
+            index={index}
+            {...panel}
+            activateTab={e => {
+              e.preventDefault();
+              this.activateTab(index);
+            }}
+          />
+        ))}
       </AccordionWrapper>
     );
   }

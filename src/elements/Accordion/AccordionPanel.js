@@ -3,7 +3,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
+import { uiColors } from 'utils';
+
+// Components
 import Typography from '../Typography';
+import AccordionPanelDetails from './AccordionPanelDetails';
+import AccordionFooter from './AccordionFooter';
 import Icon from '../Icon';
 
 const AccordionPanelContainer = styled.div`
@@ -13,12 +18,12 @@ const AccordionPanelContainer = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
-  background: #fff;
+  background: ${colors.white};
   transition: ease 500ms height;
   ${ifProp(
     'open',
     css`
-      height: calc(100vh - 120px - 72px);
+      height: 220px;
       top: 0;
       z-index: 30;
       border-bottom: none;
@@ -33,7 +38,7 @@ const AccordionPanelHeader = styled.header`
   padding: 12px 3%;
   width: 100%;
   box-sizing: border-box;
-  background: #fff;
+  background: ${colors.white};
   border-bottom: 1px solid ${colors.lightGray};
 `;
 
@@ -48,20 +53,26 @@ const AccordionIcon = styled(Icon)`
   position: absolute;
   right: 3%;
   top: 18px;
-  color: #00aae6;
+  color: ${uiColors('primary.main')};
 `;
 
 type Props = {
-  open: boolean,
-  toggleOpen: Function,
+  label: string,
+  content: string,
+  activeTab: string,
+  index: number,
+  activateTab: Function,
+  saveAction: Function,
 };
 
-const AccordionPanel = ({ toggleOpen, open }: Props) => (
-  <AccordionPanelContainer onClick={toggleOpen} open={open}>
+const AccordionPanel = ({ activateTab, label, content, activeTab, index, saveAction }: Props) => (
+  <AccordionPanelContainer onClick={activateTab} open={activeTab === index}>
     <AccordionPanelHeader>
-      <AccordionTitle variant="h3">Protected asset</AccordionTitle>
+      <AccordionTitle variant="h3">{label}</AccordionTitle>
       <AccordionIcon name="info-circle" />
     </AccordionPanelHeader>
+    <AccordionPanelDetails content={content} />
+    {activeTab === index && <AccordionFooter open={activeTab === index} saveAction={saveAction} />}
   </AccordionPanelContainer>
 );
 
