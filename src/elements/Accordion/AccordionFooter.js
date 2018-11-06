@@ -12,7 +12,6 @@ type Props = {
 };
 
 const AccordionFooterContainer = styled.footer`
-  position: absolute;
   bottom: ${ifProp('open', '0', '-80px')};
   width: 100%;
   box-sizing: border-box;
@@ -38,7 +37,7 @@ const AccordionFooterLink = styled.a`
 
 const AccordionFooter = ({ toggleClose }: Props) => (
   <AccordionFooterContainer>
-    <AccordionFooterLink>Close without saving</AccordionFooterLink>
+    <AccordionFooterLink onClick={toggleClose}>Close without saving</AccordionFooterLink>
     <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose}>
       Save
     </Button>

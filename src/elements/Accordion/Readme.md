@@ -17,26 +17,62 @@ class AccordionExample extends React.Component {
     super();
 
     this.state = {
-      open: false,
+      open: {},
     };
 
     this.toggleOpen = this.toggleOpen.bind(this);
     this.toggleClose = this.toggleClose.bind(this);
   }
 
-  toggleOpen() {
-    this.setState({ open: true });
+  toggleOpen(name) {
+    this.setState({ [name]: true });
   }
 
-  toggleClose() {
-    this.setState({ open: false });
+  toggleClose(name) {
+    this.setState({ [name]: false });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Accordion
+          toggleClose={e => {
+            e.preventDefault();
+            this.toggleClose('accordion1');
+          }}
+          open={this.state.accordion1}
+        >
+          <Accordion.AccordionPanel
+            toggleOpen={e => {
+              e.preventDefault();
+              this.toggleOpen('accordion1');
+            }}
+            open={this.state.accordion1}
+          >
+            <Accordion.AccordionPanelDetails />
+          </Accordion.AccordionPanel>
+        </Accordion>
+
+        <Accordion
+          toggleClose={e => {
+            e.preventDefault();
+            this.toggleClose('accordion2');
+          }}
+          open={this.state.accordion2}
+        >
+          <Accordion.AccordionPanel
+            toggleOpen={e => {
+              e.preventDefault();
+              this.toggleOpen('accordion2');
+            }}
+            open={this.state.accordion2}
+          >
+            <Accordion.AccordionPanelDetails />
+          </Accordion.AccordionPanel>
+        </Accordion>
+      </React.Fragment>
+    );
   }
 }
-<Accordion toggleClose={this.toggleClose}>
-  <Accordion.AccordionPanel togglOpen={this.toggleOpen}>
-    <Typography variant="h3">Protected asset</Typography>
-    <Icon name="info-circle" />
-  </Accordion.AccordionPanel>
-  <Accordion.AccordionPanelDetails>Content</Accordion.AccordionPanelDetails>
-</Accordion>;
+<AccordionExample />;
 ```

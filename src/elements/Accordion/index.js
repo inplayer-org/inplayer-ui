@@ -9,6 +9,7 @@ import AccordionFooter from './AccordionFooter';
 
 type Props = {
   children: Node,
+  open: boolean,
   toggleClose: Function,
 };
 type State = {};
@@ -19,13 +20,12 @@ class Accordion extends Component<Props, State> {
   static AccordionPanelDetails: Element<typeof AccordionPanelDetails>;
 
   render() {
-    const { children, toggleClose } = this.props;
+    const { children, toggleClose, open } = this.props;
 
     return (
       <AccordionWrapper>
         {children}
-        <AccordionFooter toggleClose={toggleClose} />
-        <AccordionFooter />
+        {open && <AccordionFooter toggleClose={toggleClose} />}
       </AccordionWrapper>
     );
   }
