@@ -1,0 +1,16 @@
+import styled from 'styled-components';
+import colors from 'config/colors';
+
+export const AccordionWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fff;
+  border-left: 1px solid ${colors.gray};
+  box-sizing: border-box;
+  max-width: 700px;
+  border-top: 1px solid ${colors.gray};
+
+  /* height: calc(100vh - 120px); */
+  overflow-y: hidden;
+`;

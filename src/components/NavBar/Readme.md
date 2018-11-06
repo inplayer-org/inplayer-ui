@@ -6,8 +6,10 @@ click logic to the MenuItem. The MenuItem can in an `a` or `Link` from react-rou
 
 ```jsx static
 <Navbar logo="https://inplayer.com/wp-content/themes/darkwin/pics/brand/android-icon-192x192.png">
-    <Navbar.MenuItem icon={<h1>M1</h1>} active>Menu item 1</Navbar.MenuItem>
-    <Navbar.MenuItem icon={<h1>M2</h1>}>Menu item 2</Navbar.MenuItem>
+  <Navbar.MenuItem icon={<h1>M1</h1>} active>
+    Menu item 1
+  </Navbar.MenuItem>
+  <Navbar.MenuItem icon={<h1>M2</h1>}>Menu item 2</Navbar.MenuItem>
 </Navbar>
 ```
 
@@ -15,10 +17,22 @@ click logic to the MenuItem. The MenuItem can in an `a` or `Link` from react-rou
 
 ```jsx
 <Navbar logo="https://inplayer.com/wp-content/themes/darkwin/pics/brand/android-icon-192x192.png">
-    <Navbar.MenuItem icon={<h1>M1</h1>} active>Menu item 1</Navbar.MenuItem>
-    <Navbar.MenuItem icon={<h1>M2</h1>} onClick={() => console.log('Clicked menu item')}>Menu item 2</Navbar.MenuItem>
-    <a style={{
-        textDecoration: 'none'
-    }} href="http://www.example.com"><Navbar.MenuItem icon={<h1>EX</h1>}>External item</Navbar.MenuItem></a>
+  <Navbar.MenuItem icon={<h1>M1</h1>} active>
+    Menu item 1
+  </Navbar.MenuItem>
+  <Navbar.MenuItem
+    icon={<h1>M2</h1>}
+    onClick={() => console.log('Clicked menu item')}
+  >
+    Menu item 2
+  </Navbar.MenuItem>
+  <a
+    style={{
+      textDecoration: 'none',
+    }}
+    href="http://www.example.com"
+  >
+    <Navbar.MenuItem icon={<h1>EX</h1>}>External item</Navbar.MenuItem>
+  </a>
 </Navbar>
 ```
