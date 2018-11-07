@@ -23,11 +23,12 @@ const AccordionPanelContainer = styled.div`
   ${ifProp(
     'open',
     css`
-      height: 220px;
+      position: absolute;
+      height: calc(100vh - 46px - 72px);
       top: 0;
       z-index: 30;
       border-bottom: none;
-      overflow: visible;
+      overflow: auto;
     `
   )};
 `;

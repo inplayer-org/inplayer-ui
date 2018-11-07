@@ -3,14 +3,12 @@ import colors from 'config/colors';
 
 export const AccordionWrapper = styled.div`
   width: 100%;
-  height: 100%;
   position: relative;
-  background: #fff;
+  background: ${colors.white};
   border-left: 1px solid ${colors.gray};
   box-sizing: border-box;
   max-width: 700px;
   border-top: 1px solid ${colors.gray};
-
-  /* height: calc(100vh - 120px); */
+  height: calc(46vh - 120px);
   overflow-y: hidden;
 `;
