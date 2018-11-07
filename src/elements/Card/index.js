@@ -30,9 +30,9 @@ const CardTitle = styled(Typography)`
 type Props = {
   title?: string,
   titleVariant?: string,
-  className: string,
+  className?: string,
   children: Node,
-  style: Object,
+  style?: Object,
 };
 
 const Card = ({ title, titleVariant, className, children, style }: Props) => (
@@ -45,6 +45,8 @@ const Card = ({ title, titleVariant, className, children, style }: Props) => (
 Card.defaultProps = {
   title: '',
   titleVariant: 'h1',
+  className: '',
+  style: '',
 };
 
 export default Card;
