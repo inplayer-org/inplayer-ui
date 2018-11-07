@@ -8,7 +8,7 @@ generateSnapshots(Accordion, {
       label: 'Accordion',
       icon: '',
       content: 'Lorem Ipsum',
-      saveAction: () => {
+      accordionAction: () => {
         console.log('Do something!');
       },
     },

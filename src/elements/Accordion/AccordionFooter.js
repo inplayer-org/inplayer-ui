@@ -5,11 +5,12 @@ import colors from 'config/colors';
 import { uiColors, fontWeights } from 'utils';
 import { ifProp } from 'styled-tools';
 
-import Button from '../Button';
+import Button from 'elements/Button';
 
 type Props = {
-  toggleClose: Function,
-  save: Function,
+  footerLink: string,
+  buttonText: string,
+  toggleClose: (name: string) => boolean,
 };
 
 const AccordionFooterContainer = styled.footer`
@@ -36,11 +37,11 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ toggleClose, save }: Props) => (
+const AccordionFooter = ({ footerLink, buttonText, toggleClose }: Props) => (
   <AccordionFooterContainer>
-    <AccordionFooterLink onClick={toggleClose}>Close without saving</AccordionFooterLink>
-    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={save}>
-      Save
+    <AccordionFooterLink onClick={toggleClose}>{footerLink}</AccordionFooterLink>
+    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={e => toggleClose(e, true)}>
+      {buttonText}
     </Button>
   </AccordionFooterContainer>
 );

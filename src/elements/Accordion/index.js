@@ -4,37 +4,26 @@ import React, { Component, type Element } from 'react';
 // Components
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
-import AccordionPanelDetails from './AccordionPanelDetails';
 
 type Props = {
   open: boolean,
-  toggleClose: Function,
-  saveAction: Function,
+  accordionAction: () => any,
 };
 type State = { name: string };
 
 class Accordion extends Component<Props, State> {
-  static AccordionPanelDetails: Element<typeof AccordionPanelDetails>;
-
   static AccordionPanel: Element<typeof AccordionPanel>;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-    };
-  }
+  state = {};
 
-  toggleOpen = (name: string) => {
+  toggleOpen = (e: Object, name: string) => {
+    e.preventDefault();
     this.setState({ [name]: true });
   };
 
-  toggleClose = (name: string) => {
-    this.setState({ [name]: false });
-  };
-
-  save = (name: string, saveAction: Function) => {
-    saveAction();
+  toggleClose = (e: Object, saveOnClose: boolean, name: string, accordionAction: () => any) => {
+    e.preventDefault();
+    if (saveOnClose) accordionAction();
     this.setState({ [name]: false });
   };
 
@@ -51,18 +40,10 @@ class Accordion extends Component<Props, State> {
             activeTab={state[panel.label]}
             index={index}
             {...panel}
-            toggleOpen={e => {
-              e.preventDefault();
-              this.toggleOpen(panel.label);
-            }}
-            toggleClose={e => {
-              e.preventDefault();
-              this.toggleClose(panel.label);
-            }}
-            save={e => {
-              e.preventDefault();
-              this.save(panel.label, panel.saveAction);
-            }}
+            toggleOpen={e => this.toggleOpen(e, panel.label)}
+            toggleClose={(e, saveOnClose) =>
+              this.toggleClose(e, saveOnClose, panel.label, panel.accordionAction)
+            }
           />
         ))}
       </AccordionWrapper>
@@ -71,7 +52,6 @@ class Accordion extends Component<Props, State> {
 }
 
 Accordion.AccordionPanel = AccordionPanel;
-Accordion.AccordionPanelDetails = AccordionPanelDetails;
 
 /** @component */
 export default Accordion;

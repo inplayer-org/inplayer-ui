@@ -2,24 +2,33 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/>- `label` (title)
 <br/>- `icon` (icon displayed next to the title)
 <br/>- `content` (details represented inside the panel)
-<br/>- `saveAction` (action that should be called on save button)
+<br/>- `accordionAction` (action that should be called on button click)
+<br/> - `renderContent` (action used to render the content)
 
 ```jsx static
 const panels = [
   {
     label: 'Accordion1',
     icon: 'info-circle',
-    content: 'Some text for the accordion',
-    saveAction: () => {
-      console.log('saveAction');
+    renderContent: () => {
+      return <h1>Content for the accordion1</h1>;
+    },
+    footerLink: 'Close without saving',
+    buttonText: 'Save',
+    accordionAction: () => {
+      console.log('accordionAction');
     },
   },
   {
     label: 'Accordion2',
     icon: 'info-circle',
-    content: 'Other text for this accordion.',
-    saveAction: () => {
-      console.log('saveAction2');
+    renderContent: () => {
+      return <h5>Content for the accordionh2</h5>;
+    },
+    footerLink: 'Close',
+    buttonText: 'Delete',
+    accordionAction: () => {
+      console.log('accordionAction2');
     },
   },
 ];
@@ -33,17 +42,25 @@ const panels = [
   {
     label: 'Accordion1',
     icon: 'info-circle',
-    content: 'Some text for the accordion',
-    saveAction: () => {
-      console.log('saveAction2');
+    renderContent: () => {
+      return <h1>Content for the accordion1</h1>;
+    },
+    footerLink: 'Close without saving',
+    buttonText: 'Save',
+    accordionAction: () => {
+      console.log('accordionAction');
     },
   },
   {
     label: 'Accordion2',
     icon: 'info-circle',
-    content: 'Other text for this accordion.',
-    saveAction: () => {
-      console.log('saveAction2');
+    renderContent: () => {
+      return <h5>Content for the accordionh2</h5>;
+    },
+    footerLink: 'Close',
+    buttonText: 'Delete',
+    accordionAction: () => {
+      console.log('accordionAction2');
     },
   },
 ];

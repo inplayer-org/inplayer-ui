@@ -3,18 +3,17 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
-import { uiColors } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 
 // Components
-import Typography from '../Typography';
-import AccordionPanelDetails from './AccordionPanelDetails';
+import Icon from 'elements/Icon';
+import Typography from 'elements/Typography';
 import AccordionFooter from './AccordionFooter';
-import Icon from '../Icon';
 
 const AccordionPanelContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 58px;
+  height: 4.833em;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
@@ -44,10 +43,10 @@ const AccordionPanelHeader = styled.header`
 `;
 
 const AccordionTitle = styled(Typography)`
-  font-weight: 100;
-  color: ${uiColors('text.main')};
-  margin: 0;
-  font-size: 22px;
+  font-weight: ${fontWeights('thin')} !important;
+  color: ${uiColors('text.main')} !important;
+  margin: 0 !important;
+  font-size: ${fontSizes('h5')} !important;
 `;
 
 const AccordionIcon = styled(Icon)`
@@ -57,32 +56,48 @@ const AccordionIcon = styled(Icon)`
   color: ${uiColors('primary.main')};
 `;
 
+const AccordionPanelDetails = styled.div`
+  padding: 10px 6% 26px;
+`;
+
 type Props = {
   label: string,
-  content: string,
   activeTab: string,
   icon?: string,
-  toggleOpen: Function,
-  toggleClose: Function,
-  save: Function,
+  buttonText: string,
+  footerLink: string,
+  toggleOpen: (name: string) => boolean,
+  toggleClose: (name: string) => boolean,
+  accordionAction: () => any,
+  renderContent: () => any,
 };
 
 const AccordionPanel = ({
   toggleOpen,
   label,
-  content,
   activeTab,
   toggleClose,
-  save,
+  accordionAction,
   icon,
+  footerLink,
+  buttonText,
+  renderContent,
 }: Props) => (
   <AccordionPanelContainer open={activeTab}>
     <AccordionPanelHeader onClick={toggleOpen}>
       <AccordionTitle variant="h3">{label}</AccordionTitle>
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
-    <AccordionPanelDetails content={content} />
-    {activeTab && <AccordionFooter open={activeTab} toggleClose={toggleClose} save={save} />}
+    <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
+    {activeTab && (
+      <AccordionFooter
+        open={activeTab}
+        toggleClose={toggleClose}
+        accordionAction={accordionAction}
+        footerLink={footerLink}
+        buttonText={buttonText}
+      />
+    )}
   </AccordionPanelContainer>
 );
 
