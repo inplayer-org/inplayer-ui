@@ -43,10 +43,10 @@ const AccordionPanelHeader = styled.header`
 `;
 
 const AccordionTitle = styled(Typography)`
-  font-weight: ${fontWeights('thin')} !important;
-  color: ${uiColors('text.main')} !important;
-  margin: 0 !important;
-  font-size: ${fontSizes('h5')} !important;
+  font-weight: ${fontWeights('thin')};
+  color: ${uiColors('text.main')};
+  margin: 0;
+  font-size: ${fontSizes('h5')};
 `;
 
 const AccordionIcon = styled(Icon)`
