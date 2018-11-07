@@ -2,8 +2,8 @@
 import React, { type Node } from 'react';
 import styled from 'styled-components';
 import colors from 'config/colors';
+import Typography from 'elements/Typography';
 import CardContent from './CardContent';
-import Typography from '../Typography';
 
 const CardWrapper = styled.div`
   position: relative;
