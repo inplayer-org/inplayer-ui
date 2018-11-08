@@ -11,12 +11,13 @@ type Props = {
   onChange: (checked: boolean) => any,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
-const Radio = ({ label, id, checked, onChange, className, ...rest }: Props) => {
+const Radio = ({ label, id, checked, onChange, className, style, ...rest }: Props) => {
   const onRadioChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
   return (
-    <RadioWrapper className={className}>
+    <RadioWrapper className={className} style={style}>
       <input type="radio" id={id} checked={checked} onChange={onRadioChange} {...rest} />
       <Label htmlFor={id}>{label}</Label>
     </RadioWrapper>
@@ -25,6 +26,7 @@ const Radio = ({ label, id, checked, onChange, className, ...rest }: Props) => {
 
 Radio.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default Radio;

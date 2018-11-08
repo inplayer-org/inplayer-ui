@@ -12,6 +12,7 @@ type Props = {
   logo: ?Element<*> | ?string,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
 type State = {
@@ -32,10 +33,10 @@ class Navbar extends Component<Props, State> {
   toggleOpen = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
-    const { children, logo, className } = this.props;
+    const { children, logo, className, style } = this.props;
     const { open } = this.state;
     return (
-      <NavbarContainer className={className} open={open} onClick={this.toggleOpen}>
+      <NavbarContainer className={className} style={style} open={open} onClick={this.toggleOpen}>
         <MenuWithLogo logo={logo}>{children}</MenuWithLogo>
         <Arrow open={open} />
       </NavbarContainer>
@@ -45,6 +46,7 @@ class Navbar extends Component<Props, State> {
 
 Navbar.defaultProps = {
   className: '',
+  style: {},
 };
 
 Navbar.MenuItem = MenuItem;

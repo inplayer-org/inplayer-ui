@@ -31,10 +31,12 @@ type HeaderProps = {
   title?: string,
   userMenuProps?: UserMenuProps,
   tabNavigationProps?: TabNavigationProps,
+  className?: string,
+  style?: Object,
 };
 
-const Header = ({ title, userMenuProps, tabNavigationProps }: HeaderProps) => (
-  <Container>
+const Header = ({ title, userMenuProps, tabNavigationProps, className, style }: HeaderProps) => (
+  <Container className={className} style={style}>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
     {userMenuProps && <UserMenu {...userMenuProps} />}
@@ -45,6 +47,8 @@ Header.defaultProps = {
   title: null,
   userMenuProps: null,
   tabNavigationProps: null,
+  className: '',
+  style: {},
 };
 
 export default Header;

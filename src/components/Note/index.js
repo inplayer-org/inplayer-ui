@@ -12,6 +12,7 @@ type Props = {
   type: NoteType,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
 const NoteIcon = {
@@ -31,10 +32,10 @@ const NoteIconModifier = {
 const getIconFromNoteType = (icon: string, type: NoteType) =>
   type !== 'informative' && (NoteIcon[type] || icon);
 
-const Note = ({ type, title, text, icon, className }: Props) => {
+const Note = ({ type, title, text, icon, className, style }: Props) => {
   const iconType = getIconFromNoteType(icon, type);
   return (
-    <NoteWrapper type={type} className={className}>
+    <NoteWrapper type={type} className={className} style={style}>
       {iconType && (
         <Icon name={getIconFromNoteType(icon, type)} modifiers={[NoteIconModifier[type]]} />
       )}{' '}
@@ -46,6 +47,7 @@ const Note = ({ type, title, text, icon, className }: Props) => {
 
 Note.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default Note;
