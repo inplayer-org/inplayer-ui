@@ -59,7 +59,9 @@ const Dropdown = ({ options, onChange, style, className, ...rest }: Props) => {
   return (
     <DropdownContainer onChange={onDropdownChange} className={className} style={style} {...rest}>
       {options.map(({ value, displayName }) => (
-        <option value={value}>{displayName}</option>
+        <option value={value} key={value}>
+          {displayName}
+        </option>
       ))}
     </DropdownContainer>
   );
