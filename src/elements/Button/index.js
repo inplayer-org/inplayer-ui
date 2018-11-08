@@ -16,6 +16,8 @@ type Props = HTMLButtonElement &
   ContentProps & {
     buttonModifiers?: Array<string>,
     size?: Size,
+    style?: Object,
+    className?: string,
   };
 
 const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
@@ -37,14 +39,22 @@ Content.defaultProps = {
   iconModifiers: [],
 };
 
-const Button = ({ size, buttonModifiers, className, ...rest }: Props) => (
-  <ButtonWrapper className={className} size={size} modifiers={buttonModifiers} {...rest}>
+const Button = ({ size, buttonModifiers, className, style, ...rest }: Props) => (
+  <ButtonWrapper
+    className={className}
+    style={style}
+    size={size}
+    modifiers={buttonModifiers}
+    {...rest}
+  >
     <Content {...rest} />
   </ButtonWrapper>
 );
 
 Button.defaultProps = {
   size: 'md',
+  style: {},
+  className: '',
 };
 
 /** @component */

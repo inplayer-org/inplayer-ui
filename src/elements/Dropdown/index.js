@@ -47,21 +47,27 @@ type Props = HTMLSelectElement & {
   color?: string,
   /** `Option` is a `{ value: string, displayName: string }` object */
   options: Array<Option>,
+  style?: Object,
 };
 
-const Dropdown = ({ options, onChange, ...rest }: Props) => {
+const Dropdown = ({ options, onChange, style, className, ...rest }: Props) => {
   const onDropdownChange = (e: SyntheticEvent<*>) => {
     if (typeof onChange === 'function') {
       onChange(e.target.value);
     }
   };
   return (
-    <DropdownContainer onChange={onDropdownChange} {...rest}>
+    <DropdownContainer onChange={onDropdownChange} className={className} style={style} {...rest}>
       {options.map(({ value, displayName }) => (
         <option value={value}>{displayName}</option>
       ))}
     </DropdownContainer>
   );
+};
+
+Dropdown.defaultProps = {
+  className: 'className',
+  style: {},
 };
 
 export default Dropdown;
