@@ -9,5 +9,6 @@ export { default as Typography } from './Typography';
 export { default as DatePicker } from './DatePicker';
 export { default as Icon } from './Typography';
 export { default as SingleDayPicker } from './SingleDayPicker';
+export { default as Accordion } from './Accordion';
 export { default as Progress } from './Progress';
 export { default as Card } from './Card';
