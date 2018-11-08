@@ -9,6 +9,8 @@ type Props = {
   date: string,
   isOutsideRange: Function,
   id?: string,
+  style?: Object,
+  className?: string,
 };
 
 class SingleDayPicker extends React.Component<Props> {
@@ -21,11 +23,11 @@ class SingleDayPicker extends React.Component<Props> {
   }
 
   render() {
-    const { date, onDateChange, id, isOutsideRange } = this.props;
+    const { date, onDateChange, id, isOutsideRange, style, className } = this.props;
     const { focusedInput } = this.state;
 
     return (
-      <SingleDayPickerWrapper>
+      <SingleDayPickerWrapper style={style} className={className}>
         <SingleDatePicker
           isOutsideRange={isOutsideRange}
           id={id || 'date'}
@@ -43,6 +45,8 @@ class SingleDayPicker extends React.Component<Props> {
 
 SingleDayPicker.defaultProps = {
   id: 'date',
+  style: {},
+  className: '',
 };
 
 export default SingleDayPicker;

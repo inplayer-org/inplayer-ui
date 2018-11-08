@@ -13,6 +13,7 @@ type Props = {
   onTabClick: (index: number) => void,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
 const renderTabs = (
@@ -34,15 +35,16 @@ const renderTabs = (
     </Tab>
   ));
 
-const Tabs = ({ tabs, selectedTabIndex, onTabClick, className }: Props) =>
+const Tabs = ({ tabs, selectedTabIndex, onTabClick, className, style }: Props) =>
   tabs ? (
-    <TabsWrapper className={className}>
+    <TabsWrapper className={className} style={style}>
       {renderTabs(tabs, selectedTabIndex, onTabClick)}
     </TabsWrapper>
   ) : null;
 
 Tabs.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default Tabs;

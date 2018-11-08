@@ -46,7 +46,7 @@ Card.defaultProps = {
   title: '',
   titleVariant: 'h1',
   className: '',
-  style: '',
+  style: {},
 };
 
 export default Card;

@@ -41,12 +41,14 @@ type Props = {
   tabs: Array<NavigationTab>,
   onTabClick: (index: number) => any,
   selectedTabIndex: number,
+  className?: string,
+  style?: Object,
 };
 
 export type TabNavigationProps = Props;
 
-const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
-  <TabContainer>
+const TabNavigation = ({ tabs, onTabClick, selectedTabIndex, className, style }: Props) => (
+  <TabContainer className={className} style={style}>
     {tabs.map((tab, index) => (
       <Tab key={tab.title} onClick={() => onTabClick(index)} active={selectedTabIndex === index}>
         {tab.title}
@@ -54,5 +56,10 @@ const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
     ))}
   </TabContainer>
 );
+
+TabNavigation.defaultProps = {
+  className: '',
+  style: {},
+};
 
 export default TabNavigation;

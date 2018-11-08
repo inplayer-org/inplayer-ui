@@ -12,16 +12,17 @@ type Props = {
   onChange: (checked: boolean) => any,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
-const Switch = ({ id, checked, label, disabled, onChange, className }: Props) => {
+const Switch = ({ id, checked, label, disabled, onChange, className, style }: Props) => {
   const onToggleChange = (e: SyntheticInputEvent<*>) => {
     if (e.target) {
       onChange(e.target.checked);
     }
   };
   return (
-    <SwitchWrapper className={className}>
+    <SwitchWrapper className={className} style={style}>
       <Toggle
         id={id}
         disabled={disabled}
@@ -38,6 +39,7 @@ const Switch = ({ id, checked, label, disabled, onChange, className }: Props) =>
 
 Switch.defaultProps = {
   className: '',
+  style: {},
 };
 
 /** @component */

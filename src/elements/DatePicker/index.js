@@ -21,6 +21,8 @@ type Props = {
   calendarInfo: boolean,
   isOutsideRange: boolean,
   onDateChange: Function,
+  style?: Object,
+  className?: string,
 };
 
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
@@ -91,12 +93,14 @@ class DatePicker extends React.Component<Props> {
       startDateId,
       endDateId,
       isOutsideRange,
+      style,
+      className,
     } = this.props;
 
     const { focusedInput } = this.state;
 
     return (
-      <DateRangePickerWrapper>
+      <DateRangePickerWrapper style={style} className={className}>
         <DateRangePicker
           isOutsideRange={isOutsideRange}
           onDatesChange={onDateChange}
@@ -119,6 +123,8 @@ class DatePicker extends React.Component<Props> {
 DatePicker.defaultProps = {
   startDateId: 'startDate',
   endDateId: 'endDate',
+  style: {},
+  className: '',
 };
 
 export default DatePicker;

@@ -11,13 +11,14 @@ type Props = {
   onChange: (checked: boolean) => any,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
+  style?: Object,
 };
 
-const Checkbox = ({ label, id, onChange, className, ...rest }: Props) => {
+const Checkbox = ({ label, id, onChange, className, style, ...rest }: Props) => {
   const onCheckboxChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
 
   return (
-    <CheckboxWrapper className={className}>
+    <CheckboxWrapper className={className} style={style}>
       <input type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
       <Label htmlFor={id}>{label}</Label>
     </CheckboxWrapper>
@@ -26,6 +27,7 @@ const Checkbox = ({ label, id, onChange, className, ...rest }: Props) => {
 
 Checkbox.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default Checkbox;

@@ -9,9 +9,10 @@ type NotificationVariant = 'success' | 'danger' | 'warning';
 type NotificationProps = {
   title: string,
   content: string,
-  variant: ?NotificationVariant,
-  duration: ?number,
-  className: ?string,
+  variant?: NotificationVariant,
+  duration?: number,
+  className?: string,
+  style?: Object,
   close: () => void,
 };
 
@@ -24,8 +25,9 @@ const Notification = ({
   duration,
   className,
   close,
+  style,
 }: NotificationProps) => (
-  <NotificationContainer variant={variant} duration={duration} className={className}>
+  <NotificationContainer variant={variant} duration={duration} className={className} style={style}>
     <div>
       <strong>{title}</strong> {content}
     </div>
@@ -65,6 +67,13 @@ Notification.warning = function warning(props: NotificationProps, parentDiv: ?HT
 
 Notification.danger = function danger(props: NotificationProps, parentDiv: ?HTMLDivElement) {
   create({ ...props, variant: 'danger' }, parentDiv);
+};
+
+Notification.defaultProps = {
+  variant: '',
+  duration: 0,
+  className: '',
+  style: {},
 };
 
 /** @component */

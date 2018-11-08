@@ -46,6 +46,7 @@ export type TypographyProps = {
   className?: string,
   modifiers?: Array<String>,
   color?: string,
+  style?: Object,
 };
 
 const Typography = ({
@@ -55,6 +56,7 @@ const Typography = ({
   className,
   modifiers,
   color,
+  style,
 }: TypographyProps) => {
   if (variant === 'p') {
     return (
@@ -63,13 +65,20 @@ const Typography = ({
         description={description}
         modifiers={modifiers}
         color={color}
+        style={style}
       >
         {children}
       </Paragraph>
     );
   }
   return (
-    <Heading className={className} variant={variant} modifiers={modifiers} color={color}>
+    <Heading
+      className={className}
+      variant={variant}
+      modifiers={modifiers}
+      color={color}
+      style={style}
+    >
       {children}
     </Heading>
   );
@@ -79,6 +88,7 @@ Typography.defaultProps = {
   className: '',
   modifiers: [],
   color: '',
+  style: {},
 };
 
 export default Typography;
