@@ -66,7 +66,7 @@ const Dropdown = ({ options, onChange, style, className, ...rest }: Props) => {
 };
 
 Dropdown.defaultProps = {
-  className: 'className',
+  className: '',
   style: {},
 };
 
