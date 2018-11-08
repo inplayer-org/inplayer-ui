@@ -11,3 +11,4 @@ export { default as Icon } from './Typography';
 export { default as SingleDayPicker } from './SingleDayPicker';
 export { default as Accordion } from './Accordion';
 export { default as Progress } from './Progress';
+export { default as Card } from './Card';
