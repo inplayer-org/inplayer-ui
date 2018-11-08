@@ -68,11 +68,10 @@ const Typography = ({
       </Paragraph>
     );
   }
-  const Component = Heading.withComponent(variant);
   return (
-    <Component className={className} variant={variant} modifiers={modifiers} color={color}>
+    <Heading className={className} variant={variant} modifiers={modifiers} color={color}>
       {children}
-    </Component>
+    </Heading>
   );
 };
 

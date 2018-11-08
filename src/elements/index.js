@@ -10,3 +10,4 @@ export { default as DatePicker } from './DatePicker';
 export { default as Icon } from './Typography';
 export { default as SingleDayPicker } from './SingleDayPicker';
 export { default as Progress } from './Progress';
+export { default as Card } from './Card';
