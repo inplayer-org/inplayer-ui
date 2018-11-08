@@ -39,8 +39,8 @@ const AccordionFooterLink = styled.a`
 
 const AccordionFooter = ({ footerLink, buttonText, toggleClose }: Props) => (
   <AccordionFooterContainer>
-    <AccordionFooterLink onClick={toggleClose}>{footerLink}</AccordionFooterLink>
-    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={e => toggleClose(e, true)}>
+    <AccordionFooterLink onClick={toggleClose(false)}>{footerLink}</AccordionFooterLink>
+    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose(true)}>
       {buttonText}
     </Button>
   </AccordionFooterContainer>

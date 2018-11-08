@@ -12,16 +12,16 @@ type Props = {
 type State = { name: string };
 
 class Accordion extends Component<Props, State> {
-  static AccordionPanel: Element<typeof AccordionPanel>;
-
   state = {};
 
-  toggleOpen = (e: Object, name: string) => {
+  toggleOpen = (name: string) => (e: SyntheticEvent<*>) => {
     e.preventDefault();
     this.setState({ [name]: true });
   };
 
-  toggleClose = (e: Object, saveOnClose: boolean, name: string, accordionAction: () => any) => {
+  toggleClose = (name: string, accordionAction: () => any) => (saveOnClose: boolean) => (
+    e: SyntheticEvent<*>
+  ) => {
     e.preventDefault();
     if (saveOnClose) accordionAction();
     this.setState({ [name]: false });
@@ -35,23 +35,19 @@ class Accordion extends Component<Props, State> {
     return (
       <AccordionWrapper>
         {panels.map((panel, index) => (
-          <Accordion.AccordionPanel
+          <AccordionPanel
             key={index}
             activeTab={state[panel.label]}
             index={index}
             {...panel}
-            toggleOpen={e => this.toggleOpen(e, panel.label)}
-            toggleClose={(e, saveOnClose) =>
-              this.toggleClose(e, saveOnClose, panel.label, panel.accordionAction)
-            }
+            toggleOpen={this.toggleOpen(panel.label)}
+            toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
           />
         ))}
       </AccordionWrapper>
     );
   }
 }
-
-Accordion.AccordionPanel = AccordionPanel;
 
 /** @component */
 export default Accordion;
