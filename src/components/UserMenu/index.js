@@ -48,6 +48,7 @@ const UserMenuContainer = styled.div`
 export type UserMenuProps = UserMenuDropdownProps & {
   image: Element<*> | string,
   className?: string,
+  style?: Object,
 };
 
 type UserMenuState = {
@@ -66,11 +67,11 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
   toggleMenuOpen = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
-    const { image, menuItems, actionItem, className } = this.props;
+    const { image, menuItems, actionItem, className, style } = this.props;
     const { open } = this.state;
 
     return (
-      <UserMenuContainer className={className} onClick={this.toggleMenuOpen}>
+      <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
         <ProfileImage src={image} />
         <MenuButton>
           <MenuArrow open={open} />
@@ -83,6 +84,7 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
 
 UserMenu.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default UserMenu;
