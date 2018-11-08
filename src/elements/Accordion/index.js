@@ -1,5 +1,5 @@
 // @flow
-import React, { Component, type Element } from 'react';
+import React, { Component } from 'react';
 
 // Components
 import { AccordionWrapper } from './styled';
