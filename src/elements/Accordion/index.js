@@ -5,9 +5,17 @@ import React, { Component } from 'react';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
 
-type Props = {
-  open: boolean,
+type Panel = {
+  label: string,
+  icon?: string,
+  renderContent: () => any,
+  footerLink: string,
+  buttonText: string,
   accordionAction: () => any,
+};
+
+type Props = {
+  panels: Array<Panel>,
 };
 type State = { name: string };
 

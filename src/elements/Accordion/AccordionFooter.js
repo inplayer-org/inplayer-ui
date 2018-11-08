@@ -10,7 +10,7 @@ import Button from 'elements/Button';
 type Props = {
   footerLink: string,
   buttonText: string,
-  toggleClose: (name: string) => boolean,
+  toggleClose: () => boolean,
 };
 
 const AccordionFooterContainer = styled.footer`
