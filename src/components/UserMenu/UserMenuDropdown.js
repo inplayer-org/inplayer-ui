@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { uiColors, fontWeights } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 
 const Container = styled.div`
@@ -18,6 +18,19 @@ const Container = styled.div`
   position: absolute;
   right: 1%;
   top: 40px;
+
+  &::before {
+    content: '';
+    display: block;
+    box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.08);
+    background: white;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    right: 18px;
+  }
 `;
 
 const Item = styled.a`
@@ -25,12 +38,13 @@ const Item = styled.a`
   box-sizing: border-box;
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
-  line-height: 1.75rem;
+  line-height: 2;
   padding: 6px 22px;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
   width: 100%;
+  font-size: ${fontSizes('medium')};
 
   &:hover {
     color: ${uiColors('text.main')};
