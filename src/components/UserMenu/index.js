@@ -77,10 +77,6 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
     this.setState(({ open }) => ({ open: !open }));
   };
 
-  hide = () => {
-    this.setState({ open: false });
-  };
-
   render() {
     const { image, menuItems, actionItem, className, style } = this.props;
     const { open } = this.state;
@@ -101,7 +97,7 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
             />
           )}
         </UserMenuContainer>
-        {open && <CloseLayer onClick={this.hide} />}
+        {open && <CloseLayer onClick={this.toggleMenuOpen} />}
       </Fragment>
     );
   }
