@@ -22,8 +22,8 @@ const Container = styled.div`
   &::before {
     content: '';
     display: block;
-    box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.08);
-    background: white;
+    box-shadow: -1px -1px 1px 0 ${transparentize(0.8, '#000')};
+    background: ${colors.white};
     transform: rotate(45deg);
     width: 10px;
     height: 10px;
