@@ -22,14 +22,14 @@ const Container = styled.div`
   &::before {
     content: '';
     display: block;
-    box-shadow: -1px -1px 1px 0 ${transparentize(0.8, '#000')};
+    box-shadow: -1px -1px 1px 0 ${transparentize(0.9, '#000')};
     background: ${colors.white};
     transform: rotate(45deg);
     width: 10px;
     height: 10px;
     position: absolute;
     top: -5px;
-    right: 18px;
+    right: 11px;
   }
 `;
 

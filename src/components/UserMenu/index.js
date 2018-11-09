@@ -21,8 +21,6 @@ const MenuButton = styled.div`
   justify-content: center;
   min-width: 30px;
   transition: all 0.5s ease;
-  position: absolute;
-  right: 9px;
 
   &:hover {
     background: ${colors.lightGray};
