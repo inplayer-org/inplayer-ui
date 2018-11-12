@@ -77,17 +77,25 @@ const TableHeaderCell = styled.th`
   max-width: 450px;
 `;
 
+type Columns = {
+  title: string,
+  key: string,
+};
+
+type Data = {};
+
 type Props = {
-  columns: Array,
-  data: Array,
+  columns: Array<Columns>,
+  data: Array<Data>,
   className?: String,
   style?: Object,
 };
 
 class Table extends React.Component<Props> {
-  renderRows = columns => columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+  renderRows = (columns: Array<Columns>) =>
+    columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
 
-  renderData = (columns, data) =>
+  renderData = (columns: Array<Columns>, data: Array<Data>) =>
     data.map((row, i) => (
       <TableRow key={i}>
         {columns.map(column => (
