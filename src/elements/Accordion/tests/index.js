@@ -11,6 +11,9 @@ generateSnapshots(Accordion, {
       accordionAction: () => {
         console.log('Do something!');
       },
+      renderContent: () => {
+        console.log('Return jsx!');
+      },
     },
   ],
 });

@@ -3,24 +3,14 @@
 exports[`Accordion renders correctly 1`] = `
 .c0 {
   width: 100%;
-  height: 100%;
   position: relative;
   background: #fff;
   border-left: 1px solid #d7dde5;
   box-sizing: border-box;
-  max-width: 700px;
+  max-width: 58.333em;
   border-top: 1px solid #d7dde5;
+  height: calc(46vh - 120px);
   overflow-y: hidden;
-}
-
-.c8 {
-  max-width: 720px;
-  font-size: 1rem;
-  color: #44494e;
-}
-
-.c7 {
-  padding: 10px 6% 26px;
 }
 
 .c6 {
@@ -28,10 +18,18 @@ exports[`Accordion renders correctly 1`] = `
   font-size: 1rem;
 }
 
+.c4 {
+  font-family: Roboto;
+  font-weight: 100;
+  margin: 1.7em 0 1em;
+  color: #286090;
+  font-size: 2rem;
+}
+
 .c1 {
   position: relative;
   width: 100%;
-  height: 58px;
+  height: 4.833em;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
@@ -51,10 +49,10 @@ exports[`Accordion renders correctly 1`] = `
 }
 
 .c3 {
-  font-weight: 100 !important;
-  color: #44494e !important;
-  margin: 0 !important;
-  font-size: 22px !important;
+  font-weight: 100;
+  color: #44494e;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .c5 {
@@ -64,12 +62,8 @@ exports[`Accordion renders correctly 1`] = `
   color: #07AAE6;
 }
 
-.c4 {
-  font-family: Roboto;
-  font-weight: 100;
-  margin: 1.7em 0 1em;
-  color: #286090;
-  font-size: 2rem;
+.c7 {
+  padding: 10px 6% 26px;
 }
 
 <div
@@ -82,27 +76,21 @@ exports[`Accordion renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <h3
-        className="c3 -h3 c4"
+      <h1
+        className="c3 c4"
         color=""
+        style={Object {}}
       >
         Accordion
-      </h3>
+      </h1>
       <span
         aria-hidden={true}
-        className="fa fa-info-circle c5 c6"
+        className="fa fa- c5 c6"
       />
     </header>
     <div
       className="c7"
-    >
-      <p
-        className="c8"
-        color=""
-      >
-        Lorem Ipsum
-      </p>
-    </div>
+    />
   </div>
 </div>
 `;

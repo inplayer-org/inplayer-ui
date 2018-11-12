@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders correctly 1`] = `
+.c4 {
+  font-family: Roboto;
+  font-weight: 100;
+  margin: 1.7em 0 1em;
+  color: #286090;
+  font-size: 1.75rem;
+}
+
+.c2 {
+  padding: 20px 20px 10px 20px;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid #d7dde5;
+}
+
+.c3 {
+  margin: 0;
+}
+
+.c5 {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.c5::before {
+  content: '✕';
+  color: #286090;
+}
+
+.c6 {
+  padding: 10px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.c0 {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.72);
+}
+
+.c1 {
+  background: #fff;
+  width: 72%;
+  max-width: 980px;
+  -webkit-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  border-radius: 3px;
+  margin: auto;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <h1
+        className="c3 c4"
+        color=""
+        style={Object {}}
+      />
+      <span
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    />
+  </div>
+</div>
+`;
