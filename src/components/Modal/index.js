@@ -12,6 +12,8 @@ type Props = {
   closeModal: Function,
   children: Node,
   title: string,
+  className: string,
+  style: Object,
 };
 
 const ModalWrapper = styled.div`
@@ -35,9 +37,9 @@ const ModalContainer = styled.div`
   margin: auto;
 `;
 
-const Modal = ({ isModalOpen, closeModal, children, title }: Props) => (
+const Modal = ({ isModalOpen, closeModal, children, title, className, style }: Props) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
-    <ModalContainer onClick={e => e.stopPropagation()}>
+    <ModalContainer className={className} style={style} onClick={e => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
       <ModalContent>{children}</ModalContent>
     </ModalContainer>

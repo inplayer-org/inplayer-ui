@@ -20,15 +20,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={mainStyle.app}>
-        <button style={mainStyle.button} onClick={this.openModal}>
+      <div>
+        <button onClick={this.openModal}>
           Open modal
         </button>
 
         <Modal
+          title="Lorem Ipsum"
           isModalOpen={this.state.isModalOpen}
           closeModal={this.closeModal}
-          style={modalStyle}
         >
            <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -81,9 +81,9 @@ class App extends React.Component {
         <Button onClick={this.openModal}>Open modal</Button>
 
         <Modal
+          title="Lorem Ipsum"
           isModalOpen={this.state.isModalOpen}
           closeModal={this.closeModal}
-          title="Lorem Ipsum"
         >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
