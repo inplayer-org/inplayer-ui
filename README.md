@@ -1,5 +1,7 @@
 # InPlayer React UI Components
 
+[![Build Status](https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev)](https://travis-ci.org/inplayer-org/inplayer-ui)
+
 ## Up & Running
 
 To install dependencies with Yarn, run:
@@ -85,7 +87,7 @@ Helpful information on development workflow in this library lives
 
 ### Linting
 
-_**NOTE:** The linter will run against everything in the `src` directory.
+\_**NOTE:** The linter will run against everything in the `src` directory.
 
 ### JavaScript Linting
 
@@ -171,7 +173,7 @@ This lib uses [react-styleguidist](https://github.com/styleguidist/react-stylegu
 
 ### Build
 
-_**NOTE:** When you run `build`, Babel will create a `build` directory.
+\_**NOTE:** When you run `build`, Babel will create a `build` directory.
 
 Run once:
 
