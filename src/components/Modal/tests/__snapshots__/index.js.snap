@@ -54,10 +54,6 @@ exports[`Modal renders correctly 1`] = `
   background: #fff;
   width: 72%;
   max-width: 980px;
-  -webkit-transition-duration: 4s;
-  transition-duration: 4s;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
   border-radius: 3px;
   margin: auto;
 }

@@ -90,7 +90,11 @@ exports[`Accordion renders correctly 1`] = `
     </header>
     <div
       className="c7"
-    />
+    >
+      <div>
+        Lorem Ipsum
+      </div>
+    </div>
   </div>
 </div>
 `;
