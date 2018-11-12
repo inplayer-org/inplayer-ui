@@ -1,5 +1,5 @@
 // @flow
-import React, { type Element } from 'react';
+import React, { type Element, Fragment } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
@@ -45,6 +45,15 @@ const UserMenuContainer = styled.div`
   position: relative;
 `;
 
+const CloseLayer = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+`;
+
 export type UserMenuProps = UserMenuDropdownProps & {
   image: Element<*> | string,
   className?: string,
@@ -64,20 +73,32 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
     open: false,
   };
 
-  toggleMenuOpen = () => this.setState(({ open }) => ({ open: !open }));
+  toggleMenuOpen = () => {
+    this.setState(({ open }) => ({ open: !open }));
+  };
 
   render() {
     const { image, menuItems, actionItem, className, style } = this.props;
     const { open } = this.state;
 
     return (
-      <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
-        <ProfileImage src={image} />
-        <MenuButton>
-          <MenuArrow open={open} />
-        </MenuButton>
-        {open && <UserMenuDropdown open={open} menuItems={menuItems} actionItem={actionItem} />}
-      </UserMenuContainer>
+      <Fragment>
+        <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
+          <ProfileImage src={image} />
+          <MenuButton>
+            <MenuArrow open={open} />
+          </MenuButton>
+          {open && (
+            <UserMenuDropdown
+              open={open}
+              menuItems={menuItems}
+              actionItem={actionItem}
+              onClick={this.toggleMenuOpen}
+            />
+          )}
+        </UserMenuContainer>
+        {open && <CloseLayer onClick={this.toggleMenuOpen} />}
+      </Fragment>
     );
   }
 }
