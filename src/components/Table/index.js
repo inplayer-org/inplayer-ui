@@ -3,10 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import colors from 'config/colors';
-import { uiColors, fontSizes } from 'utils';
+import { uiColors, fontSizes, fontWeights } from 'utils';
 
 const TableWrapper = styled.table`
-  background: #fff;
+  background: ${colors.white};
   width: 100%;
   text-align: left;
   border-collapse: collapse;
@@ -16,6 +16,17 @@ const TableWrapper = styled.table`
   border-radius: 3px;
   position: relative;
   overflow-x: hidden;
+  font-weight: ${fontWeights('light')};
+
+  .entryname {
+    color: ${uiColors('text.main')};
+  }
+
+  .checkbox {
+    label {
+      top: -10px;
+    }
+  }
 `;
 
 const TableHeadRow = styled.tr`
@@ -26,6 +37,27 @@ const TableHeadRow = styled.tr`
 const TableRow = styled.tr`
   border-bottom: 1px solid ${colors.lightGray};
   width: 100%;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .icon {
+    margin-top: 4px;
+    vertical-align: middle;
+    color: ${colors.darkGray};
+    line-height: 1;
+    font-size: ${fontSizes('medium')};
+    transition: ease all 500ms;
+    position: relative;
+    top: 0;
+  }
+
+  .action {
+    &:hover {
+      color: ${uiColors('text.main')};
+    }
+  }
 `;
 
 const TableCell = styled.td`
@@ -56,10 +88,12 @@ class Table extends React.Component<Props> {
   renderRows = columns => columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
 
   renderData = (columns, data) =>
-    data.map(row => (
-      <TableRow>
+    data.map((row, i) => (
+      <TableRow key={i}>
         {columns.map(column => (
-          <TableCell>{column.render ? column.render(row[column.key]) : row[column.key]}</TableCell>
+          <TableCell key={column.key}>
+            {column.render ? column.render(row[column.key]) : row[column.key]}
+          </TableCell>
         ))}
       </TableRow>
     ));
