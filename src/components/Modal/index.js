@@ -31,8 +31,6 @@ const ModalContainer = styled.div`
   background: ${colors.white};
   width: 72%;
   max-width: 980px;
-  transition-duration: 4s;
-  transition-timing-function: linear;
   border-radius: 3px;
   margin: auto;
 `;

@@ -1,5 +1,5 @@
+import React from 'react';
 import { generateSnapshots } from 'helpers';
-
 import Accordion from '../index';
 
 generateSnapshots(Accordion, {
@@ -11,9 +11,8 @@ generateSnapshots(Accordion, {
       accordionAction: () => {
         console.log('Do something!');
       },
-      renderContent: () => {
-        console.log('Return jsx!');
-      },
+      // eslint-disable-next-line react/display-name
+      renderContent: () => <div>Lorem Ipsum</div>,
     },
   ],
 });
