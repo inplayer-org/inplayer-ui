@@ -7,7 +7,7 @@ import { Typography } from 'elements';
 
 type Props = {
   children: Node,
-  closeModal: Function,
+  closeModal: () => any,
 };
 
 const HeaderWrapper = styled.div`

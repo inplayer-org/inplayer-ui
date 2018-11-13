@@ -9,11 +9,11 @@ import ModalContent from './ModalContent';
 
 type Props = {
   isModalOpen: boolean,
-  closeModal: Function,
+  closeModal: () => any,
   children: Node,
   title: string,
-  className: string,
-  style: Object,
+  className?: string,
+  style?: Object,
 };
 
 const ModalWrapper = styled.div`
@@ -43,5 +43,10 @@ const Modal = ({ isModalOpen, closeModal, children, title, className, style }: P
     </ModalContainer>
   </ModalWrapper>
 );
+
+Modal.defaultProps = {
+  className: '',
+  style: {},
+};
 
 export default Modal;
