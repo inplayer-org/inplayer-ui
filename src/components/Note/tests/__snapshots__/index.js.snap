@@ -28,6 +28,7 @@ exports[`Note renders correctly 1`] = `
 
 <p
   className="c0"
+  style={Object {}}
 >
    
   <strong />

@@ -648,6 +648,7 @@ exports[`DatePicker renders correctly 1`] = `
 
 <span
   className="c0 c1"
+  style={Object {}}
 >
   <div
     className="DateRangePicker DateRangePicker_1"

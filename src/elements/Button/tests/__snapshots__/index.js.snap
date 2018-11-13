@@ -46,6 +46,7 @@ exports[`Button renders correctly 1`] = `
 <button
   className="c0"
   size="md"
+  style={Object {}}
 >
   <span />
 </button>

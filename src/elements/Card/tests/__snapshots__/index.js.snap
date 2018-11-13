@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders correctly 1`] = `
+.c1 {
+  padding: 24px;
+}
+
+.c0 {
+  position: relative;
+  border: 1px solid #d7dde5;
+  border-radius: 3px;
+  background: #fff;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+<div
+  className="c0"
+  style={Object {}}
+>
+  
+  <div
+    className="c1"
+  />
+</div>
+`;

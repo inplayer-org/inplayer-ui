@@ -31,6 +31,7 @@ exports[`Dropdown renders correctly 1`] = `
 <select
   className="c0"
   onChange={[Function]}
+  style={Object {}}
   value="loremIpsum"
 >
   <option

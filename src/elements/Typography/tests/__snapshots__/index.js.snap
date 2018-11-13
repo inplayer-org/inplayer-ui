@@ -12,5 +12,6 @@ exports[`Typography renders correctly 1`] = `
 <h1
   className="c0"
   color=""
+  style={Object {}}
 />
 `;

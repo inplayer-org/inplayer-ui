@@ -132,6 +132,7 @@ exports[`Radio renders correctly 1`] = `
 
 <div
   className="c0"
+  style={Object {}}
 >
   <input
     onChange={[Function]}

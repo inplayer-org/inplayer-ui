@@ -79,6 +79,7 @@ exports[`Navbar renders correctly 1`] = `
   className="c0"
   onClick={[Function]}
   open={false}
+  style={Object {}}
 >
   <span
     className="c1"
