@@ -33,14 +33,12 @@ const data = [
     name: 'Andrej',
     id: 22,
     dateCreated: '2018 / 07 / 24',
-    // edit: <Icon name="edit" className="icon action" />,
   },
   {
     assetType: 'code',
     name: 'Petko',
     id: 28,
     dateCreated: '2018 / 07 / 21',
-    // edit: <Icon name="edit" className="icon action" />,
   },
 ];
 <Table columns={columns} data={data} />;
