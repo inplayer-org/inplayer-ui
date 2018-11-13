@@ -2,11 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
-# [1.0.0] - 13-11-2018
+# [0.1.0] - 13-11-2018
 
 ### Added
 
-- INITIAL RELEASE
+- Grid block
+- Checkbox component
+- Header component
+- Modal component
+- NavBar component
+- Note component
+- Radio component
+- TabNavigation component
+- Tabs component
+- Tooltip component
+- User Menu component
+- Accordion element
+- Button element
+- Card element
+- DatePicker element
+- Dropdown element
+- Icon element
+- Label element
+- Loader element
+- Notification element
+- Progress element
+- SingleDayPicker element
+- Switch element
+- TextArea element
+- TextField element
+- Typography element
 
 ### Changed
 
