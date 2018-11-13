@@ -1,5 +1,9 @@
 Table is a component for displaying information in order user to look for patterns and easy to scan details. <br />
-It takes columns and data props. Columns contain `title` - which is presented at the top od the columns and `key` for each column. Checkboxes should be added to each row if user wants to manipulate data. The data props contain object of each keys that are presented in the table cell according to the key.
+It takes columns, data, activeCheckbox and activeActiveAction props.
+<br /> The columns contain `title` - which is presented at the top od the columns and `key` for each column.
+<br /> The data props contain object of each keys that are presented in the table cell according to the key.
+<br /> The `activeCheckbox` is a boolean prop and if true it will display checkbox in the first row on each column.
+<br /> The `activeAction` object contains title for the column, name of the icon and href prop which indicates where should the icon navigate.
 
 ```jsx static
 const columns = [
@@ -20,28 +24,28 @@ const columns = [
     title: 'Date Created',
     key: 'dateCreated',
   },
-  {
-    title: 'Edit',
-    key: 'edit',
-    render: text => <a href="javascript:;">{text}</a>,
-  },
 ];
 
 const data = [
   {
     assetType: 'music',
-    name: 'Andrej',
+    name: "Won't You Be My Neighbour?",
     id: 22,
     dateCreated: '2018 / 07 / 24',
   },
   {
     assetType: 'code',
-    name: 'Petko',
+    name: 'Soundtrack: No Country',
     id: 28,
     dateCreated: '2018 / 07 / 21',
   },
 ];
-<Table columns={columns} data={data} />;
+<Table
+  columns={columns}
+  data={data}
+  activeCheckbox={true}
+  activeAction={{ title: 'Edit', icon: 'edit', href: 'test.com' }}
+/>;
 ```
 
 ```jsx
