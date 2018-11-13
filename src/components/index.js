@@ -8,3 +8,4 @@ export { default as Navbar } from './NavBar';
 export { default as UserMenu } from './UserMenu';
 export { default as TabNavigation } from './TabNavigation';
 export { default as Header } from './Header';
+export { default as Modal } from './Modal';
