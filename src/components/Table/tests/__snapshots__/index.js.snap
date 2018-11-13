@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders correctly 1`] = `
+.c0 {
+  background: #fff;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  color: #a0a3aa;
+  box-sizing: border-box;
+  border: 1px solid #d7dde5;
+  border-radius: 3px;
+  position: relative;
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+.c0 .entryname {
+  color: #44494e;
+}
+
+.c0 .checkbox label {
+  top: -10px;
+}
+
+.c1 {
+  border-bottom: 1px solid #d7dde5;
+  width: 100%;
+}
+
+.c3 {
+  border-bottom: 1px solid #F6F8FB;
+  width: 100%;
+}
+
+.c3:last-child {
+  border-bottom: none;
+}
+
+.c3 .icon {
+  margin-top: 4px;
+  vertical-align: middle;
+  color: #b9c1cb;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transition: ease all 500ms;
+  transition: ease all 500ms;
+  position: relative;
+  top: 0;
+}
+
+.c3 .action:hover {
+  color: #44494e;
+}
+
+.c4 {
+  font-size: 1rem;
+  padding: 7px 1%;
+  vertical-align: middle;
+  line-height: 30px;
+  text-align: left;
+  max-width: 450px;
+}
+
+.c2 {
+  padding: 8px 1%;
+  font-weight: 300;
+  font-size: 0.875rem;
+  text-align: left;
+  max-width: 450px;
+}
+
+<table
+  className="c0"
+  style={Object {}}
+>
+  <thead>
+    <tr
+      className="c1"
+    >
+      <th
+        className="c2"
+      >
+        Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="c3"
+    >
+      <td
+        className="c4"
+      >
+        Eli
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
