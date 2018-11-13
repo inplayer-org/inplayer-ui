@@ -4,12 +4,9 @@ It takes columns and data props. Columns contain `title` - which is presented at
 ```jsx static
 const columns = [
   {
-    title: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    key: 'check',
-  },
-  {
     title: '',
     key: 'assetType',
+    render: value => <Icon name={value} className="icon" />,
   },
   {
     title: 'Name',
@@ -32,20 +29,18 @@ const columns = [
 
 const data = [
   {
-    check: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    assetType: <Icon name="music" className="icon" />,
+    assetType: 'music',
     name: 'Andrej',
     id: 22,
     dateCreated: '2018 / 07 / 24',
-    edit: <Icon name="edit" className="icon action" />,
+    // edit: <Icon name="edit" className="icon action" />,
   },
   {
-    check: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    assetType: <Icon name="code" className="icon" />,
+    assetType: 'code',
     name: 'Petko',
     id: 28,
     dateCreated: '2018 / 07 / 21',
-    edit: <Icon name="edit" className="icon action" />,
+    // edit: <Icon name="edit" className="icon action" />,
   },
 ];
 <Table columns={columns} data={data} />;
@@ -54,12 +49,9 @@ const data = [
 ```jsx
 const columns = [
   {
-    title: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    key: 'check',
-  },
-  {
     title: '',
     key: 'assetType',
+    render: value => <Icon name={value} className="icon" />,
   },
   {
     title: 'Name',
@@ -73,30 +65,26 @@ const columns = [
     title: 'Date Created',
     key: 'dateCreated',
   },
-  {
-    title: 'Edit',
-    key: 'edit',
-    render: text => <a href="javascript:;">{text}</a>,
-  },
 ];
 
 const data = [
   {
-    check: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    assetType: <Icon name="music" className="icon" />,
-    name: 'Andrej',
+    assetType: 'music',
+    name: "Won't You Be My Neighbour?",
     id: 22,
     dateCreated: '2018 / 07 / 24',
-    edit: <Icon name="edit" className="icon action" />,
   },
   {
-    check: <Checkbox className="checkbox" onChange={e => console.log(e)} />,
-    assetType: <Icon name="code" className="icon" />,
-    name: 'Petko',
+    assetType: 'code',
+    name: 'Soundtrack: No Country',
     id: 28,
     dateCreated: '2018 / 07 / 21',
-    edit: <Icon name="edit" className="icon action" />,
   },
 ];
-<Table columns={columns} data={data} />;
+<Table
+  columns={columns}
+  data={data}
+  activeCheckbox={true}
+  activeAction={{ title: 'Edit', icon: 'edit', href: 'test.com' }}
+/>;
 ```

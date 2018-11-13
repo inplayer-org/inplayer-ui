@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
+import Checkbox from 'components/Checkbox';
+import Icon from 'elements/Icon';
 
 const TableWrapper = styled.table`
   background: ${colors.white};
@@ -89,31 +91,77 @@ type Props = {
   data: Array<Data>,
   className?: String,
   style?: Object,
+  activeAction: Object,
+  activeCheckbox: boolean,
 };
 
 class Table extends React.Component<Props> {
-  renderRows = (columns: Array<Columns>) =>
-    columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+  renderColumns = (columns: Array<Data>, activeCheckbox, activeAction) => {
+    if (activeCheckbox) {
+      const rowCheckbox = {
+        title: (
+          <Checkbox
+            className="checkbox"
+            id="checkbox"
+            onChange={e => {
+              console.log(e);
+            }}
+          />
+        ),
+        key: 'check',
+      };
 
-  renderData = (columns: Array<Columns>, data: Array<Data>) =>
-    data.map((row, i) => (
+      columns.unshift(rowCheckbox);
+    }
+
+    if (activeAction) {
+      const rowAction = {
+        title: activeAction.title,
+        key: 'edit',
+        render: text => <a href={activeAction.href}>{text}</a>,
+      };
+      columns.push(rowAction);
+    }
+
+    return columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+  };
+
+  renderData = (columns: Array<Columns>, data: Array<Data>, activeCheckbox, activeAction) => {
+    if (activeCheckbox) {
+      const cellCheckbox = (
+        <Checkbox className="checkbox" id="checkbox" onChange={e => console.log(e)} />
+      );
+      data.forEach(dataCell => {
+        dataCell.check = cellCheckbox;
+      });
+    }
+
+    if (activeAction) {
+      const cellAction = <Icon name={activeAction.icon} className="icon action" />;
+      data.forEach(dataRow => {
+        dataRow.edit = cellAction;
+      });
+    }
+
+    return data.map((row, i) => (
       <TableRow key={i}>
-        {columns.map(column => (
-          <TableCell key={column.key}>
+        {columns.map((column, index) => (
+          <TableCell key={index}>
             {column.render ? column.render(row[column.key]) : row[column.key]}
           </TableCell>
         ))}
       </TableRow>
     ));
+  };
 
   render() {
-    const { columns, data, className, style } = this.props;
+    const { columns, data, className, style, activeCheckbox, activeAction } = this.props;
     return (
       <TableWrapper className={className} style={style}>
         <thead>
-          <TableHeadRow>{this.renderRows(columns)}</TableHeadRow>
+          <TableHeadRow>{this.renderColumns(columns, activeCheckbox, activeAction)}</TableHeadRow>
         </thead>
-        <tbody>{this.renderData(columns, data)}</tbody>
+        <tbody>{this.renderData(columns, data, activeCheckbox, activeAction)}</tbody>
       </TableWrapper>
     );
   }
