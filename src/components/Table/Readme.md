@@ -63,13 +63,6 @@ const columns = [
     title: 'Date Created',
     key: 'dateCreated',
   },
-  {
-    title: 'Action',
-    key: 'action',
-    render: () => (
-      <Icon name="cog" onClick={() => console.log('Do something')} />
-    ),
-  },
 ];
 
 const data = [
@@ -87,5 +80,20 @@ const data = [
   },
 ];
 
-<Table rowSelection={true} columns={columns} data={data} />;
+<Table
+  rowSelection={true}
+  columns={columns}
+  data={data}
+  options={{
+    rowSelection: {
+      active: true,
+      action: data => console.log(data),
+    },
+    rowActions: [
+      { icon: 'edit', onClick: id => console.log(id) },
+      { icon: 'cog', onClick: id => console.log(id) },
+      { icon: 'trash', onClick: id => console.log(id) },
+    ],
+  }}
+/>;
 ```
