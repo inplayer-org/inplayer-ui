@@ -56,8 +56,11 @@ const TextFieldWrapper = styled.input`
         left: 1px !important;
       }
 
-      ::-webkit-search-cancel-button {
-        background-color: ${colors.gray};
+      ::-webkit-search-decoration,
+      ::-webkit-search-cancel-button,
+      ::-webkit-search-results-button,
+      ::-webkit-search-results-decoration {
+        cursor: pointer;
       }
     `
   )};
@@ -82,15 +85,18 @@ type Props = {
   id: string,
 };
 
-const TextField = ({ type, placeholder, name, ...rest }: Props) =>
-  type === 'search' ? (
+const TextField = ({ type, placeholder, name, onChange, ...rest }: Props) => {
+  const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.value);
+
+  return type === 'search' ? (
     <SearchWrapper>
       <InputIcon name={name} />
-      <TextFieldWrapper type={type} placeholder={placeholder} {...rest} />
+      <TextFieldWrapper type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
     </SearchWrapper>
   ) : (
-    <TextFieldWrapper type={type} placeholder={placeholder} />
+    <TextFieldWrapper type={type} placeholder={placeholder} onChange={onInputChange} />
   );
+};
 
 /** @component */
 export default TextField;

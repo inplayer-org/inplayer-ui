@@ -4,13 +4,28 @@ Text input is a input component for text. You can use it directly like this:
 import { TextField } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
-  return <TextField type="text" />;
+  return (
+    <TextField
+      type="text"
+      placeholder="text"
+      onChange={() => console.log('onChange')}
+    />
+  );
 }
 ```
 
 ### Demo
 
 ```jsx
-<TextField type="text" placeholder="text" />
-<TextField search id="search" type="search"  name="search" placeholder="Search" />
+<TextField
+  type="text"
+  placeholder="text"
+  onChange={() => console.log('onChange')} />
+<TextField
+  search
+  type="search"
+  name="search"
+  placeholder="Search"
+  onChange={() => console.log('onChange')}
+/>
 ```
