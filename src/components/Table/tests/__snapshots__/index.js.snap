@@ -1,6 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table renders correctly 1`] = `
+.c4 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 300;
+  cursor: pointer;
+  vertical-align: middle;
+  color: #44494e;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+  line-height: 20px;
+  margin: 0 20px 0 -14px;
+  left: 24px;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c4:not(:disabled):hover {
+  color: #a0a3aa;
+}
+
+.c3 > input {
+  display: none;
+}
+
+.c3 > input + label {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
+.c3 > input + label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #d7dde5;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.c3 > input + label::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.c3 > input:checked + label::before {
+  border: 1px solid #07AAE6;
+}
+
+.c3 > input:checked + label::after {
+  border: 2px solid #07AAE6;
+  border-top: none;
+  border-right: none;
+  width: 0.5rem;
+  height: 0.25rem;
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(-45deg);
+  -ms-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg);
+}
+
+.c3 > input:not(:checked) + label::after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  width: 0.5rem;
+  height: 0.25rem;
+  opacity: 1;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c3 > input:checked + label:hover::before {
+  border-color: transparent;
+  background: #97CCF6;
+}
+
+.c3 > input:checked + label:hover::after {
+  border-color: #07AAE6;
+}
+
+.c3 > input:not(:checked) + label:hover::before {
+  border: 1px solid #07AAE6;
+  background-color: #97CCF6;
+}
+
+.c3 > input:not(:checked) + label:hover::after {
+  -webkit-transform: scale(1) rotate(-45deg);
+  -ms-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg);
+}
+
+.c3 > input:checked:focus + label::before,
+.c3 input:not(:checked):focus + label::before {
+  border: 1px dotted #97CCF6;
+}
+
+.c3 > input:disabled:checked + label {
+  color: #c8ccd4;
+}
+
+.c3 > input:disabled:checked + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
+}
+
+.c3 > input:disabled:checked + label::after {
+  border-color: #d7dde5;
+  background: transparent;
+}
+
+.c3 > input:disabled:not(:checked) + label {
+  color: #c8ccd4;
+}
+
+.c3 > input:disabled:not(:checked) + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
+}
+
+.c8 {
+  display: inline-block;
+  font-size: 1rem;
+}
+
 .c0 {
   background: #fff;
   width: 100%;
@@ -28,16 +164,16 @@ exports[`Table renders correctly 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c5 {
   border-bottom: 1px solid #F6F8FB;
   width: 100%;
 }
 
-.c3:last-child {
+.c5:last-child {
   border-bottom: none;
 }
 
-.c3 .icon {
+.c5 .icon {
   margin-top: 4px;
   vertical-align: middle;
   color: #b9c1cb;
@@ -49,11 +185,11 @@ exports[`Table renders correctly 1`] = `
   top: 0;
 }
 
-.c3 .action:hover {
+.c5 .action:hover {
   color: #44494e;
 }
 
-.c4 {
+.c6 {
   font-size: 1rem;
   padding: 7px 1%;
   vertical-align: middle;
@@ -70,6 +206,17 @@ exports[`Table renders correctly 1`] = `
   max-width: 450px;
 }
 
+.c7 {
+  padding: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c7:hover {
+  color: #07AAE6;
+}
+
 <table
   className="c0"
   style={Object {}}
@@ -81,18 +228,77 @@ exports[`Table renders correctly 1`] = `
       <th
         className="c2"
       >
+        <div
+          className="checkbox c3"
+          style={Object {}}
+        >
+          <input
+            checked={false}
+            id="toggleAll"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="c4"
+            htmlFor="toggleAll"
+          />
+        </div>
+      </th>
+      <th
+        className="c2"
+      >
         Name
+      </th>
+      <th
+        className="c2"
+      >
+        Actions
       </th>
     </tr>
   </thead>
   <tbody>
     <tr
-      className="c3"
+      className="c5"
     >
       <td
-        className="c4"
+        className="c6"
+      >
+        <div
+          className="checkbox c3"
+          style={Object {}}
+        >
+          <input
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="c4"
+          />
+        </div>
+      </td>
+      <td
+        className="c6"
       >
         Eli
+      </td>
+      <td
+        className="c6"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-edit c7 c8"
+          onClick={[Function]}
+        />
+        <span
+          aria-hidden={true}
+          className="fa fa-cog c7 c8"
+          onClick={[Function]}
+        />
+        <span
+          aria-hidden={true}
+          className="fa fa-trash c7 c8"
+          onClick={[Function]}
+        />
       </td>
     </tr>
   </tbody>
