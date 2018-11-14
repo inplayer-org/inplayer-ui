@@ -81,6 +81,11 @@ const TableHeaderCell = styled.th`
 const ActionIcon = styled(Icon)`
   padding: 2px;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${uiColors('primary.main')};
+  }
 `;
 
 type Columns = {
@@ -88,6 +93,8 @@ type Columns = {
   key: string,
   render: Function,
 };
+
+type Data = {};
 
 type TableOptions = {
   rowSelection: {
@@ -102,7 +109,7 @@ type TableOptions = {
 
 type Props = {
   columns: Array<Columns>,
-  data: Array<Object>,
+  data: Array<Data>,
   className?: String,
   style?: Object,
   options?: TableOptions,
@@ -114,11 +121,9 @@ class Table extends React.Component<Props> {
     selectedAll: false,
   };
 
-  toggleRow = id => () => {
+  toggleRow = (id: number) => () => {
     const { selected } = this.state;
-
     const isSelected = !selected[id];
-
     const newSelected = {
       ...selected,
       [id]: isSelected,
@@ -133,7 +138,6 @@ class Table extends React.Component<Props> {
   toggleSelectAll = () => {
     const { selectedAll } = this.state;
     const { data } = this.props;
-
     const selected = data.reduce((acc, current) => ({ ...acc, [current.id]: !selectedAll }), {});
 
     this.setState(({ selectedAll: prevSelectedAll }) => ({
@@ -142,7 +146,7 @@ class Table extends React.Component<Props> {
     }));
   };
 
-  generateRows = (data, options: TableOptions) => {
+  generateRows = (data: Array<Data>, options: TableOptions) => {
     let newData = [...data];
     const {
       rowSelection: { active },
@@ -166,12 +170,12 @@ class Table extends React.Component<Props> {
     }
 
     if (rowActions) {
-      newData.map(dataCell => {
-        dataCell.actions = rowActions.map(action => (
+      newData = newData.map(dataCell => ({
+        ...dataCell,
+        actions: rowActions.map(action => (
           <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
-        ));
-        return dataCell;
-      });
+        )),
+      }));
     }
 
     return newData;
@@ -210,12 +214,12 @@ class Table extends React.Component<Props> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Data>, options) =>
+  renderColumns = (columns: Array<Data>, options: TableOptions) =>
     this.generateColumns(columns, options).map(column => (
       <TableHeaderCell>{column.title}</TableHeaderCell>
     ));
 
-  renderData = (columns: Array<Columns>, data: Array<Data>, options) => {
+  renderData = (columns: Array<Columns>, data: Array<Data>, options: TableOptions) => {
     const newColumns = this.generateColumns(columns, options);
     const newData = this.generateRows(data, options);
 
