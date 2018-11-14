@@ -1,8 +1,13 @@
-import styled from 'styled-components';
+// @flow
+import React from 'react';
+import styled, { css } from 'styled-components';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
+import { ifProp } from 'styled-tools';
 
-const TextField = styled.input`
+import Icon from 'elements/Icon';
+
+const TextFieldWrapper = styled.input`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -24,7 +29,68 @@ const TextField = styled.input`
   &:focus {
     border-bottom: 1px solid ${uiColors('primary.main')};
   }
+
+  ${ifProp(
+    'search',
+    css`
+      padding-left: 28px;
+      ::-webkit-input-placeholder {
+        position: relative !important;
+        left: 1px !important;
+      }
+
+      :-moz-placeholder {
+        /* Firefox 18- */
+        position: relative !important;
+        left: 1px !important;
+      }
+
+      ::-moz-placeholder {
+        /* Firefox 19+ */
+        position: relative !important;
+        left: 1px !important;
+      }
+
+      :-ms-input-placeholder {
+        position: relative !important;
+        left: 1px !important;
+      }
+
+      ::-webkit-search-cancel-button {
+        background-color: ${colors.gray};
+      }
+    `
+  )};
 `;
+
+const InputIcon = styled(Icon)`
+  position: absolute;
+  color: ${colors.darkGray};
+  left: 8px;
+  top: 19px;
+`;
+
+const SearchWrapper = styled.div`
+  position: relative;
+  max-width: 560px;
+`;
+
+type Props = {
+  type: string,
+  placeholder: string,
+  name: string,
+  id: string,
+};
+
+const TextField = ({ type, placeholder, name, ...rest }: Props) =>
+  type === 'search' ? (
+    <SearchWrapper>
+      <InputIcon name={name} />
+      <TextFieldWrapper type={type} placeholder={placeholder} {...rest} />
+    </SearchWrapper>
+  ) : (
+    <TextFieldWrapper type={type} placeholder={placeholder} />
+  );
 
 /** @component */
 export default TextField;

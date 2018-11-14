@@ -12,4 +12,5 @@ function Page(props) {
 
 ```jsx
 <TextField type="text" placeholder="text" />
+<TextField search id="search" type="search"  name="search" placeholder="Search" />
 ```
