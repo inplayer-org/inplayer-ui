@@ -7,7 +7,7 @@ import { ifProp } from 'styled-tools';
 
 import Icon from 'elements/Icon';
 
-const TextFieldWrapper = styled.input`
+const Input = styled.input`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -34,24 +34,7 @@ const TextFieldWrapper = styled.input`
     'search',
     css`
       padding-left: 28px;
-      ::-webkit-input-placeholder {
-        position: relative !important;
-        left: 1px !important;
-      }
-
-      :-moz-placeholder {
-        /* Firefox 18- */
-        position: relative !important;
-        left: 1px !important;
-      }
-
-      ::-moz-placeholder {
-        /* Firefox 19+ */
-        position: relative !important;
-        left: 1px !important;
-      }
-
-      :-ms-input-placeholder {
+      ::placeholder {
         position: relative !important;
         left: 1px !important;
       }
@@ -81,20 +64,19 @@ const SearchWrapper = styled.div`
 type Props = {
   type: string,
   placeholder: string,
-  name: string,
   id: string,
 };
 
-const TextField = ({ type, placeholder, name, onChange, ...rest }: Props) => {
+const TextField = ({ type, placeholder, onChange, ...rest }: Props) => {
   const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.value);
 
   return type === 'search' ? (
     <SearchWrapper>
-      <InputIcon name={name} />
-      <TextFieldWrapper type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
+      <InputIcon name="search" />
+      <Input type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
     </SearchWrapper>
   ) : (
-    <TextFieldWrapper type={type} placeholder={placeholder} onChange={onInputChange} />
+    <Input type={type} placeholder={placeholder} onChange={onInputChange} />
   );
 };
 
