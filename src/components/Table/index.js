@@ -1,11 +1,9 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
-import Icon from 'elements/Icon';
 
 const TableWrapper = styled.table`
   background: ${colors.white};
@@ -91,61 +89,93 @@ type Props = {
   data: Array<Data>,
   className?: String,
   style?: Object,
-  activeAction: Object,
-  activeCheckbox: boolean,
+  rowSelection?: boolean,
 };
 
 class Table extends React.Component<Props> {
-  renderColumns = (columns: Array<Data>, activeCheckbox, activeAction) => {
-    if (activeCheckbox) {
+  state = {
+    selected: {},
+    globalSelected: false,
+  };
+
+  toggleRow = id => () => {
+    const { selected } = this.state;
+
+    const isSelected = !selected[id];
+
+    const newSelected = {
+      ...selected,
+      [id]: isSelected,
+    };
+
+    this.setState(({ globalSelected }) => ({
+      selected: newSelected,
+      globalSelected: !isSelected ? false : globalSelected,
+    }));
+  };
+
+  toggleSelectAll = () => {
+    const { globalSelected } = this.state;
+    const { data } = this.props;
+
+    const selected = data.reduce((acc, current) => ({ ...acc, [current.id]: !globalSelected }), {});
+
+    this.setState(({ globalSelected: prevGlobal }) => ({
+      selected,
+      globalSelected: !prevGlobal,
+    }));
+  };
+
+  generateColumns = (columns: Array<Data>, rowSelection) => {
+    const { globalSelected } = this.state;
+    let newColumns = [...columns];
+    if (rowSelection) {
       const rowCheckbox = {
         title: (
           <Checkbox
+            checked={globalSelected}
             className="checkbox"
-            id="checkbox"
-            onChange={e => {
-              console.log(e);
-            }}
+            id="toggleAll"
+            onChange={this.toggleSelectAll}
           />
         ),
         key: 'check',
       };
 
-      columns.unshift(rowCheckbox);
+      newColumns = [rowCheckbox, ...columns];
     }
 
-    if (activeAction) {
-      const rowAction = {
-        title: activeAction.title,
-        key: 'edit',
-        render: text => <a href={activeAction.href}>{text}</a>,
-      };
-      columns.push(rowAction);
-    }
-
-    return columns.map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+    return newColumns;
   };
 
-  renderData = (columns: Array<Columns>, data: Array<Data>, activeCheckbox, activeAction) => {
-    if (activeCheckbox) {
-      const cellCheckbox = (
-        <Checkbox className="checkbox" id="checkbox" onChange={e => console.log(e)} />
-      );
-      data.forEach(dataCell => {
-        dataCell.check = cellCheckbox;
-      });
+  renderColumns = (columns: Array<Data>, rowSelection) =>
+    this.generateColumns(columns, rowSelection).map(column => (
+      <TableHeaderCell>{column.title}</TableHeaderCell>
+    ));
+
+  renderData = (columns: Array<Columns>, data: Array<Data>, rowSelection) => {
+    let newData = [...data];
+    if (rowSelection) {
+      const { selected } = this.state;
+
+      newData = data.map(dataCell => ({
+        ...dataCell,
+        check: (
+          <Checkbox
+            id={dataCell.id}
+            className="checkbox"
+            checked={selected[dataCell.id]}
+            onChange={this.toggleRow(dataCell.id)}
+          />
+        ),
+      }));
     }
 
-    if (activeAction) {
-      const cellAction = <Icon name={activeAction.icon} className="icon action" />;
-      data.forEach(dataRow => {
-        dataRow.edit = cellAction;
-      });
-    }
+    const newColumns = this.generateColumns(columns, rowSelection);
 
-    return data.map((row, i) => (
+    return newData.map((row, i) => (
       <TableRow key={i}>
-        {columns.map((column, index) => (
+        {newColumns.map((column, index) => (
           <TableCell key={index}>
             {column.render ? column.render(row[column.key]) : row[column.key]}
           </TableCell>
@@ -155,13 +185,13 @@ class Table extends React.Component<Props> {
   };
 
   render() {
-    const { columns, data, className, style, activeCheckbox, activeAction } = this.props;
+    const { columns, data, className, style, rowSelection } = this.props;
     return (
       <TableWrapper className={className} style={style}>
         <thead>
-          <TableHeadRow>{this.renderColumns(columns, activeCheckbox, activeAction)}</TableHeadRow>
+          <TableHeadRow>{this.renderColumns(columns, rowSelection)}</TableHeadRow>
         </thead>
-        <tbody>{this.renderData(columns, data, activeCheckbox, activeAction)}</tbody>
+        <tbody>{this.renderData(columns, data, rowSelection)}</tbody>
       </TableWrapper>
     );
   }
@@ -170,6 +200,7 @@ class Table extends React.Component<Props> {
 Table.defaultProps = {
   className: '',
   style: {},
+  rowSelection: false,
 };
 
 export default Table;
