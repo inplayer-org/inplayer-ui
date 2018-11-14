@@ -95,7 +95,7 @@ type Props = {
 class Table extends React.Component<Props> {
   state = {
     selected: {},
-    globalSelected: false,
+    selectedAll: false,
   };
 
   toggleRow = id => () => {
@@ -108,32 +108,32 @@ class Table extends React.Component<Props> {
       [id]: isSelected,
     };
 
-    this.setState(({ globalSelected }) => ({
+    this.setState(({ selectedAll }) => ({
       selected: newSelected,
-      globalSelected: !isSelected ? false : globalSelected,
+      selectedAll: !isSelected ? false : selectedAll,
     }));
   };
 
   toggleSelectAll = () => {
-    const { globalSelected } = this.state;
+    const { selectedAll } = this.state;
     const { data } = this.props;
 
-    const selected = data.reduce((acc, current) => ({ ...acc, [current.id]: !globalSelected }), {});
+    const selected = data.reduce((acc, current) => ({ ...acc, [current.id]: !selectedAll }), {});
 
-    this.setState(({ globalSelected: prevGlobal }) => ({
+    this.setState(({ selectedAll: prevSelectedAll }) => ({
       selected,
-      globalSelected: !prevGlobal,
+      selectedAll: !prevSelectedAll,
     }));
   };
 
   generateColumns = (columns: Array<Data>, rowSelection) => {
-    const { globalSelected } = this.state;
+    const { selectedAll } = this.state;
     let newColumns = [...columns];
     if (rowSelection) {
       const rowCheckbox = {
         title: (
           <Checkbox
-            checked={globalSelected}
+            checked={selectedAll}
             className="checkbox"
             id="toggleAll"
             onChange={this.toggleSelectAll}

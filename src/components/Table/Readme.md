@@ -47,42 +47,45 @@ const data = [
 ```jsx
 const columns = [
   {
+    title: 'ID',
+    key: 'id',
+  },
+  {
     title: '',
-    key: 'assetType',
-    render: value => <Icon name={value} className="icon" />,
+    key: 'icon',
+    render: value => <Icon name={value} />,
   },
   {
     title: 'Name',
     key: 'name',
   },
   {
-    title: 'ID',
-    key: 'id',
-  },
-  {
     title: 'Date Created',
     key: 'dateCreated',
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    render: () => (
+      <Icon name="cog" onClick={() => console.log('Do something')} />
+    ),
   },
 ];
 
 const data = [
   {
-    assetType: 'music',
-    name: "Won't You Be My Neighbour?",
     id: 22,
-    dateCreated: '2018 / 07 / 24',
+    icon: 'music',
+    name: "Won't You Be My Neighbour?",
+    dateCreated: '2018/07/24',
   },
   {
-    assetType: 'code',
-    name: 'Soundtrack: No Country',
     id: 28,
-    dateCreated: '2018 / 07 / 21',
+    icon: 'code',
+    name: 'Soundtrack: No Country',
+    dateCreated: '2018/07/21',
   },
 ];
-<Table
-  columns={columns}
-  data={data}
-  activeCheckbox={true}
-  activeAction={{ title: 'Edit', icon: 'edit', href: 'test.com' }}
-/>;
+
+<Table rowSelection={true} columns={columns} data={data} />;
 ```
