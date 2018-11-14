@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
+import Icon from 'elements/Icon/index';
+import Typography from 'elements/Typography/index';
 
 const TableWrapper = styled.table`
   background: ${colors.white};
@@ -77,6 +79,11 @@ const TableHeaderCell = styled.th`
   max-width: 450px;
 `;
 
+const ActionIcon = styled(Icon)`
+  padding: 2px;
+  cursor: pointer;
+`;
+
 type Columns = {
   title: string,
   key: string,
@@ -84,12 +91,23 @@ type Columns = {
 
 type Data = {};
 
+type TableOptions = {
+  rowSelection: {
+    active: boolean,
+    action: () => [],
+  },
+  rowActions: {
+    icon: string,
+    onClick: () => number,
+  },
+};
+
 type Props = {
   columns: Array<Columns>,
   data: Array<Data>,
   className?: String,
   style?: Object,
-  rowSelection?: boolean,
+  options?: TableOptions,
 };
 
 class Table extends React.Component<Props> {
@@ -126,10 +144,16 @@ class Table extends React.Component<Props> {
     }));
   };
 
-  generateColumns = (columns: Array<Data>, rowSelection) => {
+  generateColumns = (columns: Array<Data>, options) => {
     const { selectedAll } = this.state;
+    const {
+      rowSelection: { active },
+      rowActions,
+    } = options;
+
     let newColumns = [...columns];
-    if (rowSelection) {
+
+    if (active) {
       const rowCheckbox = {
         title: (
           <Checkbox
@@ -145,17 +169,27 @@ class Table extends React.Component<Props> {
       newColumns = [rowCheckbox, ...columns];
     }
 
+    if (rowActions) {
+      const actionsColumn = { title: 'Actions', key: 'actions' };
+      newColumns = [...newColumns, actionsColumn];
+    }
+
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Data>, rowSelection) =>
-    this.generateColumns(columns, rowSelection).map(column => (
+  renderColumns = (columns: Array<Data>, options) =>
+    this.generateColumns(columns, options).map(column => (
       <TableHeaderCell>{column.title}</TableHeaderCell>
     ));
 
-  renderData = (columns: Array<Columns>, data: Array<Data>, rowSelection) => {
+  renderData = (columns: Array<Columns>, data: Array<Data>, options) => {
     let newData = [...data];
-    if (rowSelection) {
+    const {
+      rowSelection: { active },
+      rowActions,
+    } = options;
+
+    if (active) {
       const { selected } = this.state;
 
       newData = data.map(dataCell => ({
@@ -171,7 +205,16 @@ class Table extends React.Component<Props> {
       }));
     }
 
-    const newColumns = this.generateColumns(columns, rowSelection);
+    if (rowActions) {
+      newData.map(dataCell => {
+        dataCell.actions = rowActions.map(action => (
+          <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
+        ));
+        return dataCell;
+      });
+    }
+
+    const newColumns = this.generateColumns(columns, options);
 
     return newData.map((row, i) => (
       <TableRow key={i}>
@@ -185,13 +228,13 @@ class Table extends React.Component<Props> {
   };
 
   render() {
-    const { columns, data, className, style, rowSelection } = this.props;
+    const { columns, data, className, style, options } = this.props;
     return (
       <TableWrapper className={className} style={style}>
         <thead>
-          <TableHeadRow>{this.renderColumns(columns, rowSelection)}</TableHeadRow>
+          <TableHeadRow>{this.renderColumns(columns, options)}</TableHeadRow>
         </thead>
-        <tbody>{this.renderData(columns, data, rowSelection)}</tbody>
+        <tbody>{this.renderData(columns, data, options)}</tbody>
       </TableWrapper>
     );
   }
@@ -200,7 +243,12 @@ class Table extends React.Component<Props> {
 Table.defaultProps = {
   className: '',
   style: {},
-  rowSelection: false,
+  options: {
+    rowSelection: {
+      active: false,
+    },
+    rowActions: [],
+  },
 };
 
 export default Table;
