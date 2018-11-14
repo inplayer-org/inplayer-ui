@@ -5,7 +5,6 @@ import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
 import Icon from 'elements/Icon/index';
-import Typography from 'elements/Typography/index';
 
 const TableWrapper = styled.table`
   background: ${colors.white};
@@ -87,9 +86,8 @@ const ActionIcon = styled(Icon)`
 type Columns = {
   title: string,
   key: string,
+  render: Function,
 };
-
-type Data = {};
 
 type TableOptions = {
   rowSelection: {
@@ -104,7 +102,7 @@ type TableOptions = {
 
 type Props = {
   columns: Array<Columns>,
-  data: Array<Data>,
+  data: Array<Object>,
   className?: String,
   style?: Object,
   options?: TableOptions,
@@ -144,7 +142,42 @@ class Table extends React.Component<Props> {
     }));
   };
 
-  generateColumns = (columns: Array<Data>, options) => {
+  generateRows = (data, options: TableOptions) => {
+    let newData = [...data];
+    const {
+      rowSelection: { active },
+      rowActions,
+    } = options;
+
+    if (active) {
+      const { selected } = this.state;
+
+      newData = data.map(dataCell => ({
+        ...dataCell,
+        check: (
+          <Checkbox
+            id={dataCell.id}
+            className="checkbox"
+            checked={selected[dataCell.id]}
+            onChange={this.toggleRow(dataCell.id)}
+          />
+        ),
+      }));
+    }
+
+    if (rowActions) {
+      newData.map(dataCell => {
+        dataCell.actions = rowActions.map(action => (
+          <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
+        ));
+        return dataCell;
+      });
+    }
+
+    return newData;
+  };
+
+  generateColumns = (columns: Array<Data>, options: TableOptions) => {
     const { selectedAll } = this.state;
     const {
       rowSelection: { active },
@@ -183,38 +216,8 @@ class Table extends React.Component<Props> {
     ));
 
   renderData = (columns: Array<Columns>, data: Array<Data>, options) => {
-    let newData = [...data];
-    const {
-      rowSelection: { active },
-      rowActions,
-    } = options;
-
-    if (active) {
-      const { selected } = this.state;
-
-      newData = data.map(dataCell => ({
-        ...dataCell,
-        check: (
-          <Checkbox
-            id={dataCell.id}
-            className="checkbox"
-            checked={selected[dataCell.id]}
-            onChange={this.toggleRow(dataCell.id)}
-          />
-        ),
-      }));
-    }
-
-    if (rowActions) {
-      newData.map(dataCell => {
-        dataCell.actions = rowActions.map(action => (
-          <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
-        ));
-        return dataCell;
-      });
-    }
-
     const newColumns = this.generateColumns(columns, options);
+    const newData = this.generateRows(data, options);
 
     return newData.map((row, i) => (
       <TableRow key={i}>
