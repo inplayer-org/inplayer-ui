@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.1.0] - 13-11-2018
+# [0.1.0] - 14-11-2018
 
 ### Added
 
@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - Radio component
 - TabNavigation component
 - Tabs component
+- Table component
 - Tooltip component
 - User Menu component
 - Accordion element
