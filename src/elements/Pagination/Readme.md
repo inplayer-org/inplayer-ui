@@ -6,20 +6,50 @@ A component to render a pagination. It takes:
 ```jsx static
 import { Pagination } from '@inplayer-org/inplayer-ui';
 
-function Page(props) {
-  return <Pagination />;
+const paginateData = {
+  total: 50,
+  data: [{ id: 1, name: 'foo' }, { id: 2, name: 'bar' }],
+};
+
+const totalPages = Math.ceil(paginateData.total / 5);
+
+class PaginationExample extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      page: 0,
+    };
+
+    this.selectPage = this.selectPage.bind(this);
+  }
+
+  selectPage(data) {
+    this.setState({ page: data.selected });
+  }
+
+  render() {
+    return (
+      <Pagination
+        pageCount={totalPages}
+        currentPage={this.state.page}
+        selectPage={this.selectPage}
+      />
+    );
+  }
 }
+<PaginationExample />;
 ```
 
 ### Demo
 
 ```jsx
-const paginate = {
+const paginateData = {
   total: 50,
   data: [{ id: 1, name: 'foo' }, { id: 2, name: 'bar' }],
 };
 
-const totalPages = Math.ceil(paginate.total / 5);
+const totalPages = Math.ceil(paginateData.total / 5);
 
 class PaginationExample extends React.Component {
   constructor() {
