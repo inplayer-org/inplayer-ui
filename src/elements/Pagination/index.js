@@ -18,8 +18,9 @@ const Pagination = ({ pageCount, currentPage, selectPage }: Props) => (
       marginPagesDisplayed={5}
       previousLabel="PREV"
       nextLabel="NEXT"
+      breakLabel="..."
       forcePage={currentPage}
-      onChange={selectPage}
+      onPageChange={selectPage}
     />
   </PaginationWrapper>
 );
