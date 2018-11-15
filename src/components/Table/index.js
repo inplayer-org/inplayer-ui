@@ -42,23 +42,6 @@ const TableRow = styled.tr`
   &:last-child {
     border-bottom: none;
   }
-
-  .icon {
-    margin-top: 4px;
-    vertical-align: middle;
-    color: ${colors.darkGray};
-    line-height: 1;
-    font-size: ${fontSizes('medium')};
-    transition: ease all 500ms;
-    position: relative;
-    top: 0;
-  }
-
-  .action {
-    &:hover {
-      color: ${uiColors('text.main')};
-    }
-  }
 `;
 
 const TableCell = styled.td`
