@@ -11,5 +11,31 @@ function Page(props) {
 ### Demo
 
 ```jsx
-<Pagination />
+class PaginationExample extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      page: 0,
+    };
+  }
+
+  render() {
+    const paginate = {
+      total: 50,
+      data: [{ id: 1, name: 'test' }, { id: 2, name: 'test2' }],
+    };
+
+    const totalPages = Math.ceil(paginate.total / 5);
+
+    return (
+      <Pagination
+        pageCount={totalPages}
+        currentPage={this.state.page}
+        selectPage={e => console.log(e)}
+      />
+    );
+  }
+}
+<PaginationExample />;
 ```

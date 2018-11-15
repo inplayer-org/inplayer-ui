@@ -4,14 +4,22 @@ import ReactPaginate from 'react-paginate';
 
 import PaginationWrapper from './PaginationWrapper';
 
-const Pagination = () => (
+type Props = {
+  pageCount: mumber,
+  currentPage: number,
+  selectPage: () => number,
+};
+
+const Pagination = ({ pageCount, currentPage, selectPage }: Props) => (
   <PaginationWrapper>
     <ReactPaginate
-      pageCount={5}
+      pageCount={pageCount}
       pageRangeDisplayed={5}
       marginPagesDisplayed={5}
       previousLabel="PREV"
       nextLabel="NEXT"
+      forcePage={currentPage}
+      onChange={selectPage}
     />
   </PaginationWrapper>
 );
