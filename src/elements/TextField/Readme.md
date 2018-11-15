@@ -22,7 +22,6 @@ function Page(props) {
   placeholder="text"
   onChange={() => console.log('onChange')} />
 <TextField
-  search
   type="search"
   placeholder="Search"
   onChange={() => console.log('onChange')}

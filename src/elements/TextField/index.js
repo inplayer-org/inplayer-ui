@@ -31,7 +31,7 @@ const Input = styled.input`
   }
 
   ${ifProp(
-    'search',
+    'type.search',
     css`
       padding-left: 28px;
       ::placeholder {
