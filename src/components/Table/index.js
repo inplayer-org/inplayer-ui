@@ -1,10 +1,10 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
-import Icon from 'elements/Icon/index';
+import Icon from 'elements/Icon';
 
 const TableWrapper = styled.table`
   background: ${colors.white};
@@ -91,7 +91,7 @@ const ActionIcon = styled(Icon)`
 type Columns = {
   title: string,
   key: string,
-  render: Function,
+  render: Node => Node,
 };
 
 type Data = {};
@@ -146,12 +146,13 @@ class Table extends React.Component<Props> {
     }));
   };
 
-  generateRows = (data: Array<Data>, options: TableOptions) => {
-    let newData = [...data];
+  generateRows = (data: Array<Data>) => {
+    const { options } = this.props;
     const {
       rowSelection: { active },
       rowActions,
     } = options;
+    let newData = [...data];
 
     if (active) {
       const { selected } = this.state;
@@ -181,8 +182,9 @@ class Table extends React.Component<Props> {
     return newData;
   };
 
-  generateColumns = (columns: Array<Data>, options: TableOptions) => {
+  generateColumns = (columns: Array<Data>) => {
     const { selectedAll } = this.state;
+    const { options } = this.props;
     const {
       rowSelection: { active },
       rowActions,
@@ -214,14 +216,12 @@ class Table extends React.Component<Props> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Data>, options: TableOptions) =>
-    this.generateColumns(columns, options).map(column => (
-      <TableHeaderCell>{column.title}</TableHeaderCell>
-    ));
+  renderColumns = (columns: Array<Data>) =>
+    this.generateColumns(columns).map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
 
-  renderData = (columns: Array<Columns>, data: Array<Data>, options: TableOptions) => {
-    const newColumns = this.generateColumns(columns, options);
-    const newData = this.generateRows(data, options);
+  renderData = (columns: Array<Columns>, data: Array<Data>) => {
+    const newColumns = this.generateColumns(columns);
+    const newData = this.generateRows(data);
 
     return newData.map((row, i) => (
       <TableRow key={i}>
@@ -235,13 +235,13 @@ class Table extends React.Component<Props> {
   };
 
   render() {
-    const { columns, data, className, style, options } = this.props;
+    const { columns, data, className, style } = this.props;
     return (
       <TableWrapper className={className} style={style}>
         <thead>
-          <TableHeadRow>{this.renderColumns(columns, options)}</TableHeadRow>
+          <TableHeadRow>{this.renderColumns(columns)}</TableHeadRow>
         </thead>
-        <tbody>{this.renderData(columns, data, options)}</tbody>
+        <tbody>{this.renderData(columns, data)}</tbody>
       </TableWrapper>
     );
   }
