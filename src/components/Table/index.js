@@ -160,8 +160,8 @@ class Table extends React.Component<Props, State> {
     if (rowActions) {
       newData = newData.map(dataCell => ({
         ...dataCell,
-        actions: rowActions.map(action => (
-          <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
+        actions: rowActions.map((action, index) => (
+          <ActionIcon key={index} name={action.icon} onClick={() => action.onClick(dataCell.id)} />
         )),
       }));
     }
@@ -198,15 +198,17 @@ class Table extends React.Component<Props, State> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Column>) =>
-    this.generateColumns(columns).map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+  renderColumns = (columns: Array<Column>): Array<Node> =>
+    this.generateColumns(columns).map((column, index) => (
+      <TableHeaderCell key={index}>{column.title}</TableHeaderCell>
+    ));
 
   renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
-    return newData.map((row, i) => (
-      <TableRow key={i}>
+    return newData.map(row => (
+      <TableRow key={row.id}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
             {column.render ? column.render({ value: row[column.key] }) : row[column.key]}
