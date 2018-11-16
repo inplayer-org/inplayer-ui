@@ -70,7 +70,7 @@ const TableCheckbox = styled(Checkbox)`
 type Column = {
   title: string,
   key: string,
-  render: Node => Node,
+  render: ({ value: string }) => Node;
 };
 
 type Data = Object;
