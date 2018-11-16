@@ -9,11 +9,9 @@ const PaginationWrapper = styled.div`
   border-radius: 3px;
   background: ${colors.white};
   font-size: ${fontSizes('small')};
-  position: relative;
   line-height: 30px;
   overflow: hidden;
   box-sizing: border-box;
-  display: inline-block;
   vertical-align: top;
   cursor: pointer;
 
@@ -33,6 +31,14 @@ const PaginationWrapper = styled.div`
 
       &:focus {
         outline: none;
+      }
+    }
+
+    &.disabled {
+      color: ${uiColors('text.disabled')};
+
+      a {
+        color: ${uiColors('text.disabled')} !important;
       }
     }
 
@@ -72,7 +78,7 @@ const PaginationWrapper = styled.div`
       }
     }
 
-    &.previous:hover {
+    &.previous:hover:not(.disabled) {
       background: ${colors.lightGray};
 
       a {
@@ -84,7 +90,7 @@ const PaginationWrapper = styled.div`
       }
     }
 
-    &.next:hover {
+    &.next:hover:not(.disabled) {
       background: ${colors.lightGray};
 
       a {
@@ -96,7 +102,7 @@ const PaginationWrapper = styled.div`
       }
     }
 
-    &:hover {
+    &:hover:not(.disabled) {
       color: ${uiColors('text.main')};
       background: ${colors.lightGray};
     }
