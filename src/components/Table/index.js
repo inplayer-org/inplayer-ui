@@ -180,11 +180,7 @@ class Table extends React.Component<Props, State> {
     if (active) {
       const rowCheckbox = {
         title: (
-          <TableCheckbox
-            id="toggleAll"
-            checked={selectedAll}
-            onChange={this.toggleSelectAll}
-          />
+          <TableCheckbox id="toggleAll" checked={selectedAll} onChange={this.toggleSelectAll} />
         ),
         key: 'check',
       };
@@ -211,7 +207,7 @@ class Table extends React.Component<Props, State> {
       <TableRow key={i}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
-            {column.render ? column.render({value: row[column.key]}) : row[column.key]}
+            {column.render ? column.render({ value: row[column.key] }) : row[column.key]}
           </TableCell>
         ))}
       </TableRow>
