@@ -70,7 +70,7 @@ const TableCheckbox = styled(Checkbox)`
 type Column = {
   title: string,
   key: string,
-  render: ({ value: string }) => Node;
+  render: ({ value: string }) => Node,
 };
 
 type Data = Object;
@@ -78,14 +78,14 @@ type Data = Object;
 type IconAction = {
   icon: string,
   onClick: (id: number | string) => any,
-}
+};
 
 type TableOptions = {
   rowSelection: {
     active: boolean,
     action: (selectedItems: Array<Data>) => any,
   },
-  rowActions: Array<IconAction>
+  rowActions: Array<IconAction>,
 };
 
 type Props = {
