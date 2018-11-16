@@ -9,6 +9,20 @@ import React from 'react';
 import { Table } from '@inplayer-org/inplayer-ui';
 
 class Page extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      page: 0,
+    };
+
+    this.onPageChange = this.onPageChange.bind(this);
+  }
+
+  onPageChange(data) {
+    this.setState({ page: data.selected });
+  }
+
   render() {
     const columns = [
       {
@@ -45,22 +59,36 @@ class Page extends React.Component {
       },
     ];
 
+    const totalPages = Math.ceil(data.total / 5);
+
     return (
-      <Table
-        columns={columns}
-        data={data}
-        options={{
-          rowSelection: {
-            active: true,
-            action: data => console.log(data),
-          },
-          rowActions: [
-            { icon: 'edit', onClick: id => console.log(id) },
-            { icon: 'cog', onClick: id => console.log(id) },
-            { icon: 'trash', onClick: id => console.log(id) },
-          ],
-        }}
-      />
+      <React.Fragment>
+        <Table
+          columns={columns}
+          data={data}
+          options={{
+            rowSelection: {
+              active: true,
+              action: data => console.log(data),
+            },
+            rowActions: [
+              { icon: 'edit', onClick: id => console.log(id) },
+              { icon: 'cog', onClick: id => console.log(id) },
+              { icon: 'trash', onClick: id => console.log(id) },
+            ],
+          }}
+        />
+        <Pagination
+          pageCount={totalPages}
+          currentPage={this.state.page}
+          pageRangeDisplayed={5}
+          marginPagesDisplayed={5}
+          previousLabel="PREV"
+          nextLabel="NEXT"
+          breakLabel="..."
+          onPageChange={this.onPageChange}
+        />
+      </React.Fragment>
     );
   }
 }
@@ -102,19 +130,60 @@ const data = [
   },
 ];
 
-<Table
-  columns={columns}
-  data={data}
-  options={{
-    rowSelection: {
-      active: true,
-      action: data => console.log(data),
-    },
-    rowActions: [
-      { icon: 'edit', onClick: id => console.log(id) },
-      { icon: 'cog', onClick: id => console.log(id) },
-      { icon: 'trash', onClick: id => console.log(id) },
-    ],
-  }}
-/>;
+const totalPages = Math.ceil(2 / 5);
+
+class TableExample extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      page: 0,
+    };
+
+    this.onPageChange = this.onPageChange.bind(this);
+  }
+
+  onPageChange(data) {
+    this.setState({ page: data.selected });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <TextField
+          type="search"
+          placeholder="Search"
+          onChange={() => console.log('onChange')}
+          style={{ maxWidth: 300 }}
+        />
+        <Table
+          columns={columns}
+          data={data}
+          options={{
+            rowSelection: {
+              active: true,
+              action: data => console.log(data),
+            },
+            rowActions: [
+              { icon: 'edit', onClick: id => console.log(id) },
+              { icon: 'cog', onClick: id => console.log(id) },
+              { icon: 'trash', onClick: id => console.log(id) },
+            ],
+          }}
+        />
+        <Pagination
+          pageCount={totalPages}
+          currentPage={this.state.page}
+          pageRangeDisplayed={5}
+          marginPagesDisplayed={5}
+          previousLabel="PREV"
+          nextLabel="NEXT"
+          breakLabel="..."
+          onPageChange={this.onPageChange}
+        />
+      </React.Fragment>
+    );
+  }
+}
+<TableExample />;
 ```
