@@ -71,13 +71,13 @@ const ActionIcon = styled(Icon)`
   }
 `;
 
-type Columns = {
+type Column = {
   title: string,
   key: string,
   render: Node => Node,
 };
 
-type Data = {};
+type Data = Object;
 
 type TableOptions = {
   rowSelection: {
@@ -91,14 +91,19 @@ type TableOptions = {
 };
 
 type Props = {
-  columns: Array<Columns>,
+  columns: Array<Column>,
   data: Array<Data>,
   className?: String,
   style?: Object,
   options?: TableOptions,
 };
 
-class Table extends React.Component<Props> {
+type State = {
+  selected: Object,
+  selectedAll: boolean
+};
+
+class Table extends React.Component<Props, State> {
   state = {
     selected: {},
     selectedAll: false,
@@ -165,7 +170,7 @@ class Table extends React.Component<Props> {
     return newData;
   };
 
-  generateColumns = (columns: Array<Data>) => {
+  generateColumns = (columns: Array<Column>) => {
     const { selectedAll } = this.state;
     const { options } = this.props;
     const {
@@ -199,10 +204,10 @@ class Table extends React.Component<Props> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Data>) =>
+  renderColumns = (columns: Array<Column>) =>
     this.generateColumns(columns).map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
 
-  renderData = (columns: Array<Columns>, data: Array<Data>) => {
+  renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
@@ -210,7 +215,7 @@ class Table extends React.Component<Props> {
       <TableRow key={i}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
-            {column.render ? column.render(row[column.key]) : row[column.key]}
+            {column.render ? column.render(value => row[value.key]) : row[column.key]}
           </TableCell>
         ))}
       </TableRow>
