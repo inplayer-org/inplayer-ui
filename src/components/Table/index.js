@@ -78,18 +78,18 @@ type Data = Object;
 type TableOptions = {
   rowSelection: {
     active: boolean,
-    action: () => [],
+    action: (selectedItems: Array<Data>) => any,
   },
   rowActions: {
     icon: string,
-    onClick: () => number,
+    onClick: (id: number | string) => any,
   },
 };
 
 type Props = {
   columns: Array<Column>,
   data: Array<Data>,
-  className?: String,
+  className?: string,
   style?: Object,
   options?: TableOptions,
 };
@@ -211,7 +211,7 @@ class Table extends React.Component<Props, State> {
       <TableRow key={i}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
-            {column.render ? column.render(value => row[value.key]) : row[column.key]}
+            {column.render ? column.render({value: row[column.key]}) : row[column.key]}
           </TableCell>
         ))}
       </TableRow>
