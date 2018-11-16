@@ -96,7 +96,7 @@ type Props = {
 
 type State = {
   selected: {
-    [id: number]: boolean,
+    [number | string]: boolean,
   },
   selectedAll: boolean,
 };
