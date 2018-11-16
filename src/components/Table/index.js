@@ -18,16 +18,6 @@ const TableWrapper = styled.table`
   position: relative;
   overflow-x: hidden;
   font-weight: ${fontWeights('light')};
-
-  .entryname {
-    color: ${uiColors('text.main')};
-  }
-
-  .checkbox {
-    label {
-      top: -10px;
-    }
-  }
 `;
 
 const TableHeadRow = styled.tr`
@@ -68,6 +58,12 @@ const ActionIcon = styled(Icon)`
 
   &:hover {
     color: ${uiColors('primary.main')};
+  }
+`;
+
+const TableCheckbox = styled(Checkbox)`
+  label {
+    top: -10px;
   }
 `;
 
@@ -148,9 +144,8 @@ class Table extends React.Component<Props, State> {
       newData = data.map(dataCell => ({
         ...dataCell,
         check: (
-          <Checkbox
+          <TableCheckbox
             id={dataCell.id}
-            className="checkbox"
             checked={selected[dataCell.id]}
             onChange={this.toggleRow(dataCell.id)}
           />
@@ -183,10 +178,9 @@ class Table extends React.Component<Props, State> {
     if (active) {
       const rowCheckbox = {
         title: (
-          <Checkbox
-            checked={selectedAll}
-            className="checkbox"
+          <TableCheckbox
             id="toggleAll"
+            checked={selectedAll}
             onChange={this.toggleSelectAll}
           />
         ),
