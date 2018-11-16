@@ -6,14 +6,14 @@ import styled from 'styled-components';
 import PaginationWrapper from './PaginationWrapper';
 
 type Props = {
-  pageCount: mumber,
+  pageCount: number,
   currentPage: number,
   pageRangeDisplayed: number,
   marginPagesDisplayed: number,
   previousLabel: string,
   nextLabel: string,
   breakLabel: string,
-  onPageChange: () => number,
+  onPageChange: (data: { selected: number }) => any,
   breakClassName?: string,
   initialPage?: number,
   disableInitialCallback?: boolean,
@@ -27,7 +27,7 @@ type Props = {
   previousLinkClassName?: string,
   nextLinkClassName?: string,
   disabledClassName?: string,
-  hrefBuilder?: () => String,
+  hrefBuilder?: () => string,
   extraAriaContext?: string,
   style?: Object,
   className?: string,
