@@ -335,6 +335,36 @@ interface INotification extends FunctionComponent<NotificationProps> {
 
 export declare const Notification: INotification;
 
+export interface PaginationProps {
+  pageCount: number;
+  currentPage: number;
+  pageRangeDisplayed: number;
+  marginPagesDisplayed: number;
+  previousLabel: string;
+  nextLabel: string;
+  breakLabel: string;
+  onPageChange: (data: { selected: number }) => any;
+  breakClassName?: string;
+  initialPage?: number;
+  disableInitialCallback?: boolean;
+  containerClassName?: string;
+  pageClassName?: string;
+  pageLinkClassName?: string;
+  activeClassName?: string;
+  activeLinkClassName?: string;
+  previousClassName?: string;
+  nextClassName?: string;
+  previousLinkClassName?: string;
+  nextLinkClassName?: string;
+  disabledClassName?: string;
+  hrefBuilder?: () => string;
+  extraAriaContext?: string;
+  style?: CSSProperties;
+  className?: string;
+}
+
+export declare const Pagination: FunctionComponent<PaginationProps>;
+
 type ProgressType = 'circle' | 'line';
 
 export interface ProgressProps {
