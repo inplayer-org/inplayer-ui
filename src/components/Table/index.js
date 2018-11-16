@@ -75,15 +75,17 @@ type Column = {
 
 type Data = Object;
 
+type IconAction = {
+  icon: string,
+  onClick: (id: number | string) => any,
+}
+
 type TableOptions = {
   rowSelection: {
     active: boolean,
     action: (selectedItems: Array<Data>) => any,
   },
-  rowActions: {
-    icon: string,
-    onClick: (id: number | string) => any,
-  },
+  rowActions: Array<IconAction>
 };
 
 type Props = {
