@@ -1,5 +1,14 @@
+import {
+  FunctionComponent,
+  CSSProperties,
+  ReactNode,
+  ReactNodeArray,
+  ReactElement,
+  Component,
+  SyntheticEvent,
+  ButtonHTMLAttributes
+} from 'react';
 import { AnyStyledComponent, BaseThemedCssFunction } from 'styled-components';
-import { FunctionComponent, CSSProperties, ReactNode, ReactNodeArray, ReactElement, Component, SyntheticEvent, ButtonHTMLAttributes } from 'react';
 import moment from 'moment';
 
 // TODO andrej-naumovski 16.11.2018: Improve types for styled-components exports
