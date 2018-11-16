@@ -104,6 +104,8 @@ export declare class Navbar extends Component<NavbarProps, NavbarState> {
 
 export type NavbarMenuItemProps = Navbar$MenuItemProps;
 
+type NoteType = 'informative' | 'success' | 'warning' | 'danger';
+
 export interface NoteProps {
   title: string;
   text: string;
