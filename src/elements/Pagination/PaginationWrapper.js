@@ -14,6 +14,7 @@ const PaginationWrapper = styled.div`
   box-sizing: border-box;
   vertical-align: top;
   cursor: pointer;
+  display: inline-block;
 
   ul {
     padding-inline-start: 0;
