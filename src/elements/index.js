@@ -12,3 +12,4 @@ export { default as SingleDayPicker } from './SingleDayPicker';
 export { default as Accordion } from './Accordion';
 export { default as Progress } from './Progress';
 export { default as Card } from './Card';
+export { default as Pagination } from './Pagination';

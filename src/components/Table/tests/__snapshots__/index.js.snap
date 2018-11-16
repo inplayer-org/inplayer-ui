@@ -173,22 +173,6 @@ exports[`Table renders correctly 1`] = `
   border-bottom: none;
 }
 
-.c5 .icon {
-  margin-top: 4px;
-  vertical-align: middle;
-  color: #b9c1cb;
-  line-height: 1;
-  font-size: 1rem;
-  -webkit-transition: ease all 500ms;
-  transition: ease all 500ms;
-  position: relative;
-  top: 0;
-}
-
-.c5 .action:hover {
-  color: #44494e;
-}
-
 .c6 {
   font-size: 1rem;
   padding: 7px 1%;

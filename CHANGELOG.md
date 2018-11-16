@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
 - TextArea element
 - TextField element
 - Typography element
+- Pagination element
 
 ### Changed
 
