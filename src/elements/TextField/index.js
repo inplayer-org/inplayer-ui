@@ -65,6 +65,7 @@ type Props = {
   type: string,
   placeholder: string,
   id: string,
+  onChange: (value: number | string) => any,
 };
 
 const TextField = ({ type, placeholder, onChange, ...rest }: Props) => {

@@ -17,7 +17,7 @@ type Panel = {
 type Props = {
   panels: Array<Panel>,
 };
-type State = { name: string };
+type State = { [string]: boolean };
 
 class Accordion extends Component<Props, State> {
   state = {};

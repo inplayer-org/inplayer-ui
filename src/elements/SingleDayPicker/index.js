@@ -13,14 +13,14 @@ type Props = {
   className?: string,
 };
 
-class SingleDayPicker extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
+type State = {
+  focusedInput: string,
+};
 
-    this.state = {
-      focusedInput: null,
-    };
-  }
+class SingleDayPicker extends React.Component<Props, State> {
+  state = {
+    focusedInput: null,
+  };
 
   render() {
     const { date, onDateChange, id, isOutsideRange, style, className } = this.props;

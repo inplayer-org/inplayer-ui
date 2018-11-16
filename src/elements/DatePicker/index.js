@@ -25,16 +25,16 @@ type Props = {
   className?: string,
 };
 
+type State = {
+  focusedInput: ?string,
+};
+
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
 
-class DatePicker extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      focusedInput: null,
-    };
-  }
+class DatePicker extends React.Component<Props, State> {
+  state = {
+    focusedInput: null,
+  };
 
   onFocusedInputChange = (focusedInput: string) => {
     this.setState({
