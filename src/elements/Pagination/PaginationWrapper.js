@@ -14,7 +14,7 @@ const PaginationWrapper = styled.div`
   box-sizing: border-box;
   vertical-align: top;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
 
   ul {
     padding-inline-start: 0;
@@ -25,7 +25,7 @@ const PaginationWrapper = styled.div`
   li {
     color: ${uiColors('text.light')};
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
 
     a {
       padding: 1px 8px 1px;
