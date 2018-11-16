@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import styled from 'styled-components';
 
 import PaginationWrapper from './PaginationWrapper';
 
@@ -32,10 +33,18 @@ type Props = {
   className?: string,
 };
 
+const PaginationPositioning = styled.div`
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+`;
+
 const Pagination = ({ style, className, ...rest }: Props) => (
-  <PaginationWrapper style={style} className={className}>
-    <ReactPaginate {...rest} />
-  </PaginationWrapper>
+  <PaginationPositioning>
+    <PaginationWrapper style={style} className={className}>
+      <ReactPaginate {...rest} />
+    </PaginationWrapper>
+  </PaginationPositioning>
 );
 
 Pagination.defaultProps = {
