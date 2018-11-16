@@ -21,7 +21,7 @@ class PaginationExample extends React.Component {
       page: 0,
     };
 
-    this.selectPage = this.selectPage.bind(this);
+    this.onPageChange = this.onPageChange.bind(this);
   }
 
   onPageChange(data) {
@@ -64,10 +64,10 @@ class PaginationExample extends React.Component {
       page: 0,
     };
 
-    this.selectPage = this.selectPage.bind(this);
+    this.onPageChange = this.onPageChange.bind(this);
   }
 
-  selectPage(data) {
+  onPageChange(data) {
     this.setState({ page: data.selected });
   }
 
@@ -76,7 +76,12 @@ class PaginationExample extends React.Component {
       <Pagination
         pageCount={totalPages}
         currentPage={this.state.page}
-        selectPage={this.selectPage}
+        pageRangeDisplayed={5}
+        marginPagesDisplayed={5}
+        previousLabel="PREV"
+        nextLabel="NEXT"
+        breakLabel="..."
+        onPageChange={this.onPageChange}
       />
     );
   }
