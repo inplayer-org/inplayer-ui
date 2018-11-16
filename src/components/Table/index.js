@@ -75,7 +75,7 @@ type Column = {
 
 type Data = Object;
 
-type IconAction = {
+type RowAction = {
   icon: string,
   onClick: (id: number | string) => any,
 };
@@ -85,7 +85,7 @@ type TableOptions = {
     active: boolean,
     action: (selectedItems: Array<Data>) => any,
   },
-  rowActions: Array<IconAction>,
+  rowActions: Array<RowAction>,
 };
 
 type Props = {
