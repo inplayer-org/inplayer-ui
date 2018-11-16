@@ -95,8 +95,10 @@ type Props = {
 };
 
 type State = {
-  selected: Object,
-  selectedAll: boolean
+  selected: {
+    [id: number]: boolean,
+  },
+  selectedAll: boolean,
 };
 
 class Table extends React.Component<Props, State> {
