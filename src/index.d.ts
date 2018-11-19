@@ -8,7 +8,7 @@ import {
   SyntheticEvent,
   ButtonHTMLAttributes
 } from 'react';
-import { AnyStyledComponent, BaseThemedCssFunction } from 'styled-components';
+import { AnyStyledComponent } from 'styled-components';
 import moment from 'moment';
 
 // TODO andrej-naumovski 16.11.2018: Improve types for styled-components exports
@@ -24,7 +24,7 @@ export declare const Grid: IGrid;
 export interface CheckboxProps {
   label: string;
   id: string;
-  name: ?string;
+  name?: string;
   checked: boolean;
   onChange: (checked: boolean) => any;
   className?: string;
@@ -81,7 +81,7 @@ export declare const Modal: FunctionComponent<ModalProps>;
 
 export interface NavbarProps {
   children: ReactNode;
-  logo: ?ReactElement<*> | ?string;
+  logo?: ReactElement<*> | string;
   className?: string;
   style?: CSSProperties;
 }
@@ -92,9 +92,9 @@ interface NavbarState {
 
 interface Navbar$MenuItemProps {
   active: boolean;
-  icon: ?string | ?ReactNode;
-  onClick: ?(e: SyntheticEvent<HTMLDivElement>) => any,
-  children: ?ReactNode,
+  icon?: string | ReactNode;
+  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any,
+  children?: ReactNode,
 }
 
 export declare class Navbar extends Component<NavbarProps, NavbarState> {
@@ -120,7 +120,7 @@ export declare const Note: FunctionComponent<NoteProps>;
 export interface RadioProps {
   label: string;
   id: string;
-  name: ?string;
+  name?: string;
   checked: boolean;
   onChange: (checked: boolean) => any;
   className?: string;
@@ -283,7 +283,7 @@ export interface DatePickerProps {
 }
 
 interface DatePickerState {
-  focusedInput: ?string;
+  focusedInput?: string;
 };
 
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
@@ -329,10 +329,10 @@ interface NotificationProps {
 }
 
 interface INotification extends FunctionComponent<NotificationProps> {
-  create(props: NotificationProps, parentDiv: ?HTMLDivElement);
-  success(props: NotificationProps, parentDiv: ?HTMLDivElement);
-  warning(props: NotificationProps, parentDiv: ?HTMLDivElement);
-  danger(props: NotificationProps, parentDiv: ?HTMLDivElement);
+  create(props: NotificationProps, parentDiv?: HTMLDivElement);
+  success(props: NotificationProps, parentDiv?: HTMLDivElement);
+  warning(props: NotificationProps, parentDiv?: HTMLDivElement);
+  danger(props: NotificationProps, parentDiv?: HTMLDivElement);
 }
 
 export declare const Notification: INotification;
@@ -429,7 +429,7 @@ type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
 export interface TypographyProps {
   variant: TypographyVariant;
-  description: ?boolean;
+  description?: boolean;
   children: ReactNode;
   className?: string;
   modifiers?: Array<string>;
@@ -443,18 +443,18 @@ export interface Theme {
   palette: {
     primary: {
       main: string;
-      light: ?string;
-      dark: ?string;
+      light?: string;
+      dark?: string;
     },
     secondary: {
       main: string;
-      light: ?string;
-      dark: ?string;
+      light?: string;
+      dark?: string;
     },
     text: {
       main: string;
-      light: ?string;
-      disabled: ?string;
+      light?: string;
+      disabled?: string;
     },
   },
   dimensions: {
@@ -465,11 +465,11 @@ export interface Theme {
     primary: string;
     primaryFallback: string;
     weights: {
-      thin: ?number;
-      light: ?number;
-      normal: number;
-      semiBold: ?number;
-      bold: ?number;
+      thin?: number;
+      light?: number;
+      normal?: number;
+      semiBold?: number;
+      bold?: number;
     },
     sizes: {
       extraSmall: string;
@@ -494,7 +494,7 @@ export interface Theme {
 
 export interface  ThemeWrapperProps {
   children: ReactNode;
-  theme: ?Theme;
+  theme?: Theme;
 }
 
 declare export const ThemeWrapper: FunctionComponent<ThemeWrapperProps>;
