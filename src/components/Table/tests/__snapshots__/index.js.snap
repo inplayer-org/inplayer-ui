@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table renders correctly 1`] = `
-.c4 {
+.c5 {
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 300;
@@ -20,21 +20,21 @@ exports[`Table renders correctly 1`] = `
   display: inline-flex;
 }
 
-.c4:not(:disabled):hover {
+.c5:not(:disabled):hover {
   color: #a0a3aa;
 }
 
-.c3 > input {
+.c4 > input {
   display: none;
 }
 
-.c3 > input + label {
+.c4 > input + label {
   position: relative;
   padding-left: 1.5rem;
   cursor: pointer;
 }
 
-.c3 > input + label::before {
+.c4 > input + label::before {
   content: '';
   position: absolute;
   left: 0;
@@ -47,7 +47,7 @@ exports[`Table renders correctly 1`] = `
   transition: all ease 300ms;
 }
 
-.c3 > input + label::after {
+.c4 > input + label::after {
   content: '';
   position: absolute;
   top: 5px;
@@ -56,11 +56,11 @@ exports[`Table renders correctly 1`] = `
   transition: all ease 300ms;
 }
 
-.c3 > input:checked + label::before {
+.c4 > input:checked + label::before {
   border: 1px solid #07AAE6;
 }
 
-.c3 > input:checked + label::after {
+.c4 > input:checked + label::after {
   border: 2px solid #07AAE6;
   border-top: none;
   border-right: none;
@@ -72,7 +72,7 @@ exports[`Table renders correctly 1`] = `
   transform: scale(1) rotate(-45deg);
 }
 
-.c3 > input:not(:checked) + label::after {
+.c4 > input:not(:checked) + label::after {
   border: 2px solid #fff;
   border-top: none;
   border-right: none;
@@ -84,55 +84,55 @@ exports[`Table renders correctly 1`] = `
   transform: scale(0);
 }
 
-.c3 > input:checked + label:hover::before {
+.c4 > input:checked + label:hover::before {
   border-color: transparent;
   background: #97CCF6;
 }
 
-.c3 > input:checked + label:hover::after {
+.c4 > input:checked + label:hover::after {
   border-color: #07AAE6;
 }
 
-.c3 > input:not(:checked) + label:hover::before {
+.c4 > input:not(:checked) + label:hover::before {
   border: 1px solid #07AAE6;
   background-color: #97CCF6;
 }
 
-.c3 > input:not(:checked) + label:hover::after {
+.c4 > input:not(:checked) + label:hover::after {
   -webkit-transform: scale(1) rotate(-45deg);
   -ms-transform: scale(1) rotate(-45deg);
   transform: scale(1) rotate(-45deg);
 }
 
-.c3 > input:checked:focus + label::before,
-.c3 input:not(:checked):focus + label::before {
+.c4 > input:checked:focus + label::before,
+.c4 input:not(:checked):focus + label::before {
   border: 1px dotted #97CCF6;
 }
 
-.c3 > input:disabled:checked + label {
+.c4 > input:disabled:checked + label {
   color: #c8ccd4;
 }
 
-.c3 > input:disabled:checked + label::before {
+.c4 > input:disabled:checked + label::before {
   border: 1px solid #d7dde5;
   background: transparent;
 }
 
-.c3 > input:disabled:checked + label::after {
+.c4 > input:disabled:checked + label::after {
   border-color: #d7dde5;
   background: transparent;
 }
 
-.c3 > input:disabled:not(:checked) + label {
+.c4 > input:disabled:not(:checked) + label {
   color: #c8ccd4;
 }
 
-.c3 > input:disabled:not(:checked) + label::before {
+.c4 > input:disabled:not(:checked) + label::before {
   border: 1px solid #d7dde5;
   background: transparent;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   font-size: 1rem;
 }
@@ -151,29 +151,21 @@ exports[`Table renders correctly 1`] = `
   font-weight: 300;
 }
 
-.c0 .entryname {
-  color: #44494e;
-}
-
-.c0 .checkbox label {
-  top: -10px;
-}
-
 .c1 {
   border-bottom: 1px solid #d7dde5;
   width: 100%;
 }
 
-.c5 {
+.c6 {
   border-bottom: 1px solid #F6F8FB;
   width: 100%;
 }
 
-.c5:last-child {
+.c6:last-child {
   border-bottom: none;
 }
 
-.c6 {
+.c7 {
   font-size: 1rem;
   padding: 7px 1%;
   vertical-align: middle;
@@ -190,15 +182,19 @@ exports[`Table renders correctly 1`] = `
   max-width: 450px;
 }
 
-.c7 {
+.c8 {
   padding: 2px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.c7:hover {
+.c8:hover {
   color: #07AAE6;
+}
+
+.c3 label {
+  top: -10px;
 }
 
 <table
@@ -213,7 +209,7 @@ exports[`Table renders correctly 1`] = `
         className="c2"
       >
         <div
-          className="checkbox c3"
+          className="c3 c4"
           style={Object {}}
         >
           <input
@@ -223,7 +219,7 @@ exports[`Table renders correctly 1`] = `
             type="checkbox"
           />
           <label
-            className="c4"
+            className="c5"
             htmlFor="toggleAll"
           />
         </div>
@@ -242,13 +238,13 @@ exports[`Table renders correctly 1`] = `
   </thead>
   <tbody>
     <tr
-      className="c5"
+      className="c6"
     >
       <td
-        className="c6"
+        className="c7"
       >
         <div
-          className="checkbox c3"
+          className="c3 c4"
           style={Object {}}
         >
           <input
@@ -256,31 +252,31 @@ exports[`Table renders correctly 1`] = `
             type="checkbox"
           />
           <label
-            className="c4"
+            className="c5"
           />
         </div>
       </td>
       <td
-        className="c6"
+        className="c7"
       >
         Eli
       </td>
       <td
-        className="c6"
+        className="c7"
       >
         <span
           aria-hidden={true}
-          className="fa fa-edit c7 c8"
+          className="fa fa-edit c8 c9"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-cog c7 c8"
+          className="fa fa-cog c8 c9"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-trash c7 c8"
+          className="fa fa-trash c8 c9"
           onClick={[Function]}
         />
       </td>
