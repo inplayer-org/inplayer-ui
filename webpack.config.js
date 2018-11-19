@@ -5,6 +5,7 @@ require('@babel/polyfill');
 
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pkg = require('./package.json');
 
 module.exports = {
@@ -41,8 +42,10 @@ module.exports = {
     hot: true,
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
 };
