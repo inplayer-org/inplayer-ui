@@ -28,5 +28,6 @@ exports[`TextField renders correctly 1`] = `
 
 <input
   className="c0"
+  onChange={[Function]}
 />
 `;
