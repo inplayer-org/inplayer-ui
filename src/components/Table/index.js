@@ -18,16 +18,6 @@ const TableWrapper = styled.table`
   position: relative;
   overflow-x: hidden;
   font-weight: ${fontWeights('light')};
-
-  .entryname {
-    color: ${uiColors('text.main')};
-  }
-
-  .checkbox {
-    label {
-      top: -10px;
-    }
-  }
 `;
 
 const TableHeadRow = styled.tr`
@@ -71,34 +61,49 @@ const ActionIcon = styled(Icon)`
   }
 `;
 
-type Columns = {
+const TableCheckbox = styled(Checkbox)`
+  label {
+    top: -10px;
+  }
+`;
+
+type Column = {
   title: string,
   key: string,
-  render: Node => Node,
+  render: ({ value: string }) => Node,
 };
 
-type Data = {};
+type Data = Object;
+
+type RowAction = {
+  icon: string,
+  onClick: (id: number | string) => any,
+};
 
 type TableOptions = {
   rowSelection: {
     active: boolean,
-    action: () => [],
+    action: (selectedItems: Array<Data>) => any,
   },
-  rowActions: {
-    icon: string,
-    onClick: () => number,
-  },
+  rowActions: Array<RowAction>,
 };
 
 type Props = {
-  columns: Array<Columns>,
+  columns: Array<Column>,
   data: Array<Data>,
-  className?: String,
+  className?: string,
   style?: Object,
   options?: TableOptions,
 };
 
-class Table extends React.Component<Props> {
+type State = {
+  selected: {
+    [number | string]: boolean,
+  },
+  selectedAll: boolean,
+};
+
+class Table extends React.Component<Props, State> {
   state = {
     selected: {},
     selectedAll: false,
@@ -143,9 +148,8 @@ class Table extends React.Component<Props> {
       newData = data.map(dataCell => ({
         ...dataCell,
         check: (
-          <Checkbox
+          <TableCheckbox
             id={dataCell.id}
-            className="checkbox"
             checked={selected[dataCell.id]}
             onChange={this.toggleRow(dataCell.id)}
           />
@@ -156,8 +160,8 @@ class Table extends React.Component<Props> {
     if (rowActions) {
       newData = newData.map(dataCell => ({
         ...dataCell,
-        actions: rowActions.map(action => (
-          <ActionIcon name={action.icon} onClick={() => action.onClick(dataCell.id)} />
+        actions: rowActions.map((action, index) => (
+          <ActionIcon key={index} name={action.icon} onClick={() => action.onClick(dataCell.id)} />
         )),
       }));
     }
@@ -165,7 +169,7 @@ class Table extends React.Component<Props> {
     return newData;
   };
 
-  generateColumns = (columns: Array<Data>) => {
+  generateColumns = (columns: Array<Column>) => {
     const { selectedAll } = this.state;
     const { options } = this.props;
     const {
@@ -178,12 +182,7 @@ class Table extends React.Component<Props> {
     if (active) {
       const rowCheckbox = {
         title: (
-          <Checkbox
-            checked={selectedAll}
-            className="checkbox"
-            id="toggleAll"
-            onChange={this.toggleSelectAll}
-          />
+          <TableCheckbox id="toggleAll" checked={selectedAll} onChange={this.toggleSelectAll} />
         ),
         key: 'check',
       };
@@ -199,18 +198,20 @@ class Table extends React.Component<Props> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Data>) =>
-    this.generateColumns(columns).map(column => <TableHeaderCell>{column.title}</TableHeaderCell>);
+  renderColumns = (columns: Array<Column>): Array<Node> =>
+    this.generateColumns(columns).map((column, index) => (
+      <TableHeaderCell key={index}>{column.title}</TableHeaderCell>
+    ));
 
-  renderData = (columns: Array<Columns>, data: Array<Data>) => {
+  renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
-    return newData.map((row, i) => (
-      <TableRow key={i}>
+    return newData.map(row => (
+      <TableRow key={row.id}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
-            {column.render ? column.render(row[column.key]) : row[column.key]}
+            {column.render ? column.render({ value: row[column.key] }) : row[column.key]}
           </TableCell>
         ))}
       </TableRow>

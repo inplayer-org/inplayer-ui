@@ -61,7 +61,7 @@ Pagination.defaultProps = {
   previousLinkClassName: 'previous',
   nextLinkClassName: 'next',
   disabledClassName: 'disabled',
-  hrefBuilder: () => String,
+  hrefBuilder: () => '',
   extraAriaContext: '',
   style: {},
   className: '',
