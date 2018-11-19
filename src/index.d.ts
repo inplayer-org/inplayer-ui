@@ -6,17 +6,17 @@ import {
   ReactElement,
   Component,
   SyntheticEvent,
-  ButtonHTMLAttributes
+  ButtonHTMLAttributes,
 } from 'react';
-import { AnyStyledComponent } from 'styled-components';
+import { StyledComponentClass } from 'styled-components';
 import moment from 'moment';
 
 // TODO andrej-naumovski 16.11.2018: Improve types for styled-components exports
 
 interface IGrid {
-  Column: AnyStyledComponent;
-  Row: AnyStyledComponent;
-  Container: AnyStyledComponent;
+  Column: StyledComponentClass<any, Theme>;
+  Row: StyledComponentClass<any, Theme>;
+  Container: StyledComponentClass<any, Theme>;
 }
 
 export declare const Grid: IGrid;
@@ -36,7 +36,7 @@ export declare const Checkbox: FunctionComponent<CheckboxProps>;
 export interface MenuItem {
   title: string;
   href?: string;
-  onClick?: (e: SyntheticEvent<*>) => any;
+  onClick?: (e: SyntheticEvent<HTMLElement>) => any;
 }
 
 export interface UserMenuDropdownProps {
@@ -45,7 +45,7 @@ export interface UserMenuDropdownProps {
 }
 
 export interface UserMenuProps extends UserMenuDropdownProps {
-  image: ReactElement<*> | string;
+  image: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
 }
@@ -81,7 +81,7 @@ export declare const Modal: FunctionComponent<ModalProps>;
 
 export interface NavbarProps {
   children: ReactNode;
-  logo?: ReactElement<*> | string;
+  logo?: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
 }
@@ -93,8 +93,8 @@ interface NavbarState {
 interface Navbar$MenuItemProps {
   active: boolean;
   icon?: string | ReactNode;
-  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any,
-  children?: ReactNode,
+  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
+  children?: ReactNode;
 }
 
 export declare class Navbar extends Component<NavbarProps, NavbarState> {
@@ -129,10 +129,14 @@ export interface RadioProps {
 
 export declare const Radio: FunctionComponent<RadioProps>;
 
+interface TableColumn$RenderProps {
+  value: string;
+}
+
 export interface TableColumn {
   title: string;
   key: string;
-  render: ({ value: string }) => ReactNode;
+  render: ({ value }: TableColumn$RenderProps) => ReactNode;
 }
 
 export interface TableRowData extends Object {
@@ -160,7 +164,7 @@ export interface TableProps {
 
 interface TableState {
   selected: {
-    [number | string]: boolean;
+    [s: string]: boolean;
   };
   selectedAll: boolean;
 }
@@ -196,7 +200,7 @@ interface TabsProps {
   tabs: Array<TabInfo>;
   selectedTabIndex: number;
   onTabClick: (index: number) => void;
-  className?: string,
+  className?: string;
   style?: CSSProperties;
 }
 
@@ -223,15 +227,15 @@ export interface AccordionPanel {
 }
 
 export interface AccordionProps {
-  panels: Array<Panel>;
+  panels: Array<AccordionPanel>;
 }
 
 export interface AccordionState {
-  [string]: boolean;
+  [s: string]: boolean;
 }
 
 export declare class Accordion extends Component<AccordionProps, AccordionState> {
-  toggleOpen: (name: string) => (e: SyntheticEvent<*>) => void;
+  toggleOpen: (name: string) => (e: SyntheticEvent<HTMLElement>) => void;
   toggleClose: (name: string, accordionAction: () => any) => (saveOnClose: boolean) => any;
 }
 
@@ -241,10 +245,9 @@ export interface ButtonContentProps {
   icon?: string;
   iconPosition?: string;
   iconModifiers?: Array<string>;
-  children: ReactNode;
 }
 
-export interface ButtonProps extends ButtonHTMLAttributes, ButtonContentProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
   buttonModifiers?: Array<string>;
   size?: ButtonSize;
   style?: CSSProperties;
@@ -278,15 +281,21 @@ export interface DatePickerProps {
   calendarInfo: boolean;
   isOutsideRange: boolean;
   onDateChange: DatePicker$OnDateChange;
-  style?: CSSProperties,
-  className?: string,
+  style?: CSSProperties;
+  className?: string;
 }
 
 interface DatePickerState {
   focusedInput?: string;
-};
+}
 
-type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
+declare const THIS_WEEK = 'this week';
+declare const LAST_WEEK = 'last week';
+declare const THIS_MONTH = 'this month';
+declare const LAST_MONTH = 'last month';
+declare const THIS_YEAR = 'this year';
+
+type Period = 'this week' | 'last week' | 'this month' | 'last month' | 'this year';
 
 export declare class DatePicker extends Component<DatePickerProps, DatePickerState> {
   onFocusedInputChange: (focusedInput: string) => void;
@@ -302,19 +311,25 @@ export interface Option {
 export interface DropdownProps extends HTMLSelectElement {
   value: string;
   onChange: (value: string) => any;
-  className?: string;
   color?: string;
-  options: Array<Option>;
-  style?: CSSProperties;
+  items: Array<Option>;
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
-export declare const Icon: AnyStyledComponent;
+export declare const Icon: StyledComponentClass<any, Theme>;
 
-export declare const Label: AnyStyledComponent;
+export interface LabelProps {
+  disabled: boolean;
+}
 
-export declare const Loader: AnyStyledComponent;
+export declare const Label: StyledComponentClass<LabelProps, Theme>;
+
+export interface LoaderProps {
+  color?: string;
+}
+
+export declare const Loader: StyledComponentClass<LoaderProps, Theme>;
 
 type NotificationVariant = 'success' | 'danger' | 'warning';
 
@@ -329,10 +344,10 @@ interface NotificationProps {
 }
 
 interface INotification extends FunctionComponent<NotificationProps> {
-  create(props: NotificationProps, parentDiv?: HTMLDivElement);
-  success(props: NotificationProps, parentDiv?: HTMLDivElement);
-  warning(props: NotificationProps, parentDiv?: HTMLDivElement);
-  danger(props: NotificationProps, parentDiv?: HTMLDivElement);
+  create(props: NotificationProps, parentDiv?: HTMLDivElement): void;
+  success(props: NotificationProps, parentDiv?: HTMLDivElement): void;
+  warning(props: NotificationProps, parentDiv?: HTMLDivElement): void;
+  danger(props: NotificationProps, parentDiv?: HTMLDivElement): void;
 }
 
 export declare const Notification: INotification;
@@ -389,7 +404,7 @@ export declare const Progress: FunctionComponent<ProgressProps>;
 export interface SingleDayPickerProps {
   onDateChange: (date: typeof moment) => any;
   date: string;
-  isOutsideRange: (any) => boolean;
+  isOutsideRange: () => boolean;
   id?: string;
   style?: CSSProperties;
   className?: string;
@@ -399,8 +414,7 @@ interface SingleDayPickerState {
   focusedInput: string;
 }
 
-export declare class SingleDayPicker extends Component<SingleDayPickerProps, SingleDayPickerState> {
-}
+export declare class SingleDayPicker extends Component<SingleDayPickerProps, SingleDayPickerState> {}
 
 export interface SwitchProps {
   checked: boolean;
@@ -414,7 +428,7 @@ export interface SwitchProps {
 
 export declare const Switch: FunctionComponent<SwitchProps>;
 
-export declare const TextArea: AnyStyledComponent;
+export declare const TextArea: StyledComponentClass<HTMLInputElement, Theme>;
 
 export interface TextFieldProps {
   type: string;
@@ -445,22 +459,22 @@ export interface Theme {
       main: string;
       light?: string;
       dark?: string;
-    },
+    };
     secondary: {
       main: string;
       light?: string;
       dark?: string;
-    },
+    };
     text: {
       main: string;
       light?: string;
       disabled?: string;
-    },
-  },
+    };
+  };
   dimensions: {
     baseGrid: number;
     borderRadius: string;
-  },
+  };
   font: {
     primary: string;
     primaryFallback: string;
@@ -470,7 +484,7 @@ export interface Theme {
       normal?: number;
       semiBold?: number;
       bold?: number;
-    },
+    };
     sizes: {
       extraSmall: string;
       small: string;
@@ -482,22 +496,22 @@ export interface Theme {
       h4: string;
       h5: string;
       h6: string;
-    },
-  },
+    };
+  };
   padding: {
     sizes: {
       small: string;
       medium: string;
-    },
-  },
+    };
+  };
 }
 
-export interface  ThemeWrapperProps {
+export interface ThemeWrapperProps {
   children: ReactNode;
   theme?: Theme;
 }
 
-declare export const ThemeWrapper: FunctionComponent<ThemeWrapperProps>;
+export declare const ThemeWrapper: FunctionComponent<ThemeWrapperProps>;
 
 interface IColors {
   white: '#fff';
