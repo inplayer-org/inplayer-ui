@@ -32,7 +32,7 @@ class Page extends React.Component {
       {
         title: '',
         key: 'icon',
-        render: value => <Icon name={value} />,
+        render: ({ value }) => <Icon name={value} />,
       },
       {
         title: 'Name',
@@ -103,7 +103,7 @@ const columns = [
   {
     title: '',
     key: 'icon',
-    render: value => <Icon name={value} />,
+    render: ({ value }) => <Icon name={value} />,
   },
   {
     title: 'Name',
