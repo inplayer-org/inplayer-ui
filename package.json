@@ -4,6 +4,7 @@
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/bundle.js",
+  "typings": "./src/index.d.ts",
   "directories": {
     "src": "src"
   },

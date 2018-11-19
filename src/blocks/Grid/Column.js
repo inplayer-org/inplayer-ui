@@ -12,9 +12,9 @@ type Props = {
   flex: string,
 };
 
-const Column: ReactComponentStyled<Props> = styled.div`
+const Column: ReactComponentStyled<*> = styled.div`
   display: flex;
-  flex: ${props => props.flex};
+  flex: ${(props: Props) => props.flex};
   padding: ${gridScale(0.5)};
   ${applyStyleModifiers(modifiers)};
 `;
