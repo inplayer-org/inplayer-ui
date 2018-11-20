@@ -1,4 +1,3 @@
-// @flow
 import { createGlobalStyle } from 'styled-components';
 
 // Global styles but theme- and update-able!
@@ -8,10 +7,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${(props: string) => props.theme.palette.primary.main};
-    color: ${(props: string) => props.theme.palette.primary.main};
-    font-family: ${(props: string) => props.theme.font.primaryFallback};
-    font-size: ${(props: string) => props.theme.font.sizes.medium}px;
+    background-color: ${props => props.theme.palette.primary.main};
+    color: ${props => props.theme.palette.primary.main};
+    font-family: ${props => props.theme.font.primaryFallback};
+    font-size: ${props => props.theme.font.sizes.medium}px;
     font-weight: 400;
     height: 100%;
     margin: 0;
@@ -20,17 +19,17 @@ const GlobalStyle = createGlobalStyle`
     input,
     select,
     textarea {
-      font-family: ${(props: string) => props.theme.font.primaryFallback};
+      font-family: ${props => props.theme.font.primaryFallback};
     }
 
     &.fonts-loaded {
-      font-family: ${(props: string) => props.theme.font.primary};
+      font-family: ${props => props.theme.font.primary};
 
       button,
       input,
       select,
       textarea {
-        font-family: ${(props: string) => props.theme.font.primary};
+        font-family: ${props => props.theme.font.primary};
       }
     }
   }

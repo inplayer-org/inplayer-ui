@@ -15,7 +15,7 @@ const ThemeWrapper = ({ children, theme }: Props) => {
   return (
     <ThemeProvider theme={appTheme}>
       <Fragment>
-        <GlobalStyles theme={appTheme} suppressMultiMountWarning />
+        <GlobalStyles suppressMultiMountWarning />
         {children}
       </Fragment>
     </ThemeProvider>
