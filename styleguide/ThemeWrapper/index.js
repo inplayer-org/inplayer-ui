@@ -13,7 +13,7 @@ const GlobalContainer = ({ children }: Props) => {
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
-        <GlobalStyles suppressMultiMountWarning />
+        <GlobalStyles theme={theme} suppressMultiMountWarning />
         {children}
       </Fragment>
     </ThemeProvider>
