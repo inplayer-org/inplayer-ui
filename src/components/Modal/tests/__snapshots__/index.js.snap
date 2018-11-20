@@ -69,7 +69,7 @@ exports[`Modal renders correctly 1`] = `
     <div
       className="c2"
     >
-      <h1
+      <h4
         className="c3 c4"
         color=""
         style={Object {}}

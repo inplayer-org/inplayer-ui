@@ -132,11 +132,6 @@ exports[`Table renders correctly 1`] = `
   background: transparent;
 }
 
-.c9 {
-  display: inline-block;
-  font-size: 1rem;
-}
-
 .c0 {
   background: #fff;
   width: 100%;
@@ -183,6 +178,8 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c8 {
+  display: inline-block;
+  font-size: 1rem;
   padding: 2px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
@@ -266,17 +263,17 @@ exports[`Table renders correctly 1`] = `
       >
         <span
           aria-hidden={true}
-          className="fa fa-edit c8 c9"
+          className="fa fa-edit c8"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-cog c8 c9"
+          className="fa fa-cog c8"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-trash c8 c9"
+          className="fa fa-trash c8"
           onClick={[Function]}
         />
       </td>
