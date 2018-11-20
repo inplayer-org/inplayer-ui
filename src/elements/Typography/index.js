@@ -73,6 +73,7 @@ const Typography = ({
   }
   return (
     <Heading
+      as={variant}
       className={className}
       variant={variant}
       modifiers={modifiers}
