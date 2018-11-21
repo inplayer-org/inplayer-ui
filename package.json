@@ -1,10 +1,10 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/bundle.js",
-  "typings": "src/index.d.ts",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
