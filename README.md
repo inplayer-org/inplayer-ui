@@ -1,6 +1,21 @@
+<h1 align="center">
+  <a target="_blank" href="https://inplayer-org.github.io/inplayer-ui/">
+    <img src="http://www.marathonartists.com/wp-content/uploads/2017/09/inplayer-logo.png" alt="inplayer-ui" title="InPlayer UI" width="300">
+  </a>
+</h1>
+<p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
+
+
 # InPlayer React UI Components
 
+[![npm version](https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg)](https://www.npmjs.com/package/@inplayer-org/inplayer-ui)
 [![Build Status](https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev)](https://travis-ci.org/inplayer-org/inplayer-ui)
+
+```sh
+yarn add @inplayer-org/inplayer-ui styled-components
+```
+
+Inplayer UI is a style system / UI library for [React](https://reactjs.org/). It works with [Styled Components 💅](https://www.styled-components.com).
 
 ## Up & Running
 
