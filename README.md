@@ -11,6 +11,12 @@
 [![npm version](https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg)](https://www.npmjs.com/package/@inplayer-org/inplayer-ui)
 [![Build Status](https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev)](https://travis-ci.org/inplayer-org/inplayer-ui)
 
+```sh
+yarn add @inplayer-org/inplayer-ui styled-components
+```
+
+Inplayer UI is a style system / UI library for [React](https://reactjs.org/). It works with [Styled Components 💅](https://www.styled-components.com).
+
 ## Up & Running
 
 To install dependencies with Yarn, run:
