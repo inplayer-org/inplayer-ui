@@ -217,7 +217,7 @@ See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) f
 
 [build-badge]: https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev
 [build]: https://travis-ci.org/inplayer-org/inplayer-ui
-[version-badge]: 	https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg
+[version-badge]: 	https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg?colorB=blue
 [package]: https://www.npmjs.com/package/@inplayer-org/inplayer-ui
 [license-badge]: https://img.shields.io/npm/l/@inplayer-org/inplayer-ui.svg?style=flat-square
 [license]: https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE
