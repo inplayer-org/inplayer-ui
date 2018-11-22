@@ -1,7 +1,8 @@
 <h1 align="center">
   <a target="_blank" href="https://inplayer-org.github.io/inplayer-ui/">
     <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ui" title="InPlayer UI" width="300">
-    <span align="center" style="font-size: 1.5rem; color: blue">InPlayer React UI Components</span>
+    <br />
+    <span style="font-size: 1.5rem; color: blue">InPlayer React UI Components</span>
   </a>
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
@@ -64,24 +65,24 @@ These common modifiers live in `src/modifiers`
 ```
 ├ src/
 ├── blocks/
-|   ├── Card
-|   |   ├── Body.js     // <- Element
-|   |   ├── Footer.js   // <- Element
-|   |   ├── Header.js   // <- Element
+|   ├── Grid
+|   |   ├── Column.js     // <- Element
+|   |   ├── Container.js   // <- Element
+|   |   ├── Row.js   // <- Element
 |   |   └── index.js    // <- Block
 |   └── index.js        // <- export for all Blocks
 ├── elements/
-|   ├── A
+|   ├── Label
 |   |   ├── tests
 |   |   |   ├── __snapshots__
 |   |   |   |   └── index.js.snap   // <- Snapshot Test
 |   |   |   └── index.js            // <- Test
 |   |   └── index.js                // <- Element
-|   ├── Link
+|   ├── Loader
 |   |   └── index.js                // <- Element
-|   ├── H3
+|   ├── Typography
 |   |   └── index.js                // <- Element
-|   ├── P
+|   ├── Icon
 |   |   └── index.js                // <- Element
 |   └── etc.
 |   └── index.js                    // <- export for all Blocks
