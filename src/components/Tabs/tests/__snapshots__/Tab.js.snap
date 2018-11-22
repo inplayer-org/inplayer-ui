@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab renders correctly 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0.5rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-right: 1px solid #d7dde5;
+  font-weight: 300;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: background 0.3s,color 0.3s;
+  transition: background 0.3s,color 0.3s;
+  background: transparent;
+  color: #a0a3aa;
+}
+
+.c0:last-child {
+  border: none;
+}
+
+.c0:hover {
+  color: #44494e;
+}
+
+<div
+  className="c0"
+/>
+`;

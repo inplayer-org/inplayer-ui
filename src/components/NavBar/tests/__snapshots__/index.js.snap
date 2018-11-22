@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+.c4 {
+  width: 18px;
+  margin: 0 17px 16px 15px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+}
+
+.c4:hover i {
+  border-color: #fff;
+}
+
+.c5 {
+  border: solid rgba(255,255,255,0.4);
+  border-width: 1px 0 0 1px;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.c0 {
+  background-color: #253a66;
+  width: 50px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.c2 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 34px;
+  margin: 8px 0;
+}
+
+.c3 {
+  width: 100%;
+  text-align: left;
+  margin: 50px 0 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+  open={false}
+  style={Object {}}
+>
+  <span
+    className="c1"
+  >
+    <img
+      className="c2"
+    />
+    <nav
+      className="c3"
+    />
+  </span>
+  <div
+    className="c4"
+  >
+    <i
+      className="c5"
+      open={false}
+    />
+  </div>
+</div>
+`;

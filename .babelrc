@@ -16,9 +16,18 @@
       "module-resolver",
       {
         "root": [
-          "./"
+          "./",
+          "./src/**"
         ]
       }
-    ]
+    ],
+    [
+      "babel-plugin-webpack-alias",
+      {
+        "config": "./webpack.config.js"
+      }
+    ],
+    "@babel/plugin-syntax-class-properties",
+    "transform-class-properties"
   ]
 }

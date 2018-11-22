@@ -1,12 +1,25 @@
-import { uiColors } from 'utils';
+import colors from 'config/colors';
 
-const fontColorModifiers = {
-  text: ({ theme }) => `
-    color: ${uiColors('text', theme)};
-  `,
-  textLight: ({ theme }) => `
-    color: ${uiColors('textLight', theme)};
-  `,
-};
+export const textPrimary = ({ theme }) => `
+  color: ${theme.palette.text.main};
+`;
 
-export default fontColorModifiers;
+export const textLight = ({ theme }) => `
+  color: ${theme.palette.text.light};
+`;
+
+export const textDisabled = ({ theme }) => `
+  color: ${theme.palette.text.disabled};
+`;
+
+export const textDanger = () => `
+  color: ${colors.red};
+`;
+
+export const textSuccess = () => `
+  color: ${colors.green};
+`;
+
+export const textWarning = () => `
+  color: ${colors.yellow};
+`;

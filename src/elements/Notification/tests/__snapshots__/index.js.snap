@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification renders correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  border: 1px solid #d7dde5;
+  border-radius: 3px;
+  background: #F6F8FB;
+  color: #44494e;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 18px 2%;
+  min-height: 10%;
+  left: 15%;
+  right: 15%;
+  position: fixed;
+  top: 80px;
+  z-index: 120;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  -webkit-animation: njGPL 0s ease-in-out 1s 1;
+  animation: njGPL 0s ease-in-out 1s 1;
+}
+
+.c0 i {
+  margin-right: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.c0 p {
+  margin: 0;
+  max-width: none;
+}
+
+.c1 {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  color: rgba(68,73,78,0.6);
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.c1::before {
+  content: '✕';
+  position: relative;
+  left: 5px;
+  font-size: 0.75rem;
+  top: -1px;
+}
+
+.c1:hover {
+  background: #fff;
+  color: #44494e;
+}
+
+<div
+  className="c0"
+  style={Object {}}
+>
+  <div>
+    <strong />
+     
+  </div>
+  <div
+    className="c1"
+  />
+</div>
+`;

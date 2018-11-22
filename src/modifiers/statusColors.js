@@ -1,21 +1,21 @@
-import { statusColors } from 'utils';
+import colors from 'config/colors';
 
-const statusColorModifiers = {
-  statusColorDanger: ({ theme }) => `
-    color: ${statusColors('danger', theme)};
-  `,
-  statusColorDefault: ({ theme }) => `
-    color: ${statusColors('default', theme)};
-  `,
-  statusColorInfo: ({ theme }) => `
-    color: ${statusColors('info', theme)};
-  `,
-  statusColorSuccess: ({ theme }) => `
-    color: ${statusColors('success', theme)};
-  `,
-  statusColorWarning: ({ theme }) => `
-    color: ${statusColors('warning', theme)};
-  `,
-};
+export const statusColorPrimary = ({ theme }) => `
+   color: ${theme.palette.primary.main};
+`;
 
-export default statusColorModifiers;
+export const statusColorWarning = () => `
+   color: ${colors.yellow};
+`;
+
+export const statusColorInfo = () => `
+   color: ${colors.blue};
+`;
+
+export const statusColorSuccess = () => `
+   color: ${colors.green};
+`;
+
+export const statusColorDanger = () => `
+   color: ${colors.red};
+`;

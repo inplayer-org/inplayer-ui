@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress renders correctly 1`] = `
+<svg
+  className="rc-progress-circle "
+  style={Object {}}
+  viewBox="0 0 100 100"
+>
+  <path
+    className="rc-progress-circle-trail"
+    d="M 50,50 m 0,-49.5
+     a 49.5,49.5 0 1 1 0,99
+     a 49.5,49.5 0 1 1 0,-99"
+    fillOpacity="0"
+    stroke="#d7dde5"
+    strokeWidth={1}
+    style={
+      Object {
+        "strokeDasharray": "311.01767270538954px 311.01767270538954px",
+        "strokeDashoffset": "-0px",
+        "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s",
+      }
+    }
+  />
+  <path
+    className="rc-progress-circle-path"
+    d="M 50,50 m 0,-49.5
+     a 49.5,49.5 0 1 1 0,99
+     a 49.5,49.5 0 1 1 0,-99"
+    fillOpacity="0"
+    strokeLinecap="round"
+    strokeWidth={0}
+    style={
+      Object {
+        "stroke": "#07AAE6",
+        "strokeDasharray": "0px 311.01767270538954px",
+        "strokeDashoffset": "-0px",
+        "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s",
+      }
+    }
+  />
+</svg>
+`;

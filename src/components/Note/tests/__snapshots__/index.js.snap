@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note renders correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  border: 1px solid #d7dde5;
+  padding: 18px 2%;
+  border-radius: 3px;
+  background: #fff;
+  color: #44494e;
+  font-weight: 300;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.c0 strong {
+  padding-right: 5px;
+}
+
+.c0 i {
+  margin-right: 12px;
+  position: relative;
+  top: 2px;
+}
+
+<p
+  className="c0"
+  style={Object {}}
+>
+   
+  <strong />
+</p>
+`;
