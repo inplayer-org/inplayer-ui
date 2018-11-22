@@ -220,4 +220,4 @@ See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) f
 [version-badge]: 	https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg
 [package]: https://www.npmjs.com/package/@inplayer-org/inplayer-ui
 [license-badge]: https://img.shields.io/npm/l/inplayer-ui.svg
-[license]: https://github.com/inplayer-org/inplayer-ui/blob/dev/README.md
+[license]: https://github.com/inplayer-org/inplayer-ui/blob/dev/LICENSE
