@@ -1,12 +1,10 @@
 <h1 align="center">
   <a target="_blank" href="https://inplayer-org.github.io/inplayer-ui/">
     <img src="https://assets.inplayer.com/images/inplayer-256.png" alt="inplayer-ui" title="InPlayer UI" width="300">
+    <span style="font-size: 1.5rem; color: blue">InPlayer React UI Components</span>
   </a>
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
-
-
-# InPlayer React UI Components
 
 [![npm version](https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg)](https://www.npmjs.com/package/@inplayer-org/inplayer-ui)
 [![Build Status](https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev)](https://travis-ci.org/inplayer-org/inplayer-ui)
@@ -15,7 +13,7 @@
 yarn add @inplayer-org/inplayer-ui styled-components
 ```
 
-Inplayer UI is a style system / UI library for [React](https://reactjs.org/). It works with [Styled Components 💅](https://www.styled-components.com).
+InPlayer UI is a style system / UI library for [React](https://reactjs.org/). It works with [Styled Components 💅](https://www.styled-components.com).
 
 ## Up & Running
 
@@ -182,7 +180,7 @@ This library uses [Prettier](https://github.com/prettier/prettier) for code cons
 
 ### Docs
 
-This lib uses [react-styleguidist](https://github.com/styleguidist/react-styleguidist) for documenting components. To to view the docs locally, run `yarn styleguide` and visit `http://localhost:6060`. To build a static version, run `yarn styleguide:build`. This static version will be created in `/docs`.
+This lib uses [react-styleguidist](https://github.com/styleguidist/react-styleguidist) for documenting components. To to view the docs locally, run `yarn styleguide` and visit `http://localhost:6060`. To build a static version, ruBlagodaram `yarn styleguide:build`. This static version will be created in `/docs`.
 
 \_**NOTE:** There is a pre-push script in this library that will automatically update the docs when you push to GitHub.
 
@@ -211,4 +209,6 @@ the Code of Conduct in the [Contributing Guidelines](https://github.com/inplayer
 
 ## License
 
-[MIT](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE)
+Licensed under the MIT License, Copyright © 2018-present InPlayer.
+
+See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) for more information.
