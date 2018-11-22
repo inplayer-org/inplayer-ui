@@ -514,6 +514,7 @@ export interface ThemeWrapperProps {
 export declare const ThemeWrapper: FunctionComponent<ThemeWrapperProps>;
 
 interface IColors {
+  black: '#000';
   white: '#fff';
   blue: '#286090';
   darkBlue: '#253a66';
@@ -522,6 +523,7 @@ interface IColors {
   gray: '#d7dde5';
   lightGray: '#F6F8FB';
   darkGray: '#b9c1cb';
+  neutralGray: '#f6f8fb';
   fontDarkGray: '#44494e';
   fontGray: '#a0a3aa';
   fontLightGray: '#c8ccd4';
@@ -529,17 +531,15 @@ interface IColors {
   skyBlue: '#07AAE6';
   deepSkyBlue: '#0a8cd2';
   navy: '#2A4D8E';
-  accentPink: '#fcc8be';
   lemon: '#fcf3c0';
   mint: '#c8e8de';
-  neutralGray: '#f6f8fb';
   red: '#f26f59';
+  pink: '#fcc8be';
   paleRed: '#f9ece8';
   yellow: '#f4ca19';
   paleYellow: '#fffcee';
   green: '#5dc6a3';
   paleGreen: '#e4f9f2';
-  black: '#000';
 }
 
 export declare const Colors: IColors;
