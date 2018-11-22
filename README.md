@@ -7,8 +7,9 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
 
-[![npm version](https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg)](https://www.npmjs.com/package/@inplayer-org/inplayer-ui)
-[![Build Status](https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev)](https://travis-ci.org/inplayer-org/inplayer-ui)
+[![Build Status][build-badge]][build]
+[![Version][version-badge]][package]
+[![MIT License][license-badge]][license]
 
 ```sh
 yarn add @inplayer-org/inplayer-ui styled-components
@@ -213,3 +214,10 @@ the Code of Conduct in the [Contributing Guidelines](https://github.com/inplayer
 Licensed under the MIT License, Copyright © 2018-present InPlayer.
 
 See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) for more information.
+
+[build-badge]: https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev
+[build]: https://travis-ci.org/inplayer-org/inplayer-ui
+[version-badge]: 	https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg
+[package]: https://www.npmjs.com/package/@inplayer-org/inplayer-ui
+[license-badge]: https://img.shields.io/npm/l/inplayer-ui.svg
+[license]: https://github.com/inplayer-org/inplayer-ui/blob/dev/README.md
