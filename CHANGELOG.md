@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.1.0] - 14-11-2018
+# [0.1.0] - 22-11-2018
 
 ### Added
 
@@ -34,6 +34,7 @@ All notable changes to this project will be documented in this file.
 - TextField element
 - Typography element
 - Pagination element
+- Typings
 
 ### Changed
 
