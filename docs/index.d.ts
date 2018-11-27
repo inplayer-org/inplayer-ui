@@ -523,6 +523,7 @@ interface IColors {
   gray: '#d7dde5';
   lightGray: '#F6F8FB';
   darkGray: '#b9c1cb';
+  neutralGray: '#f6f8fb';
   fontDarkGray: '#44494e';
   fontGray: '#a0a3aa';
   fontLightGray: '#c8ccd4';
@@ -532,8 +533,8 @@ interface IColors {
   navy: '#2A4D8E';
   lemon: '#fcf3c0';
   mint: '#c8e8de';
-  neutralGray: '#f6f8fb';
   red: '#f26f59';
+  pink: '#fcc8be';
   paleRed: '#f9ece8';
   yellow: '#f4ca19';
   paleYellow: '#fffcee';

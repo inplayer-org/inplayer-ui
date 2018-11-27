@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.1.1] - 27-11-2018
+
+### Fixes
+
+- Update libs that use harmful npm lib event-stream as dependency
+
 # [0.1.0] - 22-11-2018
 
 ### Added
@@ -35,13 +41,5 @@ All notable changes to this project will be documented in this file.
 - Typography element
 - Pagination element
 - Typings
-
-### Changed
-
-- /
-
-### Fixes
-
-- /
 
 ==========
