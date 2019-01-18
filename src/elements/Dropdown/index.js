@@ -9,6 +9,7 @@ import colors from 'config/colors';
 
 const DropdownContainer = styled.select`
   border: 1px solid ${colors.gray};
+  background-color: ${colors.white};
   border-radius: 2px;
   color: ${uiColors('text.light')};
   cursor: pointer;
