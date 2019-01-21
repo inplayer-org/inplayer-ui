@@ -11,10 +11,14 @@ import {
 import { StyledComponent } from 'styled-components';
 import moment from 'moment';
 
+interface ColumnProps {
+  flex: string;
+}
+
 interface IGrid {
-  Column: StyledComponent<any, Theme>;
-  Row: StyledComponent<any, Theme>;
-  Container: StyledComponent<any, Theme>;
+  Column: StyledComponent<'div', Theme, ColumnProps>;
+  Row: StyledComponent<'div', Theme>;
+  Container: StyledComponent<'div', Theme>;
 }
 
 export declare const Grid: IGrid;
@@ -321,13 +325,13 @@ export interface LabelProps {
   disabled: boolean;
 }
 
-export declare const Label: StyledComponent<LabelProps, Theme>;
+export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
 export interface LoaderProps {
   color?: string;
 }
 
-export declare const Loader: StyledComponent<LoaderProps, Theme>;
+export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
 
 type NotificationVariant = 'success' | 'danger' | 'warning';
 
@@ -338,7 +342,6 @@ interface NotificationProps {
   duration?: number;
   className?: string;
   style?: CSSProperties;
-  close: () => void;
 }
 
 interface INotification extends FunctionComponent<NotificationProps> {
@@ -426,7 +429,7 @@ export interface SwitchProps {
 
 export declare const Switch: FunctionComponent<SwitchProps>;
 
-export declare const TextArea: StyledComponent<HTMLInputElement, Theme>;
+export declare const TextArea: StyledComponent<'input', Theme>;
 
 export interface TextFieldProps {
   type: string;

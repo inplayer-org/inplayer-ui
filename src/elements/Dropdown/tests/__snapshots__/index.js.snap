@@ -3,6 +3,7 @@
 exports[`Dropdown renders correctly 1`] = `
 .c0 {
   border: 1px solid #d7dde5;
+  background-color: #fff;
   border-radius: 2px;
   color: #a0a3aa;
   cursor: pointer;
