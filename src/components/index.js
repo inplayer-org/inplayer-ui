@@ -10,3 +10,4 @@ export { default as TabNavigation } from './TabNavigation';
 export { default as Header } from './Header';
 export { default as Table } from './Table';
 export { default as Modal } from './Modal';
+export { default as Radio } from './Radio';
