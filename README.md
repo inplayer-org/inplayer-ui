@@ -53,6 +53,10 @@ function App() {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
+Yes, it's really all you need to get started as you can see in this live and interactive demo:
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/jlojq78mjw)
+
 ## File Structure
 
 This component library borrows its structure from [BEM](http://getbem.com/introduction/) and is set
