@@ -31,6 +31,28 @@ or to install with npm, run:
 $ npm install
 ```
 
+## Usage
+
+Here is a quick example to get you started, **it's all you need**:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeWrapper, Button } from '@inplayer-org/inplayer-ui';
+
+function App() {
+  return (
+    <ThemeWrapper>
+      <Button size="lg">
+        Hello World
+      </Button>
+    <ThemeWrapper/>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
 ## File Structure
 
 This component library borrows its structure from [BEM](http://getbem.com/introduction/) and is set
