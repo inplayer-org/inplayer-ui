@@ -8,15 +8,17 @@ import {
   SyntheticEvent,
   ButtonHTMLAttributes,
 } from 'react';
-import { StyledComponentClass } from 'styled-components';
+import { StyledComponent } from 'styled-components';
 import moment from 'moment';
 
-// TODO andrej-naumovski 16.11.2018: Improve types for styled-components exports
+interface ColumnProps {
+  flex: string;
+}
 
 interface IGrid {
-  Column: StyledComponentClass<any, Theme>;
-  Row: StyledComponentClass<any, Theme>;
-  Container: StyledComponentClass<any, Theme>;
+  Column: StyledComponent<'div', Theme, ColumnProps>;
+  Row: StyledComponent<'div', Theme>;
+  Container: StyledComponent<'div', Theme>;
 }
 
 export declare const Grid: IGrid;
@@ -317,19 +319,19 @@ export interface DropdownProps extends HTMLSelectElement {
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
-export declare const Icon: StyledComponentClass<any, Theme>;
+export declare const Icon: StyledComponent<any, Theme>;
 
 export interface LabelProps {
   disabled: boolean;
 }
 
-export declare const Label: StyledComponentClass<LabelProps, Theme>;
+export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
 export interface LoaderProps {
   color?: string;
 }
 
-export declare const Loader: StyledComponentClass<LoaderProps, Theme>;
+export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
 
 type NotificationVariant = 'success' | 'danger' | 'warning';
 
@@ -340,7 +342,6 @@ interface NotificationProps {
   duration?: number;
   className?: string;
   style?: CSSProperties;
-  close: () => void;
 }
 
 interface INotification extends FunctionComponent<NotificationProps> {
@@ -428,7 +429,7 @@ export interface SwitchProps {
 
 export declare const Switch: FunctionComponent<SwitchProps>;
 
-export declare const TextArea: StyledComponentClass<HTMLInputElement, Theme>;
+export declare const TextArea: StyledComponent<'input', Theme>;
 
 export interface TextFieldProps {
   type: string;

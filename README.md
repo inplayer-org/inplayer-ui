@@ -31,6 +31,32 @@ or to install with npm, run:
 $ npm install
 ```
 
+## Usage
+
+Here is a quick example to get you started, **it's all you need**:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeWrapper, Button } from '@inplayer-org/inplayer-ui';
+
+function App() {
+  return (
+    <ThemeWrapper>
+      <Button size="lg">
+        Hello World
+      </Button>
+    <ThemeWrapper/>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
+Yes, it's really all you need to get started as you can see in this live and interactive demo:
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/jlojq78mjw)
+
 ## File Structure
 
 This component library borrows its structure from [BEM](http://getbem.com/introduction/) and is set

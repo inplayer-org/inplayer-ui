@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.1.3] - 18-01-2019
+
+### Added
+
+- Types for styled-components
+
+# [0.1.2] - 18-01-2019
+
+### Fixes
+
+- Set white as default background color for the Dropdown component
+
 # [0.1.1] - 27-11-2018
 
 ### Fixes

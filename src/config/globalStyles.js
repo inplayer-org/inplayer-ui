@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${props => props.theme.palette.primary.main};
     color: ${props => props.theme.palette.primary.main};
     font-family: ${props => props.theme.font.primaryFallback};
     font-size: ${props => props.theme.font.sizes.medium}px;

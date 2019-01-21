@@ -13,12 +13,14 @@ exports[`Progress renders correctly 1`] = `
      a 49.5,49.5 0 1 1 0,-99"
     fillOpacity="0"
     stroke="#d7dde5"
+    strokeLinecap="round"
     strokeWidth={1}
     style={
       Object {
+        "stroke": "#d7dde5",
         "strokeDasharray": "311.01767270538954px 311.01767270538954px",
         "strokeDashoffset": "-0px",
-        "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s",
+        "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s",
       }
     }
   />

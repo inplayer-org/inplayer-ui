@@ -143,6 +143,7 @@ exports[`Pagination renders correctly 1`] = `
         className="previous disabled"
       >
         <a
+          aria-disabled="true"
           className="previous"
           onClick={[Function]}
           onKeyPress={[Function]}
@@ -263,6 +264,7 @@ exports[`Pagination renders correctly 1`] = `
         className="next"
       >
         <a
+          aria-disabled="false"
           className="next"
           href=""
           onClick={[Function]}
