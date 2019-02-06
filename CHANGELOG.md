@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.1.4] - 06-02-2019
+
+### Fixes
+
+- Body global style primary color to palette text main color
+
+### Changes
+
+- Label `disabled` prop to be optional
+
 # [0.1.3] - 18-01-2019
 
 ### Added

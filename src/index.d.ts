@@ -322,7 +322,7 @@ export declare const Dropdown: FunctionComponent<DropdownProps>;
 export declare const Icon: StyledComponent<any, Theme>;
 
 export interface LabelProps {
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
