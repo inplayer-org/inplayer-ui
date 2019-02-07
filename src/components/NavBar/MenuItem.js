@@ -21,7 +21,6 @@ const MenuItemContainer = styled.div`
     css`
       background: ${uiColors('secondary.main')};
       border-right: ${uiColors('primary.main')} 3px solid;
-      width: calc(100% - 3px);
       color: ${colors.white};
     `
   )};
