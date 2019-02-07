@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.palette.text.main};
       font-family: ${props => props.theme.font.primaryFallback};
       font-size: ${props => props.theme.font.sizes.medium}px;
-      font-weight: 400;
+      font-weight: 300;
       height: 100%;
       margin: 0;
 
