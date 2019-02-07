@@ -1,18 +1,13 @@
-import FontFaceObserver from 'fontfaceobserver';
+import WebFont from 'webfontloader';
 
 function configureFonts(theme) {
-  const fontObservers = [new FontFaceObserver(theme.font.primary)];
+  const fonts = [theme.font.primary];
 
-  function fontLoadSuccess() {
-    document.body.classList.add('fonts-loaded');
-  }
-
-  function fontLoadFailure(e) {
-    console.error('ERROR', e);
-    document.body.classList.remove('fonts-loaded');
-  }
-
-  Promise.all(fontObservers.map(o => o.load())).then(fontLoadSuccess, fontLoadFailure);
+  WebFont.load({
+    google: {
+      families: fonts,
+    },
+  });
 
   return true;
 }

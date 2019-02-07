@@ -4,31 +4,33 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html {
     height: 100%;
-  }
 
-  body {
-    color: ${props => props.theme.palette.text.main};
-    font-family: ${props => props.theme.font.primaryFallback};
-    font-size: ${props => props.theme.font.sizes.medium}px;
-    font-weight: 400;
-    height: 100%;
-    margin: 0;
-
-    button,
-    input,
-    select,
-    textarea {
+    body {
+      color: ${props => props.theme.palette.text.main};
       font-family: ${props => props.theme.font.primaryFallback};
+      font-size: ${props => props.theme.font.sizes.medium}px;
+      font-weight: 300;
+      height: 100%;
+      margin: 0;
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: ${props => props.theme.font.primaryFallback};
+      }
     }
 
-    &.fonts-loaded {
+    &.wf-active {
       font-family: ${props => props.theme.font.primary};
+      font-weight: 300;
 
       button,
       input,
       select,
       textarea {
         font-family: ${props => props.theme.font.primary};
+        font-weight: 300;
       }
     }
   }
