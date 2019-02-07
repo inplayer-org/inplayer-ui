@@ -93,7 +93,7 @@ interface NavbarState {
 }
 
 interface Navbar$MenuItemProps {
-  active: boolean;
+  active?: boolean;
   icon?: string | ReactNode;
   onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
   children?: ReactNode;
