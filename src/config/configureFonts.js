@@ -1,19 +1,18 @@
 import FontFaceObserver from 'fontfaceobserver';
 
 function configureFonts(theme) {
-  // You could add multiple fonts here, but for this example, we're only using one.
-  const fonts = [theme.font.primary];
-  const fontObserver = new FontFaceObserver(fonts, {});
+  const fontObservers = [new FontFaceObserver(theme.font.primary)];
 
   function fontLoadSuccess() {
     document.body.classList.add('fonts-loaded');
   }
 
-  function fontLoadFailure() {
+  function fontLoadFailure(e) {
+    console.error('ERROR', e);
     document.body.classList.remove('fonts-loaded');
   }
 
-  Promise.all([fontObserver].map(o => o.load())).then(fontLoadSuccess, fontLoadFailure);
+  Promise.all(fontObservers.map(o => o.load())).then(fontLoadSuccess, fontLoadFailure);
 
   return true;
 }
