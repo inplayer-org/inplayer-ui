@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.1.7] - 08-02-2019
+
+### Fixes
+
+- Replace fontfaceobserver with webfontloader
+
+### Changes
+
+- Minor changes in default globalStyles
+
+# [0.1.5] - 07-02-2019
+
+### Fixes
+
+- Navbar Menu Item fixed width
+
+### Changes
+
+- Make active prop optional in MenuItem
+
 # [0.1.4] - 06-02-2019
 
 ### Fixes
