@@ -5,6 +5,9 @@ import { ifProp } from 'styled-tools';
 import { uiColors, fontWeights } from 'utils';
 
 const Tab = styled.a`
+  height: 100%;
+  display: flex;
+  align-items: center;
   border-bottom: 2px solid transparent;
   color: ${uiColors('text.light')};
   cursor: pointer;
@@ -31,6 +34,7 @@ const TabContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  height: 100%;
 `;
 
 type NavigationTab = {
