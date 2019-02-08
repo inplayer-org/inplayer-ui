@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.1.9] - 08-02-2019
+
+### Fixes
+
+- Fix minor styling issues with Header and Navbar
+
 # [0.1.8] - 08-02-2019
 
 ### Changes
