@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/bundle.js",
