@@ -93,7 +93,7 @@ interface NavbarState {
 }
 
 interface Navbar$MenuItemProps {
-  active: boolean;
+  active?: boolean;
   icon?: string | ReactNode;
   onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
   children?: ReactNode;
@@ -322,7 +322,7 @@ export declare const Dropdown: FunctionComponent<DropdownProps>;
 export declare const Icon: StyledComponent<any, Theme>;
 
 export interface LabelProps {
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;

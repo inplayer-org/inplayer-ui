@@ -19,7 +19,7 @@ const MenuItemContainer = styled.div`
   ${ifProp(
     'active',
     css`
-      background: ${uiColors('secondary.main')};
+      background: ${uiColors('primary.dark')};
       border-right: ${uiColors('primary.main')} 3px solid;
       color: ${colors.white};
     `

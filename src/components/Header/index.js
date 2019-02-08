@@ -11,6 +11,7 @@ import TabNavigation, { type TabNavigationProps } from 'components/TabNavigation
 
 const Container = styled.header`
   align-items: center;
+  padding: 0 2%;
   background: ${colors.white};
   border-bottom: 1px solid ${colors.gray};
   display: flex;
