@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.1.7] - 08-02-2019
+# [0.1.8] - 08-02-2019
+
+### Changes
+
+- Replace fontfaceobserver with webfontloader
+
+# [0.1.7] - 07-02-2019
 
 ### Fixes
 
-- Replace fontfaceobserver with webfontloader
+- Fix fontfaceobserver font loading
 
 ### Changes
 
