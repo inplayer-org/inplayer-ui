@@ -30,7 +30,7 @@ module.exports = {
       thin: 100,
       light: 300,
       normal: 400,
-      semiBold: 600,
+      semiBold: 500,
       bold: 700,
     },
     sizes: {
