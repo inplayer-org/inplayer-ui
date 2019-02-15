@@ -8,7 +8,10 @@ import {
   SyntheticEvent,
   ButtonHTMLAttributes,
 } from 'react';
-import { StyledComponent } from 'styled-components';
+import {
+  StyledComponent,
+  ThemeProviderComponent,
+} from 'styled-components';
 import moment from 'moment';
 
 interface ColumnProps {
@@ -510,8 +513,14 @@ export interface Theme {
 export interface ThemeWrapperProps {
   children: ReactNode;
   theme?: Theme;
+  withProvider: ThemeProviderComponent<Theme>;
 }
-
+/**
+ * A component which adds the theme to the library components.
+ * Theme prop is optional - it will use the default theme if no theme is provided.
+ * The ThemeProvider component from your styled-components version must be provided as a prop to withProvider,
+ * to inject the theme into your styled-components as well.
+ */
 export declare const ThemeWrapper: FunctionComponent<ThemeWrapperProps>;
 
 interface IColors {
