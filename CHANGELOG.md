@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.2.0] - 15-02-2019
+
+- Minor style adjustments to theme
+- Add withProvider prop to inject a custom ThemeProvider
+
 # [0.1.9] - 08-02-2019
 
 ### Fixes
