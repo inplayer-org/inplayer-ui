@@ -42,6 +42,11 @@ class Page extends React.Component {
         title: 'Date Created',
         key: 'dateCreated',
       },
+      {
+        title: 'Director',
+        key: 'director',
+        render: ({ value, rowValues }) => `${value} - ${rowValues.dateCreated}`,
+      }
     ];
 
     const data = [
@@ -49,17 +54,19 @@ class Page extends React.Component {
         id: 22,
         icon: 'music',
         name: "Won't You Be My Neighbour?",
+        director: 'Morgan Neville',
         dateCreated: '2018/07/24',
       },
       {
         id: 28,
         icon: 'code',
         name: 'Soundtrack: No Country',
+        director: 'Coen Brothers',
         dateCreated: '2018/07/21',
       },
     ];
 
-    const totalPages = Math.ceil(data.total / 5);
+    const totalPages = Math.ceil(data.length / 5);
 
     return (
       <React.Fragment>
@@ -113,6 +120,11 @@ const columns = [
     title: 'Date Created',
     key: 'dateCreated',
   },
+  {
+    title: 'Director',
+    key: 'director',
+    render: ({ value, rowValues }) => `${value} - ${rowValues.dateCreated}`,
+  }
 ];
 
 const data = [
@@ -120,17 +132,19 @@ const data = [
     id: 22,
     icon: 'music',
     name: "Won't You Be My Neighbour?",
+    director: 'Morgan Neville',
     dateCreated: '2018/07/24',
   },
   {
     id: 28,
     icon: 'code',
     name: 'Soundtrack: No Country',
+    director: 'Coen Brothers',
     dateCreated: '2018/07/21',
   },
 ];
 
-const totalPages = Math.ceil(2 / 5);
+const totalPages = Math.ceil(data.length / 5);
 
 class TableExample extends React.Component {
   constructor() {
