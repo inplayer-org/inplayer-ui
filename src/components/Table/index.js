@@ -67,13 +67,13 @@ const TableCheckbox = styled(Checkbox)`
   }
 `;
 
+type Data = Object;
+
 type Column = {
   title: string,
   key: string,
-  render: ({ value: string }) => Node,
+  render: ({ value: string, rowValues: Data }) => Node,
 };
-
-type Data = Object;
 
 type RowAction = {
   icon: string,
@@ -211,7 +211,9 @@ class Table extends React.Component<Props, State> {
       <TableRow key={row.id}>
         {newColumns.map((column, index) => (
           <TableCell key={index}>
-            {column.render ? column.render({ value: row[column.key] }) : row[column.key]}
+            {column.render
+              ? column.render({ value: row[column.key], rowValues: row })
+              : row[column.key]}
           </TableCell>
         ))}
       </TableRow>
