@@ -10,7 +10,7 @@ import type { Theme } from 'types/Theme';
 type Props = {
   children: Node,
   theme: ?Theme,
-  withProvider: ComponentType,
+  withProvider?: ComponentType,
 };
 
 const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
@@ -26,6 +26,10 @@ const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
       </DefaultThemeProvider>
     </Provider>
   );
+};
+
+ThemeWrapper.defaultProps = {
+  withProvider: DefaultThemeProvider,
 };
 
 export default ThemeWrapper;
