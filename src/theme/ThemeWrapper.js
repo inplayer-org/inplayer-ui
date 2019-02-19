@@ -29,7 +29,7 @@ const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
 };
 
 ThemeWrapper.defaultProps = {
-  withProvider: React.Fragment,
+  withProvider: DefaultThemeProvider,
 };
 
 export default ThemeWrapper;
