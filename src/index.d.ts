@@ -137,7 +137,7 @@ export declare const Radio: FunctionComponent<RadioProps>;
 export interface TableColumn {
   title: string;
   key: string;
-  render: <T extends TableRowData>(props: TableColumn$RenderProps<T>) => ReactNode;
+  render?: <T extends TableRowData>(props: TableColumn$RenderProps<T>) => ReactNode;
 }
 
 export interface TableRowData extends Object {

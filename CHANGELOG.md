@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.1] - 19-02-2019
+
+### Changes
+
+- Make render prop optional on TableColumn
+
 # [0.3.0] - 19-02-2019
 
 ### Added
