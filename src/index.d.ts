@@ -513,7 +513,7 @@ export interface Theme {
 export interface ThemeWrapperProps {
   children: ReactNode;
   theme?: Theme;
-  withProvider: ThemeProviderComponent<Theme>;
+  withProvider?: ThemeProviderComponent<Theme>;
 }
 /**
  * A component which adds the theme to the library components.
