@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.2.1] - 19-02-2019
+
+### Fixes
+
+- TextField of type search styling
+- Set default theme withProvider prop
+
 # [0.2.0] - 15-02-2019
 
 - Minor style adjustments to theme
