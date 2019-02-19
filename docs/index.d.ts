@@ -141,7 +141,7 @@ interface TableColumn$RenderProps {
 export interface TableColumn {
   title: string;
   key: string;
-  render?: ({ value }: TableColumn$RenderProps) => ReactNode;
+  render: ({ value }: TableColumn$RenderProps) => ReactNode;
 }
 
 export interface TableRowData extends Object {
