@@ -25,7 +25,6 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li {
-  color: #a0a3aa;
   -webkit-text-decoration: none;
   text-decoration: none;
   display: -webkit-inline-box;
@@ -35,11 +34,21 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li a {
+  color: #aaadb4;
   padding: 1px 8px 1px;
 }
 
 .c1 li a:focus {
   outline: none;
+}
+
+.c1 li.selected {
+  background: #07AAE6;
+  pointer-events: none;
+}
+
+.c1 li.selected a {
+  color: #fff;
 }
 
 .c1 li.disabled {
@@ -55,7 +64,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.previous a {
-  color: #a0a3aa;
+  color: #aaadb4;
   padding: 1px 16px 1px;
 }
 
@@ -74,7 +83,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.next a {
-  color: #a0a3aa;
+  color: #aaadb4;
   padding: 1px 16px 1px;
 }
 
@@ -115,12 +124,6 @@ exports[`Pagination renders correctly 1`] = `
 .c1 li:hover:not(.disabled) {
   color: #44494e;
   background: #F6F8FB;
-}
-
-.c1 li.selected {
-  background: #07AAE6;
-  color: #fff;
-  pointer-events: none;
 }
 
 .c0 {

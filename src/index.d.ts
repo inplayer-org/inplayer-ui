@@ -134,18 +134,18 @@ export interface RadioProps {
 
 export declare const Radio: FunctionComponent<RadioProps>;
 
-export interface TableColumn {
+export interface TableColumn<T extends TableRowData> {
   title: string;
   key: string;
-  render?: <T extends TableRowData>(props: TableColumn$RenderProps<T>) => ReactNode;
+  render?: (props: TableColumn$RenderProps<T>) => ReactNode;
 }
 
 export interface TableRowData extends Object {
   id: number | string;
 }
 
-interface TableColumn$RenderProps<T extends TableRowData> {
-  value: string;
+interface TableColumn$RenderProps<T extends TableRowData, V = any> {
+  value: V;
   rowValues: T;
 }
 
@@ -163,6 +163,7 @@ export interface TableOptions {
 export interface TableProps {
   columns: Array<TableColumn>;
   data: Array<TableRowData>;
+  showLoader?: boolean;
   className?: string;
   style?: CSSProperties;
   options?: TableOptions;

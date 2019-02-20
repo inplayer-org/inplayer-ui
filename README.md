@@ -208,7 +208,7 @@ This library uses [Prettier](https://github.com/prettier/prettier) for code cons
 
 ### Docs
 
-This lib uses [react-styleguidist](https://github.com/styleguidist/react-styleguidist) for documenting components. To to view the docs locally, run `yarn styleguide` and visit `http://localhost:6060`. To build a static version, ruBlagodaram `yarn styleguide:build`. This static version will be created in `/docs`.
+This lib uses [react-styleguidist](https://github.com/styleguidist/react-styleguidist) for documenting components. To to view the docs locally, run `yarn styleguide` and visit `http://localhost:6060`. To build a static version, run `yarn styleguide:build`. This static version will be created in `/docs`.
 
 \_**NOTE:** There is a pre-push script in this library that will automatically update the docs when you push to GitHub.
 

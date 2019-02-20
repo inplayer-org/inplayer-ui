@@ -24,15 +24,25 @@ const PaginationWrapper = styled.div`
   }
 
   li {
-    color: ${uiColors('text.light')};
     text-decoration: none;
     display: inline-flex;
 
     a {
+      color: ${uiColors('text.light')};
       padding: 1px 8px 1px;
 
       &:focus {
         outline: none;
+      }
+    }
+
+    &.selected {
+      background: ${uiColors('primary.main')};
+      pointer-events: none;
+
+      a {
+        font-weight: ${fontWeights('semibold')};
+        color: ${colors.white};
       }
     }
 
@@ -108,13 +118,6 @@ const PaginationWrapper = styled.div`
       color: ${uiColors('text.main')};
       background: ${colors.lightGray};
     }
-  }
-
-  li.selected {
-    background: ${uiColors('primary.main')};
-    font-weight: ${fontWeights('semibold')};
-    color: ${colors.white};
-    pointer-events: none;
   }
 `;
 

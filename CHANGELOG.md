@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.4.0] - 20-02-2019
+
+### Changes
+- Add `showLoader` prop to Table.
+- Add generic for the data type to Table.
+
+### Fixes
+
+- Fix an issue with wrong text color on the selected pagination page
+
 # [0.3.1] - 19-02-2019
 
 ### Changes

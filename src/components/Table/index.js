@@ -5,12 +5,13 @@ import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
 import Icon from 'elements/Icon';
+import Loader from 'elements/Loader/index';
 
 const TableWrapper = styled.table`
+  font-family: Roboto, sans-serif;
   background: ${colors.white};
   width: 100%;
   text-align: left;
-  border-collapse: collapse;
   color: ${uiColors('text.light')};
   box-sizing: border-box;
   border: 1px solid ${colors.gray};
@@ -18,6 +19,8 @@ const TableWrapper = styled.table`
   position: relative;
   overflow-x: hidden;
   font-weight: ${fontWeights('light')};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `;
 
 const TableHeadRow = styled.tr`
@@ -41,11 +44,12 @@ const TableCell = styled.td`
   line-height: 30px;
   text-align: left;
   max-width: 450px;
+  font-weight: ${fontWeights('light')};
 `;
 
 const TableHeaderCell = styled.th`
-  padding: 8px 1%;
-  font-weight: 300;
+  padding: 16px 1%;
+  font-weight: ${fontWeights('light')};
   font-size: ${fontSizes('small')};
   text-align: left;
   max-width: 450px;
@@ -59,6 +63,14 @@ const ActionIcon = styled(Icon)`
   &:hover {
     color: ${uiColors('primary.main')};
   }
+`;
+
+const LoaderContainer = styled.div`
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TableCheckbox = styled(Checkbox)`
@@ -94,6 +106,7 @@ type Props = {
   className?: string,
   style?: Object,
   options?: TableOptions,
+  showLoader?: boolean,
 };
 
 type State = {
@@ -221,13 +234,21 @@ class Table extends React.Component<Props, State> {
   };
 
   render() {
-    const { columns, data, className, style } = this.props;
+    const { columns, data, className, style, showLoader } = this.props;
     return (
       <TableWrapper className={className} style={style}>
-        <thead>
-          <TableHeadRow>{this.renderColumns(columns)}</TableHeadRow>
-        </thead>
-        <tbody>{this.renderData(columns, data)}</tbody>
+        {showLoader ? (
+          <LoaderContainer>
+            <Loader />
+          </LoaderContainer>
+        ) : (
+          <>
+            <thead>
+              <TableHeadRow>{this.renderColumns(columns)}</TableHeadRow>
+            </thead>
+            <tbody>{this.renderData(columns, data)}</tbody>
+          </>
+        )}
       </TableWrapper>
     );
   }
@@ -242,6 +263,7 @@ Table.defaultProps = {
     },
     rowActions: [],
   },
+  showLoader: false,
 };
 
 export default Table;

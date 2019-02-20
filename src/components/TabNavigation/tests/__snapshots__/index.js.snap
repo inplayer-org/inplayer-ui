@@ -12,7 +12,7 @@ exports[`TabNavigation renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: #a0a3aa;
+  color: #aaadb4;
   cursor: pointer;
   font-weight: 300;
   line-height: 2rem;
