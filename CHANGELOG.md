@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Changes
 - Add `showLoader` prop to Table.
 - Add generic for the data type to Table.
+- Enable generic types for Button.
 
 ### Fixes
 
