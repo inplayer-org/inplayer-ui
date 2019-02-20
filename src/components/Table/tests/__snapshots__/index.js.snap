@@ -21,7 +21,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c5:not(:disabled):hover {
-  color: #a0a3aa;
+  color: #aaadb4;
 }
 
 .c4 > input {
@@ -133,17 +133,19 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c0 {
+  font-family: Roboto,sans-serif;
   background: #fff;
   width: 100%;
   text-align: left;
-  border-collapse: collapse;
-  color: #a0a3aa;
+  color: #aaadb4;
   box-sizing: border-box;
   border: 1px solid #d7dde5;
   border-radius: 3px;
   position: relative;
   overflow-x: hidden;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c1 {
@@ -167,10 +169,11 @@ exports[`Table renders correctly 1`] = `
   line-height: 30px;
   text-align: left;
   max-width: 450px;
+  font-weight: 300;
 }
 
 .c2 {
-  padding: 8px 1%;
+  padding: 16px 1%;
   font-weight: 300;
   font-size: 0.875rem;
   text-align: left;

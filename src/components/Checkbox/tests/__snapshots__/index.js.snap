@@ -21,7 +21,7 @@ exports[`Checkbox renders correctly 1`] = `
 }
 
 .c1:not(:disabled):hover {
-  color: #a0a3aa;
+  color: #aaadb4;
 }
 
 .c0 > input {
