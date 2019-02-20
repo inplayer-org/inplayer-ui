@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.4.0] - 19-02-2019
+# [0.4.0] - 20-02-2019
 
 ### Changes
 - Add `showLoader` prop to Table.
