@@ -34,15 +34,13 @@ const modifiers = {
 };
 
 const PillLabel = styled.span`
-  display: flex;
+  display: inline-block;
   background: ${colors.white};
-  align-items: center;
   color: ${uiColors('text.main')};
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 1rem;
   font-size: ${fontSizes('medium')};
-  justify-content: center;
   outline: none;
   vertical-align: middle;
   letter-spacing: 0.015em;
