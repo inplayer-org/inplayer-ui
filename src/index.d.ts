@@ -388,6 +388,15 @@ export interface PaginationProps {
 
 export declare const Pagination: FunctionComponent<PaginationProps>;
 
+type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
+
+interface PillLabelProps {
+  modifiers: Array<PillLabelModifier>;
+}
+
+export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
+
+
 type ProgressType = 'circle' | 'line';
 
 export interface ProgressProps {
