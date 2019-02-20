@@ -391,7 +391,7 @@ export declare const Pagination: FunctionComponent<PaginationProps>;
 type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
 
 interface PillLabelProps {
-  modifiers: Array<PillLabelModifier>;
+  modifiers?: Array<PillLabelModifier>;
 }
 
 export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
