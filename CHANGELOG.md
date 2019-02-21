@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.4.1] - 21-02-2019
+
+### Fixes
+- Table and DropDown prop definition types
+
 # [0.4.0] - 20-02-2019
 
 ### Changes
