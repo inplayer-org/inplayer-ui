@@ -259,9 +259,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Bu
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
+  as?: ReactElement;
 }
 
-export declare const Button: FunctionComponent<ButtonProps>;
+export declare class Button<T = {}> extends React.Component<T & ButtonProps> {
+}
 
 export interface CardProps {
   title?: string;
