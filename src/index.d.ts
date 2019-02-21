@@ -321,7 +321,9 @@ export interface DropdownProps extends HTMLSelectElement {
   value: string;
   onChange: (value: string) => any;
   color?: string;
-  items: Array<Option>;
+  options: Array<Option>;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
@@ -397,7 +399,6 @@ interface PillLabelProps {
 }
 
 export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
-
 
 type ProgressType = 'circle' | 'line';
 

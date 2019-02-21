@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Fix an issue with wrong text color on the selected pagination page
+- Add missing Dropdown props
 
 ### Added
 
