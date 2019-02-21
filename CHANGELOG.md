@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.4.1] - 21-02-2019
+# [0.5.0] - 21-02-2019
+
+### Changes
+- Enhance and modify Table API with generics and better type checking
 
 ### Fixes
 - Table and DropDown prop definition types
+- Fix Table crashing from accessing properties of optional props
 
 # [0.4.0] - 20-02-2019
 

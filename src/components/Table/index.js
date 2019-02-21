@@ -149,13 +149,10 @@ class Table extends React.Component<Props, State> {
 
   generateRows = (data: Array<Data>) => {
     const { options } = this.props;
-    const {
-      rowSelection: { active },
-      rowActions,
-    } = options;
+    const { rowSelection, rowActions } = options;
     let newData = [...data];
 
-    if (active) {
+    if (rowSelection && rowSelection.active) {
       const { selected } = this.state;
 
       newData = data.map(dataCell => ({
@@ -170,7 +167,7 @@ class Table extends React.Component<Props, State> {
       }));
     }
 
-    if (rowActions) {
+    if (rowActions && rowActions.length) {
       newData = newData.map(dataCell => ({
         ...dataCell,
         actions: rowActions.map((action, index) => (
@@ -185,14 +182,11 @@ class Table extends React.Component<Props, State> {
   generateColumns = (columns: Array<Column>) => {
     const { selectedAll } = this.state;
     const { options } = this.props;
-    const {
-      rowSelection: { active },
-      rowActions,
-    } = options;
+    const { rowSelection, rowActions } = options;
 
     let newColumns = [...columns];
 
-    if (active) {
+    if (rowSelection && rowSelection.active) {
       const rowCheckbox = {
         title: (
           <TableCheckbox id="toggleAll" checked={selectedAll} onChange={this.toggleSelectAll} />
@@ -203,7 +197,7 @@ class Table extends React.Component<Props, State> {
       newColumns = [rowCheckbox, ...columns];
     }
 
-    if (rowActions) {
+    if (rowActions && rowActions.length) {
       const actionsColumn = { title: 'Actions', key: 'actions' };
       newColumns = [...newColumns, actionsColumn];
     }
