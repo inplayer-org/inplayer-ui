@@ -149,24 +149,28 @@ interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   rowValues: T;
 }
 
+export interface RowAction {
+  icon: string;
+  onClick: (id: number | string) => any;
+};
+
+export type RowActions = Array<RowAction>;
+
 export interface TableOptions {
   rowSelection: {
     active: boolean;
     action: () => any;
   };
-  rowActions: {
-    icon: string;
-    onClick: (id: number | string) => any;
-  };
+  rowActions: RowActions;
 }
 
-export interface TableProps {
-  columns: Array<TableColumn>;
-  data: Array<TableRowData>;
+export interface TableProps<TableData extends TableRowData = TableRowData> {
+  columns: Array<TableColumn<TableData>>;
+  data: Array<TableData>;
   showLoader?: boolean;
   className?: string;
   style?: CSSProperties;
-  options?: TableOptions;
+  options?: Partial<TableOptions>;
 }
 
 interface TableState {
@@ -176,15 +180,14 @@ interface TableState {
   selectedAll: boolean;
 }
 
-export declare class Table extends Component<TableProps, TableState> {
+export declare class Table<TableData extends TableRowData> extends Component<TableProps<TableData>, TableState> {
   toggleRow: (id: number) => () => any;
   toggleSelectAll: () => any;
-  generateRows: (data: Array<TableRowData>) => ReactNodeArray;
+  generateRows: (data: Array<TableData>) => ReactNodeArray;
   generateColumns: (data: Array<TableColumn>) => ReactNodeArray;
   renderColumns: (data: Array<TableColumn>) => ReactNodeArray;
-  renderRows: (data: Array<TableRowData>) => ReactNodeArray;
+  renderRows: (data: Array<TableData>) => ReactNodeArray;
 }
-
 interface NavigationTab {
   title: string;
 }
@@ -317,7 +320,7 @@ export interface Option {
   displayName: string;
 }
 
-export interface DropdownProps extends HTMLSelectElement {
+export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
   value: string;
   onChange: (value: string) => any;
   color?: string;
