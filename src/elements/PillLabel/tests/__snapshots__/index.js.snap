@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PillLabel renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #44494e;
+  font-weight: 300;
+  border: 1px solid #d7dde5;
+  border-radius: 1rem;
+  font-size: 1rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  outline: none;
+  vertical-align: middle;
+  -webkit-letter-spacing: 0.015em;
+  -moz-letter-spacing: 0.015em;
+  -ms-letter-spacing: 0.015em;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  font-size: 1rem;
+  padding: 9px 12px;
+}
+
+<span
+  className="c0"
+  size="md"
+/>
+`;

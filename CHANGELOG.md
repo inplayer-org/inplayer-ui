@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 - Fix an issue with wrong text color on the selected pagination page
 
+### Added
+
+- Add PillLabel component
+
 # [0.3.1] - 19-02-2019
 
 ### Changes
