@@ -21,7 +21,7 @@ exports[`Label renders correctly 1`] = `
 }
 
 .c0:not(:disabled):hover {
-  color: #a0a3aa;
+  color: #aaadb4;
 }
 
 <label

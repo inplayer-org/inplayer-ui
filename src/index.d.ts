@@ -134,18 +134,18 @@ export interface RadioProps {
 
 export declare const Radio: FunctionComponent<RadioProps>;
 
-export interface TableColumn {
+export interface TableColumn<T extends TableRowData> {
   title: string;
   key: string;
-  render?: <T extends TableRowData>(props: TableColumn$RenderProps<T>) => ReactNode;
+  render?: (props: TableColumn$RenderProps<T>) => ReactNode;
 }
 
 export interface TableRowData extends Object {
   id: number | string;
 }
 
-interface TableColumn$RenderProps<T extends TableRowData> {
-  value: string;
+interface TableColumn$RenderProps<T extends TableRowData, V = any> {
+  value: V;
   rowValues: T;
 }
 
@@ -163,6 +163,7 @@ export interface TableOptions {
 export interface TableProps {
   columns: Array<TableColumn>;
   data: Array<TableRowData>;
+  showLoader?: boolean;
   className?: string;
   style?: CSSProperties;
   options?: TableOptions;
@@ -258,9 +259,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Bu
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
+  as?: ReactElement;
 }
 
-export declare const Button: FunctionComponent<ButtonProps>;
+export declare class Button<T = {}> extends React.Component<T & ButtonProps> {
+}
 
 export interface CardProps {
   title?: string;
@@ -318,7 +321,9 @@ export interface DropdownProps extends HTMLSelectElement {
   value: string;
   onChange: (value: string) => any;
   color?: string;
-  items: Array<Option>;
+  options: Array<Option>;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
@@ -386,6 +391,14 @@ export interface PaginationProps {
 }
 
 export declare const Pagination: FunctionComponent<PaginationProps>;
+
+type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
+
+interface PillLabelProps {
+  modifiers?: Array<PillLabelModifier>;
+}
+
+export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
 
 type ProgressType = 'circle' | 'line';
 
