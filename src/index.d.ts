@@ -170,7 +170,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   showLoader?: boolean;
   className?: string;
   style?: CSSProperties;
-  options?: TableOptions;
+  options?: Partial<TableOptions>;
 }
 
 interface TableState {
