@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 - Edit margins for Label
 
 ### Fixes
-- Add modifier defintions for Label, Dropdown, Icon
+- Add modifier definitions for Label, Dropdown, Icon
 
 # [0.5.0] - 21-02-2019
 
