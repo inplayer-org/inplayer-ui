@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.5.1] - 22-02-2019
+
+### Changes
+- Remove margins for Typography
+- Edit margins for Label
+
+### Fixes
+- Add modifier defintions for Label, Dropdown, Icon
+
 # [0.5.0] - 21-02-2019
 
 ### Changes
