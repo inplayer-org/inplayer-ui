@@ -320,6 +320,8 @@ export interface Option {
   displayName: string;
 }
 
+export type DropdownModifier = 'fontSizeExtraSmall' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge';
+
 export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
   value: string;
   onChange: (value: string) => any;
@@ -327,14 +329,25 @@ export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
   options: Array<Option>;
   className?: string;
   style?: CSSProperties;
+  modifiers?: Array<DropdownModifier>;
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
-export declare const Icon: StyledComponent<any, Theme>;
+export type IconModifier = 'statusColorPrimary' | 'statusColorInfo' | 'statusColorWarning' | 'statusColorSuccess' | 'statusColorDanger';
+
+export interface IconProps {
+  name: string;
+  modifiers?: Array<IconModifier>;
+}
+
+export declare const Icon: StyledComponent<'span', Theme, IconProps>;
+
+export type LabelModifier = 'fontSizeExtraSmall' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge';
 
 export interface LabelProps {
   disabled?: boolean;
+  modifiers?: Array<LabelModifier>;
 }
 
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
@@ -462,12 +475,14 @@ export declare const TextField: FunctionComponent<TextFieldProps>;
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
+type TypographyModifier = 'textPrimary' | 'textDanger' | 'textSuccess' | 'textWarning';
+
 export interface TypographyProps {
   variant: TypographyVariant;
   description?: boolean;
   children: ReactNode;
   className?: string;
-  modifiers?: Array<string>;
+  modifiers?: Array<TypographyModifier>;
   color?: string;
   style?: CSSProperties;
 }
