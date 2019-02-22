@@ -32,7 +32,6 @@ const Paragraph = styled.p`
 const Heading = styled.h1`
   font-family: ${prop('theme.font.primary')};
   font-weight: ${fontWeights('thin')};
-  margin: 1.7em 0 1em;
   color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};
   ${applyStyleModifiers(typographyModifiers)};
