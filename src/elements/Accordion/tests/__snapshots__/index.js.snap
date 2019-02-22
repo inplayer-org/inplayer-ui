@@ -16,7 +16,6 @@ exports[`Accordion renders correctly 1`] = `
 .c4 {
   font-family: Roboto;
   font-weight: 100;
-  margin: 1.7em 0 1em;
   color: #286090;
   font-size: 2rem;
 }
