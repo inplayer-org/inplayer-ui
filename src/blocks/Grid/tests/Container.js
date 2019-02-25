@@ -10,8 +10,7 @@ describe('Grid.Container Element', () => {
   });
 
   it('applies the correct style with the `fluid` modifier', () => {
-    const tree = renderWithTheme(<Container modifiers={['fluid']} />).toJSON();
+    const tree = renderWithTheme(<Container />).toJSON();
     expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('padding', '0');
   });
 });
