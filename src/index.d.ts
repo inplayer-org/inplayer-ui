@@ -152,7 +152,7 @@ interface TableColumn$RenderProps<T extends TableRowData, V = any> {
 export interface RowAction {
   icon: string;
   onClick: (id: number | string) => any;
-};
+}
 
 interface RowActionsRender<T extends TableRowData> {
   (prop: { row: T }): ReactNode;
