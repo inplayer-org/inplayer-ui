@@ -19,6 +19,7 @@ const modifiers = {
 };
 
 const Icon = styled(FA)`
+  ${({ color }) => color && `color: ${color}`};
   display: inline-block;
   font-size: ${fontSizes('medium')};
   ${applyStyleModifiers(modifiers)};
