@@ -177,15 +177,6 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   options?: Partial<TableOptions<TableData>>;
 }
 
-export interface TableProps<TableData extends TableRowData = TableRowData> {
-  columns: Array<TableColumn<TableData>>;
-  data: Array<TableData>;
-  showLoader?: boolean;
-  className?: string;
-  style?: CSSProperties;
-  options?: Partial<TableOptions>;
-}
-
 interface TableState {
   selected: {
     [s: string]: boolean;
