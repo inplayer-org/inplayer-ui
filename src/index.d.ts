@@ -154,14 +154,27 @@ export interface RowAction {
   onClick: (id: number | string) => any;
 };
 
-export type RowActions = Array<RowAction>;
+interface RowActionsRender<T extends TableRowData> {
+  (prop: { row: T }): ReactNode;
+}
 
-export interface TableOptions {
+export type RowActions<T extends TableRowData> = Array<RowAction> | RowActionsRender<T>;
+
+export interface TableOptions<T extends TableRowData> {
   rowSelection: {
     active: boolean;
     action: () => any;
   };
-  rowActions: RowActions;
+  rowActions: RowActions<T>;
+}
+
+export interface TableProps<TableData extends TableRowData = TableRowData> {
+  columns: Array<TableColumn<TableData>>;
+  data: Array<TableData>;
+  showLoader?: boolean;
+  className?: string;
+  style?: CSSProperties;
+  options?: Partial<TableOptions<TableData>>;
 }
 
 export interface TableProps<TableData extends TableRowData = TableRowData> {

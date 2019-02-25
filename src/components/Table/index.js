@@ -87,17 +87,19 @@ type Column = {
   render: ({ value: string, rowValues: Data }) => Node,
 };
 
-type RowAction = {
-  icon: string,
-  onClick: (id: number | string) => any,
-};
+type RowActions =
+  | Array<{
+      icon: string,
+      onClick: (id: number | string) => any,
+    }>
+  | ((props: { row: Data }) => Node);
 
 type TableOptions = {
   rowSelection: {
     active: boolean,
     action: (selectedItems: Array<Data>) => any,
   },
-  rowActions: Array<RowAction>,
+  rowActions: RowActions,
 };
 
 type Props = {
@@ -115,6 +117,10 @@ type State = {
   },
   selectedAll: boolean,
 };
+
+const rowActionsExist = (actions: RowActions) =>
+  typeof actions === 'function' ||
+  (typeof actions === 'object' && Array.isArray(actions) && actions.length);
 
 class Table extends React.Component<Props, State> {
   state = {
@@ -167,13 +173,28 @@ class Table extends React.Component<Props, State> {
       }));
     }
 
-    if (rowActions && rowActions.length) {
-      newData = newData.map(dataCell => ({
-        ...dataCell,
-        actions: rowActions.map((action, index) => (
-          <ActionIcon key={index} name={action.icon} onClick={() => action.onClick(dataCell.id)} />
-        )),
-      }));
+    if (rowActionsExist(rowActions)) {
+      newData = newData.map(dataCell => {
+        const actionsContent =
+          typeof rowActions === 'function'
+            ? rowActions({ row: dataCell })
+            : rowActions.map((action, index) => {
+                if (action.render) {
+                  return action.render({ row: dataCell });
+                }
+                return (
+                  <ActionIcon
+                    key={index}
+                    name={action.icon}
+                    onClick={() => action.onClick(dataCell.id)}
+                  />
+                );
+              });
+        return {
+          ...dataCell,
+          actions: actionsContent,
+        };
+      });
     }
 
     return newData;
@@ -197,7 +218,7 @@ class Table extends React.Component<Props, State> {
       newColumns = [rowCheckbox, ...columns];
     }
 
-    if (rowActions && rowActions.length) {
+    if (rowActionsExist(rowActions)) {
       const actionsColumn = { title: 'Actions', key: 'actions' };
       newColumns = [...newColumns, actionsColumn];
     }
