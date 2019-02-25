@@ -93,9 +93,8 @@ These common modifiers live in `src/modifiers`
 ├ src/
 ├── blocks/
 |   ├── Grid
-|   |   ├── Column.js     // <- Element
+|   |   ├── Cell.js     // <- Element
 |   |   ├── Container.js   // <- Element
-|   |   ├── Row.js   // <- Element
 |   |   └── index.js    // <- Block
 |   └── index.js        // <- export for all Blocks
 ├── elements/
