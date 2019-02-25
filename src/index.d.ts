@@ -7,6 +7,7 @@ import {
   Component,
   SyntheticEvent,
   ButtonHTMLAttributes,
+  HTMLAttributes,
 } from 'react';
 import {
   StyledComponent,
@@ -188,8 +189,8 @@ export declare class Table<TableData extends TableRowData> extends Component<Tab
   toggleRow: (id: number) => () => any;
   toggleSelectAll: () => any;
   generateRows: (data: Array<TableData>) => ReactNodeArray;
-  generateColumns: (data: Array<TableColumn>) => ReactNodeArray;
-  renderColumns: (data: Array<TableColumn>) => ReactNodeArray;
+  generateColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
+  renderColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
   renderRows: (data: Array<TableData>) => ReactNodeArray;
 }
 interface NavigationTab {
@@ -266,10 +267,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Bu
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
-  as?: ReactElement;
+  as?: ReactElement<HTMLAttributes<any>>;
 }
 
-export declare class Button<T = {}> extends React.Component<T & ButtonProps> {
+export declare class Button<T = {}> extends Component<T & ButtonProps> {
 }
 
 export interface CardProps {
