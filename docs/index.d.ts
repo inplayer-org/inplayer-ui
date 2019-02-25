@@ -7,6 +7,7 @@ import {
   Component,
   SyntheticEvent,
   ButtonHTMLAttributes,
+  HTMLAttributes,
 } from 'react';
 import {
   StyledComponent,
@@ -152,16 +153,20 @@ interface TableColumn$RenderProps<T extends TableRowData, V = any> {
 export interface RowAction {
   icon: string;
   onClick: (id: number | string) => any;
-};
+}
 
-export type RowActions = Array<RowAction>;
+interface RowActionsRender<T extends TableRowData> {
+  (prop: { row: T }): ReactNode;
+}
 
-export interface TableOptions {
+export type RowActions<T extends TableRowData> = Array<RowAction> | RowActionsRender<T>;
+
+export interface TableOptions<T extends TableRowData> {
   rowSelection: {
     active: boolean;
     action: () => any;
   };
-  rowActions: RowActions;
+  rowActions: RowActions<T>;
 }
 
 export interface TableProps<TableData extends TableRowData = TableRowData> {
@@ -170,7 +175,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   showLoader?: boolean;
   className?: string;
   style?: CSSProperties;
-  options?: Partial<TableOptions>;
+  options?: Partial<TableOptions<TableData>>;
 }
 
 interface TableState {
@@ -184,8 +189,8 @@ export declare class Table<TableData extends TableRowData> extends Component<Tab
   toggleRow: (id: number) => () => any;
   toggleSelectAll: () => any;
   generateRows: (data: Array<TableData>) => ReactNodeArray;
-  generateColumns: (data: Array<TableColumn>) => ReactNodeArray;
-  renderColumns: (data: Array<TableColumn>) => ReactNodeArray;
+  generateColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
+  renderColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
   renderRows: (data: Array<TableData>) => ReactNodeArray;
 }
 interface NavigationTab {
@@ -262,10 +267,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Bu
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
-  as?: ReactElement;
+  as?: ReactElement<HTMLAttributes<any>>;
 }
 
-export declare class Button<T = {}> extends React.Component<T & ButtonProps> {
+export declare class Button<T = {}> extends Component<T & ButtonProps> {
 }
 
 export interface CardProps {
@@ -410,8 +415,11 @@ export declare const Pagination: FunctionComponent<PaginationProps>;
 
 type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
 
+type PillLabelSize = 'xs' | 'sm' | 'md' | 'lg';
+
 interface PillLabelProps {
   modifiers?: Array<PillLabelModifier>;
+  size?: PillLabelSize;
 }
 
 export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;

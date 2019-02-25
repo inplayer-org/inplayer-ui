@@ -164,6 +164,7 @@ class TableExample extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Typography variant="h2">With array of row actions</Typography>
         <TextField
           type="search"
           placeholder="Search"
@@ -183,6 +184,104 @@ class TableExample extends React.Component {
               { icon: 'cog', onClick: id => console.log(id) },
               { icon: 'trash', onClick: id => console.log(id) },
             ],
+          }}
+        />
+        <Pagination
+          pageCount={totalPages}
+          currentPage={this.state.page}
+          pageRangeDisplayed={5}
+          marginPagesDisplayed={5}
+          previousLabel="PREV"
+          nextLabel="NEXT"
+          breakLabel="..."
+          onPageChange={this.onPageChange}
+        />
+      </React.Fragment>
+    );
+  }
+}
+<TableExample />;
+```
+
+```jsx
+const columns = [
+  {
+    title: 'ID',
+    key: 'id',
+  },
+  {
+    title: '',
+    key: 'icon',
+    render: ({ value }) => <Icon name={value} />,
+  },
+  {
+    title: 'Name',
+    key: 'name',
+  },
+  {
+    title: 'Date Created',
+    key: 'dateCreated',
+  },
+  {
+    title: 'Director',
+    key: 'director',
+    render: ({ value, rowValues }) => `${value} - ${rowValues.dateCreated}`,
+  }
+];
+
+const data = [
+  {
+    id: 22,
+    icon: 'music',
+    name: "Won't You Be My Neighbour?",
+    director: 'Morgan Neville',
+    dateCreated: '2018/07/24',
+  },
+  {
+    id: 28,
+    icon: 'code',
+    name: 'Soundtrack: No Country',
+    director: 'Coen Brothers',
+    dateCreated: '2018/07/21',
+  },
+];
+
+const totalPages = Math.ceil(data.length / 5);
+
+class TableExample extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      page: 0,
+    };
+
+    this.onPageChange = this.onPageChange.bind(this);
+  }
+
+  onPageChange(data) {
+    this.setState({ page: data.selected });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Typography variant="h2">With rowActions as render prop</Typography>
+        <TextField
+          type="search"
+          placeholder="Search"
+          onChange={() => console.log('onChange')}
+          style={{ maxWidth: 300 }}
+        />
+        <Table
+          columns={columns}
+          data={data}
+          options={{
+            rowSelection: {
+              active: true,
+              action: data => console.log(data),
+            },
+            rowActions: ({ row }) => <Icon name={row.icon} />,
           }}
         />
         <Pagination

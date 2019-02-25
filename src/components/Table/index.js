@@ -1,6 +1,7 @@
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
+import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
@@ -42,7 +43,7 @@ const TableCell = styled.td`
   padding: 7px 1%;
   vertical-align: middle;
   line-height: 30px;
-  text-align: left;
+  text-align: ${ifProp('alignRight', 'right', 'left')};
   max-width: 450px;
   font-weight: ${fontWeights('light')};
 `;
@@ -79,7 +80,9 @@ const TableCheckbox = styled(Checkbox)`
   }
 `;
 
-type Data = Object;
+interface Data {
+  id: string;
+}
 
 type Column = {
   title: string,
@@ -87,25 +90,27 @@ type Column = {
   render: ({ value: string, rowValues: Data }) => Node,
 };
 
-type RowAction = {
-  icon: string,
-  onClick: (id: number | string) => any,
-};
+type RowActions<T> =
+  | Array<{
+      icon: string,
+      onClick: (id: number | string) => any,
+    }>
+  | ((props: { row: T }) => Node);
 
-type TableOptions = {
+type TableOptions<T> = {
   rowSelection: {
     active: boolean,
-    action: (selectedItems: Array<Data>) => any,
+    action: (selectedItems: Array<T>) => any,
   },
-  rowActions: Array<RowAction>,
+  rowActions: RowActions<T>,
 };
 
-type Props = {
+type Props<T = Data> = {
   columns: Array<Column>,
-  data: Array<Data>,
+  data: Array<T>,
   className?: string,
   style?: Object,
-  options?: TableOptions,
+  options?: TableOptions<T>,
   showLoader?: boolean,
 };
 
@@ -116,7 +121,11 @@ type State = {
   selectedAll: boolean,
 };
 
-class Table extends React.Component<Props, State> {
+const rowActionsExist = (actions: RowActions) =>
+  typeof actions === 'function' ||
+  (typeof actions === 'object' && Array.isArray(actions) && actions.length);
+
+class Table<T> extends React.Component<Props<T>, State> {
   state = {
     selected: {},
     selectedAll: false,
@@ -167,13 +176,28 @@ class Table extends React.Component<Props, State> {
       }));
     }
 
-    if (rowActions && rowActions.length) {
-      newData = newData.map(dataCell => ({
-        ...dataCell,
-        actions: rowActions.map((action, index) => (
-          <ActionIcon key={index} name={action.icon} onClick={() => action.onClick(dataCell.id)} />
-        )),
-      }));
+    if (rowActionsExist(rowActions)) {
+      newData = newData.map(dataCell => {
+        const actionsContent =
+          typeof rowActions === 'function'
+            ? rowActions({ row: dataCell })
+            : rowActions.map((action, index) => {
+                if (action.render) {
+                  return action.render({ row: dataCell });
+                }
+                return (
+                  <ActionIcon
+                    key={index}
+                    name={action.icon}
+                    onClick={() => action.onClick(dataCell.id)}
+                  />
+                );
+              });
+        return {
+          ...dataCell,
+          actions: actionsContent,
+        };
+      });
     }
 
     return newData;
@@ -197,7 +221,7 @@ class Table extends React.Component<Props, State> {
       newColumns = [rowCheckbox, ...columns];
     }
 
-    if (rowActions && rowActions.length) {
+    if (rowActionsExist(rowActions)) {
       const actionsColumn = { title: 'Actions', key: 'actions' };
       newColumns = [...newColumns, actionsColumn];
     }
@@ -217,7 +241,7 @@ class Table extends React.Component<Props, State> {
     return newData.map(row => (
       <TableRow key={row.id}>
         {newColumns.map((column, index) => (
-          <TableCell key={index}>
+          <TableCell key={index} alignRight={column.key === 'actions'}>
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
