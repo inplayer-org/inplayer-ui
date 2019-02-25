@@ -1,6 +1,7 @@
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
+import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
@@ -42,7 +43,7 @@ const TableCell = styled.td`
   padding: 7px 1%;
   vertical-align: middle;
   line-height: 30px;
-  text-align: left;
+  text-align: ${ifProp('alignRight', 'right', 'left')};
   max-width: 450px;
   font-weight: ${fontWeights('light')};
 `;
@@ -240,7 +241,7 @@ class Table<T> extends React.Component<Props<T>, State> {
     return newData.map(row => (
       <TableRow key={row.id}>
         {newColumns.map((column, index) => (
-          <TableCell key={index}>
+          <TableCell key={index} alignRight={column.key === 'actions'}>
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
