@@ -79,7 +79,9 @@ const TableCheckbox = styled(Checkbox)`
   }
 `;
 
-type Data = Object;
+interface Data {
+  id: string;
+}
 
 type Column = {
   title: string,
@@ -87,27 +89,27 @@ type Column = {
   render: ({ value: string, rowValues: Data }) => Node,
 };
 
-type RowActions =
+type RowActions<T> =
   | Array<{
       icon: string,
       onClick: (id: number | string) => any,
     }>
-  | ((props: { row: Data }) => Node);
+  | ((props: { row: T }) => Node);
 
-type TableOptions = {
+type TableOptions<T> = {
   rowSelection: {
     active: boolean,
-    action: (selectedItems: Array<Data>) => any,
+    action: (selectedItems: Array<T>) => any,
   },
-  rowActions: RowActions,
+  rowActions: RowActions<T>,
 };
 
-type Props = {
+type Props<T = Data> = {
   columns: Array<Column>,
-  data: Array<Data>,
+  data: Array<T>,
   className?: string,
   style?: Object,
-  options?: TableOptions,
+  options?: TableOptions<T>,
   showLoader?: boolean,
 };
 
@@ -122,7 +124,7 @@ const rowActionsExist = (actions: RowActions) =>
   typeof actions === 'function' ||
   (typeof actions === 'object' && Array.isArray(actions) && actions.length);
 
-class Table extends React.Component<Props, State> {
+class Table<T> extends React.Component<Props<T>, State> {
   state = {
     selected: {},
     selectedAll: false,
