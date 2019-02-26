@@ -172,6 +172,16 @@ exports[`Table renders correctly 1`] = `
   font-weight: 300;
 }
 
+.c8 {
+  font-size: 1rem;
+  padding: 7px 1%;
+  vertical-align: middle;
+  line-height: 30px;
+  text-align: right;
+  max-width: 450px;
+  font-weight: 300;
+}
+
 .c2 {
   padding: 16px 1%;
   font-weight: 300;
@@ -180,7 +190,7 @@ exports[`Table renders correctly 1`] = `
   max-width: 450px;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   font-size: 1rem;
   padding: 2px;
@@ -189,7 +199,7 @@ exports[`Table renders correctly 1`] = `
   transition: all 0.3s ease;
 }
 
-.c8:hover {
+.c9:hover {
   color: #07AAE6;
 }
 
@@ -262,21 +272,21 @@ exports[`Table renders correctly 1`] = `
         Eli
       </td>
       <td
-        className="c7"
+        className="c8"
       >
         <span
           aria-hidden={true}
-          className="fa fa-edit c8"
+          className="fa fa-edit c9"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-cog c8"
+          className="fa fa-cog c9"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-trash c8"
+          className="fa fa-trash c9"
           onClick={[Function]}
         />
       </td>

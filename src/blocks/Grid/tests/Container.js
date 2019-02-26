@@ -8,9 +8,4 @@ describe('Grid.Container Element', () => {
     const tree = renderWithTheme(<Container />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('applies the correct style with the `fluid` modifier', () => {
-    const tree = renderWithTheme(<Container />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

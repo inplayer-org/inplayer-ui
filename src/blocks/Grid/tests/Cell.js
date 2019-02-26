@@ -8,14 +8,4 @@ describe('Grid.Column Element', () => {
     const tree = renderWithTheme(<Cell />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('applies the correct style with the `flex` prop', () => {
-    const tree = renderWithTheme(<Cell />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('applies the correct style with the `position` modifier', () => {
-    const tree = renderWithTheme(<Cell />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

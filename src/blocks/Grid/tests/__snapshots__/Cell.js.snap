@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grid.Column Element applies the correct style with the \`flex\` prop 1`] = `
-.c0 {
-  height: 100%;
-  min-width: 0;
-  grid-column-end: span 1;
-  grid-row-end: span 1;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`Grid.Column Element applies the correct style with the \`position\` modifier 1`] = `
-.c0 {
-  height: 100%;
-  min-width: 0;
-  grid-column-end: span 1;
-  grid-row-end: span 1;
-}
-
-<div
-  className="c0"
-/>
-`;
-
 exports[`Grid.Column Element renders correctly 1`] = `
 .c0 {
   height: 100%;
