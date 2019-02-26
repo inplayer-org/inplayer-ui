@@ -283,16 +283,16 @@ export interface ButtonContentProps {
   iconModifiers?: Array<string>;
 }
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
+export interface ButtonProps<T> extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
   buttonModifiers?: Array<string>;
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
-  as?: ReactElement<HTMLAttributes<any>>;
+  as?: ComponentType<T>;
+  fullWidth?: boolean;
 }
 
-export declare class Button<T = {}> extends Component<T & ButtonProps> {
-}
+export declare class Button<T = {}> extends Component<T & ButtonProps<T>> { }
 
 export interface CardProps {
   title?: string;
