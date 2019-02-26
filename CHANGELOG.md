@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.6.1] - 26-02-2019
+
+### Fixes
+- Update Button TypeScript definitions
+
 # [0.6.0] - 25-02-2019
 
 ### Changes
