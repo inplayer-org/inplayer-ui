@@ -15,14 +15,35 @@ import {
 } from 'styled-components';
 import moment from 'moment';
 
-interface ColumnProps {
-  flex: string;
+interface ContainerProps {
+  className?: string,
+  columns?: number | string,
+  gap?: string,
+  columnGap?: string,
+  rowGap?: string,
+  height?: string,
+  minRowHeight?: string,
+  flow?: string,
+  rows?: number | string,
+  areas?: Array<string>,
+  justifyContent?: string,
+  alignContent?: string
+}
+
+interface CellProps {
+  className?: string;
+  width?: number;
+  height?: number;
+  top?: number | string;
+  left?: number | string;
+  middle?: boolean;
+  center?: boolean;
+  area?: string;
 }
 
 interface IGrid {
-  Column: StyledComponent<'div', Theme, ColumnProps>;
-  Row: StyledComponent<'div', Theme>;
-  Container: StyledComponent<'div', Theme>;
+  Container: StyledComponent<'div', Theme, ContainerProps>;
+  Cell: StyledComponent<'div', Theme, CellProps>;
 }
 
 export declare const Grid: IGrid;

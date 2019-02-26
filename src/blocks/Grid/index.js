@@ -1,5 +1,4 @@
-import Column from './Column';
 import Container from './Container';
-import Row from './Row';
+import Cell from './Cell';
 
-export default { Column, Container, Row };
+export default { Container, Cell };

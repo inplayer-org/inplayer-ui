@@ -1,33 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grid.Container Element applies the correct style with the \`fluid\` modifier 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.25rem;
-  padding: 0;
-}
-
-<div
-  className="c0"
-/>
-`;
-
 exports[`Grid.Container Element renders correctly 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.25rem;
+  display: grid;
+  height: auto;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(20px,auto);
+  grid-template-columns: repeat(12,1fr);
+  grid-gap: 8px;
 }
 
 <div

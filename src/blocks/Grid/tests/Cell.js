@@ -1,11 +1,11 @@
 import React from 'react';
 import { renderWithTheme } from 'helpers';
-import Container from '../Container';
+import Cell from '../Cell';
 import 'jest-styled-components';
 
-describe('Grid.Container Element', () => {
+describe('Grid.Column Element', () => {
   it('renders correctly', () => {
-    const tree = renderWithTheme(<Container />).toJSON();
+    const tree = renderWithTheme(<Cell />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

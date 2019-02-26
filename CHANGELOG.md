@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 - Enable Table to recieve a render function for `rowActions` prop as well as an array of actions
+- Rework/Modify Grid
 
 # [0.5.1] - 22-02-2019
 
