@@ -10,7 +10,7 @@ const Container = styled.div`
   align-items: flex-start;
   box-shadow: 0 1px 5px 0 ${transparentize(0.8, '#000')};
   z-index: 1000;
-  min-width: 100%;
+  min-width: 200%;
   background: ${colors.white};
   display: inline-flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ const ActionItem = styled(Item)`
   margin-top: 12px;
   padding-top: 18px;
   ${ifProp(
-    'additionalUSerMenu',
+    'additionalUserMenu',
     css`
       font-size: ${fontSizes('small')};
       border-top: none;

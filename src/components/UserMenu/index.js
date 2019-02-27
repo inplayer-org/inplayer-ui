@@ -70,7 +70,6 @@ export type UserMenuProps = UserMenuDropdownProps & {
   image: Element<*> | string,
   className?: string,
   style?: Object,
-  userName?: string,
   menuTitle?: string,
 };
 
@@ -92,14 +91,14 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
   };
 
   render() {
-    const { image, menuItems, actionItem, className, style, userName, menuTitle } = this.props;
+    const { image, menuItems, actionItem, className, style, menuTitle } = this.props;
     const { open } = this.state;
 
     return (
       <Fragment>
         <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
           {image && <ProfileImage src={image} />}
-          <MenuTitle>{userName || menuTitle}</MenuTitle>
+          <MenuTitle>{menuTitle}</MenuTitle>
           <MenuButton>
             <MenuArrow open={open} />
           </MenuButton>

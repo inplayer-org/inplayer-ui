@@ -40,7 +40,6 @@ type HeaderProps = {
   tabNavigationProps?: TabNavigationProps,
   className?: string,
   style?: Object,
-  userName: string,
 };
 
 const Header = ({
@@ -50,14 +49,13 @@ const Header = ({
   tabNavigationProps,
   className,
   style,
-  userName,
 }: HeaderProps) => (
   <Container className={className} style={style}>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
     <MenuWrapper>
       {additionalUserMenuProps && <UserMenu {...additionalUserMenuProps} />}
-      {userMenuProps && <UserMenu userName={userName} {...userMenuProps} />}
+      {userMenuProps && <UserMenu {...userMenuProps} />}
     </MenuWrapper>
   </Container>
 );

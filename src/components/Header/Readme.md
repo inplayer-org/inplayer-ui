@@ -3,8 +3,8 @@ The Header represents a versatile component which can house a title or a TabNavi
 ```jsx static
 <Header
   title="My app title"
-  userName="User name"
   userMenuProps={{
+    menuTitle: 'User name',
     image:
       'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [
@@ -45,8 +45,8 @@ The Header represents a versatile component which can house a title or a TabNavi
 ```jsx
 <Header
   title="My app title"
-  userName="User name"
   userMenuProps={{
+    menuTitle: 'User name',
     image:
       'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [

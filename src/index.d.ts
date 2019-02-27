@@ -77,7 +77,6 @@ export interface UserMenuProps extends UserMenuDropdownProps {
   image?: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
-  userName?: string,
   menuTitle?: string,
 }
 
@@ -91,7 +90,6 @@ export declare class UserMenu extends Component<UserMenuProps, UserMenuState> {
 
 export interface HeaderProps {
   title?: string;
-  userName: string,
   userMenuProps?: UserMenuProps;
   additionalUserMenuProps?: UserMenuProps | boolean;
   tabNavigationProps?: TabNavigationProps;
