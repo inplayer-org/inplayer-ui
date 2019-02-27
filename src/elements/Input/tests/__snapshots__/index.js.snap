@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+.c0 {
+  vertical-align: middle;
+  box-sizing: border-box;
+  overflow: hidden;
+  outline: none;
+  color: #44494e;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+  background: #fff;
+  font-weight: 300;
+  border: 1px solid #d7dde5;
+  padding: 10px 18px 11px;
+  border-radius: 3px;
+  font-size: 1rem;
+  line-height: 1;
+  min-width: 260px;
+  max-width: 560px;
+  width: 100%;
+}
+
+.c0:focus {
+  border-bottom: 1px solid #07AAE6;
+}
+
+<input
+  className="c0"
+  onChange={[Function]}
+/>
+`;

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.0] - 28-02-2019
+
+### Changes
+- Rename TextField component to Input
+- Add full width/height to CardContent
+
+### Fixes
+- Update TextField/Input TypeScript definitions
+
 # [0.6.1] - 27-02-2019
 
 ### Fixes
