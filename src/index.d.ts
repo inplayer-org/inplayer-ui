@@ -171,16 +171,17 @@ interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   rowValues: T;
 }
 
-export interface RowAction {
-  icon: string;
-  onClick: (id: number | string) => any;
+export interface RowAction<T extends TableRowData> {
+  icon?: string;
+  onClick?: (id: number | string) => any;
+  render?: (props: { row: T }) => ReactNode;
 }
 
 interface RowActionsRender<T extends TableRowData> {
   (prop: { row: T }): ReactNode;
 }
 
-export type RowActions<T extends TableRowData> = Array<RowAction> | RowActionsRender<T>;
+export type RowActions<T extends TableRowData> = Array<RowAction<T>> | RowActionsRender<T>;
 
 export interface TableOptions<T extends TableRowData> {
   rowSelection: {
