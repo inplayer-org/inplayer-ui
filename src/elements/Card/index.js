@@ -17,7 +17,7 @@ const CardWrapper = styled.div`
   line-height: 1.5;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 24px;
   list-style: none;
 `;
 

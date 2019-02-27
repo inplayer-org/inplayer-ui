@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
   flex: 3;
-  padding: 24px;
+  padding: 0;
   height: 100%;
   width: 100%;
 `;
