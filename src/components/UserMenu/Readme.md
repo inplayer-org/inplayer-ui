@@ -1,4 +1,4 @@
-The UserMenu is a component which renders an overlay dropdown and is used for rendering a profile image and user-related links.
+The UserMenu is a component which renders an overlay dropdown and is used for rendering a profile image, user name and user-related links.
 
 ```jsx static
 import { UserMenu } from 'inplayer-ui';

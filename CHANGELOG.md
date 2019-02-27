@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.0] - 28-02-2019
+
+ ### Changes
+- Additional user menu added in the header
+
 # [0.6.1] - 27-02-2019
 
 ### Fixes

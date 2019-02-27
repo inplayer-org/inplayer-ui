@@ -1,4 +1,4 @@
-The Header represents a versatile component which can house a title or a TabNavigation, as well as a UserMenu.
+The Header represents a versatile component which can house a title or a TabNavigation, as well as a UserMenu and Additional User Menu.
 
 ```jsx static
 <Header
@@ -40,7 +40,7 @@ The Header represents a versatile component which can house a title or a TabNavi
 />
 ```
 
-### With all 3 components
+### With all 4 components
 
 ```jsx
 <Header
