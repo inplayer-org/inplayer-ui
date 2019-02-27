@@ -28,7 +28,7 @@ exports[`UserMenu renders correctly 1`] = `
 
 .c3 {
   border: solid #b9c1cb;
-  border-width: 1px 0;
+  border-width: 1px 0 0 1px;
   display: inline-block;
   padding: 4px;
   -webkit-transform: rotate(-135deg);
@@ -52,8 +52,9 @@ exports[`UserMenu renders correctly 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  max-width: 20%;
+  max-width: 100%;
   position: relative;
+  padding: 0 10px;
 }
 
 .c1 {
