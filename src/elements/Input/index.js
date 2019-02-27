@@ -7,7 +7,7 @@ import { ifProp } from 'styled-tools';
 
 import Icon from 'elements/Icon';
 
-const Input = styled.input`
+const StyledInput = styled.input`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -24,7 +24,6 @@ const Input = styled.input`
   min-width: 260px;
   max-width: 560px;
   width: 100%;
-  margin: 6px 0;
 
   &:focus {
     border-bottom: 1px solid ${uiColors('primary.main')};
@@ -65,21 +64,22 @@ type Props = {
   type: string,
   placeholder: string,
   id: string,
-  onChange: (value: number | string) => any,
+  onChange: (e: ChangeEvent<HTMLInputElement>) => any,
+  value: string | Array<string> | number,
 };
 
-const TextField = ({ type, placeholder, onChange, ...rest }: Props) => {
+const Input = ({ type, placeholder, onChange, ...rest }: Props) => {
   const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.value);
 
   return type === 'search' ? (
     <SearchWrapper>
       <InputIcon name="search" />
-      <Input type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
+      <StyledInput type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
     </SearchWrapper>
   ) : (
-    <Input type={type} placeholder={placeholder} onChange={onInputChange} />
+    <StyledInput type={type} placeholder={placeholder} onChange={onInputChange} />
   );
 };
 
 /** @component */
-export default TextField;
+export default Input;
