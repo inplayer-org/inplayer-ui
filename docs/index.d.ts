@@ -171,16 +171,17 @@ interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   rowValues: T;
 }
 
-export interface RowAction {
-  icon: string;
-  onClick: (id: number | string) => any;
+export interface RowAction<T extends TableRowData> {
+  icon?: string;
+  onClick?: (id: number | string) => any;
+  render?: (props: { row: T }) => ReactNode;
 }
 
 interface RowActionsRender<T extends TableRowData> {
   (prop: { row: T }): ReactNode;
 }
 
-export type RowActions<T extends TableRowData> = Array<RowAction> | RowActionsRender<T>;
+export type RowActions<T extends TableRowData> = Array<RowAction<T>> | RowActionsRender<T>;
 
 export interface TableOptions<T extends TableRowData> {
   rowSelection: {
@@ -283,16 +284,16 @@ export interface ButtonContentProps {
   iconModifiers?: Array<string>;
 }
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
+export interface ButtonProps<T> extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
   buttonModifiers?: Array<string>;
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
-  as?: ReactElement<HTMLAttributes<any>>;
+  as?: ComponentType<T>;
+  fullWidth?: boolean;
 }
 
-export declare class Button<T = {}> extends Component<T & ButtonProps> {
-}
+export declare class Button<T = {}> extends Component<T & ButtonProps<T>> { }
 
 export interface CardProps {
   title?: string;
