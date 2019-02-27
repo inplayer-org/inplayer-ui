@@ -4,7 +4,7 @@ _Give a brief description of what this PR does._
 
 ## WHERE SHOULD THE REVIEWER START?
 
-_e.g. `/lib/elements/SomeComponent.js`_
+_e.g. `/src/elements/SomeComponent.js`_
 
 ## HOW CAN THIS BE MANUALLY TESTED?
 

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.6.1] - 27-02-2019
+
+### Fixes
+- Update Button TypeScript definitions
+- Update Table RowAction TypeScript definitions
+
 # [0.6.0] - 25-02-2019
 
 ### Changes
