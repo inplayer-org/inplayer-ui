@@ -42,8 +42,9 @@ const UserMenuContainer = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
-  max-width: 20%;
+  max-width: 100%;
   position: relative;
+  padding: 0 10px;
 `;
 
 const CloseLayer = styled.div`
