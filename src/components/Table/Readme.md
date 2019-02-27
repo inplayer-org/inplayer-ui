@@ -165,7 +165,7 @@ class TableExample extends React.Component {
     return (
       <React.Fragment>
         <Typography variant="h2">With array of row actions</Typography>
-        <TextField
+        <Input
           type="search"
           placeholder="Search"
           onChange={() => console.log('onChange')}
@@ -267,7 +267,7 @@ class TableExample extends React.Component {
     return (
       <React.Fragment>
         <Typography variant="h2">With rowActions as render prop</Typography>
-        <TextField
+        <Input
           type="search"
           placeholder="Search"
           onChange={() => console.log('onChange')}
