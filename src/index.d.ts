@@ -65,7 +65,7 @@ export interface MenuItem {
   href?: string;
   onClick?: (e: SyntheticEvent<HTMLElement>) => any;
   image?: string;
-  additionalUserMenu?: boolean;
+  smallSize?: boolean;
 }
 
 export interface UserMenuDropdownProps {

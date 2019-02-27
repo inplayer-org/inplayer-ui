@@ -57,7 +57,7 @@ const ActionItem = styled(Item)`
   margin-top: 12px;
   padding-top: 18px;
   ${ifProp(
-    'additionalUserMenu',
+    'smallSize',
     css`
       font-size: ${fontSizes('small')};
       border-top: none;
@@ -103,7 +103,7 @@ const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
       <ActionItem
         href={actionItem.href}
         onClick={actionItem.onClick}
-        additionalUserMenu={actionItem.additionalUserMenu}
+        smallSize={actionItem.smallSize}
       >
         {actionItem.title}
       </ActionItem>

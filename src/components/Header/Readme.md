@@ -22,7 +22,7 @@ The Header represents a versatile component which can house a title or a TabNavi
     actionItem: {
       title: 'See more on this link',
       href: 'http://www.example.com',
-      additionalUserMenu: true
+      smallSize: true
     },
   }}
   tabNavigationProps={{
@@ -73,7 +73,7 @@ The Header represents a versatile component which can house a title or a TabNavi
     actionItem: {
         title: 'See more on this link',
         href: 'http://www.example.com',
-        additionalUserMenu: true
+        smallSize: true
       },
   }}
   tabNavigationProps={{
