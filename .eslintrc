@@ -46,7 +46,7 @@
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/label-has-for": 0,
     "import/no-extraneous-dependencies": 0,
-    "linebreak-style": 0,
+    "linebreak-style": "off",
     "no-debugger": 0,
     "no-alert": 0,
     "no-unused-vars": [

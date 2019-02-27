@@ -1,4 +1,4 @@
-The UserMenu is a component which renders an overlay dropdown and is used for rendering a profile image and user-related links.
+The UserMenu is a component which renders an overlay dropdown and is used for rendering a profile image, user name and user-related links.
 
 ```jsx static
 import { UserMenu } from 'inplayer-ui';
@@ -6,7 +6,7 @@ import { UserMenu } from 'inplayer-ui';
 function Page(props) {
   return (
     <UserMenu
-      image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
+      image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
       menuItems={[{ title: 'Hello' }]}
     />
   );
@@ -17,8 +17,8 @@ function Page(props) {
 
 ```jsx
 <UserMenu
-  image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
-  menuItems={[{ title: 'Hello' }]}
+  image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
+  menuItems={menuTitle: 'User name', [{ title: 'Hello' }]}
 />
 ```
 
@@ -26,8 +26,8 @@ function Page(props) {
 
 ```jsx
 <UserMenu
-  image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
-  menuItems={[{ title: 'Hello' }, { title: 'World' }]}
+  image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
+  menuItems={menuTitle: 'User name', [{ title: 'Hello' }, { title: 'World' }]}
   actionItem={{ title: 'Logout' }}
 />
 ```

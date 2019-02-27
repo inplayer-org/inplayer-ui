@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserMenu renders correctly 1`] = `
-.c1 {
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-}
-
 .c2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -54,12 +48,25 @@ exports[`UserMenu renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  max-width: 10%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  max-width: 100%;
   position: relative;
+  padding: 0 10px;
+}
+
+.c1 {
+  color: #aaadb4;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+  padding: 0 3px 0 10px;
+}
+
+.c1:hover {
+  color: #44494e;
 }
 
 <div
@@ -67,7 +74,7 @@ exports[`UserMenu renders correctly 1`] = `
   onClick={[Function]}
   style={Object {}}
 >
-  <img
+  <span
     className="c1"
   />
   <div

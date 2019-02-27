@@ -23,8 +23,23 @@ exports[`Header renders correctly 1`] = `
   z-index: 3;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 <header
   className="c0"
   style={Object {}}
-/>
+>
+  <div
+    className="c1"
+  />
+</header>
 `;

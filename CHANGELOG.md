@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Changes
 - Rename TextField component to Input
 - Add full width/height to CardContent
+- Additional user menu added in Header
 
 ### Fixes
 - Update TextField/Input TypeScript definitions
