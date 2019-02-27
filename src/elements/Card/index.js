@@ -6,6 +6,10 @@ import Typography from 'elements/Typography';
 import CardContent from './CardContent';
 
 const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   border: 1px solid ${colors.gray};
   border-radius: 3px;
@@ -18,6 +22,7 @@ const CardWrapper = styled.div`
 `;
 
 const CardTitle = styled(Typography)`
+  flex: 1;
   width: 100%;
   padding: 16px;
   margin: 0;
