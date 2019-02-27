@@ -6,7 +6,7 @@ import { UserMenu } from 'inplayer-ui';
 function Page(props) {
   return (
     <UserMenu
-      image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
+      image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
       menuItems={[{ title: 'Hello' }]}
     />
   );
@@ -17,7 +17,8 @@ function Page(props) {
 
 ```jsx
 <UserMenu
-  image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
+  userName="User name"
+  image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
   menuItems={[{ title: 'Hello' }]}
 />
 ```
@@ -26,7 +27,8 @@ function Page(props) {
 
 ```jsx
 <UserMenu
-  image="https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg"
+  userName="User name"
+  image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
   menuItems={[{ title: 'Hello' }, { title: 'World' }]}
   actionItem={{ title: 'Logout' }}
 />

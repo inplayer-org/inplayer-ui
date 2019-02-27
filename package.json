@@ -17,6 +17,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint src/**",
     "lint:js:watch": "esw -w src/**",
+    "lint:js:fix": "eslint src/** --fix",
     "prepublishOnly": "yarn build",
     "review": "run-s lint test:clean test test:coverage:report",
     "lint:style": "stylelint -- \"./src/**/*.js\"",

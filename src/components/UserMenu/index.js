@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 
+import { uiColors, fontSizes } from 'utils/index';
 import UserMenuDropdown, { type UserMenuDropdownProps } from './UserMenuDropdown';
 
 const ProfileImage = styled.img`
@@ -29,7 +30,7 @@ const MenuButton = styled.div`
 
 const MenuArrow = styled.i`
   border: solid ${colors.darkGray};
-  border-width: 1px 0 0 1px;
+  border-width: 1px 0px 0px 1px;
   display: inline-block;
   padding: 4px;
   transform: ${ifProp('open', 'rotate(45deg)', 'rotate(-135deg)')};
@@ -40,8 +41,8 @@ const UserMenuContainer = styled.div`
   align-items: center;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  max-width: 10%;
+  justify-content: flex-end;
+  max-width: 20%;
   position: relative;
 `;
 
@@ -54,10 +55,23 @@ const CloseLayer = styled.div`
   z-index: 1;
 `;
 
+const MenuTitle = styled.span`
+  color: ${uiColors('text.light')};
+  transition: color 0.3s ease;
+  font-size: ${fontSizes('medium')};
+  padding: 0 3px 0px 10px;
+
+  &:hover {
+    color: ${uiColors('text.main')};
+  }
+`;
+
 export type UserMenuProps = UserMenuDropdownProps & {
   image: Element<*> | string,
   className?: string,
   style?: Object,
+  userName?: string,
+  menuTitle?: string,
 };
 
 type UserMenuState = {
@@ -78,13 +92,14 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
   };
 
   render() {
-    const { image, menuItems, actionItem, className, style } = this.props;
+    const { image, menuItems, actionItem, className, style, userName, menuTitle } = this.props;
     const { open } = this.state;
 
     return (
       <Fragment>
         <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
-          <ProfileImage src={image} />
+          {image && <ProfileImage src={image} />}
+          <MenuTitle>{userName || menuTitle}</MenuTitle>
           <MenuButton>
             <MenuArrow open={open} />
           </MenuButton>

@@ -43,6 +43,8 @@ export interface MenuItem {
   title: string;
   href?: string;
   onClick?: (e: SyntheticEvent<HTMLElement>) => any;
+  image?: string;
+  additionalUserMenu?: boolean;
 }
 
 export interface UserMenuDropdownProps {
@@ -51,9 +53,11 @@ export interface UserMenuDropdownProps {
 }
 
 export interface UserMenuProps extends UserMenuDropdownProps {
-  image: ReactElement<any> | string;
+  image?: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
+  userName?: string,
+  menuTitle?: string,
 }
 
 interface UserMenuState {
@@ -66,7 +70,9 @@ export declare class UserMenu extends Component<UserMenuProps, UserMenuState> {
 
 export interface HeaderProps {
   title?: string;
+  userName: string,
   userMenuProps?: UserMenuProps;
+  additionalUserMenuProps?: UserMenuProps | boolean;
   tabNavigationProps?: TabNavigationProps;
   className?: string;
   style?: CSSProperties;

@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
@@ -9,7 +10,7 @@ const Container = styled.div`
   align-items: flex-start;
   box-shadow: 0 1px 5px 0 ${transparentize(0.8, '#000')};
   z-index: 1000;
-  min-width: 200%;
+  min-width: 100%;
   background: ${colors.white};
   display: inline-flex;
   flex-direction: column;
@@ -39,7 +40,7 @@ const Item = styled.a`
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
   line-height: 2;
-  padding: 6px 22px;
+  padding: 6px 10px;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
@@ -55,11 +56,32 @@ const ActionItem = styled(Item)`
   border-top: 1px solid ${uiColors('text.disabled')};
   margin-top: 12px;
   padding-top: 18px;
+
+  ${ifProp(
+    'additionalUSerMenu',
+    css`
+      font-size: ${fontSizes('small')};
+      border-top: none;
+    `
+  )}
+`;
+
+const ItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const ItemImage = styled.img`
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
 `;
 
 type MenuItem = {
   title: string,
   href?: string,
+  image?: string,
   onClick?: (e: SyntheticEvent<*>) => any,
 };
 
@@ -70,13 +92,20 @@ export type UserMenuDropdownProps = {
 
 const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
   <Container>
-    {menuItems.map(item => (
-      <Item key={item.title} href={item.href} onClick={item.onClick}>
-        {item.title}
-      </Item>
+    {menuItems.map((item, i) => (
+      <ItemContainer key={i}>
+        {item.image && <ItemImage src={item.image} />}
+        <Item key={i} href={item.href} onClick={item.onClick}>
+          {item.title}
+        </Item>
+      </ItemContainer>
     ))}
     {actionItem && (
-      <ActionItem href={actionItem.href} onClick={actionItem.onClick}>
+      <ActionItem
+        href={actionItem.href}
+        onClick={actionItem.onClick}
+        additionalUserMenu={actionItem.additionalUserMenu}
+      >
         {actionItem.title}
       </ActionItem>
     )}

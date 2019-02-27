@@ -3,14 +3,27 @@ The Header represents a versatile component which can house a title or a TabNavi
 ```jsx static
 <Header
   title="My app title"
+  userName="User name"
   userMenuProps={{
     image:
-      'https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg',
+      'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [
       { title: 'Hello', onClick: console.log },
       { title: 'World', href: 'http://www.example.com' },
     ],
     actionItem: { title: 'Logout' },
+  }}
+  additionalUserMenuProps={{
+    menuTitle: 'Added menu',
+    menuItems: [
+      { title: 'Agent1', onClick: console.log },
+      { title: 'Agent2',  href: 'http://www.example.com' },
+    ],
+    actionItem: {
+      title: 'See more on this link',
+      href: 'http://www.example.com',
+      additionalUserMenu: true
+    },
   }}
   tabNavigationProps={{
     tabs: [
@@ -32,14 +45,36 @@ The Header represents a versatile component which can house a title or a TabNavi
 ```jsx
 <Header
   title="My app title"
+  userName="User name"
   userMenuProps={{
     image:
-      'https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg',
+      'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [
       { title: 'Hello', onClick: console.log },
       { title: 'World', href: 'http://www.example.com' },
     ],
     actionItem: { title: 'Logout' },
+  }}
+  additionalUserMenuProps={{
+    menuTitle: 'Added menu',
+    menuItems: [
+      {
+        image: 'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
+        title: 'Agent1',
+        onClick: console.log
+      },
+      {
+        image:
+        'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
+        title: 'Agent2',
+        href: 'http://www.example.com'
+      },
+    ],
+    actionItem: {
+        title: 'See more on this link',
+        href: 'http://www.example.com',
+        additionalUserMenu: true
+      },
   }}
   tabNavigationProps={{
     tabs: [
@@ -63,7 +98,7 @@ The Header represents a versatile component which can house a title or a TabNavi
   title="My app title"
   userMenuProps={{
     image:
-      'https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg',
+      'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [
       { title: 'Hello', onClick: console.log },
       { title: 'World', href: 'http://www.example.com' },
@@ -79,13 +114,14 @@ The Header represents a versatile component which can house a title or a TabNavi
 <Header
   userMenuProps={{
     image:
-      'https://visualpharm.com/assets/941/Customer-595b40b75ba036ed117d9d5d.svg',
+      'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png',
     menuItems: [
       { title: 'Hello', onClick: console.log },
       { title: 'World', href: 'http://www.example.com' },
     ],
     actionItem: { title: 'Logout' },
   }}
+
   tabNavigationProps={{
     tabs: [
       {

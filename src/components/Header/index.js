@@ -28,25 +28,44 @@ const Title = styled.h3`
   margin: 0;
 `;
 
+const MenuWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 type HeaderProps = {
   title?: string,
   userMenuProps?: UserMenuProps,
+  additionalUserMenuProps?: UserMenuProps,
   tabNavigationProps?: TabNavigationProps,
   className?: string,
   style?: Object,
+  userName: string,
 };
 
-const Header = ({ title, userMenuProps, tabNavigationProps, className, style }: HeaderProps) => (
+const Header = ({
+  title,
+  userMenuProps,
+  additionalUserMenuProps,
+  tabNavigationProps,
+  className,
+  style,
+  userName,
+}: HeaderProps) => (
   <Container className={className} style={style}>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
-    {userMenuProps && <UserMenu {...userMenuProps} />}
+    <MenuWrapper>
+      {additionalUserMenuProps && <UserMenu {...additionalUserMenuProps} />}
+      {userMenuProps && <UserMenu userName={userName} {...userMenuProps} />}
+    </MenuWrapper>
   </Container>
 );
 
 Header.defaultProps = {
   title: null,
   userMenuProps: null,
+  additionalUserMenuProps: null,
   tabNavigationProps: null,
   className: '',
   style: {},
