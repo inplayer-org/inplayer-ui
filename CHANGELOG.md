@@ -2,10 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.6.1] - 27-02-2019
+
+### Fixes
+- Update Button TypeScript definitions
+- Update Table RowAction TypeScript definitions
+
 # [0.6.0] - 25-02-2019
 
 ### Changes
 - Enable Table to recieve a render function for `rowActions` prop as well as an array of actions
+- Rework/Modify Grid
 
 # [0.5.1] - 22-02-2019
 

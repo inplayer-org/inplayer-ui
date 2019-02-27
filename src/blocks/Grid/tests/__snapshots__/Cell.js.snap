@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid.Column Element renders correctly 1`] = `
+.c0 {
+  height: 100%;
+  min-width: 0;
+  grid-column-end: span 1;
+  grid-row-end: span 1;
+}
+
+<div
+  className="c0"
+/>
+`;

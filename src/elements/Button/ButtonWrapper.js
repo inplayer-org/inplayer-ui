@@ -140,6 +140,12 @@ const ButtonWrapper = styled.button`
       pointer-events: none;
     `
   )};
+  ${ifProp(
+    'fullWidth',
+    css`
+      width: 100%;
+    `
+  )};
 `;
 
 ButtonWrapper.defaultProps = {
