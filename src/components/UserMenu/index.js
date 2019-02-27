@@ -30,7 +30,7 @@ const MenuButton = styled.div`
 
 const MenuArrow = styled.i`
   border: solid ${colors.darkGray};
-  border-width: 1px 0;
+  border-width: 1px 0 0 1px;
   display: inline-block;
   padding: 4px;
   transform: ${ifProp('open', 'rotate(45deg)', 'rotate(-135deg)')};
