@@ -56,7 +56,6 @@ const ActionItem = styled(Item)`
   border-top: 1px solid ${uiColors('text.disabled')};
   margin-top: 12px;
   padding-top: 18px;
-
   ${ifProp(
     'additionalUSerMenu',
     css`

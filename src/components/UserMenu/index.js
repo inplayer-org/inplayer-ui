@@ -30,7 +30,7 @@ const MenuButton = styled.div`
 
 const MenuArrow = styled.i`
   border: solid ${colors.darkGray};
-  border-width: 1px 0px 0px 1px;
+  border-width: 1px 0;
   display: inline-block;
   padding: 4px;
   transform: ${ifProp('open', 'rotate(45deg)', 'rotate(-135deg)')};
@@ -59,7 +59,7 @@ const MenuTitle = styled.span`
   color: ${uiColors('text.light')};
   transition: color 0.3s ease;
   font-size: ${fontSizes('medium')};
-  padding: 0 3px 0px 10px;
+  padding: 0 3px 0 10px;
 
   &:hover {
     color: ${uiColors('text.main')};
