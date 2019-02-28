@@ -9,8 +9,9 @@ const Cell = styled.div`
   ${({ top }) => top && `grid-row-start: ${top}`};
   ${({ center }) => center && `text-align: center`};
   ${({ area }) => area && `grid-area: ${area}`};
-  ${/* prettier-ignore */
-  ({ middle }) => middle && `
+  ${({ middle }) =>
+    middle &&
+    `
     display: inline-flex;
     flex-flow: column wrap;
     justify-content: center;

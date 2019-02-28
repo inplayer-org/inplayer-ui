@@ -2,10 +2,30 @@
 
 exports[`Card renders correctly 1`] = `
 .c1 {
-  padding: 24px;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   border: 1px solid #d7dde5;
   border-radius: 3px;
@@ -13,7 +33,7 @@ exports[`Card renders correctly 1`] = `
   line-height: 1.5;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 24px;
   list-style: none;
 }
 

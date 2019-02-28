@@ -3,7 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
-  padding: 24px;
+  flex: 3;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 `;
 
 const CardContent = ({ children }: Props) => <ContentWrapper>{children}</ContentWrapper>;

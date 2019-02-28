@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField renders correctly 1`] = `
+exports[`Input renders correctly 1`] = `
 .c0 {
   vertical-align: middle;
   box-sizing: border-box;
@@ -19,7 +19,6 @@ exports[`TextField renders correctly 1`] = `
   min-width: 260px;
   max-width: 560px;
   width: 100%;
-  margin: 6px 0;
 }
 
 .c0:focus {
