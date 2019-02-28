@@ -8,6 +8,7 @@ import {
   SyntheticEvent,
   ButtonHTMLAttributes,
   HTMLAttributes,
+  AllHTMLAttributes,
 } from 'react';
 import {
   StyledComponent,
@@ -64,6 +65,8 @@ export interface MenuItem {
   title: string;
   href?: string;
   onClick?: (e: SyntheticEvent<HTMLElement>) => any;
+  image?: string;
+  smallSize?: boolean;
 }
 
 export interface UserMenuDropdownProps {
@@ -72,9 +75,10 @@ export interface UserMenuDropdownProps {
 }
 
 export interface UserMenuProps extends UserMenuDropdownProps {
-  image: ReactElement<any> | string;
+  image?: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
+  menuTitle?: string,
 }
 
 interface UserMenuState {
@@ -88,6 +92,7 @@ export declare class UserMenu extends Component<UserMenuProps, UserMenuState> {
 export interface HeaderProps {
   title?: string;
   userMenuProps?: UserMenuProps;
+  additionalUserMenuProps?: UserMenuProps | boolean;
   tabNavigationProps?: TabNavigationProps;
   className?: string;
   style?: CSSProperties;
@@ -494,14 +499,9 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
-export interface TextFieldProps {
-  type: string;
-  placeholder: string;
-  id: string;
-  onChange: (value: number | string) => any;
-}
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {}
 
-export declare const TextField: FunctionComponent<TextFieldProps>;
+export declare const Input: FunctionComponent<InputProps>;
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
