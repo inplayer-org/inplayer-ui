@@ -68,6 +68,7 @@ const ActionItem = styled(Item)`
 const ItemContainer = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 
 const ItemImage = styled.img`
