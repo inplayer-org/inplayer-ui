@@ -22,6 +22,7 @@ const TableWrapper = styled.table`
   font-weight: ${fontWeights('light')};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border-collapse: collapse;
 `;
 
 const TableHeadRow = styled.tr`
