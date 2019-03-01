@@ -612,6 +612,7 @@ interface IColors {
   paleYellow: '#fffcee';
   green: '#5dc6a3';
   paleGreen: '#e4f9f2';
+  pale: '#f0f3f6';
 }
 
 export declare const Colors: IColors;
