@@ -69,7 +69,12 @@ type Props = {
 };
 
 const Input = ({ type, placeholder, onChange, ...rest }: Props) => {
-  const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.value);
+  const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
+    e.persist();
+    if (onChange) {
+      onChange(e);
+    }
+  };
 
   return type === 'search' ? (
     <SearchWrapper>
