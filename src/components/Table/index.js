@@ -23,6 +23,7 @@ const TableWrapper = styled.table`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-collapse: collapse;
+  table-layout: fixed;
 `;
 
 const TableHeadRow = styled.tr`
@@ -47,6 +48,7 @@ const TableCell = styled.td`
   text-align: ${ifProp('alignRight', 'right', 'left')};
   max-width: 450px;
   font-weight: ${fontWeights('light')};
+  word-wrap: break-word;
 `;
 
 const TableHeaderCell = styled.th`
