@@ -32,7 +32,7 @@ const tipsDiagonalLeft = keyframes`
 `;
 
 const TooltipWrapper = styled.div`
-  color: ${uiColors('text.main')};
+  color: ${uiColors('text.light')};
   cursor: pointer;
 
   [tooltip] {
