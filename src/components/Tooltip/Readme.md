@@ -35,7 +35,7 @@ function Page(props) {
 ### Tooltip with Custom Color
 
 ```jsx
-<Tooltip data-html="true" color="#0da" placement="down" dataTip="custom color tooltip \n here plus">
+<Tooltip color="#0da" placement="down" dataTip="custom color tooltip \n here plus">
   Tooltip with custom color!
 </Tooltip>
 ```
