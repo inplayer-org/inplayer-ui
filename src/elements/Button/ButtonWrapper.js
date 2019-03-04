@@ -103,6 +103,10 @@ const ButtonWrapper = styled.button`
   letter-spacing: 0.015em;
   line-height: 1;
 
+  a {
+    color: ${uiColors('text.light')};
+  }
+
   &:hover {
     border-color: ${uiColors('primary.main')};
     color: ${uiColors('primary.main')};
