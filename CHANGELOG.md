@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.1] - 04-03-2019
+
+### Changes
+- Status color for the icon and the tooltip set to light gray
+- Border in the table displayed
+- New line support added in the tooltip
+
 # [0.7.0] - 28-02-2019
 
 ### Changes
