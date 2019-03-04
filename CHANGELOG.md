@@ -2,7 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-<<<<<<< HEAD
 # [0.7.1] - 04-03-2019
 
 ### Fixes
