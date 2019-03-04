@@ -8,7 +8,7 @@ function Page(props) {
     <Input
       type="text"
       placeholder="text"
-      onChange={() => console.log('onChange')}
+      onChange={console.log}
     />
   );
 }
@@ -20,13 +20,13 @@ function Page(props) {
 <Input
   type="text"
   placeholder="text"
-  onChange={() => console.log('onChange')}
+  onChange={console.log}
   style={{ margin: '6px 0' }}
 />
 <Input
   type="search"
   placeholder="Search"
-  onChange={() => console.log('onChange')}
+  onChange={console.log}
   style={{ margin: '6px 0' }}
 />
 ```
