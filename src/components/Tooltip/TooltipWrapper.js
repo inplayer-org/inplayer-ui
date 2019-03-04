@@ -36,7 +36,7 @@ const TooltipWrapper = styled.div`
   cursor: pointer;
 
   [tooltip] {
-    position: relative;
+    position: absolute;
   }
 
   [tooltip]::before,
