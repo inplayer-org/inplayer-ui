@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.2] - 04-03-2019
+
+### Changes
+- Tooltip span positioned absolute
+- Changed color of the `a` element in button and table
+
 # [0.7.1] - 04-03-2019
 
 ### Fixes

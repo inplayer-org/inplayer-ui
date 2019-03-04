@@ -49,6 +49,10 @@ const TableCell = styled.td`
   max-width: 450px;
   font-weight: ${fontWeights('light')};
   word-wrap: break-word;
+
+  a {
+    color: ${uiColors('text.light')};
+  }
 `;
 
 const TableHeaderCell = styled.th`
