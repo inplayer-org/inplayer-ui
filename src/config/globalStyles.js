@@ -16,7 +16,10 @@ const GlobalStyle = createGlobalStyle`
       button,
       input,
       select,
-      textarea {
+      textarea,
+      span,
+      p,
+      a {
         font-family: ${props => props.theme.font.primaryFallback};
       }
     }
@@ -28,7 +31,10 @@ const GlobalStyle = createGlobalStyle`
       button,
       input,
       select,
-      textarea {
+      textarea,
+      span:not(.fa),
+      a,
+      p {
         font-family: ${props => props.theme.font.primary};
         font-weight: 300;
       }
