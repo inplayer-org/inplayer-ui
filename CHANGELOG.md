@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.1] - 01-03-2019
+
+### Fixes
+- Fix Input handling of onChange event
+
+### Added
+- Add new `pale (#f0f3f6)` color to Colors object
+
 # [0.7.0] - 28-02-2019
 
 ### Changes
