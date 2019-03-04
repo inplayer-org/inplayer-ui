@@ -8,8 +8,8 @@ export const statusColorWarning = () => `
    color: ${colors.yellow};
 `;
 
-export const statusColorInfo = () => `
-   color: ${colors.blue};
+export const statusColorInfo = ({ theme }) => `
+   color: ${theme.palette.text.light};
 `;
 
 export const statusColorSuccess = () => `
