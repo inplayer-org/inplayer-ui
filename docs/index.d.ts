@@ -248,8 +248,10 @@ interface TabsProps {
 
 export declare const Tabs: FunctionComponent<TabsProps>;
 
+type TooltipVariant = 'up' | 'down' | 'left' | 'right';
+
 interface TooltipProps {
-  placement: string;
+  placement: TooltipVariant;
   dataTip: string;
   children: ReactNode;
   className?: string;
@@ -612,6 +614,7 @@ interface IColors {
   paleYellow: '#fffcee';
   green: '#5dc6a3';
   paleGreen: '#e4f9f2';
+  pale: '#f0f3f6';
 }
 
 export declare const Colors: IColors;
