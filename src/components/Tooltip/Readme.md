@@ -16,7 +16,7 @@ function Page(props) {
 
 ```jsx
 <Tooltip placement="up" dataTip="Lorem Ipsum">
-  Tooltip top!
+  Tooltip up!
 </Tooltip>
 <br />
 <Tooltip placement="down" dataTip="Lorem Ipsum" >
@@ -35,7 +35,7 @@ function Page(props) {
 ### Tooltip with Custom Color
 
 ```jsx
-<Tooltip color="#0da" placement="down" dataTip="custom color tooltip">
+<Tooltip data-html="true" color="#0da" placement="down" dataTip="custom color tooltip \n here plus">
   Tooltip with custom color!
 </Tooltip>
 ```
