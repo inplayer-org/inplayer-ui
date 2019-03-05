@@ -55,7 +55,7 @@ const TableCell = styled.td`
 
     &:hover {
       color: ${uiColors('text.main')};
-      font-weight: ${fontWeights('normal')};
+      font-weight: ${fontWeights('light')};
     }
   }
 `;
