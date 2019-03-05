@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.8.0] - 05-03-2019
+
+### Changes
+- Changed color of the `a` element on hover table
+
+### Fixes
+- Font family fixed for `p`, `span` and `a` elements
+
+### Added
+- Add new extraLarge font size
+
 # [0.7.2] - 04-03-2019
 
 ### Changes

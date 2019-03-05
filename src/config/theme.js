@@ -38,6 +38,7 @@ module.exports = {
       small: rem(14),
       medium: rem(16),
       large: rem(18),
+      extraLarge: rem(50),
       h1: rem(40),
       h2: rem(36),
       h3: rem(32),
