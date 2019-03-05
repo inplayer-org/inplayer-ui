@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.7.3] - 05-03-2019
+# [0.8.0] - 05-03-2019
 
 ### Changes
 - Changed color of the `a` element on hover table
