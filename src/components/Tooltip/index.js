@@ -2,8 +2,10 @@
 import React, { type Node } from 'react';
 import TooltipWrapper from './TooltipWrapper';
 
+type TooltipVariant = 'up' | 'down' | 'left' | 'right';
+
 type Props = {
-  placement: string,
+  placement: TooltipVariant,
   dataTip: string,
   children: Node,
   /** A className can be passed down for further styling or extending with CSS-in-JS */

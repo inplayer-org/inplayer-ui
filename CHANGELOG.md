@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.7.2] - 04-03-2019
+
+### Changes
+- Tooltip span positioned absolute
+- Changed color of the `a` element in button and table
+
+# [0.7.1] - 04-03-2019
+
+### Fixes
+- Fix Input handling of onChange event
+
+### Changes
+- Status color for the icon and the tooltip set to light gray
+- Border in the table displayed
+- New line support added in the tooltip
+
+### Added
+- Add new `pale (#f0f3f6)` color to Colors object
+
 # [0.7.0] - 28-02-2019
 
 ### Changes
