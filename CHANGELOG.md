@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.8.1] - 05-03-2019
+
+### Fixes
+
+- Fix primary font being set on html instead of body after loading and not applying
+
 # [0.8.0] - 05-03-2019
 
 ### Changes
