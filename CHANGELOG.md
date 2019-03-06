@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.8.2] - 06-03-2019
+
+### Fixes
+
+- Fix Pagination className not being forwarded to container
+
 # [0.8.1] - 05-03-2019
 
 ### Fixes
