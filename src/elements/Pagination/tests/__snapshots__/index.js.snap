@@ -134,10 +134,10 @@ exports[`Pagination renders correctly 1`] = `
 
 <div
   className="c0"
+  style={Object {}}
 >
   <div
     className="c1"
-    style={Object {}}
   >
     <ul
       className=""
