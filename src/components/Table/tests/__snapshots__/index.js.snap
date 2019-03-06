@@ -146,6 +146,8 @@ exports[`Table renders correctly 1`] = `
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .c1 {
@@ -170,6 +172,16 @@ exports[`Table renders correctly 1`] = `
   text-align: left;
   max-width: 450px;
   font-weight: 300;
+  word-wrap: break-word;
+}
+
+.c7 a {
+  color: #aaadb4;
+}
+
+.c7 a:hover {
+  color: #44494e;
+  font-weight: 300;
 }
 
 .c8 {
@@ -179,6 +191,16 @@ exports[`Table renders correctly 1`] = `
   line-height: 30px;
   text-align: right;
   max-width: 450px;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.c8 a {
+  color: #aaadb4;
+}
+
+.c8 a:hover {
+  color: #44494e;
   font-weight: 300;
 }
 
