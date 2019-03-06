@@ -40,8 +40,8 @@ const PaginationPositioning = styled.div`
 `;
 
 const Pagination = ({ style, className, ...rest }: Props) => (
-  <PaginationPositioning>
-    <PaginationWrapper style={style} className={className}>
+  <PaginationPositioning style={style} className={className}>
+    <PaginationWrapper>
       <ReactPaginate {...rest} />
     </PaginationWrapper>
   </PaginationPositioning>
