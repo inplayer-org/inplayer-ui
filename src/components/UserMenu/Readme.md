@@ -18,7 +18,8 @@ function Page(props) {
 ```jsx
 <UserMenu
   image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
-  menuItems={menuTitle: 'User name', [{ title: 'Hello' }]}
+  menuTitle="User name"
+  menuItems={[{ title: 'Hello' }]}
 />
 ```
 
@@ -27,7 +28,8 @@ function Page(props) {
 ```jsx
 <UserMenu
   image="https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png"
-  menuItems={menuTitle: 'User name', [{ title: 'Hello' }, { title: 'World' }]}
+  menuTitle='User name'
+  menuItems={[{ title: 'Hello' }, { title: 'World' }]}
   actionItem={{ title: 'Logout' }}
 />
 ```

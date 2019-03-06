@@ -36,7 +36,7 @@ const TooltipWrapper = styled.div`
   cursor: pointer;
 
   [tooltip] {
-    position: absolute;
+    position: relative;
   }
 
   [tooltip]::before,
@@ -59,9 +59,9 @@ const TooltipWrapper = styled.div`
 
   [tooltip]::after {
     content: attr(tooltip);
-    text-align: center;
-    min-width: 16em;
-    max-width: 21em;
+    width: max-content;
+    white-space: pre-line;
+    text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 1ch 1.5ch;
@@ -71,8 +71,7 @@ const TooltipWrapper = styled.div`
     color: ${colors.white};
     z-index: 1000;
     opacity: 0.8;
-    white-space: pre-line;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   [tooltip]:hover::before,
