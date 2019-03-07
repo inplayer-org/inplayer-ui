@@ -7,6 +7,7 @@ import PaginationWrapper from './PaginationWrapper';
 
 type Props = {
   pageCount: number,
+  currentPage: number,
   pageRangeDisplayed: number,
   marginPagesDisplayed: number,
   previousLabel: string,
@@ -15,7 +16,6 @@ type Props = {
   onPageChange: (data: { selected: number }) => any,
   breakClassName?: string,
   initialPage?: number,
-  forcePage?: number,
   disableInitialCallback?: boolean,
   containerClassName?: string,
   pageClassName?: string,
@@ -39,10 +39,10 @@ const PaginationPositioning = styled.div`
   text-align: center;
 `;
 
-const Pagination = ({ style, className, ...rest }: Props) => (
+const Pagination = ({ style, className, currentPage, ...rest }: Props) => (
   <PaginationPositioning style={style} className={className}>
     <PaginationWrapper>
-      <ReactPaginate {...rest} />
+      <ReactPaginate forcePage={currentPage} {...rest} />
     </PaginationWrapper>
   </PaginationPositioning>
 );
@@ -50,7 +50,6 @@ const Pagination = ({ style, className, ...rest }: Props) => (
 Pagination.defaultProps = {
   breakClassName: 'break',
   initialPage: 0,
-  forcePage: 0,
   disableInitialCallback: false,
   containerClassName: '',
   pageClassName: '',
