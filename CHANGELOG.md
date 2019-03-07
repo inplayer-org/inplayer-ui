@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.0] - 07-03-2019
+
+### Changes
+
+- Remove unused Pagination prop currentPage
+- Add missing optional Pagination prop forcePage
+
 # [0.8.2] - 06-03-2019
 
 ### Fixes
