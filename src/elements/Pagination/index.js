@@ -7,7 +7,6 @@ import PaginationWrapper from './PaginationWrapper';
 
 type Props = {
   pageCount: number,
-  currentPage: number,
   pageRangeDisplayed: number,
   marginPagesDisplayed: number,
   previousLabel: string,
@@ -16,6 +15,7 @@ type Props = {
   onPageChange: (data: { selected: number }) => any,
   breakClassName?: string,
   initialPage?: number,
+  forcePage?: number,
   disableInitialCallback?: boolean,
   containerClassName?: string,
   pageClassName?: string,
@@ -50,6 +50,7 @@ const Pagination = ({ style, className, ...rest }: Props) => (
 Pagination.defaultProps = {
   breakClassName: 'break',
   initialPage: 0,
+  forcePage: 0,
   disableInitialCallback: false,
   containerClassName: '',
   pageClassName: '',
