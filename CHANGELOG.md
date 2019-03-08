@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- Put unused Pagination prop currentPage into use
+- Passed down Pagination currentPage prop to forcePage of ReactPaginate
 
 # [0.8.2] - 06-03-2019
 
