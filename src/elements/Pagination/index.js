@@ -39,10 +39,10 @@ const PaginationPositioning = styled.div`
   text-align: center;
 `;
 
-const Pagination = ({ style, className, ...rest }: Props) => (
+const Pagination = ({ style, className, currentPage, ...rest }: Props) => (
   <PaginationPositioning style={style} className={className}>
     <PaginationWrapper>
-      <ReactPaginate {...rest} />
+      <ReactPaginate forcePage={currentPage} {...rest} />
     </PaginationWrapper>
   </PaginationPositioning>
 );
