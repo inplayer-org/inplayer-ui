@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.1] - 11-03-2019
+
+### Fixes
+
+- Add missing value prop for Radio to typedefs
+
 # [0.9.0] - 11-03-2019
 
 ### Changes
