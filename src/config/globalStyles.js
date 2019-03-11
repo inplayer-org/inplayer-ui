@@ -7,15 +7,26 @@ const GlobalStyle = createGlobalStyle`
 
     body {
       color: ${props => props.theme.palette.text.main};
-      font-family: ${props => props.theme.font.primaryFallback};
       font-size: ${props => props.theme.font.sizes.medium}px;
-      font-weight: 300;
       height: 100%;
       margin: 0;
     }
 
+    body,
+    input,
+    textarea,
+    select,
+    button {
+      font-family: ${props => props.theme.font.primaryFallback};
+      font-weight: 300;
+    }
+
     &.wf-active {
-      body {
+      body,
+      input,
+      textarea,
+      select,
+      button {
         font-family: ${props => props.theme.font.primary};
         font-weight: 300;
       }
