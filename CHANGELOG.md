@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 
 - Change onChange of Radio to accept ChangeEvent instead of boolean
 
+### Fixes
+
+- Fix font-family from user agent stylesheet overriding HTML elements
 
 # [0.8.3] - 07-03-2019
 
