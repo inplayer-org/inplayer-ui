@@ -135,7 +135,7 @@ exports[`Radio renders correctly 1`] = `
   style={Object {}}
 >
   <input
-    onChange={[Function]}
+    onBlur={[Function]}
     type="radio"
   />
   <label
