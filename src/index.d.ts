@@ -155,6 +155,7 @@ export interface RadioProps {
   id: string;
   name?: string;
   checked: boolean;
+  value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   onBlur?: (e: any) => any;
   className?: string;

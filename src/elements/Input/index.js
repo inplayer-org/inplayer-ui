@@ -82,7 +82,7 @@ const Input = ({ type, placeholder, onChange, ...rest }: Props) => {
       <StyledInput type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
     </SearchWrapper>
   ) : (
-    <StyledInput type={type} placeholder={placeholder} onChange={onInputChange} />
+    <StyledInput {...rest} type={type} placeholder={placeholder} onChange={onInputChange} />
   );
 };
 
