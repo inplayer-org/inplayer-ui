@@ -9,6 +9,7 @@ import {
   ButtonHTMLAttributes,
   HTMLAttributes,
   AllHTMLAttributes,
+  ChangeEvent,
 } from 'react';
 import {
   StyledComponent,
@@ -154,7 +155,8 @@ export interface RadioProps {
   id: string;
   name?: string;
   checked: boolean;
-  onChange: (checked: boolean) => any;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => any;
+  onBlur?: (e: any) => any;
   className?: string;
   style?: CSSProperties;
 }
