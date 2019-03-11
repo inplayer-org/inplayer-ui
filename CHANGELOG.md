@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.0] - 11-03-2019
+
+### Changes
+
+- Change onChange of Radio to accept ChangeEvent instead of boolean
+
+### Fixes
+
+- Fix font-family from user agent stylesheet overriding HTML elements
+
+# [0.8.3] - 07-03-2019
+
+### Fixes
+
+- Passed down Pagination currentPage prop to forcePage of ReactPaginate
+
 # [0.8.2] - 06-03-2019
 
 ### Fixes
