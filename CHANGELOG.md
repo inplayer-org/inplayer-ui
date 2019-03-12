@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.3] - 12-03-2019
+
+### Changes
+
+- Make disabled prop optional on Switch
+
 # [0.9.2] - 11-03-2019
 
 ### Fixes

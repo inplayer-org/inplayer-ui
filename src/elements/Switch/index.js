@@ -6,7 +6,7 @@ import Label from '../Label';
 
 type Props = {
   checked: boolean,
-  disabled: boolean,
+  disabled?: boolean,
   id: string,
   label: string,
   onChange: (checked: boolean) => any,
@@ -40,6 +40,7 @@ const Switch = ({ id, checked, label, disabled, onChange, className, style }: Pr
 Switch.defaultProps = {
   className: '',
   style: {},
+  disabled: false,
 };
 
 /** @component */
