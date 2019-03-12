@@ -492,7 +492,7 @@ export declare class SingleDayPicker extends Component<SingleDayPickerProps, Sin
 
 export interface SwitchProps {
   checked: boolean;
-  disabled: boolean;
+  disabled?: boolean;
   id: string;
   label: string;
   onChange: (checked: boolean) => any;
