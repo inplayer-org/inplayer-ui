@@ -148,8 +148,6 @@ exports[`Switch renders correctly 1`] = `
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
   line-height: 20px;
-  margin: 0 30px;
-  left: 24px;
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -187,6 +185,7 @@ exports[`Switch renders correctly 1`] = `
     />
     <input
       className="react-toggle-screenreader-only"
+      disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -195,6 +194,7 @@ exports[`Switch renders correctly 1`] = `
   </div>
   <label
     className="c1"
+    disabled={false}
   />
 </span>
 `;

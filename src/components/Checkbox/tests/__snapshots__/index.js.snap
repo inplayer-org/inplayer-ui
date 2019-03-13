@@ -11,8 +11,6 @@ exports[`Checkbox renders correctly 1`] = `
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
   line-height: 20px;
-  margin: 0 30px;
-  left: 24px;
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
