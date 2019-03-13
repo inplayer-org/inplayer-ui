@@ -17,7 +17,7 @@ import {
 } from 'styled-components';
 import moment from 'moment';
 
-interface ContainerProps {
+export interface ContainerProps {
   className?: string,
   columns?: number | string,
   gap?: string,
@@ -32,7 +32,7 @@ interface ContainerProps {
   alignContent?: string
 }
 
-interface CellProps {
+export interface CellProps {
   className?: string;
   width?: number;
   height?: number;
