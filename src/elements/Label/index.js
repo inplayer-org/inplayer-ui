@@ -19,8 +19,6 @@ const Label = styled.label`
   color: ${uiColors('text.main')};
   transition: all ease 300ms;
   line-height: 20px;
-  margin: 0 30px;
-  left: 24px;
   position: relative;
   display: inline-flex;
 
