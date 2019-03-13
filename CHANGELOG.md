@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.4] - 13-03-2019
+
+### Changes
+
+- Remove margin from Label
+
+### Fixes
+
+- Export Container and Cell props
+
 # [0.9.3] - 12-03-2019
 
 ### Changes
