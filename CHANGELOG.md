@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.9.5] - 13-03-2019
+
+### Changes
+
+- Remove left positioning from Label
+
 # [0.9.4] - 13-03-2019
 
 ### Changes
