@@ -24,8 +24,8 @@ const tabs = [{ name: 'Account' }, { name: 'User' }, { name: 'Contact' }];
 
 ```jsx
 const tabs = [
-  { name: 'Account', icon: 'exclamation', iconModifiers: 'statusColorDanger' },
-  { name: 'User', icon: 'plus', iconModifiers: 'statusColorSuccess', iconPosition: 'right' },
+  { name: 'Account', icon: 'far fa-user-circle', iconModifiers: 'statusColorWarning' },
+  { name: 'User', icon: 'far fa-user', iconPosition: 'right' },
   { name: 'Contact' }
 ];
 
