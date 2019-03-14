@@ -13,6 +13,10 @@ exports[`TabsWrapper renders correctly 1`] = `
   text-align: center;
 }
 
+.c0 span {
+  padding: 0 1rem;
+}
+
 <div
   className="c0"
 />

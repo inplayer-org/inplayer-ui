@@ -36,6 +36,11 @@ exports[`Tab renders correctly 1`] = `
   color: #44494e;
 }
 
+.c0 span {
+  background: transparent;
+  color: #aaadb4;
+}
+
 <div
   className="c0"
 />
