@@ -301,6 +301,7 @@ export interface ButtonProps<T> extends ButtonHTMLAttributes<HTMLButtonElement>,
   className?: string;
   as?: ComponentType<T>;
   fullWidth?: boolean;
+  fullHeight?: boolean;
 }
 
 export declare class Button<T = {}> extends Component<T & ButtonProps<T>> { }
