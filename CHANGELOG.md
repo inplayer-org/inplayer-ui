@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 
+- Add fullHeight prop to Button
 - Enable to use icons in Tabs component
 
 # [0.9.5] - 13-03-2019
