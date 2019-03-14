@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.10.0] - 14-03-2019
+
+### Changes
+
+- Add fullHeight prop to Button
+
 # [0.9.5] - 13-03-2019
 
 ### Changes
