@@ -8,6 +8,10 @@ const TabsWrapper = styled.div`
   display: flex;
   overflow: hidden;
   text-align: center;
+
+  span {
+    padding: 0 1rem;
+  }
 `;
 
 export default TabsWrapper;

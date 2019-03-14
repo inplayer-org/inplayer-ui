@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import Icon from 'elements/Icon';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 
@@ -7,13 +8,39 @@ type TabInfo = {
   name: string,
 };
 
-type Props = {
-  tabs: Array<TabInfo>,
-  selectedTabIndex: number,
-  onTabClick: (index: number) => void,
-  /** A className can be passed down for further styling or extending with CSS-in-JS */
-  className?: string,
-  style?: Object,
+type ContentProps = {
+  icon?: string,
+  iconPosition?: string,
+  iconModifiers?: Array<string>,
+};
+
+type Props = HTMLDivElement &
+  ContentProps & {
+    tabs: Array<TabInfo>,
+    selectedTabIndex: number,
+    onTabClick: (index: number) => void,
+    /** A className can be passed down for further styling or extending with CSS-in-JS */
+    className?: string,
+    style?: Object,
+  };
+
+const Content = ({ icon, iconPosition, iconModifiers, name }: any) =>
+  iconPosition === 'right' ? (
+    <React.Fragment>
+      {name}
+      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      {name}
+    </React.Fragment>
+  );
+
+Content.defaultProps = {
+  icon: null,
+  iconPosition: 'left',
+  iconModifiers: [],
 };
 
 const renderTabs = (
@@ -21,7 +48,7 @@ const renderTabs = (
   selectedTabIndex: number,
   onTabClick: (index: number) => void
 ) =>
-  tabs.map(({ name }, index) => (
+  tabs.map(({ name, ...rest }, index) => (
     <Tab
       selected={selectedTabIndex === index}
       key={name}
@@ -31,7 +58,7 @@ const renderTabs = (
         }
       }}
     >
-      {name}
+      <Content name={name} {...rest} />
     </Tab>
   ));
 

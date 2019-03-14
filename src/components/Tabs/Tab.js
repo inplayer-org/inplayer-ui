@@ -32,6 +32,11 @@ const Tab = styled.div`
       &:hover {
         color: ${uiColors('text.main')};
       }
+
+      span {
+        background: transparent;
+        color: ${uiColors('text.light')};
+      }
     `
   )};
 `;
