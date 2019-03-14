@@ -146,6 +146,12 @@ const ButtonWrapper = styled.button`
       width: 100%;
     `
   )};
+  ${ifProp(
+    'fullHeight',
+    css`
+      height: 100%;
+    `
+  )};
 `;
 
 ButtonWrapper.defaultProps = {
