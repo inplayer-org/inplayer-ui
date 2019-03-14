@@ -19,3 +19,19 @@ const tabs = [{ name: 'Account' }, { name: 'User' }, { name: 'Contact' }];
   onTabClick={index => console.log(index)}
 />;
 ```
+
+### Tabs with Icon
+
+```jsx
+const tabs = [
+  { name: 'Account', icon: 'user-circle', iconModifiers: 'statusColorWarning' },
+  { name: 'User', icon: 'user', iconPosition: 'right' },
+  { name: 'Contact' }
+];
+
+<Tabs
+  tabs={tabs}
+  selectedTabIndex={0}
+  onTabClick={index => console.log(index)}
+/>;
+```

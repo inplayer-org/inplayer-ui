@@ -227,7 +227,13 @@ interface NavigationTab {
   title: string;
 }
 
-export interface TabNavigationProps {
+export interface TabContentProps {
+  icon?: string;
+  iconPosition?: string;
+  iconModifiers?: Array<string>;
+}
+
+export interface TabNavigationProps<T> extends DivHTMLAttributes<HTMLDivElement>, TabContentProps {
   tabs: Array<NavigationTab>;
   onTabClick: (index: number) => any;
   selectedTabIndex: number;
