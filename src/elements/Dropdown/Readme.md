@@ -71,3 +71,20 @@ const options = [
   color="#936"
 />;
 ```
+
+### Disabled
+
+```jsx
+const options = [
+  { value: 'Option 1', displayName: 'Option 1' },
+  { value: 'Option 2', displayName: 'Option 2' },
+];
+
+<Dropdown
+  options={options}
+  value={options[0].value}
+  onChange={console.log}
+  color="#936"
+  disabled
+/>;
+```
