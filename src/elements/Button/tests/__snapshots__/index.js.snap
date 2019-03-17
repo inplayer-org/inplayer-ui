@@ -39,7 +39,7 @@ exports[`Button renders correctly 1`] = `
   color: #07AAE6;
 }
 
-.c0 span {
+.c1 {
   padding: 0.2rem;
 }
 
@@ -48,6 +48,8 @@ exports[`Button renders correctly 1`] = `
   size="md"
   style={Object {}}
 >
-  <span />
+  <span
+    className="c1"
+  />
 </button>
 `;
