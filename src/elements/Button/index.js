@@ -1,7 +1,12 @@
 // @flow
 import React, { type Node } from 'react';
+import styled from 'styled-components';
 import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';
+
+const SpanInside = styled.span`
+  padding: 0.2rem;
+`;
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -23,13 +28,13 @@ type Props = HTMLButtonElement &
 const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
   iconPosition === 'right' ? (
     <React.Fragment>
-      <span>{children}</span>
+      <SpanInside>{children}</SpanInside>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
     </React.Fragment>
   ) : (
     <React.Fragment>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
-      <span>{children}</span>
+      <SpanInside>{children}</SpanInside>
     </React.Fragment>
   );
 
