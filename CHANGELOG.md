@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.10.1] - 14-03-2019
+
+### Changes
+
+- Added optional disabled prop on Dropdown element.
+
 # [0.10.0] - 14-03-2019
 
 ### Changes
