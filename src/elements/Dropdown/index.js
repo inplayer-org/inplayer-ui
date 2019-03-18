@@ -49,6 +49,7 @@ type Props = HTMLSelectElement & {
   /** `Option` is a `{ value: string, displayName: string }` object */
   options: Array<Option>,
   style?: Object,
+  disabled?: boolean,
 };
 
 const Dropdown = ({ options, onChange, style, className, ...rest }: Props) => {
