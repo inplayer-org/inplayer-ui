@@ -4,10 +4,6 @@ import styled from 'styled-components';
 import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';
 
-const SpanInside = styled.span`
-  padding: 0.2rem;
-`;
-
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type ContentProps = {
@@ -25,16 +21,20 @@ type Props = HTMLButtonElement &
     className?: string,
   };
 
+const ContentHolder = styled.span`
+  padding: 0.2rem;
+`;
+
 const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
   iconPosition === 'right' ? (
     <React.Fragment>
-      <SpanInside>{children}</SpanInside>
+      <ContentHolder>{children}</ContentHolder>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
     </React.Fragment>
   ) : (
     <React.Fragment>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
-      <SpanInside>{children}</SpanInside>
+      <ContentHolder>{children}</ContentHolder>
     </React.Fragment>
   );
 
