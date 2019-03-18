@@ -374,7 +374,7 @@ export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
   className?: string;
   style?: CSSProperties;
   modifiers?: Array<DropdownModifier>;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;

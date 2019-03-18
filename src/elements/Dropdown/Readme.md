@@ -84,7 +84,6 @@ const options = [
   options={options}
   value={options[0].value}
   onChange={console.log}
-  color="#936"
   disabled
 />;
 ```
