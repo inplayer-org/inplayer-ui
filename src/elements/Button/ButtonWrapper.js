@@ -108,10 +108,6 @@ const ButtonWrapper = styled.button`
     color: ${uiColors('primary.main')};
   }
 
-  span {
-    padding: 0.2rem;
-  }
-
   ${switchProp('size', {
     xs: css`
       font-size: ${fontSizes('extraSmall')};
