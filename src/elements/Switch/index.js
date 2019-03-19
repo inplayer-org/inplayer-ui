@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 import Toggle from 'react-toggle';
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
@@ -14,6 +15,10 @@ type Props = {
   className?: string,
   style?: Object,
 };
+
+const MarginLeftLabel = styled(Label)`
+  margin-left: 0.5rem;
+`;
 
 const Switch = ({ id, checked, label, disabled, onChange, className, style }: Props) => {
   const onToggleChange = (e: SyntheticInputEvent<*>) => {
@@ -30,9 +35,9 @@ const Switch = ({ id, checked, label, disabled, onChange, className, style }: Pr
         onChange={onToggleChange}
         icons={false}
       />
-      <Label disabled={disabled} htmlFor={id}>
+      <MarginLeftLabel disabled={disabled} htmlFor={id}>
         {label}
-      </Label>
+      </MarginLeftLabel>
     </SwitchWrapper>
   );
 };
