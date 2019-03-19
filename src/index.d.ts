@@ -15,7 +15,7 @@ import {
   StyledComponent,
   ThemeProviderComponent,
 } from 'styled-components';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
 export interface ContainerProps {
   className?: string,
@@ -323,19 +323,19 @@ export interface CardProps {
 export declare const Card: FunctionComponent<CardProps>;
 
 interface DatePicker$OnDateChange$Arguments {
-  startDate: typeof moment;
-  endDate: typeof moment;
+  startDate: Moment;
+  endDate: Moment;
 }
 
 export type DatePicker$OnDateChange = (values: DatePicker$OnDateChange$Arguments) => any;
 
 export interface DatePickerProps {
-  startDate: string;
-  endDate: string;
+  startDate: Moment;
+  endDate: Moment;
   startDateId?: string;
   endDateId?: string;
-  calendarInfo: boolean;
-  isOutsideRange: boolean;
+  calendarInfo?: boolean;
+  isOutsideRange?: () => boolean;
   onDateChange: DatePicker$OnDateChange;
   style?: CSSProperties;
   className?: string;
