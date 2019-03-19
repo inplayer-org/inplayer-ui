@@ -41,25 +41,37 @@ type Option = {
   displayName: string,
 };
 
+type DefaultOption = {
+  displayName: string,
+  disabled?: boolean,
+};
+
 type Props = HTMLSelectElement & {
   value: string,
-  onChange: (value: string) => any,
+  onChange?: (value: string) => any,
   className?: string,
   color?: string,
   /** `Option` is a `{ value: string, displayName: string }` object */
   options: Array<Option>,
   style?: Object,
   disabled?: boolean,
+  defaultOption?: DefaultOption,
 };
 
-const Dropdown = ({ options, onChange, style, className, ...rest }: Props) => {
+const Dropdown = ({ options, onChange, style, className, defaultOption, ...rest }: Props) => {
   const onDropdownChange = (e: SyntheticEvent<*>) => {
     if (typeof onChange === 'function') {
       onChange(e.target.value);
     }
   };
+
   return (
     <DropdownContainer onChange={onDropdownChange} className={className} style={style} {...rest}>
+      {defaultOption && (
+        <option value="" disabled={defaultOption.disabled}>
+          {defaultOption.displayName}
+        </option>
+      )}
       {options.map(({ value, displayName }) => (
         <option value={value} key={value}>
           {displayName}

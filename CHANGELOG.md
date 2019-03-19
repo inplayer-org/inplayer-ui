@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 # [0.10.2] - 19-03-2019
 
+### Changes
+
+- Added optional defaultOption prop on Dropdown element.
+
 ### Fixes
 
 - Add margin left to the Label in Switch component
