@@ -14,6 +14,32 @@ const options = [
 <Dropdown options={options} value={options[0].value} onChange={console.log} />;
 ```
 
+### Standard dropdown with disabled default option
+
+```jsx
+const options = [
+  { value: 'Option 1', displayName: 'Option 1' },
+  { value: 'Option 2', displayName: 'Option 2' },
+];
+
+const defaultOption = { displayName: 'default value',  disabled: true};
+
+<Dropdown options={options} value={options[0].value} defaultOption={defaultOption} onChange={console.log} />;
+```
+
+### Standard dropdown with enabled default option
+
+```jsx
+const options = [
+  { value: 'Option 1', displayName: 'Option 1' },
+  { value: 'Option 2', displayName: 'Option 2' },
+];
+
+const defaultOption = { displayName: 'default value' };
+
+<Dropdown options={options} value={options[0].value} defaultOption={defaultOption} onChange={console.log} />;
+```
+
 ### Font size modifiers
 
 ```jsx
