@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.10.3] - 20-03-2019
+
+### Fixes
+
+- Make calendarInfo and isOutsideRange DatePicker props optional.
+- Change the types of startDate and endDate (from string to Moment)
+
 # [0.10.2] - 19-03-2019
 
 ### Changes
