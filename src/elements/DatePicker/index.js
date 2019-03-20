@@ -2,7 +2,7 @@
 import React from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
 import DateRangePickerWrapper from './DateRangePickerWrapper';
 import Label from '../Label';
@@ -14,12 +14,12 @@ const LAST_MONTH = 'last month';
 const THIS_YEAR = 'this year';
 
 type Props = {
-  startDate: string,
-  endDate: string,
+  startDate: Moment,
+  endDate: Moment,
   startDateId?: string,
   endDateId?: string,
-  calendarInfo: boolean,
-  isOutsideRange: boolean,
+  calendarInfo?: boolean,
+  isOutsideRange?: Function,
   onDateChange: Function,
   style?: Object,
   className?: string,
@@ -123,6 +123,8 @@ class DatePicker extends React.Component<Props, State> {
 DatePicker.defaultProps = {
   startDateId: 'startDate',
   endDateId: 'endDate',
+  calendarInfo: false,
+  isOutsideRange: () => false,
   style: {},
   className: '',
 };

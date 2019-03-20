@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
+- Make calendarInfo and isOutsideRange DatePicker props optional
+- Change the types of startDate and endDate (from string to Moment)
 - Forward ref to Input component
 
 # [0.10.2] - 19-03-2019
