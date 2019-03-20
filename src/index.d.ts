@@ -11,6 +11,7 @@ import {
   AllHTMLAttributes,
   ChangeEvent,
   ForwardRefExoticComponent,
+  Ref,
 } from 'react';
 import {
   StyledComponent,
@@ -519,7 +520,9 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
-export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
+  ref: Ref<HTMLInputElement>
+}
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
 
