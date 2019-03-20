@@ -68,7 +68,7 @@ type Props = {
   value: string | Array<string> | number,
 };
 
-const Input = ({ type, placeholder, onChange, ...rest }: Props) => {
+const Input = React.forwardRef(({ type, placeholder, onChange, ...rest }: Props, ref) => {
   const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
     e.persist();
     if (onChange) {
@@ -79,12 +79,24 @@ const Input = ({ type, placeholder, onChange, ...rest }: Props) => {
   return type === 'search' ? (
     <SearchWrapper>
       <InputIcon name="search" />
-      <StyledInput type={type} placeholder={placeholder} {...rest} onChange={onInputChange} />
+      <StyledInput
+        ref={ref}
+        type={type}
+        placeholder={placeholder}
+        {...rest}
+        onChange={onInputChange}
+      />
     </SearchWrapper>
   ) : (
-    <StyledInput {...rest} type={type} placeholder={placeholder} onChange={onInputChange} />
+    <StyledInput
+      ref={ref}
+      type={type}
+      placeholder={placeholder}
+      onChange={onInputChange}
+      {...rest}
+    />
   );
-};
+});
 
 /** @component */
 export default Input;
