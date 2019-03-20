@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import 'react-dates/initialize';
-import { DateRangePicker } from 'react-dates';
+import { DateRangePicker, FocusedInputShape } from 'react-dates';
 import moment, { Moment } from 'moment';
 
 import DateRangePickerWrapper from './DateRangePickerWrapper';
@@ -23,25 +23,13 @@ type Props = {
   onDateChange: Function,
   style?: Object,
   className?: string,
-};
-
-type State = {
-  focusedInput: ?string,
+  onFocusChange: Function,
+  focusedInput: FocusedInputShape | null,
 };
 
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
 
 class DatePicker extends React.Component<Props, State> {
-  state = {
-    focusedInput: null,
-  };
-
-  onFocusedInputChange = (focusedInput: string) => {
-    this.setState({
-      focusedInput,
-    });
-  };
-
   handleRangeClick = (activePeriod: Period) => {
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
@@ -95,16 +83,16 @@ class DatePicker extends React.Component<Props, State> {
       isOutsideRange,
       style,
       className,
+      onFocusChange,
+      focusedInput,
     } = this.props;
-
-    const { focusedInput } = this.state;
 
     return (
       <DateRangePickerWrapper style={style} className={className}>
         <DateRangePicker
           isOutsideRange={isOutsideRange}
           onDatesChange={onDateChange}
-          onFocusChange={this.onFocusedInputChange}
+          onFocusChange={onFocusChange}
           renderCalendarInfo={this.renderDatePresets}
           focusedInput={focusedInput}
           startDate={startDate}

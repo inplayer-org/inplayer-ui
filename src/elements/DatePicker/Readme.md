@@ -15,6 +15,7 @@ class DatePicker extends React.Component {
     this.state = {
       startDate: moment().subtract(1, 'month'),
       endDate: moment(),
+      focusedInput: null,
     };
   }
 
@@ -23,6 +24,10 @@ class DatePicker extends React.Component {
       startDate,
       endDate,
     });
+  };
+
+  onFocusChange = (focusedInput) => {
+    this.setState({ focusedInput });
   };
 
   render() {
@@ -35,6 +40,8 @@ class DatePicker extends React.Component {
         onDateChange={this.onDateChange}
         calendarInfo={true}
         isOutsideRange={() => false}
+        onFocusChange={this.onFocusChange}
+        focusedInput={this.state.focusedInput}
       />
     );
   }
@@ -54,9 +61,11 @@ class DatePickerExample extends React.Component {
     this.state = {
       startDate: moment().subtract(1, 'month'),
       endDate: moment(),
+      focusedInput: null,
     };
 
     this.onDateChange = this.onDateChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
   }
 
   onDateChange({ startDate, endDate }) {
@@ -64,6 +73,10 @@ class DatePickerExample extends React.Component {
       startDate,
       endDate,
     });
+  }
+
+  onFocusChange(focusedInput) {
+    this.setState({ focusedInput });
   }
 
   render() {
@@ -76,6 +89,8 @@ class DatePickerExample extends React.Component {
         onDateChange={this.onDateChange}
         calendarInfo={true}
         isOutsideRange={() => false}
+        onFocusChange={this.onFocusChange}
+        focusedInput={this.state.focusedInput}
       />
     );
   }
