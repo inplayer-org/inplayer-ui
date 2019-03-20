@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.10.4] - 20-03-2019
+
+### Fixes
+
+- Make Input ref prop optional in Input component
+
 # [0.10.3] - 20-03-2019
 
 ### Fixes
