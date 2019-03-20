@@ -397,9 +397,14 @@ export type IconModifier = 'statusColorPrimary' | 'statusColorInfo' | 'statusCol
 export interface IconProps {
   name: string;
   modifiers?: Array<IconModifier>;
+  color?: string;
 }
 
 export declare const Icon: StyledComponent<'span', Theme, IconProps>;
+
+export type InPlayerIconProps = IconProps;
+
+export declare const InPlayerIcon: StyledComponent<'i', Theme, InPlayerIconProps>;
 
 export type LabelModifier = 'fontSizeExtraSmall' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge';
 
