@@ -10,12 +10,14 @@ import {
   HTMLAttributes,
   AllHTMLAttributes,
   ChangeEvent,
+  ForwardRefExoticComponent,
+  Ref,
 } from 'react';
 import {
   StyledComponent,
   ThemeProviderComponent,
 } from 'styled-components';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
 export interface ContainerProps {
   className?: string,
@@ -323,19 +325,19 @@ export interface CardProps {
 export declare const Card: FunctionComponent<CardProps>;
 
 interface DatePicker$OnDateChange$Arguments {
-  startDate: typeof moment;
-  endDate: typeof moment;
+  startDate: Moment;
+  endDate: Moment;
 }
 
 export type DatePicker$OnDateChange = (values: DatePicker$OnDateChange$Arguments) => any;
 
 export interface DatePickerProps {
-  startDate: string;
-  endDate: string;
+  startDate: Moment;
+  endDate: Moment;
   startDateId?: string;
   endDateId?: string;
-  calendarInfo: boolean;
-  isOutsideRange: boolean;
+  calendarInfo?: boolean;
+  isOutsideRange?: () => boolean;
   onDateChange: DatePicker$OnDateChange;
   style?: CSSProperties;
   className?: string;
@@ -518,9 +520,11 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
-export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
+  ref?: Ref<HTMLInputElement>
+}
 
-export declare const Input: FunctionComponent<InputProps>;
+export declare const Input: ForwardRefExoticComponent<InputProps>;
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
