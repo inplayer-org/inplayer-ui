@@ -10,6 +10,7 @@ import {
   HTMLAttributes,
   AllHTMLAttributes,
   ChangeEvent,
+  ForwardRefExoticComponent,
 } from 'react';
 import {
   StyledComponent,
@@ -520,7 +521,7 @@ export declare const TextArea: StyledComponent<'input', Theme>;
 
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {}
 
-export declare const Input: FunctionComponent<InputProps>;
+export declare const Input: ForwardRefExoticComponent<InputProps>;
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
