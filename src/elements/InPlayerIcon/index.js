@@ -132,10 +132,7 @@ const InPlayerIcon = styled.span`
   ${applyStyleModifiers(modifiers)};
 
   ::before {
-    content: ${props => {
-      console.error(`'${iconContent[props.name]}'`);
-      return `'${iconContent[props.name]}'`;
-    }};
+    content: ${({ name }) => `'${iconContent[name]}'`};
     width: 20px;
     height: 20px;
   }
