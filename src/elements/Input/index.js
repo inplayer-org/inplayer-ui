@@ -8,6 +8,7 @@ import { ifProp } from 'styled-tools';
 import Icon from 'elements/Icon';
 
 const StyledInput = styled.input`
+  width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -21,9 +22,6 @@ const StyledInput = styled.input`
   border-radius: 3px;
   font-size: ${fontSizes('medium')};
   line-height: 1;
-  min-width: 260px;
-  max-width: 560px;
-  width: 100%;
 
   &:focus {
     border-bottom: 1px solid ${uiColors('primary.main')};
@@ -56,8 +54,8 @@ const InputIcon = styled(Icon)`
 `;
 
 const SearchWrapper = styled.div`
+  width: 100%;
   position: relative;
-  max-width: 560px;
 `;
 
 type Props = {
