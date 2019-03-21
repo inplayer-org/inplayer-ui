@@ -115,8 +115,6 @@ const iconContent = {
 
 const InPlayerIcon = styled.span`
   ${({ color }) => color && `color: ${color}`};
-  width: 20px;
-  height: 20px;
 
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ipic', Arial, Helvetica, sans-serif !important;
@@ -133,8 +131,6 @@ const InPlayerIcon = styled.span`
 
   ::before {
     content: ${({ name }) => `'${iconContent[name]}'`};
-    width: 20px;
-    height: 20px;
   }
 `;
 
