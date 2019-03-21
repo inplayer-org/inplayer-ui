@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.11.0] - 21-03-2019
+
+### Fixes
+
+- Remove fixed width in Input component
+
 # [0.10.4] - 20-03-2019
 
 ### Fixes
