@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.11.0] - 20-03-2019
+
+### Added
+
+- Add InPlayerIcon component with custom icon font.
+
 # [0.10.5] - 21-03-2019
 
 ### Fixes
