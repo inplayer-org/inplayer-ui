@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.11.0] - 21-03-2019
+
+### Added
+
+- Add InPlayerIcon component with custom icon font
+
+### Fixes
+
+- Remove fixed width in Input component
+- Pass onFocusChange and focusedInput as required props to DatePicker component
+
 # [0.10.4] - 20-03-2019
 
 ### Fixes
