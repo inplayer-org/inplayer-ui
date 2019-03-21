@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Remove fixed width in Input component
+- Pass onFocusChange and focusedInput as required props to DatePicker component
 
 # [0.10.4] - 20-03-2019
 

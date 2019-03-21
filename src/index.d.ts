@@ -18,6 +18,7 @@ import {
   ThemeProviderComponent,
 } from 'styled-components';
 import moment, { Moment } from 'moment';
+import { FocusedInputShape } from 'react-dates';
 
 export interface ContainerProps {
   className?: string,
@@ -331,6 +332,8 @@ interface DatePicker$OnDateChange$Arguments {
 
 export type DatePicker$OnDateChange = (values: DatePicker$OnDateChange$Arguments) => any;
 
+export type DatePicker$OnFocusChange = (focusedInput: FocusedInputShape | null) => any;
+
 export interface DatePickerProps {
   startDate: Moment;
   endDate: Moment;
@@ -341,6 +344,8 @@ export interface DatePickerProps {
   onDateChange: DatePicker$OnDateChange;
   style?: CSSProperties;
   className?: string;
+  onFocusChange: DatePicker$OnFocusChange;
+  focusedInput: FocusedInputShape | null;
 }
 
 interface DatePickerState {
