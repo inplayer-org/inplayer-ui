@@ -2,6 +2,7 @@
 
 exports[`undefined renders correctly 1`] = `
 .c0 {
+  width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -16,9 +17,6 @@ exports[`undefined renders correctly 1`] = `
   border-radius: 3px;
   font-size: 1rem;
   line-height: 1;
-  min-width: 260px;
-  max-width: 560px;
-  width: 100%;
 }
 
 .c0:focus {
