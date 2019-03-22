@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.11.2] - 25-03-2019
+
+### Fixes
+
+- Center button icon content
+
 # [0.11.1] - 22-03-2019
 
 ### Fixes
