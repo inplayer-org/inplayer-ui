@@ -164,7 +164,7 @@ exports[`Table renders correctly 1`] = `
 
 .c7 {
   font-size: 1rem;
-  padding: 7px 1%;
+  padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
   text-align: left;
@@ -184,7 +184,7 @@ exports[`Table renders correctly 1`] = `
 
 .c8 {
   font-size: 1rem;
-  padding: 7px 1%;
+  padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
   text-align: right;
@@ -203,7 +203,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c2 {
-  padding: 16px 1%;
+  padding: 1rem 1%;
   font-weight: 300;
   font-size: 0.875rem;
   text-align: left;
@@ -213,7 +213,7 @@ exports[`Table renders correctly 1`] = `
 .c9 {
   display: inline-block;
   font-size: 1rem;
-  padding: 2px;
+  padding: 0.125rem;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;

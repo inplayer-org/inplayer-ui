@@ -15,7 +15,7 @@ const Container = styled.div`
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 1.125rem 0;
   position: absolute;
   right: 1%;
   top: 40px;
@@ -40,7 +40,7 @@ const Item = styled.a`
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
   line-height: 2;
-  padding: 6px 10px;
+  padding: 0.375rem 0.625rem;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
@@ -54,15 +54,15 @@ const Item = styled.a`
 
 const ActionItem = styled(Item)`
   border-top: 1px solid ${uiColors('text.disabled')};
-  margin-top: 12px;
-  padding-top: 18px;
+  margin-top: 0.75rem;
+  padding-top: 1.125rem;
   ${ifProp(
     'smallSize',
     css`
       font-size: ${fontSizes('small')};
       border-top: none;
     `
-  )}
+  )};
 `;
 
 const ItemContainer = styled.div`
@@ -75,7 +75,7 @@ const ItemImage = styled.img`
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-left: 10px;
+  margin-left: 0.625rem;
 `;
 
 type MenuItem = {

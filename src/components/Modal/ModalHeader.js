@@ -11,7 +11,7 @@ type Props = {
 };
 
 const HeaderWrapper = styled.div`
-  padding: 20px 20px 10px 20px;
+  padding: 1.25rem;
   box-sizing: border-box;
   position: relative;
   border-bottom: 1px solid ${colors.gray};
@@ -23,10 +23,10 @@ const Title = styled(Typography)`
 
 const IconClose = styled.span`
   position: absolute;
-  height: 18px;
-  width: 18px;
-  top: 10px;
-  right: 10px;
+  height: 1.125rem;
+  width: 1.125rem;
+  top: 0.625rem;
+  right: 0.625rem;
   cursor: pointer;
 
   &::before {
