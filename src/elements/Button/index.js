@@ -27,15 +27,15 @@ const ContentHolder = styled.span`
 
 const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
   iconPosition === 'right' ? (
-    <React.Fragment>
-      <ContentHolder>{children}</ContentHolder>
+    <>
+      {children && <ContentHolder>{children}</ContentHolder>}
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
-    </React.Fragment>
+    </>
   ) : (
-    <React.Fragment>
+    <>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
-      <ContentHolder>{children}</ContentHolder>
-    </React.Fragment>
+      {children && <ContentHolder>{children}</ContentHolder>}
+    </>
   );
 
 Content.defaultProps = {
