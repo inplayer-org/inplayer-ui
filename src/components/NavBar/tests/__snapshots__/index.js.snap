@@ -3,7 +3,7 @@
 exports[`Navbar renders correctly 1`] = `
 .c4 {
   width: 18px;
-  margin: 0 17px 16px 15px;
+  margin: 0 1rem 1rem 1rem;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -18,7 +18,7 @@ exports[`Navbar renders correctly 1`] = `
   border: solid rgba(255,255,255,0.4);
   border-width: 1px 0 0 1px;
   display: inline-block;
-  padding: 3px;
+  padding: 0.225rem;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
@@ -52,13 +52,13 @@ exports[`Navbar renders correctly 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   height: 34px;
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
 .c3 {
   width: 100%;
   text-align: left;
-  margin: 50px 0 0;
+  margin: 3.125rem 0 0;
 }
 
 .c1 {

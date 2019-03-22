@@ -48,19 +48,19 @@ const PillLabel = styled.span`
   ${switchProp('size', {
     xs: css`
       font-size: ${fontSizes('extraSmall')};
-      padding: 3px 4px;
+      padding: 0.1875rem 0.25rem;
     `,
     sm: css`
       font-size: ${fontSizes('small')};
-      padding: 6px 8px;
+      padding: 0.375rem 0.5rem;
     `,
     md: css`
       font-size: ${fontSizes('medium')};
-      padding: 9px 12px;
+      padding: 0.5625rem 0.75rem;
     `,
     lg: css`
       font-size: ${fontSizes('large')};
-      padding: 12px 16px;
+      padding: 0.75rem 1rem;
     `,
   })};
   ${applyStyleModifiers(modifiers)};

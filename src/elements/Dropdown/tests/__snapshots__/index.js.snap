@@ -10,7 +10,7 @@ exports[`Dropdown renders correctly 1`] = `
   font-size: 0.875rem;
   font-weight: 300;
   outline: none;
-  padding: 0.2em;
+  padding: 0.375rem 0.75rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

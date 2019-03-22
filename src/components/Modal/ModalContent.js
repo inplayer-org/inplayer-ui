@@ -7,7 +7,7 @@ type Props = {
 };
 
 const ContentContainer = styled.div`
-  padding: 10px 20px 20px 20px;
+  padding: 0.625rem 1.25rem;
   box-sizing: border-box;
 `;
 

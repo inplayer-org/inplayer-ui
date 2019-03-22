@@ -6,7 +6,7 @@ import { fontWeights, uiColors } from 'utils';
 const NoteWrapper = styled.p`
   box-sizing: border-box;
   border: 1px solid ${colors.gray};
-  padding: 18px 2%;
+  padding: 1.125rem 2%;
   border-radius: 3px;
   background: ${colors.white};
   color: ${uiColors('text.main')};
@@ -15,11 +15,11 @@ const NoteWrapper = styled.p`
   line-height: 1.8;
 
   strong {
-    padding-right: 5px;
+    padding-right: 0.3125rem;
   }
 
   i {
-    margin-right: 12px;
+    margin-right: 0.75rem;
     position: relative;
     top: 2px;
   }

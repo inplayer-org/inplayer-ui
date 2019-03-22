@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.11.1] - 22-03-2019
+
+### Fixes
+
+- Use same padding sizes for Input and Dropdown
+- Use rem unit for spacing through out the app
+
 # [0.11.0] - 21-03-2019
 
 ### Added
