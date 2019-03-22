@@ -6,7 +6,7 @@ import { uiColors, fontWeights, fontSizes } from 'utils';
 
 const DatePickerWrapper = styled.span`
   .PresetDateRangePicker_panel {
-    padding: 0 22px 11px;
+    padding: 0 1.375rem 0.6875rem;
   }
 
   .PresetDateRangePicker_button {
@@ -15,8 +15,8 @@ const DatePickerWrapper = styled.span`
     text-align: center;
     background: 0 0;
     color: ${uiColors('primary.main')};
-    padding: 4px 12px;
-    margin-right: 8px;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.5rem;
     font: inherit;
     font-weight: ${fontWeights('bold')};
     line-height: normal;
@@ -38,7 +38,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .CalendarDay {
-    padding: 1px;
+    padding: 0.0625rem;
     box-sizing: border-box;
     height: 37px;
     width: 37px;
@@ -155,8 +155,8 @@ const DatePickerWrapper = styled.span`
     color: ${colors.navy};
     font-size: ${fontSizes('h6')};
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 48px;
+    padding-top: 1.25rem;
+    padding-bottom: 3.125rem;
     font-weight: ${fontWeights('light')} !important;
   }
 
@@ -165,8 +165,8 @@ const DatePickerWrapper = styled.span`
   }
 
   .CalendarMonth_caption__verticalScrollable {
-    padding-top: 12px;
-    padding-bottom: 7px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.4375rem;
   }
 
   .CalendarMonthGrid {
@@ -256,7 +256,7 @@ const DatePickerWrapper = styled.span`
     top: 18px;
     line-height: 0.78;
     border-radius: 3px;
-    padding: 6px 9px;
+    padding: 0.375rem 0.5625rem;
   }
 
   .DayPickerNavigation_leftButton__horizontalDefault,
@@ -275,7 +275,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DayPickerNavigation_button__verticalDefault {
-    padding: 5px;
+    padding: 0.3125rem;
     background: ${colors.white};
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -294,13 +294,13 @@ const DatePickerWrapper = styled.span`
   }
 
   .DayPickerNavigation_rightButton__horizontalDefault:hover {
-    padding-left: 12px;
-    padding-right: 8px;
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
   }
 
   .DayPickerNavigation_leftButton__horizontalDefault:hover {
-    padding-right: 12px;
-    padding-left: 8px;
+    padding-right: 0.75rem;
+    padding-left: 0.5rem;
   }
 
   .DayPickerNavigation_svg__horizontal {
@@ -375,7 +375,7 @@ const DatePickerWrapper = styled.span`
     top: 62px;
     z-index: 2;
     text-align: left;
-    padding: 0 13px;
+    padding: 0 0.8125rem;
   }
 
   .DayPicker_weekHeader__vertical {
@@ -395,7 +395,7 @@ const DatePickerWrapper = styled.span`
 
   .DayPicker_weekHeader_ul {
     list-style: none;
-    margin: 1px 0;
+    margin: 0.0625rem 0;
     padding-left: 0;
     padding-right: 0;
     font-size: ${fontSizes('medium')};
@@ -422,7 +422,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DayPicker_transitionContainer__verticalScrollable {
-    padding-top: 20px;
+    padding-top: 1.25rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -459,7 +459,7 @@ const DatePickerWrapper = styled.span`
     font-weight: ${fontWeights('thin')};
     background-color: ${colors.white};
     width: 100%;
-    padding: 0 5px;
+    padding: 0 0.3125rem;
     border: 0;
     border-top: 0;
     border-right: 0;
@@ -478,7 +478,7 @@ const DatePickerWrapper = styled.span`
     font-size: ${fontSizes('small')};
     line-height: 18px;
     letter-spacing: 0.2px;
-    padding: 7px 7px 5px;
+    padding: 0.4375rem 0.4375rem 0.3125rem;
   }
 
   .DateInput_input__regular {
@@ -514,7 +514,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DateRangePickerInput {
-    padding: 5px 10px;
+    padding: 0.3125rem 0.625rem;
     box-sizing: border-box;
     background: ${colors.white};
     border: 1px solid ${colors.gray};
@@ -542,15 +542,15 @@ const DatePickerWrapper = styled.span`
   }
 
   .DateRangePickerInput__showClearDates {
-    padding-right: 30px;
+    padding-right: 1.875rem;
   }
 
   .DateRangePickerInput_arrow {
     display: inline-block;
     vertical-align: middle;
-    padding: 5px 10px;
+    padding: 0.3125rem 0.625rem;
     font-size: ${fontSizes('small')};
-    line-height: 16px;
+    line-height: 1rem;
     color: ${uiColors('text.light')};
     font-weight: ${fontWeights('light')};
   }

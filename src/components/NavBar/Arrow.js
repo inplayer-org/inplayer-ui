@@ -7,7 +7,7 @@ import { transparentize } from 'polished';
 
 export const ArrowContainer = styled.div`
   width: 18px;
-  margin: 0 17px 16px 15px;
+  margin: 0 1rem 1rem 1rem;
   align-self: flex-end;
   text-align: center;
 
@@ -20,7 +20,7 @@ export const NavbarArrow = styled.i`
   border: solid ${transparentize(0.6, colors.white)};
   border-width: 1px 0 0 1px;
   display: inline-block;
-  padding: 3px;
+  padding: 0.225rem;
   transform: ${ifProp('open', 'rotate(-45deg)', 'rotate(135deg)')};
   transition: all 0.5s ease;
 `;

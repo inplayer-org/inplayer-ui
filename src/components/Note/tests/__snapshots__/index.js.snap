@@ -4,7 +4,7 @@ exports[`Note renders correctly 1`] = `
 .c0 {
   box-sizing: border-box;
   border: 1px solid #d7dde5;
-  padding: 18px 2%;
+  padding: 1.125rem 2%;
   border-radius: 3px;
   background: #fff;
   color: #44494e;
@@ -17,11 +17,11 @@ exports[`Note renders correctly 1`] = `
 }
 
 .c0 strong {
-  padding-right: 5px;
+  padding-right: 0.3125rem;
 }
 
 .c0 i {
-  margin-right: 12px;
+  margin-right: 0.75rem;
   position: relative;
   top: 2px;
 }

@@ -19,8 +19,8 @@ const TextArea = styled.textarea`
   min-width: 260px;
   max-width: 560px;
   width: 100%;
-  margin: 6px 0;
-  padding: 12px 18px;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1.125rem;
 
   &:focus {
     border-bottom: 1px solid ${uiColors('primary.main')};

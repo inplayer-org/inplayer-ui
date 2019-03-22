@@ -16,8 +16,8 @@ exports[`TabNavigation renders correctly 1`] = `
   cursor: pointer;
   font-weight: 300;
   line-height: 2rem;
-  margin-right: 1em;
-  padding: 0 4px;
+  margin-right: 1rem;
+  padding: 0 0.25rem;
   -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-transition: color 0.3s ease;

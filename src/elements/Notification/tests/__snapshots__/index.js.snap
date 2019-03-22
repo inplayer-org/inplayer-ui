@@ -19,7 +19,7 @@ exports[`Notification renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 18px 2%;
+  padding: 1.125rem 2%;
   min-height: 10%;
   left: 15%;
   right: 15%;
@@ -33,7 +33,7 @@ exports[`Notification renders correctly 1`] = `
 }
 
 .c0 i {
-  margin-right: 12px;
+  margin-right: 0.75rem;
   position: relative;
   top: 2px;
 }
