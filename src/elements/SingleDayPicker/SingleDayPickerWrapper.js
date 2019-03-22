@@ -42,7 +42,7 @@ const SingleDatePickerWrapper = styled(DatePickerWrapper)`
   }
 
   .SingleDatePickerInput__showClearDate {
-    padding-right: 30px;
+    padding-right: 1.875rem;
   }
 
   .SingleDatePickerInput_calendarIcon {
@@ -55,8 +55,8 @@ const SingleDatePickerWrapper = styled(DatePickerWrapper)`
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
-    padding: 10px;
-    margin: 0 5px 0 10px;
+    padding: 0.625rem;
+    margin: 0 0.5rem;
   }
 
   .SingleDatePickerInput_calendarIcon_svg {

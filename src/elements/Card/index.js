@@ -17,14 +17,14 @@ const CardWrapper = styled.div`
   line-height: 1.5;
   box-sizing: border-box;
   margin: 0;
-  padding: 0 24px;
+  padding: 0 1.5rem;
   list-style: none;
 `;
 
 const CardTitle = styled(Typography)`
   flex: 1;
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;

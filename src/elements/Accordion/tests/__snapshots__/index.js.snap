@@ -35,7 +35,7 @@ exports[`Accordion renders correctly 1`] = `
 .c2 {
   position: relative;
   margin: 0;
-  padding: 12px 3%;
+  padding: 0.75rem 3%;
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -59,7 +59,7 @@ exports[`Accordion renders correctly 1`] = `
 }
 
 .c6 {
-  padding: 10px 6% 26px;
+  padding: 0.625rem 6% 26px;
 }
 
 <div

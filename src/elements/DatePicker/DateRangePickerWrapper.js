@@ -6,7 +6,7 @@ import DatePickerWrapper from '../DatePickerWrapper';
 const DateRangePickerWrapper = styled(DatePickerWrapper)`
   .datepreset {
     width: 96px;
-    padding: 64px 20px 10px;
+    padding: 3.75rem 1.25rem 0.625rem;
 
     label {
       display: block;
@@ -15,7 +15,7 @@ const DateRangePickerWrapper = styled(DatePickerWrapper)`
       transition: ease 200ms color;
       cursor: pointer;
       font-weight: ${fontWeights('light')};
-      padding: 7px;
+      padding: 0.4375rem;
 
       &:hover {
         color: ${uiColors('text.main')};
@@ -33,7 +33,7 @@ const DateRangePickerWrapper = styled(DatePickerWrapper)`
         border-right: 1px solid ${uiColors('primary.dark')};
         border-top: 1px solid ${uiColors('primary.dark')};
         transform: rotate(45deg);
-        margin-right: 8px;
+        margin-right: 0.5rem;
         position: relative;
         top: -2px;
       }

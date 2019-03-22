@@ -31,7 +31,7 @@ const MenuItemContainer = styled.div`
 `;
 
 const MenuItemIcon = styled.i`
-  margin: 0 17px 0 15px;
+  margin: 0 1rem;
   width: 20px;
   min-width: 20px;
 `;

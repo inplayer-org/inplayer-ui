@@ -13,8 +13,8 @@ const Tab = styled.a`
   cursor: pointer;
   font-weight: ${fontWeights('light')};
   line-height: 2rem;
-  margin-right: 1em;
-  padding: 0 4px;
+  margin-right: 1rem;
+  padding: 0 0.25rem;
   text-decoration: none;
   transition: color 0.3s ease;
   ${ifProp(

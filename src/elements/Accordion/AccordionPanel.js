@@ -35,7 +35,7 @@ const AccordionPanelContainer = styled.div`
 const AccordionPanelHeader = styled.header`
   position: relative;
   margin: 0;
-  padding: 12px 3%;
+  padding: 0.75rem 3%;
   width: 100%;
   box-sizing: border-box;
   background: ${colors.white};
@@ -57,7 +57,7 @@ const AccordionIcon = styled(Icon)`
 `;
 
 const AccordionPanelDetails = styled.div`
-  padding: 10px 6% 26px;
+  padding: 0.625rem 6% 26px;
 `;
 
 type Props = {

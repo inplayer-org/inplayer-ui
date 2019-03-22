@@ -19,7 +19,7 @@ const AccordionFooterContainer = styled.footer`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 16px 3%;
+  padding: 1rem 3%;
   background: ${colors.white};
   align-items: center;
   transition-timing-function: ease, ease;

@@ -13,7 +13,7 @@ const RadioWrapper = styled.div`
 
   > input + label {
     position: relative;
-    padding-left: 25px;
+    padding-left: 1.5rem;
     cursor: pointer;
 
     &::before {

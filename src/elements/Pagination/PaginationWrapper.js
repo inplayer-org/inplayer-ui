@@ -15,7 +15,7 @@ const PaginationWrapper = styled.div`
   vertical-align: top;
   cursor: pointer;
   display: inline-flex;
-  margin: 14px auto;
+  margin: 1rem auto;
 
   ul {
     padding-inline-start: 0;
@@ -29,7 +29,7 @@ const PaginationWrapper = styled.div`
 
     a {
       color: ${uiColors('text.light')};
-      padding: 1px 8px 1px;
+      padding: 0.0625rem 1rem 0.0625rem;
 
       &:focus {
         outline: none;
@@ -59,11 +59,11 @@ const PaginationWrapper = styled.div`
 
       a {
         color: ${uiColors('text.light')};
-        padding: 1px 16px 1px;
+        padding: 0.0625rem 1rem 0.0625rem;
 
         &::before {
           content: '⟵';
-          padding-right: 8px;
+          padding-right: 0.5rem;
           position: relative;
           top: -1px;
           left: 0;
@@ -77,11 +77,11 @@ const PaginationWrapper = styled.div`
 
       a {
         color: ${uiColors('text.light')};
-        padding: 1px 16px 1px;
+        padding: 0.0625rem 1rem 0.0625rem;
 
         &::after {
           content: '⟶';
-          padding-left: 8px;
+          padding-left: 0.5rem;
           position: relative;
           top: -1px;
           right: 0;

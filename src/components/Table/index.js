@@ -42,7 +42,7 @@ const TableRow = styled.tr`
 
 const TableCell = styled.td`
   font-size: ${fontSizes('medium')};
-  padding: 7px 1%;
+  padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
   text-align: ${ifProp('alignRight', 'right', 'left')};
@@ -61,7 +61,7 @@ const TableCell = styled.td`
 `;
 
 const TableHeaderCell = styled.th`
-  padding: 16px 1%;
+  padding: 1rem 1%;
   font-weight: ${fontWeights('light')};
   font-size: ${fontSizes('small')};
   text-align: left;
@@ -69,7 +69,7 @@ const TableHeaderCell = styled.th`
 `;
 
 const ActionIcon = styled(Icon)`
-  padding: 2px;
+  padding: 0.125rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
