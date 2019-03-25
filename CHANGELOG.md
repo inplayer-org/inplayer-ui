@@ -2,11 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.11.2] - 25-03-2019
+# [0.12.0] - 25-03-2019
 
 ### Added
 
 - Add Input sizes (xs, sm, md, lg)
+- Add Button buttonLink modifier
 
 ### Fixes
 
