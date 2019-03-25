@@ -42,6 +42,7 @@ function Page(props) {
   <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> <br />
   <Button buttonModifiers={['buttonSuccess']}>Button Success</Button> <br />
   <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> <br />
+  <Button buttonModifiers={['buttonLink']}>Button Link</Button> <br />
   <Button disabled>Button Disabled</Button>
 </div>
 ```
