@@ -3,9 +3,10 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
-import { ifProp } from 'styled-tools';
-
+import { ifProp, switchProp } from 'styled-tools';
 import Icon from 'elements/Icon';
+
+type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 const StyledInput = styled.input`
   width: 100%;
@@ -30,10 +31,10 @@ const StyledInput = styled.input`
   ${ifProp(
     { type: 'search' },
     css`
-      padding-left: 28px;
+      padding-left: 2rem !important;
       ::placeholder {
         position: relative !important;
-        left: 1px !important;
+        left: 0.1rem !important;
       }
 
       ::-webkit-search-decoration,
@@ -44,13 +45,31 @@ const StyledInput = styled.input`
       }
     `
   )};
+  ${switchProp('size', {
+    xs: css`
+      font-size: ${fontSizes('extraSmall')};
+      padding: 0.1875rem 0.25rem;
+    `,
+    sm: css`
+      font-size: ${fontSizes('small')};
+      padding: 0.375rem 0.5rem;
+    `,
+    md: css`
+      font-size: ${fontSizes('medium')};
+      padding: 0.5625rem 0.75rem;
+    `,
+    lg: css`
+      font-size: ${fontSizes('large')};
+      padding: 0.75rem 1rem;
+    `,
+  })};
 `;
 
 const InputIcon = styled(Icon)`
   position: absolute;
   color: ${colors.darkGray};
-  left: 8px;
-  top: 19px;
+  left: 0.5rem;
+  top: 50%;
 `;
 
 const SearchWrapper = styled.div`
@@ -64,9 +83,10 @@ type Props = {
   id: string,
   onChange: (e: ChangeEvent<HTMLInputElement>) => any,
   value: string | Array<string> | number,
+  size?: Size,
 };
 
-const Input = React.forwardRef(({ type, placeholder, onChange, ...rest }: Props, ref) => {
+const Input = React.forwardRef(({ type, placeholder, onChange, size, ...rest }: Props, ref) => {
   const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
     e.persist();
     if (onChange) {
@@ -76,8 +96,9 @@ const Input = React.forwardRef(({ type, placeholder, onChange, ...rest }: Props,
 
   return type === 'search' ? (
     <SearchWrapper>
-      <InputIcon name="search" />
+      <InputIcon size={size} name="search" />
       <StyledInput
+        size={size}
         ref={ref}
         type={type}
         placeholder={placeholder}
@@ -87,6 +108,7 @@ const Input = React.forwardRef(({ type, placeholder, onChange, ...rest }: Props,
     </SearchWrapper>
   ) : (
     <StyledInput
+      size={size}
       ref={ref}
       type={type}
       placeholder={placeholder}
@@ -95,6 +117,10 @@ const Input = React.forwardRef(({ type, placeholder, onChange, ...rest }: Props,
     />
   );
 });
+
+Input.defaultProps = {
+  size: 'md',
+};
 
 /** @component */
 export default Input;
