@@ -17,6 +17,8 @@ exports[`undefined renders correctly 1`] = `
   border-radius: 3px;
   font-size: 1rem;
   line-height: 1;
+  font-size: 1rem;
+  padding: 0.5625rem 0.75rem;
 }
 
 .c0:focus {
@@ -26,5 +28,6 @@ exports[`undefined renders correctly 1`] = `
 <input
   className="c0"
   onChange={[Function]}
+  size="md"
 />
 `;

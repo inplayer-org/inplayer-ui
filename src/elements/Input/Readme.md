@@ -21,12 +21,22 @@ function Page(props) {
   type="text"
   placeholder="text"
   onChange={console.log}
-  style={{ margin: '6px 0' }}
 />
 <Input
   type="search"
   placeholder="Search"
   onChange={console.log}
-  style={{ margin: '6px 0' }}
+  style={{ marginTop: '1rem' }}
 />
+```
+
+### Input Sizes
+
+```jsx
+<>
+  <Input size="xs" type="text" placeholder="Extra Small Input" />
+  <Input size="sm" type="text" placeholder="Small Input" style={{ marginTop: '1rem' }}/>
+  <Input size="md" type="text" placeholder="Medium Input" style={{ marginTop: '1rem' }}/>
+  <Input size="lg" type="text" placeholder="Large Input" style={{ marginTop: '1rem' }}/>
+</>
 ```

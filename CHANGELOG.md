@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 # [0.11.2] - 25-03-2019
 
+### Added
+
+- Add Input sizes (xs, sm, md, lg)
+
 ### Fixes
 
 - Center button icon content
+- Remove max-width fixed values
+- Rename defaultChecked prop to checked in Switch component
 
 # [0.11.1] - 22-03-2019
 
