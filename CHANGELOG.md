@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Center button icon content
+- Remove max-width fixed values
+- Rename defaultChecked prop to checked in Switch component
 
 # [0.11.1] - 22-03-2019
 
