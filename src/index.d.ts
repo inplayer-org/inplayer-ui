@@ -530,8 +530,11 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
+type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
-  ref?: Ref<HTMLInputElement>
+  ref?: Ref<HTMLInputElement>;
+  size?: InputSize;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
