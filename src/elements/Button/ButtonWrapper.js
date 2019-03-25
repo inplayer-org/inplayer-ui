@@ -84,6 +84,23 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
+  buttonLink: ({ theme }) => `
+  color: ${theme.palette.primary.main};
+  border: none;
+  background: transparent;
+  display: inline;
+
+  &:hover, &:focus {
+    color: ${theme.palette.primary.dark};
+  }
+
+  &:disabled {
+    background: transparent;
+    background-color: transparent;
+    font-style: italic;
+    cursor: not-allowed;
+  }
+  `,
 };
 
 const ButtonWrapper = styled.button`
