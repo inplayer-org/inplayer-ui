@@ -88,14 +88,14 @@ const modifiers = {
 
 const ButtonWrapper = styled.button`
   display: flex;
-  background: ${colors.white};
   align-items: center;
+  justify-content: center;
+  background: ${colors.white};
   color: ${uiColors('text.main')};
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   font-size: ${fontSizes('medium')};
-  justify-content: center;
   outline: none;
   transition: all ease 300ms;
   cursor: pointer;

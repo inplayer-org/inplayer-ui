@@ -50,6 +50,8 @@ function Page(props) {
 
 ```jsx
 <div>
+  <Button fullHeight icon="trash" buttonModifiers={['buttonDanger']} />
+  <br/>
   <Button
     buttonModifiers={['buttonDanger']}
     icon="exclamation-circle"

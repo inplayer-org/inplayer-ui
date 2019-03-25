@@ -6,20 +6,20 @@ exports[`Button renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #fff;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #fff;
   color: #44494e;
   font-weight: 300;
   border: 1px solid #d7dde5;
   border-radius: 3px;
   font-size: 1rem;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   outline: none;
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
@@ -39,17 +39,9 @@ exports[`Button renders correctly 1`] = `
   color: #07AAE6;
 }
 
-.c1 {
-  padding: 0.2rem;
-}
-
 <button
   className="c0"
   size="md"
   style={Object {}}
->
-  <span
-    className="c1"
-  />
-</button>
+/>
 `;
