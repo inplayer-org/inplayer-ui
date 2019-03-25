@@ -31,7 +31,7 @@ const Switch = ({ id, checked, label, disabled, onChange, className, style }: Pr
       <Toggle
         id={id}
         disabled={disabled}
-        defaultChecked={checked}
+        checked={checked}
         onChange={onToggleChange}
         icons={false}
       />
