@@ -300,11 +300,22 @@ type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 export interface ButtonContentProps {
   icon?: string;
   iconPosition?: string;
-  iconModifiers?: Array<string>;
+  iconModifiers?: Array<IconModifier>;
 }
 
+type ButtonModifier =
+  | 'hoverInfo'
+  | 'hoverDanger'
+  | 'hoverWarning'
+  | 'hoverSuccess'
+  | 'buttonPrimary'
+  | 'buttonInfo'
+  | 'buttonDanger'
+  | 'buttonSuccess'
+  | 'buttonLink';
+
 export interface ButtonProps<T> extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonContentProps {
-  buttonModifiers?: Array<string>;
+  buttonModifiers?: Array<ButtonModifier>;
   size?: ButtonSize;
   style?: CSSProperties;
   className?: string;
@@ -530,8 +541,11 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
+type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
-  ref?: Ref<HTMLInputElement>
+  ref?: Ref<HTMLInputElement>;
+  size?: InputSize;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
