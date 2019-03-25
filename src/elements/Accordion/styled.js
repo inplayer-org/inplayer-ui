@@ -7,7 +7,6 @@ export const AccordionWrapper = styled.div`
   background: ${colors.white};
   border-left: 1px solid ${colors.gray};
   box-sizing: border-box;
-  max-width: 58.333em;
   border-top: 1px solid ${colors.gray};
   height: calc(46vh - 120px);
   overflow-y: hidden;

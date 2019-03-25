@@ -16,8 +16,6 @@ const TextArea = styled.textarea`
   font-size: ${fontSizes('medium')};
   line-height: 1.4em;
   min-height: 7em;
-  min-width: 260px;
-  max-width: 560px;
   width: 100%;
   margin: 0.5rem 0;
   padding: 0.75rem 1.125rem;

@@ -69,7 +69,7 @@ const InputIcon = styled(Icon)`
   position: absolute;
   color: ${colors.darkGray};
   left: 0.5rem;
-  top: 50%;
+  top: 33%;
 `;
 
 const SearchWrapper = styled.div`
@@ -86,37 +86,41 @@ type Props = {
   size?: Size,
 };
 
-const Input = React.forwardRef(({ type, placeholder, onChange, size, ...rest }: Props, ref) => {
-  const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
-    e.persist();
-    if (onChange) {
-      onChange(e);
-    }
-  };
+const Input = React.forwardRef(
+  ({ type, placeholder, onChange, size, style, className, ...rest }: Props, ref) => {
+    const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
+      e.persist();
+      if (onChange) {
+        onChange(e);
+      }
+    };
 
-  return type === 'search' ? (
-    <SearchWrapper>
-      <InputIcon size={size} name="search" />
+    return type === 'search' ? (
+      <SearchWrapper style={style} className={className}>
+        <InputIcon size={size} name="search" />
+        <StyledInput
+          size={size}
+          ref={ref}
+          type={type}
+          placeholder={placeholder}
+          {...rest}
+          onChange={onInputChange}
+        />
+      </SearchWrapper>
+    ) : (
       <StyledInput
+        style={style}
+        className={className}
         size={size}
         ref={ref}
         type={type}
         placeholder={placeholder}
-        {...rest}
         onChange={onInputChange}
+        {...rest}
       />
-    </SearchWrapper>
-  ) : (
-    <StyledInput
-      size={size}
-      ref={ref}
-      type={type}
-      placeholder={placeholder}
-      onChange={onInputChange}
-      {...rest}
-    />
-  );
-});
+    );
+  }
+);
 
 Input.defaultProps = {
   size: 'md',

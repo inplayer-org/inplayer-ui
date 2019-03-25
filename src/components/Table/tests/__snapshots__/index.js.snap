@@ -153,33 +153,13 @@ exports[`Table renders correctly 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   border-bottom: 1px solid #F6F8FB;
   width: 100%;
 }
 
-.c6:last-child {
+.c7:last-child {
   border-bottom: none;
-}
-
-.c7 {
-  font-size: 1rem;
-  padding: 0.4375rem 1%;
-  vertical-align: middle;
-  line-height: 30px;
-  text-align: left;
-  max-width: 450px;
-  font-weight: 300;
-  word-wrap: break-word;
-}
-
-.c7 a {
-  color: #aaadb4;
-}
-
-.c7 a:hover {
-  color: #44494e;
-  font-weight: 300;
 }
 
 .c8 {
@@ -187,8 +167,7 @@ exports[`Table renders correctly 1`] = `
   padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
-  text-align: right;
-  max-width: 450px;
+  text-align: left;
   font-weight: 300;
   word-wrap: break-word;
 }
@@ -202,15 +181,40 @@ exports[`Table renders correctly 1`] = `
   font-weight: 300;
 }
 
+.c9 {
+  font-size: 1rem;
+  padding: 0.4375rem 1%;
+  vertical-align: middle;
+  line-height: 30px;
+  text-align: right;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.c9 a {
+  color: #aaadb4;
+}
+
+.c9 a:hover {
+  color: #44494e;
+  font-weight: 300;
+}
+
 .c2 {
   padding: 1rem 1%;
   font-weight: 300;
   font-size: 0.875rem;
   text-align: left;
-  max-width: 450px;
 }
 
-.c9 {
+.c6 {
+  padding: 1rem 1%;
+  font-weight: 300;
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.c10 {
   display: inline-block;
   font-size: 1rem;
   padding: 0.125rem;
@@ -219,7 +223,7 @@ exports[`Table renders correctly 1`] = `
   transition: all 0.3s ease;
 }
 
-.c9:hover {
+.c10:hover {
   color: #07AAE6;
 }
 
@@ -260,7 +264,7 @@ exports[`Table renders correctly 1`] = `
         Name
       </th>
       <th
-        className="c2"
+        className="c6"
       >
         Actions
       </th>
@@ -268,10 +272,10 @@ exports[`Table renders correctly 1`] = `
   </thead>
   <tbody>
     <tr
-      className="c6"
+      className="c7"
     >
       <td
-        className="c7"
+        className="c8"
       >
         <div
           className="c3 c4"
@@ -287,26 +291,26 @@ exports[`Table renders correctly 1`] = `
         </div>
       </td>
       <td
-        className="c7"
+        className="c8"
       >
         Eli
       </td>
       <td
-        className="c8"
+        className="c9"
       >
         <span
           aria-hidden={true}
-          className="fa fa-edit c9"
+          className="fa fa-edit c10"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-cog c9"
+          className="fa fa-cog c10"
           onClick={[Function]}
         />
         <span
           aria-hidden={true}
-          className="fa fa-trash c9"
+          className="fa fa-trash c10"
           onClick={[Function]}
         />
       </td>
