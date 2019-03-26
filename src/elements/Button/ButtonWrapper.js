@@ -84,18 +84,35 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
+  buttonLink: ({ theme }) => `
+  color: ${theme.palette.primary.main};
+  border: none;
+  background: transparent;
+  display: inline;
+
+  &:hover, &:focus {
+    color: ${theme.palette.primary.dark};
+  }
+
+  &:disabled {
+    background: transparent;
+    background-color: transparent;
+    font-style: italic;
+    cursor: not-allowed;
+  }
+  `,
 };
 
 const ButtonWrapper = styled.button`
   display: flex;
-  background: ${colors.white};
   align-items: center;
+  justify-content: center;
+  background: ${colors.white};
   color: ${uiColors('text.main')};
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   font-size: ${fontSizes('medium')};
-  justify-content: center;
   outline: none;
   transition: all ease 300ms;
   cursor: pointer;

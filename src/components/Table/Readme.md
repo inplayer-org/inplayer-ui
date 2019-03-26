@@ -171,6 +171,7 @@ class TableExample extends React.Component {
           onChange={() => console.log('onChange')}
           style={{ maxWidth: 300 }}
         />
+        <br />
         <Table
           columns={columns}
           data={data}
@@ -273,6 +274,7 @@ class TableExample extends React.Component {
           onChange={() => console.log('onChange')}
           style={{ maxWidth: 300 }}
         />
+        <br />
         <Table
           columns={columns}
           data={data}

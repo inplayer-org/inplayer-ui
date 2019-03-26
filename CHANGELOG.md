@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.12.0] - 25-03-2019
+
+### Added
+
+- Add Input sizes (xs, sm, md, lg)
+- Add Button buttonLink modifier
+
+### Fixes
+
+- Center button icon content
+- Remove max-width fixed values
+- Rename defaultChecked prop to checked in Switch component
+
 # [0.11.1] - 22-03-2019
 
 ### Fixes

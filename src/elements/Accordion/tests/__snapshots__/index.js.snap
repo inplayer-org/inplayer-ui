@@ -7,7 +7,6 @@ exports[`Accordion renders correctly 1`] = `
   background: #fff;
   border-left: 1px solid #d7dde5;
   box-sizing: border-box;
-  max-width: 58.333em;
   border-top: 1px solid #d7dde5;
   height: calc(46vh - 120px);
   overflow-y: hidden;

@@ -46,7 +46,6 @@ const TableCell = styled.td`
   vertical-align: middle;
   line-height: 30px;
   text-align: ${ifProp('alignRight', 'right', 'left')};
-  max-width: 450px;
   font-weight: ${fontWeights('light')};
   word-wrap: break-word;
 
@@ -64,8 +63,7 @@ const TableHeaderCell = styled.th`
   padding: 1rem 1%;
   font-weight: ${fontWeights('light')};
   font-size: ${fontSizes('small')};
-  text-align: left;
-  max-width: 450px;
+  text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
 `;
 
 const ActionIcon = styled(Icon)`
@@ -234,7 +232,7 @@ class Table<T> extends React.Component<Props<T>, State> {
     }
 
     if (rowActionsExist(rowActions)) {
-      const actionsColumn = { title: 'Actions', key: 'actions' };
+      const actionsColumn = { title: 'Actions', key: 'actions', alignRight: true };
       newColumns = [...newColumns, actionsColumn];
     }
 
@@ -243,7 +241,9 @@ class Table<T> extends React.Component<Props<T>, State> {
 
   renderColumns = (columns: Array<Column>): Array<Node> =>
     this.generateColumns(columns).map((column, index) => (
-      <TableHeaderCell key={index}>{column.title}</TableHeaderCell>
+      <TableHeaderCell key={index} alignRight={column.alignRight}>
+        {column.title}
+      </TableHeaderCell>
     ));
 
   renderData = (columns: Array<Column>, data: Array<Data>) => {
