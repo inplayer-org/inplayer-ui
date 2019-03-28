@@ -7,7 +7,7 @@ import ButtonWrapper from './ButtonWrapper';
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type ContentProps = {
-  icon?: string,
+  icon?: string | Node,
   iconPosition?: string,
   iconModifiers?: Array<string>,
   children: Node,
@@ -25,18 +25,22 @@ const ContentHolder = styled.span`
   padding: 0.2rem;
 `;
 
-const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) =>
-  iconPosition === 'right' ? (
+const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) => {
+  const iconContent =
+    typeof icon === 'string' ? <Icon name={icon} modifiers={iconModifiers} /> : icon;
+
+  return iconPosition === 'right' ? (
     <>
       {children && <ContentHolder>{children}</ContentHolder>}
-      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      {icon && iconContent}
     </>
   ) : (
     <>
-      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      {icon && iconContent}
       {children && <ContentHolder>{children}</ContentHolder>}
     </>
   );
+};
 
 Content.defaultProps = {
   icon: null,
