@@ -59,6 +59,7 @@ export interface CheckboxProps {
   name?: string;
   checked: boolean;
   onChange: (checked: boolean) => any;
+  containerRef?: React.RefObject<HTMLDivElement>;
   className?: string;
   style?: CSSProperties;
 }
