@@ -69,10 +69,7 @@ function Page(props) {
     Button with Icon Color Modifier
   </Button>
   <br />
-  <Button
-    iconModifiers={['statusColorWarning']}
-    icon={<InPlayerIcon name="download"     iconModifiers={['statusColorWarning']} modifiers={['statusColorSuccess']} />}
-  >
+  <Button icon={<InPlayerIcon name="download" />}>
     Button with Custom Icon
   </Button>
 </div>
