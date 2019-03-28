@@ -9,16 +9,17 @@ type Props = {
   name: ?string,
   checked: boolean,
   onChange: (checked: boolean) => any,
+  componentRef?: React.RefObject<HTMLDivElement>,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
   style?: Object,
 };
 
-const Checkbox = ({ label, id, onChange, className, style, ...rest }: Props) => {
+const Checkbox = ({ label, id, onChange, componentRef, className, style, ...rest }: Props) => {
   const onCheckboxChange = (e: SyntheticEvent<HTMLInputElement>): any => onChange(e.target.checked);
 
   return (
-    <CheckboxWrapper className={className} style={style}>
+    <CheckboxWrapper className={className} style={style} ref={componentRef}>
       <input type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
       <Label htmlFor={id}>{label}</Label>
     </CheckboxWrapper>
@@ -28,6 +29,7 @@ const Checkbox = ({ label, id, onChange, className, style, ...rest }: Props) => 
 Checkbox.defaultProps = {
   className: '',
   style: {},
+  componentRef: null,
 };
 
 export default Checkbox;
