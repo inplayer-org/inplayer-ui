@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.12.1] - 28-03-2019
+
+### Changes
+
+- Added optional containerRef prop on Checkbox component.
+
 # [0.12.0] - 25-03-2019
 
 ### Added
