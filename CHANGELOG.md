@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+=======
+# [0.13.0] - 28-03-2019
+
+### Added
+
+- Add Custom Icon to Button as prop
+
+### Changes
+
+- Add optional containerRef prop on Checkbox component
+
 # [0.12.0] - 25-03-2019
 
 ### Added
@@ -51,7 +62,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 
-- Added optional defaultOption prop on Dropdown element.
+- Add optional defaultOption prop on Dropdown element.
 
 ### Fixes
 
@@ -61,7 +72,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 
-- Added optional disabled prop on Dropdown element.
+- Add optional disabled prop on Dropdown element.
 
 ### Fixes
 

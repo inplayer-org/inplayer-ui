@@ -68,5 +68,9 @@ function Page(props) {
   >
     Button with Icon Color Modifier
   </Button>
+  <br />
+  <Button icon={<InPlayerIcon name="download" />}>
+    Button with Custom Icon
+  </Button>
 </div>
 ```

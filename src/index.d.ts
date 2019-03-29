@@ -59,6 +59,7 @@ export interface CheckboxProps {
   name?: string;
   checked: boolean;
   onChange: (checked: boolean) => any;
+  containerRef?: React.RefObject<HTMLDivElement>;
   className?: string;
   style?: CSSProperties;
 }
@@ -140,7 +141,7 @@ export declare class Navbar extends Component<NavbarProps, NavbarState> {
 
 export type NavbarMenuItemProps = Navbar$MenuItemProps;
 
-type NoteType = 'informative' | 'success' | 'warning' | 'danger';
+export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 
 export interface NoteProps {
   title: string;
@@ -260,7 +261,7 @@ interface TabsProps {
 
 export declare const Tabs: FunctionComponent<TabsProps>;
 
-type TooltipVariant = 'up' | 'down' | 'left' | 'right';
+export type TooltipVariant = 'up' | 'down' | 'left' | 'right';
 
 interface TooltipProps {
   placement: TooltipVariant;
@@ -295,15 +296,15 @@ export declare class Accordion extends Component<AccordionProps, AccordionState>
   toggleClose: (name: string, accordionAction: () => any) => (saveOnClose: boolean) => any;
 }
 
-type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 
 export interface ButtonContentProps {
-  icon?: string;
+  icon?: string | ReactNode;
   iconPosition?: string;
   iconModifiers?: Array<IconModifier>;
 }
 
-type ButtonModifier =
+export type ButtonModifier =
   | 'hoverInfo'
   | 'hoverDanger'
   | 'hoverWarning'
@@ -369,7 +370,7 @@ declare const THIS_MONTH = 'this month';
 declare const LAST_MONTH = 'last month';
 declare const THIS_YEAR = 'this year';
 
-type Period = 'this week' | 'last week' | 'this month' | 'last month' | 'this year';
+export type Period = 'this week' | 'last week' | 'this month' | 'last month' | 'this year';
 
 export declare class DatePicker extends Component<DatePickerProps, DatePickerState> {
   onFocusedInputChange: (focusedInput: string) => void;
@@ -432,7 +433,7 @@ export interface LoaderProps {
 
 export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
 
-type NotificationVariant = 'success' | 'danger' | 'warning';
+export type NotificationVariant = 'success' | 'danger' | 'warning';
 
 interface NotificationProps {
   title: string;
@@ -482,9 +483,9 @@ export interface PaginationProps {
 
 export declare const Pagination: FunctionComponent<PaginationProps>;
 
-type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
+export type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'warning';
 
-type PillLabelSize = 'xs' | 'sm' | 'md' | 'lg';
+export type PillLabelSize = 'xs' | 'sm' | 'md' | 'lg';
 
 interface PillLabelProps {
   modifiers?: Array<PillLabelModifier>;
@@ -493,7 +494,7 @@ interface PillLabelProps {
 
 export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
 
-type ProgressType = 'circle' | 'line';
+export type ProgressType = 'circle' | 'line';
 
 export interface ProgressProps {
   type?: ProgressType;
@@ -541,7 +542,7 @@ export declare const Switch: FunctionComponent<SwitchProps>;
 
 export declare const TextArea: StyledComponent<'input', Theme>;
 
-type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
@@ -550,9 +551,9 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
 
-type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
-type TypographyModifier = 'textPrimary' | 'textDanger' | 'textSuccess' | 'textWarning';
+export type TypographyModifier = 'textPrimary' | 'textDanger' | 'textSuccess' | 'textWarning';
 
 export interface TypographyProps {
   variant: TypographyVariant;
