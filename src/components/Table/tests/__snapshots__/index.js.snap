@@ -316,5 +316,6 @@ exports[`Table renders correctly 1`] = `
       </td>
     </tr>
   </tbody>
+  <tfoot />
 </table>
 `;

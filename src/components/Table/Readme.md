@@ -285,6 +285,11 @@ class TableExample extends React.Component {
             },
             rowActions: ({ row }) => <Icon name={row.icon} />,
           }}
+          tableButton={{
+            label: 'Add new',
+            icon: <InPlayerIcon name="add" />,
+            onClick: () => console.log('Clicked'),
+          }}
         />
         <Pagination
           pageCount={totalPages}
