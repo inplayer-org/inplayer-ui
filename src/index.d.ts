@@ -210,6 +210,11 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   className?: string;
   style?: CSSProperties;
   options?: Partial<TableOptions<TableData>>;
+  tableButton?: {
+    label: string,
+    icon?: string | Node,
+    onClick: (e: SyntheticEvent) => any,
+  },
 }
 
 interface TableState {
