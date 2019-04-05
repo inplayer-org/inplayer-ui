@@ -212,7 +212,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   options?: Partial<TableOptions<TableData>>;
   tableButton?: {
     label: string;
-    icon?: string | Node;
+    icon?: string | Node | JSX.Element;
     onClick: (e: SyntheticEvent) => any;
     type: string;
   },
