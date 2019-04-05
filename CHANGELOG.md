@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Add optional tableButton prop to Table component
+
+# [0.13.0] - 28-03-2019
+
+### Added
+
 - Add Custom Icon to Button as prop
 
 ### Changes
