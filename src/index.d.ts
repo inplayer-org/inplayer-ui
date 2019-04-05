@@ -211,9 +211,10 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   style?: CSSProperties;
   options?: Partial<TableOptions<TableData>>;
   tableButton?: {
-    label: string,
-    icon?: string | Node,
-    onClick: (e: SyntheticEvent) => any,
+    label: string;
+    icon?: string | Node;
+    onClick: (e: SyntheticEvent) => any;
+    type: string;
   },
 }
 

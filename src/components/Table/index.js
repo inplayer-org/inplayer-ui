@@ -148,6 +148,7 @@ type Props<T = Data> = {
     label: string,
     icon?: string | Node,
     onClick: (e: SyntheticEvent) => any,
+    type: string,
   },
 };
 
@@ -320,6 +321,7 @@ class Table<T> extends React.Component<Props<T>, State> {
                       onClick={tableButton.onClick}
                       icon={tableButton.icon}
                       iconPosition="left"
+                      type={tableButton.type}
                     >
                       {tableButton.label}
                     </TableButton>
