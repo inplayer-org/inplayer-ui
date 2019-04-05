@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.14.1] - 05-04-2019
+
+### Fixes
+
+- Modify icon prop type in TableButtons
+
 # [0.14.0] - 05-04-2019
 
 ### Added
