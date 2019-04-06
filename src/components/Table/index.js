@@ -1,12 +1,13 @@
 // @flow
 import React, { type Node } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
 import Icon from 'elements/Icon';
 import Loader from 'elements/Loader/index';
+import Button from 'elements/Button/index';
 
 const TableWrapper = styled.table`
   font-family: Roboto, sans-serif;
@@ -34,10 +35,20 @@ const TableHeadRow = styled.tr`
 const TableRow = styled.tr`
   border-bottom: 1px solid ${colors.lightGray};
   width: 100%;
+  ${({ noBottomBorder }) =>
+    noBottomBorder &&
+    css`
+      &:last-child {
+        border-bottom: none;
+      }
+    `}
+`;
 
-  &:last-child {
-    border-bottom: none;
-  }
+const ButtonTableRow = styled(TableRow)`
+  background: ${colors.lightGray};
+  width: 100%;
+  border-bottom: 1px solid ${colors.gray};
+  border-top: 1px solid ${colors.gray};
 `;
 
 const TableCell = styled.td`
@@ -90,6 +101,17 @@ const TableCheckbox = styled(Checkbox)`
   }
 `;
 
+const TableButton = styled(Button)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: ${colors.fontGray};
+
+  &:hover {
+    color: ${({ theme }) => theme.palette.primary.main};
+  }
+`;
+
 interface Data {
   id: string;
 }
@@ -122,6 +144,12 @@ type Props<T = Data> = {
   style?: Object,
   options?: TableOptions<T>,
   showLoader?: boolean,
+  tableButton?: {
+    label: string,
+    icon?: string | Node,
+    onClick: (e: SyntheticEvent) => any,
+    type: string,
+  },
 };
 
 type State = {
@@ -250,8 +278,10 @@ class Table<T> extends React.Component<Props<T>, State> {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
+    const { tableButton } = this.props;
+
     return newData.map(row => (
-      <TableRow key={row.id}>
+      <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column, index) => (
           <TableCell key={index} alignRight={column.key === 'actions'}>
             {column.render
@@ -264,7 +294,10 @@ class Table<T> extends React.Component<Props<T>, State> {
   };
 
   render() {
-    const { columns, data, className, style, showLoader } = this.props;
+    const { columns, data, className, style, showLoader, tableButton } = this.props;
+
+    const columnContent = this.renderColumns(columns);
+
     return (
       <TableWrapper className={className} style={style}>
         {showLoader ? (
@@ -274,9 +307,28 @@ class Table<T> extends React.Component<Props<T>, State> {
         ) : (
           <>
             <thead>
-              <TableHeadRow>{this.renderColumns(columns)}</TableHeadRow>
+              <TableHeadRow>{columnContent}</TableHeadRow>
             </thead>
             <tbody>{this.renderData(columns, data)}</tbody>
+            <tfoot>
+              {tableButton && (
+                <ButtonTableRow>
+                  <TableCell colSpan={columnContent.length}>
+                    <TableButton
+                      modifiers={['buttonLink']}
+                      fullWidth
+                      fullHeight
+                      onClick={tableButton.onClick}
+                      icon={tableButton.icon}
+                      iconPosition="left"
+                      type={tableButton.type}
+                    >
+                      {tableButton.label}
+                    </TableButton>
+                  </TableCell>
+                </ButtonTableRow>
+              )}
+            </tfoot>
           </>
         )}
       </TableWrapper>
@@ -294,6 +346,7 @@ Table.defaultProps = {
     rowActions: [],
   },
   showLoader: false,
+  tableButton: null,
 };
 
 export default Table;
