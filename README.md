@@ -57,7 +57,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 Yes, it's really all you need to get started as you can see in this live and interactive demo:
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/kkj9nyk5z5)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/k5qqq2797)
 
 ## File Structure
 
