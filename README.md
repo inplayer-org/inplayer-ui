@@ -36,13 +36,15 @@ $ npm install
 Here is a quick example to get you started, **it's all you need**:
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeWrapper, Button } from '@inplayer-org/inplayer-ui';
+import React from "react";
+import ReactDOM from "react-dom";
+import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { ThemeWrapper, Button } from "@inplayer-org/inplayer-ui";
 
 function App() {
   return (
-    <ThemeWrapper>
+    <ThemeWrapper withProvider={ThemeProvider}>
       <Button size="lg">
         Hello World
       </Button>
