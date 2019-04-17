@@ -28,8 +28,8 @@ exports[`Notification renders correctly 1`] = `
   z-index: 120;
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   opacity: 0;
-  -webkit-animation: njGPL 0s ease-in-out 0s 1;
-  animation: njGPL 0s ease-in-out 0s 1;
+  -webkit-animation: njGPL 0s ease-in-out 0.2s 1;
+  animation: njGPL 0s ease-in-out 0.2s 1;
 }
 
 .c0 i {
