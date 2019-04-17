@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.14.2] - 17-04-2019
+
+### Change
+
+- Reduce Notification animation delay
+
 # [0.14.1] - 05-04-2019
 
 ### Fixes
