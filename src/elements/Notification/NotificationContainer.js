@@ -35,7 +35,7 @@ const NotificationContainer = styled.div`
   z-index: 120;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   opacity: 0;
-  animation: ${notify} ${prop('duration', 8)}s ease-in-out 1s 1;
+  animation: ${notify} ${prop('duration', 8)}s ease-in-out 0s 1;
   ${switchProp('variant', {
     success: css`
       border-color: ${colors.green};
