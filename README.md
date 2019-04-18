@@ -36,13 +36,15 @@ $ npm install
 Here is a quick example to get you started, **it's all you need**:
 
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeWrapper, Button } from '@inplayer-org/inplayer-ui';
+import React from "react";
+import ReactDOM from "react-dom";
+import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { ThemeWrapper, Button } from "@inplayer-org/inplayer-ui";
 
 function App() {
   return (
-    <ThemeWrapper>
+    <ThemeWrapper withProvider={ThemeProvider}>
       <Button size="lg">
         Hello World
       </Button>
@@ -55,7 +57,7 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 Yes, it's really all you need to get started as you can see in this live and interactive demo:
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/jlojq78mjw)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/k5qqq2797)
 
 ## File Structure
 
