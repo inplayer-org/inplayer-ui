@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.14.3] - 19-04-2019
+
+### Fixes
+
+- Destroy Notification after duration expiry
+
 # [0.14.2] - 17-04-2019
 
 ### Change
