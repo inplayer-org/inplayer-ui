@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import NotificationContainer, { CloseIcon } from './NotificationContainer';
@@ -18,6 +18,15 @@ type NotificationProps = {
 
 const divs: Array<HTMLDivElement> = [];
 
+function useInterval(callback, duration) {
+  useEffect(() => {
+    if (typeof duration === 'number' && duration >= 0) {
+      const id = setTimeout(callback, duration);
+      return () => clearTimeout(id);
+    }
+  }, [duration]);
+}
+
 const Notification = ({
   title,
   content,
@@ -26,18 +35,29 @@ const Notification = ({
   className,
   close,
   style,
-}: NotificationProps) => (
-  <NotificationContainer variant={variant} duration={duration} className={className} style={style}>
-    <div>
-      <strong>{title}</strong> {content}
-    </div>
-    <CloseIcon onClick={close} />
-  </NotificationContainer>
-);
+}: NotificationProps) => {
+  useInterval(() => {
+    close();
+  }, duration * 1000);
+  return (
+    <NotificationContainer
+      variant={variant}
+      duration={duration}
+      className={className}
+      style={style}
+    >
+      <div>
+        <strong>{title}</strong> {content}
+      </div>
+      <CloseIcon onClick={close} />
+    </NotificationContainer>
+  );
+};
 
 function destroy(index) {
   if (divs[index]) {
     ReactDOM.unmountComponentAtNode(divs[index]);
+    document.body.removeChild(divs[index]);
   }
 }
 
