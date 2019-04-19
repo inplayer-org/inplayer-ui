@@ -18,7 +18,7 @@ type NotificationProps = {
 
 const divs: Array<HTMLDivElement> = [];
 
-function useInterval(callback, duration) {
+function useTimeout(callback, duration) {
   useEffect(() => {
     if (typeof duration === 'number' && duration >= 0) {
       const id = setTimeout(callback, duration);
@@ -36,9 +36,7 @@ const Notification = ({
   close,
   style,
 }: NotificationProps) => {
-  useInterval(() => {
-    close();
-  }, duration * 1000);
+  useTimeout(close, duration * 1000);
   return (
     <NotificationContainer
       variant={variant}
