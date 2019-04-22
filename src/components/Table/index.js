@@ -19,7 +19,6 @@ const TableWrapper = styled.table`
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   position: relative;
-  overflow-x: hidden;
   font-weight: ${fontWeights('light')};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
