@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.14.5] - 24-04-2019
+
+### Fixes
+
+- Include minimumNights prop in DatePicker Component
+
 # [0.14.4] - 19-04-2019
 
 ### Fixes
