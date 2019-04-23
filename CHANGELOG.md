@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.14.4] - 19-04-2019
+
+### Fixes
+
+- Fix table preventing popup menu from overflowing
+
 # [0.14.3] - 19-04-2019
 
 ### Fixes

@@ -140,7 +140,6 @@ exports[`Table renders correctly 1`] = `
   border: 1px solid #d7dde5;
   border-radius: 3px;
   position: relative;
-  overflow-x: hidden;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
