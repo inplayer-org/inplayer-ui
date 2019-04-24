@@ -25,6 +25,7 @@ type Props = {
   className?: string,
   onFocusChange: Function,
   focusedInput: FocusedInputShape | null,
+  minimumNights?: number,
 };
 
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
@@ -85,6 +86,7 @@ class DatePicker extends React.Component<Props, State> {
       className,
       onFocusChange,
       focusedInput,
+      minimumNights,
     } = this.props;
 
     return (
@@ -102,6 +104,7 @@ class DatePicker extends React.Component<Props, State> {
           customArrowIcon="to"
           readOnly
           calendarInfoPosition={calendarInfo && 'before'}
+          minimumNights={minimumNights}
         />
       </DateRangePickerWrapper>
     );
@@ -115,6 +118,7 @@ DatePicker.defaultProps = {
   isOutsideRange: () => false,
   style: {},
   className: '',
+  minimumNights: 0,
 };
 
 export default DatePicker;

@@ -364,6 +364,7 @@ export interface DatePickerProps {
   className?: string;
   onFocusChange: DatePicker$OnFocusChange;
   focusedInput: FocusedInputShape | null;
+  minimumNights?: number;
 }
 
 interface DatePickerState {
