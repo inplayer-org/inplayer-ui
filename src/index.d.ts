@@ -343,6 +343,25 @@ export interface CardProps {
 
 export declare const Card: FunctionComponent<CardProps>;
 
+interface SingleDayPicker$OnDateChange$Arguments {
+  date: Moment;
+}
+
+export type SingleDayPicker$OnDateChange = (values: SingleDayPicker$OnDateChange$Arguments) => any;
+
+export type SingleDayPicker$OnFocusChange = (focusedInput: FocusedInputShape | null) => any;
+
+export interface SingleDayPickerProps {
+  isOutsideRange?: (day: number) => any,
+  onDateChange: (date: Moment) => any,
+  onFocusChange: (focused: any) => any,
+  focused: FocusedInputShape | null,
+  date: Moment,
+  id: string,
+  style?: Object,
+  className?: string,
+}
+
 interface DatePicker$OnDateChange$Arguments {
   startDate: Moment;
   endDate: Moment;

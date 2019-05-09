@@ -11,7 +11,6 @@ type Props = {
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,
   focused: FocusedInputShape | null,
-  date?: any,
   date: Moment,
   id: string,
   style?: Object,
