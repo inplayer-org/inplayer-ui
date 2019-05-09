@@ -349,13 +349,13 @@ interface SingleDayPicker$OnDateChange$Arguments {
 
 export type SingleDayPicker$OnDateChange = (values: SingleDayPicker$OnDateChange$Arguments) => any;
 
-export type SingleDayPicker$OnFocusChange = (focusedInput: FocusedInputShape | null) => any;
+export type SingleDayPicker$OnFocusChange = (focusedInput: boolean) => any;
 
 export interface SingleDayPickerProps {
   isOutsideRange?: (day: number) => any,
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,
-  focused: FocusedInputShape | null,
+  focused: boolean,
   date: Moment,
   id: string,
   style?: Object,

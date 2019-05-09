@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import 'react-dates/initialize';
-import { SingleDatePicker, FocusedInputShape } from 'react-dates';
+import { SingleDatePicker } from 'react-dates';
 import { Moment } from 'moment';
 
 import DatePickerWrapper from '../DatePickerWrapper';
@@ -10,7 +10,7 @@ type Props = {
   isOutsideRange?: (day: number) => any,
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,
-  focused: FocusedInputShape | null,
+  focused: boolean,
   date: Moment,
   id: string,
   style?: Object,

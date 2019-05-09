@@ -15,7 +15,7 @@ class SingleDayPickerExample extends React.Component {
 
     this.state = {
       date: moment(),
-      focused: null,
+      focused: false,
     };
   }
 
@@ -46,7 +46,7 @@ class SingleDayPickerExample extends React.Component {
 
     this.state = {
       date: moment(),
-      focused: null,
+      focused: false,
     };
   }
 
