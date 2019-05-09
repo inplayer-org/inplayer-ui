@@ -1,5 +1,4 @@
 SingleDayPicker is a component for picking single day. It takes:
-<br>-`id` for the single date picker
 <br>-`date` as a prop( momentPropTypes.momentObj or null)
 <br>-`focused` as a prop( momentPropTypes.boolean)
 <br>- `isOutsideRange` a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}).
@@ -22,7 +21,6 @@ class SingleDayPickerExample extends React.Component {
   render() {
     return (
       <SingleDayPicker
-        id="singledate"
         date={this.state.date}
         focused={this.state.focused}
         isOutsideRange={() => false}
@@ -53,7 +51,6 @@ class SingleDayPickerExample extends React.Component {
   render() {
     return (
       <SingleDayPicker
-        id="singledate"
         date={this.state.date}
         focused={this.state.focused}
         isOutsideRange={() => false}

@@ -12,7 +12,6 @@ type Props = {
   onFocusChange: (focused: any) => any,
   focused: boolean,
   date: Moment,
-  id: string,
   style?: Object,
   className?: string,
 };
@@ -23,13 +22,11 @@ const SingleDayPicker = ({
   onFocusChange,
   focused,
   date,
-  id,
   style,
   className,
 }: Props) => (
   <DatePickerWrapper style={style} className={className}>
     <SingleDatePicker
-      id={id}
       isOutsideRange={isOutsideRange}
       onDateChange={onDateChange}
       onFocusChange={onFocusChange}

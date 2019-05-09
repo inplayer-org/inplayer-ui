@@ -357,7 +357,6 @@ export interface SingleDayPickerProps {
   onFocusChange: (focused: any) => any,
   focused: boolean,
   date: Moment,
-  id: string,
   style?: Object,
   className?: string,
 }
