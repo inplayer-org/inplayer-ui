@@ -30,7 +30,7 @@ type Props = {
 
 type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
 
-class DatePicker extends React.Component<Props, State> {
+class DatePicker extends React.Component<Props> {
   handleRangeClick = (activePeriod: Period) => {
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');

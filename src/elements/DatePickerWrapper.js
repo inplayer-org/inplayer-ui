@@ -595,6 +595,10 @@ const DatePickerWrapper = styled.span`
   .DateRangePicker_picker__fullScreenPortal {
     background-color: ${colors.white};
   }
+
+  .SingleDatePicker_picker {
+    z-index: 9;
+  }
 `;
 
 export default DatePickerWrapper;
