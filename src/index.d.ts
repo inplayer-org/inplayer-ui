@@ -538,21 +538,6 @@ export interface ProgressProps {
 
 export declare const Progress: FunctionComponent<ProgressProps>;
 
-export interface SingleDayPickerProps {
-  onDateChange: (date: typeof moment) => any;
-  date: string;
-  isOutsideRange: () => boolean;
-  id?: string;
-  style?: CSSProperties;
-  className?: string;
-}
-
-interface SingleDayPickerState {
-  focusedInput: string;
-}
-
-export declare class SingleDayPicker extends Component<SingleDayPickerProps, SingleDayPickerState> {}
-
 export interface SwitchProps {
   checked: boolean;
   disabled?: boolean;
