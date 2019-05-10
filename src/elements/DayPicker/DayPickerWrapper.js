@@ -4,7 +4,7 @@ import colors from 'config/colors';
 import { uiColors } from 'utils';
 import DatePickerWrapper from '../DatePickerWrapper';
 
-const SingleDatePickerWrapper = styled(DatePickerWrapper)`
+const DayPickerWrapper = styled(DatePickerWrapper)`
   .DateInput {
     width: 100px !important;
   }
@@ -108,4 +108,4 @@ const SingleDatePickerWrapper = styled(DatePickerWrapper)`
   }
 `;
 
-export default SingleDatePickerWrapper;
+export default DayPickerWrapper;
