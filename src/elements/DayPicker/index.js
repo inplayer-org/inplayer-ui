@@ -14,6 +14,7 @@ type Props = {
   date: Moment,
   style?: Object,
   className?: string,
+  numberOfMonths?: number,
 };
 
 const DayPicker = ({
@@ -24,6 +25,7 @@ const DayPicker = ({
   date,
   style,
   className,
+  numberOfMonths,
 }: Props) => (
   <DayPickerWrapper style={style} className={className}>
     <SingleDatePicker
@@ -32,7 +34,7 @@ const DayPicker = ({
       onFocusChange={onFocusChange}
       focused={focused}
       date={date}
-      numberOfMonths={1}
+      numberOfMonths={numberOfMonths}
     />
   </DayPickerWrapper>
 );
@@ -41,6 +43,7 @@ DayPicker.defaultProps = {
   isOutsideRange: () => false,
   style: {},
   className: '',
+  numberOfMonths: 1,
 };
 
 export default DayPicker;
