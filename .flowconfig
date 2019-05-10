@@ -8,3 +8,6 @@ flow-typed
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 module.name_mapper='^config\(.*\)$' -> '<PROJECT_ROOT>/config/\1'
+
+[lints]
+deprecated-utility=off

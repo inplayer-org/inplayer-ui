@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.15.0] - 09-05-2019
+
+### Added
+
+- Single Day Picker Component added
+
 # [0.14.5] - 24-04-2019
 
 ### Fixes

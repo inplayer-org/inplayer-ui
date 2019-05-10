@@ -343,6 +343,26 @@ export interface CardProps {
 
 export declare const Card: FunctionComponent<CardProps>;
 
+interface DayPicker$OnDateChange$Arguments {
+  date: Moment;
+}
+
+export type DayPicker$OnDateChange = (values: DayPicker$OnDateChange$Arguments) => any;
+
+export type DayPicker$OnFocusChange = (focusedInput: boolean) => any;
+
+export interface DayPickerProps {
+  isOutsideRange?: (day: number) => any,
+  onDateChange: (date: Moment) => any,
+  onFocusChange: (focused: any) => any,
+  focused: boolean,
+  date: Moment,
+  style?: Object,
+  className?: string,
+}
+
+export declare const DayPicker: FunctionComponent<DayPickerProps>;
+
 interface DatePicker$OnDateChange$Arguments {
   startDate: Moment;
   endDate: Moment;
@@ -519,21 +539,6 @@ export interface ProgressProps {
 }
 
 export declare const Progress: FunctionComponent<ProgressProps>;
-
-export interface SingleDayPickerProps {
-  onDateChange: (date: typeof moment) => any;
-  date: string;
-  isOutsideRange: () => boolean;
-  id?: string;
-  style?: CSSProperties;
-  className?: string;
-}
-
-interface SingleDayPickerState {
-  focusedInput: string;
-}
-
-export declare class SingleDayPicker extends Component<SingleDayPickerProps, SingleDayPickerState> {}
 
 export interface SwitchProps {
   checked: boolean;

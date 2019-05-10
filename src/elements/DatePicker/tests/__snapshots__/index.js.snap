@@ -607,6 +607,10 @@ exports[`DatePicker renders correctly 1`] = `
   background-color: #fff;
 }
 
+.c0 .SingleDatePicker_picker {
+  z-index: 9;
+}
+
 .c0 .datepreset {
   width: 96px;
   padding: 3.75rem 1.25rem 0.625rem;

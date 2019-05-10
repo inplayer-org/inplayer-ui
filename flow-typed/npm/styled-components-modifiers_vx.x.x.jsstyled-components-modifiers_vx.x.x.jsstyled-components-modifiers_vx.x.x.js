@@ -48,7 +48,8 @@ declare module 'styled-components-modifiers/dist/utils/modifiedStyles' {
 
 // Filename aliases
 declare module 'styled-components-modifiers/dist/applyResponsiveStyleModifiers.js' {
-  declare module.exports: $Exports<'styled-components-modifiers/dist/applyResponsiveStyleModifiers'>;
+  declare module.exports: $Exports<
+    'styled-components-modifiers/dist/applyResponsiveStyleModifiers'>;
 }
 declare module 'styled-components-modifiers/dist/applyStyleModifiers.js' {
   declare module.exports: $Exports<'styled-components-modifiers/dist/applyStyleModifiers'>;
@@ -57,7 +58,8 @@ declare module 'styled-components-modifiers/dist/index.js' {
   declare module.exports: $Exports<'styled-components-modifiers/dist/index'>;
 }
 declare module 'styled-components-modifiers/dist/responsiveStyleModifierPropTypes.js' {
-  declare module.exports: $Exports<'styled-components-modifiers/dist/responsiveStyleModifierPropTypes'>;
+  declare module.exports: $Exports<
+    'styled-components-modifiers/dist/responsiveStyleModifierPropTypes'>;
 }
 declare module 'styled-components-modifiers/dist/styleModifierPropTypes.js' {
   declare module.exports: $Exports<'styled-components-modifiers/dist/styleModifierPropTypes'>;
