@@ -1,4 +1,4 @@
-SingleDayPicker is a component for picking single day. It takes:
+DayPicker is a component for picking single day. It takes:
 <br>-`date` as a prop( momentPropTypes.momentObj or null)
 <br>-`focused` as a prop( momentPropTypes.boolean)
 <br>- `isOutsideRange` a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}).
@@ -8,7 +8,7 @@ SingleDayPicker is a component for picking single day. It takes:
 ```jsx static
 const moment = require('moment');
 
-class SingleDayPickerExample extends React.Component {
+class DayPickerExample extends React.Component {
   constructor() {
     super();
 
@@ -20,7 +20,7 @@ class SingleDayPickerExample extends React.Component {
 
   render() {
     return (
-      <SingleDayPicker
+      <DayPicker
         date={this.state.date}
         focused={this.state.focused}
         isOutsideRange={() => false}
@@ -30,7 +30,7 @@ class SingleDayPickerExample extends React.Component {
     )
   }
 }
-<SingleDayPickerExample />;
+<DayPickerExample />;
 ```
 
 ### Demo
@@ -38,7 +38,7 @@ class SingleDayPickerExample extends React.Component {
 ```jsx
 const moment = require('moment');
 
-class SingleDayPickerExample extends React.Component {
+class DayPickerExample extends React.Component {
   constructor() {
     super();
 
@@ -50,7 +50,7 @@ class SingleDayPickerExample extends React.Component {
 
   render() {
     return (
-      <SingleDayPicker
+      <DayPicker
         date={this.state.date}
         focused={this.state.focused}
         isOutsideRange={() => false}
@@ -60,5 +60,5 @@ class SingleDayPickerExample extends React.Component {
     )
   }
 }
-<SingleDayPickerExample />;
+<DayPickerExample />;
 ```
