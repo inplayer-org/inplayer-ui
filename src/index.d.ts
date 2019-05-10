@@ -359,6 +359,7 @@ export interface DayPickerProps {
   date: Moment,
   style?: Object,
   className?: string,
+  numberOfMonths?: number,
 }
 
 export declare const DayPicker: FunctionComponent<DayPickerProps>;
