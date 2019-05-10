@@ -343,15 +343,15 @@ export interface CardProps {
 
 export declare const Card: FunctionComponent<CardProps>;
 
-interface SingleDayPicker$OnDateChange$Arguments {
+interface DayPicker$OnDateChange$Arguments {
   date: Moment;
 }
 
-export type SingleDayPicker$OnDateChange = (values: SingleDayPicker$OnDateChange$Arguments) => any;
+export type DayPicker$OnDateChange = (values: DayPicker$OnDateChange$Arguments) => any;
 
-export type SingleDayPicker$OnFocusChange = (focusedInput: boolean) => any;
+export type DayPicker$OnFocusChange = (focusedInput: boolean) => any;
 
-export interface SingleDayPickerProps {
+export interface DayPickerProps {
   isOutsideRange?: (day: number) => any,
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,

@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import { Moment } from 'moment';
 
@@ -16,7 +15,7 @@ type Props = {
   className?: string,
 };
 
-const SingleDayPicker = ({
+const DayPicker = ({
   isOutsideRange,
   onDateChange,
   onFocusChange,
@@ -37,10 +36,10 @@ const SingleDayPicker = ({
   </DatePickerWrapper>
 );
 
-SingleDayPicker.defaultProps = {
+DayPicker.defaultProps = {
   isOutsideRange: () => false,
   style: {},
   className: '',
 };
 
-export default SingleDayPicker;
+export default DayPicker;
