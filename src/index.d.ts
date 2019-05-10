@@ -361,6 +361,8 @@ export interface DayPickerProps {
   className?: string,
 }
 
+export declare const DayPicker: FunctionComponent<DayPickerProps>;
+
 interface DatePicker$OnDateChange$Arguments {
   startDate: Moment;
   endDate: Moment;
