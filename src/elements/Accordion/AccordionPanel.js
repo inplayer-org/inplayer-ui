@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
-import { uiColors, fontWeights, fontSizes } from 'utils';
+import { uiColors, fontWeights } from 'utils';
 
 // Components
 import Icon from 'elements/Icon';
@@ -20,7 +20,7 @@ const AccordionPanelContainer = styled.div`
   background: ${colors.white};
   transition: ease 500ms height;
   ${ifProp(
-    'open',
+    'isOpen',
     css`
       position: absolute;
       ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 120px)`};
@@ -85,7 +85,7 @@ const AccordionPanel = ({
   renderContent,
   contentHeight,
 }: Props) => (
-  <AccordionPanelContainer open={activeTab} contentHeight={contentHeight}>
+  <AccordionPanelContainer isOpen={activeTab} contentHeight={contentHeight}>
     <AccordionPanelHeader onClick={toggleOpen}>
       <AccordionTitle variant="h6">{label}</AccordionTitle>
       <AccordionIcon name={icon} />
@@ -93,7 +93,7 @@ const AccordionPanel = ({
     <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
     {activeTab && (
       <AccordionFooter
-        open={activeTab}
+        isOpen={activeTab}
         toggleClose={toggleClose}
         accordionAction={accordionAction}
         footerLink={footerLink}
