@@ -10,10 +10,12 @@ import Button from 'elements/Button';
 type Props = {
   footerLink: string,
   buttonText: string,
+  open: boolean,
   toggleClose: () => boolean,
 };
 
 const AccordionFooterContainer = styled.footer`
+  position: absolute;
   bottom: ${ifProp('open', '0', '-80px')};
   width: 100%;
   box-sizing: border-box;
@@ -37,8 +39,8 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ footerLink, buttonText, toggleClose }: Props) => (
-  <AccordionFooterContainer>
+const AccordionFooter = ({ footerLink, buttonText, toggleClose, open }: Props) => (
+  <AccordionFooterContainer open={open}>
     <AccordionFooterLink onClick={toggleClose(false)}>{footerLink}</AccordionFooterLink>
     <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose(true)}>
       {buttonText}

@@ -5,6 +5,8 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/>- `accordionAction` (action that should be called on button click)
 <br/> - `renderContent` (action used to render the content)
 
+and `contentHeight` - that determines the height of the wrapper.
+
 ```jsx static
 const panels = [
   {
@@ -32,7 +34,7 @@ const panels = [
     },
   },
 ];
-<Accordion panels={panels} />;
+<Accordion panels={panels} contentHeight="46vh" />;
 ```
 
 ### Demo
@@ -64,5 +66,5 @@ const panels = [
     },
   },
 ];
-<Accordion panels={panels} />;
+<Accordion panels={panels} contentHeight="46vh" />;
 ```

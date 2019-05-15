@@ -8,6 +8,6 @@ export const AccordionWrapper = styled.div`
   border-left: 1px solid ${colors.gray};
   box-sizing: border-box;
   border-top: 1px solid ${colors.gray};
-  height: calc(46vh - 120px);
+  ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 120px)`};
   overflow-y: hidden;
 `;
