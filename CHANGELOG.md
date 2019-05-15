@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Accordion design modified
+- Accordion redesign
 
 # [0.15.0] - 09-05-2019
 
