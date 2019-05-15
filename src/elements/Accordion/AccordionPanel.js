@@ -48,7 +48,6 @@ const AccordionTitle = styled(Typography)`
   font-weight: ${fontWeights('thin')};
   color: ${uiColors('text.main')};
   margin: 0;
-  font-size: ${fontSizes('h5')};
   cursor: pointer;
   display: inline;
 `;
@@ -88,7 +87,7 @@ const AccordionPanel = ({
 }: Props) => (
   <AccordionPanelContainer open={activeTab} contentHeight={contentHeight}>
     <AccordionPanelHeader onClick={toggleOpen}>
-      <AccordionTitle variant="h3">{label}</AccordionTitle>
+      <AccordionTitle variant="h6">{label}</AccordionTitle>
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
     <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
