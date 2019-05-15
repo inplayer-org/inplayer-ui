@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/bundle.js",
@@ -28,7 +28,7 @@
     "test:watch": "jest src/** --watch",
     "test:watchAll": "jest src/** --watchAll",
     "test:coverage:report": "open ./coverage/lcov-report/index.html",
-    "test:update-snapshots": "jest src/** --updateSnapshot",
+    "test:update:snapshots": "jest src/** --updateSnapshot",
     "flow": "flow",
     "flow:watch": "flow-watch",
     "generate:docs": "yarn styleguide:build && git add docs && git commit --amend --no-edit"
