@@ -291,6 +291,7 @@ export interface AccordionPanel {
 
 export interface AccordionProps {
   panels: Array<AccordionPanel>;
+  contentHeight: string;
 }
 
 export interface AccordionState {

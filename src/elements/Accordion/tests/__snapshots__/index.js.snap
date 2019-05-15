@@ -8,7 +8,6 @@ exports[`Accordion renders correctly 1`] = `
   border-left: 1px solid #d7dde5;
   box-sizing: border-box;
   border-top: 1px solid #d7dde5;
-  height: calc(46vh - 120px);
   overflow-y: hidden;
 }
 
@@ -16,13 +15,13 @@ exports[`Accordion renders correctly 1`] = `
   font-family: Roboto;
   font-weight: 100;
   color: #286090;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .c1 {
   position: relative;
   width: 100%;
-  height: 4.833em;
+  height: 3.5rem;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
@@ -32,28 +31,37 @@ exports[`Accordion renders correctly 1`] = `
 }
 
 .c2 {
-  position: relative;
   margin: 0;
   padding: 0.75rem 3%;
   width: 100%;
   box-sizing: border-box;
   background: #fff;
   border-bottom: 1px solid #F6F8FB;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c3 {
   font-weight: 100;
   color: #44494e;
   margin: 0;
-  font-size: 1.5rem;
+  cursor: pointer;
+  display: inline;
 }
 
 .c5 {
   display: inline-block;
   font-size: 1rem;
-  position: absolute;
-  right: 3%;
-  top: 18px;
   color: #07AAE6;
 }
 
@@ -71,13 +79,13 @@ exports[`Accordion renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <h3
+      <h6
         className="c3 c4"
         color=""
         style={Object {}}
       >
         Accordion
-      </h3>
+      </h6>
       <span
         aria-hidden={true}
         className="fa fa- c5"

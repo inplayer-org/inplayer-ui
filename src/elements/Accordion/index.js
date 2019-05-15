@@ -16,6 +16,7 @@ type Panel = {
 
 type Props = {
   panels: Array<Panel>,
+  contentHeight: string,
 };
 type State = { [string]: boolean };
 
@@ -36,12 +37,12 @@ class Accordion extends Component<Props, State> {
   };
 
   render() {
-    const { panels } = this.props;
+    const { panels, contentHeight } = this.props;
 
     const { state } = this;
 
     return (
-      <AccordionWrapper>
+      <AccordionWrapper contentHeight={contentHeight}>
         {panels.map((panel, index) => (
           <AccordionPanel
             key={index}
@@ -50,6 +51,7 @@ class Accordion extends Component<Props, State> {
             {...panel}
             toggleOpen={this.toggleOpen(panel.label)}
             toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
+            contentHeight={contentHeight}
           />
         ))}
       </AccordionWrapper>
