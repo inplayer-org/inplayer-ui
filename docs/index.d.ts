@@ -291,6 +291,7 @@ export interface AccordionPanel {
 
 export interface AccordionProps {
   panels: Array<AccordionPanel>;
+  contentHeight: string;
 }
 
 export interface AccordionState {
@@ -375,7 +376,7 @@ export type DatePicker$OnFocusChange = (focusedInput: FocusedInputShape | null) 
 
 export interface DatePickerProps {
   startDate: Moment;
-  endDate: Moment;
+  endDate?: Moment;
   startDateId?: string;
   endDateId?: string;
   calendarInfo?: boolean;
