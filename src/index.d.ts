@@ -376,7 +376,7 @@ export type DatePicker$OnFocusChange = (focusedInput: FocusedInputShape | null) 
 
 export interface DatePickerProps {
   startDate: Moment;
-  endDate: Moment;
+  endDate?: Moment;
   startDateId?: string;
   endDateId?: string;
   calendarInfo?: boolean;

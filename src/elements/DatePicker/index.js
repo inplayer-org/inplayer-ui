@@ -15,7 +15,7 @@ const THIS_YEAR = 'this year';
 
 type Props = {
   startDate: Moment,
-  endDate: Moment,
+  endDate?: Moment,
   startDateId?: string,
   endDateId?: string,
   calendarInfo?: boolean,
@@ -112,6 +112,7 @@ class DatePicker extends React.Component<Props> {
 }
 
 DatePicker.defaultProps = {
+  endDate: null,
   startDateId: 'startDate',
   endDateId: 'endDate',
   calendarInfo: false,
