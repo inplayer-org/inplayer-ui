@@ -59,7 +59,6 @@ const StepWrapper = styled.div`
   top: 0;
   width: 100%;
   z-index: 0;
-
   ${ifProp(
     'active',
     css`
@@ -100,10 +99,9 @@ type Props = {
 };
 
 const Step = ({ children, isActive, transition }: Props) => (
-    <StepWrapper isActive={isActive} transition={transition}>
-      {children}
-    </StepWrapper>
-  );
+  <StepWrapper isActive={isActive} transition={transition}>
+    {children}
+  </StepWrapper>
 );
 
 Step.defaultProps = {
