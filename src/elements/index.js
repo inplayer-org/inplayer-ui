@@ -18,3 +18,4 @@ export { default as Loader } from './Loader';
 export { default as Dropdown } from './Dropdown';
 export { default as PillLabel } from './PillLabel';
 export { default as InPlayerIcon } from './InPlayerIcon';
+export { default as StepWizard } from './StepWizard';
