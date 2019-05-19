@@ -5,8 +5,12 @@ import { Tooltip } from 'inplayer-ui';
 
 function Page(props) {
   return (
-    <Tooltip placement="up" dataTip="hello world">
-      Hover me!
+    <Tooltip
+      content="😎"
+    >
+      <Button>
+        Hover me !
+      </Button>
     </Tooltip>
   );
 }
@@ -15,28 +19,44 @@ function Page(props) {
 ### Demo
 
 ```jsx
-<Tooltip placement="up" dataTip="Lorem Ipsum">
-  Tooltip up!
+<Tooltip
+  content="😎"
+>
+  <Button>
+    Hover me !
+  </Button>
 </Tooltip>
-<br />
-<Tooltip placement="down" dataTip="Lorem Ipsum" >
-  Tooltip down!
-</Tooltip>
-<br />
-<Tooltip placement="left" dataTip="Lorem Ipsum">
-  Tooltip left!
-</Tooltip>
-<br />
-<Tooltip placement="right" dataTip="Lorem Ipsum">
-  Tooltip right!
+<Tooltip
+  content="Hello!"
+>
+  <Button>
+    Hover me !
+  </Button>
 </Tooltip>
 ```
 
 ### Tooltip with Custom Color
 
 ```jsx
-<Tooltip color="#0da" placement="down"
-dataTip={`custom color tooltip.\nnew line here`}>
-  Tooltip with custom color!
+<Tooltip
+  arrow={15}
+  background="#000"
+  border="#000"
+  color="#fff"
+  content="😎"
+  fadeDuration={0}
+  fadeEasing="linear"
+  fixed={false}
+  fontFamily="inherit"
+  fontSize="inherit"
+  offset={0}
+  padding={2}
+  placement="top"
+  radius={0}
+  zIndex={1}
+>
+  <Button>
+    Hover me !
+  </Button>
 </Tooltip>
 ```

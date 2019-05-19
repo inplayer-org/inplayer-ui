@@ -267,19 +267,6 @@ interface TabsProps {
 
 export declare const Tabs: FunctionComponent<TabsProps>;
 
-export type TooltipVariant = 'up' | 'down' | 'left' | 'right';
-
-interface TooltipProps {
-  placement: TooltipVariant;
-  dataTip: string;
-  children: ReactNode;
-  className?: string;
-  color?: string;
-  style?: CSSProperties;
-}
-
-export declare const Tooltip: FunctionComponent<TooltipProps>;
-
 export interface AccordionPanel {
   label: string;
   icon?: string;
@@ -679,3 +666,38 @@ interface IColors {
 }
 
 export declare const Colors: IColors;
+
+export type Placement = 'left' | 'right' | 'top' | 'bottom';
+
+export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
+
+export interface TooltipProps {
+  arrowWidth?: number;
+  background?: string;
+  border?: string;
+  children?: ReactNode;
+  color?: string;
+  content: ReactNode;
+  className?: string;
+  style?: string;
+  fadeDuration?: number;
+  fadeEasing?: FadeEasing;
+  fixed?: boolean;
+  fontFamily?: string;
+  fontSize?: string;
+  offset?: number;
+  padding?: number;
+  placement?: Placement;
+  radius?: number;
+  zIndex?: number;
+}
+
+interface TooltipState {
+  isOpen: boolean;
+}
+
+export declare class Tooltip extends Component<TooltipProps, TooltipState> {
+  handleMouseEnter: () => any;
+  handleMouseLeave: () => any;
+}
+
