@@ -84,8 +84,11 @@ type Props = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => any,
   value: string | Array<string> | number,
   size?: Size,
+  style?: string,
+  className?: string,
 };
 
+// eslint-disable-next-line react/display-name
 const Input = React.forwardRef(
   ({ type, placeholder, onChange, size, style, className, ...rest }: Props, ref) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
@@ -124,6 +127,8 @@ const Input = React.forwardRef(
 
 Input.defaultProps = {
   size: 'md',
+  style: '',
+  className: '',
 };
 
 /** @component */
