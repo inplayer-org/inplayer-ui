@@ -29,5 +29,6 @@ exports[`undefined renders correctly 1`] = `
   className="c0"
   onChange={[Function]}
   size="md"
+  style=""
 />
 `;
