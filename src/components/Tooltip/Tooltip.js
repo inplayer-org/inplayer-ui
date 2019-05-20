@@ -28,13 +28,12 @@ const animation = props => css`
   animation: ${props.fadeDuration}ms ${props.fadeEasing} 0s 1 ${fadeAnimation};
 `;
 
-// prettier-ignore
 const Base = styled('div')`
   position: absolute;
   width: max-content;
   ${props => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
   ${props => props.zIndex && `z-index: ${props.zIndex};`};
-`
+`;
 
 const Top = styled(Base)`
   bottom: 100%;
