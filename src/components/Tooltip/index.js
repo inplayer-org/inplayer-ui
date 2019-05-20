@@ -8,8 +8,11 @@ import Bubble from './Bubble';
 import type { FadeEasing } from './Tooltip';
 
 export type Placement = 'left' | 'right' | 'top' | 'bottom';
+export type TooltipBehavior = 'hover' | 'click';
 
 type Props = {
+  behavior?: TooltipBehavior,
+  durationOnClick?: number,
   arrowWidth?: number,
   background?: string,
   border?: string,
@@ -44,17 +47,40 @@ class Tooltip extends PureComponent<Props, State> {
     isOpen: false,
   };
 
-  handleMouseEnter = () => {
+  timeoutId: number = 0;
+
+  timeDelay = (msDuration: number) =>
+    new Promise(resolve => {
+      this.timeoutId = setTimeout(() => {
+        this.timeoutId = 0;
+        resolve(true);
+      }, msDuration);
+    });
+
+  showTooltip = () => {
     this.setState({ isOpen: true });
   };
 
-  handleMouseLeave = () => {
+  hideTooltip = () => {
     this.setState({ isOpen: false });
+  };
+
+  flashTooltip = async () => {
+    const { durationOnClick } = this.props;
+
+    if (this.timeoutId) {
+      return;
+    }
+
+    this.showTooltip();
+    await this.timeDelay(durationOnClick);
+    this.hideTooltip();
   };
 
   render() {
     const { isOpen } = this.state;
     const {
+      behavior,
       arrowWidth,
       background,
       border,
@@ -98,12 +124,14 @@ class Tooltip extends PureComponent<Props, State> {
         </Bubble>
       </TooltipWrapper>
     );
+
     return children ? (
       <Container
         style={style}
         className={className}
-        onMouseEnter={!fixed ? this.handleMouseEnter : undefined}
-        onMouseLeave={!fixed ? this.handleMouseLeave : undefined}
+        onClick={behavior === 'click' ? this.flashTooltip : undefined}
+        onMouseEnter={behavior === 'hover' && !fixed ? this.showTooltip : undefined}
+        onMouseLeave={behavior === 'hover' && !fixed ? this.hideTooltip : undefined}
       >
         {children}
         {tooltipElement}
@@ -117,6 +145,8 @@ class Tooltip extends PureComponent<Props, State> {
 }
 
 Tooltip.defaultProps = {
+  behavior: 'hover',
+  durationOnClick: 1000,
   arrowWidth: 8,
   background: '',
   border: '',

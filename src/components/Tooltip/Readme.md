@@ -28,9 +28,11 @@ function Page(props) {
 </Tooltip>
 <Tooltip
   content="Hello!"
+  behavior="click"
+  placement="right"
 >
   <Button>
-    Hover me !
+    Click me !
   </Button>
 </Tooltip>
 ```
