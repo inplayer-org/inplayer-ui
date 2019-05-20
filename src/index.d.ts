@@ -671,7 +671,11 @@ export type Placement = 'left' | 'right' | 'top' | 'bottom';
 
 export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
 
+export type TooltipBehavior = 'hover' | 'click';
+
 export interface TooltipProps {
+  behavior?: TooltipBehavior,
+  durationOnClick?: number,
   arrowWidth?: number;
   background?: string;
   border?: string;
