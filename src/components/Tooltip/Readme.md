@@ -63,18 +63,6 @@ function Page(props) {
     Click me!
   </Button>
 </Tooltip>
-<br />
-<Tooltip
-  content="Tooltip shown asynchronically after a delay of 1000 ms!"
-  behavior="click"
-  placement="right"
-  onClickAsync={() => new Promise((resolve) => setTimeout(() => resolve(true), 1000))}
-  durationOnClick={3000}
->
-  <Button>
-    Click and wait!
-  </Button>
-</Tooltip>
 ```
 
 ### Tooltip with Custom Color
