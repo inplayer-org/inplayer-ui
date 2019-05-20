@@ -60,7 +60,7 @@ const StepWrapper = styled.div`
   width: 100%;
   z-index: 0;
   ${ifProp(
-    'active',
+    'isActive',
     css`
       opacity: 1;
       pointer-events: inherit;
@@ -70,12 +70,12 @@ const StepWrapper = styled.div`
   )};
   ${switchProp('transition', {
     fadeInRight: css`
-      animation: ${fadeInRight};
+      animation-name: ${fadeInRight};
       animation-duration: 0.8192s;
       animation-fill-mode: backwards;
     `,
     fadeInLeft: css`
-      animation: ${fadeInLeft};
+      animation-name: ${fadeInLeft};
       animation-duration: 0.8192s;
       animation-fill-mode: backwards;
     `,
@@ -93,8 +93,8 @@ const StepWrapper = styled.div`
 `;
 
 type Props = {
-  children?: ReactNode,
-  isActive?: boolean,
+  children: ReactNode,
+  isActive: boolean,
   transition?: string,
 };
 
@@ -105,9 +105,7 @@ const Step = ({ children, isActive, transition }: Props) => (
 );
 
 Step.defaultProps = {
-  children: [],
-  isActive: false,
-  transition: '',
+  transition: 'fadeInLeft',
 };
 
 export default Step;

@@ -2,7 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'config/colors';
+import { uiColors } from 'utils';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;
@@ -22,7 +22,7 @@ const StepAction = styled.span`
   ${ifProp(
     'isActive',
     css`
-      color: ${colors.white};
+      color: ${uiColors('primary.main')};
       opacity: 1;
       text-shadow: 0 0px 8px;
     `
@@ -31,14 +31,14 @@ const StepAction = styled.span`
 
 type Props = {
   totalSteps: number,
-  currentStep: number,
-  goToStep: Function,
+  activeStep: number,
+  goToStep: (activeStep: number) => void,
 };
 
-const Nav = ({ totalSteps, currentStep, goToStep }: Props) => {
+const Nav = ({ totalSteps, activeStep, goToStep }: Props) => {
   const dots = [];
   for (let i = 1; i <= totalSteps; i += 1) {
-    const isActive = currentStep === i;
+    const isActive = activeStep === i;
     dots.push(
       <StepAction isActive={isActive} key={`step-${i}`} onClick={() => goToStep(i)}>
         &bull;
