@@ -8,11 +8,12 @@ import Bubble from './Bubble';
 import type { FadeEasing } from './Tooltip';
 
 export type Placement = 'left' | 'right' | 'top' | 'bottom';
-export type TooltipBehavior = 'hover' | 'click';
+export type TooltipBehavior = 'hover' | 'click' | 'async';
 
 type Props = {
   behavior?: TooltipBehavior,
   durationOnClick?: number,
+  onClickAsync?: boolean | Promise<boolean>,
   arrowWidth?: number,
   background?: string,
   border?: string,
@@ -66,10 +67,18 @@ class Tooltip extends PureComponent<Props, State> {
   };
 
   flashTooltip = async () => {
-    const { durationOnClick } = this.props;
+    const { durationOnClick, onClickAsync } = this.props;
 
     if (this.timeoutId) {
       return;
+    }
+
+    if (onClickAsync) {
+      const shouldShow = await onClickAsync();
+
+      if (!shouldShow) {
+        return;
+      }
     }
 
     this.showTooltip();
@@ -147,6 +156,7 @@ class Tooltip extends PureComponent<Props, State> {
 Tooltip.defaultProps = {
   behavior: 'hover',
   durationOnClick: 1000,
+  onClickAsync: undefined,
   arrowWidth: 8,
   background: '',
   border: '',

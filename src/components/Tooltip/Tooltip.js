@@ -31,6 +31,7 @@ const animation = props => css`
 // prettier-ignore
 const Base = styled('div')`
   position: absolute;
+  width: max-content;
   ${props => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
   ${props => props.zIndex && `z-index: ${props.zIndex};`};
 `

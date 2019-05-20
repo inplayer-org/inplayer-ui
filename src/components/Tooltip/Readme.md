@@ -23,16 +23,56 @@ function Page(props) {
   content="😎"
 >
   <Button>
-    Hover me !
+    Hover me!
   </Button>
 </Tooltip>
+<br />
+<Tooltip
+  content="Tooltip on the left"
+  placement="left"
+>
+  <Button>
+    Hover me too!
+  </Button>
+</Tooltip>
+<br />
+<Tooltip
+  content="Tooltip on the right"
+  placement="right"
+>
+  <Button>
+    Hover me as well!
+  </Button>
+</Tooltip>
+<br />
+<Tooltip
+  content="Tooltip on the bottom"
+  placement="bottom"
+>
+  <Button>
+    Hover me also!
+  </Button>
+</Tooltip>
+<br />
 <Tooltip
   content="Hello!"
   behavior="click"
   placement="right"
 >
   <Button>
-    Click me !
+    Click me!
+  </Button>
+</Tooltip>
+<br />
+<Tooltip
+  content="Tooltip shown asynchronically after a delay of 1000 ms!"
+  behavior="click"
+  placement="right"
+  onClickAsync={() => new Promise((resolve) => setTimeout(() => resolve(true), 1000))}
+  durationOnClick={3000}
+>
+  <Button>
+    Click and wait!
   </Button>
 </Tooltip>
 ```
