@@ -694,7 +694,7 @@ export interface TooltipProps {
   placement?: Placement;
   radius?: number;
   zIndex?: number;
-  ref?: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<Tooltip>;
 }
 
 interface TooltipState {
@@ -702,7 +702,8 @@ interface TooltipState {
 }
 
 export declare class Tooltip extends Component<TooltipProps, TooltipState> {
-  handleMouseEnter: () => any;
-  handleMouseLeave: () => any;
+  showTooltip: () => any;
+  hideTooltip: () => any;
+  flashTooltip: () => any;
 }
 
