@@ -679,3 +679,17 @@ interface IColors {
 }
 
 export declare const Colors: IColors;
+
+type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
+
+interface StepWizardProps {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  children?: React.ReactNode,
+  activeStep?: number,
+  onStepChange?: (activeStep: number) => void,
+  transition?: TransitionVariant,
+}
+
+export declare const StepWizard: FunctionComponent<StepWizardProps>;
