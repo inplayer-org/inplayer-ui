@@ -684,10 +684,9 @@ type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOut
 
 interface StepWizardProps {
   children: ReactNode;
+  activeStep: number,
   className?: string;
   style?: CSSProperties;
-  children?: React.ReactNode,
-  activeStep?: number,
   onStepChange?: (activeStep: number) => void,
   transition?: TransitionVariant,
 }
