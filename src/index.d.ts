@@ -671,7 +671,7 @@ export type Placement = 'left' | 'right' | 'top' | 'bottom';
 
 export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
 
-export type TooltipBehavior = 'hover' | 'click';
+export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
 export interface TooltipProps {
   behavior?: TooltipBehavior,
@@ -694,6 +694,7 @@ export interface TooltipProps {
   placement?: Placement;
   radius?: number;
   zIndex?: number;
+  ref?: React.RefObject<HTMLDivElement>;
 }
 
 interface TooltipState {
