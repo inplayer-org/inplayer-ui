@@ -22,12 +22,12 @@ const AccordionPanelContainer = styled.div`
     'isOpen',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 243px)`};
+      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 15.5rem)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
       overflow: auto;
-      margin-top: 4rem;
+      margin-top: 3.5rem;
       display: block;
     `
   )};
@@ -43,6 +43,14 @@ const AccordionPanelHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${ifProp(
+    'isOpen',
+    css`
+      position: absolute;
+      top: 0;
+    `
+  )};
 `;
 
 const AccordionTitle = styled(Typography)`
@@ -79,7 +87,7 @@ const AccordionPanel = ({
   contentHeight,
 }: Props) => (
   <>
-    <AccordionPanelHeader onClick={toggleOpen}>
+    <AccordionPanelHeader onClick={toggleOpen} isOpen={activeTab}>
       <AccordionTitle variant="h6" isOpen={activeTab}>
         {label}
       </AccordionTitle>
