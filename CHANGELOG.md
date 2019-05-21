@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 =======
+
 # [0.16.0] - 21-05-2019
 
 ### Added
@@ -11,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
- - Modify Tooltip behavior
+- Modify Tooltip behavior
 
 # [0.15.2] - 16-05-2019
 
