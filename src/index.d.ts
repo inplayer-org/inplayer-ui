@@ -548,6 +548,8 @@ export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
   size?: InputSize;
+  style?: CSSProperties;
+  className?: string;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
@@ -707,3 +709,15 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
   flashTooltip: () => any;
 }
 
+type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
+
+interface StepWizardProps {
+  children: ReactNode;
+  activeStep: number,
+  className?: string;
+  style?: CSSProperties;
+  onStepChange?: (activeStep: number) => void,
+  transition?: TransitionVariant,
+}
+
+export declare const StepWizard: FunctionComponent<StepWizardProps>;

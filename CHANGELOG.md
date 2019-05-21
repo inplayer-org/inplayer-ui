@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 =======
 
-# [0.16.0] - 20-05-2019
+# [0.16.0] - 21-05-2019
+
+### Added
+
+- Step Wizard
 
 ### Change
 
