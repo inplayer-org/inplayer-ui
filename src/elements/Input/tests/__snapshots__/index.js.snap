@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`undefined renders correctly 1`] = `
+exports[`Input renders correctly 1`] = `
 .c0 {
   width: 100%;
   vertical-align: middle;
@@ -29,5 +29,6 @@ exports[`undefined renders correctly 1`] = `
   className="c0"
   onChange={[Function]}
   size="md"
+  style={Object {}}
 />
 `;

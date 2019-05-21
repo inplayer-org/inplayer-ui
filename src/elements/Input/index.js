@@ -84,6 +84,8 @@ type Props = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => any,
   value: string | Array<string> | number,
   size?: Size,
+  style?: Object,
+  className?: string,
 };
 
 const Input = React.forwardRef(
@@ -122,8 +124,12 @@ const Input = React.forwardRef(
   }
 );
 
+Input.displayName = 'Input';
+
 Input.defaultProps = {
   size: 'md',
+  style: {},
+  className: '',
 };
 
 /** @component */

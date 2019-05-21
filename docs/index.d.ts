@@ -267,19 +267,6 @@ interface TabsProps {
 
 export declare const Tabs: FunctionComponent<TabsProps>;
 
-export type TooltipVariant = 'up' | 'down' | 'left' | 'right';
-
-interface TooltipProps {
-  placement: TooltipVariant;
-  dataTip: string;
-  children: ReactNode;
-  className?: string;
-  color?: string;
-  style?: CSSProperties;
-}
-
-export declare const Tooltip: FunctionComponent<TooltipProps>;
-
 export interface AccordionPanel {
   label: string;
   icon?: string;
@@ -291,6 +278,7 @@ export interface AccordionPanel {
 
 export interface AccordionProps {
   panels: Array<AccordionPanel>;
+  contentHeight: string;
 }
 
 export interface AccordionState {
@@ -375,7 +363,7 @@ export type DatePicker$OnFocusChange = (focusedInput: FocusedInputShape | null) 
 
 export interface DatePickerProps {
   startDate: Moment;
-  endDate: Moment;
+  endDate?: Moment;
   startDateId?: string;
   endDateId?: string;
   calendarInfo?: boolean;
@@ -560,6 +548,8 @@ export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
   size?: InputSize;
+  style?: CSSProperties;
+  className?: string;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
@@ -678,3 +668,56 @@ interface IColors {
 }
 
 export declare const Colors: IColors;
+
+export type Placement = 'left' | 'right' | 'top' | 'bottom';
+
+export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
+
+export type TooltipBehavior = 'hover' | 'click' | 'ref';
+
+export interface TooltipProps {
+  behavior?: TooltipBehavior,
+  durationOnClick?: number,
+  arrowWidth?: number;
+  background?: string;
+  border?: string;
+  children?: ReactNode;
+  color?: string;
+  content: ReactNode;
+  className?: string;
+  style?: string;
+  fadeDuration?: number;
+  fadeEasing?: FadeEasing;
+  fixed?: boolean;
+  fontFamily?: string;
+  fontSize?: string;
+  offset?: number;
+  padding?: number;
+  placement?: Placement;
+  radius?: number;
+  zIndex?: number;
+  ref?: React.RefObject<Tooltip>;
+}
+
+interface TooltipState {
+  isOpen: boolean;
+}
+
+export declare class Tooltip extends Component<TooltipProps, TooltipState> {
+  showTooltip: () => any;
+  hideTooltip: () => any;
+  flashTooltip: () => any;
+}
+
+type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
+
+interface StepWizardProps {
+  children: ReactNode;
+  activeStep: number,
+  className?: string;
+  style?: CSSProperties;
+  onStepChange?: (activeStep: number) => void,
+  transition?: TransitionVariant,
+}
+
+export declare const StepWizard: FunctionComponent<StepWizardProps>;
