@@ -31,7 +31,6 @@ const animation = props => css`
 const Base = styled('div')`
   position: absolute;
   width: max-content;
-  min-width: 16em;
   white-space: pre-line;
   ${props => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
   ${props => props.zIndex && `z-index: ${props.zIndex};`};
