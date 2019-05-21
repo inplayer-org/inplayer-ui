@@ -27,8 +27,9 @@ function Page(props) {
   </Button>
 </Tooltip>
 <br />
+<br />
 <Tooltip
-  content="Tooltip on the left"
+  content="Tooltip at the left"
   placement="left"
 >
   <Button>
@@ -36,8 +37,9 @@ function Page(props) {
   </Button>
 </Tooltip>
 <br />
+<br />
 <Tooltip
-  content="Tooltip on the right"
+  content="Tooltip at the right"
   placement="right"
 >
   <Button>
@@ -45,14 +47,16 @@ function Page(props) {
   </Button>
 </Tooltip>
 <br />
+<br />
 <Tooltip
-  content="Tooltip on the bottom"
+  content="Tooltip at the bottom"
   placement="bottom"
 >
   <Button>
     Hover me also!
   </Button>
 </Tooltip>
+<br />
 <br />
 <Tooltip
   content="Hello!"
