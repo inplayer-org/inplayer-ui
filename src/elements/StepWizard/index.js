@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
 import Nav from './Nav';
 import Step from './Step';
 
@@ -14,10 +13,6 @@ type Props = {
   onStepChange?: (activeStep: number) => void,
   transition?: TransitionVariant,
 };
-
-const WizardContainer = styled.div`
-  position: relative;
-`;
 
 const StepWizard = ({
   children,
@@ -61,7 +56,7 @@ const StepWizard = ({
   return (
     <div className={className} style={style}>
       <Nav activeStep={activeStep} totalSteps={children.length} goToStep={goToStep} />
-      <WizardContainer>{childrenWithProps}</WizardContainer>
+      <div>{childrenWithProps}</div>
     </div>
   );
 };
