@@ -561,6 +561,8 @@ export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
   size?: InputSize;
+  style?: CSSProperties;
+  className?: string;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
@@ -679,3 +681,16 @@ interface IColors {
 }
 
 export declare const Colors: IColors;
+
+type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
+
+interface StepWizardProps {
+  children: ReactNode;
+  activeStep: number,
+  className?: string;
+  style?: CSSProperties;
+  onStepChange?: (activeStep: number) => void,
+  transition?: TransitionVariant,
+}
+
+export declare const StepWizard: FunctionComponent<StepWizardProps>;
