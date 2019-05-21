@@ -20,7 +20,7 @@ type Props = {
   color?: string,
   content: Node,
   className?: string,
-  style?: string,
+  style?: object,
   fadeDuration?: number,
   fadeEasing?: FadeEasing,
   fixed?: boolean,
@@ -47,15 +47,8 @@ class Tooltip extends PureComponent<Props, State> {
     isOpen: false,
   };
 
-  timeoutId: number = 0;
-
   timeDelay = (msDuration: number) =>
-    new Promise(resolve => {
-      this.timeoutId = setTimeout(() => {
-        this.timeoutId = 0;
-        resolve(true);
-      }, msDuration);
-    });
+    new Promise(resolve => setTimeout(() => resolve(true), msDuration));
 
   showTooltip = () => {
     this.setState({ isOpen: true });
@@ -67,8 +60,9 @@ class Tooltip extends PureComponent<Props, State> {
 
   flashTooltip = async () => {
     const { durationOnClick } = this.props;
+    const { isOpen } = this.state;
 
-    if (this.timeoutId) {
+    if (isOpen) {
       return;
     }
 
@@ -156,13 +150,13 @@ Tooltip.defaultProps = {
   fadeEasing: 'linear',
   fixed: false,
   fontFamily: 'inherit',
-  fontSize: 'inherit',
+  fontSize: null,
   offset: 0,
   padding: 1,
   placement: 'top',
   radius: 0,
   zIndex: 1,
-  style: null,
+  style: {},
   className: null,
 };
 
