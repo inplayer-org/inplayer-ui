@@ -561,6 +561,8 @@ export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
   size?: InputSize;
+  style?: CSSProperties;
+  className?: string;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
