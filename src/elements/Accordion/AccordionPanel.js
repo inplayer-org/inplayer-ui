@@ -8,10 +8,8 @@ import { uiColors, fontWeights } from 'utils';
 // Components
 import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
-import AccordionFooter from './AccordionFooter';
 
 const AccordionPanelContainer = styled.div`
-  position: relative;
   width: 100%;
   height: 3.5rem;
   box-sizing: border-box;
@@ -19,22 +17,25 @@ const AccordionPanelContainer = styled.div`
   z-index: 10;
   background: ${colors.white};
   transition: ease 500ms height;
+  display: none;
   ${ifProp(
     'isOpen',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 120px)`};
+      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 243px)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
       overflow: auto;
+      margin-top: 4rem;
+      display: block;
     `
   )};
 `;
 
 const AccordionPanelHeader = styled.header`
   margin: 0;
-  padding: 0.75rem 3%;
+  padding: 1rem 3%;
   width: 100%;
   box-sizing: border-box;
   background: ${colors.white};
@@ -48,7 +49,7 @@ const AccordionTitle = styled(Typography)`
   font-weight: ${fontWeights('thin')};
   color: ${uiColors('text.main')};
   margin: 0;
-  cursor: pointer;
+  cursor: ${ifProp('isOpen', 'default', 'pointer')};
   display: inline;
 `;
 
@@ -57,19 +58,15 @@ const AccordionIcon = styled(Icon)`
 `;
 
 const AccordionPanelDetails = styled.div`
-  padding: 0.625rem 6% 26px;
+  padding: 2rem 6%;
 `;
 
 type Props = {
   label: string,
   activeTab: string,
   icon?: string,
-  buttonText: string,
-  footerLink: string,
   contentHeight: string,
   toggleOpen: (name: string) => boolean,
-  toggleClose: (name: string) => boolean,
-  accordionAction: () => any,
   renderContent: () => any,
 };
 
@@ -77,30 +74,21 @@ const AccordionPanel = ({
   toggleOpen,
   label,
   activeTab,
-  toggleClose,
-  accordionAction,
   icon,
-  footerLink,
-  buttonText,
   renderContent,
   contentHeight,
 }: Props) => (
-  <AccordionPanelContainer isOpen={activeTab} contentHeight={contentHeight}>
+  <>
     <AccordionPanelHeader onClick={toggleOpen}>
-      <AccordionTitle variant="h6">{label}</AccordionTitle>
+      <AccordionTitle variant="h6" isOpen={activeTab}>
+        {label}
+      </AccordionTitle>
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
-    <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
-    {activeTab && (
-      <AccordionFooter
-        isOpen={activeTab}
-        toggleClose={toggleClose}
-        accordionAction={accordionAction}
-        footerLink={footerLink}
-        buttonText={buttonText}
-      />
-    )}
-  </AccordionPanelContainer>
+    <AccordionPanelContainer isOpen={activeTab} contentHeight={contentHeight}>
+      <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
+    </AccordionPanelContainer>
+  </>
 );
 
 AccordionPanel.defaultProps = {
