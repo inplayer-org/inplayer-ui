@@ -5,6 +5,7 @@ import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import Icon from 'elements/Icon';
+import interopRequireDefault from 'node_modules/jest-util/build/interopRequireDefault';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -88,7 +89,6 @@ type Props = {
   className?: string,
 };
 
-// eslint-disable-next-line react/display-name
 const Input = React.forwardRef(
   ({ type, placeholder, onChange, size, style, className, ...rest }: Props, ref) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
@@ -124,6 +124,8 @@ const Input = React.forwardRef(
     );
   }
 );
+
+Input.displayName = 'Input';
 
 Input.defaultProps = {
   size: 'md',
