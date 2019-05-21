@@ -2,7 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors } from 'utils';
+import { uiColors, fontSizes } from 'utils';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;
@@ -10,11 +10,10 @@ const StepNavigation = styled.div`
 `;
 
 const StepAction = styled.span`
-  color: black;
   cursor: pointer;
-  font-size: 36px;
+  font-size: ${fontSizes('extraLarge')};
   line-height: 1;
-  margin: 0 15px;
+  margin: 0 1.5rem;
   opacity: 0.4;
   text-shadow: none;
   transition: opacity 1s ease, text-shadow 1s ease;
