@@ -43,7 +43,6 @@ const AccordionPanelHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   ${ifProp(
     'isOpen',
     css`
