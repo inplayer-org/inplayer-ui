@@ -7,20 +7,15 @@ exports[`StepWizardComponent renders correctly 1`] = `
 }
 
 .c1 {
-  color: black;
   cursor: pointer;
-  font-size: 36px;
+  font-size: 3.125rem;
   line-height: 1;
-  margin: 0 15px;
+  margin: 0 1.5rem;
   opacity: 0.4;
   text-shadow: none;
   -webkit-transition: opacity 1s ease,text-shadow 1s ease;
   transition: opacity 1s ease,text-shadow 1s ease;
   will-change: opacity,text-shadow;
-}
-
-.c2 {
-  position: relative;
 }
 
 <div
@@ -55,8 +50,6 @@ exports[`StepWizardComponent renders correctly 1`] = `
       •
     </span>
   </div>
-  <div
-    className="c2"
-  />
+  <div />
 </div>
 `;
