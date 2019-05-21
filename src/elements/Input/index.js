@@ -5,7 +5,6 @@ import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import Icon from 'elements/Icon';
-import interopRequireDefault from 'node_modules/jest-util/build/interopRequireDefault';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
