@@ -22,7 +22,7 @@ const AccordionFooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
   padding: 1rem 3%;
-  background: ${ifProp('isOpen', `${colors.white}`, `${colors.paleRed}`)};
+  background: ${ifProp('isOpen', `${colors.white}`, `${colors.pale}`)};
   align-items: center;
   transition-timing-function: ease, ease;
   transition-duration: 400ms, 1000ms;
