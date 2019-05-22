@@ -11,15 +11,14 @@ exports[`Accordion renders correctly 1`] = `
   overflow-y: hidden;
 }
 
-.c4 {
+.c3 {
   font-family: Roboto;
   font-weight: 100;
   color: #286090;
   font-size: 1.25rem;
 }
 
-.c1 {
-  position: relative;
+.c5 {
   width: 100%;
   height: 3.5rem;
   box-sizing: border-box;
@@ -28,11 +27,12 @@ exports[`Accordion renders correctly 1`] = `
   background: #fff;
   -webkit-transition: ease 500ms height;
   transition: ease 500ms height;
+  display: none;
 }
 
-.c2 {
+.c1 {
   margin: 0;
-  padding: 0.75rem 3%;
+  padding: 1rem 3%;
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -51,7 +51,7 @@ exports[`Accordion renders correctly 1`] = `
   align-items: center;
 }
 
-.c3 {
+.c2 {
   font-weight: 100;
   color: #44494e;
   margin: 0;
@@ -59,28 +59,111 @@ exports[`Accordion renders correctly 1`] = `
   display: inline;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   font-size: 1rem;
   color: #07AAE6;
 }
 
 .c6 {
-  padding: 0.625rem 6% 26px;
+  padding: 2rem 6%;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #fff;
+  color: #44494e;
+  font-weight: 300;
+  border: 1px solid #d7dde5;
+  border-radius: 3px;
+  font-size: 1rem;
+  outline: none;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-letter-spacing: 0.015em;
+  -moz-letter-spacing: 0.015em;
+  -ms-letter-spacing: 0.015em;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  font-size: 0.875rem;
+  padding: 0.375rem 0.5rem;
+  color: #07AAE6;
+  border-color: #07AAE6;
+  background: rgba(7,170,230,0.06);
+}
+
+.c9:hover {
+  border-color: #07AAE6;
+  color: #07AAE6;
+}
+
+.c9:hover,
+.c9:focus {
+  color: #fff;
+  background: #07AAE6;
+}
+
+.c7 {
+  position: absolute;
+  bottom: -80px;
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 3%;
+  background: #f0f3f6;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition-timing-function: ease,ease;
+  transition-timing-function: ease,ease;
+  -webkit-transition-duration: 400ms,1000ms;
+  transition-duration: 400ms,1000ms;
+  -webkit-transition-property: all,background;
+  transition-property: all,background;
+  -webkit-transition-delay: 0s,300ms;
+  transition-delay: 0s,300ms;
+  z-index: 10;
+  border-top: 1px solid #d7dde5;
+  border-bottom: 1px solid #d7dde5;
+}
+
+.c8 {
+  color: #aaadb4;
+  font-weight: 300;
+  cursor: pointer;
 }
 
 <div
   className="c0"
 >
-  <div
-    className="c1"
-  >
+  <div>
     <header
-      className="c2"
+      className="c1"
       onClick={[Function]}
     >
       <h6
-        className="c3 c4"
+        className="c2 c3"
         color=""
         style={Object {}}
       >
@@ -88,16 +171,34 @@ exports[`Accordion renders correctly 1`] = `
       </h6>
       <span
         aria-hidden={true}
-        className="fa fa- c5"
+        className="fa fa- c4"
       />
     </header>
     <div
-      className="c6"
+      className="c5"
     >
-      <div>
-        Lorem Ipsum
+      <div
+        className="c6"
+      >
+        <div>
+          Lorem Ipsum
+        </div>
       </div>
     </div>
+    <footer
+      className="c7"
+    >
+      <a
+        className="c8"
+        onClick={[Function]}
+      />
+      <button
+        className="c9"
+        onClick={[Function]}
+        size="sm"
+        style={Object {}}
+      />
+    </footer>
   </div>
 </div>
 `;

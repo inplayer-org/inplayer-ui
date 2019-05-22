@@ -17,6 +17,12 @@ exports[`Tooltip renders correctly 1`] = `
 
 .c1 {
   position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: pre-line;
+  -webkit-animation: 150ms fade-in-out 0s 1 bcCCNc;
+  animation: 150ms fade-in-out 0s 1 bcCCNc;
   z-index: 1;
   bottom: 100%;
   left: 50%;
@@ -31,8 +37,8 @@ exports[`Tooltip renders correctly 1`] = `
   background: #286090;
   border-radius: 0.3em;
   border: 1px solid;
-  padding: 1rem;
-  font-size: inherit;
+  padding: 0.7rem;
+  font-size: 0.875rem;
   font-family: inherit;
 }
 
@@ -43,7 +49,7 @@ exports[`Tooltip renders correctly 1`] = `
 
 <div
   className="c0"
-  style={null}
+  style={Object {}}
 >
   <div
     className="c1"
@@ -53,7 +59,7 @@ exports[`Tooltip renders correctly 1`] = `
       className="c2"
       color=""
       fontFamily="inherit"
-      fontSize="inherit"
+      fontSize={null}
       radius={0}
     >
       <div
