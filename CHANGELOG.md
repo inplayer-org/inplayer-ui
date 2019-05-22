@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.16.1] - 22-05-2019
+
+### Fixed
+
+- Reset content position after closing the accordion
+
 # [0.16.0] - 21-05-2019
 
 ### Added

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Components
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
+import AccordionFooter from './AccordionFooter';
 
 type Panel = {
   label: string,
@@ -44,15 +45,24 @@ class Accordion extends Component<Props, State> {
     return (
       <AccordionWrapper contentHeight={contentHeight}>
         {panels.map((panel, index) => (
-          <AccordionPanel
-            key={index}
-            activeTab={state[panel.label]}
-            index={index}
-            {...panel}
-            toggleOpen={this.toggleOpen(panel.label)}
-            toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
-            contentHeight={contentHeight}
-          />
+          <div key={index}>
+            <AccordionPanel
+              key={index}
+              activeTab={state[panel.label]}
+              index={index}
+              {...panel}
+              toggleOpen={this.toggleOpen(panel.label)}
+              toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
+              contentHeight={contentHeight}
+            />
+            <AccordionFooter
+              isOpen={state[panel.label]}
+              toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
+              accordionAction={panel.accordionAction}
+              footerLink={panel.footerLink}
+              buttonText={panel.buttonText}
+            />
+          </div>
         ))}
       </AccordionWrapper>
     );

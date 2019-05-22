@@ -45,7 +45,15 @@ const panels = [
     label: 'Accordion1',
     icon: 'info-circle',
     renderContent: () => {
-      return <h1>Content for the accordion1</h1>;
+      return(
+      <div>
+      <h1>Long Content for the accordion1</h1>
+      <h1>Long Content for the accordion1</h1>
+      <h1>Long Content for the accordion1</h1>
+      <h1>Long Content for the accordion1</h1>
+      <h1>Long Content for the accordion1</h1>
+      <h1>Long Content for the accordion1</h1>
+      </div>);
     },
     footerLink: 'Close without saving',
     buttonText: 'Save',
