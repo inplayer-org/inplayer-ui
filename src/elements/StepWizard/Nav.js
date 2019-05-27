@@ -1,8 +1,9 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { uiColors, fontSizes } from 'utils';
+import colors from 'config/colors';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;
@@ -26,26 +27,42 @@ const StepAction = styled.span`
       text-shadow: 0 0px 8px;
     `
   )};
+  ${ifProp(
+    'isDisabled',
+    css`
+      pointer-events: none;
+    `
+  )};
+  ${ifProp(
+    'isCompleted',
+    css`
+      color: ${colors.green};
+      opacity: 1;
+      text-shadow: 0 0px 8px;
+    `
+  )};
 `;
 
 type Props = {
-  totalSteps: number,
+  stepActions: Array<Node>,
   activeStep: number,
   goToStep: (activeStep: number) => void,
 };
 
-const Nav = ({ totalSteps, activeStep, goToStep }: Props) => {
-  const dots = [];
-  for (let i = 1; i <= totalSteps; i += 1) {
-    const isActive = activeStep === i;
-    dots.push(
-      <StepAction isActive={isActive} key={`step-${i}`} onClick={() => goToStep(i)}>
+const Nav = ({ stepActions, goToStep, activeStep }: Props) => (
+  <StepNavigation>
+    {stepActions.map(({ props: { isDisabled, isCompleted } }, i) => (
+      <StepAction
+        key={`step-${i}`}
+        isActive={i === activeStep}
+        isDisabled={isDisabled}
+        isCompleted={isCompleted}
+        onClick={() => goToStep(i)}
+      >
         &bull;
       </StepAction>
-    );
-  }
-
-  return <StepNavigation>{dots}</StepNavigation>;
-};
+    ))}
+  </StepNavigation>
+);
 
 export default Nav;
