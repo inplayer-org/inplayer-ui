@@ -42,7 +42,7 @@ class StepWizardExample extends React.Component {
     super();
 
     this.state = {
-      activeStep: 1,
+      activeStep: 0,
     };
 
     this.onStepChange = this.onStepChange.bind(this);
@@ -57,10 +57,10 @@ class StepWizardExample extends React.Component {
 
     return (
       <StepWizard activeStep={activeStep} onStepChange={onStepChange}>
-        <StepOne />
-        <StepTwo />
-        <StepThree />
-        <StepFour />
+        <StepOne isDisabled={false} isCompleted={true} />
+        <StepTwo isDisabled={false} />
+        <StepThree isDisabled={true} />
+        <StepFour isDisabled={true} />
       </StepWizard>
     );
   }
@@ -106,7 +106,7 @@ class StepWizardExample extends React.Component {
     super();
 
     this.state = {
-      activeStep: 1,
+      activeStep: 0,
     };
 
     this.onStepChange = this.onStepChange.bind(this);
@@ -122,10 +122,10 @@ class StepWizardExample extends React.Component {
     return (
       <React.Fragment>
         <StepWizard activeStep={activeStep} onStepChange={this.onStepChange}>
-           <StepOne />
-           <StepTwo />
-           <StepThree />
-           <StepFour />
+          <StepOne isDisabled={false} isCompleted={true} />
+          <StepTwo isDisabled={false} />
+          <StepThree isDisabled={true} />
+          <StepFour isDisabled={true} />
         </StepWizard>
       </React.Fragment>
     );
