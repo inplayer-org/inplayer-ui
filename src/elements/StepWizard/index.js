@@ -38,9 +38,8 @@ const StepWizard = ({
   /** Go to step index */
   const goToStep = step => setActiveStep(step);
 
-  const childrenWithProps = React.Children.map(children, (child, i) => {
-    // child has 0 starting index
-    const isStepActive = i + 1 === activeStep;
+  const renderChildren = React.Children.map(children, (child, i) => {
+    const isStepActive = i === activeStep;
 
     if (isStepActive) {
       return (
@@ -55,8 +54,8 @@ const StepWizard = ({
 
   return (
     <div className={className} style={style}>
-      <Nav activeStep={activeStep} totalSteps={children.length} goToStep={goToStep} />
-      <div>{childrenWithProps}</div>
+      <Nav stepActions={children} activeStep={activeStep} goToStep={goToStep} />
+      <div>{renderChildren}</div>
     </div>
   );
 };
