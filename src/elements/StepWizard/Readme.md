@@ -100,6 +100,13 @@ function StepFour() {
   );
 };
 
+const steps = [
+  { isDisabled: false, isCompleted: true, component: <StepOne/> },
+  { isDisabled: false, isCompleted: false, component: <StepTwo/> },
+  { isDisabled: true, isCompleted: false, component: <StepThree/> },
+  { isDisabled: true, isCompleted: false, component: <StepFour/> },
+];
+
 
 class StepWizardExample extends React.Component {
   constructor() {
@@ -120,14 +127,7 @@ class StepWizardExample extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <React.Fragment>
-        <StepWizard activeStep={activeStep} onStepChange={this.onStepChange}>
-          <StepOne isDisabled={false} isCompleted={true} />
-          <StepTwo isDisabled={false} />
-          <StepThree isDisabled={true} />
-          <StepFour isDisabled={true} />
-        </StepWizard>
-      </React.Fragment>
+       <StepWizard activeStep={activeStep} onStepChange={this.onStepChange} steps={steps} />
     );
   }
 }
