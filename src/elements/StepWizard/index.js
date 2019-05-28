@@ -37,7 +37,7 @@ const StepWizard = ({ steps, className, style, activeStep, onStepChange, transit
 
     if (isStepActive) {
       return (
-        <Step isActive={isStepActive} transition={transition}>
+        <Step key={`step-${i}`} isActive={isStepActive} transition={transition}>
           {step.component}
         </Step>
       );
