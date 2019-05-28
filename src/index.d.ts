@@ -711,13 +711,19 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
+interface Step {
+  isDisabled: boolean;
+  isCompleted: boolean;
+  component: ReactNode;
+}
+
 interface StepWizardProps {
-  children: ReactNode;
-  activeStep: number,
+  steps: Array<Step>;
+  activeStep: number;
   className?: string;
   style?: CSSProperties;
-  onStepChange?: (activeStep: number) => void,
-  transition?: TransitionVariant,
+  onStepChange?: (activeStep: number) => void;
+  transition?: TransitionVariant;
 }
 
 export declare const StepWizard: FunctionComponent<StepWizardProps>;
