@@ -2,11 +2,12 @@
 import React from 'react';
 import Nav from './Nav';
 import Step from './Step';
+import type { StepItem } from './Nav';
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
 type Props = {
-  children: React.ReactNode,
+  steps: Array<StepItem>,
   activeStep: number,
   className?: string,
   style?: Object,
@@ -14,15 +15,8 @@ type Props = {
   transition?: TransitionVariant,
 };
 
-const StepWizard = ({
-  children,
-  className,
-  style,
-  activeStep,
-  onStepChange,
-  transition,
-}: Props) => {
-  const isInvalidStep = currentStep => currentStep < 0 || currentStep > children.length;
+const StepWizard = ({ steps, className, style, activeStep, onStepChange, transition }: Props) => {
+  const isInvalidStep = currentStep => currentStep < 0 || currentStep > steps.length;
 
   const setActiveStep = currentStep => {
     if (activeStep === currentStep) return;
@@ -38,13 +32,13 @@ const StepWizard = ({
   /** Go to step index */
   const goToStep = step => setActiveStep(step);
 
-  const renderChildren = React.Children.map(children, (child, i) => {
+  const renderSteps = steps.map((step, i) => {
     const isStepActive = i === activeStep;
 
     if (isStepActive) {
       return (
         <Step isActive={isStepActive} transition={transition}>
-          {child}
+          {step.component}
         </Step>
       );
     }
@@ -54,8 +48,8 @@ const StepWizard = ({
 
   return (
     <div className={className} style={style}>
-      <Nav stepActions={children} activeStep={activeStep} goToStep={goToStep} />
-      <div>{renderChildren}</div>
+      <Nav steps={steps} activeStep={activeStep} goToStep={goToStep} />
+      <div>{renderSteps}</div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 // @flow
-import React, { type Node } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { uiColors, fontSizes } from 'utils';
@@ -43,15 +43,21 @@ const StepAction = styled.span`
   )};
 `;
 
+export type StepItem = {
+  isDisabled: boolean,
+  isCompleted: boolean,
+  component: React.ReactNode,
+};
+
 type Props = {
-  stepActions: Array<Node>,
+  steps: Array<StepItem>,
   activeStep: number,
   goToStep: (activeStep: number) => void,
 };
 
-const Nav = ({ stepActions, goToStep, activeStep }: Props) => (
+const Nav = ({ steps, goToStep, activeStep }: Props) => (
   <StepNavigation>
-    {stepActions.map(({ props: { isDisabled, isCompleted } }, i) => (
+    {steps.map(({ isDisabled, isCompleted }, i) => (
       <StepAction
         key={`step-${i}`}
         isActive={i === activeStep}
