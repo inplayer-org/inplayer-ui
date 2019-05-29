@@ -36,13 +36,19 @@ function StepFour() {
   );
 };
 
+const steps = [
+  { isDisabled: false, isCompleted: true, component: <StepOne/> },
+  { isDisabled: false, isCompleted: false, component: <StepTwo/> },
+  { isDisabled: true, isCompleted: false, component: <StepThree/> },
+  { isDisabled: true, isCompleted: false, component: <StepFour/> },
+];
 
 class StepWizardExample extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      activeStep: 1,
+      activeStep: 0,
     };
 
     this.onStepChange = this.onStepChange.bind(this);
@@ -56,12 +62,7 @@ class StepWizardExample extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <StepWizard activeStep={activeStep} onStepChange={onStepChange}>
-        <StepOne />
-        <StepTwo />
-        <StepThree />
-        <StepFour />
-      </StepWizard>
+      <StepWizard activeStep={activeStep} onStepChange={onStepChange} steps={steps} />
     );
   }
 }
@@ -100,13 +101,20 @@ function StepFour() {
   );
 };
 
+const steps = [
+  { isDisabled: false, isCompleted: true, component: <StepOne/> },
+  { isDisabled: false, isCompleted: false, component: <StepTwo/> },
+  { isDisabled: true, isCompleted: false, component: <StepThree/> },
+  { isDisabled: true, isCompleted: false, component: <StepFour/> },
+];
+
 
 class StepWizardExample extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      activeStep: 1,
+      activeStep: 0,
     };
 
     this.onStepChange = this.onStepChange.bind(this);
@@ -120,14 +128,7 @@ class StepWizardExample extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <React.Fragment>
-        <StepWizard activeStep={activeStep} onStepChange={this.onStepChange}>
-           <StepOne />
-           <StepTwo />
-           <StepThree />
-           <StepFour />
-        </StepWizard>
-      </React.Fragment>
+       <StepWizard activeStep={activeStep} onStepChange={this.onStepChange} steps={steps} />
     );
   }
 }

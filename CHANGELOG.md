@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.17.0] - 27-05-2019
+
+### Added
+
+- Add isDisabled, isCompleted props to StepWizard Steps
+
 # [0.16.1] - 22-05-2019
 
 ### Fixed
