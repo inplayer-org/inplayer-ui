@@ -9347,9 +9347,9 @@ react-codemirror2@^5.1.0:
   integrity sha512-Cksbgbviuf2mJfMyrKmcu7ycK6zX/ukuQO8dvRZdFWqATf5joalhjFc6etnBdGCcPA2LbhIwz+OPnQxLN/j1Fw==
 
 react-dates@^20.1.0:
-  version "20.2.0"
-  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-20.2.0.tgz#0ecd6d19bd94b49382604bebbc85d2c916d0d929"
-  integrity sha512-ufpczVs48f5DP4KDKvU+YuDdeBB3RnFuZriCcHX9m5KLimee+W7Cqad8t0m3o/i1CwOYwuHCEAdZBrqgeSYWZw==
+  version "20.2.1"
+  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-20.2.1.tgz#5bdd736f326c8325bf32444c3abb17f175bae5b4"
+  integrity sha512-NWbolPrIeP5RJR/kjrJyRHX3vyzETg7JXmwLh9EueP7z0p9zYR83NROQSHy3PmqkhbQl2EsuJp5vx3cCLs1icg==
   dependencies:
     airbnb-prop-types "^2.10.0"
     consolidated-events "^1.1.1 || ^2.0.0"
