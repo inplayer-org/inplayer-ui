@@ -8,7 +8,7 @@ import { ifProp } from 'styled-tools';
 type Props = {
   isOpen: boolean,
   closePanel: () => void,
-  actionButton: Node,
+  actionButton: () => Node,
 };
 
 const AccordionFooterContainer = styled.footer`
