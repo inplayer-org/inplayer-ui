@@ -18,6 +18,19 @@ exports[`StepWizardComponent renders correctly 1`] = `
   will-change: opacity,text-shadow;
 }
 
+.c2 {
+  cursor: pointer;
+  font-size: 3.125rem;
+  line-height: 1;
+  margin: 0 1.5rem;
+  opacity: 0.4;
+  text-shadow: none;
+  -webkit-transition: opacity 1s ease,text-shadow 1s ease;
+  transition: opacity 1s ease,text-shadow 1s ease;
+  will-change: opacity,text-shadow;
+  pointer-events: none;
+}
+
 <div
   className={null}
   style={Object {}}
@@ -32,19 +45,13 @@ exports[`StepWizardComponent renders correctly 1`] = `
       •
     </span>
     <span
-      className="c1"
+      className="c2"
       onClick={[Function]}
     >
       •
     </span>
     <span
-      className="c1"
-      onClick={[Function]}
-    >
-      •
-    </span>
-    <span
-      className="c1"
+      className="c2"
       onClick={[Function]}
     >
       •
