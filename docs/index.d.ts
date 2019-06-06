@@ -271,9 +271,7 @@ export interface AccordionPanel {
   label: string;
   icon?: string;
   renderContent: () => ReactNode;
-  footerLink: string;
-  buttonText: string;
-  accordionAction: () => any;
+  actionButton: () => ReactNode;
 }
 
 export interface AccordionProps {
