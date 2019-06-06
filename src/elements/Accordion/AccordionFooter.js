@@ -1,17 +1,14 @@
 // @flow
-import React from 'react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
 import colors from 'config/colors';
 import { uiColors, fontWeights } from 'utils';
 import { ifProp } from 'styled-tools';
 
-import Button from 'elements/Button';
-
 type Props = {
-  footerLink: string,
-  buttonText: string,
   isOpen: boolean,
-  toggleClose: () => boolean,
+  closePanel: () => void,
+  actionButton: () => Node,
 };
 
 const AccordionFooterContainer = styled.footer`
@@ -39,12 +36,10 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ footerLink, buttonText, toggleClose, isOpen }: Props) => (
+const AccordionFooter = ({ closePanel, isOpen, actionButton }: Props) => (
   <AccordionFooterContainer isOpen={isOpen}>
-    <AccordionFooterLink onClick={toggleClose(false)}>{footerLink}</AccordionFooterLink>
-    <Button size="sm" buttonModifiers={['buttonPrimary']} onClick={toggleClose(true)}>
-      {buttonText}
-    </Button>
+    <AccordionFooterLink onClick={closePanel}>Close</AccordionFooterLink>
+    {actionButton()}
   </AccordionFooterContainer>
 );
 

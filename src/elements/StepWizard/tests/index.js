@@ -21,19 +21,24 @@ const StepThree = () => (
   </div>
 );
 
-const StepFour = () => (
-  <div>
-    <h1 variant="h2">Step Four!</h1>
-  </div>
-);
+const steps = [
+  {
+    isDisabled: false,
+    isCompleted: false,
+    component: <StepOne />,
+  },
+  {
+    isDisabled: true,
+    isCompleted: false,
+    component: <StepTwo />,
+  },
+  {
+    isDisabled: true,
+    isCompleted: false,
+    component: <StepThree />,
+  },
+];
 
-const StepWizardComponent = () => (
-  <StepWizard>
-    <StepOne />
-    <StepTwo />
-    <StepThree />
-    <StepFour />
-  </StepWizard>
-);
+const StepWizardComponent = () => <StepWizard steps={steps} />;
 
 generateSnapshots(StepWizardComponent);
