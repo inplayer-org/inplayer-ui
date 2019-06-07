@@ -73,12 +73,12 @@ type Props = {
   activeTab: string,
   icon?: string,
   contentHeight: string,
-  toggleOpen: (name: string) => boolean,
+  openPanel: (name: string) => boolean,
   renderContent: () => any,
 };
 
 const AccordionPanel = ({
-  toggleOpen,
+  openPanel,
   label,
   activeTab,
   icon,
@@ -86,7 +86,7 @@ const AccordionPanel = ({
   contentHeight,
 }: Props) => (
   <>
-    <AccordionPanelHeader onClick={toggleOpen} isOpen={activeTab}>
+    <AccordionPanelHeader onClick={openPanel} isOpen={activeTab}>
       <AccordionTitle variant="h6" isOpen={activeTab}>
         {label}
       </AccordionTitle>

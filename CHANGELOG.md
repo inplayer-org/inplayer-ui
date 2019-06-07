@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.18.0] - 06-06-2019
+
+### Change
+
+- Accordion action button render
+
 # [0.17.0] - 27-05-2019
 
 ### Added

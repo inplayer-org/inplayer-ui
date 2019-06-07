@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 
 // Components
 import { AccordionWrapper } from './styled';
@@ -10,9 +10,7 @@ type Panel = {
   label: string,
   icon?: string,
   renderContent: () => any,
-  footerLink: string,
-  buttonText: string,
-  accordionAction: () => any,
+  actionButton: () => Node,
 };
 
 type Props = {
@@ -24,16 +22,13 @@ type State = { [string]: boolean };
 class Accordion extends Component<Props, State> {
   state = {};
 
-  toggleOpen = (name: string) => (e: SyntheticEvent<*>) => {
+  openPanel = (name: string) => (e: SyntheticEvent<*>) => {
     e.preventDefault();
     this.setState({ [name]: true });
   };
 
-  toggleClose = (name: string, accordionAction: () => any) => (saveOnClose: boolean) => (
-    e: SyntheticEvent<*>
-  ) => {
+  closePanel = (name: string) => (e: SyntheticEvent<*>) => {
     e.preventDefault();
-    if (saveOnClose) accordionAction();
     this.setState({ [name]: false });
   };
 
@@ -51,16 +46,14 @@ class Accordion extends Component<Props, State> {
               activeTab={state[panel.label]}
               index={index}
               {...panel}
-              toggleOpen={this.toggleOpen(panel.label)}
-              toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
+              openPanel={this.openPanel(panel.label)}
+              closePanel={this.closePanel(panel.label)}
               contentHeight={contentHeight}
             />
             <AccordionFooter
               isOpen={state[panel.label]}
-              toggleClose={this.toggleClose(panel.label, panel.accordionAction)}
-              accordionAction={panel.accordionAction}
-              footerLink={panel.footerLink}
-              buttonText={panel.buttonText}
+              closePanel={this.closePanel(panel.label)}
+              actionButton={panel.actionButton}
             />
           </div>
         ))}
