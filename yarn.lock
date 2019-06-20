@@ -3739,6 +3739,14 @@ enzyme-adapter-utils@^1.12.0:
     prop-types "^15.7.2"
     semver "^5.6.0"
 
+enzyme-shallow-equal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/enzyme-shallow-equal/-/enzyme-shallow-equal-1.0.0.tgz#d8e4603495e6ea279038eef05a4bf4887b55dc69"
+  integrity sha512-VUf+q5o1EIv2ZaloNQQtWCJM9gpeux6vudGVH6vLmfPXFLRuxl5+Aq3U260wof9nn0b0i+P5OEUXm1vnxkRpXQ==
+  dependencies:
+    has "^1.0.3"
+    object-is "^1.0.1"
+
 enzyme@^3.9.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.10.0.tgz#7218e347c4a7746e133f8e964aada4a3523452f6"
@@ -9211,18 +9219,19 @@ react-codemirror2@^5.1.0:
   integrity sha512-Cksbgbviuf2mJfMyrKmcu7ycK6zX/ukuQO8dvRZdFWqATf5joalhjFc6etnBdGCcPA2LbhIwz+OPnQxLN/j1Fw==
 
 react-dates@^20.1.0:
-  version "20.2.3"
-  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-20.2.3.tgz#f9b35a78619a6bf236837626572fc733fab6a4c7"
-  integrity sha512-Q4vi0W/q6FKqfDBRhmG6DrZcxa8rkIXWbUb1ttQrN2bo1fuBZ5d+La66XSYOAuO30+rr75UksGKOzFgpM/WDww==
+  version "20.2.4"
+  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-20.2.4.tgz#60584182fdde247da7177dcfcdcb6743e4d14c67"
+  integrity sha512-nwg8i+aRXZ9e6l0+q1LgLT0qZP23HJ+jPHPaMIa2Ey3Vu1UsTlmSg/QwpJTmGcoIJrCUQMJsbH992eaB/yFRwA==
   dependencies:
+    "@babel/runtime" "^7.4.5"
     airbnb-prop-types "^2.10.0"
     consolidated-events "^1.1.1 || ^2.0.0"
+    enzyme-shallow-equal "^1.0.0"
     is-touch-device "^1.0.1"
     lodash "^4.1.1"
     object.assign "^4.1.0"
     object.values "^1.0.4"
     prop-types "^15.6.1"
-    react-addons-shallow-compare "^15.6.2"
     react-moment-proptypes "^1.6.0"
     react-outside-click-handler "^1.2.0"
     react-portal "^4.1.5"
