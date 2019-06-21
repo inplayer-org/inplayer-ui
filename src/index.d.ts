@@ -270,7 +270,7 @@ export declare const Tabs: FunctionComponent<TabsProps>;
 export interface AccordionPanel {
   label: string;
   icon?: string;
-  renderContent: () => ReactNode;
+  renderContent: (isActive?: boolean) => ReactNode;
   actionButton: () => ReactNode;
 }
 
@@ -280,7 +280,7 @@ export interface AccordionProps {
 }
 
 export interface AccordionState {
-  [s: string]: boolean;
+  activePanel: number;
 }
 
 export declare class Accordion extends Component<AccordionProps, AccordionState> {

@@ -70,30 +70,30 @@ const AccordionPanelDetails = styled.div`
 
 type Props = {
   label: string,
-  activeTab: string,
+  isActive: boolean,
   icon?: string,
   contentHeight: string,
   openPanel: (name: string) => boolean,
-  renderContent: () => any,
+  renderContent: (isActive?: boolean) => any,
 };
 
 const AccordionPanel = ({
   openPanel,
   label,
-  activeTab,
+  isActive,
   icon,
   renderContent,
   contentHeight,
 }: Props) => (
   <>
-    <AccordionPanelHeader onClick={openPanel} isOpen={activeTab}>
-      <AccordionTitle variant="h6" isOpen={activeTab}>
+    <AccordionPanelHeader onClick={openPanel} isOpen={isActive}>
+      <AccordionTitle variant="h6" isOpen={isActive}>
         {label}
       </AccordionTitle>
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
-    <AccordionPanelContainer isOpen={activeTab} contentHeight={contentHeight}>
-      <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
+    <AccordionPanelContainer isOpen={isActive} contentHeight={contentHeight}>
+      <AccordionPanelDetails>{renderContent(isActive)}</AccordionPanelDetails>
     </AccordionPanelContainer>
   </>
 );
