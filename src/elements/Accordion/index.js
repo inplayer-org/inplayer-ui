@@ -63,7 +63,7 @@ class Accordion extends Component<Props, State> {
               />
               <AccordionFooter
                 isOpen={activePanel === index}
-                closePanel={this.closePanel(index)}
+                closePanel={this.closePanel}
                 actionButton={actionButton}
               />
             </div>
