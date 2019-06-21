@@ -33,7 +33,7 @@ class Accordion extends Component<Props, State> {
     this.setState({ activePanel: panelIndex });
   };
 
-  closePanel = () => (e: SyntheticEvent<*>) => {
+  closePanel = (e: SyntheticEvent<*>) => {
     e.preventDefault();
     this.setState({ activePanel: -1 });
   };
@@ -58,7 +58,7 @@ class Accordion extends Component<Props, State> {
                 label={label}
                 renderContent={renderContent}
                 openPanel={this.openPanel(index)}
-                closePanel={this.closePanel()}
+                closePanel={this.closePanel}
                 contentHeight={contentHeight}
               />
               <AccordionFooter
