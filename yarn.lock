@@ -9188,9 +9188,9 @@ raw-body@2.3.3:
     unpipe "1.0.0"
 
 rc-progress@^2.3.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/rc-progress/-/rc-progress-2.4.0.tgz#640d508aafbe5b155e0441b5197a3df075ffd673"
-  integrity sha512-6Zj63viWlura47ITFQYodReA7LSp8FHVlweXjeXzbDyfZGpq7JZyw/y9HSzduQr1wuVEX7WoMFFJMfTn8kSpeA==
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/rc-progress/-/rc-progress-2.4.1.tgz#dab669e51c0bf7470eca069e03c1fcaae555846f"
+  integrity sha512-J66eNptJOhzKR+5ClG/VF+83cMsKtuxKEegWXfJ367teGAn/m6QFFCXy9zP+EfZ5CfJLm2jYfr7+zW53JpCw5w==
   dependencies:
     babel-runtime "6.x"
     prop-types "^15.5.8"
