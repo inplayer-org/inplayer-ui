@@ -12,7 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- AccordionPanel renderContent function prop can now receive an optional boolean isActive
+- AccordionPanel renderContent is only called for the currently active tab and its
+  content is unmounted upon closing the tab
 - Change Accordion's state interface: a single state prop activePanel: number is now used
 - AccordionPanel's activeTab prop renamed to isActive
 

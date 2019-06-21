@@ -74,7 +74,7 @@ type Props = {
   icon?: string,
   contentHeight: string,
   openPanel: (name: string) => boolean,
-  renderContent: (isActive?: boolean) => any,
+  renderContent: () => any,
 };
 
 const AccordionPanel = ({
@@ -93,7 +93,7 @@ const AccordionPanel = ({
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
     <AccordionPanelContainer isOpen={isActive} contentHeight={contentHeight}>
-      <AccordionPanelDetails>{renderContent(isActive)}</AccordionPanelDetails>
+      <AccordionPanelDetails>{isActive && renderContent()}</AccordionPanelDetails>
     </AccordionPanelContainer>
   </>
 );

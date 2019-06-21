@@ -9,7 +9,7 @@ import AccordionFooter from './AccordionFooter';
 type Panel = {
   label: string,
   icon?: string,
-  renderContent: (isActive?: boolean) => any,
+  renderContent: () => any,
   actionButton: () => Node,
 };
 
