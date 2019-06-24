@@ -17,6 +17,7 @@ type Props = {
   panels: Array<Panel>,
   contentHeight: string,
 };
+
 type State = { activePanel: number };
 
 class Accordion extends Component<Props, State> {
@@ -26,11 +27,9 @@ class Accordion extends Component<Props, State> {
     e.preventDefault();
     const { activePanel } = this.state;
 
-    if (panelIndex === activePanel) {
-      return;
+    if (panelIndex !== activePanel) {
+      this.setState({ activePanel: panelIndex });
     }
-
-    this.setState({ activePanel: panelIndex });
   };
 
   closePanel = (e: SyntheticEvent<*>) => {
@@ -62,7 +61,7 @@ class Accordion extends Component<Props, State> {
                 contentHeight={contentHeight}
               />
               <AccordionFooter
-                isOpen={activePanel === index}
+                isActive={activePanel === index}
                 closePanel={this.closePanel}
                 actionButton={actionButton}
               />
