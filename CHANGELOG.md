@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.19.0] - 21-06-2019
+
+### Fixes
+
+- AccordionPanel prop activeTab type declaration corrected from string to boolean
+
+### Change
+
+- AccordionPanel renderContent is only called for the currently active tab and its
+  content is unmounted upon closing the tab
+- Change Accordion's state interface: a single state prop activePanel: number is now used
+- AccordionPanel's activeTab prop renamed to isActive
+
 # [0.18.0] - 06-06-2019
 
 ### Change
@@ -18,7 +31,7 @@ All notable changes to this project will be documented in this file.
 
 # [0.16.1] - 22-05-2019
 
-### Fixed
+### Fixes
 
 - Reset content position after closing the accordion
 

@@ -19,7 +19,7 @@ const AccordionPanelContainer = styled.div`
   transition: ease 500ms height;
   display: none;
   ${ifProp(
-    'isOpen',
+    'isActive',
     css`
       position: absolute;
       ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 15.5rem)`};
@@ -44,7 +44,7 @@ const AccordionPanelHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   ${ifProp(
-    'isOpen',
+    'isActive',
     css`
       position: absolute;
       top: 0;
@@ -56,7 +56,7 @@ const AccordionTitle = styled(Typography)`
   font-weight: ${fontWeights('thin')};
   color: ${uiColors('text.main')};
   margin: 0;
-  cursor: ${ifProp('isOpen', 'default', 'pointer')};
+  cursor: ${ifProp('isActive', 'default', 'pointer')};
   display: inline;
 `;
 
@@ -70,7 +70,7 @@ const AccordionPanelDetails = styled.div`
 
 type Props = {
   label: string,
-  activeTab: string,
+  isActive: boolean,
   icon?: string,
   contentHeight: string,
   openPanel: (name: string) => boolean,
@@ -80,20 +80,20 @@ type Props = {
 const AccordionPanel = ({
   openPanel,
   label,
-  activeTab,
+  isActive,
   icon,
   renderContent,
   contentHeight,
 }: Props) => (
   <>
-    <AccordionPanelHeader onClick={openPanel} isOpen={activeTab}>
-      <AccordionTitle variant="h6" isOpen={activeTab}>
+    <AccordionPanelHeader onClick={openPanel} isActive={isActive}>
+      <AccordionTitle variant="h6" isActive={isActive}>
         {label}
       </AccordionTitle>
       <AccordionIcon name={icon} />
     </AccordionPanelHeader>
-    <AccordionPanelContainer isOpen={activeTab} contentHeight={contentHeight}>
-      <AccordionPanelDetails>{renderContent()}</AccordionPanelDetails>
+    <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
+      <AccordionPanelDetails>{isActive && renderContent()}</AccordionPanelDetails>
     </AccordionPanelContainer>
   </>
 );
