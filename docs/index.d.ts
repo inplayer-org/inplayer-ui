@@ -280,7 +280,7 @@ export interface AccordionProps {
 }
 
 export interface AccordionState {
-  [s: string]: boolean;
+  activePanel: number;
 }
 
 export declare class Accordion extends Component<AccordionProps, AccordionState> {
