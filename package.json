@@ -154,7 +154,7 @@
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-paginate": "^6.3.0",
-    "react-styleguidist": "^8.0.6",
+    "react-styleguidist": "^9.1.10",
     "react-test-renderer": "^16.8.6",
     "react-toggle": "^4.0.2",
     "rimraf": "^2.6.3",
