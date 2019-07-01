@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Dropdown padding updated
+- Adjust Dropdown to match Input height
 
 # [0.19.0] - 21-06-2019
 
