@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.19.1] - 01-07-2019
+
+### Change
+
+- Adjust Dropdown to match Input height
+
 # [0.19.0] - 21-06-2019
 
 ### Fixes

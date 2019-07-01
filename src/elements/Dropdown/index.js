@@ -16,7 +16,7 @@ const DropdownContainer = styled.select`
   font-size: ${fontSizes('small')};
   font-weight: ${fontWeights('light')};
   outline: none;
-  padding: 0.375rem 0.75rem;
+  padding: 0.5625rem 0.75rem;
   transition: all 0.3s ease;
 
   &:hover {
