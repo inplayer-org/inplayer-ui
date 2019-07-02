@@ -8,16 +8,29 @@ import * as fontSizeModifiers from 'modifiers';
 import colors from 'config/colors';
 
 const DropdownContainer = styled.select`
-  border: 1px solid ${colors.gray};
-  background-color: ${colors.white};
-  border-radius: 2px;
+  border: thin solid ${colors.gray};
+  border-radius: 4px;
   color: ${uiColors('text.light')};
   cursor: pointer;
   font-size: ${fontSizes('small')};
   font-weight: ${fontWeights('light')};
   outline: none;
-  padding: 0.375rem 0.75rem;
   transition: all 0.3s ease;
+  padding: 0.5rem 3.5rem 0.5rem 1rem;
+  line-height: 1.5em;
+  background-color: ${colors.white};
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 1.5rem;
+  /* stylelint-disable value-list-comma-newline-after */
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 1.25rem) calc(1rem + 0.125rem),
+    calc(100% - 0.9375rem) calc(1rem + 0.125rem), calc(100% - 2.5rem) 0.5rem;
+
+  /* reset browser default styling  */
+  margin: 0;
+  box-sizing: border-box;
+  appearance: none;
 
   &:hover {
     color: ${ifProp('color', prop('color'), uiColors('primary.main'))};
