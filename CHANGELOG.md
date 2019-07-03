@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
+- Use svg background image for Dropdown arrow
+
+# [0.19.2] - 02-07-2019
+
+### Fixes
+
 - Style Dropdown consistently across browsers
 
 # [0.19.1] - 01-07-2019
