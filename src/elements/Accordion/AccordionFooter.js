@@ -25,7 +25,7 @@ const AccordionFooterContainer = styled.footer`
   transition-duration: 400ms, 1000ms;
   transition-property: all, background;
   transition-delay: 0s, 300ms;
-  z-index: ${ifProp('isActive', '40', '10')};
+  z-index: ${ifProp('isActive', '25', '10')};
   border-top: 1px solid ${colors.gray};
   border-bottom: 1px solid ${colors.gray};
 `;
