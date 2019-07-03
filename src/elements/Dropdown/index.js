@@ -9,23 +9,20 @@ import colors from 'config/colors';
 
 const DropdownContainer = styled.select`
   border: thin solid ${colors.gray};
-  border-radius: 4px;
+  border-radius: 0.188em;
   color: ${uiColors('text.light')};
   cursor: pointer;
   font-size: ${fontSizes('small')};
   font-weight: ${fontWeights('light')};
   outline: none;
   transition: all 0.3s ease;
-  padding: 0.5rem 3.5rem 0.5rem 1rem;
+  padding: 0.6em 1.8em 0.5em 0.8em;
   line-height: 1.5em;
   background-color: ${colors.white};
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='grey'/></g></svg>");
   background-repeat: no-repeat;
-  background-size: 5px 5px, 5px 5px, 1px 1.5rem;
-  /* stylelint-disable value-list-comma-newline-after */
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 1.25rem) calc(1rem + 0.125rem),
-    calc(100% - 0.9375rem) calc(1rem + 0.125rem), calc(100% - 2.5rem) 0.5rem;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 
   /* reset browser default styling  */
   margin: 0;
