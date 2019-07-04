@@ -19,7 +19,7 @@ const StyledInput = styled.input`
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
   padding: 0.375em 0.75em;
-  border: thin solid ${colors.gray};
+  border: 1px solid ${colors.gray};
   border-radius: 0.188em;
   font-size: ${fontSizes('medium')};
   line-height: 1;

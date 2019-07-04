@@ -8,7 +8,7 @@ import * as fontSizeModifiers from 'modifiers';
 import colors from 'config/colors';
 
 const DropdownContainer = styled.select`
-  border: thin solid ${colors.gray};
+  border: 1px solid ${colors.gray};
   border-radius: 0.188em;
   color: ${uiColors('text.light')};
   cursor: pointer;
@@ -23,8 +23,6 @@ const DropdownContainer = styled.select`
   background-repeat: no-repeat;
   background-position: right 0.7em top 50%, 0 0;
   background-size: 0.65em auto, 100%;
-
-  /* reset browser default styling  */
   margin: 0;
   box-sizing: border-box;
   appearance: none;
