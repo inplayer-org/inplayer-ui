@@ -12,9 +12,9 @@ exports[`Input renders correctly 1`] = `
   transition: all ease 300ms;
   background: #fff;
   font-weight: 300;
-  border: 1px solid #d7dde5;
-  padding: 0.375rem 0.75rem;
-  border-radius: 3px;
+  padding: 0.375em 0.75em;
+  border: thin solid #d7dde5;
+  border-radius: 0.188em;
   font-size: 1rem;
   line-height: 1;
   font-size: 1rem;
