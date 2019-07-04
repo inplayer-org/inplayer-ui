@@ -3,12 +3,15 @@
 All notable changes to this project will be documented in this file.
 
 =======
-
 # [0.19.3] - 03-07-2019
 
 ### Fixes
 
 - Use svg background image for Dropdown arrow
+
+### Change
+
+- Change accordion footer z-index
 
 # [0.19.2] - 02-07-2019
 
