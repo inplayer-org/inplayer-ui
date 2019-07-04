@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 =======
+
+# [0.19.4] - 04-07-2019
+
+### Fixes
+
+- Use 1px for Input and Dropdown border
+
 # [0.19.3] - 03-07-2019
 
 ### Fixes
