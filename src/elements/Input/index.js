@@ -18,9 +18,9 @@ const StyledInput = styled.input`
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
+  padding: 0.375em 0.75em;
   border: 1px solid ${colors.gray};
-  padding: 0.375rem 0.75rem;
-  border-radius: 3px;
+  border-radius: 0.188em;
   font-size: ${fontSizes('medium')};
   line-height: 1;
 
