@@ -8,7 +8,9 @@ import { ifProp } from 'styled-tools';
 type Props = {
   isActive: boolean,
   closePanel: () => void,
-  actionButton: () => Node,
+  renderActionButton: ({
+    closeAccordion: (e?: SyntheticEvent<*>) => void,
+  }) => Node,
 };
 
 const AccordionFooterContainer = styled.footer`
@@ -36,10 +38,10 @@ const AccordionFooterLink = styled.a`
   cursor: pointer;
 `;
 
-const AccordionFooter = ({ closePanel, isActive, actionButton }: Props) => (
+const AccordionFooter = ({ closePanel, isActive, renderActionButton }: Props) => (
   <AccordionFooterContainer isActive={isActive}>
     <AccordionFooterLink onClick={closePanel}>Close</AccordionFooterLink>
-    {actionButton()}
+    {renderActionButton({ closeAccordion: closePanel })}
   </AccordionFooterContainer>
 );
 

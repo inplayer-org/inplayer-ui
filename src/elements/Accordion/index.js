@@ -10,7 +10,9 @@ type Panel = {
   label: string,
   icon?: string,
   renderContent: () => any,
-  actionButton: () => Node,
+  renderActionButton: ({
+    closeAccordion: (e?: SyntheticEvent<*>) => void,
+  }) => Node,
 };
 
 type Props = {
@@ -32,8 +34,8 @@ class Accordion extends Component<Props, State> {
     }
   };
 
-  closePanel = (e: SyntheticEvent<*>) => {
-    e.preventDefault();
+  closePanel = (e?: SyntheticEvent<*>) => {
+    if (e) e.preventDefault();
     this.setState({ activePanel: -1 });
   };
 
@@ -45,7 +47,7 @@ class Accordion extends Component<Props, State> {
     return (
       <AccordionWrapper contentHeight={contentHeight}>
         {panels.map((panel, index) => {
-          const { icon, label, actionButton, renderContent } = panel;
+          const { icon, label, renderActionButton, renderContent } = panel;
           const { activePanel } = state;
 
           return (
@@ -63,7 +65,7 @@ class Accordion extends Component<Props, State> {
               <AccordionFooter
                 isActive={activePanel === index}
                 closePanel={this.closePanel}
-                actionButton={actionButton}
+                renderActionButton={renderActionButton}
               />
             </div>
           );
