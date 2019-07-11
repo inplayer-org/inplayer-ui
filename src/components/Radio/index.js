@@ -13,6 +13,7 @@ type Props = {
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
   style?: Object,
+  disabled?: boolean,
 };
 
 const Radio = ({ label, id, checked, onChange, className, style, ...rest }: Props) => (
@@ -26,6 +27,7 @@ Radio.defaultProps = {
   className: '',
   style: {},
   onBlur: () => {},
+  disabled: false,
 };
 
 export default Radio;
