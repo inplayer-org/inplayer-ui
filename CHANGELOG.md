@@ -6,9 +6,9 @@ All notable changes to this project will be documented in this file.
 
 # [0.20.0] - 11-07-2019
 
-### Added
+### Change
 
-- Add renderActionButton method to the panel prop of the accordion.
+- Change actionButton method to renderActionButton in Accordion component.
 
 # [0.19.5] - 11-07-2019
 
