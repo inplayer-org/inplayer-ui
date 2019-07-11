@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.19.6] - 12-07-2019
+
+### Change
+
+- CSS Tooltip changes
+
 # [0.19.5] - 11-07-2019
 
 ### Fixes
