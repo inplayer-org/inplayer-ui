@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 
 =======
+# [0.19.5] - 11-07-2019
+
+### Fixes
+
+- Add missing optional prop disable to Radio component
 
 # [0.19.4] - 04-07-2019
 
