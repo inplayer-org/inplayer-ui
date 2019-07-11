@@ -11,7 +11,9 @@ type Panel = {
   label: string,
   icon?: string,
   renderContent: () => any,
-  actionButton: () => Node,
+  renderActionButton: ({
+    closeAccordion: (e?: SyntheticEvent<*>) => void,
+  }) => Node,
 };
 
 type Props = {
@@ -33,8 +35,8 @@ class Accordion extends Component<Props, State> {
     }
   };
 
-  closePanel = (e: SyntheticEvent<*>) => {
-    e.stopPropagation();
+  closePanel = (e?: SyntheticEvent<*>) => {
+    if (e) e.stopPropagation();
     this.setState({ activePanel: -1 });
   };
 
@@ -47,34 +49,31 @@ class Accordion extends Component<Props, State> {
     const { open } = state;
 
     return (
-      <AccordionWrapper contentHeight={contentHeight} open={open} onClick={this.toggleOpen}>
-        <div>
-          {panels.map((panel, index) => {
-            const { icon, label, actionButton, renderContent } = panel;
-            const { activePanel } = state;
+      <AccordionWrapper open={open} onClick={this.toggleOpen} contentHeight={contentHeight}>
+        {panels.map((panel, index) => {
+          const { icon, label, renderActionButton, renderContent } = panel;
+          const { activePanel } = state;
 
-            return (
-              <div key={index}>
-                <AccordionPanel
-                  key={index}
-                  isActive={activePanel === index}
-                  icon={icon}
-                  label={label}
-                  renderContent={renderContent}
-                  openPanel={this.openPanel(index)}
-                  closePanel={this.closePanel}
-                  contentHeight={contentHeight}
-                />
-                <AccordionFooter
-                  isActive={activePanel === index}
-                  closePanel={this.closePanel}
-                  actionButton={actionButton}
-                />
-              </div>
-            );
-          })}
-        </div>
-
+          return (
+            <div key={index}>
+              <AccordionPanel
+                key={index}
+                isActive={activePanel === index}
+                icon={icon}
+                label={label}
+                renderContent={renderContent}
+                openPanel={this.openPanel(index)}
+                closePanel={this.closePanel}
+                contentHeight={contentHeight}
+              />
+              <AccordionFooter
+                isActive={activePanel === index}
+                closePanel={this.closePanel}
+                renderActionButton={renderActionButton}
+              />
+            </div>
+          );
+        })}
         <Arrow open={open} />
       </AccordionWrapper>
     );

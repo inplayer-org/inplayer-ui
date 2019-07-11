@@ -1,7 +1,7 @@
 Accordion or expansion panel is a component that generates Accordion component with more accordion panels. It takes `panels` - array of objects and each object should contain:
 <br/>- `label` (title)
 <br/>- `icon` (icon displayed next to the title)
-<br/>- `actionButton` (save/submit action buttn)
+<br/>- `renderActionButton` (save/submit action buttn)
 <br/> - `renderContent` (action used to render the content)
 
 and `contentHeight` - that determines the height of the wrapper.
@@ -16,7 +16,8 @@ const panels = [
     },
     footerLink: 'Close without saving',
     buttonText: 'Save',
-    accordionAction: () => {
+    renderActionButton: ({ closeAccordion }) => {
+      closeAccordion();
       console.log('accordionAction');
     },
   },
@@ -28,7 +29,8 @@ const panels = [
     },
     footerLink: 'Close',
     buttonText: 'Delete',
-    accordionAction: () => {
+    renderActionButton: ({ closeAccordion }) => {
+      closeAccordion();
       console.log('accordionAction2');
     },
   },
@@ -54,9 +56,9 @@ const panels = [
         <h1>Long Content for the accordion1</h1>
       </div>);
     },
-    actionButton: () => {
+    renderActionButton: ({ closeAccordion }) => {
       return (
-        <Button size="sm" buttonModifiers={['buttonPrimary']}>
+        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
           Save
         </Button>
       )
@@ -68,9 +70,9 @@ const panels = [
     renderContent: () => {
       return <h5>Content for the accordionh2</h5>;
     },
-    actionButton: () => {
+    renderActionButton: ({ closeAccordion }) => {
       return (
-        <Button size="sm" buttonModifiers={['buttonPrimary']}>
+        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
           Save
         </Button>
       )
