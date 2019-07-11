@@ -133,6 +133,7 @@ exports[`Radio renders correctly 1`] = `
   style={Object {}}
 >
   <input
+    disabled={false}
     onBlur={[Function]}
     type="radio"
   />
