@@ -45,7 +45,6 @@ class Accordion extends Component<Props, State> {
 
   toggleOpen = () => {
     const { enableExtendAccordion } = this.props;
-    console.log('HERERE');
     if (enableExtendAccordion) this.setState(({ open }) => ({ open: !open }));
   };
 
