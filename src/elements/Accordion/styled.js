@@ -15,7 +15,6 @@ export const AccordionWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   transition: width 0.3s ease;
-
   ${({ open }) =>
     open &&
     css`

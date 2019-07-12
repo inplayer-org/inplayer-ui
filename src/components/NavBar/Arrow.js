@@ -9,7 +9,6 @@ export const ArrowContainer = styled.div`
   width: 18px;
   margin: 0 1rem 1rem 1rem;
   text-align: center;
-
   ${switchProp('section', {
     navbar: css`
       align-self: flex-end;
@@ -29,7 +28,6 @@ export const NavbarArrow = styled.i`
   padding: 0.225rem;
   transition: all 0.5s ease;
   cursor: pointer;
-
   ${switchProp('section', {
     navbar: css`
       border: solid ${transparentize(0.6, colors.white)};
