@@ -3,12 +3,26 @@
 exports[`Accordion renders correctly 1`] = `
 .c0 {
   width: 100%;
+  margin-left: 0%;
   position: relative;
   background: #fff;
   border-left: 1px solid #d7dde5;
   box-sizing: border-box;
   border-top: 1px solid #d7dde5;
   overflow-y: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .c3 {
@@ -109,41 +123,46 @@ exports[`Accordion renders correctly 1`] = `
 
 <div
   className="c0"
+  onClick={[Function]}
+  open={false}
+  width="100%"
 >
   <div>
-    <header
-      className="c1"
-      onClick={[Function]}
-    >
-      <h6
-        className="c2 c3"
-        color=""
-        style={Object {}}
-      >
-        Accordion
-      </h6>
-      <span
-        aria-hidden={true}
-        className="fa fa- c4"
-      />
-    </header>
-    <div
-      className="c5"
-    >
-      <div
-        className="c6"
-      />
-    </div>
-    <footer
-      className="c7"
-    >
-      <a
-        className="c8"
+    <div>
+      <header
+        className="c1"
         onClick={[Function]}
       >
-        Close
-      </a>
-    </footer>
+        <h6
+          className="c2 c3"
+          color=""
+          style={Object {}}
+        >
+          Accordion
+        </h6>
+        <span
+          aria-hidden={true}
+          className="fa fa- c4"
+        />
+      </header>
+      <div
+        className="c5"
+      >
+        <div
+          className="c6"
+        />
+      </div>
+      <footer
+        className="c7"
+      >
+        <a
+          className="c8"
+          onClick={[Function]}
+        >
+          Close
+        </a>
+      </footer>
+    </div>
   </div>
 </div>
 `;
