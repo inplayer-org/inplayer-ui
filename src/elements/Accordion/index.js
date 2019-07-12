@@ -21,7 +21,7 @@ type Props = {
   contentHeight: string,
   width?: string,
   extendWidth?: string,
-  enableExtendAccordion?: boolean,
+  enableExpand?: boolean,
 };
 
 type State = { activePanel: number, open: boolean };
@@ -44,12 +44,12 @@ class Accordion extends Component<Props, State> {
   };
 
   toggleOpen = () => {
-    const { enableExtendAccordion } = this.props;
-    if (enableExtendAccordion) this.setState(({ open }) => ({ open: !open }));
+    const { enableExpand } = this.props;
+    if (enableExpand) this.setState(({ open }) => ({ open: !open }));
   };
 
   render() {
-    const { panels, contentHeight, width, extendWidth, enableExtendAccordion } = this.props;
+    const { panels, contentHeight, width, extendWidth, enableExpand } = this.props;
 
     const { state } = this;
     const { open } = state;
@@ -87,9 +87,7 @@ class Accordion extends Component<Props, State> {
             );
           })}
         </div>
-        {enableExtendAccordion && (
-          <Arrow onClick={this.toggleOpen} open={open} section="accordion" />
-        )}
+        {enableExpand && <Arrow onClick={this.toggleOpen} open={open} section="accordion" />}
       </AccordionWrapper>
     );
   }
@@ -98,7 +96,7 @@ class Accordion extends Component<Props, State> {
 Accordion.defaultProps = {
   width: '100%',
   extendWidth: '20%',
-  enableExtendAccordion: false,
+  enableExpand: false,
 };
 
 /** @component */
