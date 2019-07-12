@@ -147,7 +147,7 @@ Tooltip.defaultProps = {
   children: null,
   color: '',
   fadeDuration: 150,
-  fadeEasing: 'fade-in-out',
+  fadeEasing: 'linear',
   fixed: false,
   fontFamily: 'inherit',
   fontSize: null,

@@ -49,7 +49,7 @@ function Page(props) {
 <br />
 <br />
 <Tooltip
-  content="Tooltip at the bottom"
+  content={`Tooltip at the bottom\nTooltip at the bottom`}
   placement="bottom"
 >
   <Button>
