@@ -45,6 +45,7 @@ class Accordion extends Component<Props, State> {
 
   toggleOpen = () => {
     const { enableExtendAccordion } = this.props;
+    console.log('HERERE');
     if (enableExtendAccordion) this.setState(({ open }) => ({ open: !open }));
   };
 
@@ -59,7 +60,6 @@ class Accordion extends Component<Props, State> {
         width={width}
         extendWidth={extendWidth}
         open={open}
-        onClick={this.toggleOpen}
         contentHeight={contentHeight}
       >
         <div>
@@ -88,7 +88,9 @@ class Accordion extends Component<Props, State> {
             );
           })}
         </div>
-        {enableExtendAccordion && <Arrow open={open} section="accordion" />}
+        {enableExtendAccordion && (
+          <Arrow onClick={this.toggleOpen} open={open} section="accordion" />
+        )}
       </AccordionWrapper>
     );
   }
