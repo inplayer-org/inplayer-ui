@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Added extend option to Accordion component
+- Added extend option to Accordion
 
 # [0.20.1] - 12-07-2019
 
