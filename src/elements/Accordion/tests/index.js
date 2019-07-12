@@ -10,7 +10,7 @@ generateSnapshots(Accordion, {
       label: 'Accordion',
       icon: '',
       content: 'Lorem Ipsum',
-      actionButton: () => actionButton,
+      renderActionButton: ({ closeAccordion }) => actionButton,
       // eslint-disable-next-line react/display-name
       renderContent: () => <div>Lorem Ipsum</div>,
     },

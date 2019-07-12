@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.20.1] - 12-07-2019
+
+### Change
+
+- CSS Tooltip styling changes
+
+# [0.20.0] - 11-07-2019
+
+### Change
+
+- Change actionButton method to renderActionButton in Accordion component.
+
+# [0.19.5] - 11-07-2019
+
+### Fixes
+
+- Add missing optional prop disable to Radio component
+
 # [0.19.4] - 04-07-2019
 
 ### Fixes

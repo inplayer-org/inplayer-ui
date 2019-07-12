@@ -164,6 +164,7 @@ export interface RadioProps {
   onBlur?: (e: any) => any;
   className?: string;
   style?: CSSProperties;
+  disabled?: boolean;
 }
 
 export declare const Radio: FunctionComponent<RadioProps>;
@@ -267,11 +268,15 @@ interface TabsProps {
 
 export declare const Tabs: FunctionComponent<TabsProps>;
 
+export interface ActionButtonRenderProps {
+  closeAccordion: (e?: SyntheticEvent<*>) => void;
+}
+
 export interface AccordionPanel {
   label: string;
   icon?: string;
   renderContent: () => ReactNode;
-  actionButton: () => ReactNode;
+  renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
 }
 
 export interface AccordionProps {

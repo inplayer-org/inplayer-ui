@@ -11,6 +11,7 @@ const Bubble = styled('div')`
   padding: ${props => (props.padding ? `${props.padding}rem` : 0)};
   font-size: ${props => props.fontSize || fontSizes('small')};
   font-family: ${props => props.fontFamily};
+  line-height: 1.4;
 `;
 
 export default Bubble;
