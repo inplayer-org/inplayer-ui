@@ -5,7 +5,7 @@ import React, { Component, type Node } from 'react';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
 import AccordionFooter from './AccordionFooter';
-import Arrow from './Arrow';
+import Arrow from '../../components/NavBar/Arrow';
 
 type Panel = {
   label: string,
@@ -19,6 +19,9 @@ type Panel = {
 type Props = {
   panels: Array<Panel>,
   contentHeight: string,
+  width?: string,
+  extendWidth?: string,
+  enableExtendAccordion?: boolean,
 };
 
 type State = { activePanel: number, open: boolean };
@@ -40,45 +43,62 @@ class Accordion extends Component<Props, State> {
     this.setState({ activePanel: -1 });
   };
 
-  toggleOpen = () => this.setState(({ open }) => ({ open: !open }));
+  toggleOpen = () => {
+    const { enableExtendAccordion } = this.props;
+    if (enableExtendAccordion) this.setState(({ open }) => ({ open: !open }));
+  };
 
   render() {
-    const { panels, contentHeight } = this.props;
+    const { panels, contentHeight, width, extendWidth, enableExtendAccordion } = this.props;
 
     const { state } = this;
     const { open } = state;
 
     return (
-      <AccordionWrapper open={open} onClick={this.toggleOpen} contentHeight={contentHeight}>
-        {panels.map((panel, index) => {
-          const { icon, label, renderActionButton, renderContent } = panel;
-          const { activePanel } = state;
+      <AccordionWrapper
+        width={width}
+        extendWidth={extendWidth}
+        open={open}
+        onClick={this.toggleOpen}
+        contentHeight={contentHeight}
+      >
+        <div>
+          {panels.map((panel, index) => {
+            const { icon, label, renderActionButton, renderContent } = panel;
+            const { activePanel } = state;
 
-          return (
-            <div key={index}>
-              <AccordionPanel
-                key={index}
-                isActive={activePanel === index}
-                icon={icon}
-                label={label}
-                renderContent={renderContent}
-                openPanel={this.openPanel(index)}
-                closePanel={this.closePanel}
-                contentHeight={contentHeight}
-              />
-              <AccordionFooter
-                isActive={activePanel === index}
-                closePanel={this.closePanel}
-                renderActionButton={renderActionButton}
-              />
-            </div>
-          );
-        })}
-        <Arrow open={open} />
+            return (
+              <div key={index}>
+                <AccordionPanel
+                  key={index}
+                  isActive={activePanel === index}
+                  icon={icon}
+                  label={label}
+                  renderContent={renderContent}
+                  openPanel={this.openPanel(index)}
+                  closePanel={this.closePanel}
+                  contentHeight={contentHeight}
+                />
+                <AccordionFooter
+                  isActive={activePanel === index}
+                  closePanel={this.closePanel}
+                  renderActionButton={renderActionButton}
+                />
+              </div>
+            );
+          })}
+        </div>
+        {enableExtendAccordion && <Arrow open={open} section="accordion" />}
       </AccordionWrapper>
     );
   }
 }
+
+Accordion.defaultProps = {
+  width: '100%',
+  extendWidth: '20%',
+  enableExtendAccordion: false,
+};
 
 /** @component */
 export default Accordion;

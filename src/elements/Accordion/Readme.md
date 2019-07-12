@@ -3,6 +3,9 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/>- `icon` (icon displayed next to the title)
 <br/>- `renderActionButton` (save/submit action buttn)
 <br/> - `renderContent` (action used to render the content)
+<br/> - `enableExtendAccordion` (display arrow and allow the accordion to extend)
+<br/> - `width` (width for the Accordion wrapper)
+<br/> - `extendWidth` (define the width the accordion should extend)
 
 and `contentHeight` - that determines the height of the wrapper.
 
@@ -80,5 +83,5 @@ const panels = [
   },
 ];
 
-<Accordion panels={panels} contentHeight="46vh" />;
+<Accordion panels={panels} contentHeight="46vh" enableExtendAccordion width="80%" extendWidth="20%" />;
 ```
