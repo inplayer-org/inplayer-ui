@@ -4,10 +4,10 @@ exports[`Navbar renders correctly 1`] = `
 .c4 {
   width: 18px;
   margin: 0 1rem 1rem 1rem;
+  text-align: center;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  text-align: center;
 }
 
 .c4:hover i {
@@ -15,15 +15,16 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 .c5 {
-  border: solid rgba(255,255,255,0.4);
-  border-width: 1px 0 0 1px;
   display: inline-block;
   padding: 0.225rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: solid rgba(255,255,255,0.4);
+  border-width: 1px 0 0 1px;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 .c0 {
