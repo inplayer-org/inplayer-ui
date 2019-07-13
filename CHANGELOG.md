@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 =======
 
-# [0.20.2] - 12-07-2019
+# [0.20.2] - 15-07-2019
 
 ### Change
 
