@@ -4,11 +4,17 @@ All notable changes to this project will be documented in this file.
 
 =======
 
-# [0.20.2] - 15-07-2019
+# [0.22.0] - 15-07-2019
 
 ### Change
 
-- Added enableExpand option to Accordion
+- Rename isCollapsible flat to isExtendable in Accordion
+
+# [0.21.0] - 15-07-2019
+
+### Change
+
+- Add isCollapsible option to Accordion
 
 # [0.20.1] - 12-07-2019
 
