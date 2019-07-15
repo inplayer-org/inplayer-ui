@@ -123,7 +123,6 @@ exports[`Accordion renders correctly 1`] = `
 
 <div
   className="c0"
-  onClick={[Function]}
   open={false}
   width="100%"
 >
