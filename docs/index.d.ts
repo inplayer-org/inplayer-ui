@@ -282,6 +282,9 @@ export interface AccordionPanel {
 export interface AccordionProps {
   panels: Array<AccordionPanel>;
   contentHeight: string;
+  isCollapsible?: boolean;
+  width?: string;
+  extendWidth?: string;
 }
 
 export interface AccordionState {
