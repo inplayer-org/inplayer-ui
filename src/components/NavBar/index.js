@@ -38,7 +38,7 @@ class Navbar extends Component<Props, State> {
     return (
       <NavbarContainer className={className} style={style} open={open} onClick={this.toggleOpen}>
         <MenuWithLogo logo={logo}>{children}</MenuWithLogo>
-        <Arrow open={open} />
+        <Arrow open={open} section="navbar" />
       </NavbarContainer>
     );
   }
