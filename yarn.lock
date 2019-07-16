@@ -4007,9 +4007,9 @@ eslint-plugin-import@^2.17.2:
     resolve "^1.11.0"
 
 eslint-plugin-jest@^22.5.1:
-  version "22.7.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.7.2.tgz#7ab118a66a34e46ae5e16a128b5d24fd28b43dca"
-  integrity sha512-Aecqe3ulBVI7amgOycVI8ZPL8o0SnGHOf3zn2/Ciu8TXyXDHcjtwD3hOs3ss/Qh/VAwlW/DMcuiXg5btgF+XMA==
+  version "22.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.8.0.tgz#242ef5459e8da25d2c41438e95eb546e03d7fae1"
+  integrity sha512-2VftZMfILmlhL3VMq5ptHRIuyyXb3ShDEDb1J1UjvWNzm4l+UK/YmwNuTuJcM0gv8pJuOfiR/8ZptJ8Ou68pFw==
 
 eslint-plugin-jsx-a11y@^6.2.1:
   version "6.2.3"
@@ -10843,9 +10843,9 @@ style-search@^0.1.0:
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
 styled-components-modifiers@^1.1.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/styled-components-modifiers/-/styled-components-modifiers-1.2.1.tgz#f70348b610926571be2ea7fa9892120ae3159d8e"
-  integrity sha512-VOn7rXm4YsMPVycB4zdxZNYT8AUYIZ9ob38TTjZoFa7WJBfg4jJe3pqmHMHVUURuPah01eFeytE9ZqXMBdxAqA==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/styled-components-modifiers/-/styled-components-modifiers-1.2.3.tgz#b6e94081afedbb4c972821501e6a3a77fb3159c6"
+  integrity sha512-yLwZUcR3NKnmpNWF0DEEWL/Ativgy9V/m1Bkc6OpaRvHY9LLWf0XObuzHOhck0ZB9GK95IznJ0gi+A2Jli3yog==
   dependencies:
     "@types/prop-types" "^15.7.1"
     "@types/styled-components" "^4.1.15"
