@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Change footerLunk to renderFooterLink in Accordion component
+- Add renderFooterLink option to panel properites
 
 # [0.22.0] - 15-07-2019
 
