@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.23.0] - 18-07-2019
+
+### Change
+
+- Add renderFooterLink option to panel properites
+
 # [0.22.0] - 15-07-2019
 
 ### Change

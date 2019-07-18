@@ -14,6 +14,9 @@ type Panel = {
   renderActionButton: ({
     closeAccordion: (e?: SyntheticEvent<*>) => void,
   }) => Node,
+  renderFooterLink: ({
+    closeAccordion: (e?: SyntheticEvent<*>) => void,
+  }) => Node,
 };
 
 type Props = {
@@ -63,7 +66,7 @@ class Accordion extends Component<Props, State> {
       >
         <div>
           {panels.map((panel, index) => {
-            const { icon, label, renderActionButton, renderContent } = panel;
+            const { icon, label, renderActionButton, renderContent, renderFooterLink } = panel;
             const { activePanel } = state;
 
             return (
@@ -82,6 +85,7 @@ class Accordion extends Component<Props, State> {
                   isActive={activePanel === index}
                   closePanel={this.closePanel}
                   renderActionButton={renderActionButton}
+                  renderFooterLink={renderFooterLink}
                 />
               </div>
             );
