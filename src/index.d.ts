@@ -277,6 +277,7 @@ export interface AccordionPanel {
   icon?: string;
   renderContent: () => ReactNode;
   renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
+  renderFooterLink: (props: ActionButtonRenderProps) => ReactNode;
 }
 
 export interface AccordionProps {

@@ -2,6 +2,7 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/>- `label` (title)
 <br/>- `icon` (icon displayed next to the title)
 <br/>- `renderActionButton` (save/submit action buttn)
+<br/>- `renderFooterLink` (close action buttn)
 <br/> - `renderContent` (action used to render the content)
 <br/> - `contentHeight` - that determines the height of the wrapper.
 <br/> - `isExtendable` (display arrow and allow the accordion to extend)
@@ -16,9 +17,11 @@ const panels = [
     renderContent: () => {
       return <h1>Content for the accordion1</h1>;
     },
-    footerLink: 'Close without saving',
-    buttonText: 'Save',
     renderActionButton: ({ closeAccordion }) => {
+      closeAccordion();
+      console.log('accordionAction');
+    },
+    renderFooterLink: ({ closeAccordion }) => {
       closeAccordion();
       console.log('accordionAction');
     },
@@ -29,11 +32,13 @@ const panels = [
     renderContent: () => {
       return <h5>Content for the accordionh2</h5>;
     },
-    footerLink: 'Close',
-    buttonText: 'Delete',
     renderActionButton: ({ closeAccordion }) => {
       closeAccordion();
       console.log('accordionAction2');
+    },
+    renderFooterLink: ({ closeAccordion }) => {
+      closeAccordion();
+      console.log('accordionAction');
     },
   },
 ];
@@ -64,7 +69,14 @@ const panels = [
           Save
         </Button>
       )
-    }
+    },
+    renderFooterLink: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+          Cancel
+        </Button>
+      )
+    },
   },
   {
     label: 'Accordion2',
@@ -78,7 +90,14 @@ const panels = [
           Save
         </Button>
       )
-    }
+    },
+     renderFooterLink: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+          Cancel
+        </Button>
+      )
+    },
   },
 ];
 
