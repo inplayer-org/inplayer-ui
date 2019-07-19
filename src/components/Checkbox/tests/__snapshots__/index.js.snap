@@ -135,6 +135,7 @@ exports[`Checkbox renders correctly 1`] = `
   style={Object {}}
 >
   <input
+    disabled={false}
     onChange={[Function]}
     type="checkbox"
   />

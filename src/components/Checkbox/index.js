@@ -13,6 +13,7 @@ type Props = {
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
   style?: Object,
+  disabled?: boolean,
 };
 
 const Checkbox = ({ label, id, onChange, containerRef, className, style, ...rest }: Props) => {
@@ -30,6 +31,7 @@ Checkbox.defaultProps = {
   className: '',
   style: {},
   containerRef: null,
+  disabled: false,
 };
 
 export default Checkbox;
