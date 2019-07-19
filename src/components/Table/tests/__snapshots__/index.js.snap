@@ -247,6 +247,7 @@ exports[`Table renders correctly 1`] = `
         >
           <input
             checked={false}
+            disabled={false}
             id="toggleAll"
             onChange={[Function]}
             type="checkbox"
@@ -281,6 +282,7 @@ exports[`Table renders correctly 1`] = `
           style={Object {}}
         >
           <input
+            disabled={false}
             onChange={[Function]}
             type="checkbox"
           />
