@@ -62,6 +62,7 @@ export interface CheckboxProps {
   containerRef?: React.RefObject<HTMLDivElement>;
   className?: string;
   style?: CSSProperties;
+  disabled?: boolean;
 }
 
 export declare const Checkbox: FunctionComponent<CheckboxProps>;
