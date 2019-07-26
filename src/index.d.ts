@@ -276,6 +276,8 @@ export interface ActionButtonRenderProps {
 export interface AccordionPanel {
   label: string;
   icon?: string;
+  iconTooltip?: TooltipProps;
+  disabled?: boolean;
   renderContent: () => ReactNode;
   renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
   renderFooterLink: (props: ActionButtonRenderProps) => ReactNode;

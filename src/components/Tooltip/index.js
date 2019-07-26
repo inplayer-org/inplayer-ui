@@ -10,7 +10,7 @@ import type { FadeEasing } from './Tooltip';
 export type Placement = 'left' | 'right' | 'top' | 'bottom';
 export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
-type Props = {
+export type Props = {
   behavior?: TooltipBehavior,
   durationOnClick?: number,
   arrowWidth?: number,

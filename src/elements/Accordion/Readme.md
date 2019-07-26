@@ -81,8 +81,33 @@ const panels = [
   {
     label: 'Accordion2',
     icon: 'info-circle',
+    iconTooltip: {
+      content: 'This is a disabled panel with optional icon with a tooltip',
+      placement: 'left',
+    },
     renderContent: () => {
       return <h5>Content for the accordionh2</h5>;
+    },
+    renderActionButton: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
+          Save
+        </Button>
+      )
+    },
+     renderFooterLink: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+          Cancel
+        </Button>
+      )
+    },
+    disabled: true,
+  },
+  {
+    label: 'Accordion3',
+    renderContent: () => {
+      return <h5>Content for the accordionh3</h5>;
     },
     renderActionButton: ({ closeAccordion }) => {
       return (
