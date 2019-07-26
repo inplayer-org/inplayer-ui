@@ -8,6 +8,7 @@ import { uiColors, fontWeights } from 'utils';
 // Components
 import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
+import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -38,7 +39,8 @@ const AccordionPanelHeader = styled.header`
   padding: 1rem 3%;
   width: 100%;
   box-sizing: border-box;
-  background: ${colors.white};
+  background: ${ifProp('disabled', colors.lightGray, colors.white)};
+  cursor: ${({ disabled, isActive }) => (disabled || isActive ? 'default' : 'pointer')};
   border-bottom: 1px solid ${colors.lightGray};
   display: flex;
   justify-content: space-between;
@@ -54,14 +56,14 @@ const AccordionPanelHeader = styled.header`
 
 const AccordionTitle = styled(Typography)`
   font-weight: ${fontWeights('thin')};
-  color: ${uiColors('text.main')};
+  color: ${ifProp('disabled', uiColors('text.disabled'), uiColors('text.main'))};
   margin: 0;
-  cursor: ${ifProp('isActive', 'default', 'pointer')};
   display: inline;
 `;
 
 const AccordionIcon = styled(Icon)`
   color: ${uiColors('primary.main')};
+  ${({ pointer }) => (pointer ? 'cursor: pointer;' : '')}
 `;
 
 const AccordionPanelDetails = styled.div`
@@ -71,26 +73,43 @@ const AccordionPanelDetails = styled.div`
 type Props = {
   label: string,
   isActive: boolean,
+  isOtherPanelActive: boolean,
   icon?: string,
+  iconTooltip?: TooltipProps,
   contentHeight: string,
   openPanel: (name: string) => boolean,
   renderContent: () => any,
+  disabled: boolean,
 };
 
 const AccordionPanel = ({
   openPanel,
   label,
   isActive,
+  isOtherPanelActive,
   icon,
+  iconTooltip,
   renderContent,
   contentHeight,
+  disabled,
 }: Props) => (
   <>
-    <AccordionPanelHeader onClick={openPanel} isActive={isActive}>
-      <AccordionTitle variant="h6" isActive={isActive}>
+    <AccordionPanelHeader
+      disabled={disabled}
+      onClick={!disabled ? openPanel : null}
+      isActive={isActive}
+    >
+      <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
         {label}
       </AccordionTitle>
-      <AccordionIcon name={icon} />
+      {!isOtherPanelActive &&
+        (iconTooltip ? (
+          <Tooltip {...iconTooltip}>
+            <AccordionIcon name={icon} pointer />
+          </Tooltip>
+        ) : (
+          <AccordionIcon name={icon} />
+        ))}
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
       <AccordionPanelDetails>{isActive && renderContent()}</AccordionPanelDetails>
@@ -100,6 +119,7 @@ const AccordionPanel = ({
 
 AccordionPanel.defaultProps = {
   icon: '',
+  iconTooltip: null,
 };
 
 export default AccordionPanel;

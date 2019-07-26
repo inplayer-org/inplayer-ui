@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 
 =======
+
+# [0.24.0] - 26-07-2019
+
+### Fixes
+
+- Add private AccordionPanel prop 'isOtherPanelActive' to prevent icon rendering
+  by an inactive AccordionPanel while another AccordionPanel is active
+
+### Change
+
+- Add and implement public AccordionPanel props 'disabled' and 'iconTooltip'
+
 # [0.23.1] - 19-07-2019
 
 ### Fixes

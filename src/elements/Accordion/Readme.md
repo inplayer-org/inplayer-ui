@@ -6,8 +6,10 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/> - `renderContent` (action used to render the content)
 <br/> - `contentHeight` - that determines the height of the wrapper.
 <br/> - `isExtendable` (display arrow and allow the accordion to extend)
+<br/> - `iconTooltip` (optional parameter - a tooltip to display on hovering the icon, see `Tooltip`'s prop list) - default `null`
 <br/> - `width` (optional parameter - sets the width for the Accordion wrapper) - default 100%
 <br/> - `extendWidth` (optional parameter - defines the width the accordion should extend) - default 20%
+<br/> - `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default `false`
 
 ```jsx static
 const panels = [
@@ -81,8 +83,33 @@ const panels = [
   {
     label: 'Accordion2',
     icon: 'info-circle',
+    iconTooltip: {
+      content: 'This is a disabled panel with optional icon with a tooltip',
+      placement: 'left',
+    },
     renderContent: () => {
       return <h5>Content for the accordionh2</h5>;
+    },
+    renderActionButton: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
+          Save
+        </Button>
+      )
+    },
+     renderFooterLink: ({ closeAccordion }) => {
+      return (
+        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+          Cancel
+        </Button>
+      )
+    },
+    disabled: true,
+  },
+  {
+    label: 'Accordion3',
+    renderContent: () => {
+      return <h5>Content for the accordionh3</h5>;
     },
     renderActionButton: ({ closeAccordion }) => {
       return (

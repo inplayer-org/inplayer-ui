@@ -2,14 +2,17 @@
 import React, { Component, type Node } from 'react';
 
 // Components
+import { Props as TooltipProps } from 'components/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
 import AccordionFooter from './AccordionFooter';
 import Arrow from '../../components/NavBar/Arrow';
 
+// Types
 type Panel = {
   label: string,
   icon?: string,
+  iconTooltip?: TooltipProps,
   renderContent: () => any,
   renderActionButton: ({
     closeAccordion: (e?: SyntheticEvent<*>) => void,
@@ -66,20 +69,33 @@ class Accordion extends Component<Props, State> {
       >
         <div>
           {panels.map((panel, index) => {
-            const { icon, label, renderActionButton, renderContent, renderFooterLink } = panel;
+            const {
+              icon,
+              iconTooltip,
+              label,
+              renderActionButton,
+              renderContent,
+              renderFooterLink,
+              disabled,
+            } = panel;
             const { activePanel } = state;
+            const isActive = activePanel === index;
+            const isOtherPanelActive = !isActive && activePanel !== -1;
 
             return (
               <div key={index}>
                 <AccordionPanel
                   key={index}
-                  isActive={activePanel === index}
+                  isActive={isActive}
                   icon={icon}
+                  iconTooltip={iconTooltip}
                   label={label}
                   renderContent={renderContent}
                   openPanel={this.openPanel(index)}
                   closePanel={this.closePanel}
+                  isOtherPanelActive={isOtherPanelActive}
                   contentHeight={contentHeight}
+                  disabled={disabled}
                 />
                 <AccordionFooter
                   isActive={activePanel === index}
