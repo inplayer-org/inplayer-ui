@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 =======
-# [0.23.2] - 26-07-2019
+# [0.24.0] - 26-07-2019
 
 ### Fixes
 
