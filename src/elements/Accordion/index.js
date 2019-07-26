@@ -13,7 +13,6 @@ type Panel = {
   label: string,
   icon?: string,
   iconTooltip?: TooltipProps,
-  disabled?: boolean,
   renderContent: () => any,
   renderActionButton: ({
     closeAccordion: (e?: SyntheticEvent<*>) => void,
@@ -118,7 +117,6 @@ Accordion.defaultProps = {
   width: '100%',
   extendWidth: '20%',
   isExtendable: false,
-  disabled: false,
 };
 
 /** @component */

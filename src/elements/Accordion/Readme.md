@@ -6,8 +6,10 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/> - `renderContent` (action used to render the content)
 <br/> - `contentHeight` - that determines the height of the wrapper.
 <br/> - `isExtendable` (display arrow and allow the accordion to extend)
+<br/> - `iconTooltip` (optional parameter - a tooltip to display on hovering the icon, see `Tooltip`'s prop list) - default `null`
 <br/> - `width` (optional parameter - sets the width for the Accordion wrapper) - default 100%
 <br/> - `extendWidth` (optional parameter - defines the width the accordion should extend) - default 20%
+<br/> - `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default `false`
 
 ```jsx static
 const panels = [
