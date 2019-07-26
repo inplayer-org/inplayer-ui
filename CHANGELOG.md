@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 
 =======
+# [0.23.1] - 19-07-2019
+
+### Fixes
+
+- Add missing optional prop disabled to Checkbox component
+
+# [0.23.0] - 19-07-2019
+
+### Change
+
+- Add renderFooterLink option to panel properites
 
 # [0.22.0] - 15-07-2019
 

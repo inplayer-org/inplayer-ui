@@ -2,13 +2,15 @@
 import React, { type Node } from 'react';
 import styled from 'styled-components';
 import colors from 'config/colors';
-import { uiColors, fontWeights } from 'utils';
 import { ifProp } from 'styled-tools';
 
 type Props = {
   isActive: boolean,
   closePanel: () => void,
   renderActionButton: ({
+    closeAccordion: (e?: SyntheticEvent<*>) => void,
+  }) => Node,
+  renderFooterLink: ({
     closeAccordion: (e?: SyntheticEvent<*>) => void,
   }) => Node,
 };
@@ -20,7 +22,7 @@ const AccordionFooterContainer = styled.footer`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 3%;
+  padding: 0.8rem 3%;
   background: ${ifProp('isActive', `${colors.white}`, `${colors.pale}`)};
   align-items: center;
   transition-timing-function: ease, ease;
@@ -32,15 +34,9 @@ const AccordionFooterContainer = styled.footer`
   border-bottom: 1px solid ${colors.gray};
 `;
 
-const AccordionFooterLink = styled.a`
-  color: ${uiColors('text.light')};
-  font-weight: ${fontWeights('light')};
-  cursor: pointer;
-`;
-
-const AccordionFooter = ({ closePanel, isActive, renderActionButton }: Props) => (
+const AccordionFooter = ({ closePanel, isActive, renderActionButton, renderFooterLink }: Props) => (
   <AccordionFooterContainer isActive={isActive}>
-    <AccordionFooterLink onClick={closePanel}>Close</AccordionFooterLink>
+    {renderFooterLink({ closeAccordion: closePanel })}
     {renderActionButton({ closeAccordion: closePanel })}
   </AccordionFooterContainer>
 );

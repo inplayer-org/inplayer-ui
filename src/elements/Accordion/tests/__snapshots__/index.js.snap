@@ -96,7 +96,7 @@ exports[`Accordion renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem 3%;
+  padding: 0.8rem 3%;
   background: #f0f3f6;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -113,12 +113,6 @@ exports[`Accordion renders correctly 1`] = `
   z-index: 10;
   border-top: 1px solid #d7dde5;
   border-bottom: 1px solid #d7dde5;
-}
-
-.c8 {
-  color: #aaadb4;
-  font-weight: 300;
-  cursor: pointer;
 }
 
 <div
@@ -153,14 +147,7 @@ exports[`Accordion renders correctly 1`] = `
       </div>
       <footer
         className="c7"
-      >
-        <a
-          className="c8"
-          onClick={[Function]}
-        >
-          Close
-        </a>
-      </footer>
+      />
     </div>
   </div>
 </div>

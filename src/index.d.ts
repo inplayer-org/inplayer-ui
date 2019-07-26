@@ -62,6 +62,7 @@ export interface CheckboxProps {
   containerRef?: React.RefObject<HTMLDivElement>;
   className?: string;
   style?: CSSProperties;
+  disabled?: boolean;
 }
 
 export declare const Checkbox: FunctionComponent<CheckboxProps>;
@@ -277,6 +278,7 @@ export interface AccordionPanel {
   icon?: string;
   renderContent: () => ReactNode;
   renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
+  renderFooterLink: (props: ActionButtonRenderProps) => ReactNode;
 }
 
 export interface AccordionProps {
