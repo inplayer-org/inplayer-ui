@@ -80,7 +80,7 @@ class Accordion extends Component<Props, State> {
             } = panel;
             const { activePanel } = state;
             const isActive = activePanel === index;
-            const otherPanelIsActive = !isActive && activePanel !== -1;
+            const isOtherPanelActive = !isActive && activePanel !== -1;
 
             return (
               <div key={index}>
@@ -93,7 +93,7 @@ class Accordion extends Component<Props, State> {
                   renderContent={renderContent}
                   openPanel={this.openPanel(index)}
                   closePanel={this.closePanel}
-                  otherPanelIsActive={otherPanelIsActive}
+                  isOtherPanelActive={isOtherPanelActive}
                   contentHeight={contentHeight}
                   disabled={disabled}
                 />

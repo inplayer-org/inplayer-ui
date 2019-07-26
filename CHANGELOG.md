@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- Add private AccordionPanel prop 'otherPanelIsActive' to prevent icon rendering
+- Add private AccordionPanel prop 'isOtherPanelActive' to prevent icon rendering
   by an inactive AccordionPanel while another AccordionPanel is active
 
 ### Change

@@ -73,7 +73,7 @@ const AccordionPanelDetails = styled.div`
 type Props = {
   label: string,
   isActive: boolean,
-  otherPanelIsActive: boolean,
+  isOtherPanelActive: boolean,
   icon?: string,
   iconTooltip?: TooltipProps,
   contentHeight: string,
@@ -86,7 +86,7 @@ const AccordionPanel = ({
   openPanel,
   label,
   isActive,
-  otherPanelIsActive,
+  isOtherPanelActive,
   icon,
   iconTooltip,
   renderContent,
@@ -102,7 +102,7 @@ const AccordionPanel = ({
       <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
         {label}
       </AccordionTitle>
-      {!otherPanelIsActive &&
+      {!isOtherPanelActive &&
         (iconTooltip ? (
           <Tooltip {...iconTooltip}>
             <AccordionIcon name={icon} pointer />
