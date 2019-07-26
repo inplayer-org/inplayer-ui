@@ -50,6 +50,7 @@ exports[`Accordion renders correctly 1`] = `
   width: 100%;
   box-sizing: border-box;
   background: #fff;
+  cursor: pointer;
   border-bottom: 1px solid #F6F8FB;
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,7 +70,6 @@ exports[`Accordion renders correctly 1`] = `
   font-weight: 100;
   color: #44494e;
   margin: 0;
-  cursor: pointer;
   display: inline;
 }
 
