@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.24.1] - 29-07-2019
+
+### Added
+
+- Add onTabChange handler in Accordion component.
+
 # [0.24.0] - 26-07-2019
 
 ### Fixes
