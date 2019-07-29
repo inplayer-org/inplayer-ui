@@ -12,7 +12,7 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/> - `width` (optional parameter - sets the width for the Accordion wrapper) - default 100%
 <br/> - `extendWidth` (optional parameter - defines the width the accordion should extend) - default 20%
 <br/> - `contentHeight` - that determines the height of the wrapper.
-<br/> - `onTabChange` - function to be executed when the accordion tab changes
+<br/> - `onActivePanelChange` - function to be executed when the accordion tab changes
 
 ```jsx static
 const panels = [
@@ -157,7 +157,7 @@ const panels = [
 ];
 
 <Accordion
-  onTabChange={(index: number) => console.log(index)}
+  onActivePanelChange={(index: number) => console.log(index)}
   panels={panels}
   contentHeight="46vh"
   isExtendable

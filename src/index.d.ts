@@ -289,7 +289,7 @@ export interface AccordionProps {
   isExtendable?: boolean;
   width?: string;
   extendWidth?: string;
-  onTabChange?: (index: number) => void;
+  onActivePanelChange?: (index: number) => void;
 }
 
 export interface AccordionState {
