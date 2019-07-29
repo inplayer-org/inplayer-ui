@@ -4,12 +4,15 @@ Accordion or expansion panel is a component that generates Accordion component w
 <br/>- `renderActionButton` (save/submit action buttn)
 <br/>- `renderFooterLink` (close action buttn)
 <br/> - `renderContent` (action used to render the content)
-<br/> - `contentHeight` - that determines the height of the wrapper.
-<br/> - `isExtendable` (display arrow and allow the accordion to extend)
 <br/> - `iconTooltip` (optional parameter - a tooltip to display on hovering the icon, see `Tooltip`'s prop list) - default `null`
+<br/> - `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default `false`
+<br/>
+<br/>Other props that the accordion accepts:
+<br/> - `isExtendable` (display arrow and allow the accordion to extend)
 <br/> - `width` (optional parameter - sets the width for the Accordion wrapper) - default 100%
 <br/> - `extendWidth` (optional parameter - defines the width the accordion should extend) - default 20%
-<br/> - `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default `false`
+<br/> - `contentHeight` - that determines the height of the wrapper.
+<br/> - `onTabChange` - function to be executed when the accordion tab changes
 
 ```jsx static
 const panels = [
@@ -55,29 +58,38 @@ const panels = [
     label: 'Accordion1',
     icon: 'info-circle',
     renderContent: () => {
-      return(
-      <div>
-        <h1>Long Content for the accordion1</h1>
-        <h1>Long Content for the accordion1</h1>
-        <h1>Long Content for the accordion1</h1>
-        <h1>Long Content for the accordion1</h1>
-        <h1>Long Content for the accordion1</h1>
-        <h1>Long Content for the accordion1</h1>
-      </div>);
+      return (
+        <div>
+          <h1>Long Content for the accordion1</h1>
+          <h1>Long Content for the accordion1</h1>
+          <h1>Long Content for the accordion1</h1>
+          <h1>Long Content for the accordion1</h1>
+          <h1>Long Content for the accordion1</h1>
+          <h1>Long Content for the accordion1</h1>
+        </div>
+      );
     },
     renderActionButton: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
+        <Button
+          onClick={closeAccordion}
+          size="sm"
+          buttonModifiers={['buttonPrimary']}
+        >
           Save
         </Button>
-      )
+      );
     },
     renderFooterLink: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+        <Button
+          onClick={closeAccordion}
+          style={{ border: 'none', background: 'transparent' }}
+          size="sm"
+        >
           Cancel
         </Button>
-      )
+      );
     },
   },
   {
@@ -92,17 +104,25 @@ const panels = [
     },
     renderActionButton: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
+        <Button
+          onClick={closeAccordion}
+          size="sm"
+          buttonModifiers={['buttonPrimary']}
+        >
           Save
         </Button>
-      )
+      );
     },
-     renderFooterLink: ({ closeAccordion }) => {
+    renderFooterLink: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+        <Button
+          onClick={closeAccordion}
+          style={{ border: 'none', background: 'transparent' }}
+          size="sm"
+        >
           Cancel
         </Button>
-      )
+      );
     },
     disabled: true,
   },
@@ -113,20 +133,35 @@ const panels = [
     },
     renderActionButton: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} size="sm" buttonModifiers={['buttonPrimary']}>
+        <Button
+          onClick={closeAccordion}
+          size="sm"
+          buttonModifiers={['buttonPrimary']}
+        >
           Save
         </Button>
-      )
+      );
     },
-     renderFooterLink: ({ closeAccordion }) => {
+    renderFooterLink: ({ closeAccordion }) => {
       return (
-        <Button onClick={closeAccordion} style={{border: 'none', background: 'transparent'}} size="sm">
+        <Button
+          onClick={closeAccordion}
+          style={{ border: 'none', background: 'transparent' }}
+          size="sm"
+        >
           Cancel
         </Button>
-      )
+      );
     },
   },
 ];
 
-<Accordion panels={panels} contentHeight="46vh" isExtendable width="80%" extendWidth="20%" />;
+<Accordion
+  onTabChange={(index: number) => console.log(index)}
+  panels={panels}
+  contentHeight="46vh"
+  isExtendable
+  width="80%"
+  extendWidth="20%"
+/>;
 ```

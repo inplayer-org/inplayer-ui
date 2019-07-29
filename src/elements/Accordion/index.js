@@ -28,6 +28,7 @@ type Props = {
   width?: string,
   extendWidth?: string,
   isExtendable?: boolean,
+  onTabChange?: (index: number) => void,
 };
 
 type State = { activePanel: number, open: boolean };
@@ -38,9 +39,11 @@ class Accordion extends Component<Props, State> {
   openPanel = (panelIndex: number) => (e: SyntheticEvent<*>) => {
     e.stopPropagation();
     const { activePanel } = this.state;
+    const { onTabChange } = this.props;
 
     if (panelIndex !== activePanel) {
       this.setState({ activePanel: panelIndex });
+      if (onTabChange) onTabChange(panelIndex);
     }
   };
 
@@ -117,6 +120,7 @@ Accordion.defaultProps = {
   width: '100%',
   extendWidth: '20%',
   isExtendable: false,
+  onTabChange: null,
 };
 
 /** @component */
