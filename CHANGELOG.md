@@ -4,11 +4,11 @@ All notable changes to this project will be documented in this file.
 
 =======
 
-# [0.24.1] - 29-07-2019
+# [0.25.0] - 29-07-2019
 
 ### Added
 
-- Add onActivePanelChange handler in Accordion component.
+- Add onActivePanelChange handler in Accordion
 
 # [0.24.0] - 26-07-2019
 
