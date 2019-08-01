@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.1] - 01-08-2019
+
+### Change
+
+- Update webfontloader wq active in globalStyles
+
 # [0.25.0] - 29-07-2019
 
 ### Added
