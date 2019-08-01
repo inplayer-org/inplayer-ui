@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Remove button from wf-active class in globalStyles.js
+- Update webfontloader wq active in globalStyles
 
 # [0.25.0] - 29-07-2019
 
