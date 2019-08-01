@@ -41,8 +41,7 @@ const GlobalStyle = createGlobalStyle`
       body,
       input,
       textarea,
-      select,
-      button {
+      select {
         font-family: ${props => props.theme.font.primary};
         font-weight: 300;
       }
