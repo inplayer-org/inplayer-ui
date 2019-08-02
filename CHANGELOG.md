@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.1] - 01-08-2019
+
+### Change
+
+- Update webfontloader wq active in globalStyles
+
+# [0.25.0] - 29-07-2019
+
+### Added
+
+- Add onActivePanelChange handler in Accordion
+
 # [0.24.0] - 26-07-2019
 
 ### Fixes
