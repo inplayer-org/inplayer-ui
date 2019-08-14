@@ -58,6 +58,9 @@ const TableCell = styled.td`
   text-align: ${ifProp('alignRight', 'right', 'left')};
   font-weight: ${fontWeights('light')};
   word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   a {
     color: ${uiColors('text.light')};
@@ -119,6 +122,7 @@ type Column = {
   title: string,
   key: string,
   render: ({ value: string, rowValues: Data }) => Node,
+  style?: Object,
 };
 
 type RowActions<T> =
@@ -282,7 +286,7 @@ class Table<T> extends React.Component<Props<T>, State> {
     return newData.map(row => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column, index) => (
-          <TableCell key={index} alignRight={column.key === 'actions'}>
+          <TableCell key={index} alignRight={column.key === 'actions'} style={column.style || {}}>
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
