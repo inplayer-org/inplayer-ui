@@ -169,6 +169,9 @@ exports[`Table renders correctly 1`] = `
   text-align: left;
   font-weight: 300;
   word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c8 a {
@@ -188,6 +191,9 @@ exports[`Table renders correctly 1`] = `
   text-align: right;
   font-weight: 300;
   word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c9 a {
@@ -276,6 +282,7 @@ exports[`Table renders correctly 1`] = `
     >
       <td
         className="c8"
+        style={Object {}}
       >
         <div
           className="c3 c4"
@@ -293,11 +300,13 @@ exports[`Table renders correctly 1`] = `
       </td>
       <td
         className="c8"
+        style={Object {}}
       >
         Eli
       </td>
       <td
         className="c9"
+        style={Object {}}
       >
         <span
           aria-hidden={true}

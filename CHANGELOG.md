@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.2] - 15-08-2019
+
+### Change
+
+- Always display TableCell content in single line by handling long content overflow and wrapping
+
 # [0.25.1] - 01-08-2019
 
 ### Change

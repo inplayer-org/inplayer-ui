@@ -174,6 +174,7 @@ export interface TableColumn<T extends TableRowData> {
   title: string;
   key: string;
   render?: (props: TableColumn$RenderProps<T>) => ReactNode;
+  style?: CSSProperties;
 }
 
 export interface TableRowData extends Object {
