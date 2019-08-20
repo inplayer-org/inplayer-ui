@@ -169,9 +169,9 @@ exports[`Table renders correctly 1`] = `
   text-align: left;
   font-weight: 300;
   word-wrap: break-word;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c8 a {
@@ -191,7 +191,6 @@ exports[`Table renders correctly 1`] = `
   text-align: right;
   font-weight: 300;
   word-wrap: break-word;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
