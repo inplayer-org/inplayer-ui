@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- Remove overflow: hiddel for actions cell
+- Remove overflow: hidden for actions cell
 
 # [0.25.2] - 15-08-2019
 
