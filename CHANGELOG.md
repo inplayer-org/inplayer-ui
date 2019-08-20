@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.3] - 20-08-2019
+
+### Fixes
+
+- Remove overflow: hidden for actions cell
+
 # [0.25.2] - 15-08-2019
 
 ### Change

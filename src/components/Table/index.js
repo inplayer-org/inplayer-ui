@@ -55,12 +55,12 @@ const TableCell = styled.td`
   padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
-  text-align: ${ifProp('alignRight', 'right', 'left')};
+  text-align: ${ifProp('isActionsCell', 'right', 'left')};
   font-weight: ${fontWeights('light')};
   word-wrap: break-word;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  ${({ isActionsCell }) => !isActionsCell && `overflow: hidden`};
 
   a {
     color: ${uiColors('text.light')};
@@ -286,7 +286,11 @@ class Table<T> extends React.Component<Props<T>, State> {
     return newData.map(row => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column, index) => (
-          <TableCell key={index} alignRight={column.key === 'actions'} style={column.style || {}}>
+          <TableCell
+            key={index}
+            isActionsCell={column.key === 'actions'}
+            style={column.style || {}}
+          >
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
