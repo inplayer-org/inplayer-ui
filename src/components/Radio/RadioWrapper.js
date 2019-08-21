@@ -3,12 +3,10 @@ import { uiColors } from 'utils';
 import colors from 'config/colors';
 
 const RadioWrapper = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
 
   > input {
-    display: none;
+    opacity: 0;
   }
 
   > input + label {
@@ -25,18 +23,24 @@ const RadioWrapper = styled.div`
       height: 1rem;
       border: 1px solid ${colors.gray};
       background: ${colors.white};
-      border-radius: 50%;
-      transition: all ease 300ms;
+      border-radius: 100%;
     }
 
     &::after {
       content: '●';
       position: absolute;
-      bottom: 1px;
-      left: 1px;
-      font-size: 1.7rem;
+      top: -1px;
+      left: 2.3px;
+      font-size: 1.4rem;
       color: ${uiColors('primary.main')};
-      transition: all ease 300ms;
+      transition: all 0.2s;
+    }
+  }
+
+  > input:not(:checked) + label {
+    &::after {
+      opacity: 0;
+      transform: scale(0);
     }
   }
 
@@ -45,33 +49,18 @@ const RadioWrapper = styled.div`
       border: 1px solid ${uiColors('primary.main')};
     }
 
-    &:hover::before {
-      border: 1px solid ${colors.gray};
-      background: ${uiColors('primary.main')};
-    }
-
     &::after {
       opacity: 1;
       transform: scale(1);
     }
   }
 
-  > input:not(:checked) + label {
-    &:hover::before {
-      border: 1px solid ${uiColors('primary.main')};
-      background-color: transparent;
-    }
+  > input:disabled:not(:checked) + label {
+    color: ${uiColors('text.disabled')};
 
-    &::after {
-      opacity: 0;
-      transform: scale(0);
-    }
-  }
-
-  > input:checked:focus + label,
-  input:not(:checked):focus + label {
     &::before {
-      border: 1px dotted ${uiColors('primary.main')};
+      border: 1px solid ${colors.gray};
+      background: transparent;
     }
   }
 
@@ -89,12 +78,10 @@ const RadioWrapper = styled.div`
     }
   }
 
-  > input:disabled:not(:checked) + label {
-    color: ${uiColors('text.disabled')};
-
+  > input:checked:focus + label,
+  input:not(:checked):focus + label {
     &::before {
       border: 1px solid ${colors.gray};
-      background: transparent;
     }
   }
 `;
