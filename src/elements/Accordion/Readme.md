@@ -157,7 +157,7 @@ const panels = [
 ];
 
 <Accordion
-  onActivePanelChange={(index: number) => console.log(index)}
+  onActivePanelChange={index => console.log(index)}
   panels={panels}
   contentHeight="46vh"
   isExtendable
