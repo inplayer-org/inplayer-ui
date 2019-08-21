@@ -157,7 +157,7 @@
     "react-styleguidist": "^8.0.6",
     "react-test-renderer": "^16.8.6",
     "react-toggle": "^4.0.2",
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.0",
     "styled-components": "^4.3.2",
     "styled-components-modifiers": "^1.2.4",
     "styled-tools": "^1.7.1",
