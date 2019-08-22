@@ -130,7 +130,8 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 100
+        "printWidth": 100,
+        "endOfLine": "auto"
       }
     ],
     "jsx-a11y/href-no-hash": "off",

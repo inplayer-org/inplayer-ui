@@ -17,7 +17,7 @@ const RadioWrapper = styled.div`
     &::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: -0.61px;
       top: 1px;
       width: 1rem;
       height: 1rem;
@@ -29,8 +29,8 @@ const RadioWrapper = styled.div`
     &::after {
       content: '●';
       position: absolute;
-      top: -1px;
-      left: 2.3px;
+      top: -0.1rem;
+      left: 0.09rem;
       font-size: 1.4rem;
       color: ${uiColors('primary.main')};
       transition: all 0.2s;
