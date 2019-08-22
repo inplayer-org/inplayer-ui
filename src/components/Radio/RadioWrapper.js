@@ -78,8 +78,13 @@ const RadioWrapper = styled.div`
     }
   }
 
-  > input:checked:focus + label,
-  input:not(:checked):focus + label {
+  > input:checked:focus + label {
+    &::before {
+      border: 1px solid ${uiColors('primary.main')};
+    }
+  }
+
+  > input:not(:checked):focus + label {
     &::before {
       border: 1px solid ${colors.gray};
     }
