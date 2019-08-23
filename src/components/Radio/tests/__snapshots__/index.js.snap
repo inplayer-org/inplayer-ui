@@ -18,7 +18,7 @@ exports[`Radio renders correctly 1`] = `
 .c0 > input + label::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -0.61px;
   top: 1px;
   width: 1rem;
   height: 1rem;
@@ -30,8 +30,8 @@ exports[`Radio renders correctly 1`] = `
 .c0 > input + label::after {
   content: '●';
   position: absolute;
-  top: -1px;
-  left: 2.3px;
+  top: -0.1rem;
+  left: 0.09rem;
   font-size: 1.4rem;
   color: #07AAE6;
   -webkit-transition: all 0.2s;
@@ -79,8 +79,11 @@ exports[`Radio renders correctly 1`] = `
   background: transparent;
 }
 
-.c0 > input:checked:focus + label::before,
-.c0 input:not(:checked):focus + label::before {
+.c0 > input:checked:focus + label::before {
+  border: 1px solid #07AAE6;
+}
+
+.c0 > input:not(:checked):focus + label::before {
   border: 1px solid #d7dde5;
 }
 
