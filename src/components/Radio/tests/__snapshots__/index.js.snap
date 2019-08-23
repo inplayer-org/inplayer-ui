@@ -2,22 +2,11 @@
 
 exports[`Radio renders correctly 1`] = `
 .c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: inline-block;
 }
 
 .c0 > input {
-  display: none;
+  opacity: 0;
 }
 
 .c0 > input + label {
@@ -35,41 +24,18 @@ exports[`Radio renders correctly 1`] = `
   height: 1rem;
   border: 1px solid #d7dde5;
   background: #fff;
-  border-radius: 50%;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
+  border-radius: 100%;
 }
 
 .c0 > input + label::after {
   content: '●';
   position: absolute;
-  bottom: 1px;
-  left: 1px;
-  font-size: 1.7rem;
+  top: -1px;
+  left: 2.3px;
+  font-size: 1.4rem;
   color: #07AAE6;
-  -webkit-transition: all ease 300ms;
-  transition: all ease 300ms;
-}
-
-.c0 > input:checked + label::before {
-  border: 1px solid #07AAE6;
-}
-
-.c0 > input:checked + label:hover::before {
-  border: 1px solid #d7dde5;
-  background: #07AAE6;
-}
-
-.c0 > input:checked + label::after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c0 > input:not(:checked) + label:hover::before {
-  border: 1px solid #07AAE6;
-  background-color: transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .c0 > input:not(:checked) + label::after {
@@ -79,9 +45,24 @@ exports[`Radio renders correctly 1`] = `
   transform: scale(0);
 }
 
-.c0 > input:checked:focus + label::before,
-.c0 input:not(:checked):focus + label::before {
-  border: 1px dotted #07AAE6;
+.c0 > input:checked + label::before {
+  border: 1px solid #07AAE6;
+}
+
+.c0 > input:checked + label::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0 > input:disabled:not(:checked) + label {
+  color: #c8ccd4;
+}
+
+.c0 > input:disabled:not(:checked) + label::before {
+  border: 1px solid #d7dde5;
+  background: transparent;
 }
 
 .c0 > input:disabled:checked + label {
@@ -98,13 +79,9 @@ exports[`Radio renders correctly 1`] = `
   background: transparent;
 }
 
-.c0 > input:disabled:not(:checked) + label {
-  color: #c8ccd4;
-}
-
-.c0 > input:disabled:not(:checked) + label::before {
+.c0 > input:checked:focus + label::before,
+.c0 input:not(:checked):focus + label::before {
   border: 1px solid #d7dde5;
-  background: transparent;
 }
 
 .c1 {
