@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.4] - 23-08-2019
+
+### Fixes
+
+- Remove redundant Radio styles
+
 # [0.25.3] - 20-08-2019
 
 ### Fixes
