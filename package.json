@@ -128,7 +128,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-import-resolver-webpack": "^0.11.1",
-    "eslint-loader": "^2.2.1",
+    "eslint-loader": "^3.0.0",
     "eslint-plugin-flowtype": "^3.12.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.14.1",
