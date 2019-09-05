@@ -23,7 +23,7 @@ const TableWrapper = styled.table`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
 `;
 
 const TableHeadRow = styled.tr`
