@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.25.5] - 05-09-2019
+
+### Fixes
+
+- Table layout to auto
+
 # [0.25.4] - 23-08-2019
 
 ### Fixes
