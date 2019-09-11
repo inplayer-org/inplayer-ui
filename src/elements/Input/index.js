@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 import { ifProp, switchProp } from 'styled-tools';
-import Icon from 'elements/Icon';
+import InplayerIcon from 'elements/InPlayerIcon';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -27,6 +27,13 @@ const StyledInput = styled.input`
   &:focus {
     border-bottom: 1px solid ${uiColors('primary.main')};
   }
+
+  ${ifProp(
+    { type: 'icon' },
+    css`
+      padding-left: 2rem !important;
+    `
+  )}
 
   ${ifProp(
     { type: 'search' },
@@ -65,14 +72,14 @@ const StyledInput = styled.input`
   })};
 `;
 
-const InputIcon = styled(Icon)`
+const InputIcon = styled(InplayerIcon)`
   position: absolute;
   color: ${colors.darkGray};
   left: 0.5rem;
   top: 33%;
 `;
 
-const SearchWrapper = styled.div`
+const InputWrapper = styled.div`
   width: 100%;
   position: relative;
 `;
@@ -86,10 +93,11 @@ type Props = {
   size?: Size,
   style?: Object,
   className?: string,
+  iconName?: string,
 };
 
 const Input = React.forwardRef(
-  ({ type, placeholder, onChange, size, style, className, ...rest }: Props, ref) => {
+  ({ type, placeholder, onChange, size, style, className, iconName, ...rest }: Props, ref) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
@@ -98,7 +106,7 @@ const Input = React.forwardRef(
     };
 
     return type === 'search' ? (
-      <SearchWrapper style={style} className={className}>
+      <InputWrapper style={style} className={className}>
         <InputIcon size={size} name="search" />
         <StyledInput
           size={size}
@@ -108,18 +116,19 @@ const Input = React.forwardRef(
           {...rest}
           onChange={onInputChange}
         />
-      </SearchWrapper>
+      </InputWrapper>
     ) : (
-      <StyledInput
-        style={style}
-        className={className}
-        size={size}
-        ref={ref}
-        type={type}
-        placeholder={placeholder}
-        onChange={onInputChange}
-        {...rest}
-      />
+      <InputWrapper style={style} className={className}>
+        {iconName && <InputIcon size={size} name={iconName} />}
+        <StyledInput
+          size={size}
+          ref={ref}
+          type={iconName ? 'icon' : type}
+          placeholder={placeholder}
+          onChange={onInputChange}
+          {...rest}
+        />
+      </InputWrapper>
     );
   }
 );
@@ -130,6 +139,7 @@ Input.defaultProps = {
   size: 'md',
   style: {},
   className: '',
+  iconName: '',
 };
 
 /** @component */
