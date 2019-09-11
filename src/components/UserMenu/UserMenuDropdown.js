@@ -83,6 +83,7 @@ type MenuItem = {
   href?: string,
   image?: string,
   onClick?: (e: SyntheticEvent<*>) => any,
+  smallSize?: boolean,
 };
 
 export type UserMenuDropdownProps = {
