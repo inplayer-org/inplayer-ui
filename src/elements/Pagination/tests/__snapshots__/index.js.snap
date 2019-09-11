@@ -34,7 +34,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li a {
-  color: #92959c;
+  color: #7d7e7f;
   padding: 0.0625rem 1rem 0.0625rem;
 }
 
@@ -64,7 +64,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.previous a {
-  color: #92959c;
+  color: #7d7e7f;
   padding: 0.0625rem 1rem 0.0625rem;
 }
 
@@ -83,7 +83,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.next a {
-  color: #92959c;
+  color: #7d7e7f;
   padding: 0.0625rem 1rem 0.0625rem;
 }
 

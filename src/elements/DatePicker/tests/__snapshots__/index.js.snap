@@ -372,7 +372,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DayPicker_weekHeader {
-  color: #92959c;
+  color: #7d7e7f;
   font-size: 1rem;
   position: absolute;
   top: 62px;
@@ -562,7 +562,7 @@ exports[`DatePicker renders correctly 1`] = `
   padding: 0.3125rem 0.625rem;
   font-size: 0.875rem;
   line-height: 1rem;
-  color: #92959c;
+  color: #7d7e7f;
   font-weight: 300;
 }
 
@@ -618,7 +618,7 @@ exports[`DatePicker renders correctly 1`] = `
 
 .c0 .datepreset label {
   display: block;
-  color: #92959c;
+  color: #7d7e7f;
   font-size: 0.875rem;
   -webkit-transition: ease 200ms color;
   transition: ease 200ms color;

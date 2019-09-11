@@ -157,7 +157,7 @@ exports[`Switch renders correctly 1`] = `
 }
 
 .c1:not(:disabled):hover {
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 <span

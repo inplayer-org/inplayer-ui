@@ -19,7 +19,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c5:not(:disabled):hover {
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 .c4 > input {
@@ -135,7 +135,7 @@ exports[`Table renders correctly 1`] = `
   background: #fff;
   width: 100%;
   text-align: left;
-  color: #92959c;
+  color: #7d7e7f;
   box-sizing: border-box;
   border: 1px solid #d7dde5;
   border-radius: 3px;
@@ -175,7 +175,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c8 a {
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 .c8 a:hover {
@@ -196,7 +196,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c9 a {
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 .c9 a:hover {

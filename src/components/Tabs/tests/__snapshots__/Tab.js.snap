@@ -25,7 +25,7 @@ exports[`Tab renders correctly 1`] = `
   -webkit-transition: background 0.3s,color 0.3s;
   transition: background 0.3s,color 0.3s;
   background: transparent;
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 .c0:last-child {
@@ -38,7 +38,7 @@ exports[`Tab renders correctly 1`] = `
 
 .c0 span {
   background: transparent;
-  color: #92959c;
+  color: #7d7e7f;
 }
 
 <div

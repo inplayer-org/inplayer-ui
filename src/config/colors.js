@@ -9,7 +9,7 @@ module.exports = {
   lightGray: '#F6F8FB',
   darkGray: '#b9c1cb',
   neutralGray: '#f6f8fb',
-  fontGray: '#92959c',
+  fontGray: '#7d7e7f',
   fontLightGray: '#c8ccd4',
   fontDarkGray: '#44494e',
   skyBlue: '#07AAE6',
