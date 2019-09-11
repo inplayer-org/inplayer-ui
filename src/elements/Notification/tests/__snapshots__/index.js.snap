@@ -6,7 +6,7 @@ exports[`Notification renders correctly 1`] = `
   border: 1px solid #d7dde5;
   border-radius: 3px;
   background: #F6F8FB;
-  color: #44494e;
+  color: #3e4348;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ exports[`Notification renders correctly 1`] = `
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  color: rgba(68,73,78,0.6);
+  color: rgba(62,67,72,0.6);
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -66,7 +66,7 @@ exports[`Notification renders correctly 1`] = `
 
 .c1:hover {
   background: #fff;
-  color: #44494e;
+  color: #3e4348;
 }
 
 <div
