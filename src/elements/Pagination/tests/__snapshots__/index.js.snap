@@ -102,7 +102,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.previous:hover:not(.disabled) a {
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c1 li.previous:hover:not(.disabled) a::before {
@@ -114,7 +114,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li.next:hover:not(.disabled) a {
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c1 li.next:hover:not(.disabled) a::after {
@@ -122,7 +122,7 @@ exports[`Pagination renders correctly 1`] = `
 }
 
 .c1 li:hover:not(.disabled) {
-  color: #44494e;
+  color: #3e4348;
   background: #F6F8FB;
 }
 

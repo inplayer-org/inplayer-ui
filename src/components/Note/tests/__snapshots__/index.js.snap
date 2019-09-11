@@ -7,7 +7,7 @@ exports[`Note renders correctly 1`] = `
   padding: 1.125rem 2%;
   border-radius: 3px;
   background: #fff;
-  color: #44494e;
+  color: #3e4348;
   font-weight: 300;
   -webkit-letter-spacing: 0.01em;
   -moz-letter-spacing: 0.01em;

@@ -66,7 +66,7 @@ exports[`UserMenu renders correctly 1`] = `
 }
 
 .c1:hover {
-  color: #44494e;
+  color: #3e4348;
 }
 
 <div

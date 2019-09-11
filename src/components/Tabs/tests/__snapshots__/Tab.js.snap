@@ -33,7 +33,7 @@ exports[`Tab renders correctly 1`] = `
 }
 
 .c0:hover {
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c0 span {
