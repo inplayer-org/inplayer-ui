@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input renders correctly 1`] = `
-.c0 {
+.c1 {
   width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: #44494e;
+  color: #3e4348;
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
   background: #fff;
@@ -21,14 +21,24 @@ exports[`Input renders correctly 1`] = `
   padding: 0.5625rem 0.75rem;
 }
 
-.c0:focus {
+.c1:focus {
   border-bottom: 1px solid #07AAE6;
 }
 
-<input
+.c0 {
+  width: 100%;
+  position: relative;
+}
+
+<div
   className="c0"
-  onChange={[Function]}
-  size="md"
   style={Object {}}
-/>
+>
+  
+  <input
+    className="c1"
+    onChange={[Function]}
+    size="md"
+  />
+</div>
 `;
