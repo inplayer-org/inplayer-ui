@@ -19,7 +19,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c5:not(:disabled):hover {
-  color: #aaadb4;
+  color: #92959c;
 }
 
 .c4 > input {
@@ -135,7 +135,7 @@ exports[`Table renders correctly 1`] = `
   background: #fff;
   width: 100%;
   text-align: left;
-  color: #aaadb4;
+  color: #92959c;
   box-sizing: border-box;
   border: 1px solid #d7dde5;
   border-radius: 3px;
@@ -144,7 +144,7 @@ exports[`Table renders correctly 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .c1 {
@@ -175,7 +175,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c8 a {
-  color: #aaadb4;
+  color: #92959c;
 }
 
 .c8 a:hover {
@@ -196,7 +196,7 @@ exports[`Table renders correctly 1`] = `
 }
 
 .c9 a {
-  color: #aaadb4;
+  color: #92959c;
 }
 
 .c9 a:hover {

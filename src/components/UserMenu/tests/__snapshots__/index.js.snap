@@ -58,7 +58,7 @@ exports[`UserMenu renders correctly 1`] = `
 }
 
 .c1 {
-  color: #aaadb4;
+  color: #92959c;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   font-size: 1rem;

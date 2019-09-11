@@ -372,7 +372,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DayPicker_weekHeader {
-  color: #aaadb4;
+  color: #92959c;
   font-size: 1rem;
   position: absolute;
   top: 62px;
@@ -562,7 +562,7 @@ exports[`DatePicker renders correctly 1`] = `
   padding: 0.3125rem 0.625rem;
   font-size: 0.875rem;
   line-height: 1rem;
-  color: #aaadb4;
+  color: #92959c;
   font-weight: 300;
 }
 
@@ -618,7 +618,7 @@ exports[`DatePicker renders correctly 1`] = `
 
 .c0 .datepreset label {
   display: block;
-  color: #aaadb4;
+  color: #92959c;
   font-size: 0.875rem;
   -webkit-transition: ease 200ms color;
   transition: ease 200ms color;
@@ -685,7 +685,8 @@ exports[`DatePicker renders correctly 1`] = `
             className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
             id="DateInput__screen-reader-message-startDate"
           >
-            Navigate forward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
           </p>
         </div>
         <div
@@ -719,7 +720,8 @@ exports[`DatePicker renders correctly 1`] = `
             className="DateInput_screenReaderMessage DateInput_screenReaderMessage_1"
             id="DateInput__screen-reader-message-endDate"
           >
-            Navigate backward to interact with the calendar and select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
+            Press the down arrow key to interact with the calendar and
+  select a date. Press the question mark key to get the keyboard shortcuts for changing dates.
           </p>
         </div>
       </div>
