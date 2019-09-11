@@ -63,11 +63,10 @@ const TableCell = styled.td`
   ${({ isActionsCell }) => !isActionsCell && `overflow: hidden`};
 
   a {
-    color: ${uiColors('text.light')};
+    color: ${colors.fontGray};
 
     &:hover {
-      color: ${uiColors('text.main')};
-      font-weight: ${fontWeights('light')};
+      color: ${colors.fontDarkGray};
     }
   }
 `;
