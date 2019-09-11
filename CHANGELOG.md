@@ -9,15 +9,15 @@ All notable changes to this project will be documented in this file.
 
 - Update Table link css
 
+### Fixes
+
+- Display tooltip in tables
+
 # [0.26.0] - 11-09-2019
 
 ### Added
 
 - Input with icon option
-
-### Fixes
-
-- Display tooltip in tables
 
 ### Change
 
