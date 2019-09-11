@@ -60,7 +60,6 @@ const TableCell = styled.td`
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
-  ${({ isActionsCell }) => !isActionsCell && `overflow: hidden`};
 
   a {
     color: ${colors.fontGray};
