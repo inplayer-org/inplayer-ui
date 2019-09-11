@@ -171,7 +171,6 @@ exports[`Table renders correctly 1`] = `
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .c8 a {

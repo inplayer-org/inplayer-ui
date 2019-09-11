@@ -15,6 +15,10 @@ All notable changes to this project will be documented in this file.
 
 - Input with icon option
 
+### Fixes
+
+- Display tooltip in tables
+
 ### Change
 
 - Update theme colors
