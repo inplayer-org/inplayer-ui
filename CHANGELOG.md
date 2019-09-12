@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 =======
 
 # [0.26.1] - 11-09-2019
+
 ### Change
 
 - Update Table link css
