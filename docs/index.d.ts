@@ -562,6 +562,7 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   size?: InputSize;
   style?: CSSProperties;
   className?: string;
+  iconName?: string;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;

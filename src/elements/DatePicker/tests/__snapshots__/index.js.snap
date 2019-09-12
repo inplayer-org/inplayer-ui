@@ -38,7 +38,7 @@ exports[`DatePicker renders correctly 1`] = `
   box-sizing: border-box;
   height: 37px;
   width: 37px;
-  color: #44494e;
+  color: #3e4348;
   text-align: center;
   font-size: 0.875rem;
   line-height: 32px;
@@ -58,7 +58,7 @@ exports[`DatePicker renders correctly 1`] = `
 
 .c0 .CalendarDay__default {
   border: 1px solid #d7dde5;
-  color: #44494e;
+  color: #3e4348;
   background: #fff;
 }
 
@@ -372,7 +372,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .DayPicker_weekHeader {
-  color: #aaadb4;
+  color: #7d7e7f;
   font-size: 1rem;
   position: absolute;
   top: 62px;
@@ -474,7 +474,7 @@ exports[`DatePicker renders correctly 1`] = `
   font-size: 1rem;
   line-height: 28px;
   cursor: pointer;
-  color: #44494e;
+  color: #3e4348;
   text-align: center;
 }
 
@@ -562,7 +562,7 @@ exports[`DatePicker renders correctly 1`] = `
   padding: 0.3125rem 0.625rem;
   font-size: 0.875rem;
   line-height: 1rem;
-  color: #aaadb4;
+  color: #7d7e7f;
   font-weight: 300;
 }
 
@@ -618,7 +618,7 @@ exports[`DatePicker renders correctly 1`] = `
 
 .c0 .datepreset label {
   display: block;
-  color: #aaadb4;
+  color: #7d7e7f;
   font-size: 0.875rem;
   -webkit-transition: ease 200ms color;
   transition: ease 200ms color;
@@ -628,7 +628,7 @@ exports[`DatePicker renders correctly 1`] = `
 }
 
 .c0 .datepreset label:hover {
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c0 .datepreset label.active {

@@ -15,7 +15,7 @@ exports[`Button renders correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   background: #fff;
-  color: #44494e;
+  color: #3e4348;
   font-weight: 300;
   border: 1px solid #d7dde5;
   border-radius: 3px;

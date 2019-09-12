@@ -12,7 +12,7 @@ exports[`TabNavigation renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: #aaadb4;
+  color: #7d7e7f;
   cursor: pointer;
   font-weight: 300;
   line-height: 2rem;
@@ -23,11 +23,11 @@ exports[`TabNavigation renders correctly 1`] = `
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   border-color: #07AAE6;
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c1:hover {
-  color: #44494e;
+  color: #3e4348;
 }
 
 .c0 {

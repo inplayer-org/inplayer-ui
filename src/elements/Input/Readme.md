@@ -28,6 +28,8 @@ function Page(props) {
   onChange={console.log}
   style={{ marginTop: '1rem' }}
 />
+  <Input type="text" placeholder="Input with icon"
+  style={{ marginTop: '1rem' }} iconName="lock" />
 ```
 
 ### Input Sizes

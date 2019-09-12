@@ -144,7 +144,7 @@ exports[`Switch renders correctly 1`] = `
   font-weight: 300;
   cursor: pointer;
   vertical-align: middle;
-  color: #44494e;
+  color: #3e4348;
   -webkit-transition: all ease 300ms;
   transition: all ease 300ms;
   line-height: 20px;
@@ -157,7 +157,7 @@ exports[`Switch renders correctly 1`] = `
 }
 
 .c1:not(:disabled):hover {
-  color: #aaadb4;
+  color: #7d7e7f;
 }
 
 <span
