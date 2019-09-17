@@ -60,14 +60,12 @@ const TableCell = styled.td`
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
-  ${({ isActionsCell }) => !isActionsCell && `overflow: hidden`};
 
   a {
-    color: ${uiColors('text.light')};
+    color: ${colors.fontGray};
 
     &:hover {
-      color: ${uiColors('text.main')};
-      font-weight: ${fontWeights('light')};
+      color: ${colors.fontDarkGray};
     }
   }
 `;

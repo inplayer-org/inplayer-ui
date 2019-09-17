@@ -4,16 +4,27 @@ All notable changes to this project will be documented in this file.
 
 =======
 
-# [0.25.6] - 11-09-2019
+# [0.26.1] - 11-09-2019
+
+### Change
+
+- Update Table link css
+
+### Fixes
+
+- Display tooltip in tables
+
+# [0.26.0] - 11-09-2019
+
+### Added
+
+- Input with icon option
 
 ### Change
 
 - Update theme colors
 
 # [0.25.5] - 05-09-2019
-### Added
-
-- Input with icon option
 
 ### Fixes
 

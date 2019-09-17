@@ -171,7 +171,6 @@ exports[`Table renders correctly 1`] = `
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .c8 a {
@@ -180,7 +179,6 @@ exports[`Table renders correctly 1`] = `
 
 .c8 a:hover {
   color: #3e4348;
-  font-weight: 300;
 }
 
 .c9 {
@@ -201,7 +199,6 @@ exports[`Table renders correctly 1`] = `
 
 .c9 a:hover {
   color: #3e4348;
-  font-weight: 300;
 }
 
 .c2 {
