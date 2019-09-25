@@ -1,12 +1,6 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage",
-        "debug": true
-      }
-    ],
+    "@babel/preset-env",
     "@babel/preset-react",
     "@babel/preset-flow"
   ],

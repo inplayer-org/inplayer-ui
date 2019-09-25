@@ -1,15 +1,24 @@
-// React v.16 uses some newer JS functionality, so to ensure everything
-// works across all browsers, we're adding babel-polyfill here.
-// The polyfill must be at the top of the entry point to ensure the polyfills are loaded first.
-require('@babel/polyfill');
-
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const pkg = require('./package.json');
 
 module.exports = {
   entry: ['./src/index'],
+  mode: 'production',
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  output: {
+    path: path.join(__dirname, '/build'),
+    filename: 'bundle.min.js',
+    library: pkg.name,
+    libraryTarget: 'umd',
+    publicPath: '/',
+    umdNamedDefine: true,
+  },
   module: {
     rules: [
       { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
@@ -87,15 +96,6 @@ module.exports = {
       theme: path.resolve(__dirname, './src/theme'),
     },
   },
-  output: {
-    path: path.join(__dirname, '/build'),
-    library: pkg.name,
-    libraryTarget: 'commonjs2',
-    publicPath: '/',
-    filename: 'bundle.js',
-    umdNamedDefine: true,
-  },
-  devtool: 'eval',
   devServer: {
     contentBase: './build',
     hot: true,
@@ -103,8 +103,6 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
 };
