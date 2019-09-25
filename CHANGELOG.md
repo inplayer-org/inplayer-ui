@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.26.2] - 25-09-2019
+
+### Fixes
+
+- Optimize generated bundle size
+
 # [0.26.1] - 11-09-2019
 
 ### Change
