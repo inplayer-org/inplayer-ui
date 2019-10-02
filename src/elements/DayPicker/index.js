@@ -2,7 +2,7 @@
 import React from 'react';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
-import { Moment } from 'moment';
+import moment, { Moment } from 'moment';
 
 import DayPickerWrapper from './DayPickerWrapper';
 
@@ -11,7 +11,7 @@ type Props = {
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,
   focused: boolean,
-  date: Moment,
+  date: Moment | string,
   style?: Object,
   className?: string,
   numberOfMonths?: number,
@@ -26,18 +26,22 @@ const DayPicker = ({
   style,
   className,
   numberOfMonths,
-}: Props) => (
-  <DayPickerWrapper style={style} className={className}>
-    <SingleDatePicker
-      isOutsideRange={isOutsideRange}
-      onDateChange={onDateChange}
-      onFocusChange={onFocusChange}
-      focused={focused}
-      date={date}
-      numberOfMonths={numberOfMonths}
-    />
-  </DayPickerWrapper>
-);
+}: Props) => {
+  console.log(typeof date, 'TYPE Of UIIIIIII');
+  console.log(typeof date === 'string' ? moment(date, 'MM-DD-YYYY') : date, 'DATE');
+  return (
+    <DayPickerWrapper style={style} className={className}>
+      <SingleDatePicker
+        isOutsideRange={isOutsideRange}
+        onDateChange={onDateChange}
+        onFocusChange={onFocusChange}
+        focused={focused}
+        date={typeof date === 'string' ? moment(date, 'MM-DD-YYYY') : date}
+        numberOfMonths={numberOfMonths}
+      />
+    </DayPickerWrapper>
+  );
+};
 
 DayPicker.defaultProps = {
   isOutsideRange: () => false,
