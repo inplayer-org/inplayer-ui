@@ -2,7 +2,7 @@
 import React from 'react';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
-import { Moment } from 'moment';
+import moment, { Moment } from 'moment';
 
 import DayPickerWrapper from './DayPickerWrapper';
 
@@ -11,7 +11,7 @@ type Props = {
   onDateChange: (date: Moment) => any,
   onFocusChange: (focused: any) => any,
   focused: boolean,
-  date: Moment,
+  date: Moment | string,
   style?: Object,
   className?: string,
   numberOfMonths?: number,
@@ -33,7 +33,7 @@ const DayPicker = ({
       onDateChange={onDateChange}
       onFocusChange={onFocusChange}
       focused={focused}
-      date={date}
+      date={typeof date === 'string' ? moment(date, 'MM-DD-YYYY') : date}
       numberOfMonths={numberOfMonths}
     />
   </DayPickerWrapper>
