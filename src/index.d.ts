@@ -418,7 +418,7 @@ export interface DefaultOption {
 
 export type DropdownModifier = 'fontSizeExtraSmall' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge';
 
-export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
+export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement> {
   value: string;
   onChange?: (value: string) => any;
   color?: string;
@@ -428,8 +428,6 @@ export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
   modifiers?: Array<DropdownModifier>;
   disabled?: boolean;
   defaultOption?: DefaultOption,
-  id?: string,
-  name?: string,
 }
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;

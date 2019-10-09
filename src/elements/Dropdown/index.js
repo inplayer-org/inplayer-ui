@@ -64,8 +64,6 @@ type Props = HTMLSelectElement & {
   style?: Object,
   disabled?: boolean,
   defaultOption?: DefaultOption,
-  id?: string,
-  name?: string,
 };
 
 const Dropdown = ({ options, onChange, style, className, defaultOption, ...rest }: Props) => {
