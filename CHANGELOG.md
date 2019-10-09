@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 =======
 
+# [0.26.4] - 09-10-2019
+
+### Change
+
+- Changed the prop types for Dropdown.
+
 # [0.26.3] - 04-10-2019
 
 ### Fixes
