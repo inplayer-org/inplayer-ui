@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 # [0.26.3] - 04-10-2019
 
+### Change
+
+- Added id and name optional props to Dropdown.
+
+# [0.26.3] - 04-10-2019
+
 ### Fixes
 
 - Fixed type attribute of input
