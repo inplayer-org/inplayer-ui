@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment } from 'react';
+import React from 'react';
 import type { Node, ComponentType } from 'react';
 import { ThemeProvider as DefaultThemeProvider } from 'styled-components';
 import GlobalStyles from 'config/globalStyles';
@@ -19,10 +19,10 @@ const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
   return (
     <Provider theme={appTheme}>
       <DefaultThemeProvider theme={appTheme}>
-        <Fragment>
+        <>
           <GlobalStyles suppressMultiMountWarning />
           {children}
-        </Fragment>
+        </>
       </DefaultThemeProvider>
     </Provider>
   );
