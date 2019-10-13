@@ -3,8 +3,13 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "usage",
-        "debug": true
+        "modules": false,
+        "targets": {
+          "node": "current",
+          "browsers": [
+            "last 2 versions"
+          ]
+        }
       }
     ],
     "@babel/preset-react",

@@ -26,15 +26,15 @@ type Props = HTMLDivElement &
 
 const Content = ({ icon, iconPosition, iconModifiers, name }: any) =>
   iconPosition === 'right' ? (
-    <React.Fragment>
+    <>
       {name}
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
-    </React.Fragment>
+    </>
   ) : (
-    <React.Fragment>
+    <>
       {icon && <Icon name={icon} modifiers={iconModifiers} />}
       {name}
-    </React.Fragment>
+    </>
   );
 
 Content.defaultProps = {
