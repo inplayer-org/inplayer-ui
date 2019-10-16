@@ -2,7 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-=======
+# [1.0.0] - 10-10-2019 Fully tested major version
+
+# [0.26.3] - 04-10-2019
+
+### Fixes
+
+- Fixed type attribute of input
+
+### Change
+
+- Changed the date type. The date can be of type moment or type string
+
+# [0.26.2] - 25-09-2019
+
+### Fixes
+
+- Optimize generated bundle size
 
 # [0.26.1] - 11-09-2019
 

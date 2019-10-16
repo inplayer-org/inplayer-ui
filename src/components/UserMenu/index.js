@@ -1,5 +1,5 @@
 // @flow
-import React, { type Element, Fragment } from 'react';
+import React, { type Element } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
@@ -79,10 +79,6 @@ type UserMenuState = {
 };
 
 class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
-  static defaultProps: {
-    className: string,
-  };
-
   state = {
     open: false,
   };
@@ -96,7 +92,7 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
     const { open } = this.state;
 
     return (
-      <Fragment>
+      <>
         <UserMenuContainer className={className} style={style} onClick={this.toggleMenuOpen}>
           {image && <ProfileImage src={image} />}
           <MenuTitle>{menuTitle}</MenuTitle>
@@ -113,7 +109,7 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
           )}
         </UserMenuContainer>
         {open && <CloseLayer onClick={this.toggleMenuOpen} />}
-      </Fragment>
+      </>
     );
   }
 }

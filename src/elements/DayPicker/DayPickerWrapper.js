@@ -76,7 +76,7 @@ const DayPickerWrapper = styled(DatePickerWrapper)`
   }
 
   .SingleDatePicker_picker {
-    z-index: 1;
+    z-index: 10;
     background-color: ${colors.white};
     position: absolute;
     top: 35px !important;

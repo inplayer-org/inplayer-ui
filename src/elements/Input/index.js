@@ -29,7 +29,7 @@ const StyledInput = styled.input`
   }
 
   ${ifProp(
-    { type: 'icon' },
+    'iconName',
     css`
       padding-left: 2rem !important;
     `
@@ -123,9 +123,10 @@ const Input = React.forwardRef(
         <StyledInput
           size={size}
           ref={ref}
-          type={iconName ? 'icon' : type}
+          type={type || 'text'}
           placeholder={placeholder}
           onChange={onInputChange}
+          iconName={iconName}
           {...rest}
         />
       </InputWrapper>
