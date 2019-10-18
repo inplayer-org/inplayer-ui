@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.0.3] - 18-10-2019
+
+### Fixes
+
+- Fix typo in react and react-dom version
+
 # [1.0.2] - 17-10-2019
 
 ### Fixes
