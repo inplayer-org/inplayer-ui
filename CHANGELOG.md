@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.0.2] - 17-10-2019
+
+### Fixes
+
+- Change webpack libraryTarget output to commonjs2
+
 # [1.0.1] - 16-10-2019
 
 ### Change
