@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.0.1] - 16-10-2019
+
+### Change
+
+- Add margin to Typography
+
 # [1.0.0] - 10-10-2019 Fully tested major version
 
 # [0.26.3] - 04-10-2019
