@@ -33,7 +33,7 @@ const DayPicker = ({
       onDateChange={onDateChange}
       onFocusChange={onFocusChange}
       focused={focused}
-      date={typeof date === 'string' ? moment(date, 'MM-DD-YYYY') : date}
+      date={typeof date === 'string' ? moment(date) : date}
       numberOfMonths={numberOfMonths}
     />
   </DayPickerWrapper>

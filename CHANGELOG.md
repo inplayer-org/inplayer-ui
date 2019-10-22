@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.0.4] - 22-10-2019
+
+### Fixes
+
+- Fix invalid date in day picker. Create moment from string without specifying the format
+
 # [1.0.3] - 18-10-2019
 
 ### Fixes
