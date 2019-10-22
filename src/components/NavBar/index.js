@@ -20,13 +20,13 @@ type State = {
 };
 
 class Navbar extends Component<Props, State> {
-  static MenuItem: Element<typeof MenuItem>;
-
   state = {
     open: false,
   };
 
   toggleOpen = () => this.setState(({ open }) => ({ open: !open }));
+
+  static MenuItem: Element<typeof MenuItem>;
 
   render() {
     const { children, logo, className, style } = this.props;
