@@ -38,6 +38,7 @@
     }
   },
   "rules": {
+    "react/sort-comp": 0,
     "react/default-props-match-prop-types": 0,
     "react/no-danger": 0,
     "react/prop-types": "warn",
