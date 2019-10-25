@@ -38,7 +38,7 @@ const Heading = styled.h1`
 
 export type TypographyProps = {
   variant: TypographyVariant,
-  description: ?boolean,
+  description?: boolean,
   children: Node,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
@@ -88,6 +88,7 @@ Typography.defaultProps = {
   modifiers: [],
   color: '',
   style: {},
+  description: false,
 };
 
 export default Typography;

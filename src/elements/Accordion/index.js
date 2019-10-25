@@ -20,6 +20,7 @@ type Panel = {
   renderFooterLink: ({
     closeAccordion: (e?: SyntheticEvent<*>) => void,
   }) => Node,
+  disabled: boolean,
 };
 
 type Props = {
@@ -36,8 +37,7 @@ type State = { activePanel: number, open: boolean };
 class Accordion extends Component<Props, State> {
   state = { activePanel: -1, open: false };
 
-  openPanel = (panelIndex: number) => (e: SyntheticEvent<*>) => {
-    e.stopPropagation();
+  openPanel = (panelIndex: number) => {
     const { activePanel } = this.state;
     const { onActivePanelChange } = this.props;
 
@@ -50,6 +50,16 @@ class Accordion extends Component<Props, State> {
   closePanel = (e?: SyntheticEvent<*>) => {
     if (e) e.stopPropagation();
     this.setState({ activePanel: -1 });
+  };
+
+  togglePanel = (panelIndex: number) => (e: SyntheticEvent<*>) => {
+    e.stopPropagation();
+    const { activePanel } = this.state;
+    if (activePanel !== -1) {
+      this.closePanel();
+    } else {
+      this.openPanel(panelIndex);
+    }
   };
 
   toggleOpen = () => {
@@ -94,11 +104,11 @@ class Accordion extends Component<Props, State> {
                   iconTooltip={iconTooltip}
                   label={label}
                   renderContent={renderContent}
-                  openPanel={this.openPanel(index)}
                   closePanel={this.closePanel}
                   isOtherPanelActive={isOtherPanelActive}
                   contentHeight={contentHeight}
                   disabled={disabled}
+                  togglePanel={this.togglePanel(index)}
                 />
                 <AccordionFooter
                   isActive={activePanel === index}
