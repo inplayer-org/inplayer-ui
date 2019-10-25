@@ -28,13 +28,7 @@ const StyledInput = styled.input`
     border-bottom: 1px solid ${uiColors('primary.main')};
   }
 
-  ${ifProp(
-    'iconName',
-    css`
-      padding-left: 2rem !important;
-    `
-  )}
-
+  padding-left: ${props => (props.iconName || props.renderIcon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`
@@ -94,10 +88,14 @@ type Props = {
   style?: Object,
   className?: string,
   iconName?: string,
+  renderIcon?: () => Node,
 };
 
 const Input = React.forwardRef(
-  ({ type, placeholder, onChange, size, style, className, iconName, ...rest }: Props, ref) => {
+  (
+    { type, placeholder, onChange, size, style, className, iconName, renderIcon, ...rest }: Props,
+    ref
+  ) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
@@ -120,6 +118,7 @@ const Input = React.forwardRef(
     ) : (
       <InputWrapper style={style} className={className}>
         {iconName && <InputIcon size={size} name={iconName} />}
+        {renderIcon && renderIcon()}
         <StyledInput
           size={size}
           ref={ref}
@@ -127,6 +126,7 @@ const Input = React.forwardRef(
           placeholder={placeholder}
           onChange={onInputChange}
           iconName={iconName}
+          renderIcon={renderIcon}
           {...rest}
         />
       </InputWrapper>
@@ -141,6 +141,7 @@ Input.defaultProps = {
   style: {},
   className: '',
   iconName: '',
+  renderIcon: null,
 };
 
 /** @component */

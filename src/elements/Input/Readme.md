@@ -1,7 +1,7 @@
 Text input is a input component for text. You can use it directly like this:
 
 ```jsx static
-import { Input } from '@inplayer-org/inplayer-ui';
+import { Input, InPlayerIcon } from '@inplayer-org/inplayer-ui';
 
 function Page(props) {
   return (
@@ -30,6 +30,8 @@ function Page(props) {
 />
   <Input type="text" placeholder="Input with icon"
   style={{ marginTop: '1rem' }} iconName="lock" />
+  <Input type="text" placeholder="Input with custom icon"
+  style={{ marginTop: '1rem' }} renderIcon={() => <InPlayerIcon name="download" modifiers={['statusColorSuccess']} />} />
 ```
 
 ### Input Sizes
