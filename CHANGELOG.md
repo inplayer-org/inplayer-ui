@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.1.0] - 25-10-2019
+
+### Change
+
+- Add renderIcon option to Icon
+
 # [1.0.4] - 22-10-2019
 
 ### Fixes
