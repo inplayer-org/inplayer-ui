@@ -275,13 +275,16 @@ export interface ActionButtonRenderProps {
 }
 
 export interface AccordionPanel {
-  label: string;
+  label: string,
+  isActive: boolean;
+  isOtherPanelActive: boolean;
   icon?: string;
   iconTooltip?: TooltipProps;
-  disabled?: boolean;
-  renderContent: () => ReactNode;
-  renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
-  renderFooterLink: (props: ActionButtonRenderProps) => ReactNode;
+  contentHeight: string;
+  togglePanel: (panel: number) => (e?: SyntheticEvent<any>) => void;
+  renderContent: (actions: {closePanel: (e?: SyntheticEvent<any>) => void}) => any;
+  closePanel: (e?: SyntheticEvent<any>) => void;
+  disabled: boolean;
 }
 
 export interface AccordionProps {

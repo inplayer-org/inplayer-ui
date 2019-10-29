@@ -1,11 +1,10 @@
 // @flow
-import React, { Component, type Node } from 'react';
+import React, { Component } from 'react';
 
 // Components
-import { Props as TooltipProps } from 'components/Tooltip';
+import type { Props as TooltipProps } from 'components/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
-import AccordionFooter from './AccordionFooter';
 import Arrow from '../../components/NavBar/Arrow';
 
 // Types
@@ -14,12 +13,6 @@ type Panel = {
   icon?: string,
   iconTooltip?: TooltipProps,
   renderContent: () => any,
-  renderActionButton: ({
-    closeAccordion: (e?: SyntheticEvent<*>) => void,
-  }) => Node,
-  renderFooterLink: ({
-    closeAccordion: (e?: SyntheticEvent<*>) => void,
-  }) => Node,
   disabled: boolean,
 };
 
@@ -82,15 +75,7 @@ class Accordion extends Component<Props, State> {
       >
         <div>
           {panels.map((panel, index) => {
-            const {
-              icon,
-              iconTooltip,
-              label,
-              renderActionButton,
-              renderContent,
-              renderFooterLink,
-              disabled,
-            } = panel;
+            const { icon, iconTooltip, label, renderContent, disabled } = panel;
             const { activePanel } = state;
             const isActive = activePanel === index;
             const isOtherPanelActive = !isActive && activePanel !== -1;
@@ -109,12 +94,6 @@ class Accordion extends Component<Props, State> {
                   contentHeight={contentHeight}
                   disabled={disabled}
                   togglePanel={this.togglePanel(index)}
-                />
-                <AccordionFooter
-                  isActive={activePanel === index}
-                  closePanel={this.closePanel}
-                  renderActionButton={renderActionButton}
-                  renderFooterLink={renderFooterLink}
                 />
               </div>
             );

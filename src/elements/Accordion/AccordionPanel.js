@@ -24,7 +24,7 @@ const AccordionPanelContainer = styled.div`
     'isActive',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 15.5rem)`};
+      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 12.5rem)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
@@ -80,7 +80,8 @@ type Props = {
   iconTooltip?: TooltipProps,
   contentHeight: string,
   togglePanel: (panel: number) => (e?: SyntheticEvent<*>) => void,
-  renderContent: () => any,
+  renderContent: (actions: { closePanel: (e?: SyntheticEvent<any>) => void }) => any,
+  closePanel: (e?: SyntheticEvent<*>) => void,
   disabled: boolean,
 };
 
@@ -94,6 +95,7 @@ const AccordionPanel = ({
   contentHeight,
   disabled,
   togglePanel,
+  closePanel,
 }: Props) => (
   <>
     <AccordionPanelHeader
@@ -114,7 +116,7 @@ const AccordionPanel = ({
         ))}
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
-      <AccordionPanelDetails>{isActive && renderContent()}</AccordionPanelDetails>
+      <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>
     </AccordionPanelContainer>
   </>
 );
