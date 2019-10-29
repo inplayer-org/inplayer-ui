@@ -15,7 +15,7 @@ module.exports = {
     path: path.join(__dirname, '/build'),
     filename: 'bundle.min.js',
     library: pkg.name,
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     publicPath: '/',
     umdNamedDefine: true,
   },

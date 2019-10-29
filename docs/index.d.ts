@@ -418,7 +418,7 @@ export interface DefaultOption {
 
 export type DropdownModifier = 'fontSizeExtraSmall' | 'fontSizeSmall' | 'fontSizeMedium' | 'fontSizeLarge';
 
-export interface DropdownProps extends HTMLAttributes<HTMLSelectElement> {
+export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement> {
   value: string;
   onChange?: (value: string) => any;
   color?: string;
@@ -563,6 +563,7 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   style?: CSSProperties;
   className?: string;
   iconName?: string;
+  renderIcon?: () => ReactNode;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;

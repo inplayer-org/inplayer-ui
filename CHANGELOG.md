@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+# [1.1.0] - 25-10-2019
+
+### Change
+
+- Add renderIcon option to Icon
+
+# [1.0.4] - 22-10-2019
+
+### Fixes
+
+- Fix invalid date in day picker. Create moment from string without specifying the format
+
+# [1.0.3] - 18-10-2019
+
+### Fixes
+
+- Fix typo in react and react-dom version
+
+# [1.0.2] - 17-10-2019
+
+### Fixes
+
+- Change webpack libraryTarget output to commonjs2
+
+# [1.0.1] - 16-10-2019
+
+### Change
+
+- Add margin to Typography
+
 # [1.0.0] - 10-10-2019 Fully tested major version
 
 # [0.26.3] - 04-10-2019
