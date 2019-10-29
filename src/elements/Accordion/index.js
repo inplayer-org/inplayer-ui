@@ -64,7 +64,7 @@ class Accordion extends Component<Props, State> {
     const { panels, contentHeight, width, extendWidth, isExtendable } = this.props;
 
     const { state } = this;
-    const { open } = state;
+    const { open, activePanel } = state;
 
     return (
       <AccordionWrapper
@@ -76,7 +76,6 @@ class Accordion extends Component<Props, State> {
         <div>
           {panels.map((panel, index) => {
             const { icon, iconTooltip, label, renderContent, disabled } = panel;
-            const { activePanel } = state;
             const isActive = activePanel === index;
             const isOtherPanelActive = !isActive && activePanel !== -1;
 
@@ -99,7 +98,9 @@ class Accordion extends Component<Props, State> {
             );
           })}
         </div>
-        {isExtendable && <Arrow onClick={this.toggleOpen} open={open} section="accordion" />}
+        {isExtendable && activePanel === -1 && (
+          <Arrow onClick={this.toggleOpen} open={open} section="accordion" />
+        )}
       </AccordionWrapper>
     );
   }
