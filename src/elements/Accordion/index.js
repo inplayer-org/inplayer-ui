@@ -1,11 +1,10 @@
 // @flow
-import React, { Component, type Node } from 'react';
+import React, { Component } from 'react';
 
 // Components
-import { Props as TooltipProps } from 'components/Tooltip';
+import type { Props as TooltipProps } from 'components/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
-import AccordionFooter from './AccordionFooter';
 import Arrow from '../../components/NavBar/Arrow';
 
 // Types
@@ -14,12 +13,7 @@ type Panel = {
   icon?: string,
   iconTooltip?: TooltipProps,
   renderContent: () => any,
-  renderActionButton: ({
-    closeAccordion: (e?: SyntheticEvent<*>) => void,
-  }) => Node,
-  renderFooterLink: ({
-    closeAccordion: (e?: SyntheticEvent<*>) => void,
-  }) => Node,
+  disabled: boolean,
 };
 
 type Props = {
@@ -36,8 +30,7 @@ type State = { activePanel: number, open: boolean };
 class Accordion extends Component<Props, State> {
   state = { activePanel: -1, open: false };
 
-  openPanel = (panelIndex: number) => (e: SyntheticEvent<*>) => {
-    e.stopPropagation();
+  openPanel = (panelIndex: number) => {
     const { activePanel } = this.state;
     const { onActivePanelChange } = this.props;
 
@@ -52,6 +45,16 @@ class Accordion extends Component<Props, State> {
     this.setState({ activePanel: -1 });
   };
 
+  togglePanel = (panelIndex: number) => (e: SyntheticEvent<*>) => {
+    e.stopPropagation();
+    const { activePanel } = this.state;
+    if (activePanel !== -1) {
+      this.closePanel();
+    } else {
+      this.openPanel(panelIndex);
+    }
+  };
+
   toggleOpen = () => {
     const { isExtendable } = this.props;
     if (isExtendable) this.setState(({ open }) => ({ open: !open }));
@@ -61,7 +64,7 @@ class Accordion extends Component<Props, State> {
     const { panels, contentHeight, width, extendWidth, isExtendable } = this.props;
 
     const { state } = this;
-    const { open } = state;
+    const { open, activePanel } = state;
 
     return (
       <AccordionWrapper
@@ -72,16 +75,7 @@ class Accordion extends Component<Props, State> {
       >
         <div>
           {panels.map((panel, index) => {
-            const {
-              icon,
-              iconTooltip,
-              label,
-              renderActionButton,
-              renderContent,
-              renderFooterLink,
-              disabled,
-            } = panel;
-            const { activePanel } = state;
+            const { icon, iconTooltip, label, renderContent, disabled } = panel;
             const isActive = activePanel === index;
             const isOtherPanelActive = !isActive && activePanel !== -1;
 
@@ -94,23 +88,19 @@ class Accordion extends Component<Props, State> {
                   iconTooltip={iconTooltip}
                   label={label}
                   renderContent={renderContent}
-                  openPanel={this.openPanel(index)}
                   closePanel={this.closePanel}
                   isOtherPanelActive={isOtherPanelActive}
                   contentHeight={contentHeight}
                   disabled={disabled}
-                />
-                <AccordionFooter
-                  isActive={activePanel === index}
-                  closePanel={this.closePanel}
-                  renderActionButton={renderActionButton}
-                  renderFooterLink={renderFooterLink}
+                  togglePanel={this.togglePanel(index)}
                 />
               </div>
             );
           })}
         </div>
-        {isExtendable && <Arrow onClick={this.toggleOpen} open={open} section="accordion" />}
+        {isExtendable && activePanel === -1 && (
+          <Arrow onClick={this.toggleOpen} open={open} section="accordion" />
+        )}
       </AccordionWrapper>
     );
   }

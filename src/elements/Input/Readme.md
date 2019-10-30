@@ -31,7 +31,7 @@ function Page(props) {
   <Input type="text" placeholder="Input with icon"
   style={{ marginTop: '1rem' }} iconName="lock" />
   <Input type="text" placeholder="Input with custom icon"
-  style={{ marginTop: '1rem' }} renderIcon={() => <InPlayerIcon name="download" modifiers={['statusColorSuccess']} />} />
+  style={{ marginTop: '1rem' }} renderIcon={() => <div style={{ marginLeft: '5px', top: '30px', position: 'relative' }}><InPlayerIcon name="download" modifiers={['statusColorSuccess']} /></div>} />
 ```
 
 ### Input Sizes
