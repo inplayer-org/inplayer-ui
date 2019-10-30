@@ -1,8 +1,6 @@
 Accordion or expansion panel is a component that generates Accordion component with more accordion panels. It takes `panels` - array of objects and each object should contain:
 <br/>- `label` (title)
 <br/>- `icon` (icon displayed next to the title)
-<br/>- `renderActionButton` (save/submit action buttn)
-<br/>- `renderFooterLink` (close action buttn)
 <br/> - `renderContent` (action used to render the content)
 <br/> - `iconTooltip` (optional parameter - a tooltip to display on hovering the icon, see `Tooltip`'s prop list) - default `null`
 <br/> - `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default `false`
@@ -19,31 +17,15 @@ const panels = [
   {
     label: 'Accordion1',
     icon: 'info-circle',
-    renderContent: () => {
+    renderContent: ({ closePanel }) => {
       return <h1>Content for the accordion1</h1>;
-    },
-    renderActionButton: ({ closeAccordion }) => {
-      closeAccordion();
-      console.log('accordionAction');
-    },
-    renderFooterLink: ({ closeAccordion }) => {
-      closeAccordion();
-      console.log('accordionAction');
     },
   },
   {
     label: 'Accordion2',
     icon: 'info-circle',
-    renderContent: () => {
+    renderContent: ({ closePanel }) => {
       return <h5>Content for the accordionh2</h5>;
-    },
-    renderActionButton: ({ closeAccordion }) => {
-      closeAccordion();
-      console.log('accordionAction2');
-    },
-    renderFooterLink: ({ closeAccordion }) => {
-      closeAccordion();
-      console.log('accordionAction');
     },
   },
 ];
@@ -57,7 +39,7 @@ const panels = [
   {
     label: 'Accordion1',
     icon: 'info-circle',
-    renderContent: () => {
+    renderContent: ({ closePanel }) => {
       return (
         <div>
           <h1>Long Content for the accordion1</h1>
@@ -69,28 +51,6 @@ const panels = [
         </div>
       );
     },
-    renderActionButton: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          size="sm"
-          buttonModifiers={['buttonPrimary']}
-        >
-          Save
-        </Button>
-      );
-    },
-    renderFooterLink: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          style={{ border: 'none', background: 'transparent' }}
-          size="sm"
-        >
-          Cancel
-        </Button>
-      );
-    },
   },
   {
     label: 'Accordion2',
@@ -99,30 +59,8 @@ const panels = [
       content: 'This is a disabled panel with optional icon with a tooltip',
       placement: 'left',
     },
-    renderContent: () => {
+    renderContent: ({ closePanel }) => {
       return <h5>Content for the accordionh2</h5>;
-    },
-    renderActionButton: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          size="sm"
-          buttonModifiers={['buttonPrimary']}
-        >
-          Save
-        </Button>
-      );
-    },
-    renderFooterLink: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          style={{ border: 'none', background: 'transparent' }}
-          size="sm"
-        >
-          Cancel
-        </Button>
-      );
     },
     disabled: true,
   },
@@ -130,28 +68,6 @@ const panels = [
     label: 'Accordion3',
     renderContent: () => {
       return <h5>Content for the accordionh3</h5>;
-    },
-    renderActionButton: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          size="sm"
-          buttonModifiers={['buttonPrimary']}
-        >
-          Save
-        </Button>
-      );
-    },
-    renderFooterLink: ({ closeAccordion }) => {
-      return (
-        <Button
-          onClick={closeAccordion}
-          style={{ border: 'none', background: 'transparent' }}
-          size="sm"
-        >
-          Cancel
-        </Button>
-      );
     },
   },
 ];
