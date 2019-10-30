@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0] - 30-10-2019
+
+### Change
+
+- Removed renderActionButton and renderFooterLink options from accordion.
+
 # [1.1.0] - 25-10-2019
 
 ### Change

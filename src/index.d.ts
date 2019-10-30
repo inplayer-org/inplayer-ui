@@ -279,9 +279,7 @@ export interface AccordionPanel {
   icon?: string;
   iconTooltip?: TooltipProps;
   disabled?: boolean;
-  renderContent: () => ReactNode;
-  renderActionButton: (props: ActionButtonRenderProps) => ReactNode;
-  renderFooterLink: (props: ActionButtonRenderProps) => ReactNode;
+  renderContent: (actions: {closePanel: (e?: SyntheticEvent<any>) => void}) => any;
 }
 
 export interface AccordionProps {
