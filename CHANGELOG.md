@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Removed renderActionButton and renderFooterLink options from accordion.
+- Accordion api change, removed renderActionButton and renderFooterLink options
 
 # [1.1.0] - 25-10-2019
 
