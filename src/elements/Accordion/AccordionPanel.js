@@ -24,7 +24,7 @@ const AccordionPanelContainer = styled.div`
     'isActive',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 12.5rem)`};
+      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 11rem)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
