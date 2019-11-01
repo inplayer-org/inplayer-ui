@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.1] - 01-11-2019
+
+### Change
+
+- Removed padding from Accordion
+
+# [2.0.0-beta.0] - 30-10-2019
+
+### Change
+
+- Accordion api change, removed renderActionButton and renderFooterLink options
+
 # [1.1.0] - 25-10-2019
 
 ### Change

@@ -8,7 +8,8 @@ import { uiColors, fontWeights } from 'utils';
 // Components
 import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
-import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
+import Tooltip from 'components/Tooltip';
+import type { Props as TooltipProps } from 'components/Tooltip';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ const AccordionPanelContainer = styled.div`
     'isActive',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 15.5rem)`};
+      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 11rem)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
@@ -40,7 +41,7 @@ const AccordionPanelHeader = styled.header`
   width: 100%;
   box-sizing: border-box;
   background: ${ifProp('disabled', colors.lightGray, colors.white)};
-  cursor: ${({ disabled, isActive }) => (disabled || isActive ? 'default' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   border-bottom: 1px solid ${colors.lightGray};
   display: flex;
   justify-content: space-between;
@@ -67,7 +68,8 @@ const AccordionIcon = styled(Icon)`
 `;
 
 const AccordionPanelDetails = styled.div`
-  padding: 2rem 6%;
+  padding: 0;
+  height: 100%;
 `;
 
 type Props = {
@@ -77,13 +79,13 @@ type Props = {
   icon?: string,
   iconTooltip?: TooltipProps,
   contentHeight: string,
-  openPanel: (name: string) => boolean,
-  renderContent: () => any,
+  togglePanel: (panel: number) => (e?: SyntheticEvent<*>) => void,
+  renderContent: (actions: { closePanel: (e?: SyntheticEvent<any>) => void }) => any,
+  closePanel: (e?: SyntheticEvent<*>) => void,
   disabled: boolean,
 };
 
 const AccordionPanel = ({
-  openPanel,
   label,
   isActive,
   isOtherPanelActive,
@@ -92,11 +94,13 @@ const AccordionPanel = ({
   renderContent,
   contentHeight,
   disabled,
+  togglePanel,
+  closePanel,
 }: Props) => (
   <>
     <AccordionPanelHeader
       disabled={disabled}
-      onClick={!disabled ? openPanel : null}
+      onClick={!disabled ? togglePanel : null}
       isActive={isActive}
     >
       <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
@@ -112,7 +116,7 @@ const AccordionPanel = ({
         ))}
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
-      <AccordionPanelDetails>{isActive && renderContent()}</AccordionPanelDetails>
+      <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>
     </AccordionPanelContainer>
   </>
 );
