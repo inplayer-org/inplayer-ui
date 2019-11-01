@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Removed padding from accordion element
+- Removed padding from Accordion
 
 # [2.0.0-beta.0] - 30-10-2019
 
