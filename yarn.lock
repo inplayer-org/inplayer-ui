@@ -4806,12 +4806,12 @@ flow-typed@^2.6.2:
     yargs "^12.0.2"
 
 flow-watch@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/flow-watch/-/flow-watch-1.1.4.tgz#d4ab2278a4c35d7483e3e99e9e87675f24c5adbe"
-  integrity sha512-k2B4PtkaQX43GqMRHce1Y0zKDKGefHw/39DkaiabaKVG8dVGpFO//LQ3/DT6PWn1YfTh+S85j375Jst5spHSIA==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/flow-watch/-/flow-watch-1.1.5.tgz#8790e83d6b7956d905423e5104ab1bc39787cf74"
+  integrity sha512-LHKcSw7IUedjenRJso6YPD49gZKM/ncip6Yk6hD6DOoznGmw1+5kplaUHwgVAT4G7rMb9O9JBsZKh7gcsKJ7bw==
   dependencies:
     cross-spawn "^6.0.3"
-    nodemon "^1.18.6"
+    nodemon "^1.19.4"
 
 flowgen@^1.9.0:
   version "1.10.0"
@@ -8145,7 +8145,7 @@ node-releases@^1.0.0-alpha.11, node-releases@^1.1.38:
   dependencies:
     semver "^6.3.0"
 
-nodemon@^1.18.6:
+nodemon@^1.19.4:
   version "1.19.4"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.19.4.tgz#56db5c607408e0fdf8920d2b444819af1aae0971"
   integrity sha512-VGPaqQBNk193lrJFotBU8nvWZPqEZY2eIzymy2jjY0fJ9qIsxA0sxQ8ATPl0gZC645gijYEc1jtZvpS8QWzJGQ==
