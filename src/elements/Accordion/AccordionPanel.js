@@ -10,6 +10,7 @@ import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
 import Tooltip from 'components/Tooltip';
 import type { Props as TooltipProps } from 'components/Tooltip';
+import InPlayerIcon from 'elements/InPlayerIcon';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -114,6 +115,7 @@ const AccordionPanel = ({
         ) : (
           <AccordionIcon name={icon} />
         ))}
+      <InPlayerIcon name={isActive ? 'angle-up' : 'angle-down'} />
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
       <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>
