@@ -32,6 +32,12 @@
         "config": "./webpack.config.js"
       }
     ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
     "@babel/plugin-syntax-class-properties",
     "transform-class-properties"
   ]
