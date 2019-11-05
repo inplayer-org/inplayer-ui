@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.2] - 05-11-2019
+
+### Change
+
+- Add arrow up/down in accordion header to show whether accordion is open or close
+
 # [2.0.0-beta.1] - 01-11-2019
 
 ### Change
