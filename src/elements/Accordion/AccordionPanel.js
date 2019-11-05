@@ -20,7 +20,6 @@ const AccordionPanelContainer = styled.div`
   z-index: 10;
   background: ${colors.white};
   transition: ease 500ms height;
-  display: none;
   ${ifProp(
     'isActive',
     css`
@@ -32,6 +31,9 @@ const AccordionPanelContainer = styled.div`
       overflow: auto;
       margin-top: 3.5rem;
       display: block;
+    `,
+    css`
+      height: 0;
     `
   )};
 `;
