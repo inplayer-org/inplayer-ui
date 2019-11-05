@@ -10,6 +10,7 @@ import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
 import Tooltip from 'components/Tooltip';
 import type { Props as TooltipProps } from 'components/Tooltip';
+import InPlayerIcon from 'elements/InPlayerIcon';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -72,6 +73,12 @@ const AccordionPanelDetails = styled.div`
   height: 100%;
 `;
 
+const AccordionIconHolder = styled.div`
+  display: flex;
+  width: 3rem;
+  justify-content: space-between;
+`;
+
 type Props = {
   label: string,
   isActive: boolean,
@@ -106,14 +113,17 @@ const AccordionPanel = ({
       <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
         {label}
       </AccordionTitle>
-      {!isOtherPanelActive &&
-        (iconTooltip ? (
-          <Tooltip {...iconTooltip}>
-            <AccordionIcon name={icon} pointer />
-          </Tooltip>
-        ) : (
-          <AccordionIcon name={icon} />
-        ))}
+      <AccordionIconHolder>
+        {!isOtherPanelActive &&
+          (iconTooltip ? (
+            <Tooltip {...iconTooltip}>
+              <AccordionIcon name={icon} pointer />
+            </Tooltip>
+          ) : (
+            <AccordionIcon name={icon} />
+          ))}
+        <InPlayerIcon name={isActive ? 'angle-up' : 'angle-down'} />
+      </AccordionIconHolder>
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
       <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>
