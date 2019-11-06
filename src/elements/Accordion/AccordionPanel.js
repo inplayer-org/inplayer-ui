@@ -2,7 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
-import { ifProp } from 'styled-tools';
+import { ifProp, ifNotProp } from 'styled-tools';
 import { uiColors, fontWeights } from 'utils';
 
 // Components
@@ -10,6 +10,7 @@ import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
 import Tooltip from 'components/Tooltip';
 import type { Props as TooltipProps } from 'components/Tooltip';
+import InPlayerIcon from 'elements/InPlayerIcon';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -19,7 +20,6 @@ const AccordionPanelContainer = styled.div`
   z-index: 10;
   background: ${colors.white};
   transition: ease 500ms height;
-  display: none;
   ${ifProp(
     'isActive',
     css`
@@ -31,6 +31,9 @@ const AccordionPanelContainer = styled.div`
       overflow: auto;
       margin-top: 3.5rem;
       display: block;
+    `,
+    css`
+      height: 0;
     `
   )};
 `;
@@ -72,6 +75,17 @@ const AccordionPanelDetails = styled.div`
   height: 100%;
 `;
 
+const AccordionIconHolder = styled.div`
+  ${ifNotProp(
+    'isAccordionDisabled',
+    css`
+      display: flex;
+      width: 3rem;
+      justify-content: space-between;
+    `
+  )};
+`;
+
 type Props = {
   label: string,
   isActive: boolean,
@@ -106,14 +120,17 @@ const AccordionPanel = ({
       <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
         {label}
       </AccordionTitle>
-      {!isOtherPanelActive &&
-        (iconTooltip ? (
-          <Tooltip {...iconTooltip}>
-            <AccordionIcon name={icon} pointer />
-          </Tooltip>
-        ) : (
-          <AccordionIcon name={icon} />
-        ))}
+      <AccordionIconHolder isAccordionDisabled={disabled}>
+        {!isOtherPanelActive &&
+          (iconTooltip ? (
+            <Tooltip {...iconTooltip}>
+              <AccordionIcon name={icon} pointer />
+            </Tooltip>
+          ) : (
+            <AccordionIcon name={icon} />
+          ))}
+        {!disabled && <InPlayerIcon name={isActive ? 'angle-up' : 'angle-down'} />}
+      </AccordionIconHolder>
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
       <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>

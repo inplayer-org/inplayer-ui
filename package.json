@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.5",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/bundle.min.js",
@@ -108,6 +108,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/plugin-syntax-class-properties": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.6.3",
