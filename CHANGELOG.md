@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.5] - 06-11-2019
+
+### Change
+
+- Added animation on accordion open/close.
+- Do not show the arrow on disabled accordion panel.
+
 # [2.0.0-beta.4] - 05-11-2019
 
 ### Fix
