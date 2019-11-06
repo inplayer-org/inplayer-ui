@@ -30,7 +30,7 @@ object-assign
  * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
  * @license   Licensed under MIT license
  *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   v4.2.6+9869a4bc
+ * @version   v4.2.8+1e68dce6
  */
 
 /** @license React v16.11.0
@@ -60,7 +60,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.10.2
+/** @license React v16.11.0
  * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
