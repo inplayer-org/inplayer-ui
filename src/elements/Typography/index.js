@@ -29,7 +29,6 @@ const Paragraph = styled.p`
 `;
 
 const Heading = styled.h1`
-  margin: 0 0 2vh 0;
   font-family: ${prop('theme.font.primary')};
   font-weight: ${fontWeights('thin')};
   color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
