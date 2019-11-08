@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.6] - 08-11-2019
+
+### Change
+
+- Removed margin on Typography
+
 # [2.0.0-beta.5] - 06-11-2019
 
 ### Change
