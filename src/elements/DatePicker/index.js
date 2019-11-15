@@ -47,7 +47,10 @@ class DatePicker extends React.Component<Props> {
     const { customAllTimePreset } = this.props;
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
-    const formattedAllTimeDate = moment(customAllTimePreset * 1000);
+
+    const allTimeStartDate = customAllTimePreset
+      ? moment(customAllTimePreset * 1000)
+      : startDate.subtract(3, 'year');
 
     switch (activePeriod) {
       case THIS_WEEK:
@@ -74,7 +77,7 @@ class DatePicker extends React.Component<Props> {
         startDate = startDate.subtract(1, 'year');
         break;
       case ALL_TIME:
-        startDate = formattedAllTimeDate || startDate.subtract(3, 'year');
+        startDate = allTimeStartDate;
         break;
       default:
         break;
