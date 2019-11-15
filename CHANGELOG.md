@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.7] - 15-11-2019
+
+### Change
+
+- Availability to add default or custom presets to date picker and customAllTimeDate
+
 # [2.0.0-beta.6] - 08-11-2019
 
 ### Change

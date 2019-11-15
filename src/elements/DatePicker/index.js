@@ -29,7 +29,7 @@ type Props = {
   focusedInput: FocusedInputShape | null,
   minimumNights?: number,
   displayPresets?: Array,
-  customAllTimePreset?: number,
+  customAllTimeDate?: number,
 };
 
 type Period =
@@ -44,12 +44,12 @@ type Period =
 
 class DatePicker extends React.Component<Props> {
   handleRangeClick = (activePeriod: Period) => {
-    const { customAllTimePreset } = this.props;
+    const { customAllTimeDate } = this.props;
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
 
-    const allTimeStartDate = customAllTimePreset
-      ? moment(customAllTimePreset * 1000)
+    const allTimeStartDate = customAllTimeDate
+      ? moment(customAllTimeDate * 1000)
       : startDate.subtract(3, 'year');
 
     switch (activePeriod) {
@@ -155,7 +155,7 @@ DatePicker.defaultProps = {
   className: '',
   minimumNights: 0,
   displayPresets: ['default'],
-  customAllTimePreset: moment()
+  customAllTimeDate: moment()
     .startOf('day')
     .subtract(3, 'year'),
 };

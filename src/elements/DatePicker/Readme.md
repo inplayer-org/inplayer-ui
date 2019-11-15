@@ -4,7 +4,7 @@ DatePicker is a component for picking range for dates. It takes:
 <br>- `onDateChange` function for setting the state for the dates
 <br>- `displayPresets` prop is an array where the user defines which presets to be displayed to the date picker. Available presets are: this week, last week, last 2 weeks, this month, last month, last 6 months, this year, all time. Default option is available as well and if the user adds only default prop to the array, following presets will be displayed: this week, last week, this month, last month, this year,
 <br>- `isOutsideRange` a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}).
-<br>- `customAllTimePreset` a timestamp that defines from which date the all time starts in the preset
+<br>- `customAllTimeDate` a timestamp that defines from which date the all time starts in the preset
 
 ```jsx static
 const moment = require('moment');
@@ -43,7 +43,7 @@ class DatePicker extends React.Component {
         isOutsideRange={() => false}
         onFocusChange={this.onFocusChange}
         focusedInput={this.state.focusedInput}
-        customAllTimePreset={1514208111}
+        customAllTimeDate={1514208111}
       />
     );
   }
@@ -93,7 +93,7 @@ class DatePickerExample extends React.Component {
         isOutsideRange={() => false}
         onFocusChange={this.onFocusChange}
         focusedInput={this.state.focusedInput}
-        customAllTimePreset={1514208111}
+        customAllTimeDate={1514208111}
       />
     );
   }
