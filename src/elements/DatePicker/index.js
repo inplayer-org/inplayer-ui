@@ -9,16 +9,18 @@ import Label from '../Label';
 
 const THIS_WEEK = 'this week';
 const LAST_WEEK = 'last week';
+const LAST_TWO_WEEKS = 'last 2 weeks';
 const THIS_MONTH = 'this month';
 const LAST_MONTH = 'last month';
 const THIS_YEAR = 'this year';
+const LAST_SIX_MONTHS = 'last 6 months';
+const ALL_TIME = 'all time';
 
 type Props = {
   startDate: Moment,
   endDate?: Moment,
   startDateId?: string,
   endDateId?: string,
-  calendarInfo?: boolean,
   isOutsideRange?: Function,
   onDateChange: Function,
   style?: Object,
@@ -26,14 +28,26 @@ type Props = {
   onFocusChange: Function,
   focusedInput: FocusedInputShape | null,
   minimumNights?: number,
+  displayPresets?: Array,
+  customAllTimePreset?: number,
 };
 
-type Period = THIS_WEEK | LAST_WEEK | THIS_MONTH | LAST_MONTH | THIS_YEAR;
+type Period =
+  | THIS_WEEK
+  | LAST_WEEK
+  | LAST_TWO_WEEKS
+  | THIS_MONTH
+  | LAST_MONTH
+  | LAST_SIX_MONTHS
+  | THIS_YEAR
+  | ALL_TIME;
 
 class DatePicker extends React.Component<Props> {
   handleRangeClick = (activePeriod: Period) => {
+    const { customAllTimePreset } = this.props;
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
+    const formattedAllTimeDate = moment(customAllTimePreset * 1000);
 
     switch (activePeriod) {
       case THIS_WEEK:
@@ -43,6 +57,9 @@ class DatePicker extends React.Component<Props> {
       case LAST_WEEK:
         startDate = startDate.subtract(7, 'days');
         break;
+      case LAST_TWO_WEEKS:
+        startDate = startDate.subtract(14, 'days');
+        break;
       case THIS_MONTH:
         endDate = startDate.add(1, 'month');
         startDate = moment().endOf('day');
@@ -50,8 +67,14 @@ class DatePicker extends React.Component<Props> {
       case LAST_MONTH:
         startDate = startDate.subtract(1, 'months');
         break;
+      case LAST_SIX_MONTHS:
+        startDate = startDate.subtract(6, 'months');
+        break;
       case THIS_YEAR:
         startDate = startDate.subtract(1, 'year');
+        break;
+      case ALL_TIME:
+        startDate = formattedAllTimeDate || startDate.subtract(3, 'year');
         break;
       default:
         break;
@@ -61,7 +84,14 @@ class DatePicker extends React.Component<Props> {
   };
 
   renderDatePresets = () => {
-    const presets = [THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR];
+    const { displayPresets } = this.props;
+    let presets = [];
+    if (displayPresets.includes('default')) {
+      presets = [THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR];
+    } else {
+      presets = [...displayPresets];
+    }
+
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
@@ -78,7 +108,7 @@ class DatePicker extends React.Component<Props> {
       onDateChange,
       startDate,
       endDate,
-      calendarInfo,
+      displayPresets,
       startDateId,
       endDateId,
       isOutsideRange,
@@ -89,6 +119,7 @@ class DatePicker extends React.Component<Props> {
       minimumNights,
     } = this.props;
 
+    const hasPresets = displayPresets.length !== 0;
     return (
       <DateRangePickerWrapper style={style} className={className}>
         <DateRangePicker
@@ -103,7 +134,7 @@ class DatePicker extends React.Component<Props> {
           endDateId={endDateId || 'endDate'}
           customArrowIcon="to"
           readOnly
-          calendarInfoPosition={calendarInfo && 'before'}
+          calendarInfoPosition={hasPresets && 'before'}
           minimumNights={minimumNights}
         />
       </DateRangePickerWrapper>
@@ -120,6 +151,10 @@ DatePicker.defaultProps = {
   style: {},
   className: '',
   minimumNights: 0,
+  displayPresets: ['default'],
+  customAllTimePreset: moment()
+    .startOf('day')
+    .subtract(3, 'year'),
 };
 
 export default DatePicker;
