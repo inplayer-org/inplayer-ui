@@ -71,6 +71,7 @@ const AccordionIcon = styled(Icon)`
 `;
 
 const AccordionPanelDetails = styled.div`
+  padding: 0;
   height: 100%;
 `;
 
