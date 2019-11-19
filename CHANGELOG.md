@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.7] - 15-11-2019
+# [2.0.0-beta.7] - 19-11-2019
 
 ### Change
 
@@ -472,76 +472,92 @@ All notable changes to this project will be documented in this file.
 # [0.8.0] - 05-03-2019
 
 ### Changes
+
 - Changed color of the `a` element on hover table
 
 ### Fixes
+
 - Font family fixed for `p`, `span` and `a` elements
 
 ### Added
+
 - Add new extraLarge font size
 
 # [0.7.2] - 04-03-2019
 
 ### Changes
+
 - Tooltip span positioned absolute
 - Changed color of the `a` element in button and table
 
 # [0.7.1] - 04-03-2019
 
 ### Fixes
+
 - Fix Input handling of onChange event
 
 ### Changes
+
 - Status color for the icon and the tooltip set to light gray
 - Border in the table displayed
 - New line support added in the tooltip
 
 ### Added
+
 - Add new `pale (#f0f3f6)` color to Colors object
 
 # [0.7.0] - 28-02-2019
 
 ### Changes
+
 - Rename TextField component to Input
 - Add full width/height to CardContent
 - Additional user menu added in Header
 
 ### Fixes
+
 - Update TextField/Input TypeScript definitions
 
 # [0.6.1] - 27-02-2019
 
 ### Fixes
+
 - Update Button TypeScript definitions
 - Update Table RowAction TypeScript definitions
 
 # [0.6.0] - 25-02-2019
 
 ### Changes
+
 - Enable Table to recieve a render function for `rowActions` prop as well as an array of actions
 - Rework/Modify Grid
 
 # [0.5.1] - 22-02-2019
 
 ### Changes
+
 - Remove margins for Typography
 - Edit margins for Label
 
 ### Fixes
+
 - Add modifier definitions for Label, Dropdown, Icon
 
 # [0.5.0] - 21-02-2019
 
 ### Changes
+
 - Enhance and modify Table API with generics and better type checking
 
 ### Fixes
+
 - Table and DropDown prop definition types
 - Fix Table crashing from accessing properties of optional props
 
 # [0.4.0] - 20-02-2019
 
 ### Changes
+
 - Add `showLoader` prop to Table.
 - Add generic for the data type to Table.
 - Enable generic types for Button.
