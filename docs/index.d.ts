@@ -376,7 +376,7 @@ export interface DatePickerProps {
   endDate?: Moment;
   startDateId?: string;
   endDateId?: string;
-  calendarInfo?: boolean;
+  displayPresets?: Array<Period | 'default'>;
   isOutsideRange?: () => boolean;
   onDateChange: DatePicker$OnDateChange;
   style?: CSSProperties;
@@ -384,6 +384,7 @@ export interface DatePickerProps {
   onFocusChange: DatePicker$OnFocusChange;
   focusedInput: FocusedInputShape | null;
   minimumNights?: number;
+  customAllTimeDate?: number;
 }
 
 interface DatePickerState {
@@ -392,11 +393,14 @@ interface DatePickerState {
 
 declare const THIS_WEEK = 'this week';
 declare const LAST_WEEK = 'last week';
+declare const LAST_TWO_WEEKS = 'last 2 weeks';
 declare const THIS_MONTH = 'this month';
 declare const LAST_MONTH = 'last month';
+declare const LAST_SIX_MONTHS = 'last 6 months';
 declare const THIS_YEAR = 'this year';
+declare const ALL_TIME = 'all time';
 
-export type Period = 'this week' | 'last week' | 'this month' | 'last month' | 'this year';
+export type Period = 'this week' | 'last week' | 'last 2 weeks' | 'this month' | 'last month' | 'last 6 months' | 'this year' | 'all time';
 
 export declare class DatePicker extends Component<DatePickerProps, DatePickerState> {
   onFocusedInputChange: (focusedInput: string) => void;
