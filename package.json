@@ -32,7 +32,7 @@
     "test:update:snapshots": "jest src/** --updateSnapshot",
     "flow": "flow",
     "flow:watch": "flow-watch",
-    "generate:docs": "yarn styleguide:build && git add docs && git commit --amend --no-edit"
+    "generate:docs": "yarn styleguide:build"
   },
   "repository": {
     "type": "git",
