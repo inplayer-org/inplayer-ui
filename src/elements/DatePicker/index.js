@@ -154,7 +154,7 @@ DatePicker.defaultProps = {
   style: {},
   className: '',
   minimumNights: 0,
-  displayPresets: ['default'],
+  displayPresets: [],
   customAllTimeDate: moment()
     .startOf('day')
     .subtract(3, 'year'),
