@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.8] - 21-11-2019
+
+### Fix
+
+- Do not display default presets to the DatePicker if displayPresets is not set
+
 # [2.0.0-beta.7] - 19-11-2019
 
 ### Change
