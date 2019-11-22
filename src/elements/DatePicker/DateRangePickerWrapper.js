@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from 'config/colors';
 
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import DatePickerWrapper from '../DatePickerWrapper';
@@ -10,7 +11,6 @@ const DateRangePickerWrapper = styled(DatePickerWrapper)`
 
     label {
       display: block;
-      color: ${uiColors('text.light')};
       font-size: ${fontSizes('small')};
       transition: ease 200ms color;
       cursor: pointer;
@@ -18,7 +18,7 @@ const DateRangePickerWrapper = styled(DatePickerWrapper)`
       padding: 0.4375rem;
 
       &:hover {
-        color: ${uiColors('text.main')};
+        color: ${colors.navy};
       }
     }
 

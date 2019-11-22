@@ -3,9 +3,17 @@ import React from 'react';
 import 'react-dates/initialize';
 import { DateRangePicker, FocusedInputShape } from 'react-dates';
 import moment, { Moment } from 'moment';
+import styled from 'styled-components';
+import { ifProp } from 'styled-tools';
+import colors from 'config/colors';
 
+// components
 import DateRangePickerWrapper from './DateRangePickerWrapper';
 import Label from '../Label';
+
+const LabelStyled = styled(Label)`
+  color: ${ifProp('active', colors.navy, colors.fontGray)};
+`;
 
 const THIS_WEEK = 'this week';
 const LAST_WEEK = 'last week';
@@ -43,8 +51,11 @@ type Period =
   | ALL_TIME;
 
 class DatePicker extends React.Component<Props> {
-  handleRangeClick = (activePeriod: Period) => {
+  state = { activePeriod: '' };
+
+  handleRangeClick = (period: Period) => {
     const { customAllTimeDate } = this.props;
+    this.setState({ activePeriod: period });
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
 
@@ -52,7 +63,7 @@ class DatePicker extends React.Component<Props> {
       ? moment(customAllTimeDate * 1000)
       : startDate.subtract(3, 'year');
 
-    switch (activePeriod) {
+    switch (period) {
       case THIS_WEEK:
         endDate = startDate.add(7, 'days');
         startDate = moment().endOf('day');
@@ -88,6 +99,8 @@ class DatePicker extends React.Component<Props> {
 
   renderDatePresets = () => {
     const { displayPresets } = this.props;
+    const { activePeriod } = this.state;
+
     let presets = [];
     if (displayPresets.includes('default')) {
       presets = [THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR];
@@ -98,9 +111,13 @@ class DatePicker extends React.Component<Props> {
     return (
       <div className="datepreset">
         {presets.map((text, i) => (
-          <Label key={i} onClick={() => this.handleRangeClick(text)}>
+          <LabelStyled
+            active={activePeriod === text}
+            key={i}
+            onClick={() => this.handleRangeClick(text)}
+          >
             {text}
-          </Label>
+          </LabelStyled>
         ))}
       </div>
     );
