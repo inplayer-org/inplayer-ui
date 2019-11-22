@@ -8,11 +8,28 @@ import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 
 // components
-import DateRangePickerWrapper from './DateRangePickerWrapper';
+import { fontSizes, fontWeights } from 'utils';
 import Label from '../Label';
+import DatePickerWrapper from '../DatePickerWrapper';
 
 const StyledLabel = styled(Label)`
+  display: block;
+  font-size: ${fontSizes('small')};
+  transition: ease 200ms color;
+  cursor: pointer;
+  font-weight: ${fontWeights('light')};
+  padding: 0.4375rem;
+
+  &:hover {
+    color: ${colors.navy} !important;
+  }
+
   color: ${ifProp('active', colors.navy, colors.fontGray)};
+`;
+
+const DatePresetWrapper = styled.div`
+  width: 96px;
+  padding: 3.75rem 1.25rem 0.625rem;
 `;
 
 const THIS_WEEK = 'this week';
@@ -109,7 +126,7 @@ class DatePicker extends React.Component<Props> {
     }
 
     return (
-      <div className="datepreset">
+      <DatePresetWrapper>
         {presets.map(text => (
           <StyledLabel
             active={activePeriod === text}
@@ -119,7 +136,7 @@ class DatePicker extends React.Component<Props> {
             {text}
           </StyledLabel>
         ))}
-      </div>
+      </DatePresetWrapper>
     );
   };
 
@@ -141,7 +158,7 @@ class DatePicker extends React.Component<Props> {
 
     const hasPresets = displayPresets.length !== 0;
     return (
-      <DateRangePickerWrapper style={style} className={className}>
+      <DatePickerWrapper style={style} className={className}>
         <DateRangePicker
           isOutsideRange={isOutsideRange}
           onDatesChange={onDateChange}
@@ -157,7 +174,7 @@ class DatePicker extends React.Component<Props> {
           calendarInfoPosition={hasPresets && 'before'}
           minimumNights={minimumNights}
         />
-      </DateRangePickerWrapper>
+      </DatePickerWrapper>
     );
   }
 }
