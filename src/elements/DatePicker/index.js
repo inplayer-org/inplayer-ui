@@ -11,7 +11,7 @@ import colors from 'config/colors';
 import DateRangePickerWrapper from './DateRangePickerWrapper';
 import Label from '../Label';
 
-const LabelStyled = styled(Label)`
+const StyledLabel = styled(Label)`
   color: ${ifProp('active', colors.navy, colors.fontGray)};
 `;
 
@@ -110,14 +110,14 @@ class DatePicker extends React.Component<Props> {
 
     return (
       <div className="datepreset">
-        {presets.map((text, i) => (
-          <LabelStyled
+        {presets.map(text => (
+          <StyledLabel
             active={activePeriod === text}
-            key={i}
+            key={text}
             onClick={() => this.handleRangeClick(text)}
           >
             {text}
-          </LabelStyled>
+          </StyledLabel>
         ))}
       </div>
     );
