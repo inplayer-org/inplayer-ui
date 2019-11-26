@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.10] - 26-11-2019
+
+### Fixes
+
+- Add padding-bottom to Card Title
+
 # [2.0.0-beta.9] - 26-11-2019
 
 ### Fixes
