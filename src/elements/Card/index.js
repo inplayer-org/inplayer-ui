@@ -24,7 +24,6 @@ const CardWrapper = styled.div`
 const CardTitle = styled(Typography)`
   flex: 1;
   width: 100%;
-  padding: 1rem;
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
