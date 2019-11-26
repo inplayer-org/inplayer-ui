@@ -25,6 +25,7 @@ const CardTitle = styled(Typography)`
   flex: 1;
   width: 100%;
   margin: 0;
+  padding-bottom: 1rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
