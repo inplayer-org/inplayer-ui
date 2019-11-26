@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.9] - 22-11-2019
+
+### Change
+
+- Added style for active date preset
+
 # [2.0.0-beta.8] - 21-11-2019
 
 ### Fix

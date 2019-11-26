@@ -89,7 +89,7 @@ class DatePickerExample extends React.Component {
         endDate={this.state.endDate}
         endDateId="endDate"
         onDateChange={this.onDateChange}
-        displayPresets={['all time']}
+        displayPresets={['default']}
         isOutsideRange={() => false}
         onFocusChange={this.onFocusChange}
         focusedInput={this.state.focusedInput}
