@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.12] - 27-11-2019
+
+### Change
+
+- InPlayerIcons in docs
+
 # [2.0.0-beta.11] - 26-11-2019
 
 ### Fixes
