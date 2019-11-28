@@ -173,6 +173,7 @@ class DatePicker extends React.Component<Props> {
           readOnly
           calendarInfoPosition={hasPresets && 'before'}
           minimumNights={minimumNights}
+          enableOutsideDays
         />
       </DatePickerWrapper>
     );
