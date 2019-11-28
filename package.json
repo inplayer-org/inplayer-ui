@@ -32,6 +32,7 @@
     "test:update:snapshots": "jest src/** --updateSnapshot",
     "flow": "flow",
     "flow:watch": "flow-watch",
+    "pregenerate:docs": "rimraf ./docs",
     "generate:docs": "yarn styleguide:build"
   },
   "repository": {
