@@ -3,7 +3,7 @@
   "version": "2.0.0-beta.11",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
-  "main": "build/bundle.min.js",
+  "main": "build/inplayer-ui.min.js",
   "types": "build/index.d.ts",
   "files": [
     "build"

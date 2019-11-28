@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'bundle.min.js',
+    filename: 'inplayer-ui.min.js',
     library: pkg.name,
     libraryTarget: 'commonjs2',
     publicPath: '/',
@@ -95,10 +95,6 @@ module.exports = {
       types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
     },
-  },
-  devServer: {
-    contentBase: './build',
-    hot: true,
   },
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
