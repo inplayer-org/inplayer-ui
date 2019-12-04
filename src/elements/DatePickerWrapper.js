@@ -459,7 +459,6 @@ const DatePickerWrapper = styled.span`
     font-weight: ${fontWeights('thin')};
     background-color: ${colors.white};
     width: 100%;
-    padding: 0 0.3125rem;
     border: 0;
     border-top: 0;
     border-right: 0;
@@ -472,6 +471,7 @@ const DatePickerWrapper = styled.span`
     cursor: pointer;
     color: ${uiColors('text.main')};
     text-align: center;
+    padding: 0;
   }
 
   .DateInput_input__small {
