@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.12] - 04-12-2019
+# [2.0.0-beta.13] - 04-12-2019
 
 ### Fixes
 
