@@ -385,6 +385,7 @@ export interface DatePickerProps {
   focusedInput: FocusedInputShape | null;
   minimumNights?: number;
   customAllTimeDate?: number;
+  activePeriodPreset?: string;
 }
 
 interface DatePickerState {
