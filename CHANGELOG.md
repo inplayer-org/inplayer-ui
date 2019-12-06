@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Create Avatar component
+- Avatar component
 
 # [2.0.0-beta.13] - 04-12-2019
 
