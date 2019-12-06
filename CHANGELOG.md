@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.14] - 06-12-2019
+
+### Added
+
+- Create Avatar component
+
 # [2.0.0-beta.13] - 04-12-2019
 
 ### Fixes
