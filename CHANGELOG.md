@@ -2,11 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.12] - 27-11-2019
+# [2.0.0-beta.14] - 06-12-2019
+
+### Added
+
+- Avatar component
+
+# [2.0.0-beta.13] - 04-12-2019
+
+### Fixes
+
+- CSS update to date range picker
+
+# [2.0.0-beta.12] - 02-12-2019
 
 ### Change
 
-- InPlayerIcons in docs
+- Added optional activePeriod prop to the date picker where user defines which presets period to be selected
+- Added CUSTOM period which is used when user chose custom dates from date picker
 
 # [2.0.0-beta.11] - 26-11-2019
 

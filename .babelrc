@@ -3,12 +3,13 @@
     [
       "@babel/preset-env",
       {
+        "useBuiltIns": "usage",
+        "debug": true,
+        "corejs": 3,
         "modules": false,
         "targets": {
           "node": "current",
-          "browsers": [
-            "last 2 versions"
-          ]
+          "browsers": ["last 2 versions"]
         }
       }
     ],
@@ -20,10 +21,7 @@
     [
       "module-resolver",
       {
-        "root": [
-          "./",
-          "./src/**"
-        ]
+        "root": ["./", "./src/**"]
       }
     ],
     [

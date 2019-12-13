@@ -17,7 +17,7 @@ const StyledLabel = styled(Label)`
   font-size: ${fontSizes('small')};
   transition: ease 200ms color;
   cursor: pointer;
-  font-weight: ${fontWeights('light')};
+  font-weight: ${ifProp('active', fontWeights('normal'), fontWeights('light'))};
   padding: 0.4375rem;
 
   &:hover {
@@ -40,6 +40,7 @@ const LAST_MONTH = 'last month';
 const THIS_YEAR = 'this year';
 const LAST_SIX_MONTHS = 'last 6 months';
 const ALL_TIME = 'all time';
+const CUSTOM = 'custom date preset';
 
 type Props = {
   startDate: Moment,
@@ -55,6 +56,7 @@ type Props = {
   minimumNights?: number,
   displayPresets?: Array,
   customAllTimeDate?: number,
+  activePeriodPreset?: string,
 };
 
 type Period =
@@ -65,10 +67,18 @@ type Period =
   | LAST_MONTH
   | LAST_SIX_MONTHS
   | THIS_YEAR
-  | ALL_TIME;
+  | ALL_TIME
+  | CUSTOM;
 
 class DatePicker extends React.Component<Props> {
-  state = { activePeriod: '' };
+  state = {
+    activePeriod: '',
+  };
+
+  componentDidMount() {
+    const { activePeriodPreset } = this.props;
+    this.setState({ activePeriod: activePeriodPreset });
+  }
 
   handleRangeClick = (period: Period) => {
     const { customAllTimeDate } = this.props;
@@ -140,9 +150,14 @@ class DatePicker extends React.Component<Props> {
     );
   };
 
+  handleDateChange = ({ startDate, endDate }) => {
+    const { onDateChange } = this.props;
+    this.setState({ activePeriod: CUSTOM });
+    onDateChange({ startDate, endDate });
+  };
+
   render() {
     const {
-      onDateChange,
       startDate,
       endDate,
       displayPresets,
@@ -161,7 +176,7 @@ class DatePicker extends React.Component<Props> {
       <DatePickerWrapper style={style} className={className}>
         <DateRangePicker
           isOutsideRange={isOutsideRange}
-          onDatesChange={onDateChange}
+          onDatesChange={this.handleDateChange}
           onFocusChange={onFocusChange}
           renderCalendarInfo={this.renderDatePresets}
           focusedInput={focusedInput}
@@ -173,6 +188,7 @@ class DatePicker extends React.Component<Props> {
           readOnly
           calendarInfoPosition={hasPresets && 'before'}
           minimumNights={minimumNights}
+          enableOutsideDays
         />
       </DatePickerWrapper>
     );
@@ -192,6 +208,7 @@ DatePicker.defaultProps = {
   customAllTimeDate: moment()
     .startOf('day')
     .subtract(3, 'year'),
+  activePeriodPreset: '',
 };
 
 export default DatePicker;
