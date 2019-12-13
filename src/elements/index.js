@@ -19,3 +19,4 @@ export { default as Dropdown } from './Dropdown';
 export { default as PillLabel } from './PillLabel';
 export { default as InPlayerIcon } from './InPlayerIcon';
 export { default as StepWizard } from './StepWizard';
+export { default as Avatar } from './Avatar';
