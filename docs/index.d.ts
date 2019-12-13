@@ -744,3 +744,9 @@ interface StepWizardProps {
 }
 
 export declare const StepWizard: FunctionComponent<StepWizardProps>;
+
+interface AvatarProps {
+  imageUrl?: string;
+}
+
+export declare const Avatar: FunctionComponent<AvatarProps>
