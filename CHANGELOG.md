@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.15] - 13-12-2019
+
+### Fixes
+
+- Missing Avatar component export
+
+### Added
+
+- Render all available InPlayer icons in docs demo
+
 # [2.0.0-beta.14] - 06-12-2019
 
 ### Added
