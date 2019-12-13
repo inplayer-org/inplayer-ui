@@ -1,12 +1,8 @@
-/*! https://mths.be/regenerate v1.3.3 by @mathias | MIT license */
-
-/**
- * A better abstraction over CSS.
- *
- * @copyright Oleg Isonen (Slobodskoi) / Isonen 2014-present
- * @website https://github.com/cssinjs/jss
- * @license MIT
- */
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
 
 /*
 object-assign
@@ -20,6 +16,14 @@ object-assign
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
  */
+
+/*!
+ * regjsgen 0.3.0
+ * Copyright 2014-2016 Benjamin Tan <https://demoneaux.github.io/>
+ * Available under MIT license <https://github.com/demoneaux/regjsgen/blob/master/LICENSE>
+ */
+
+/*! https://mths.be/regenerate v1.3.3 by @mathias | MIT license */
 
 /*!
  * @overview es6-promise - a tiny implementation of Promises/A+.
@@ -64,17 +68,3 @@ object-assign
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
-/*!
- * regjsgen 0.5.1
- * Copyright 2014-2019 Benjamin Tan <https://bnjmnt4n.now.sh/>
- * Available under MIT license <https://github.com/bnjmnt4n/regjsgen/blob/master/LICENSE>
- */
-
-/*!
-  Copyright (c) 2017 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-
-/*! For license information please see bundle.2b7a6728.js.LICENSE */
