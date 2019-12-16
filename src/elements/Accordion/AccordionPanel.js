@@ -129,7 +129,7 @@ const AccordionPanel = ({
           ) : (
             <AccordionIcon name={icon} />
           ))}
-        {!disabled && <InPlayerIcon name={isActive ? 'angle-up' : 'angle-down'} />}
+        {!disabled && <InPlayerIcon name={isActive ? 'angleUp' : 'angleDown'} />}
       </AccordionIconHolder>
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
