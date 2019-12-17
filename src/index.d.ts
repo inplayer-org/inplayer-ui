@@ -204,7 +204,7 @@ export interface TableOptions<T extends TableRowData> {
     action: () => any;
   };
   rowActions: RowActions<T>;
-  headersection: Node | JSX.Element;
+  headerSection: Node | JSX.Element;
 }
 
 export interface TableProps<TableData extends TableRowData = TableRowData> {
