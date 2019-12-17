@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.17] - 17-12-2019
+
+### Fixes
+
+- InPlayerIcon name in Accordion
+
+### Added
+
+- Table header section
+
 # [2.0.0-beta.16] - 13-12-2019
 
 ### Change
