@@ -320,8 +320,10 @@ class Table<T> extends React.Component<Props<T>, State> {
 
     const columnContent = this.renderColumns(columns);
 
+    const hasHeaderSection = typeof headerSection !== 'undefined';
+
     return (
-      <TableWrapper className={className} style={style} hasHeaderSection={headerSection !== null}>
+      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
         {showLoader ? (
           <LoaderContainer>
             <Loader />

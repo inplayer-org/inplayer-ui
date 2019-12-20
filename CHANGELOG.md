@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.18] - 20-12-2019
+
+### Fixes
+
+- Table header section did not have border when headerSection was omitted
+- Table headerSection option accepts null as a value
+
 # [2.0.0-beta.17] - 17-12-2019
 
 ### Fixes
