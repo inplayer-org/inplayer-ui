@@ -144,7 +144,7 @@ type TableOptions<T> = {
     action: (selectedItems: Array<T>) => any,
   },
   rowActions: RowActions<T>,
-  headerSection: Node,
+  headerSection?: Node,
 };
 
 type Props<T = Data> = {
@@ -391,7 +391,7 @@ Table.defaultProps = {
       active: false,
     },
     rowActions: [],
-    headerSection: null,
+    headerSection: undefined,
   },
   showLoader: false,
   tableButton: null,
