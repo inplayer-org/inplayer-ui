@@ -144,7 +144,7 @@ type TableOptions<T> = {
     action: (selectedItems: Array<T>) => any,
   },
   rowActions: RowActions<T>,
-  headerSection: Node,
+  headerSection?: Node,
 };
 
 type Props<T = Data> = {
@@ -320,8 +320,10 @@ class Table<T> extends React.Component<Props<T>, State> {
 
     const columnContent = this.renderColumns(columns);
 
+    const hasHeaderSection = typeof headerSection !== 'undefined';
+
     return (
-      <TableWrapper className={className} style={style} hasHeaderSection={headerSection !== null}>
+      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
         {showLoader ? (
           <LoaderContainer>
             <Loader />
@@ -389,7 +391,7 @@ Table.defaultProps = {
       active: false,
     },
     rowActions: [],
-    headerSection: null,
+    headerSection: undefined,
   },
   showLoader: false,
   tableButton: null,
