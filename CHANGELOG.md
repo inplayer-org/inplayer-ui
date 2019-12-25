@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Table showEmptyTable boolean prop
+- Table renderEmptyTable boolean prop
 
 # [2.0.0-beta.18] - 20-12-2019
 
