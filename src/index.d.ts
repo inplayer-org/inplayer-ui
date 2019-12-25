@@ -211,6 +211,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   columns: Array<TableColumn<TableData>>;
   data: Array<TableData>;
   showLoader?: boolean;
+  renderEmptyTable?: boolean;
   className?: string;
   style?: CSSProperties;
   options?: Partial<TableOptions<TableData>>;

@@ -154,6 +154,7 @@ type Props<T = Data> = {
   style?: Object,
   options?: TableOptions<T>,
   showLoader?: boolean,
+  renderEmptyTable?: boolean,
   tableButton?: {
     label: string,
     icon?: string | Node,
@@ -314,9 +315,14 @@ class Table<T> extends React.Component<Props<T>, State> {
       className,
       style,
       showLoader,
+      renderEmptyTable,
       tableButton,
       options: { headerSection },
     } = this.props;
+
+    if (!data.length && !renderEmptyTable) {
+      return null;
+    }
 
     const columnContent = this.renderColumns(columns);
 
@@ -394,6 +400,7 @@ Table.defaultProps = {
     headerSection: undefined,
   },
   showLoader: false,
+  renderEmptyTable: false,
   tableButton: null,
 };
 
