@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.19] - 25-12-2019
+
+### Added
+
+- Table showEmptyTable boolean prop
+
 # [2.0.0-beta.18] - 20-12-2019
 
 ### Fixes
