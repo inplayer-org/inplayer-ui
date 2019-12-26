@@ -8,6 +8,14 @@ import Checkbox from 'components/Checkbox';
 import Icon from 'elements/Icon';
 import Loader from 'elements/Loader/index';
 import Button from 'elements/Button/index';
+import Grid from 'blocks/Grid';
+
+const TableWithHeaderSectionContainer = styled(Grid.Container)`
+  padding: 1rem;
+  background-color: ${colors.white};
+  border: 1px solid ${colors.gray};
+  border-radius: 2px;
+`;
 
 const TableWrapper = styled.table`
   font-family: Roboto, sans-serif;
@@ -16,7 +24,7 @@ const TableWrapper = styled.table`
   text-align: left;
   color: ${uiColors('text.light')};
   box-sizing: border-box;
-  border: 1px solid ${colors.gray};
+  border: ${ifProp('hasHeaderSection', '0', `1px solid ${colors.gray}`)};
   border-radius: 3px;
   position: relative;
   font-weight: ${fontWeights('light')};
@@ -136,6 +144,7 @@ type TableOptions<T> = {
     action: (selectedItems: Array<T>) => any,
   },
   rowActions: RowActions<T>,
+  headerSection?: Node,
 };
 
 type Props<T = Data> = {
@@ -145,6 +154,7 @@ type Props<T = Data> = {
   style?: Object,
   options?: TableOptions<T>,
   showLoader?: boolean,
+  renderEmptyTable?: boolean,
   tableButton?: {
     label: string,
     icon?: string | Node,
@@ -298,13 +308,28 @@ class Table<T> extends React.Component<Props<T>, State> {
     ));
   };
 
-  render() {
-    const { columns, data, className, style, showLoader, tableButton } = this.props;
+  renderTable = () => {
+    const {
+      columns,
+      data,
+      className,
+      style,
+      showLoader,
+      renderEmptyTable,
+      tableButton,
+      options: { headerSection },
+    } = this.props;
+
+    if (!data.length && !renderEmptyTable) {
+      return null;
+    }
 
     const columnContent = this.renderColumns(columns);
 
+    const hasHeaderSection = typeof headerSection !== 'undefined';
+
     return (
-      <TableWrapper className={className} style={style}>
+      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
         {showLoader ? (
           <LoaderContainer>
             <Loader />
@@ -338,6 +363,29 @@ class Table<T> extends React.Component<Props<T>, State> {
         )}
       </TableWrapper>
     );
+  };
+
+  renderTableWithHeaderSection = () => {
+    const {
+      options: { headerSection },
+    } = this.props;
+
+    return (
+      <TableWithHeaderSectionContainer columns={1}>
+        <Grid.Cell>{headerSection}</Grid.Cell>
+        <Grid.Cell>{this.renderTable()}</Grid.Cell>
+      </TableWithHeaderSectionContainer>
+    );
+  };
+
+  render() {
+    const {
+      options: { headerSection },
+    } = this.props;
+
+    if (!headerSection) return this.renderTable();
+
+    return this.renderTableWithHeaderSection();
   }
 }
 
@@ -349,8 +397,10 @@ Table.defaultProps = {
       active: false,
     },
     rowActions: [],
+    headerSection: undefined,
   },
   showLoader: false,
+  renderEmptyTable: false,
   tableButton: null,
 };
 
