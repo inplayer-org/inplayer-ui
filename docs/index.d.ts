@@ -204,12 +204,14 @@ export interface TableOptions<T extends TableRowData> {
     action: () => any;
   };
   rowActions: RowActions<T>;
+  headerSection?: Node | JSX.Element | null;
 }
 
 export interface TableProps<TableData extends TableRowData = TableRowData> {
   columns: Array<TableColumn<TableData>>;
   data: Array<TableData>;
   showLoader?: boolean;
+  renderEmptyTable?: boolean;
   className?: string;
   style?: CSSProperties;
   options?: Partial<TableOptions<TableData>>;
