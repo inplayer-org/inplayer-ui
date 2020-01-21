@@ -320,6 +320,14 @@ class Table<T> extends React.Component<Props<T>, State> {
       options: { headerSection },
     } = this.props;
 
+    if (showLoader) {
+      return (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      );
+    }
+
     if (!data.length && !renderEmptyTable) {
       return null;
     }
@@ -330,37 +338,29 @@ class Table<T> extends React.Component<Props<T>, State> {
 
     return (
       <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
-        {showLoader ? (
-          <LoaderContainer>
-            <Loader />
-          </LoaderContainer>
-        ) : (
-          <>
-            <thead>
-              <TableHeadRow>{columnContent}</TableHeadRow>
-            </thead>
-            <tbody>{this.renderData(columns, data)}</tbody>
-            <tfoot>
-              {tableButton && (
-                <ButtonTableRow>
-                  <TableCell colSpan={columnContent.length}>
-                    <TableButton
-                      modifiers={['buttonLink']}
-                      fullWidth
-                      fullHeight
-                      onClick={tableButton.onClick}
-                      icon={tableButton.icon}
-                      iconPosition="left"
-                      type={tableButton.type}
-                    >
-                      {tableButton.label}
-                    </TableButton>
-                  </TableCell>
-                </ButtonTableRow>
-              )}
-            </tfoot>
-          </>
-        )}
+        <thead>
+          <TableHeadRow>{columnContent}</TableHeadRow>
+        </thead>
+        <tbody>{this.renderData(columns, data)}</tbody>
+        <tfoot>
+          {tableButton && (
+            <ButtonTableRow>
+              <TableCell colSpan={columnContent.length}>
+                <TableButton
+                  modifiers={['buttonLink']}
+                  fullWidth
+                  fullHeight
+                  onClick={tableButton.onClick}
+                  icon={tableButton.icon}
+                  iconPosition="left"
+                  type={tableButton.type}
+                >
+                  {tableButton.label}
+                </TableButton>
+              </TableCell>
+            </ButtonTableRow>
+          )}
+        </tfoot>
       </TableWrapper>
     );
   };

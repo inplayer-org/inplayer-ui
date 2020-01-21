@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.20] - 20-01-2020
+
+### Fix
+
+- Render loader on data fetch in table
+
 # [2.0.0-beta.19] - 25-12-2019
 
 ### Added
