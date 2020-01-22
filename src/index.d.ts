@@ -20,6 +20,8 @@ import {
 import moment, { Moment } from 'moment';
 import { FocusedInputShape } from 'react-dates';
 
+export { FocusedInputShape } from 'react-dates';
+
 export interface ContainerProps {
   className?: string,
   columns?: number | string,
