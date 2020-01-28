@@ -20,6 +20,8 @@ import {
 import moment, { Moment } from 'moment';
 import { FocusedInputShape } from 'react-dates';
 
+export { FocusedInputShape } from 'react-dates';
+
 export interface ContainerProps {
   className?: string,
   columns?: number | string,
@@ -181,7 +183,7 @@ export interface TableRowData extends Object {
   id: number | string;
 }
 
-interface TableColumn$RenderProps<T extends TableRowData, V = any> {
+export interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   value: V;
   rowValues: T;
 }
@@ -192,7 +194,7 @@ export interface RowAction<T extends TableRowData> {
   render?: (props: { row: T }) => ReactNode;
 }
 
-interface RowActionsRender<T extends TableRowData> {
+export interface RowActionsRender<T extends TableRowData> {
   (prop: { row: T }): ReactNode;
 }
 
