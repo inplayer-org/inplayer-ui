@@ -1,0 +1,19 @@
+import { fontWeights } from 'packages/inplayer-ui/src/modifiers/utils';
+
+export const fontWeightModifiers = {};
+
+export const fontLight = ({ theme }) => `
+  font-weight: ${fontWeights('light', theme)};
+`;
+
+export const fontNormal = ({ theme }) => `
+  font-weight: ${fontWeights('normal', theme)};
+`;
+
+export const fontSemiBold = ({ theme }) => `
+  font-weight: ${fontWeights('semiBold', theme)};
+`;
+
+export const fontBold = ({ theme }) => `
+  font-weight: ${fontWeights('bold', theme)};
+`;

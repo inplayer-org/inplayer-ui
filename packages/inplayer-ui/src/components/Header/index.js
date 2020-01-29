@@ -1,0 +1,72 @@
+// @flow
+import React from 'packages/inplayer-ui/src/components/Header/react';
+import styled from 'styled-components';
+import { prop } from 'packages/inplayer-ui/src/components/Header/styled-tools';
+import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors, fontWeights } from 'packages/inplayer-ui/src/components/Header/utils';
+
+// Components
+import UserMenu, { type UserMenuProps } from 'packages/inplayer-ui/src/components/UserMenu';
+import TabNavigation, { type TabNavigationProps } from 'packages/inplayer-ui/src/components/TabNavigation';
+
+const Container = styled.header`
+  align-items: center;
+  padding: 0 2%;
+  background: ${colors.white};
+  border-bottom: 1px solid ${colors.gray};
+  display: flex;
+  height: ${prop('height', 50)}px;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  z-index: 3;
+`;
+
+const Title = styled.h3`
+  color: ${uiColors('text.main')};
+  font-weight: ${fontWeights('light')};
+  margin: 0;
+`;
+
+const MenuWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+type HeaderProps = {
+  title?: string,
+  userMenuProps?: UserMenuProps,
+  additionalUserMenuProps?: UserMenuProps,
+  tabNavigationProps?: TabNavigationProps,
+  className?: string,
+  style?: Object,
+};
+
+const Header = ({
+  title,
+  userMenuProps,
+  additionalUserMenuProps,
+  tabNavigationProps,
+  className,
+  style,
+}: HeaderProps) => (
+  <Container className={className} style={style}>
+    {title && <Title>{title}</Title>}
+    {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
+    <MenuWrapper>
+      {additionalUserMenuProps && <UserMenu {...additionalUserMenuProps} />}
+      {userMenuProps && <UserMenu {...userMenuProps} />}
+    </MenuWrapper>
+  </Container>
+);
+
+Header.defaultProps = {
+  title: null,
+  userMenuProps: null,
+  additionalUserMenuProps: null,
+  tabNavigationProps: null,
+  className: '',
+  style: {},
+};
+
+export default Header;

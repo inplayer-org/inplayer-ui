@@ -1,0 +1,30 @@
+{
+  "name": "@inplayer-org/paywall-templates",
+  "version": "0.0.0",
+  "description": "InPlayer Paywall Preview Templates",
+  "keywords": [
+    "preview",
+    "templates"
+  ],
+  "author": "srdjanRakic <srgjan.rakic@gmail.com>",
+  "homepage": "https://github.com/inplayer-org/inplayer-ui/tree/master/packages/paywall-templates#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inplayer-org/inplayer-ui.git"
+  },
+  "scripts": {
+     "test": "echo testing server with version: $npm_package_version"
+  },
+  "bugs": {
+    "url": "https://github.com/inplayer-org/inplayer-ui/issues"
+  }
+}
