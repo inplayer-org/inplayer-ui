@@ -1,8 +1,8 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/TabNavigation/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/TabNavigation/styled-tools';
-import { uiColors, fontWeights } from 'packages/inplayer-ui/src/components/TabNavigation/utils';
+import { ifProp } from 'styled-tools';
+import { uiColors, fontWeights } from 'utils';
 
 const Tab = styled.a`
   height: 100%;

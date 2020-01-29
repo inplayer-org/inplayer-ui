@@ -1,7 +1,7 @@
-import React from 'packages/inplayer-ui/src/blocks/Grid/tests/react';
-import { renderWithTheme } from 'packages/inplayer-ui/src/blocks/Grid/tests/helpers';
+import React from 'react';
+import { renderWithTheme } from 'helpers';
 import Container from '../Container';
-import 'packages/inplayer-ui/src/blocks/Grid/tests/jest-styled-components';
+import 'jest-styled-components';
 
 describe('Grid.Container Element', () => {
   it('renders correctly', () => {

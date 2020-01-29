@@ -1,5 +1,5 @@
 // @flow
-import React, { Component, type Node, type Element } from 'packages/inplayer-ui/src/components/NavBar/react';
+import React, { Component, type Node, type Element } from 'react';
 
 // Components
 import Arrow from './Arrow';

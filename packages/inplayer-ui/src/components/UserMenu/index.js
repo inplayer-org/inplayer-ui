@@ -1,10 +1,10 @@
 // @flow
-import React, { type Element } from 'packages/inplayer-ui/src/components/UserMenu/react';
+import React, { type Element } from 'react';
 import styled from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/UserMenu/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { ifProp } from 'styled-tools';
+import colors from 'config/colors';
 
-import { uiColors, fontSizes } from 'packages/inplayer-ui/src/utils/index';
+import { uiColors, fontSizes } from 'utils/index';
 import UserMenuDropdown, { type UserMenuDropdownProps } from './UserMenuDropdown';
 
 const ProfileImage = styled.img`

@@ -1,16 +1,16 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Accordion/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { ifProp, ifNotProp } from 'packages/inplayer-ui/src/elements/Accordion/styled-tools';
-import { uiColors, fontWeights } from 'packages/inplayer-ui/src/elements/Accordion/utils';
+import colors from 'config/colors';
+import { ifProp, ifNotProp } from 'styled-tools';
+import { uiColors, fontWeights } from 'utils';
 
 // Components
-import Icon from 'packages/inplayer-ui/src/elements/Icon';
-import Typography from 'packages/inplayer-ui/src/elements/Typography';
-import Tooltip from 'packages/inplayer-ui/src/components/Tooltip';
+import Icon from 'elements/Icon';
+import Typography from 'elements/Typography';
+import Tooltip from 'components/Tooltip';
 import type { Props as TooltipProps } from 'components/Tooltip';
-import InPlayerIcon from 'packages/inplayer-ui/src/elements/InPlayerIcon';
+import InPlayerIcon from 'elements/InPlayerIcon';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;

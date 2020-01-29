@@ -1,4 +1,4 @@
-import colors from 'packages/inplayer-ui/src/config/colors';
+import colors from 'config/colors';
 
 export const statusColorPrimary = ({ theme }) => `
    color: ${theme.palette.primary.main};

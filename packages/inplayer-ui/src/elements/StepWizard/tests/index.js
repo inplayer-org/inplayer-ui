@@ -1,5 +1,5 @@
-import React from 'packages/inplayer-ui/src/elements/StepWizard/tests/react';
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/StepWizard/tests/helpers';
+import React from 'react';
+import { generateSnapshots } from 'helpers';
 
 import StepWizard from '../index';
 

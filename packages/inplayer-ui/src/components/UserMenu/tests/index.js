@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/UserMenu/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import UserMenu from '../index';
 

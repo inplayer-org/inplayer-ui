@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/TextArea/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import TextArea from '../index';
 

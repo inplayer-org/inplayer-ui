@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import uiColors from 'packages/inplayer-ui/src/utils/uiColors';
+import colors from 'config/colors';
+import uiColors from 'utils/uiColors';
 
 const CheckboxWrapper = styled.div`
   > input {

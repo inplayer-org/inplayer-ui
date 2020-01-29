@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/Tabs/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import TabsWrapper from '../TabsWrapper';
 

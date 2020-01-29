@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Typography/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Typography from '../index';
 

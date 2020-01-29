@@ -1,4 +1,4 @@
-import { fontWeights } from 'packages/inplayer-ui/src/modifiers/utils';
+import { fontWeights } from 'utils';
 
 export const fontWeightModifiers = {};
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ifProp, prop } from 'packages/inplayer-ui/src/components/Tooltip/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors, fontSizes } from 'packages/inplayer-ui/src/components/Tooltip/utils';
+import { ifProp, prop } from 'styled-tools';
+import colors from 'config/colors';
+import { uiColors, fontSizes } from 'utils';
 
 const Bubble = styled('div')`
   color: ${colors.white};

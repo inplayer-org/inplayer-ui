@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import colors from 'config/colors';
 
 export const AccordionWrapper = styled.div`
   ${({ width }) => width && `width: ${width}`};

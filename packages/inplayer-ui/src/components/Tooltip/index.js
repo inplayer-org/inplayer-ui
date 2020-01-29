@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'packages/inplayer-ui/src/components/Tooltip/react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
 import Arrow from './Arrow';

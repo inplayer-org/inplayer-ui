@@ -1,9 +1,9 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Tooltip/react';
+import React from 'react';
 import styled from 'styled-components';
-import { ifProp, prop } from 'packages/inplayer-ui/src/components/Tooltip/styled-tools';
+import { ifProp, prop } from 'styled-tools';
 
-import { uiColors } from 'packages/inplayer-ui/src/components/Tooltip/utils';
+import { uiColors } from 'utils';
 
 type Props = {
   background: string,

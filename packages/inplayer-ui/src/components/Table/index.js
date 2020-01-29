@@ -1,14 +1,14 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/components/Table/react';
+import React, { type Node } from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/Table/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors, fontSizes, fontWeights } from 'packages/inplayer-ui/src/components/Table/utils';
-import Checkbox from 'packages/inplayer-ui/src/components/Checkbox';
-import Icon from 'packages/inplayer-ui/src/elements/Icon';
-import Loader from 'packages/inplayer-ui/src/elements/Loader/index';
-import Button from 'packages/inplayer-ui/src/elements/Button/index';
-import Grid from 'packages/inplayer-ui/src/blocks/Grid';
+import { ifProp } from 'styled-tools';
+import colors from 'config/colors';
+import { uiColors, fontSizes, fontWeights } from 'utils';
+import Checkbox from 'components/Checkbox';
+import Icon from 'elements/Icon';
+import Loader from 'elements/Loader/index';
+import Button from 'elements/Button/index';
+import Grid from 'blocks/Grid';
 
 const TableWithHeaderSectionContainer = styled(Grid.Container)`
   padding: 1rem;

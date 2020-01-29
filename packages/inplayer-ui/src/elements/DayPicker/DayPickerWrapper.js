@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors } from 'packages/inplayer-ui/src/elements/DayPicker/utils';
+import colors from 'config/colors';
+import { uiColors } from 'utils';
 import DatePickerWrapper from '../DatePickerWrapper';
 
 const DayPickerWrapper = styled(DatePickerWrapper)`

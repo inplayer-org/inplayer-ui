@@ -1,6 +1,6 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Note/react';
-import Icon from 'packages/inplayer-ui/src/elements/Icon';
+import React from 'react';
+import Icon from 'elements/Icon';
 import NoteWrapper from './NoteWrapper';
 
 type NoteType = 'informative' | 'success' | 'warning' | 'danger';

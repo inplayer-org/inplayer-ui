@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Radio/react';
+import React from 'react';
 import RadioWrapper from './RadioWrapper';
 import Label from '../../elements/Label';
 

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { switchProp } from 'packages/inplayer-ui/src/components/Note/styled-tools';
-import { fontWeights, uiColors } from 'packages/inplayer-ui/src/components/Note/utils';
+import colors from 'config/colors';
+import { switchProp } from 'styled-tools';
+import { fontWeights, uiColors } from 'utils';
 
 const NoteWrapper = styled.p`
   box-sizing: border-box;

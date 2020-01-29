@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/NavBar/tests/helpers';
+import { generateSnapshots } from 'helpers';
 import Navbar from '../index';
 
 generateSnapshots(Navbar);

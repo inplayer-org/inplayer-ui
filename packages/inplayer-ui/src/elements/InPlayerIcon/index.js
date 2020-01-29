@@ -6,8 +6,8 @@ import {
   statusColorInfo,
   statusColorSuccess,
   statusColorDanger,
-} from 'packages/inplayer-ui/src/elements/InPlayerIcon/modifiers';
-import { fontSizes } from 'packages/inplayer-ui/src/elements/InPlayerIcon/utils';
+} from 'modifiers';
+import { fontSizes } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const modifiers = {

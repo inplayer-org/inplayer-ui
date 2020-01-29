@@ -1,9 +1,9 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/StepWizard/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/elements/StepWizard/styled-tools';
-import { uiColors, fontSizes } from 'packages/inplayer-ui/src/elements/StepWizard/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { ifProp } from 'styled-tools';
+import { uiColors, fontSizes } from 'utils';
+import colors from 'config/colors';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;

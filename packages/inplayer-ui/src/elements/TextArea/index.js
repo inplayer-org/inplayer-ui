@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/TextArea/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import colors from 'config/colors';
 
 const TextArea = styled.textarea`
   vertical-align: middle;

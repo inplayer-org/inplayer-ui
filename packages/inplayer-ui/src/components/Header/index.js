@@ -1,13 +1,13 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Header/react';
+import React from 'react';
 import styled from 'styled-components';
-import { prop } from 'packages/inplayer-ui/src/components/Header/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors, fontWeights } from 'packages/inplayer-ui/src/components/Header/utils';
+import { prop } from 'styled-tools';
+import colors from 'config/colors';
+import { uiColors, fontWeights } from 'utils';
 
 // Components
-import UserMenu, { type UserMenuProps } from 'packages/inplayer-ui/src/components/UserMenu';
-import TabNavigation, { type TabNavigationProps } from 'packages/inplayer-ui/src/components/TabNavigation';
+import UserMenu, { type UserMenuProps } from 'components/UserMenu';
+import TabNavigation, { type TabNavigationProps } from 'components/TabNavigation';
 
 const Container = styled.header`
   align-items: center;

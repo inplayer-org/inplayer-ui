@@ -1,7 +1,7 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Switch/react';
+import React from 'react';
 import styled from 'styled-components';
-import Toggle from 'packages/inplayer-ui/src/elements/Switch/react-toggle';
+import Toggle from 'react-toggle';
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
 

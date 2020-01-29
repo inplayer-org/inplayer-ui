@@ -1,10 +1,10 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/UserMenu/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/UserMenu/styled-tools';
-import { transparentize } from 'packages/inplayer-ui/src/components/UserMenu/polished';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/components/UserMenu/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { ifProp } from 'styled-tools';
+import { transparentize } from 'polished';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import colors from 'config/colors';
 
 const Container = styled.div`
   align-items: flex-start;

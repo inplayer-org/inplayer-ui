@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import ipicEot from 'packages/inplayer-ui/src/assets/fonts/ipic18.eot';
-import ipicTtf from 'packages/inplayer-ui/src/assets/fonts/ipic18.ttf';
-import ipicWoff from 'packages/inplayer-ui/src/assets/fonts/ipic18.woff';
-import ipicSvg from 'packages/inplayer-ui/src/assets/fonts/ipic18.svg';
+import ipicEot from 'assets/fonts/ipic18.eot';
+import ipicTtf from 'assets/fonts/ipic18.ttf';
+import ipicWoff from 'assets/fonts/ipic18.woff';
+import ipicSvg from 'assets/fonts/ipic18.svg';
 
 // Global styles but theme- and update-able!
 const GlobalStyle = createGlobalStyle`

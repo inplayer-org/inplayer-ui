@@ -1,11 +1,11 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Dropdown/react';
+import React from 'react';
 import styled from 'styled-components';
-import { prop, ifProp } from 'packages/inplayer-ui/src/elements/Dropdown/styled-tools';
+import { prop, ifProp } from 'styled-tools';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/Dropdown/utils';
-import * as fontSizeModifiers from 'packages/inplayer-ui/src/elements/Dropdown/modifiers';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import * as fontSizeModifiers from 'modifiers';
+import colors from 'config/colors';
 
 const DropdownContainer = styled.select`
   border: 1px solid ${colors.gray};

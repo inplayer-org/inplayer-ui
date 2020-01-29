@@ -1,9 +1,9 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/elements/Typography/react';
+import React, { type Node } from 'react';
 import styled, { css } from 'styled-components';
-import { prop, ifProp } from 'packages/inplayer-ui/src/elements/Typography/styled-tools';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/Typography/utils';
-import { textPrimary, textDanger, textSuccess, textWarning } from 'packages/inplayer-ui/src/elements/Typography/modifiers';
+import { prop, ifProp } from 'styled-tools';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const typographyModifiers = {

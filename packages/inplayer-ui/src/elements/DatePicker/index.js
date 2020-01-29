@@ -1,14 +1,14 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/DatePicker/react';
-import 'packages/inplayer-ui/src/elements/DatePicker/react-dates/initialize';
-import { DateRangePicker, FocusedInputShape } from 'packages/inplayer-ui/src/elements/DatePicker/react-dates';
-import moment, { Moment } from 'packages/inplayer-ui/src/elements/DatePicker/moment';
+import React from 'react';
+import 'react-dates/initialize';
+import { DateRangePicker, FocusedInputShape } from 'react-dates';
+import moment, { Moment } from 'moment';
 import styled from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/elements/DatePicker/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { ifProp } from 'styled-tools';
+import colors from 'config/colors';
 
 // components
-import { fontSizes, fontWeights } from 'packages/inplayer-ui/src/elements/DatePicker/utils';
+import { fontSizes, fontWeights } from 'utils';
 import Label from '../Label';
 import DatePickerWrapper from '../DatePickerWrapper';
 

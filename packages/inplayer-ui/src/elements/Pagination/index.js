@@ -1,6 +1,6 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Pagination/react';
-import ReactPaginate from 'packages/inplayer-ui/src/elements/Pagination/react-paginate';
+import React from 'react';
+import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
 
 import PaginationWrapper from './PaginationWrapper';

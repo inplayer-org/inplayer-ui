@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/Table/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Table from '../index';
 

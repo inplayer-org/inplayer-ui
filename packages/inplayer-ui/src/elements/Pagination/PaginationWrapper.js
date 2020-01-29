@@ -1,8 +1,8 @@
 // @flow
 import styled from 'styled-components';
 
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors, fontSizes, fontWeights } from 'packages/inplayer-ui/src/elements/Pagination/utils';
+import colors from 'config/colors';
+import { uiColors, fontSizes, fontWeights } from 'utils';
 
 const PaginationWrapper = styled.div`
   border: 1px solid ${colors.gray};

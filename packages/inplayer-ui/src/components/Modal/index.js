@@ -1,9 +1,9 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/components/Modal/react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/Modal/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { transparentize } from 'packages/inplayer-ui/src/components/Modal/polished';
+import { ifProp } from 'styled-tools';
+import colors from 'config/colors';
+import { transparentize } from 'polished';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 

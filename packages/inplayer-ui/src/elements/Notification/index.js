@@ -1,6 +1,6 @@
 // @flow
-import React, { useEffect } from 'packages/inplayer-ui/src/elements/Notification/react';
-import ReactDOM from 'packages/inplayer-ui/src/elements/Notification/react-dom';
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
 import NotificationContainer, { CloseIcon } from './NotificationContainer';
 

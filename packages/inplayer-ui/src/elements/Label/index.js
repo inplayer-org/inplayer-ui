@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights } from 'packages/inplayer-ui/src/elements/Label/utils';
-import { ifProp } from 'packages/inplayer-ui/src/elements/Label/styled-tools';
-import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'packages/inplayer-ui/src/elements/Label/modifiers';
+import { uiColors, fontWeights } from 'utils';
+import { ifProp } from 'styled-tools';
+import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const typographyModifiers = {

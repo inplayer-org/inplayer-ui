@@ -1,9 +1,9 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/components/Modal/react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors } from 'packages/inplayer-ui/src/components/Modal/utils';
-import { Typography } from 'packages/inplayer-ui/src/components/Modal/elements';
+import colors from 'config/colors';
+import { uiColors } from 'utils';
+import { Typography } from 'elements';
 
 type Props = {
   children: Node,

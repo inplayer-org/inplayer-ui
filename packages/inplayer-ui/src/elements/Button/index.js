@@ -1,5 +1,5 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/elements/Button/react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
 import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';

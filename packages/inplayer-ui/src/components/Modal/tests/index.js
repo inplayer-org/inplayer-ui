@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/Modal/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Modal from '../index';
 

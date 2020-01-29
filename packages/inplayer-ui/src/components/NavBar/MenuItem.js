@@ -1,10 +1,10 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/components/NavBar/react';
+import React, { type Node } from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/NavBar/styled-tools';
-import { transparentize } from 'packages/inplayer-ui/src/components/NavBar/polished';
-import { uiColors, fontSizes } from 'packages/inplayer-ui/src/components/NavBar/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { ifProp } from 'styled-tools';
+import { transparentize } from 'polished';
+import { uiColors, fontSizes } from 'utils';
+import colors from 'config/colors';
 
 const MenuItemContainer = styled.div`
   display: inline-flex;

@@ -1,4 +1,4 @@
-import colors from 'packages/inplayer-ui/src/config/colors';
+import colors from 'config/colors';
 
 export const borderPrimary = ({ theme }) => `
   border: 1px solid ${theme.palette.primary.main};

@@ -1,7 +1,7 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Avatar/react';
+import React from 'react';
 import styled from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import colors from 'config/colors';
 
 const ImageContainer = styled.div`
   width: 100%;

@@ -1,5 +1,5 @@
-import React from 'packages/inplayer-ui/src/elements/Accordion/tests/react';
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Accordion/tests/helpers';
+import React from 'react';
+import { generateSnapshots } from 'helpers';
 import Accordion from '../index';
 
 const actionButton = () => <button type="button">Save</button>;

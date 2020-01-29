@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ifProp } from 'packages/inplayer-ui/src/components/NavBar/styled-tools';
-import { uiColors } from 'packages/inplayer-ui/src/components/NavBar/utils';
+import { ifProp } from 'styled-tools';
+import { uiColors } from 'utils';
 
 export const NavbarContainer = styled.div`
   background-color: ${uiColors('secondary.dark')};

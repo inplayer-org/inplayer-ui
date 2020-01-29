@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import FA from 'packages/inplayer-ui/src/elements/Icon/react-fontawesome';
+import FA from 'react-fontawesome';
 import {
   statusColorPrimary,
   statusColorWarning,
   statusColorInfo,
   statusColorSuccess,
   statusColorDanger,
-} from 'packages/inplayer-ui/src/elements/Icon/modifiers';
-import { fontSizes } from 'packages/inplayer-ui/src/elements/Icon/utils';
+} from 'modifiers';
+import { fontSizes } from 'utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const modifiers = {

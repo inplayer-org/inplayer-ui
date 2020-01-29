@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import colors from 'config/colors';
 
 const TabsWrapper = styled.div`
   border: 1px solid ${colors.gray};

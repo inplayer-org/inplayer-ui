@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/StepWizard/react';
+import React from 'react';
 import Nav from './Nav';
 import Step from './Step';
 import type { StepItem } from './Nav';

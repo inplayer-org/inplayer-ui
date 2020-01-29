@@ -1,4 +1,4 @@
-import { rem } from 'packages/inplayer-ui/src/utils/polished';
+import { rem } from 'polished';
 
 const gridScale = scale => props => rem(props.theme.dimensions.baseGrid * scale);
 

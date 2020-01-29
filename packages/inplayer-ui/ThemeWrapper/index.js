@@ -1,10 +1,10 @@
 // @flow
-import React, { Fragment } from 'packages/inplayer-ui/ThemeWrapper/react';
+import React from 'react';
 import type { Node } from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from 'packages/inplayer-ui/ThemeWrapper/config/globalStyles';
-import configureFonts from 'packages/inplayer-ui/ThemeWrapper/config/configureFonts';
-import theme from 'packages/inplayer-ui/ThemeWrapper/config/theme';
+import GlobalStyles from 'config/globalStyles';
+import configureFonts from 'config/configureFonts';
+import theme from 'config/theme';
 
 type Props = { children: Node };
 
@@ -12,10 +12,10 @@ const GlobalContainer = ({ children }: Props) => {
   configureFonts(theme);
   return (
     <ThemeProvider theme={theme}>
-      <Fragment>
+      <>
         <GlobalStyles suppressMultiMountWarning />
         {children}
-      </Fragment>
+      </>
     </ThemeProvider>
   );
 };

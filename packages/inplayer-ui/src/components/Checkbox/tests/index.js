@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/Checkbox/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Checkbox from '../index';
 

@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
-import { switchProp, prop } from 'packages/inplayer-ui/src/elements/Notification/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { transparentize } from 'packages/inplayer-ui/src/elements/Notification/polished';
+import { switchProp, prop } from 'styled-tools';
+import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 const notify = keyframes`
   0%,

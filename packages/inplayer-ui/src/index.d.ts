@@ -12,15 +12,15 @@ import {
   ChangeEvent,
   ForwardRefExoticComponent,
   Ref,
-} from 'packages/inplayer-ui/src/react';
+} from 'react';
 import {
   StyledComponent,
   ThemeProviderComponent,
 } from 'styled-components';
-import moment, { Moment } from 'packages/inplayer-ui/src/moment';
-import { FocusedInputShape } from 'packages/inplayer-ui/src/react-dates';
+import moment, { Moment } from 'moment';
+import { FocusedInputShape } from 'react-dates';
 
-export { FocusedInputShape } from 'packages/inplayer-ui/src/react-dates';
+export { FocusedInputShape } from 'react-dates';
 
 export interface ContainerProps {
   className?: string,

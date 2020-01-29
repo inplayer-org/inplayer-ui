@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/TabNavigation/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import TabNavigation from '../index';
 

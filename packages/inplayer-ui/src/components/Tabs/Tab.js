@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights } from 'packages/inplayer-ui/src/components/Tabs/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { ifProp } from 'packages/inplayer-ui/src/components/Tabs/styled-tools';
+import { uiColors, fontWeights } from 'utils';
+import colors from 'config/colors';
+import { ifProp } from 'styled-tools';
 
 const Tab = styled.div`
   margin: 0;

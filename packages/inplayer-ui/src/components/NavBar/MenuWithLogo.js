@@ -1,5 +1,5 @@
 // @flow
-import React, { type Node, type Element } from 'packages/inplayer-ui/src/components/NavBar/react';
+import React, { type Node, type Element } from 'react';
 import { LogoMenuContainer, NavbarLogo, MenuContainer } from './styled';
 
 type Props = {

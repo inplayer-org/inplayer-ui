@@ -1,6 +1,6 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Tabs/react';
-import Icon from 'packages/inplayer-ui/src/elements/Icon';
+import React from 'react';
+import Icon from 'elements/Icon';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 

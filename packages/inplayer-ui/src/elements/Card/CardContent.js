@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Card/react';
+import React from 'react';
 import styled from 'styled-components';
 
 const ContentWrapper = styled.div`

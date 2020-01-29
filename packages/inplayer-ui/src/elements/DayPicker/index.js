@@ -1,8 +1,8 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/DayPicker/react';
-import 'packages/inplayer-ui/src/elements/DayPicker/react-dates/initialize';
-import { SingleDatePicker } from 'packages/inplayer-ui/src/elements/DayPicker/react-dates';
-import moment, { Moment } from 'packages/inplayer-ui/src/elements/DayPicker/moment';
+import React from 'react';
+import 'react-dates/initialize';
+import { SingleDatePicker } from 'react-dates';
+import moment, { Moment } from 'moment';
 
 import DayPickerWrapper from './DayPickerWrapper';
 

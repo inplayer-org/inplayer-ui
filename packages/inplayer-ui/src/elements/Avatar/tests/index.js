@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Avatar/tests/helpers';
+import { generateSnapshots } from 'helpers';
 import Avatar from '../index';
 
 generateSnapshots(Avatar);

@@ -1,8 +1,8 @@
 // @flow
-import React, { type Node } from 'packages/inplayer-ui/src/elements/Card/react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import Typography from 'packages/inplayer-ui/src/elements/Typography';
+import colors from 'config/colors';
+import Typography from 'elements/Typography';
 import CardContent from './CardContent';
 
 const CardWrapper = styled.div`

@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'packages/inplayer-ui/src/elements/Accordion/react';
+import React, { Component } from 'react';
 
 // Components
 import type { Props as TooltipProps } from 'components/Tooltip';

@@ -1,9 +1,9 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/NavBar/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp, switchProp } from 'packages/inplayer-ui/src/components/NavBar/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { transparentize } from 'packages/inplayer-ui/src/components/NavBar/polished';
+import { ifProp, switchProp } from 'styled-tools';
+import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 export const ArrowContainer = styled.div`
   width: 18px;

@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/Button/utils';
-import { transparentize } from 'packages/inplayer-ui/src/elements/Button/polished';
-import { ifProp, switchProp } from 'packages/inplayer-ui/src/elements/Button/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import { transparentize } from 'polished';
+import { ifProp, switchProp } from 'styled-tools';
+import colors from 'config/colors';
 
 const modifiers = {
   hoverInfo: () => `

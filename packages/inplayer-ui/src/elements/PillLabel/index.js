@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/PillLabel/utils';
-import { transparentize } from 'packages/inplayer-ui/src/elements/PillLabel/polished';
-import { switchProp } from 'packages/inplayer-ui/src/elements/PillLabel/styled-tools';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import { transparentize } from 'polished';
+import { switchProp } from 'styled-tools';
+import colors from 'config/colors';
 
 const modifiers = {
   primary: ({ theme }) => `

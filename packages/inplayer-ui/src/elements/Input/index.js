@@ -1,10 +1,10 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Input/react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/Input/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { ifProp, switchProp } from 'packages/inplayer-ui/src/elements/Input/styled-tools';
-import InplayerIcon from 'packages/inplayer-ui/src/elements/InPlayerIcon';
+import { uiColors, fontWeights, fontSizes } from 'utils';
+import colors from 'config/colors';
+import { ifProp, switchProp } from 'styled-tools';
+import InplayerIcon from 'elements/InPlayerIcon';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 

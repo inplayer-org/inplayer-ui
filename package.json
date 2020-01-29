@@ -1,164 +1,37 @@
 {
-  "private": true,
+  "name": "inplayer-ui-components",
   "workspaces": [
     "packages/*"
   ],
-  "author": "InPlayer",
-  "description": "InPlayer React UI Components",
-  "main": "build/inplayer-ui.min.js",
-  "types": "build/index.d.ts",
-  "scripts": {
-    "prebuild": "rimraf ./build",
-    "build": "webpack",
-    "build:watch": "webpack --watch --progress",
-    "lint": "yarn lint:js && yarn lint:style",
-    "lint:js": "eslint ./src --ext .js",
-    "lint:js:watch": "esw -w src/**",
-    "lint:js:fix": "eslint src/** --fix",
-    "prepublishOnly": "yarn build",
-    "review": "run-s lint test:clean test test:coverage:report",
-    "lint:style": "stylelint -- \"./src/**/*.js\"",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "lerna-test": "lerna run test",
-    "test": "jest src/**; exit 0",
-    "test:clean": "rimraf ./coverage",
-    "test:watch": "jest src/** --watch",
-    "test:watchAll": "jest src/** --watchAll",
-    "test:coverage:report": "open ./coverage/lcov-report/index.html",
-    "test:update:snapshots": "jest src/** --updateSnapshot",
-    "flow": "flow",
-    "flow:watch": "flow-watch",
-    "pregenerate:docs": "rimraf ./docs",
-    "generate:docs": "yarn styleguide:build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/inplayer-org/inplayer-ui"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/inplayer-org/inplayer-ui/issues"
+  "private": true,
+  "scripts": {
+    "clean": "lerna run clean --stream --parallel",
+    "build": "lerna run build --stream --parallel",
+    "lint": "eslint . --ext .js,.ts,.tsx -f codeframe",
+    "pretest": "yarn typecheck && yarn lint",
+    "test": "yarn test:unit",
+    "test:unit": "mocha \"packages/**/test/**/*.spec.ts?(x)\"",
+    "start": "yarn workspace @sample/app start",
+    "typecheck": "tsc --noEmit",
+    "prettify": "npx prettier \"packages/**/*.{js,ts,tsx}\" --write"
   },
-  "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
-  "jest": {
-    "testMatch": [
-      "**/tests/**/*.js?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ],
-    "coveragePathIgnorePatterns": [
-      "node_modules",
-      "<rootDir>/src/index.d.ts"
-    ],
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "^components(.*)$": "<rootDir>/src/components$1",
-      "^elements(.*)$": "<rootDir>/src/elements$1",
-      "^blocks(.*)$": "<rootDir>/src/blocks$1",
-      "^modifiers(.*)$": "<rootDir>/src/modifiers$1",
-      "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^helpers(.*)$": "<rootDir>/tests/helpers$1",
-      "^config(.*)$": "<rootDir>/config$1"
-    },
-    "collectCoverageFrom": [
-      "src/**",
-      "!src/**/*.snap",
-      "!src/blocks/index.js",
-      "!src/blocks/Grid/index.js",
-      "!src/components/index.js",
-      "!src/utils/**",
-      "!src/elements/index.js",
-      "!src/index.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "moduleDirectories": [
-      "node_modules",
-      "./"
-    ],
-    "setupFiles": [
-      "raf/polyfill",
-      "./tests/config"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
-  "peerDependencies": {
-    "moment": "^2.24.0",
-    "polished": "^3.4.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-fontawesome": "^1.7.1",
-    "styled-components": "^4.4.1",
-    "styled-components-modifiers": "^1.2.5",
-    "styled-tools": "^1.7.1"
+  "dependencies": {
+    "@inplayer-org/paywall-templates": "file:packages/paywall-templates",
+    "undefined": "file:packages/inplayer-ui"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-syntax-class-properties": "^7.7.4",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-flow": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
     "@types/styled-components": "^4.4.1",
-    "acorn-dynamic-import": "^4.0.0",
-    "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "babel-plugin-styled-components": "^1.10.6",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-webpack-alias": "^2.1.2",
-    "copy-webpack-plugin": "^5.1.1",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
-    "eslint": "^6.7.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-config-react-app": "^5.1.0",
-    "eslint-import-resolver-webpack": "^0.12.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-flowtype": "^4.5.2",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.1.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.17.0",
     "eslint-watch": "^6.0.1",
-    "flow-bin": "^0.113.0",
-    "flow-typed": "^2.6.2",
-    "flow-watch": "^1.1.5",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.4",
     "lerna": "^3.20.2",
-    "moment": "^2.24.0",
-    "npm-run-all": "^4.1.5",
     "polished": "^3.4.2",
     "prettier": "^1.19.1",
     "prettierrc": "^0.0.0-5",
-    "raf": "^3.4.1",
-    "rc-progress": "^2.5.2",
     "react": "^16.12.0",
-    "react-addons-shallow-compare": "^15.6.2",
-    "react-dates": "^21.5.1",
     "react-dom": "^16.12.0",
-    "react-fontawesome": "^1.7.1",
-    "react-paginate": "^6.3.2",
-    "react-styleguidist": "8.0.6",
-    "react-test-renderer": "^16.12.0",
-    "react-toggle": "^4.1.1",
-    "rimraf": "^3.0.0",
     "styled-components": "^4.4.1",
     "styled-components-modifiers": "^1.2.5",
     "styled-tools": "^1.7.1",
@@ -166,9 +39,6 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.9.0",
-    "terser-webpack-plugin": "^2.3.0",
-    "url-loader": "^2.3.0",
-    "webfontloader": "^1.6.28",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }

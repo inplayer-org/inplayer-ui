@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { transparentize } from 'packages/inplayer-ui/src/elements/polished';
+import { transparentize } from 'polished';
 
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { uiColors, fontWeights, fontSizes } from 'packages/inplayer-ui/src/elements/utils';
+import colors from 'config/colors';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 
 const DatePickerWrapper = styled.span`
   .PresetDateRangePicker_panel {

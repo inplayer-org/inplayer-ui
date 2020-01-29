@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { prop, ifProp } from 'packages/inplayer-ui/src/elements/Loader/styled-tools';
-import { uiColors } from 'packages/inplayer-ui/src/elements/Loader/utils';
-import { transparentize } from 'packages/inplayer-ui/src/elements/Loader/polished';
+import { prop, ifProp } from 'styled-tools';
+import { uiColors } from 'utils';
+import { transparentize } from 'polished';
 
 const spin = keyframes`
   0% {

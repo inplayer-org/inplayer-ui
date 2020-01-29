@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Checkbox/react';
+import React from 'react';
 import Label from '../../elements/Label';
 import CheckboxWrapper from './CheckboxWrapper';
 

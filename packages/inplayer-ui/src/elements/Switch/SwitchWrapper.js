@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import uiColors from 'packages/inplayer-ui/src/utils/uiColors';
-import colors from 'packages/inplayer-ui/src/config/colors';
-import { transparentize } from 'packages/inplayer-ui/src/elements/Switch/polished';
+import uiColors from 'utils/uiColors';
+import colors from 'config/colors';
+import { transparentize } from 'polished';
 
 const SwitchWrapper = styled.span`
   display: inline-flex;

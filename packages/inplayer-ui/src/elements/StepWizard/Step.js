@@ -1,7 +1,7 @@
 // @flow
-import React, { ReactNode } from 'packages/inplayer-ui/src/elements/StepWizard/react';
+import React, { ReactNode } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { ifProp, switchProp } from 'packages/inplayer-ui/src/elements/StepWizard/styled-tools';
+import { ifProp, switchProp } from 'styled-tools';
 
 /** fadeInRight */
 const fadeInRight = keyframes`

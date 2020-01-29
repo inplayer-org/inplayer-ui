@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/elements/Progress/react';
+import React from 'react';
 import { Line, Circle } from 'rc-progress';
 
 type ProgressType = 'circle' | 'line';

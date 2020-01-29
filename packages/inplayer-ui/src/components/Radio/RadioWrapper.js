@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { uiColors } from 'packages/inplayer-ui/src/components/Radio/utils';
-import colors from 'packages/inplayer-ui/src/config/colors';
+import { uiColors } from 'utils';
+import colors from 'config/colors';
 
 const RadioWrapper = styled.div`
   display: inline-block;

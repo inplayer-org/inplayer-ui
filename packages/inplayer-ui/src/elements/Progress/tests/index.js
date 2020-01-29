@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Progress/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Progress from '../index';
 

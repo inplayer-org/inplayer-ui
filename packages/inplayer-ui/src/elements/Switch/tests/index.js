@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Switch/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Switch from '../index';
 

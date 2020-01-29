@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/elements/Label/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Label from '../index';
 

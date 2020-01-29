@@ -1,5 +1,5 @@
 // @flow
-import React from 'packages/inplayer-ui/src/components/Tooltip/react';
+import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
 export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';

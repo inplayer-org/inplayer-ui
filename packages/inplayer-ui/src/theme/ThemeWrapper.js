@@ -1,10 +1,10 @@
 // @flow
-import React from 'packages/inplayer-ui/src/theme/react';
+import React from 'react';
 import type { Node, ComponentType } from 'react';
 import { ThemeProvider as DefaultThemeProvider } from 'styled-components';
-import GlobalStyles from 'packages/inplayer-ui/src/config/globalStyles';
-import configureFonts from 'packages/inplayer-ui/src/config/configureFonts';
-import fallbackTheme from 'packages/inplayer-ui/src/config/theme';
+import GlobalStyles from 'config/globalStyles';
+import configureFonts from 'config/configureFonts';
+import fallbackTheme from 'config/theme';
 import type { Theme } from 'types/Theme';
 
 type Props = {

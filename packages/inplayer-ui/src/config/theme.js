@@ -1,4 +1,4 @@
-const { rem } = require('packages/inplayer-ui/src/config/polished');
+const { rem } = require('polished');
 const colors = require('./colors');
 
 module.exports = {

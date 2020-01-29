@@ -1,4 +1,4 @@
-import { generateSnapshots } from 'packages/inplayer-ui/src/components/Header/tests/helpers';
+import { generateSnapshots } from 'helpers';
 
 import Header from '../index';
 
