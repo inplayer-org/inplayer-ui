@@ -11,19 +11,22 @@
     "lint": "eslint . --ext .js,.ts,.tsx -f codeframe",
     "pretest": "yarn typecheck && yarn lint",
     "test": "yarn test:unit",
-    "test:unit": "mocha \"packages/**/test/**/*.spec.ts?(x)\"",
-    "start": "yarn workspace @inplayer-ui/app start",
+    "start": "yarn workspace @inplayer-ui/styleguide start",
     "typecheck": "tsc --noEmit",
-    "prettify": "npx prettier \"packages/**/*.{js,ts,tsx}\" --write"
+    "prettify": "npx prettier \"packages/**/*.{js,ts,tsx}\" --write",
+    "new-version": "lerna version"
   },
   "dependencies": {
     "@inplayer-org/paywall-templates": "file:packages/paywall-templates"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/styled-components": "^4.4.1",
+    "cross-env": "^7.0.0",
     "cz-conventional-changelog": "3.1.0",
     "eslint-watch": "^6.0.1",
-    "husky": "^3.1.0",
+    "husky": "^4.2.1",
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.4",
     "lerna": "^3.20.2",
