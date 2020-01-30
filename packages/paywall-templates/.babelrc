@@ -1,0 +1,27 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "debug": true,
+        "modules": false,
+        "targets": {
+          "node": "current",
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    "@babel/plugin-syntax-class-properties",
+    "transform-class-properties"
+  ]
+}
