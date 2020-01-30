@@ -1,8 +1,9 @@
 {
-  "name": "@inplayer-ui/styleguide",
+  "name": "@inplayer-org/styleguide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@inplayer-org/paywall-templates": "^0.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -30,5 +31,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "> TODO: description",
+  "author": "srdjanRakic <srgjan.rakic@gmail.com>",
+  "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
+  "license": "ISC",
+  "main": "lib/styleguide.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inplayer-org/inplayer-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inplayer-org/inplayer-ui/issues"
   }
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+import Hello from '@inplayer-org/paywall-templates/lib/Hello';
+import Another from '@inplayer-org/paywall-templates/lib/Another';
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+        <Hello></Hello>
+        <Another></Another>
       </header>
     </div>
   );
