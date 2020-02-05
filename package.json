@@ -24,12 +24,6 @@
     "lint:style": "stylelint -- \"./src/**/*.js\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "test": "jest src/**; exit 0",
-    "test:clean": "rimraf ./coverage",
-    "test:watch": "jest src/** --watch",
-    "test:watchAll": "jest src/** --watchAll",
-    "test:coverage:report": "open ./coverage/lcov-report/index.html",
-    "test:update:snapshots": "jest src/** --updateSnapshot",
     "flow": "flow",
     "flow:watch": "flow-watch",
     "pregenerate:docs": "rimraf ./docs",
@@ -44,52 +38,6 @@
     "url": "https://github.com/inplayer-org/inplayer-ui/issues"
   },
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
-  "jest": {
-    "testMatch": [
-      "**/tests/**/*.js?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ],
-    "coveragePathIgnorePatterns": [
-      "node_modules",
-      "<rootDir>/src/index.d.ts"
-    ],
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "^components(.*)$": "<rootDir>/src/components$1",
-      "^elements(.*)$": "<rootDir>/src/elements$1",
-      "^blocks(.*)$": "<rootDir>/src/blocks$1",
-      "^modifiers(.*)$": "<rootDir>/src/modifiers$1",
-      "^utils(.*)$": "<rootDir>/src/utils$1",
-      "^helpers(.*)$": "<rootDir>/tests/helpers$1",
-      "^config(.*)$": "<rootDir>/config$1"
-    },
-    "collectCoverageFrom": [
-      "src/**",
-      "!src/**/*.snap",
-      "!src/blocks/index.js",
-      "!src/blocks/Grid/index.js",
-      "!src/components/index.js",
-      "!src/utils/**",
-      "!src/elements/index.js",
-      "!src/index.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "moduleDirectories": [
-      "node_modules",
-      "./"
-    ],
-    "setupFiles": [
-      "raf/polyfill",
-      "./tests/config"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
@@ -116,15 +64,12 @@
     "@types/styled-components": "^4.4.2",
     "acorn-dynamic-import": "^4.0.0",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-webpack-alias": "^2.1.2",
     "copy-webpack-plugin": "^5.1.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
@@ -133,7 +78,6 @@
     "eslint-loader": "^3.0.3",
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
@@ -142,8 +86,6 @@
     "flow-typed": "^2.6.2",
     "flow-watch": "^1.1.5",
     "husky": "^4.2.1",
-    "jest": "^25.1.0",
-    "jest-styled-components": "^7.0.0",
     "moment": "^2.24.0",
     "npm-run-all": "^4.1.5",
     "polished": "^3.4.4",

@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { shallow, mount } from 'enzyme';
-import theme from 'src/config/theme';
-import 'jest-styled-components';
+import theme from './node_modules/src/config/theme';
+import './node_modules/jest-styled-components';
 
 export function renderWithTheme(component) {
   return renderer.create(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
