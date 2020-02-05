@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "module": "commonjs",
     "declaration": true,
     "noImplicitAny": false,
@@ -9,7 +10,8 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "lib": ["es6"]
+    "lib": ["es6", "dom"],
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
