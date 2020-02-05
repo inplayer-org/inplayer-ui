@@ -20,7 +20,6 @@
     "lint:js:watch": "esw -w src/**",
     "lint:js:fix": "eslint src/** --fix",
     "prepublishOnly": "yarn build",
-    "review": "run-s lint test:clean test test:coverage:report",
     "lint:style": "stylelint -- \"./src/**/*.js\"",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
