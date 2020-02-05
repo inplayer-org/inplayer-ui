@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "module": "commonjs",
-    "declaration": true,
+    // "declaration": true,
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
