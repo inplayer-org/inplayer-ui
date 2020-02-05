@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Fix
 
+- Make table responsive - change in table style
+
+# [2.0.0-beta.22] - 24-01-2020
+
+### Fix
+
 - Export not exported interfaces
 
 # [2.0.0-beta.21] - 22-01-2020

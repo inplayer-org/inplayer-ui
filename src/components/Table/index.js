@@ -32,6 +32,10 @@ const TableWrapper = styled.table`
   -moz-osx-font-smoothing: grayscale;
   border-collapse: collapse;
   table-layout: auto;
+
+  @media (max-width: 960px) {
+    table-layout: fixed;
+  }
 `;
 
 const TableHeadRow = styled.tr`
@@ -67,7 +71,7 @@ const TableCell = styled.td`
   font-weight: ${fontWeights('light')};
   word-wrap: break-word;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 
   a {
     color: ${colors.fontGray};
@@ -83,6 +87,7 @@ const TableHeaderCell = styled.th`
   font-weight: ${fontWeights('light')};
   font-size: ${fontSizes('small')};
   text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
+  white-space: normal;
 `;
 
 const ActionIcon = styled(Icon)`
