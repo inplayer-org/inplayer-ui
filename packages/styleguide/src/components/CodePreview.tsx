@@ -9,10 +9,11 @@ interface Props {
 }
 
 const Pre = styled.pre`
-  width: 40%;
+  width: 100%;
   background-color: ${Colors.lightGray};
-  padding-left: 10px;
-  margin-left: 10px;
+  margin: 50px;
+  padding-top:10px;
+  padding-bottom: 30px;
   border: 1px solid ${Colors.gray};
   border-radius: 3px;
 `;

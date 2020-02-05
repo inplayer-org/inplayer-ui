@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import * as components from '@inplayer-org/inplayer-ui';
 
 const Wrapper = styled.div`
-    width: 40%;
+    width: 100%;
     padding-left: 10px;
     margin-left: 10px;
 `;
