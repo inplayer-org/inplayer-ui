@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.22] - 24-01-2020
+# [2.0.0-beta.23] - 05-02-2020
 
 ### Fix
 
-- Make table responsive - change in table style
+- Make table body responsive
 
 # [2.0.0-beta.22] - 24-01-2020
 
