@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
 import InPlayerIcon from 'elements/InPlayerIcon';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -99,11 +100,11 @@ const Pagination = ({
   useEffect(() => {
     let minVisiblePage = 0;
     // this won't work if user wants to show less than 3 pages
-    if (startPage + 2 >= totalPages) {
+    if (startPage + 1 >= totalPages) {
       minVisiblePage = totalPages - numberOfPagesDisplayedScaled + 1;
-    } else if (startPage - 2 <= 1) {
+    } else if (startPage - 1 <= 1) {
       minVisiblePage = 1;
-    } else minVisiblePage = startPage - 2;
+    } else minVisiblePage = startPage - 1;
 
     // Create the pages that are visible for selection
     const initialPagesVisible = Array.from(Array(numberOfPagesDisplayedScaled).keys()).map(
@@ -111,8 +112,11 @@ const Pagination = ({
     );
 
     setVisiblePages(initialPagesVisible);
+  }, [totalItems, itemsPerPage, numberOfPagesDisplayed]);
+
+  useEffect(() => {
     setActivePage(startPage);
-  }, [startPage, totalItems, itemsPerPage, numberOfPagesDisplayed]);
+  }, [startPage]);
 
   const onPageClick = (pageNumber: number) => () => {
     const indexOfPage = visiblePages.indexOf(pageNumber);
@@ -179,7 +183,7 @@ const Pagination = ({
   return (
     <PaginationContainer>
       <PageBox type="button" disabled={activePage === 1} onClick={goToStart}>
-        &lt;&lt;
+        <AiOutlineDoubleLeft />
       </PageBox>
       <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
         <InPlayerIcon name="angleLeft" />
@@ -212,7 +216,7 @@ const Pagination = ({
         <InPlayerIcon name="angleRight" />
       </PageBox>
       <PageBox type="button" disabled={activePage === totalPages} onClick={goToEnd}>
-        &gt;&gt;
+        <AiOutlineDoubleRight />
       </PageBox>
     </PaginationContainer>
   );
