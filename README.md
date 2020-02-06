@@ -242,9 +242,7 @@ Licensed under the MIT License, Copyright © 2018-present InPlayer.
 
 See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) for more information.
 
-[build-badge]: https://travis-ci.org/inplayer-org/inplayer-ui.svg?branch=dev
-[build]: https://travis-ci.org/inplayer-org/inplayer-ui
-[version-badge]: 	https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg?colorB=blue
+[version-badge]: https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg?colorB=blue
 [package]: https://www.npmjs.com/package/@inplayer-org/inplayer-ui
 [license-badge]: https://img.shields.io/npm/l/@inplayer-org/inplayer-ui.svg?style=flat-square
 [license]: https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE

@@ -90,7 +90,6 @@ module.exports = {
       elements: path.resolve(__dirname, './src/elements'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
       utils: path.resolve(__dirname, './src/utils'),
-      helpers: path.resolve(__dirname, 'tests/helpers'),
       config: path.resolve(__dirname, './src/config'),
       types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
@@ -101,4 +100,18 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
+  externals: {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  },
 };
