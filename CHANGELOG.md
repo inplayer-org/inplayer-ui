@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Make custom pagination component
+- Custom pagination component
 
 # [2.0.0-beta.24] - 05-02-2020
 
