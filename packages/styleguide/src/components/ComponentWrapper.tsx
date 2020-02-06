@@ -7,8 +7,6 @@ import { InPlayerIcon } from '@inplayer-org/inplayer-ui';
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
 import PropsPreview from './PropsPreview';
-import { getUsage, getExamples, getPropsAndMethods } from '../utils/generateComponentData';
-
 import { getComponent } from '../utils/generateComponentData';
 
 const WrapperNavigationChild = styled.div`
