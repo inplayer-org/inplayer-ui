@@ -12,7 +12,6 @@ export { default as DayPicker } from './DayPicker';
 export { default as Accordion } from './Accordion';
 export { default as Progress } from './Progress';
 export { default as Card } from './Card';
-export { default as Pagination } from './Pagination';
 export { default as Label } from './Label';
 export { default as Loader } from './Loader';
 export { default as Dropdown } from './Dropdown';
