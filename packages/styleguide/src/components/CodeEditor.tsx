@@ -5,40 +5,46 @@ import {
     LiveError,
     LivePreview
   } from 'react-live';
-import { Button } from '@inplayer-org/inplayer-ui';
+import { Button, Colors } from '@inplayer-org/inplayer-ui';
 import styled from 'styled-components';
 import * as components from '@inplayer-org/inplayer-ui';
+import theme from 'prism-react-renderer/themes/github';
 
 const Wrapper = styled.div`
-    width: 100%;
-    padding-left: 10px;
-    margin-left: 10px;
+    width: 50rem;
+
+    > * {
+        margin-top: 10px;
+    }
+`;
+
+const EditorWrapper = styled.div`
+    border: 1px solid ${Colors.gray};
+    border-radius: 3px;
 `;
 
 interface Props {
     code: string;
-    scopeComponent: UiComponentType;
 }
 
-type UiComponentType = keyof typeof components;
+const scope = {
+    Checkbox: components.Checkbox,
+    Button: components.Button,
+};
 
-const CodeEditor = ({code, scopeComponent}: Props) => {
+const CodeEditor = ({code}: Props) => {
     const [viewCode, toggleViewCode] = useState(false);
-    // @ts-ignore
-    const MyComponent = components[scopeComponent];
-    const scope = {
-        [scopeComponent]: MyComponent
-    };
+    
     return (
         <Wrapper>
-            <LiveProvider code={code}  scope={scope} noInline={false}>
+            <LiveProvider code={code}  scope={scope} noInline={false} theme={theme}>
                 <LivePreview />
                 <Button size="sm" onClick={() => toggleViewCode(!viewCode)}>View code</Button>
                 {viewCode && (
-                    <div>
-                    <LiveEditor />
-                    <LiveError />
-                    </div>    
+                    <EditorWrapper>
+                        <LiveEditor />
+                        <LiveError />
+                    </EditorWrapper>
                 )}
             </LiveProvider>
         </Wrapper>
