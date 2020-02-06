@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const usage = `
   import React from 'react';
@@ -71,6 +71,7 @@ const Checkbox: ComponentData = {
       code: demoCode,
     }
   ],
+  propsAndMethods: [],
 }
 
 export default Checkbox;

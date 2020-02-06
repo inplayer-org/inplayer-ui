@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const usage = `
   import { Button } from '@inplayer-org/inplayer-ui';
@@ -27,6 +27,7 @@ const Button: ComponentData = {
       code: demoCode,
     }
   ],
+  propsAndMethods: [],
 }
 
 export default Button;

@@ -9,6 +9,7 @@ import {
 
 import ComponentWrapper from './ComponentWrapper'
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
+import * as packageJson from '../../package.json';
 
 const WrapperNavigation = styled.div`
   width: 15rem;
@@ -65,11 +66,13 @@ const NavigationHeader = styled(StyledLink)`
 `
 const navigationElements = Object.keys(InplayerUi);
 
+const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].replace(/[~>^]/gi, '');
+
 const SidebarMenu: React.FC = () => (
     <Router>
       <WrapperNavigation>
         <WrapperSection>
-          <NavigationHeader to='/'> Styleguide </NavigationHeader>
+          <NavigationHeader to='/'> InPlayer UI | {libraryVersion} </NavigationHeader>
         </WrapperSection>
         <WrapperSection>
           <NavigationHeader> Components</NavigationHeader>

@@ -6,6 +6,9 @@ import { InPlayerIcon } from '@inplayer-org/inplayer-ui';
 
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
+import PropsPreview from './PropsPreview';
+import { getUsage, getExamples, getPropsAndMethods } from '../utils/generateComponentData';
+
 import { getComponent } from '../utils/generateComponentData';
 
 const WrapperNavigationChild = styled.div`
@@ -41,16 +44,18 @@ const StyledIcon = styled(InPlayerIcon)`
 
 const ComponentWrapper: React.FC = () => {
   let { id } = useParams();
-  const { description, path, usage, examples } = getComponent(id);
+  const { description, path, usage, examples, propsAndMethods } = getComponent(id);
   return (
     <WrapperNavigationChild>
       <Wrapper>
         <ComponentName>{id}</ComponentName>
+
         {path && <Description>
           {path}
           <CopyToClipboard text={path}>
             <StyledIcon name="file" />
           </CopyToClipboard>
+          <PropsPreview propsAndMethods={propsAndMethods} />
         </Description>}
         {description && <Description>{description}</Description>}
         {usage && <CodePreview code={usage} />}

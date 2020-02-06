@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const usage = `
   <Header
@@ -159,6 +159,7 @@ const Header: ComponentData = {
       code: withTabNavigationCode,
     }
   ],
+  propsAndMethods: [],
 }
 
 export default Header;

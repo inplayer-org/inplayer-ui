@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const usage = `
   import { Modal } from 'inplayer-ui';
@@ -110,6 +110,7 @@ const Modal: ComponentData = {
       code: demoCode,
     }
   ],
+  propsAndMethods: [],
 }
 
 export default Modal;
