@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
@@ -8,7 +8,6 @@ import InPlayerIcon from 'elements/InPlayerIcon';
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 30rem;
 `;
 
 const getBoxStyles = ({
@@ -77,34 +76,43 @@ type Props = {
   itemsPerPage?: number,
 };
 
+// Kibana has limit of 9990 pages
+const pagesLimit = 9990;
+
 const Pagination = ({
   onPageChange,
   numberOfPagesDisplayed = 5,
   totalItems,
   startPage = 1,
-  itemsPerPage = 10,
+  itemsPerPage = 15,
 }: Props) => {
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const [activePage, setActivePage] = useState(startPage);
+  const [visiblePages, setVisiblePages] = useState<number[]>([]);
+
+  let totalPages = Math.ceil(totalItems / itemsPerPage);
+  totalPages = Math.min(totalPages, pagesLimit);
   const numberOfPagesDisplayedScaled =
     totalPages < numberOfPagesDisplayed ? totalPages : numberOfPagesDisplayed;
-  let minVisiblePage = 0;
-  // this won't work if user wants to show less than 3 pages
-  if (startPage + 2 >= totalPages) {
-    minVisiblePage = totalPages - numberOfPagesDisplayedScaled + 1;
-  } else if (startPage - 2 <= 1) {
-    minVisiblePage = 1;
-  } else minVisiblePage = startPage - 2;
-
-  // Create the pages that are visible for selection
-  const initialPagesVisible = Array.from(Array(numberOfPagesDisplayedScaled).keys()).map(
-    i => i + minVisiblePage
-  );
-
-  const [activePage, setActivePage] = useState(startPage);
-  const [visiblePages, setVisiblePages] = useState(initialPagesVisible);
-
   const isVisibleLess = !visiblePages.some(index => index === 1);
   const isVisibleMore = !visiblePages.some(index => index === totalPages);
+
+  useEffect(() => {
+    let minVisiblePage = 0;
+    // this won't work if user wants to show less than 3 pages
+    if (startPage + 2 >= totalPages) {
+      minVisiblePage = totalPages - numberOfPagesDisplayedScaled + 1;
+    } else if (startPage - 2 <= 1) {
+      minVisiblePage = 1;
+    } else minVisiblePage = startPage - 2;
+
+    // Create the pages that are visible for selection
+    const initialPagesVisible = Array.from(Array(numberOfPagesDisplayedScaled).keys()).map(
+      i => i + minVisiblePage
+    );
+
+    setVisiblePages(initialPagesVisible);
+    setActivePage(startPage);
+  }, [startPage, totalItems, itemsPerPage, numberOfPagesDisplayed]);
 
   const onPageClick = (pageNumber: number) => () => {
     const indexOfPage = visiblePages.indexOf(pageNumber);
@@ -170,31 +178,40 @@ const Pagination = ({
 
   return (
     <PaginationContainer>
-      <PageBox disabled={activePage === 1} onClick={goToStart}>
+      <PageBox type="button" disabled={activePage === 1} onClick={goToStart}>
         &lt;&lt;
       </PageBox>
-      <PageBox disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
+      <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
         <InPlayerIcon name="angleLeft" />
       </PageBox>
       {!visiblePages.some(index => index === 1) && (
-        <PageBox hideBorder onClick={onDotsClick(false)}>
+        <PageBox type="button" hideBorder onClick={onDotsClick(false)}>
           •••
         </PageBox>
       )}
       {visiblePages.map(index => (
-        <PageBox selected={activePage === index} key={index} onClick={onPageClick(index)}>
+        <PageBox
+          type="button"
+          selected={activePage === index}
+          key={index}
+          onClick={onPageClick(index)}
+        >
           {index}
         </PageBox>
       ))}
       {!visiblePages.some(index => index === totalPages) && (
-        <PageBox hideBorder onClick={onDotsClick(true)}>
+        <PageBox type="button" hideBorder onClick={onDotsClick(true)}>
           •••
         </PageBox>
       )}
-      <PageBox disabled={activePage === totalPages} onClick={onPageClick(activePage + 1)}>
+      <PageBox
+        type="button"
+        disabled={activePage === totalPages}
+        onClick={onPageClick(activePage + 1)}
+      >
         <InPlayerIcon name="angleRight" />
       </PageBox>
-      <PageBox disabled={activePage === totalPages} onClick={goToEnd}>
+      <PageBox type="button" disabled={activePage === totalPages} onClick={goToEnd}>
         &gt;&gt;
       </PageBox>
     </PaginationContainer>
@@ -204,7 +221,7 @@ const Pagination = ({
 Pagination.defaultProps = {
   startPage: 1,
   numberOfPagesDisplayed: 5,
-  itemsPerPage: 10,
+  itemsPerPage: 15,
 };
 
 export default Pagination;
