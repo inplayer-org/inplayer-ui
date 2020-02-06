@@ -4,7 +4,7 @@ import {
     LiveEditor,
     LiveError,
     LivePreview
-  } from 'react-live';
+} from 'react-live';
 import { Button, Colors } from '@inplayer-org/inplayer-ui';
 import styled from 'styled-components';
 import * as components from '@inplayer-org/inplayer-ui';
@@ -28,16 +28,15 @@ interface Props {
 }
 
 const scope = {
-    Checkbox: components.Checkbox,
-    Button: components.Button,
+    ...components
 };
 
-const CodeEditor = ({code}: Props) => {
+const CodeEditor = ({ code }: Props) => {
     const [viewCode, toggleViewCode] = useState(false);
-    
+
     return (
         <Wrapper>
-            <LiveProvider code={code}  scope={scope} noInline={false} theme={theme}>
+            <LiveProvider code={code.trimRight()} scope={scope} noInline={false} theme={theme}>
                 <LivePreview />
                 <Button size="sm" onClick={() => toggleViewCode(!viewCode)}>View code</Button>
                 {viewCode && (

@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useParams } from "react-router-dom";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { InPlayerIcon } from '@inplayer-org/inplayer-ui';
+
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
-import { getUsage, getExamples } from '../utils/generateComponentData';
+import { getComponent } from '../utils/generateComponentData';
 
 const WrapperNavigationChild = styled.div`
   margin-left: 16rem;
@@ -11,25 +14,57 @@ const WrapperNavigationChild = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
+
+const Wrapper = styled.div`
+`;
+
+const Description = styled.p`
+  padding-bottom: 10px;
+  width: 50rem;
+`;
+
+const ExampleWrapper = styled.div`
+  margin-bottom: 20px; 
+`;
+
+const ComponentName = styled.h1`
+`;
+
+const ExampleTitle = styled.h3`
+`;
+
+const StyledIcon = styled(InPlayerIcon)`
+  cursor: pointer;
+  margin-left: 5px;
+`;
 
 const ComponentWrapper: React.FC = () => {
   let { id } = useParams();
-  const examples = getExamples(id); 
+  const { description, path, usage, examples } = getComponent(id);
   return (
     <WrapperNavigationChild>
-      <h1>{id}</h1>
-      <CodePreview code={getUsage(id)} />
-      {examples.map(({code, title}) => {
-        return (
-          <div>
-            <h3>{title}</h3>
-            <CodeEditor code={code} />
-          </div>
-        );
-      })}
+      <Wrapper>
+        <ComponentName>{id}</ComponentName>
+        {path && <Description>
+          {path}
+          <CopyToClipboard text={path}>
+            <StyledIcon name="file" />
+          </CopyToClipboard>
+        </Description>}
+        {description && <Description>{description}</Description>}
+        {usage && <CodePreview code={usage} />}
+        {examples && examples.map(({ code, title }) => {
+          return (
+            <ExampleWrapper>
+              <ExampleTitle>{title}</ExampleTitle>
+              <CodeEditor code={code} />
+            </ExampleWrapper>
+          );
+        })}
+      </Wrapper>
     </WrapperNavigationChild>
   );
-  };
+};
 
 export default ComponentWrapper;
