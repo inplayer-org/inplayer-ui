@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { useParams } from "react-router-dom";
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
-import { getUsage, getExamples } from '../utils/generateComponentData';
+import PropsPreview from './PropsPreview';
+import { getUsage, getExamples, getPropsAndMethods } from '../utils/generateComponentData';
+
 
 const WrapperNavigationChild = styled.div`
   margin-left: 16rem;
@@ -16,9 +18,11 @@ const WrapperNavigationChild = styled.div`
 const ComponentWrapper: React.FC = () => {
   let { id } = useParams();
   const examples = getExamples(id); 
+  const propsAndMethods = getPropsAndMethods(id);
   return (
     <WrapperNavigationChild>
       <h1>{id}</h1>
+      <PropsPreview propsAndMethods={propsAndMethods} />
       <CodePreview code={getUsage(id)} />
       {examples.map(({code, title}) => {
         return (

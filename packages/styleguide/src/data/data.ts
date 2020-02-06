@@ -19,7 +19,8 @@ const Button = {
       </div>
       `
     } 
-  ]
+  ],
+  propsAndMethods: [{}]
 }
 
 const Checkbox = {
@@ -88,6 +89,17 @@ const Checkbox = {
       </div>
      `
     }
+  ],
+  propsAndMethods: [
+    {name: 'checked', type: 'boolean', default: 'required'},
+    {name: 'id', type: 'string', default: 'required'},
+    {name: 'label', type: 'string', default: 'required'},
+    {name: 'name', type: 'string', default: 'required'},
+    {name: 'onChange', type: 'function', default: 'required'},
+    {name: 'className', type: 'string', description: 'A className can be passed down for further styling or extending with CSS-in-JS'},
+    {name: 'containerRef', type: 'React.RefObject<HTMLDivElement>	', default: 'null'},
+    {name: 'disabled', type: 'boolean', default: 'false'},
+    {name: 'style', type: 'Object', default: '{}'},
   ]
 }
 
