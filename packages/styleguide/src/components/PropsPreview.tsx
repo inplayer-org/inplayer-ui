@@ -5,7 +5,6 @@ import { ifProp } from 'styled-tools';
 const ContentWrapper = styled.div`
   width: 50rem;
   font-size: .8rem;
-  margin-bottom: 2rem;
 `
 
 const Row = styled.div`

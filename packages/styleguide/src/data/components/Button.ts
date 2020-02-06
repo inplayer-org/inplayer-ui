@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const Button: ComponentData = {
     description: ``,
@@ -24,7 +24,7 @@ const Button: ComponentData = {
         `
         }
     ],
-    propsAndMethods: [{}]
-}
+    propsAndMethods: [{name: '', type:''}]
+  }
 
 export default Button;

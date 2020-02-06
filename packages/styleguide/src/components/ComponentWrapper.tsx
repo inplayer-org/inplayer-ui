@@ -49,13 +49,13 @@ const ComponentWrapper: React.FC = () => {
     <WrapperNavigationChild>
       <Wrapper>
         <ComponentName>{id}</ComponentName>
-        <PropsPreview propsAndMethods={propsAndMethods} />
 
         {path && <Description>
           {path}
           <CopyToClipboard text={path}>
             <StyledIcon name="file" />
           </CopyToClipboard>
+          <PropsPreview propsAndMethods={propsAndMethods} />
         </Description>}
         {description && <Description>{description}</Description>}
         {usage && <CodePreview code={usage} />}

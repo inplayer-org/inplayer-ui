@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const Header: ComponentData = {
   description: `
@@ -143,7 +143,7 @@ const Header: ComponentData = {
             `
     }
   ],
-  propsAndMethods: [{}]
+  propsAndMethods: [{name: '', type:''}]
 }
 
 export default Header;

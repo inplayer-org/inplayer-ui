@@ -1,4 +1,4 @@
-import { ComponentData } from '../data';
+import { ComponentData } from "../types";
 
 const Modal: ComponentData = {
     description: ``,
@@ -107,7 +107,7 @@ const Modal: ComponentData = {
             `
         }
     ],
-    propsAndMethods: [{}]
-}
+    propsAndMethods: [{name: '', type:''}]
+  }
 
 export default Modal;
