@@ -63,7 +63,7 @@ const Checkbox: ComponentData = {
   description: `
       Checkbox input is a input component for checkbox. You can use it directly like this:
     `,
-  path: `src/components/Checkbox/index.js`,
+  path: 'src/components/Checkbox/index.js',
   usage,
   examples: [
     {
@@ -71,7 +71,17 @@ const Checkbox: ComponentData = {
       code: demoCode,
     }
   ],
-  propsAndMethods: [],
+  propsAndMethods: [
+    { name: 'checked', type: 'boolean', default: 'Required' },
+    { name: 'id', type: 'string', default: 'Required' },
+    { name: 'label', type: 'string', default: 'Required' },
+    { name: 'name', type: 'string', default: 'Required' },
+    { name: 'onChange', type: 'function', default: 'Required' },
+    { name: 'className', type: 'string', description: 'A className can be passed down for further styling or extending with CSS-in-JS' },
+    { name: 'containerRef', type: 'React.RefObject<HTMLDivElement>', default: 'null' },
+    { name: 'disabled', type: 'boolean', default: 'false' },
+    { name: 'style', type: 'Object', default: '{ }'},
+  ],
 }
 
 export default Checkbox;

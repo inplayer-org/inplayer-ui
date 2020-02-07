@@ -143,7 +143,7 @@ const Header: ComponentData = {
   description: `
     The Header represents a versatile component which can house a title or a TabNavigation, as well as a UserMenu and Additional User Menu.
   `,
-  path: `src/components/Header/index.js`,
+  path: 'src/components/Header/index.js',
   usage,
   examples: [
     {
@@ -159,7 +159,14 @@ const Header: ComponentData = {
       code: withTabNavigationCode,
     }
   ],
-  propsAndMethods: [],
+  propsAndMethods: [
+    { name: 'additionalUserMenuProps', type: 'UserMenuProps', default: 'null' },
+    { name: 'className', type: 'string' },
+    { name: 'style', type: 'Object', default: '{ }' }, 
+    { name: 'tabNavigationProps', type: 'TabNavigationProps', default: 'null' },
+    { name: 'title', type: 'string', default: 'null' },
+    { name: 'userMenuProps', type: 'UserMenuProps', default: 'null' },
+  ],
 }
 
 export default Header;

@@ -20,7 +20,7 @@ const WrapperNavigationChild = styled.div`
 const Wrapper = styled.div`
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   padding-bottom: 10px;
   width: 50rem;
 `;
@@ -51,7 +51,7 @@ const ComponentWrapper: React.FC = () => {
         {path && <Description>
           {path}
           <CopyToClipboard text={path}>
-            <StyledIcon name="file" />
+            <StyledIcon name="file" title="Copy to clipboard" />
           </CopyToClipboard>
           <PropsPreview propsAndMethods={propsAndMethods} />
         </Description>}
