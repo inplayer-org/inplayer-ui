@@ -162,7 +162,7 @@ const Header: ComponentData = {
   propsAndMethods: [
     { name: 'additionalUserMenuProps', type: 'UserMenuProps', default: 'null' },
     { name: 'className', type: 'string' },
-    { name: 'style', type: 'Object', default: '{ }' }, 
+    { name: 'style', type: 'Object', default: '{ }' },
     { name: 'tabNavigationProps', type: 'TabNavigationProps', default: 'null' },
     { name: 'title', type: 'string', default: 'null' },
     { name: 'userMenuProps', type: 'UserMenuProps', default: 'null' },

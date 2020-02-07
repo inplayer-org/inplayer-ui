@@ -101,8 +101,7 @@ const demoCode = `class App extends React.Component {
 `;
 
 const Modal: ComponentData = {
-  description: ``,
-  path: `src/components/Modal/index.js`,
+  path: 'src/components/Modal/index.js',
   usage,
   examples: [
     {
@@ -111,12 +110,13 @@ const Modal: ComponentData = {
     }
   ],
   propsAndMethods: [
-    {name: 'children', type:'Node', default: 'Required'},
-    {name: 'closeModal', type:'function', default: 'Required'},
-    {name: 'isModalOpen', type:'boolean', default: 'Required'},
-    {name: 'title', type:'string', default: 'Required'},
-    {name: 'className', type:'string'},
-    {name: 'style', type: 'Object', default: '{}'},
-  ]}
+    { name: 'children', type: 'Node', default: 'Required' },
+    { name: 'closeModal', type: 'function', default: 'Required' },
+    { name: 'isModalOpen', type: 'boolean', default: 'Required' },
+    { name: 'title', type: 'string', default: 'Required' },
+    { name: 'className', type: 'string' },
+    { name: 'style', type: 'Object', default: '{}' },
+  ]
+}
 
 export default Modal;

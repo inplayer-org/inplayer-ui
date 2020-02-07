@@ -5,8 +5,9 @@ export interface PropsAndMethods {
   description?: string;
 }
 export interface Example {
-  title: string;
+  title?: string;
   code: string;
+  displayCode?: boolean;
 }
 export interface ComponentData {
   description?: string;

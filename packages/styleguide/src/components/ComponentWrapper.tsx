@@ -47,7 +47,6 @@ const ComponentWrapper: React.FC = () => {
     <WrapperNavigationChild>
       <Wrapper>
         <ComponentName>{id}</ComponentName>
-
         {path && <Description>
           {path}
           <CopyToClipboard text={path}>
@@ -57,11 +56,11 @@ const ComponentWrapper: React.FC = () => {
         </Description>}
         {description && <Description>{description}</Description>}
         {usage && <CodePreview code={usage} />}
-        {examples && examples.map(({ code, title }) => {
+        {examples && examples.map(({ code, title, displayCode = true}) => {
           return (
             <ExampleWrapper>
               <ExampleTitle>{title}</ExampleTitle>
-              <CodeEditor code={code} />
+              <CodeEditor displayCodeButton={displayCode} code={code} />
             </ExampleWrapper>
           );
         })}
