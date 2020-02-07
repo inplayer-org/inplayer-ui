@@ -27,7 +27,16 @@ const Button: ComponentData = {
       code: demoCode,
     }
   ],
-  propsAndMethods: [],
+  propsAndMethods: [
+    { name: 'children', type:'Node', default: 'Required' },
+    { name: 'buttonModifiers', type:'Array<string>' },
+    { name: 'className', type:'string' },
+    { name: 'icon', type:'union' },
+    { name: 'iconModifiers', type:'Array<string>' },
+    { name: 'iconPosition', type:'string' },
+    { name: 'size', type:'enum', default: 'md', description: 'One of: xs, sm, md, lg' },
+    { name: 'style', type:'Object', default: '{}' },
+  ]
 }
 
 export default Button;

@@ -110,7 +110,13 @@ const Modal: ComponentData = {
       code: demoCode,
     }
   ],
-  propsAndMethods: [],
-}
+  propsAndMethods: [
+    {name: 'children', type:'Node', default: 'Required'},
+    {name: 'closeModal', type:'function', default: 'Required'},
+    {name: 'isModalOpen', type:'boolean', default: 'Required'},
+    {name: 'title', type:'string', default: 'Required'},
+    {name: 'className', type:'string'},
+    {name: 'style', type: 'Object', default: '{}'},
+  ]}
 
 export default Modal;
