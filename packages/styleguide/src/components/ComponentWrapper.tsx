@@ -52,7 +52,9 @@ const ComponentWrapper: React.FC = () => {
           <CopyToClipboard text={path}>
             <StyledIcon name="file" title="Copy to clipboard" />
           </CopyToClipboard>
-          <PropsPreview propsAndMethods={propsAndMethods} />
+          {
+            propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />
+          }
         </Description>}
         {description && <Description>{description}</Description>}
         {usage && <CodePreview code={usage} />}

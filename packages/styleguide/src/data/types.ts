@@ -14,12 +14,5 @@ export interface ComponentData {
   path: string;
   usage: string;
   examples: Example[];
-  propsAndMethods: PropsAndMethods[],
-}
-
-export interface PropsAndMethods {
-  name: string;
-  type: string;
-  default?: string;
-  description?: string;
+  propsAndMethods?: PropsAndMethods[],
 }
