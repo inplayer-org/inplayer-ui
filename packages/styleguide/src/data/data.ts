@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Modal from './components/Modal';
 import Typography from './components/Typography';
 import TextArea from './components/TextArea';
+import Navbar from './components/Navbar';
+import Note from './components/Note';
 
 const Data = {
     Checkbox,
@@ -12,6 +14,8 @@ const Data = {
     Modal,
     Typography,
     TextArea,
+    Navbar,
+    Note,
 }
 
 export default Data;
