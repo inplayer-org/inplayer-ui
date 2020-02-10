@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import ComponentWrapper from './ComponentWrapper'
+import Home from './Home';
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
 import * as packageJson from '../../package.json';
 import UIElements from './UIElements';
@@ -107,6 +108,9 @@ const SidebarMenu: React.FC = () => {
         <Switch>
           <Route path="/:id">
             <ComponentWrapper changeRoute={(id) => changeRoute(id)} />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>

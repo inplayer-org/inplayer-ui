@@ -10,7 +10,7 @@ import PropsPreview from './PropsPreview';
 import { getComponent } from '../utils/generateComponentData';
 import DescriptionWrapper from './DescriptionWrapper';
 
-const WrapperNavigationChild = styled.div`
+export const WrapperNavigationChild = styled.div`
   margin-left: 16rem;
   width: 200rem;
   display: flex;
@@ -18,7 +18,7 @@ const WrapperNavigationChild = styled.div`
   align-items: center;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 `;
 
 const PathWrapper = styled.div`

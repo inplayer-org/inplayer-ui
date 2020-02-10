@@ -51,7 +51,7 @@ const Description = styled(Col)`
   font-size: .7rem;
 `
 
-const Title = styled.h3`
+export const Title = styled.h3`
   text-transform: uppercase;
 
   :hover{
