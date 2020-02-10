@@ -42,17 +42,17 @@ const StyledIcon = styled(InPlayerIcon)`
 `;
 
 interface Props {
-  rootChanged: (string) => void;
+  changeRoute: (string) => void;
 }
 
-const ComponentWrapper: React.FC<Props> = ({ rootChanged }) => {
+const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
   let { id } = useParams();
   const { description, path, usage, examples, propsAndMethods } = getComponent(id);
 
 
   useEffect(() => {
-    rootChanged(id);
-  }, [id]);
+    changeRoute(id);
+  }, [id, changeRoute]);
 
   return (
     <WrapperNavigationChild>
