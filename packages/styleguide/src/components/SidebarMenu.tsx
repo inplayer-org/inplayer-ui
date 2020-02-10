@@ -64,7 +64,10 @@ const NavigationHeader = styled(StyledLink)`
   padding: 1em 1.3em;
   color: #292929;
 `
-const navigationElements = Object.keys(InplayerUi);
+
+const itemsToIgnore = ['Colors', 'ThemeWrapper']
+
+const navigationElements = Object.keys(InplayerUi).filter(element => !itemsToIgnore.includes(element));
 
 const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].replace(/[~>^]/gi, '');
 
