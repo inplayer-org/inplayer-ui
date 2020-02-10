@@ -29,8 +29,7 @@ import Input from './components/Input';
 import InPlayerIcon from './components/InPlayerIcon';
 import Icon from './components/Icon';
 import Dropdown from './components/Dropdown';
-
-
+import Tooltip from './components/Tooltip';
 
 const Data = {
     Checkbox,
@@ -64,6 +63,7 @@ const Data = {
     InPlayerIcon,
     Icon,
     Dropdown,
+    Tooltip,
 }
 
 export default Data;

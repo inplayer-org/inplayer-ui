@@ -110,7 +110,23 @@ const DatePicker: ComponentData = {
       code: demoCode,
     }
   ],
-  propsAndMethods: [],
+  propsAndMethods: [
+    { name: 'focusedInput', type: 'union', default: 'Required' },
+    { name: 'onDateChange', type: 'Function', default: 'Required' },
+    { name: 'onFocusChange', type: 'Function', default: 'Required' },
+    { name: 'startDate', type: 'Moment', default: 'Required' },
+    { name: 'activePeriodPreset', type: 'string' },
+    { name: 'calendarInfo', type: 'unknown', default: 'false' },
+    { name: 'className', type: 'string' },
+    { name: 'customAllTimeDate', type: 'number', default: 'moment() .startOf("day") .subtract(3, "year")' },
+    { name: 'displayPresets', type: 'Array', default: '[ ]' },
+    { name: 'endDate', type: 'Moment', default: 'null' },
+    { name: 'endDateId', type: 'string', default: 'endDate' },
+    { name: 'isOutsideRange', type: 'Function', default: '() => false' },
+    { name: 'minimumNights', type: 'number', default: '0' },
+    { name: 'startDateId', type: 'string', default: 'startDate' },
+    { name: 'style', type: 'Object', default: '{ }' },
+  ],
 }
 
 export default DatePicker;

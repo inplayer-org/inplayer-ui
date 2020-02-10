@@ -72,7 +72,16 @@ const DayPicker: ComponentData = {
       code: demoCode,
     }
   ],
-  propsAndMethods: [],
+  propsAndMethods: [
+    { name: 'date', type: 'union', default: 'Required' },
+    { name: 'focused', type: 'boolean', default: 'Required' },
+    { name: 'onDateChange', type: 'function', default: 'Required' },
+    { name: 'onFocusChange', type: 'function', default: 'Required' },
+    { name: 'className', type: 'string' },
+    { name: 'isOutsideRange', type: 'function', default: 'Function' },
+    { name: 'numberOfMonths', type: 'number', default: '1' },
+    { name: 'style', type: 'Object', default: '{ }' },
+  ],
 }
 
 export default DayPicker;

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
+import { useParams } from "react-router-dom";
 
 const ContentWrapper = styled.div`
   width: 50rem;
@@ -64,8 +65,13 @@ interface Props {
 }
 
 const PropsPreview: React.FC<Props> = ({ propsAndMethods }: Props) => {
+  let { id } = useParams();
   const [viewProps, toggleViewProps] = useState(false);
 
+  useEffect(() => {
+    toggleViewProps(false);
+  }, [id]);
+  
   return (
     <ContentWrapper>
       <Title onClick={() => {toggleViewProps(!viewProps)}}>Props and methods</Title>
