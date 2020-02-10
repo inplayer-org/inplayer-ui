@@ -106,7 +106,7 @@ const SidebarMenu: React.FC = () => {
 
         <Switch>
           <Route path="/:id">
-            <ComponentWrapper rootChanged={(id) => changeRoute(id)} />
+            <ComponentWrapper changeRoute={(id) => changeRoute(id)} />
           </Route>
         </Switch>
       </Router>
