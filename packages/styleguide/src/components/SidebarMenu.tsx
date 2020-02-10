@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
     BrowserRouter as Router,
@@ -10,6 +10,8 @@ import {
 import ComponentWrapper from './ComponentWrapper'
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
 import * as packageJson from '../../package.json';
+import UIElements from './UIElements';
+import { ifProp } from 'styled-tools';
 
 const WrapperNavigation = styled.div`
   width: 15rem;
@@ -49,10 +51,14 @@ const WrapperSection = styled.div`
   flex-direction: column;
 `
 
-const StyledLink = styled(Link)`
+interface StyledLinkProps {
+  isActive?: boolean;
+}
+
+export const StyledLink= styled(Link)<StyledLinkProps> `
   text-decoration: none;
   cursor: pointer;
-  color: #9a9a9a;
+  color: ${ifProp('isActive', 'black', '#9a9a9a')} ;
   padding: .5em 1.3em;
 
   &:hover {
@@ -65,32 +71,46 @@ const NavigationHeader = styled(StyledLink)`
   color: #292929;
 `
 
+const NavigationInput = styled(InplayerUi.Input)`
+  width: 85%;
+  margin: 1rem;
+`
+
 const itemsToIgnore = ['Colors', 'ThemeWrapper']
 
 const navigationElements = Object.keys(InplayerUi).filter(element => !itemsToIgnore.includes(element));
 
 const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].replace(/[~>^]/gi, '');
 
-const SidebarMenu: React.FC = () => (
-    <Router>
-      <WrapperNavigation>
-        <WrapperSection>
-          <NavigationHeader to='/'> InPlayer UI | {libraryVersion} </NavigationHeader>
-        </WrapperSection>
-        <WrapperSection>
-          <NavigationHeader> Components</NavigationHeader>
-          {
-            navigationElements.map(el => <StyledLink to={`/${el}`}>{el}</StyledLink>)
-          }
-        </WrapperSection>
-    </WrapperNavigation>
+const SidebarMenu: React.FC = () => {
+  const [elements, filterElements] = useState(navigationElements);
+  const [id, changeRoute] = useState('');
 
-      <Switch>
-        <Route path="/:id">
-          <ComponentWrapper />
-        </Route>
-      </Switch>
-    </Router>
-);
+
+  const handleInputChange = (input: string) => {
+    filterElements(navigationElements.filter(el => el.toLowerCase().includes(input.toLowerCase())));
+  }
+
+    return (
+      <Router>
+        <WrapperNavigation>
+          <WrapperSection>
+            <NavigationHeader to='/'> InPlayer UI | {libraryVersion} </NavigationHeader>
+          </WrapperSection>
+          <WrapperSection>
+          <NavigationInput onChange={(e) => handleInputChange(e.currentTarget.value)} type="text" name="filter" placeholder="Filter by name" />
+            <NavigationHeader> Components</NavigationHeader>
+            <UIElements activeElement={id} navigationElements={elements} />
+          </WrapperSection>
+        </WrapperNavigation>
+
+        <Switch>
+          <Route path="/:id">
+            <ComponentWrapper rootChanged={(id) => changeRoute(id)} />
+          </Route>
+        </Switch>
+      </Router>
+  );
+}
 
 export default SidebarMenu;
