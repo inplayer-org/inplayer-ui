@@ -47,12 +47,16 @@ const demoCode = `<div>
 </div>
 `;
 
+const description = `
+Note is a component for displaying information for notification. 
+The <b>type</b> attribute can be: informative, success, warning, danger. If not of the above is added, the default note with white background will be displayed. 
+The <b>title</b> attribute is the string to be set as title for the notification. 
+The <b>text</b> attribute is the actual notification that needs to be displayed to the user. 
+The <b>icon</b> attribute is a string which represents a FontAwesome icon. It is not considered when there is a type prop passed.
+`;
+
 const Note: ComponentData = {
-  description: `Note is a component for displaying information for notification. 
-  The type attribute can be: informative, success, warning, danger. If not of the above is added, the default note with white background will be displayed. 
-  The title attribute is the string to be set as title for the notification. 
-  The text attribute is the actual notification that needs to be displayed to the user. 
-  The icon attribute is a string which represents a FontAwesome icon. It is not considered when there is a type prop passed.`,
+  description,
   path: 'src/components/Note/index.js',
   usage,
   examples: [

@@ -99,12 +99,16 @@ const disabled = `Page = () => {
     onChange={console.log}
     disabled
   />;
-}`
+}`;
+
+const description = `
+A simple Dropdown controlled component. Receives an options prop which is an array of { value, displayName } pairs and defaultOption prop which is an object of {displayName, disabled}. value is passed to the option tag as value prop while displayName is the value used in the dropdown UI.
+
+Can accept a custom color parameter, otherwise it uses the theme primary.main color.
+`;
 
 const Dropdown: ComponentData = {
-  description: `A simple Dropdown controlled component. Receives an options prop which is an array of { value, displayName } pairs and defaultOption prop which is an object of {displayName, disabled}. value is passed to the option tag as value prop while displayName is the value used in the dropdown UI.
-
-  Can accept a custom color parameter, otherwise it uses the theme primary.main color.`,
+  description,
   path: `src/elements/Dropdown/index.js`,
   usage: ``,
   examples: [

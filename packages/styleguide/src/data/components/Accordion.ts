@@ -70,23 +70,24 @@ Page = () => {
 }
 `;
 
+const description = `
+Accordion or expansion panel is a component that generates Accordion component with more accordion panels. It takes panels - array of objects and each object should contain: 
+  - <b>label</b> (title) 
+  - <b>icon</b> (icon displayed next to the title) 
+  - <b>renderContent</b> (action used to render the content) 
+  - <b>iconTooltip</b> (optional parameter - a tooltip to display on hovering the icon, see Tooltip's prop list) - default null 
+  - <b>disabled</b> (optional paremeter - a boolean to disable clicking or opening the panel) - default false 
+  
+Other props that the accordion accepts: 
+  - <b>isExtendable</b> (display arrow and allow the accordion to extend) 
+  - <b>width</b> (optional parameter - sets the width for the Accordion wrapper) - default 100% 
+  - <b>extendWidth</b> (optional parameter - defines the width the accordion should extend) - default 20% 
+  - <b>contentHeight</b> - that determines the height of the wrapper. 
+  - <b>onActivePanelChange</b> - function to be executed when the accordion tab changes
+`;
+
 const Accordion: ComponentData = {
-  description: `
-  Accordion or expansion panel is a component that generates Accordion component with more accordion panels. It takes panels - array of objects and each object should contain: 
-  - label (title) 
-  - icon (icon displayed next to the title) 
-  - renderContent (action used to render the content) 
-  - iconTooltip (optional parameter - a tooltip to display on hovering the icon, see Tooltip's prop list) - default null 
-  - disabled (optional paremeter - a boolean to disable clicking or opening the panel) - default false 
-  
-  Other props that the accordion accepts: 
-  - isExtendable (display arrow and allow the accordion to extend) 
-  - width (optional parameter - sets the width for the Accordion wrapper) - default 100% 
-  - extendWidth (optional parameter - defines the width the accordion should extend) - default 20% 
-  - contentHeight - that determines the height of the wrapper. 
-  - onActivePanelChange - function to be executed when the accordion tab changes
-  
-      `,
+  description,
   path: 'src/elements/Accordion/index.js',
   usage,
   examples: [
