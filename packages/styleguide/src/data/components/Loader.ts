@@ -23,7 +23,7 @@ const demoCode = `
 `;
 
 const Loader: ComponentData = {
-  description: `A simple spinner/loader to use as fallback when doing async operations. By default it inherits the primary.main theme color. Can be passed a color prop with a custom hex color.`,
+  description: `A simple spinner/loader to use as fallback when doing async operations. By default it inherits the <b>primary.main</b> theme color. Can be passed a <b>color</b> prop with a custom hex color.`,
   path: `src/elements/Loader/index.js`,
   usage,
   examples: [
