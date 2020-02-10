@@ -59,7 +59,7 @@ const demoCodeCustomColors = `
 
 const description = `
 Typography is an element which allows you to control the style of your text.
-It has a variant prop which allows you to choose between the h1-h6 headings. It inherits the palette.primary.dark text color,
+It has a <b>variant</b> prop which allows you to choose between the h1-h6 headings. It inherits the <b>palette.primary.dark</b> text color,
 however this can be overridden by using styled-components.
 `;
 
