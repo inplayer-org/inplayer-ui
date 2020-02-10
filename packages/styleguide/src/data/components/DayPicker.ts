@@ -57,12 +57,12 @@ const demoCode = `
 const DayPicker: ComponentData = {
   description: `
   DayPicker is a component for picking single day. It takes: 
-  -date as a prop( momentPropTypes.momentObj, string or null) 
-  -focused as a prop( PropTypes.boolean) 
-  - isOutsideRange a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}). 
-  - onFocusChange a function which controls whether or not the input is focused 
-  - onDateChange function for setting the state for the dates 
-  - numberOfMonths as a prop (PropTypes.number) - controls the number of the displayed months
+  - <b>date</b> as a prop( momentPropTypes.momentObj, string or null) 
+  - <b>focused</b> as a prop( PropTypes.boolean) 
+  - <b>isOutsideRange</b> a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}). 
+  - <b>onFocusChange</b> a function which controls whether or not the input is focused 
+  - <b>onDateChange</b> function for setting the state for the dates 
+  - <b>numberOfMonths</b> as a prop (PropTypes.number) - controls the number of the displayed months
   `,
   path: 'src/elements/DayPicker/index.js',
   usage,

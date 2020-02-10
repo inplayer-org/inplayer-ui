@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from "react-router-dom";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { InPlayerIcon } from '@inplayer-org/inplayer-ui';
 
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
 import PropsPreview from './PropsPreview';
 import { getComponent } from '../utils/generateComponentData';
+import DescriptionWrapper from './DescriptionWrapper';
 
 const WrapperNavigationChild = styled.div`
   margin-left: 16rem;
@@ -20,7 +21,7 @@ const WrapperNavigationChild = styled.div`
 const Wrapper = styled.div`
 `;
 
-const Description = styled.div`
+const PathWrapper = styled.div`
   padding-bottom: 10px;
   width: 50rem;
 `;
@@ -57,16 +58,14 @@ const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
     <WrapperNavigationChild>
       <Wrapper>
         <ComponentName>{id}</ComponentName>
-        {path && <Description>
+        {path && <PathWrapper>
           {path}
           <CopyToClipboard text={path}>
             <StyledIcon name="file" title="Copy to clipboard" />
           </CopyToClipboard>
-          {
-            propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />
-          }
-        </Description>}
-        {description && <Description>{description}</Description>}
+        </PathWrapper>}
+        {propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />}
+        {description && <DescriptionWrapper description={description.trim()} />}
         {usage && <CodePreview code={usage} />}
         {examples && examples.map(({ code, title, displayCode = true}) => {
           return (

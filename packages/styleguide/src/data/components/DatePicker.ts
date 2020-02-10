@@ -94,13 +94,13 @@ const demoCode = `
 const DatePicker: ComponentData = {
   description: `
   DatePicker is a component for picking range for dates. It takes: 
-  -startDate and endDate as a prop( momentPropTypes.momentObj or null) 
-  - startDateId and endDateId 
-  - onDateChange function for setting the state for the dates 
-  - displayPresets prop is an array where the user defines which presets to be displayed to the date picker. Available presets are: this week, last week, last 2 weeks, this month, last month, last 6 months, this year, all time. Default option is available as well and if the user adds only default prop to the array, following presets will be displayed: this week, last week, this month, last month, this year, 
-  - isOutsideRange a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}). 
-  - customAllTimeDate a timestamp that defines from which date the all time starts in the preset 
-  - activePeriod prop is a string where the user defines which presets period to be selected to the date picker. Available presets periods are those present in displayPresets.
+  - <b>startDate</b> and <b>endDate</b> as a prop( momentPropTypes.momentObj or null) 
+  - <b>startDateId</b> and <b>endDateId</b>
+  - <b>onDateChange</b> function for setting the state for the dates 
+  - <b>displayPresets</b> prop is an array where the user defines which presets to be displayed to the date picker. Available presets are: this week, last week, last 2 weeks, this month, last month, last 6 months, this year, all time. Default option is available as well and if the user adds only default prop to the array, following presets will be displayed: this week, last week, this month, last month, this year, 
+  - <b>isOutsideRange</b> a function which specifies the days that are not allowed to be choosed (ex. isOutsideRange={day => day.isBefore(moment())}). 
+  - <b>customAllTimeDate</b> a timestamp that defines from which date the all time starts in the preset 
+  - <b>activePeriod</b> prop is a string where the user defines which presets period to be selected to the date picker. Available presets periods are those present in displayPresets.
   `,
   path: 'src/elements/DatePicker/index.js',
   usage,
