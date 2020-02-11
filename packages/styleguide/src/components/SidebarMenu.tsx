@@ -12,7 +12,6 @@ import Home from './Home';
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
 import * as packageJson from '../../package.json';
 import UIElements from './UIElements';
-import { ifProp } from 'styled-tools';
 
 const WrapperNavigation = styled.div`
   width: 15rem;
@@ -26,6 +25,7 @@ const WrapperNavigation = styled.div`
   box-shadow: 0 2px 3px 2px #e2e6ea;
   position: fixed;
   overflow-y: auto;
+  background-color: #f7f7f7;
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -48,7 +48,6 @@ const WrapperSection = styled.div`
   border-top: 1px solid #e2e6ea;
   display: flex;
   flex-direction: column;
-  background-color: #f7f7f7;
 `
 
 export const StyledLink= styled(Link) `

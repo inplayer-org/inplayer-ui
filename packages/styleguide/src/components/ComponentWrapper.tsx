@@ -18,9 +18,6 @@ export const WrapperNavigationChild = styled.div`
   align-items: center;
 `;
 
-export const Wrapper = styled.div`
-`;
-
 const PathWrapper = styled.div`
   padding-bottom: 10px;
   width: 50rem;
@@ -28,12 +25,6 @@ const PathWrapper = styled.div`
 
 const ExampleWrapper = styled.div`
   margin-bottom: 20px; 
-`;
-
-const ComponentName = styled.h1`
-`;
-
-const ExampleTitle = styled.h3`
 `;
 
 const StyledIcon = styled(InPlayerIcon)`
@@ -56,8 +47,8 @@ const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
 
   return (
     <WrapperNavigationChild>
-      <Wrapper>
-        <ComponentName>{id}</ComponentName>
+      <div>
+        <h1>{id}</h1>
         {path && <PathWrapper>
           {path}
           <CopyToClipboard text={path}>
@@ -70,12 +61,12 @@ const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
         {examples && examples.map(({ exampleId, code, title, displayCode = true}) => {
           return (
             <ExampleWrapper key={exampleId || title}>
-              <ExampleTitle>{title}</ExampleTitle>
+              <h3>{title}</h3>
               <CodeEditor displayCodeButton={displayCode} code={code} />
             </ExampleWrapper>
           );
         })}
-      </Wrapper>
+      </div>
     </WrapperNavigationChild>
   );
 };

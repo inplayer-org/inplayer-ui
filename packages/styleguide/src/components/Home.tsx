@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { WrapperNavigationChild, Wrapper } from './ComponentWrapper';
+import { WrapperNavigationChild } from './ComponentWrapper';
 import CodePreview from './CodePreview';
 import { Button } from '@inplayer-org/inplayer-ui';
 
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
       <InPlayerHeader>InPlayer React UI Components</InPlayerHeader>
       <img src="https://camo.githubusercontent.com/0f43c47b5d59a9968651529d17720c0a56df2501/68747470733a2f2f6173736574732e696e706c617965722e636f6d2f696d616765732f696e706c617965722d3235362e706e67" alt="inplayer-ui" title="InPlayer UI" width="300" data-canonical-src="https://assets.inplayer.com/images/inplayer-256.png" ></img>
       <Description>Modern React UI library. Code less, do more.</Description>
-      <Wrapper>
+      <div>
 
         <CodePreview padding={'1rem'} code='yarn add @inplayer-org/inplayer-ui styled-components' />
 
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
         <Description>3. Import and export in src/data/data.ts</Description>
         <Title> Example </Title>
         <CodePreview code={styleguideExample} />
-      </Wrapper>
+      </div>
     </WrapperNavigationChild>
 
   )
