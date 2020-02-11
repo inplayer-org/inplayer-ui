@@ -50,6 +50,10 @@ const Home: React.FC = () => {
     margin-bottom: 2rem;
   `
 
+  const InPlayerHeader = styled(Header)`
+    color: #245B98;
+  `
+
   const Title = styled.h4``
 
   const PropertiesList = styled.ul`
@@ -72,10 +76,11 @@ const Home: React.FC = () => {
 
   return (
     <WrapperNavigationChild>
+      <InPlayerHeader>InPlayer React UI Components</InPlayerHeader>
+      <img src="https://camo.githubusercontent.com/0f43c47b5d59a9968651529d17720c0a56df2501/68747470733a2f2f6173736574732e696e706c617965722e636f6d2f696d616765732f696e706c617965722d3235362e706e67" alt="inplayer-ui" title="InPlayer UI" width="300" data-canonical-src="https://assets.inplayer.com/images/inplayer-256.png" ></img>
+      <Description>Modern React UI library. Code less, do more.</Description>
       <Wrapper>
-        <Header>InPlayer React UI Components</Header>
 
-        <Description>Modern React UI library. Code less, do more.</Description>
         <CodePreview padding={'1rem'} code='yarn add @inplayer-org/inplayer-ui styled-components' />
 
         <Description>InPlayer UI is a style system / UI library for React. It works with Styled Components</Description>
