@@ -63,11 +63,11 @@ const Input: ComponentData = {
     { name: 'placeholder', type: 'string', default: 'Required' },
     { name: 'type', type: 'string', default: 'Required' },
     { name: 'value', type: 'union', default: 'Required' },
-    { name: 'className', type: 'string', default: 'Required' },
-    { name: 'iconName', type: 'string', default: 'Required' },
+    { name: 'className', type: 'string' },
+    { name: 'iconName', type: 'string' },
     { name: 'renderIcon', type: 'function', default: 'null' },
     { name: 'size', type: 'enum', default: 'md' , description: 'One of: xs, sm, md, lg'},
-    { name: 'style', type: 'Object', default: '{}' },
+    { name: 'style', type: 'Object', default: '{ }' },
   ]
 }
 

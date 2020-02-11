@@ -100,7 +100,8 @@ const Notification: ComponentData = {
     { name: 'content', type: 'string', default: 'Required' },
     { name: 'title', type: 'string', default: 'Required' },
     { name: 'className', type: 'string'},
-    { name: 'duration', type: 'number', default: '{}' },
+    { name: 'duration', type: 'number', default: '0' },
+    { name: 'style', type: 'Object', default: '{ }' },
     { name: 'variant', type: 'enum', description: `One of: success, danger, warning`},
   ]
 }

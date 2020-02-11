@@ -117,12 +117,10 @@ const StepWizard: ComponentData = {
   propsAndMethods: [
     { name: 'activeStep', type:'number', default: 'Required' },
     { name: 'steps', type:'Array<StepItem>', default: 'Required' },
-    { name: 'className', type:'string' },
-    { name: 'icon', type:'union' },
-    { name: 'iconModifiers', type:'Array<string>' },
-    { name: 'iconPosition', type:'string' },
-    { name: 'size', type:'enum', default: 'md', description: 'One of: xs, sm, md, lg' },
+    { name: 'className', type:'string', default: 'null' },
+    { name: 'onStepChange', type:'function', default: 'Function' },
     { name: 'style', type:'Object', default: '{}' },
+    { name: 'transition', type:'enum', default: 'fadeInRight', description: 'One of: fadeInLeft, fadeInRight, fadeOutLeft, fadeOutRight' },
   ]
 }
 

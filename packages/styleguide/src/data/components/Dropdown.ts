@@ -113,7 +113,7 @@ const Dropdown: ComponentData = {
   usage: ``,
   examples: [
     {
-      title: 'Standard Option',
+      title: 'Standard dropdown',
       code: standardOption,
     },
     {
