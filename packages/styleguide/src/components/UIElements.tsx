@@ -12,7 +12,7 @@ interface Propss {
 }
 const Wrapper = styled.div<Propss>`
   a {
-    color: ${ifProp('isActive', 'black', '#9a9a9a')} ;
+    color: ${ifProp('isActive', '#333030', '#9a9a9a')} ;
   }
   text-decoration: none;
   cursor: pointer;

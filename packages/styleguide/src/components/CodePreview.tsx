@@ -19,7 +19,7 @@ const Pre = styled.pre<PreProps>`
   background-color: ${Colors.lightGray};
   border: 1px solid ${Colors.gray};
   border-radius: 3px;
-  padding: ${({ padding }) => ifProp('padding', padding)}
+  padding: ${({ padding }) => ifProp('padding', padding)};
 `;
 
 const CodePreview = ({ code, padding }: Props) => {

@@ -28,7 +28,6 @@ const WrapperNavigation = styled.div`
   overflow-y: auto;
 
   &::-webkit-scrollbar {
-    -webkit-appearance: none;
     width: 10px;
     height: 10px;
   }
@@ -37,7 +36,6 @@ const WrapperNavigation = styled.div`
     cursor: pointer;
     border-radius: 5px;
     background: rgba(0,0,0,.25);
-    -webkit-transition: color .2s ease;
     transition: color .2s ease;
   }
 
@@ -53,16 +51,10 @@ const WrapperSection = styled.div`
   background-color: #f7f7f7;
 `
 
-interface StyledLinkProps extends Link {
-  isActive?: boolean;
-}
-
-export const StyledLink= styled(Link)<StyledLinkProps> `
+export const StyledLink= styled(Link) `
   text-decoration: none;
   cursor: pointer;
-  color: ${ifProp('isActive', '#333030', '#9a9a9a')} ;
   padding: .5em 1.3em;
-
 
   &:hover {
   color: #333030;
