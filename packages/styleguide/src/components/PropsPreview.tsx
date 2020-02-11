@@ -71,10 +71,14 @@ const PropsPreview: React.FC<Props> = ({ propsAndMethods }: Props) => {
   useEffect(() => {
     toggleViewProps(false);
   }, [id]);
+
+  const handleOnClick = () => {
+    toggleViewProps(!viewProps)
+  }
   
   return (
     <ContentWrapper>
-      <Title onClick={() => {toggleViewProps(!viewProps)}}>Props and methods</Title>
+      <Title onClick={handleOnClick}>Props and methods</Title>
       {
         viewProps && (<>
           <HeaderRow>
@@ -86,7 +90,7 @@ const PropsPreview: React.FC<Props> = ({ propsAndMethods }: Props) => {
           {   
             propsAndMethods.map(prop => {
               return (
-                <Row>
+                <Row key={prop.name}>
                   <Name> {prop.name}</Name>
                   <Type>{prop.type}</Type>
                   <Default isDefault>{prop.default}</Default>

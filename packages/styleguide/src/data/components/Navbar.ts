@@ -45,7 +45,7 @@ const Navbar: ComponentData = {
     { name: 'children', type: 'Node', default: 'Required' },
     { name: 'logo', type: 'union', default: 'Required' },
     { name: 'className', type: 'string', description: 'A className can be passed down for further styling or extending with CSS-in-JS' },
-    { name: 'children', type: 'Node', default: 'Required' },
+    { name: 'style', type: 'Object', default: '{ }' },
   ],
 }
 
