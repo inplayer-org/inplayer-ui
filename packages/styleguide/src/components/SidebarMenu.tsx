@@ -70,6 +70,7 @@ export const StyledLink= styled(Link)<StyledLinkProps> `
 const Header = styled(StyledLink)`
   font-weight: bold;
   padding: 1em 1.3em;
+  font-size: 1.2rem;
   color: #292929;
 `
 
