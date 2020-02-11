@@ -50,6 +50,7 @@ const WrapperSection = styled.div`
   border-top: 1px solid #e2e6ea;
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
 `
 
 interface StyledLinkProps extends Link {
@@ -59,25 +60,25 @@ interface StyledLinkProps extends Link {
 export const StyledLink= styled(Link)<StyledLinkProps> `
   text-decoration: none;
   cursor: pointer;
-  color: ${ifProp('isActive', 'black', '#9a9a9a')} ;
+  color: ${ifProp('isActive', '#333030', '#9a9a9a')} ;
   padding: .5em 1.3em;
 
 
   &:hover {
-  color: #292929;
+  color: #333030;
 }`
 
 const Header = styled(StyledLink)`
   font-weight: bold;
   padding: 1em 1.3em;
   font-size: 1.2rem;
-  color: #292929;
+  color: #333030;
 `
 
 const NavigationHeader = styled.h4`
   font-weight: bold;
   padding: 0 1.3em;
-  color: #292929;
+  color: #333030;
 `
 
 const NavigationInput = styled(InplayerUi.Input)`
