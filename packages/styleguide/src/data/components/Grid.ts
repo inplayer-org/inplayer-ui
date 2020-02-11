@@ -39,7 +39,6 @@ const Grid: ComponentData = {
       displayCode: false,
     }
   ],
-  propsAndMethods: [],
 }
 
 export default Grid;
