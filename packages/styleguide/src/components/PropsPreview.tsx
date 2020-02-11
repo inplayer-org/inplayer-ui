@@ -19,11 +19,10 @@ const Col = styled.div`
   font-weight: bold;
 `
 const Header = styled(Col)`
-  font-weight: bolder;
-  color: black;
+  font-weight: 500;
 `
 
-const HeaderType = styled(Col)`
+const HeaderType = styled(Header)`
   flex: 1.5;
 `
 
