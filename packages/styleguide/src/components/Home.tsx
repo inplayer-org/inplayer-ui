@@ -54,14 +54,12 @@ const Home: React.FC = () => {
     color: #245B98;
   `
 
-  const Title = styled.h4``
-
   const PropertiesList = styled.ul`
     width: 50rem;
     list-style-type: none;
 
     > li:before {
-    content: "–"; /* en dash */
+    content: "–";
     position: absolute;
     margin-left: -1.1em; 
   }
@@ -73,6 +71,9 @@ const Home: React.FC = () => {
   const Description = styled.p`
     margin: 1.5rem 0;
   `
+  const handleOnClick = () => {
+    window.open("https://codesandbox.io/s/k5qqq2797")
+  }
 
   return (
     <WrapperNavigationChild>
@@ -85,21 +86,21 @@ const Home: React.FC = () => {
 
         <Description>InPlayer UI is a style system / UI library for React. It works with Styled Components</Description>
 
-        <Title>Up & Running</Title>
+        <h4>Up & Running</h4>
         <Description>To install dependencies with Yarn, run:</Description>
         <CodePreview padding={'1rem'} code='$ yarn install' />
         <Description>or to install with npm, run:</Description>
         <CodePreview padding={'1rem'} code='$ npm install' />
 
-        <Title> Usage</Title>
+        <h4> Usage</h4>
         <Description>Here is a quick example to get you started, it's all you need:</Description>
         <CodePreview code={usage} />
 
         <Description>Yes, it's really all you need to get started as you can see in this live and interactive demo:</Description>
 
-        <Button onClick={() => window.open("https://codesandbox.io/s/k5qqq2797")}>Edit on CodeSandbox</Button>
+        <Button onClick={handleOnClick}>Edit on CodeSandbox</Button>
         <Header>Styleguide</Header>
-        <Title>Steps for adding a new component</Title>
+        <h4>Steps for adding a new component</h4>
         <Description>1. Add a new file in src/data/components</Description>
         <Description>2. The new object which is representing the component should contain the following properties:</Description>
         <PropertiesList> 
@@ -111,7 +112,7 @@ const Home: React.FC = () => {
           <PropertyItem>propsAndMethods</PropertyItem>
         </PropertiesList>
         <Description>3. Import and export in src/data/data.ts</Description>
-        <Title> Example </Title>
+        <h4> Example </h4>
         <CodePreview code={styleguideExample} />
       </div>
     </WrapperNavigationChild>

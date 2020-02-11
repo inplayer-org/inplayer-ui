@@ -43,11 +43,15 @@ const CodeEditor = ({ code, displayCodeButton }: Props) => {
     toggleViewCode(false);
   }, [id]);
   
+  const handleOnClick = () => {
+    toggleViewCode(!viewCode)
+  }
+
   return (
     <Wrapper>
       <LiveProvider code={code.trimRight()} scope={scope} noInline={false} theme={theme}>
         <LivePreview />
-        {displayCodeButton && <Button size="sm" onClick={() => toggleViewCode(!viewCode)}>View code</Button>}
+        {displayCodeButton && <Button size="sm" onClick={handleOnClick}>View code</Button>}
         {viewCode && (
           <EditorWrapper>
             <LiveEditor />

@@ -58,9 +58,9 @@ const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
         {propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />}
         {description && <DescriptionWrapper description={description.trim()} />}
         {usage && <CodePreview code={usage} />}
-        {examples && examples.map(({ exampleId, code, title, displayCode = true}) => {
+        {examples?.map(({ exampleId, code, title, displayCode = true}) => {
           return (
-            <ExampleWrapper key={exampleId || title}>
+            <ExampleWrapper key={exampleId ?? title}>
               <h3>{title}</h3>
               <CodeEditor displayCodeButton={displayCode} code={code} />
             </ExampleWrapper>

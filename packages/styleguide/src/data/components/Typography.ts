@@ -88,7 +88,7 @@ const Typography: ComponentData = {
     {name: 'color', type: 'string'},
     {name: 'description', type: 'boolean', default: 'false'},
     {name: 'modifiers', type: 'Array<String>	', default: '[]'},
-    {name: 'style', type: 'Object', default: '[]'},
+    {name: 'style', type: 'Object', default: '{ }'},
   ] 
 }
 
