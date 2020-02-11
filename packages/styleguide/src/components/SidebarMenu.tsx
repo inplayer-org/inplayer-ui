@@ -52,7 +52,7 @@ const WrapperSection = styled.div`
   flex-direction: column;
 `
 
-interface StyledLinkProps {
+interface StyledLinkProps extends Link {
   isActive?: boolean;
 }
 
@@ -62,13 +62,20 @@ export const StyledLink= styled(Link)<StyledLinkProps> `
   color: ${ifProp('isActive', 'black', '#9a9a9a')} ;
   padding: .5em 1.3em;
 
+
   &:hover {
   color: #292929;
 }`
 
-const NavigationHeader = styled(StyledLink)`
+const Header = styled(StyledLink)`
   font-weight: bold;
   padding: 1em 1.3em;
+  color: #292929;
+`
+
+const NavigationHeader = styled.h4`
+  font-weight: bold;
+  padding: 0 1.3em;
   color: #292929;
 `
 
@@ -96,7 +103,7 @@ const SidebarMenu: React.FC = () => {
       <Router>
         <WrapperNavigation>
           <WrapperSection>
-            <NavigationHeader to='/'> InPlayer UI | {libraryVersion} </NavigationHeader>
+            <Header to='/'> InPlayer UI | {libraryVersion} </Header>
           </WrapperSection>
           <WrapperSection>
           <NavigationInput onChange={(e) => handleInputChange(e.currentTarget.value)} type="text" name="filter" placeholder="Filter by name" />

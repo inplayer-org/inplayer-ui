@@ -8,6 +8,7 @@ export interface Example {
   title?: string;
   code: string;
   displayCode?: boolean;
+  exampleId?: string;
 }
 export interface ComponentData {
   description?: string;

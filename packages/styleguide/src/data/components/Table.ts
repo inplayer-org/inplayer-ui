@@ -425,12 +425,15 @@ const Table: ComponentData = {
   examples: [
     {
       code: arrayOfRowActions,
+      exampleId: 'table-1'
     },
     {
       code: rowActionsAsRenderProp,
+      exampleId: 'table-2'
     },
     {
       code: headerSection,
+      exampleId: 'table-3'
     },
   ],
   propsAndMethods: [
