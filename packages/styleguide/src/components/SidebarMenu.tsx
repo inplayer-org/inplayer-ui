@@ -85,18 +85,22 @@ const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].rep
 
 const SidebarMenu: React.FC = () => {
   const [elements, filterElements] = useState(navigationElements);
-  const [id, changeRoute] = useState('');
+  const [id, changeRoute] = useState('/');
 
 
   const handleInputChange = (input: string) => {
     filterElements(navigationElements.filter(el => el.toLowerCase().includes(input.toLowerCase())));
   }
 
+  const handleOnClick = () => {
+    changeRoute('/')
+  }
+
     return (
       <Router>
         <WrapperNavigation>
           <WrapperSection>
-            <Header to='/'> InPlayer UI | {libraryVersion} </Header>
+            <Header onClick={handleOnClick} to='/'> InPlayer UI | {libraryVersion} </Header>
           </WrapperSection>
           <WrapperSection>
           <NavigationInput onChange={(e) => handleInputChange(e.currentTarget.value)} type="text" name="filter" placeholder="Filter by name" />
