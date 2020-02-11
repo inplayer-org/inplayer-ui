@@ -13,13 +13,14 @@ interface Propss {
 const Wrapper = styled.div<Propss>`
   a {
     color: ${ifProp('isActive', '#333030', '#9a9a9a')} ;
+    transition: 0.3s;
   }
   text-decoration: none;
   cursor: pointer;
   padding: .5em 1.3em;
 
   &:hover {
-  color: #292929;
+    color: #292929;
   }
 `
 
