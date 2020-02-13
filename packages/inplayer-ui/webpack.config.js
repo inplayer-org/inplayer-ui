@@ -8,8 +8,15 @@ module.exports = {
   entry: ['./src/index'],
   mode: 'production',
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
   },
   output: {
     path: path.join(__dirname, '/build'),
@@ -21,7 +28,16 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        },
+      },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         exclude: /node_modules/,
@@ -95,6 +111,10 @@ module.exports = {
       types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
     },
+  },
+  performance: {
+    maxEntrypointSize: 750000,
+    maxAssetSize: 750000,
   },
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
