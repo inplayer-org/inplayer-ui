@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyledLink } from './SidebarMenu';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 
 interface Props {
   navigationElements: string[];
-  activeElement?: string;
+  resetActiveElement?: boolean;
+  changeResetActiveElement: (boolean) => void;
 }
-interface Propss {
+interface WrapperProps {
   isActive?: boolean;
 }
-const Wrapper = styled.div<Propss>`
+const Wrapper = styled.div<WrapperProps>`
   a {
     color: ${ifProp('isActive', '#333030', '#9a9a9a')} ;
     transition: 0.3s;
@@ -24,15 +25,21 @@ const Wrapper = styled.div<Propss>`
   }
 `
 
-const UIElements: React.FC<Props> = ({ navigationElements, activeElement }) => {
+const UIElements: React.FC<Props> = ({ navigationElements, resetActiveElement, changeResetActiveElement }) => {
+  const [id, setElement] = useState('');
+
+  const handleOnClick = (element) => () => {
+      setElement(element)
+      changeResetActiveElement(false)
+    }
+
   return (
     <>
       { navigationElements.map( element => { 
-          const isActive = element === activeElement;
-      
+          const isActive =( element === id) && !resetActiveElement;      
           return ( 
             <Wrapper key={element} isActive={isActive}>
-              <StyledLink to={`/${element}`}> {element} </StyledLink>
+              <StyledLink onClick={handleOnClick(element)} to={`/${element}`}> {element} </StyledLink>
             </Wrapper>
           )
         }) 

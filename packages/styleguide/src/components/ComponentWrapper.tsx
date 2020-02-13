@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useParams } from "react-router-dom";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -32,18 +32,9 @@ const StyledIcon = styled(InPlayerIcon)`
   margin-left: 5px;
 `;
 
-interface Props {
-  changeRoute: (string) => void;
-}
-
-const ComponentWrapper: React.FC<Props> = ({ changeRoute }) => {
+const ComponentWrapper: React.FC = () => {
   let { id } = useParams();
   const { description, path, usage, examples, propsAndMethods } = getComponent(id);
-
-
-  useEffect(() => {
-    changeRoute(id);
-  }, [id, changeRoute]);
 
   return (
     <WrapperNavigationChild>

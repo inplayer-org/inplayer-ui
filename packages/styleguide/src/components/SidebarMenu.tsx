@@ -9,9 +9,11 @@ import {
 
 import ComponentWrapper from './ComponentWrapper'
 import Home from './Home';
+import UIElements from './UIElements';
+import ColorsAndTheme from './Theme';
+
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
 import * as packageJson from '../../package.json';
-import UIElements from './UIElements';
 
 const WrapperNavigation = styled.div`
   width: 15rem;
@@ -77,15 +79,17 @@ const NavigationInput = styled(InplayerUi.Input)`
   margin: 1rem;
 `
 
-const itemsToIgnore = ['Colors', 'ThemeWrapper']
+const elementsToIgnore = ['Colors', 'ThemeWrapper'];
 
-const navigationElements = Object.keys(InplayerUi).filter(element => !itemsToIgnore.includes(element));
+const additionalElements = ['Theme']
+
+const navigationElements = Object.keys(InplayerUi).filter(element => !elementsToIgnore.includes(element));
 
 const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].replace(/[~>^]/gi, '');
 
 const SidebarMenu: React.FC = () => {
-  const [elements, filterElements] = useState(navigationElements);
-  const [id, changeRoute] = useState('/');
+  const [elements, filterElements] = useState([...navigationElements, ...additionalElements]);
+  const [resetActiveElement, changeResetActiveElement] = useState(false);
 
 
   const handleInputChange = (input: string) => {
@@ -93,7 +97,7 @@ const SidebarMenu: React.FC = () => {
   }
 
   const handleOnClick = () => {
-    changeRoute('/')
+    changeResetActiveElement(true)
   }
 
     return (
@@ -105,13 +109,16 @@ const SidebarMenu: React.FC = () => {
           <WrapperSection>
           <NavigationInput onChange={(e) => handleInputChange(e.currentTarget.value)} type="text" name="filter" placeholder="Filter by name" />
             <NavigationHeader> Components</NavigationHeader>
-            <UIElements activeElement={id} navigationElements={elements} />
+            <UIElements changeResetActiveElement={changeResetActiveElement} resetActiveElement={resetActiveElement} navigationElements={elements} />
           </WrapperSection>
         </WrapperNavigation>
 
         <Switch>
+          <Route path="/Theme">
+            <ColorsAndTheme  />
+          </Route>
           <Route path="/:id">
-            <ComponentWrapper changeRoute={(id) => changeRoute(id)} />
+            <ComponentWrapper />
           </Route>
           <Route path="/">
             <Home />
