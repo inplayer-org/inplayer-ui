@@ -82,9 +82,9 @@ const demoCode = `
 
 const Pagination: ComponentData = {
   description: `A component to render a pagination. It takes: 
-  - pageCount - the total number of the pages 
-  - currentPage - the current number of the page 
-  - selectPage - action to select the page
+  - <b>pageCount</b> - the total number of the pages 
+  - <b>currentPage</b> - the current number of the page 
+  - <b>selectPage</b> - action to select the page
   `,
   path: `src/elements/Pagination/index.js`,
   usage,

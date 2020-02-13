@@ -43,7 +43,7 @@ const Progress: ComponentData = {
     { name: 'gapDegree', type: 'number', default: '0', description: 'the gap degree of half circle, 0 - 360' },
     { name: 'gapPosition', type: 'string', default: 'top' , description: 'the gap position, value: top, bottom, left, right.' },
     { name: 'percent', type: 'number', default: '0', description: 'the percent of the progress' },
-    { name: 'prefixCls', type: 'string', default: 'rc-progress', description: 'A className can be passed down for further styling or extending with CSS-in-JS'},
+    { name: 'prefixCls', type: 'string', default: 'rc-progress', description: 'prefix className for component' },
     { name: 'strokeColor', type: 'string', default: '#07AAE6', description: 'Stroke color' },
     { name: 'strokeLinecap', type:'string', default: 'round', description: 'The shape to be used at the end of the progress bar, can be butt, square or round.' },
     { name: 'strokeWidth', type:'number', default: '1', description: 'Width of the stroke. Unit is percentage of SVG canvas size.' },

@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useParams } from "react-router-dom";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { InPlayerIcon } from '@inplayer-org/inplayer-ui';
 
 import CodePreview from './CodePreview';
 import CodeEditor from './CodeEditor';
 import PropsPreview from './PropsPreview';
 import { getComponent } from '../utils/generateComponentData';
+import DescriptionWrapper from './DescriptionWrapper';
 
-const WrapperNavigationChild = styled.div`
+export const WrapperNavigationChild = styled.div`
   margin-left: 16rem;
   width: 200rem;
   display: flex;
@@ -17,22 +18,13 @@ const WrapperNavigationChild = styled.div`
   align-items: center;
 `;
 
-const Wrapper = styled.div`
-`;
-
-const Description = styled.div`
+const PathWrapper = styled.div`
   padding-bottom: 10px;
   width: 50rem;
 `;
 
 const ExampleWrapper = styled.div`
   margin-bottom: 20px; 
-`;
-
-const ComponentName = styled.h1`
-`;
-
-const ExampleTitle = styled.h3`
 `;
 
 const StyledIcon = styled(InPlayerIcon)`
@@ -43,30 +35,29 @@ const StyledIcon = styled(InPlayerIcon)`
 const ComponentWrapper: React.FC = () => {
   let { id } = useParams();
   const { description, path, usage, examples, propsAndMethods } = getComponent(id);
+
   return (
     <WrapperNavigationChild>
-      <Wrapper>
-        <ComponentName>{id}</ComponentName>
-        {path && <Description>
+      <div>
+        <h1>{id}</h1>
+        {path && <PathWrapper>
           {path}
           <CopyToClipboard text={path}>
             <StyledIcon name="file" title="Copy to clipboard" />
           </CopyToClipboard>
-          {
-            propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />
-          }
-        </Description>}
-        {description && <Description>{description}</Description>}
+        </PathWrapper>}
+        {propsAndMethods && <PropsPreview propsAndMethods={propsAndMethods} />}
+        {description && <DescriptionWrapper description={description.trim()} />}
         {usage && <CodePreview code={usage} />}
-        {examples && examples.map(({ code, title, displayCode = true}) => {
+        {examples?.map(({ exampleId, code, title, displayCode = true}) => {
           return (
-            <ExampleWrapper>
-              <ExampleTitle>{title}</ExampleTitle>
+            <ExampleWrapper key={exampleId ?? title}>
+              <h3>{title}</h3>
               <CodeEditor displayCodeButton={displayCode} code={code} />
             </ExampleWrapper>
           );
         })}
-      </Wrapper>
+      </div>
     </WrapperNavigationChild>
   );
 };

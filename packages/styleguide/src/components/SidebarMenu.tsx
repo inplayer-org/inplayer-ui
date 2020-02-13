@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
     BrowserRouter as Router,
@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 
 import ComponentWrapper from './ComponentWrapper'
+import Home from './Home';
+import UIElements from './UIElements';
+import ColorsAndTheme from './Theme';
+
 import * as InplayerUi from '@inplayer-org/inplayer-ui';
 import * as packageJson from '../../package.json';
 
@@ -23,9 +27,9 @@ const WrapperNavigation = styled.div`
   box-shadow: 0 2px 3px 2px #e2e6ea;
   position: fixed;
   overflow-y: auto;
+  background-color: #f7f7f7;
 
   &::-webkit-scrollbar {
-    -webkit-appearance: none;
     width: 10px;
     height: 10px;
   }
@@ -34,7 +38,6 @@ const WrapperNavigation = styled.div`
     cursor: pointer;
     border-radius: 5px;
     background: rgba(0,0,0,.25);
-    -webkit-transition: color .2s ease;
     transition: color .2s ease;
   }
 
@@ -49,48 +52,80 @@ const WrapperSection = styled.div`
   flex-direction: column;
 `
 
-const StyledLink = styled(Link)`
+export const StyledLink= styled(Link) `
   text-decoration: none;
   cursor: pointer;
-  color: #9a9a9a;
   padding: .5em 1.3em;
 
   &:hover {
-  color: #292929;
+  color: #333030;
 }`
 
-const NavigationHeader = styled(StyledLink)`
+const Header = styled(StyledLink)`
   font-weight: bold;
   padding: 1em 1.3em;
-  color: #292929;
+  font-size: 1.2rem;
+  color: #333030;
 `
 
-const itemsToIgnore = ['Colors', 'ThemeWrapper']
+const NavigationHeader = styled.h4`
+  font-weight: bold;
+  padding: 0 1.3em;
+  color: #333030;
+`
 
-const navigationElements = Object.keys(InplayerUi).filter(element => !itemsToIgnore.includes(element));
+const NavigationInput = styled(InplayerUi.Input)`
+  width: 85%;
+  margin: 1rem;
+`
+
+const elementsToIgnore = ['Colors', 'ThemeWrapper'];
+
+const additionalElements = ['Theme']
+
+const navigationElements = Object.keys(InplayerUi).filter(element => !elementsToIgnore.includes(element));
 
 const libraryVersion = packageJson.dependencies["@inplayer-org/inplayer-ui"].replace(/[~>^]/gi, '');
 
-const SidebarMenu: React.FC = () => (
-    <Router>
-      <WrapperNavigation>
-        <WrapperSection>
-          <NavigationHeader to='/'> InPlayer UI | {libraryVersion} </NavigationHeader>
-        </WrapperSection>
-        <WrapperSection>
-          <NavigationHeader> Components</NavigationHeader>
-          {
-            navigationElements.map(el => <StyledLink to={`/${el}`}>{el}</StyledLink>)
-          }
-        </WrapperSection>
-    </WrapperNavigation>
+const SidebarMenu: React.FC = () => {
+  const [elements, filterElements] = useState([...navigationElements, ...additionalElements]);
+  const [resetActiveElement, changeResetActiveElement] = useState(false);
 
-      <Switch>
-        <Route path="/:id">
-          <ComponentWrapper />
-        </Route>
-      </Switch>
-    </Router>
-);
+
+  const handleInputChange = (input: string) => {
+    filterElements(navigationElements.filter(el => el.toLowerCase().includes(input.toLowerCase())));
+  }
+
+  const handleOnClick = () => {
+    changeResetActiveElement(true)
+  }
+
+    return (
+      <Router>
+        <WrapperNavigation>
+          <WrapperSection>
+            <Header onClick={handleOnClick} to='/'> InPlayer UI | {libraryVersion} </Header>
+          </WrapperSection>
+          <WrapperSection>
+          <NavigationInput onChange={(e) => handleInputChange(e.currentTarget.value)} type="text" name="filter" placeholder="Filter by name" />
+            <NavigationHeader> Components</NavigationHeader>
+            <UIElements changeResetActiveElement={changeResetActiveElement} resetActiveElement={resetActiveElement} navigationElements={elements} />
+          </WrapperSection>
+        </WrapperNavigation>
+
+        <Switch>
+          <Route path="/Theme">
+            <ColorsAndTheme  />
+          </Route>
+          <Route path="/:id">
+            <ComponentWrapper />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+  );
+}
 
 export default SidebarMenu;

@@ -51,7 +51,7 @@ const Radio: ComponentData = {
     { name: 'onChange', type: 'function', default: 'Required' },
     { name: 'className', type: 'string', description: 'A className can be passed down for further styling or extending with CSS-in-JS' },
     { name: 'disabled', type: 'boolean', default: 'false' },
-    { name: 'onBlur', type: 'onBlur', default: 'Function' },
+    { name: 'onBlur', type: 'function', default: 'Function' },
     { name: 'style', type: 'Object', default: '{ }' },
   ],
 }

@@ -29,7 +29,7 @@ const demoCode = `
 
 const Grid: ComponentData = {
   description: `
-    Grid, itself, is not a component, you can import several components from it. Container and Cell, all live within Grid. Each of these components is Flexbox-based. You can either use them directly or you can deconstruct them like this:
+    Grid, itself, is not a component, you can import several components from it. <b>Container</b> and <b>Cell</b>, all live within Grid. Each of these components is Flexbox-based. You can either use them directly or you can deconstruct them like this:
   `,
   path: 'src/blocks/Grid/index.js',
   usage,
@@ -39,7 +39,6 @@ const Grid: ComponentData = {
       displayCode: false,
     }
   ],
-  propsAndMethods: [],
 }
 
 export default Grid;

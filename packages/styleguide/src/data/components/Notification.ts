@@ -77,12 +77,16 @@ const demoCode = `
     duration: 3,
   })}>Show warning notification</Button>
 </div>
-`
+`;
+
+const description = `
+The Notification exposes an API for creating notifications. The API consists of 4 functions: <b>Notification.create</b>, <b>Notification.success</b>, <b>Notification.danger</b> and <b>Notification.warning</b>. The latter 3 are simply abstractions over the first one which set the variant to <b>success</b>, <b>danger</b> and <b>warning</b> accordingly. If no variant is passed it will simply use a neutral grey color scheme (check the demo.).
+
+The functions take 2 arguments: first one is an object which represents the props of the notification, the second one is optional and is a reference to a parent DOM element for the notification. If the parent DOM is not passed the notification will be mounted as a child on the <b>body</b> element. The way it is used is:
+`;
 
 const Notification: ComponentData = {
-  description: `The Notification exposes an API for creating notifications. The API consists of 4 functions: Notification.create, Notification.success, Notification.danger and Notification.warning. The latter 3 are simply abstractions over the first one which set the variant to success, danger and warning accordingly. If no variant is passed it will simply use a neutral grey color scheme (check the demo.).
-
-  The functions take 2 arguments: first one is an object which represents the props of the notification, the second one is optional and is a reference to a parent DOM element for the notification. If the parent DOM is not passed the notification will be mounted as a child on the body element. The way it is used is:`,
+  description,
   path: `src/elements/Notification/index.js`,
   usage,
   examples: [
@@ -96,7 +100,8 @@ const Notification: ComponentData = {
     { name: 'content', type: 'string', default: 'Required' },
     { name: 'title', type: 'string', default: 'Required' },
     { name: 'className', type: 'string'},
-    { name: 'duration', type: 'number', default: '{}' },
+    { name: 'duration', type: 'number', default: '0' },
+    { name: 'style', type: 'Object', default: '{ }' },
     { name: 'variant', type: 'enum', description: `One of: success, danger, warning`},
   ]
 }
