@@ -93,6 +93,7 @@ module.exports = {
       config: path.resolve(__dirname, './src/config'),
       types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
+      previews: path.resolve(__dirname, './src/previews'),
     },
   },
   plugins: [
