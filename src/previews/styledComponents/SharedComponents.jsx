@@ -1,14 +1,17 @@
-import { Colors, Theme, InPlayerIcon, Typography } from '@inplayer-org/inplayer-ui';
+// @flow
+import colors from 'config/colors';
 import { transparentize, darken } from 'polished';
-import styled, { StyledComponent } from 'styled-components';
+import styled from 'styled-components';
 import { ifProp, prop } from 'styled-tools';
+import InPlayerIcon from 'elements/InPlayerIcon';
+import Typography from 'elements/Typography';
 
 export const PaywallContainer = styled.div`
   width: 100%;
   max-width: 375px;
   margin: auto;
-  background: ${Colors.pale};
-  box-shadow: 0 1px 8px 0 ${Colors.darkGray};
+  background: ${colors.pale};
+  box-shadow: 0 1px 8px 0 ${colors.darkGray};
   border-radius: 2px;
   overflow: hidden;
   transition: all 250ms ease-out;
@@ -18,8 +21,8 @@ export const PaywallContainer = styled.div`
 `;
 
 export const SectionContainer = styled.section`
-  background: ${Colors.white};
-  border-top: 1px solid ${Colors.gray};
+  background: ${colors.white};
+  border-top: 1px solid ${colors.gray};
   padding: 2vh 0;
   position: relative;
 `;
@@ -32,23 +35,18 @@ export const FormContainer = styled.div`
   margin: 8px auto;
 `;
 
-interface StyledInputProps {
-  borderColor?: string;
-  first?: boolean;
-}
-
-export const StyledInput = styled.input<StyledInputProps>`
+export const StyledInput = `
   border-top: none;
   border-right: none;
   border-left: none;
   border-radius: 0;
-  border-bottom: 1px solid ${({ borderColor }) => ifProp('borderColor', borderColor, Colors.gray)};
+  border-bottom: 1px solid ${({ borderColor }) => ifProp('borderColor', borderColor, colors.gray)};
   margin: 0 auto 10px;
   margin-right: ${ifProp('first', '1px', 'auto')};
   line-height: 20px;
   font-weight: ${({ theme }) => theme.font.weights.light};
   width: 100%;
-  color: ${Colors.black};
+  color: ${colors.black};
   letter-spacing: 0.04em;
   transition: all 0.3s ease;
   background: transparent;
@@ -62,23 +60,20 @@ export const ButtonHolder = styled.div`
   justify-content: space-between;
 `;
 
-interface ButtonProps {
-  borderTextColor?: string;
-}
-
-export const Button: StyledComponent<'button', Theme, ButtonProps> = styled.button`
+export const Button = `
   text-rendering: auto;
   word-spacing: normal;
   text-indent: 0;
   text-shadow: none;
   display: inline-block;
   border-radius: 2px;
-  border: 1px solid ${({ borderTextColor }: ButtonProps) => ifProp('borderTextColor', borderTextColor, Colors.skyBlue)};
+  border: 1px solid
+    ${({ borderTextColor }) => ifProp('borderTextColor', borderTextColor, colors.skyBlue)};
   font-size: ${({ theme }) => theme.font.sizes.small};
   font-weight: ${({ theme }) => theme.font.weights.normal};
   text-align: center;
-  color: ${({ borderTextColor }: ButtonProps) => ifProp('borderTextColor', borderTextColor, Colors.skyBlue)};
-  background: ${Colors.white};
+  color: ${({ borderTextColor }) => ifProp('borderTextColor', borderTextColor, colors.skyBlue)};
+  background: ${colors.white};
   box-sizing: border-box;
   padding: 8px 0;
   cursor: default;
@@ -96,7 +91,7 @@ export const PasswordResetContainer = styled.div`
   transition: all 0.25s ease;
   max-height: 50px;
   font-size: ${({ theme }) => theme.font.sizes.extraSmall};
-  color: ${transparentize(0.45, Colors.fontDarkGray)};
+  color: ${transparentize(0.45, colors.fontDarkGray)};
   text-align: left;
 `;
 
@@ -106,55 +101,38 @@ export const ForgotLabel = styled.label`
   width: auto;
 `;
 
-interface IconProps {
-  color?: string;
-}
-
 export const StyledInPlayerIcon = styled(InPlayerIcon)`
   position: absolute;
   top: 15px;
   left: 0;
   font-size: ${({ theme }) => theme.font.sizes.large};
-  color: ${({ color }: IconProps) => ifProp('color', color, Colors.gray)};
+  color: ${({ color }) => ifProp('color', color, colors.gray)};
 `;
 
 export const InputContainer = styled.div`
   position: relative;
 `;
 
-interface PreviewFooterProps {
-  color: string;
-}
-
-export const PreviewFooter: any = styled.div`
-  color: ${({ color }: PreviewFooterProps) => color};
+export const PreviewFooter = styled.div`
+  color: ${({ color }) => color};
   font-size: ${({ theme }) => theme.font.sizes.small};
   line-height: 1.3rem;
 `;
 
-interface PreviewBoxProps {
-  topBorder?: boolean;
-  circleImage?: boolean;
-  width?: string;
-  height?: string;
-  minWidth?: string;
-  minHeight?: string;
-}
-
-export const PreviewBox: any = styled.div<PreviewBoxProps>`
+export const PreviewBox = `
   width: ${({ width }) => width ?? '500px'};
   height: ${({ height }) => height ?? '580px'};
   max-width: ${({ width }) => (width ? '' : '520px')};
   min-width: ${({ minWidth }) => minWidth};
   min-height: ${({ minHeight }) => minHeight};
   margin: auto;
-  border: 1px solid ${Colors.gray};
+  border: 1px solid ${colors.gray};
   clear: both;
   padding: ${ifProp('circleImage', '26px', '18px')} 3%;
   background: ${ifProp(
     'topBorder',
-    `${Colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`,
-    `${Colors.white}`
+    `${colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`,
+    `${colors.white}`
   )};
   background-size: 100% 4px;
   position: relative;
@@ -163,12 +141,7 @@ export const PreviewBox: any = styled.div<PreviewBoxProps>`
   box-sizing: border-box;
 `;
 
-interface PreviewImageProps {
-  imageWidth?: string;
-  imageBorderRadius?: boolean;
-}
-
-export const PreviewImage = styled.img<PreviewImageProps>`
+export const PreviewImage = `
   width: ${prop('imageWidth', '100%')};
   border-radius: ${ifProp('imageBorderRadius', '50%')};
   object-fit: cover;
@@ -184,7 +157,7 @@ export const PreviewImage = styled.img<PreviewImageProps>`
 `;
 
 export const OverlayLabel = styled(Typography)`
-  color: ${Colors.white};
+  color: ${colors.white};
   font-weight: ${({ theme }) => theme.font.weights.semiBold};
   position: absolute;
   top: 0px;
@@ -207,18 +180,13 @@ export const ImageHolder = styled.div`
   overflow: hidden;
   display: block;
   position: relative;
-  background: ${Colors.mint};
+  background: ${colors.mint};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 `;
 
-interface TemplatesButtonProps {
-  buttonBgColor: string;
-  buttonTextColor: string;
-}
-
-export const TemplatesButton: any = styled.div<TemplatesButtonProps>`
+export const TemplatesButton = `
   color: ${({ buttonTextColor }) => buttonTextColor};
   background-color: ${({ buttonBgColor }) => buttonBgColor};
   border: ${({ buttonBgColor }) => `1px solid ${buttonBgColor}`};
@@ -236,12 +204,8 @@ export const TemplatesButton: any = styled.div<TemplatesButtonProps>`
     background: ${({ buttonBgColor }) => darken(0.1, buttonBgColor)};
   }
 `;
-interface IconWrapperProps {
-  protectedLabel?: boolean;
-  backgroundColor: string;
-}
 
-export const IconWrapper: any = styled.div<IconWrapperProps>`
+export const IconWrapper = `
   background: ${({ backgroundColor }) => backgroundColor};
   display: ${ifProp('protectedLabel', 'block', 'none')};
   position: absolute;
@@ -252,11 +216,7 @@ export const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-interface PaywallExplainProps {
-  color: string;
-}
-
-export const PaywallExplain: any = styled.div<PaywallExplainProps>`
+export const PaywallExplain = `
   color: ${({ color }) => color};
   display: block;
   font-size: ${({ theme }) => theme.font.sizes.small};
