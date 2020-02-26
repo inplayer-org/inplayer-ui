@@ -82,7 +82,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-watch": "^6.0.1",
     "flow-bin": "^0.119.0",
-    "flow-typed": "^2.6.2",
+    "flow-typed": "^3.0.0",
     "flow-watch": "^1.1.5",
     "husky": "^4.2.3",
     "moment": "^2.24.0",
