@@ -1,17 +1,18 @@
+// @flow
 import React from 'react';
 import { Colors } from '@inplayer-org/inplayer-ui';
 import { lighten } from 'polished';
-import { withTheme } from "styled-components";
+import { withTheme } from 'styled-components';
 
 // Images
-import previewImg from 'assets/ip-preview-premium.png';
+import previewImg from 'assets/images/ip-preview-premium.png';
 
 // Types
-import { Branding } from './types';
+import TextEditor from '../components/TextEditor';
+import { type Branding } from '../types';
 
 // Components
-import TextEditor from '../components/TextEditor';
-import { PaywallExplain } from './styledComponents/SharedComponents';
+import { PaywallExplain } from '../styledComponents/SharedComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -24,14 +25,14 @@ import {
   PaywallExplainSpan,
   TitleHolder,
   DescriptionHolder,
-} from './styledComponents/Preview5';
+} from './styled';
 
-interface OwnProps {
-  branding?: Branding;
-  width?: string;
-  height?: string;
-  theme?: any;
-}
+type OwnProps = {
+  branding?: Branding,
+  width?: string,
+  height?: string,
+  theme?: any,
+};
 
 const Preview5 = ({
   branding: {
@@ -45,7 +46,7 @@ const Preview5 = ({
   width,
   height,
 }: OwnProps) => {
-  const heightNumber = Number(height?.slice(0, -1));
+  const heightNumber = height && Number(height.slice(0, -1));
   return (
     <StyledPreviewBox minHeight="420px" width={width} height={height}>
       <ImageWrapper height={heightNumber} backgroundImage={imageUrl}>
