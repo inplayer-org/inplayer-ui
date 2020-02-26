@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useState, FunctionComponent } from 'react';
-import styled, { StyledComponent, css } from 'styled-components';
+// @flow
+import React, { useEffect, useMemo, useState } from 'react';
+import styled, { css } from 'styled-components';
 import ReactQuill from 'react-quill';
-import { Theme, Colors } from '@inplayer-org/inplayer-ui';
+import colors from 'config/colors';
 
 // editor styles
 import 'react-quill/dist/quill.snow.css';
@@ -9,30 +10,20 @@ import 'react-quill/dist/quill.snow.css';
 // utils
 import throttle from 'lodash/throttle';
 
-interface Props {
-  value: string | any;
-  readOnly?: boolean;
-  onChange?: (e: any) => any;
-  displayToolbar?: boolean;
-  isAssetPreviewTitle?: boolean;
-  textBackground?: string;
-  textColor?: string;
-  isTextCenter?: boolean;
-  isPadding?: boolean;
-  lineHeight?: number;
-}
+type Props = {
+  value: string | any,
+  readOnly?: boolean,
+  onChange?: (e: any) => any,
+  displayToolbar?: boolean,
+  isAssetPreviewTitle?: boolean,
+  textBackground?: string,
+  textColor?: string,
+  isTextCenter?: boolean,
+  isPadding?: boolean,
+  lineHeight?: number,
+};
 
-interface StyledEditorContainerProps {
-  readOnly?: boolean;
-  isAssetPreviewTitle?: boolean;
-  textBackground?: string;
-  textColor?: string;
-  isTextCenter?: boolean;
-  isPadding?: boolean;
-  lineHeight?: number;
-}
-
-const EditorContainer: StyledComponent<'div', Theme, StyledEditorContainerProps> = styled.div`
+const EditorContainer = styled.div`
   width: 100%;
 
   .ql-editor p,
@@ -50,11 +41,11 @@ const EditorContainer: StyledComponent<'div', Theme, StyledEditorContainerProps>
     font-weight: ${({ theme }) => theme.font.weights.light};
     line-height: ${({ lineHeight }) => lineHeight || 1};
     font-size: ${({ theme }) => theme.font.sizes.medium};
-    color: ${({ textColor }) => textColor || Colors.fontDarkGray};
+    color: ${({ textColor }) => textColor || colors.fontDarkGray};
     text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
   }
 
-  ${({ isAssetPreviewTitle }: StyledEditorContainerProps) =>
+  ${({ isAssetPreviewTitle }) =>
     isAssetPreviewTitle &&
     css`
       button.ql-link {
@@ -62,7 +53,7 @@ const EditorContainer: StyledComponent<'div', Theme, StyledEditorContainerProps>
       }
     `}
 
-  ${({ readOnly }: StyledEditorContainerProps) =>
+  ${({ readOnly }) =>
     readOnly &&
     css`
       .ql-container.ql-snow {
@@ -85,14 +76,14 @@ const EditorContainer: StyledComponent<'div', Theme, StyledEditorContainerProps>
       .ql-editor h5,
       .ql-editor h6 {
         font-weight: ${({ theme }) => theme.font.weights.normal};
-        color: ${({ textColor }) => textColor || Colors.black};
+        color: ${({ textColor }) => textColor || colors.black};
         padding: ${({ isPadding }) => isPadding && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};
       }
     `}
 `;
 
-const TextEditor: FunctionComponent<Props> = ({
+const TextEditor = ({
   value,
   onChange,
   readOnly,
@@ -103,7 +94,7 @@ const TextEditor: FunctionComponent<Props> = ({
   isTextCenter,
   isPadding,
   lineHeight,
-}) => {
+}: Props) => {
   const [editorState, setEditorState] = useState(value);
 
   useEffect(() => {
