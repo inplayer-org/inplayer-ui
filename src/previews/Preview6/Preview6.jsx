@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import colors from 'config/colors';
-import { withTheme } from 'styled-components';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -28,7 +27,6 @@ type Props = {
   branding?: Branding,
   width?: string,
   height?: string,
-  theme?: any,
 };
 
 const Preview6 = ({
@@ -65,4 +63,10 @@ const Preview6 = ({
   </StyledPreviewBox>
 );
 
-export default withTheme(Preview6);
+Preview6.defaultProps = {
+  branding: {},
+  width: '0',
+  height: '0',
+};
+
+export default Preview6;

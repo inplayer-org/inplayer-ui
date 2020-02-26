@@ -75,7 +75,7 @@ const Preview3 = ({
 );
 
 Preview3.defaultProps = {
-  branding: null,
+  branding: {},
   showInPreview: false,
   width: '0',
   height: '0',

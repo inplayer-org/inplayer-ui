@@ -10,7 +10,7 @@ import {
   ExplainSpan,
   ImageHolder,
   TemplatesButton,
-} from '../styledComponents/SharedComponents';
+} from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   box-sizing: border-box;
