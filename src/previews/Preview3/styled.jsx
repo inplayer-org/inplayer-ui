@@ -1,26 +1,28 @@
+// @flow
 import styled from 'styled-components';
-import { Colors, InPlayerIcon } from '@inplayer-org/inplayer-ui';
+import { InPlayerIcon } from 'elements';
+import colors from 'config/colors';
 import { transparentize } from 'polished';
 import { ifProp } from 'styled-tools';
 
 // Components
 import {
-    PreviewFooter,
-    PreviewBox,
-    ExplainSpan,
-    ImageHolder,
-    TextWrapper,
-} from './SharedComponents';
+  PreviewFooter,
+  PreviewBox,
+  ExplainSpan,
+  ImageHolder,
+  TextWrapper,
+} from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? '350px'};
   border-top: 3px solid ${({ color }) => color};
-  background: ${Colors.white};
+  background: ${colors.white};
   display: inline-block;
   vertical-align: top;
   padding: 1% 3% 2% 3%;
   box-sizing: border-box;
-  color: ${Colors.fontDarkGray};
+  color: ${colors.fontDarkGray};
   border-radius: 3px 3px 0 0;
 `;
 
@@ -30,11 +32,7 @@ export const TitleWrapper = styled.div`
   justify-content: space-between;
 `;
 
-interface ImageProps {
-    backgroundImage: string;
-}
-
-export const StyledImageHolder = styled(ImageHolder)<ImageProps>`
+export const StyledImageHolder = styled(ImageHolder)`
   height: 100%;
   margin: 0;
   display: flex;
@@ -42,8 +40,8 @@ export const StyledImageHolder = styled(ImageHolder)<ImageProps>`
   position: relative;
   background-image: linear-gradient(
       45deg,
-      ${transparentize(0.2, Colors.black)} 0%,
-      ${transparentize(0.5, Colors.black)} 100%
+      ${transparentize(0.2, colors.black)} 0%,
+      ${transparentize(0.5, colors.black)} 100%
     ),
     url(${({ backgroundImage }) => backgroundImage});
 `;
@@ -52,11 +50,7 @@ export const PaywallExplainSpan = styled(ExplainSpan)`
   padding-bottom: 20px;
 `;
 
-interface ShowInPreviewProps {
-  showInPreview?: boolean;
-}
-
-export const StyledTextWrapper = styled(TextWrapper)<ShowInPreviewProps>`
+export const StyledTextWrapper = styled(TextWrapper)`
   position: relative;
   justify-content: flex-end;
   height: ${ifProp('showInPreview', '350px', '700px')};
@@ -66,19 +60,13 @@ export const StyledTextWrapper = styled(TextWrapper)<ShowInPreviewProps>`
 `;
 
 export const Header = styled(PreviewFooter)`
-  border-bottom: 1px solid ${transparentize(0.6, Colors.darkGray)};
+  border-bottom: 1px solid ${transparentize(0.6, colors.darkGray)};
   margin: 3%;
   text-align: right;
   padding-bottom: 1%;
 `;
 
-
-  
-interface TextColorProps {
-    color: string;
-}
-
-export const StyledIcon = styled(InPlayerIcon)<TextColorProps>`
+export const StyledIcon = styled(InPlayerIcon)`
   font-size: ${({ theme }) => theme.font.sizes.extraLarge};
   color: ${({ color }) => color};
 
@@ -89,7 +77,7 @@ export const StyledIcon = styled(InPlayerIcon)<TextColorProps>`
   }
 `;
 
-export const TitleBorder = styled.div<TextColorProps>`
+export const TitleBorder = styled.div`
   margin-bottom: 2%;
   width: 300px;
   background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
