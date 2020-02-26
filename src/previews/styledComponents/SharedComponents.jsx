@@ -35,7 +35,7 @@ export const FormContainer = styled.div`
   margin: 8px auto;
 `;
 
-export const StyledInput = `
+export const StyledInput = styled.input`
   border-top: none;
   border-right: none;
   border-left: none;
@@ -60,7 +60,7 @@ export const ButtonHolder = styled.div`
   justify-content: space-between;
 `;
 
-export const Button = `
+export const Button = styled.button`
   text-rendering: auto;
   word-spacing: normal;
   text-indent: 0;
@@ -119,7 +119,7 @@ export const PreviewFooter = styled.div`
   line-height: 1.3rem;
 `;
 
-export const PreviewBox = `
+export const PreviewBox = styled.div`
   width: ${({ width }) => width ?? '500px'};
   height: ${({ height }) => height ?? '580px'};
   max-width: ${({ width }) => (width ? '' : '520px')};
@@ -141,7 +141,7 @@ export const PreviewBox = `
   box-sizing: border-box;
 `;
 
-export const PreviewImage = `
+export const PreviewImage = styled.img`
   width: ${prop('imageWidth', '100%')};
   border-radius: ${ifProp('imageBorderRadius', '50%')};
   object-fit: cover;
@@ -186,7 +186,7 @@ export const ImageHolder = styled.div`
   background-position: center center;
 `;
 
-export const TemplatesButton = `
+export const TemplatesButton = styled.div`
   color: ${({ buttonTextColor }) => buttonTextColor};
   background-color: ${({ buttonBgColor }) => buttonBgColor};
   border: ${({ buttonBgColor }) => `1px solid ${buttonBgColor}`};
@@ -205,7 +205,7 @@ export const TemplatesButton = `
   }
 `;
 
-export const IconWrapper = `
+export const IconWrapper = styled.div`
   background: ${({ backgroundColor }) => backgroundColor};
   display: ${ifProp('protectedLabel', 'block', 'none')};
   position: absolute;
@@ -216,7 +216,7 @@ export const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const PaywallExplain = `
+export const PaywallExplain = styled.div`
   color: ${({ color }) => color};
   display: block;
   font-size: ${({ theme }) => theme.font.sizes.small};
