@@ -23,7 +23,7 @@ import {
 } from './styled';
 
 // Types
-import { type Branding } from '../types';
+import { type Branding } from '../types/branding';
 
 type Props = {
   branding?: Branding,

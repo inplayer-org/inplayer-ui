@@ -7,7 +7,7 @@ import colors from 'config/colors';
 import previewImg from 'assets/images/ip-preview-premium.png';
 
 // Types
-import { Branding } from '../types';
+import { Branding } from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';

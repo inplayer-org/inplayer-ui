@@ -9,7 +9,7 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import logo from 'assets/images/ip-icon-blue.svg';
 
 // Types
-import { type Branding } from '../types';
+import { type Branding } from '../types/branding';
 
 // Components
 import StyledContainer from '../components/StyledContainer';

@@ -8,7 +8,7 @@ import previewImg from 'assets/images/ip-preview-premium.png';
 
 // Types
 import TextEditor from '../components/TextEditor';
-import { type Branding } from '../types';
+import { type Branding } from '../types/branding';
 
 // Components
 import { PaywallExplain } from '../components/SharedComponents';
