@@ -23,7 +23,7 @@ import {
 } from './styled';
 
 // Types
-import { Branding } from '../types';
+import { type Branding } from '../types';
 
 type Props = {
   branding?: Branding,
@@ -32,8 +32,8 @@ type Props = {
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
   isFullPreview?: boolean,
-  width?: number,
-  height?: number,
+  width?: string,
+  height?: string,
 };
 
 const removeTags = (str: string) =>
@@ -124,8 +124,8 @@ Preview4.defaultProps = {
   displayBuyButton: false,
   previewNotAvailable: false,
   isFullPreview: false,
-  width: 0,
-  height: 0,
+  width: '0',
+  height: '0',
 };
 
 export default Preview4;
