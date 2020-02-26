@@ -1,14 +1,14 @@
-import styled, { StyledComponent } from 'styled-components';
-import { Colors, Theme } from '@inplayer-org/inplayer-ui';
+import styled from 'styled-components';
+import colors from 'config/colors';
 
 // Components
 import {
-    PreviewFooter,
-    PreviewBox,
-    ImageHolder,
-    TemplatesButton,
-    IconWrapper,
-} from './SharedComponents';
+  PreviewFooter,
+  PreviewBox,
+  ImageHolder,
+  TemplatesButton,
+  IconWrapper,
+} from '../styledComponents/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;
@@ -22,7 +22,7 @@ export const ImageWrapper = styled(ImageHolder)`
   margin: auto;
 `;
 
-export const PreviewHeader: StyledComponent<'h4', Theme> = styled.h4`
+export const PreviewHeader = styled.h4`
   font-size: ${({ theme }) => theme.font.sizes.h4};
   line-height: 1.4em;
   margin: 0;
@@ -60,7 +60,7 @@ export const BuyButton = styled(TemplatesButton)`
 
 export const StyledIconWrapper = styled(IconWrapper)`
   padding: 12px;
-  color: ${Colors.white};
+  color: ${colors.white};
   border-radius: 50%;
   overflow: hidden;
   top: 76%;
@@ -69,11 +69,11 @@ export const StyledIconWrapper = styled(IconWrapper)`
 `;
 
 export const StyledImageWrapper = styled(ImageWrapper)`
-  background: ${Colors.white};
+  background: ${colors.white};
 `;
 
 export const StyledPreviewFooter = styled(PreviewFooter)`
-  border-top: 1px solid ${Colors.gray};
+  border-top: 1px solid ${colors.gray};
   margin-top: 10px;
   text-align: center;
   padding-top: 5px;
