@@ -1,12 +1,13 @@
+// @flow
 import React from 'react';
-import { Colors } from '@inplayer-org/inplayer-ui';
-import { withTheme } from "styled-components";
+import colors from 'config/colors';
+import { withTheme } from 'styled-components';
 
 // Images
-import previewImg from 'assets/ip-preview-premium.png';
+import previewImg from 'assets/images/ip-preview-premium.png';
 
 // Types
-import { Branding } from './types';
+import { type Branding } from '../types';
 
 // Components
 import TextEditor from '../components/TextEditor';
@@ -21,14 +22,14 @@ import {
   FooterLink,
   IconHolder,
   Icon,
-} from './styledComponents/Preview6';
+} from './styled';
 
-interface Props {
-  branding?: Branding;
-  width?: string;
-  height?: string;
-  theme?: any;
-}
+type Props = {
+  branding?: Branding,
+  width?: string,
+  height?: string,
+  theme?: any,
+};
 
 const Preview6 = ({
   branding: {
@@ -36,8 +37,8 @@ const Preview6 = ({
     preview_title: title = '<h1><strong>Title</strong></h1>',
     preview_description: description = '<p>Description</p>',
     preview_button_label: buttonLabel = 'Buy',
-    preview_buttons_bg_color: buttonBgColor = Colors.green,
-    preview_buttons_text_color: buttonTextColor = Colors.white,
+    preview_buttons_bg_color: buttonBgColor = colors.green,
+    preview_buttons_text_color: buttonTextColor = colors.white,
   } = {},
   width,
   height,
