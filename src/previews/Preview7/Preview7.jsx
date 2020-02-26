@@ -1,16 +1,18 @@
-import React, { FunctionComponent } from 'react';
-import { Colors, InPlayerIcon } from '@inplayer-org/inplayer-ui';
-import { withTheme } from "styled-components";
+// @flow
+import React from 'react';
+import InPlayerIcon from 'elements/InPlayerIcon';
+import colors from 'config/colors';
+import { withTheme } from 'styled-components';
 
 // Images
-import previewImg from 'assets/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/restricted-asset.png';
+import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
-import { Branding } from './types';
+import { type Branding } from '../types';
 
 // Components
-import { PreviewImage, OverlayLabel } from './styledComponents/SharedComponents';
+import { PreviewImage, OverlayLabel } from '../styledComponents/SharedComponents';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
@@ -22,20 +24,20 @@ import {
   ButtonWrapper,
   BuyButton,
   StyledPreviewFooter,
-} from './styledComponents/Preview7';
+} from './styled';
 
-interface Props {
-  branding?: Branding;
-  assetCountrySetId?: number;
-  assetDomainRestrictions?: Array<any>;
-  displayBuyButton?: boolean;
-  previewNotAvailable?: boolean;
-  width?: string;
-  height?: string;
-  theme?: any;
-}
+type Props = {
+  branding?: Branding,
+  assetCountrySetId?: number,
+  assetDomainRestrictions?: Array<any>,
+  displayBuyButton?: boolean,
+  previewNotAvailable?: boolean,
+  width?: string,
+  height?: string,
+  theme?: any,
+};
 
-const Preview7: FunctionComponent<Props> = ({
+const Preview7 = ({
   branding: {
     preview_top_border: previewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
@@ -43,8 +45,8 @@ const Preview7: FunctionComponent<Props> = ({
     preview_title: previewTitle = `<h1><strong>Asset Title</strong></h1>`,
     preview_description: previewDescription = `<p>Asset Description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
-    preview_buttons_bg_color: buttonBgColor = Colors.green,
-    preview_buttons_text_color: buttonTextColor = Colors.white,
+    preview_buttons_bg_color: buttonBgColor = colors.green,
+    preview_buttons_text_color: buttonTextColor = colors.white,
   } = {},
   assetCountrySetId,
   assetDomainRestrictions = [],
@@ -87,7 +89,7 @@ const Preview7: FunctionComponent<Props> = ({
           </BuyButton>
         </ButtonWrapper>
       )}
-      <StyledPreviewFooter color={Colors.fontGray}>
+      <StyledPreviewFooter color={colors.fontGray}>
         <p>Already have access? Login here with your account.</p>
       </StyledPreviewFooter>
     </StyledPreviewBox>
