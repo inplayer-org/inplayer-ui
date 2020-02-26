@@ -1,44 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es2017",
-        "allowSyntheticDefaultImports": false,
-        "baseUrl": "./",
-        "paths": {
-            "assets/*": [
-                "src/assets/*"
-            ],
-            "components/*": [
-                "src/components/*"
-            ],
-            "elements/*": [
-                "src/elements/*"
-            ],
-            "blocks/*": [
-                "src/blocks/*"
-            ],
-            "utils/*": [
-                "src/utils/*"
-            ],
-            "modifiers/*": [
-                "src/modifiers/*"
-            ],
-            "helpers/*": [
-                "tests/helpers/*"
-            ],
-            "config/*": [
-                "src/config/*"
-            ],
-            "types/*": [
-                "src/types/*"
-            ],
-            "theme/*": [
-                "src/theme/*"
-            ]
-        }
-    },
-    "exclude": [
-        "node_modules",
-        "docs",
-        "build"
-    ]
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "elements/*": ["src/elements/*"],
+      "blocks/*": ["src/blocks/*"],
+      "utils/*": ["src/utils/*"],
+      "modifiers/*": ["src/modifiers/*"],
+      "helpers/*": ["tests/helpers/*"],
+      "config/*": ["src/config/*"],
+      "types/*": ["src/types/*"],
+      "theme/*": ["src/theme/*"]
+    }
+  },
+  "exclude": ["node_modules", "docs", "dist"]
 }
