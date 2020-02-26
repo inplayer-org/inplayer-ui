@@ -8,7 +8,7 @@ import {
   ImageHolder,
   TemplatesButton,
   IconWrapper,
-} from '../styledComponents/SharedComponents';
+} from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;

@@ -2,17 +2,16 @@
 import React from 'react';
 import InPlayerIcon from 'elements/InPlayerIcon';
 import colors from 'config/colors';
-import { withTheme } from 'styled-components';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
-import { type Branding } from '../types';
+import { type Branding } from '../types/branding';
 
 // Components
-import { PreviewImage, OverlayLabel } from '../styledComponents/SharedComponents';
+import { PreviewImage, OverlayLabel } from '../components/SharedComponents';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
@@ -34,7 +33,6 @@ type Props = {
   previewNotAvailable?: boolean,
   width?: string,
   height?: string,
-  theme?: any,
 };
 
 const Preview7 = ({
@@ -96,4 +94,14 @@ const Preview7 = ({
   );
 };
 
-export default withTheme(Preview7);
+Preview7.defaultProps = {
+  branding: {},
+  assetCountrySetId: 0,
+  assetDomainRestrictions: [],
+  displayBuyButton: false,
+  previewNotAvailable: false,
+  width: '0',
+  height: '0',
+};
+
+export default Preview7;
