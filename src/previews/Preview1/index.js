@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 import colors from 'config/colors';
-import Grid from 'blocks/Grid';
+import Grid from 'blocks';
+import { Typography } from 'elements';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -104,7 +105,7 @@ const Preview1 = ({
         {displayBuyButton && (
           <Cell middle>
             <TemplatesButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-              <p>{previewButtonLabel}</p>
+              <Typography>{previewButtonLabel}</Typography>
             </TemplatesButton>
           </Cell>
         )}
