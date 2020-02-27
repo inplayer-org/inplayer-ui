@@ -13,7 +13,7 @@ import throttle from 'lodash/throttle';
 type Props = {
   value: string | any,
   readOnly?: boolean,
-  onChange?: (e: any) => any,
+  onChange: (e: any) => any,
   displayToolbar?: boolean,
   isAssetPreviewTitle?: boolean,
   textBackground?: string,
@@ -37,7 +37,6 @@ const EditorContainer = styled.div`
   .ql-editor h4,
   .ql-editor h5,
   .ql-editor h6 {
-    font-family: Roboto;
     font-weight: ${({ theme }) => theme.font.weights.light};
     line-height: ${({ lineHeight }) => lineHeight || 1};
     font-size: ${({ theme }) => theme.font.sizes.medium};
@@ -128,6 +127,17 @@ const TextEditor = ({
       />
     </EditorContainer>
   );
+};
+
+TextEditor.defaultProps = {
+  readOnly: false,
+  displayToolbar: false,
+  isAssetPreviewTitle: false,
+  textBackground: '',
+  textColor: '',
+  isTextCenter: false,
+  isPadding: false,
+  lineHeight: 0,
 };
 
 export default TextEditor;

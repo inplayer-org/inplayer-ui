@@ -66,6 +66,7 @@ export const BuyButton = styled(TemplatesButton)`
   font-size: ${({ theme }) => theme.font.sizes.large};
   padding: 10px 60px;
   height: 1.3rem;
+
   &:hover {
     outline: none;
   }

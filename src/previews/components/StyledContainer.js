@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Grid from 'blocks/Grid';
+import { Grid } from 'blocks';
 
 const { Container } = Grid;
 

@@ -3,8 +3,7 @@ import colors from 'config/colors';
 import { transparentize, darken } from 'polished';
 import styled from 'styled-components';
 import { ifProp, prop } from 'styled-tools';
-import InPlayerIcon from 'elements/InPlayerIcon';
-import Typography from 'elements/Typography';
+import { InPlayerIcon, Typography } from 'elements';
 
 export const PaywallContainer = styled.div`
   width: 100%;
@@ -136,7 +135,6 @@ export const PreviewBox = styled.div`
   )};
   background-size: 100% 4px;
   position: relative;
-  position: relative;
   transition: all ease 200ms;
   box-sizing: border-box;
 `;
@@ -160,14 +158,14 @@ export const OverlayLabel = styled(Typography)`
   color: ${colors.white};
   font-weight: ${({ theme }) => theme.font.weights.semiBold};
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px;
+  margin: 0;
   text-align: center;
   z-index: 30;
   background: rgba(0, 0, 0, 0.5);

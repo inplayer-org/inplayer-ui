@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import InPlayerIcon from 'elements/InPlayerIcon';
+import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
 
 // Images
@@ -45,10 +45,10 @@ const Preview7 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-  } = {},
+  },
   assetCountrySetId,
-  assetDomainRestrictions = [],
-  displayBuyButton = true,
+  assetDomainRestrictions,
+  displayBuyButton,
   previewNotAvailable,
   width,
   height,
@@ -98,7 +98,7 @@ Preview7.defaultProps = {
   branding: {},
   assetCountrySetId: 0,
   assetDomainRestrictions: [],
-  displayBuyButton: false,
+  displayBuyButton: true,
   previewNotAvailable: false,
   width: '0',
   height: '0',

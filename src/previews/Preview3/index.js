@@ -36,8 +36,8 @@ const Preview3 = ({
     preview_title: previewTitle = `<h1><strong>Asset title</strong></h1>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
-  } = {},
-  showInPreview = true,
+  },
+  showInPreview,
   width,
   height,
 }: OwnProps) => (
@@ -76,7 +76,7 @@ const Preview3 = ({
 
 Preview3.defaultProps = {
   branding: {},
-  showInPreview: false,
+  showInPreview: true,
   width: '0',
   height: '0',
 };

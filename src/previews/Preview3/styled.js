@@ -55,7 +55,6 @@ export const StyledTextWrapper = styled(TextWrapper)`
   justify-content: flex-end;
   height: ${ifProp('showInPreview', '350px', '700px')};
   width: 50%;
-  height: 100%;
   padding: 0 2%;
 `;
 

@@ -40,7 +40,7 @@ const Preview5 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = lighten(0.01, colors.green),
     preview_buttons_text_color: buttonTextColor = colors.black,
-  } = {},
+  },
   width,
   height,
 }: OwnProps) => {

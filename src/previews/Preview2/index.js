@@ -36,8 +36,8 @@ const Preview2 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-  } = {},
-  showInPreview = true,
+  },
+  showInPreview,
   height,
   width,
 }: Props) => (
@@ -67,7 +67,7 @@ const Preview2 = ({
 );
 
 Preview2.defaultProps = {
-  showInPreview: false,
+  showInPreview: true,
   branding: {},
   width: '',
   height: '',

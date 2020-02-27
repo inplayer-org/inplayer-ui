@@ -4,7 +4,7 @@ import InPlayerIcon from 'elements/InPlayerIcon';
 import colors from 'config/colors';
 
 // Components
-import { PreviewBox, TemplatesButton, ImageHolder } from '../styledComponents/SharedComponents';
+import { PreviewBox, TemplatesButton, ImageHolder } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   width: ${({ width }) => width ?? '580px'};
@@ -108,12 +108,12 @@ export const Icon = styled(InPlayerIcon)`
 `;
 
 export const ImageWrapper = styled(ImageHolder)`
-    margin: 0;
-    border: 0;
-    outline: 0;
-    width: 40%;
-    height: 100%;
-    vertical-align: middle;
-    float: left;
-    background-image: url('${({ backgroundImage }) => backgroundImage}');
+  margin: 0;
+  border: 0;
+  outline: 0;
+  width: 40%;
+  height: 100%;
+  vertical-align: middle;
+  float: left;
+  background-image: url('${({ backgroundImage }) => backgroundImage}');
 `;
