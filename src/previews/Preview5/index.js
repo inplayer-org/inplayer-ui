@@ -28,8 +28,10 @@ import {
 
 type OwnProps = {
   branding?: Branding,
-  width: number,
-  height: number,
+  width?: string,
+  height?: string,
+  minWidth?: string,
+  minHeight?: string,
 };
 
 const Preview5 = ({
@@ -43,8 +45,10 @@ const Preview5 = ({
   },
   width,
   height,
+  minHeight,
+  minWidth,
 }: OwnProps) => (
-  <StyledPreviewBox minHeight="420px" width={width} height={height}>
+  <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>
     <ImageWrapper height={height} backgroundImage={imageUrl}>
       <Overlay />
       <BuyButtonHolder>
@@ -72,6 +76,10 @@ const Preview5 = ({
 
 Preview5.defaultProps = {
   branding: {},
+  minWidth: undefined,
+  minHeight: '420px',
+  height: undefined,
+  width: undefined,
 };
 
 export default Preview5;

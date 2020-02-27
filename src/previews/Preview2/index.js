@@ -25,7 +25,7 @@ type Props = {
   showInPreview?: boolean,
   branding?: Branding,
   minWidth?: string,
-  minHeight?: string
+  minHeight?: string,
   height?: string,
   width?: string,
 };
@@ -73,10 +73,10 @@ const Preview2 = ({
 Preview2.defaultProps = {
   showInPreview: true,
   branding: {},
-  minWidth: "500px",
-  minHeight?: "400px",
+  minWidth: '500px',
+  minHeight: '400px',
   height: undefined,
-  width?: undefined,
+  width: undefined,
 };
 
 export default Preview2;

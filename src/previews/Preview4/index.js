@@ -32,8 +32,10 @@ type Props = {
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
   isFullPreview?: boolean,
-  width: number,
-  height: number,
+  width?: number,
+  height?: number,
+  minWidth?: string,
+  minHeight?: string,
 };
 
 const removeTags = (str: string) =>
@@ -57,8 +59,10 @@ const Preview4 = ({
   displayBuyButton,
   previewNotAvailable,
   isFullPreview,
-  width,
+  minWidth,
+  minHeight,
   height,
+  width,
 }: Props) => {
   const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
   const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
@@ -67,7 +71,7 @@ const Preview4 = ({
 
   return (
     <StyledPreviewBox
-      minHeight="390px"
+      minHeight={minHeight}
       topBorderColor={buttonBgColor}
       isFullPreview={isFullPreview}
       width={width}
@@ -123,6 +127,10 @@ Preview4.defaultProps = {
   displayBuyButton: true,
   previewNotAvailable: false,
   isFullPreview: true,
+  minWidth: undefined,
+  minHeight: '390px',
+  height: undefined,
+  width: undefined,
 };
 
 export default Preview4;
