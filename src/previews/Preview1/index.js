@@ -87,12 +87,12 @@ const Preview1 = ({
               This premium content requires an account to access.
             </PaywallExplainSpan>
           </PremiumContent>
-          <div>
+          <PremiumContent>
             <Protected>Protected by InPlayer</Protected>
             <a href="https://inplayer.com" target="_blank" rel="noopener noreferrer">
               <Logo src={logo} alt="logo" />
             </a>
-          </div>
+          </PremiumContent>
         </StyledPaywallExplain>
       </ImageHolder>
       <StyledContainer height="30%" columns="1fr 10rem" margin="0.5rem 0">
