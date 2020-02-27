@@ -1,38 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import { ThemeWrapper, Grid, Button, Preview3 } from './index.js';
+import {
+  ThemeWrapper,
+  Grid,
+  Preview1,
+  Preview2,
+  Preview3,
+  Preview4,
+  Preview5,
+  Preview6,
+  Preview7,
+} from './index.js';
 
 const { Container, Cell } = Grid;
 
 const StyledContainer = styled(Container)`
-  margin: 2rem;
+  margin: 3rem;
 `;
 
 function App() {
   return (
     <ThemeWrapper withProvider={ThemeProvider}>
       <StyledContainer gap="1rem">
-        <Cell width={2}>
-          <Button disabled>Buy now</Button>
+        <Cell width={6}>
+          <Preview1 />
         </Cell>
-        <Cell width={2}>
-          <Button buttonModifiers={['buttonInfo']}>Buy now</Button>
+        <Cell width={6}>
+          <Preview2 />
         </Cell>
-        <Cell width={2}>
-          <Button buttonModifiers={['buttonPrimary']}>Buy now</Button>
+        <Cell width={6}>
+          <Preview3 />
         </Cell>
-        <Cell width={2}>
-          <Button buttonModifiers={['buttonWarning']}>Buy now</Button>
+        <Cell width={6}>
+          <Preview4 />
         </Cell>
-        <Cell width={2}>
-          <Button buttonModifiers={['buttonSuccess']}>Buy now</Button>
+        <Cell width={6}>
+          <Preview5 />
         </Cell>
-        <Cell width={2}>
-          <Button buttonModifiers={['buttonDanger']}>Buy now</Button>
+        <Cell width={6}>
+          <Preview6 />
+        </Cell>
+        <Cell width={6}>
+          <Preview7 />
         </Cell>
       </StyledContainer>
-      <Preview3 />
     </ThemeWrapper>
   );
 }
