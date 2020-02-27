@@ -14,7 +14,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "prebuild": "rimraf ./build",
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "build:watch": "webpack --watch --progress",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint ./src --ext .js",
