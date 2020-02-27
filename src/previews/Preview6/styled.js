@@ -61,8 +61,6 @@ export const Button = styled(TemplatesButton)`
   min-width: 60%;
   margin: 0;
   width: 140px;
-  vertical-align: middle;
-  display: table-cell;
 `;
 
 export const ButtonWrapper = styled.div`

@@ -31,6 +31,7 @@ export const PreviewHeader = styled.h4`
 export const ItemDetails = styled.div`
   width: 100%;
   height: 30%;
+  padding-top: 20px;
 `;
 
 export const ItemContent = styled.p`

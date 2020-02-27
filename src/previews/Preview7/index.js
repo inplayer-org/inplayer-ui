@@ -5,7 +5,6 @@ import colors from 'config/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 
@@ -28,8 +27,6 @@ import {
 
 type Props = {
   branding?: Branding,
-  assetCountrySetId?: number,
-  assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
   width?: string,
@@ -49,60 +46,51 @@ const Preview7 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  assetCountrySetId,
-  assetDomainRestrictions,
   displayBuyButton,
   previewNotAvailable,
   width,
   height,
   minWidth,
   minHeight,
-}: Props) => {
-  const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
-  const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
-
-  return (
-    <StyledPreviewBox
-      minWidth={minWidth}
-      minHeight={minHeight}
-      topBorder={previewTopBorder}
-      circleImage
-      width={width}
-      height={height}
-    >
-      {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper>
-        <PreviewImage src={assetPreviewImage} imageWidth="250px" imageBorderRadius />
-        <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
-          <InPlayerIcon name="lock" />
-        </StyledIconWrapper>
-      </StyledImageWrapper>
-      <ItemDetails>
-        <PreviewHeader>
-          <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
-        </PreviewHeader>
-        <ItemContent>
-          <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
-        </ItemContent>
-      </ItemDetails>
-      {displayBuyButton && (
-        <ButtonWrapper>
-          <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-            {previewButtonLabel}
-          </BuyButton>
-        </ButtonWrapper>
-      )}
-      <StyledPreviewFooter color={colors.fontGray}>
-        <Typography variant="p">Already have access? Login here with your account.</Typography>
-      </StyledPreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+}: Props) => (
+  <StyledPreviewBox
+    minWidth={minWidth}
+    minHeight={minHeight}
+    topBorder={previewTopBorder}
+    circleImage
+    width={width}
+    height={height}
+  >
+    {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <StyledImageWrapper>
+      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
+      <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
+        <InPlayerIcon name="lock" />
+      </StyledIconWrapper>
+    </StyledImageWrapper>
+    <ItemDetails>
+      <PreviewHeader>
+        <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
+      </PreviewHeader>
+      <ItemContent>
+        <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
+      </ItemContent>
+    </ItemDetails>
+    {displayBuyButton && (
+      <ButtonWrapper>
+        <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          {previewButtonLabel}
+        </BuyButton>
+      </ButtonWrapper>
+    )}
+    <StyledPreviewFooter color={colors.fontGray}>
+      <Typography variant="p">Already have access? Login here with your account.</Typography>
+    </StyledPreviewFooter>
+  </StyledPreviewBox>
+);
 
 Preview7.defaultProps = {
   branding: {},
-  assetCountrySetId: 0,
-  assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
   minWidth: '400px',
