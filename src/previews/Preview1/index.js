@@ -42,8 +42,9 @@ type Props = {
   assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
-  height: number,
-  width: number,
+  minWidth?: string,
+  height?: string,
+  width?: string,
 };
 
 const Preview1 = ({
@@ -56,19 +57,25 @@ const Preview1 = ({
     inplayer_protected_label: protectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.red,
-  } = {},
+  },
   assetCountrySetId,
   assetDomainRestrictions,
   displayBuyButton,
   previewNotAvailable,
   width,
   height,
+  minWidth,
 }: Props) => {
   const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
   const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
 
   return (
-    <StyledPreviewBox minWidth="520px" width={width} height={height} topBorder={previewTopBorder}>
+    <StyledPreviewBox
+      minWidth={minWidth}
+      width={width}
+      height={height}
+      topBorder={previewTopBorder}
+    >
       {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <ImageHolder>
         <PreviewImage src={assetPreviewImage} />
@@ -111,10 +118,13 @@ const Preview1 = ({
 
 Preview1.defaultProps = {
   branding: {},
-  assetCountrySetId: 0,
+  assetCountrySetId: undefined,
   assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
+  minWidth: '520px',
+  width: undefined,
+  height: undefined,
 };
 
 export default Preview1;

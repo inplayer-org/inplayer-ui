@@ -24,8 +24,10 @@ import {
 type Props = {
   showInPreview?: boolean,
   branding?: Branding,
-  width: number,
-  height: number,
+  minWidth?: string,
+  minHeight?: string
+  height?: string,
+  width?: string,
 };
 
 const Preview2 = ({
@@ -38,10 +40,12 @@ const Preview2 = ({
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
   showInPreview,
+  minWidth,
+  minHeight,
   height,
   width,
 }: Props) => (
-  <StyledPreviewBox minHeight="500px" minWidth="400px" height={height} width={width}>
+  <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
     <StyledImageHolder
       showInPreview={showInPreview}
       backgroundImage={imageUrl}
@@ -69,6 +73,10 @@ const Preview2 = ({
 Preview2.defaultProps = {
   showInPreview: true,
   branding: {},
+  minWidth: "500px",
+  minHeight?: "400px",
+  height: undefined,
+  width?: undefined,
 };
 
 export default Preview2;

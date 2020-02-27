@@ -26,8 +26,10 @@ import {
 type OwnProps = {
   branding?: Branding,
   showInPreview?: boolean,
-  width: number,
-  height: number,
+  width?: string,
+  height?: string,
+  minWidth?: string,
+  minHeight?: string,
 };
 
 const Preview3 = ({
@@ -40,8 +42,10 @@ const Preview3 = ({
   showInPreview,
   width,
   height,
+  minWidth,
+  minHeight,
 }: OwnProps) => (
-  <StyledPreviewBox minWidth="450px" color={buttonBgColor} width={width} height={height}>
+  <StyledPreviewBox minWidth={minWidth} color={buttonBgColor} width={width} height={height}>
     <StyledImageHolder backgroundImage={imageUrl}>
       <Header color={colors.fontLightGray}>
         Already have access? Login with your InPlayer account
@@ -77,6 +81,10 @@ const Preview3 = ({
 Preview3.defaultProps = {
   branding: {},
   showInPreview: true,
+  minWidth: '450px',
+  minHeight: undefined,
+  height: undefined,
+  width: undefined,
 };
 
 export default Preview3;
