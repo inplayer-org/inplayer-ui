@@ -28,8 +28,8 @@ export const StyledPreviewBox = styled(PreviewBox)`
 
 export const TitleWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const StyledImageHolder = styled(ImageHolder)`
@@ -47,7 +47,9 @@ export const StyledImageHolder = styled(ImageHolder)`
 `;
 
 export const PaywallExplainSpan = styled(ExplainSpan)`
-  padding-bottom: 20px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.font.sizes.small};
 `;
 
 export const StyledTextWrapper = styled(TextWrapper)`

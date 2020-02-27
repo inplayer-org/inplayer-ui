@@ -53,7 +53,7 @@ const Preview3 = ({
       <StyledTextWrapper showInPreview={showInPreview}>
         <PaywallExplain color={buttonBgColor}>
           <PaywallExplainSpan>
-            <InPlayerIcon name="diamond" /> PREMIUM CONTENT
+            <InPlayerIcon name="diamond" /> premium content
           </PaywallExplainSpan>
         </PaywallExplain>
         <TitleWrapper>

@@ -191,11 +191,13 @@ export const TemplatesButton = styled.div`
   text-transform: uppercase;
   font-weight: ${({ theme }) => theme.font.weights.bold};
   border-radius: 2px;
-  text-align: center;
   word-break: break-all;
   height: 3rem;
   overflow: hidden;
   transition: background ease 500ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     outline: none;

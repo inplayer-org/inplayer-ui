@@ -30,6 +30,7 @@ export const TextElement = styled.div`
   line-height: 1.3em;
   margin: 0;
   max-width: ${({ width }) => (width < 45 ? '80%' : '55%')};
+  z-index: 1;
 `;
 
 export const Button = styled(TemplatesButton)`
@@ -43,14 +44,12 @@ export const StyledTextWrapper = styled(TextWrapper)`
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
-  width: 20px;
-  height: 20px;
-  padding: 34px;
-  margin: -55px;
+  width: 45px;
+  height: 68px;
   border: 1px solid ${transparentize(0.6, colors.black)};
   transform: rotate(45deg);
-  top: 0;
-  left: 0;
+  top: -27px;
+  left: -16px;
   z-index: 1;
 `;
 
@@ -60,12 +59,9 @@ export const ImageWrapper = styled(ImageHolder)`
 `;
 
 export const Icon = styled.div`
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
   color: ${colors.white};
-  padding: 1px 32px 25px 45px;
-  margin: 0;
-  position: relative;
+  position: absolute;
+  top: 25px;
+  left: 23px;
   transform: rotate(-45deg);
 `;
