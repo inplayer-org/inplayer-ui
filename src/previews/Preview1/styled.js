@@ -42,7 +42,7 @@ export const StyledPaywallExplain = styled(PaywallExplain)`
 `;
 
 export const Protected = styled.strong`
-  font-size: ${fontSizes('large')};
+  font-size: ${fontSizes('small')};
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   color: ${colors.fontLightGray};
