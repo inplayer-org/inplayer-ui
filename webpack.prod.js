@@ -23,49 +23,20 @@ module.exports = {
     rules: [
       { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 8192,
-              mimetype: 'application/font-woff',
-              name: 'fonts/[name].[ext]',
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
             },
           },
         ],
       },
       {
-        test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              mimetype: 'application/octet-stream',
-              name: 'fonts/[name].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              mimetype: 'image/svg+xml',
-              name: 'fonts/[name].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|gif|ico|svg)$/i,
+        test: /\.(jpe?g|png|gif|ico)$/i,
         exclude: /node_modules/,
         use: [
           {
@@ -82,20 +53,6 @@ module.exports = {
         test: /\.css$/,
         exclude: [/stylesheets/, /node_modules/],
         use: ['css-loader?sourceMap&modules,localIdentName=[local]-[hash:base64]'],
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              mimetype: 'application/vnd.ms-fontobject',
-              name: 'fonts/[name].[ext]',
-            },
-          },
-        ],
       },
     ],
   },
