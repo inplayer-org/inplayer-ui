@@ -31,8 +31,8 @@ type Props = {
   assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
-  width?: string,
-  height?: string,
+  width: number,
+  height: number,
 };
 
 const Preview7 = ({
@@ -100,8 +100,6 @@ Preview7.defaultProps = {
   assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
-  width: '0',
-  height: '0',
 };
 
 export default Preview7;

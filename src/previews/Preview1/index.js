@@ -42,8 +42,8 @@ type Props = {
   assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
-  height?: string,
-  width?: string,
+  height: number,
+  width: number,
 };
 
 const Preview1 = ({
@@ -56,7 +56,7 @@ const Preview1 = ({
     inplayer_protected_label: protectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.red,
-  },
+  } = {},
   assetCountrySetId,
   assetDomainRestrictions,
   displayBuyButton,
@@ -115,8 +115,6 @@ Preview1.defaultProps = {
   assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
-  height: '',
-  width: '',
 };
 
 export default Preview1;

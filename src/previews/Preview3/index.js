@@ -26,8 +26,8 @@ import {
 type OwnProps = {
   branding?: Branding,
   showInPreview?: boolean,
-  width?: number,
-  height?: number,
+  width: number,
+  height: number,
 };
 
 const Preview3 = ({
@@ -77,8 +77,6 @@ const Preview3 = ({
 Preview3.defaultProps = {
   branding: {},
   showInPreview: true,
-  width: '0',
-  height: '0',
 };
 
 export default Preview3;

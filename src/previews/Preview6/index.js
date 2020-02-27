@@ -25,8 +25,8 @@ import {
 
 type Props = {
   branding?: Branding,
-  width?: string,
-  height?: string,
+  width: number,
+  height: number,
 };
 
 const Preview6 = ({
@@ -65,8 +65,6 @@ const Preview6 = ({
 
 Preview6.defaultProps = {
   branding: {},
-  width: '0',
-  height: '0',
 };
 
 export default Preview6;

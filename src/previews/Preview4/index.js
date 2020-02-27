@@ -32,8 +32,8 @@ type Props = {
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
   isFullPreview?: boolean,
-  width?: string,
-  height?: string,
+  width: number,
+  height: number,
 };
 
 const removeTags = (str: string) =>
@@ -124,8 +124,6 @@ Preview4.defaultProps = {
   displayBuyButton: true,
   previewNotAvailable: false,
   isFullPreview: true,
-  width: '0',
-  height: '0',
 };
 
 export default Preview4;

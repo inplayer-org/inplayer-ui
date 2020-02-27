@@ -24,8 +24,8 @@ import {
 type Props = {
   showInPreview?: boolean,
   branding?: Branding,
-  width?: string,
-  height?: string,
+  width: number,
+  height: number,
 };
 
 const Preview2 = ({
@@ -69,8 +69,6 @@ const Preview2 = ({
 Preview2.defaultProps = {
   showInPreview: true,
   branding: {},
-  width: '',
-  height: '',
 };
 
 export default Preview2;
