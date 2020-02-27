@@ -21,7 +21,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         exclude: /node_modules/,
@@ -51,18 +51,23 @@ module.exports = {
         ],
       },
       {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(jpe?g|png|gif|ico|svg)$/i,
         exclude: /node_modules/,
         use: [
           {
             loader: 'url-loader',
-            options: {
-              limit: 1000000,
-              mimetype: 'image/svg+xml',
-              name: 'fonts/[name].[ext]',
-            },
           },
         ],
+      },
+      {
+        test: /\.(css)$/,
+        include: [/stylesheets/, /node_modules/],
+        use: ['css-loader'],
+      },
+      {
+        test: /\.css$/,
+        exclude: [/stylesheets/, /node_modules/],
+        use: ['css-loader?sourceMap&modules,localIdentName=[local]-[hash:base64]'],
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -82,7 +87,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve('./'), path.resolve('./node_modules')],
-    extensions: ['.js'],
+    extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {
       assets: path.resolve(__dirname, './src/assets'),
       components: path.resolve(__dirname, './src/components'),
