@@ -43,35 +43,32 @@ const Preview5 = ({
   },
   width,
   height,
-}: OwnProps) => {
-  const heightNumber = height && Number(height.slice(0, -1));
-  return (
-    <StyledPreviewBox minHeight="420px" width={width} height={height}>
-      <ImageWrapper height={heightNumber} backgroundImage={imageUrl}>
-        <Overlay />
-        <BuyButtonHolder>
-          <BuyButtonBorder>
-            <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-              {previewButtonLabel}
-            </BuyButton>
-          </BuyButtonBorder>
-        </BuyButtonHolder>
-      </ImageWrapper>
-      <ItemDetails height={heightNumber}>
-        <PaywallExplain color={lighten(0.01, buttonBgColor)}>
-          <StyledIcon name="diamond" />
-          <PaywallExplainSpan>Premium content</PaywallExplainSpan>
-        </PaywallExplain>
-        <TitleHolder>
-          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-        </TitleHolder>
-        <DescriptionHolder>
-          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-        </DescriptionHolder>
-      </ItemDetails>
-    </StyledPreviewBox>
-  );
-};
+}: OwnProps) => (
+  <StyledPreviewBox minHeight="420px" width={width} height={height}>
+    <ImageWrapper height={height} backgroundImage={imageUrl}>
+      <Overlay />
+      <BuyButtonHolder>
+        <BuyButtonBorder>
+          <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+            {previewButtonLabel}
+          </BuyButton>
+        </BuyButtonBorder>
+      </BuyButtonHolder>
+    </ImageWrapper>
+    <ItemDetails height={height}>
+      <PaywallExplain color={lighten(0.01, buttonBgColor)}>
+        <StyledIcon name="diamond" />
+        <PaywallExplainSpan>Premium content</PaywallExplainSpan>
+      </PaywallExplain>
+      <TitleHolder>
+        <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+      </TitleHolder>
+      <DescriptionHolder>
+        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+      </DescriptionHolder>
+    </ItemDetails>
+  </StyledPreviewBox>
+);
 
 Preview5.defaultProps = {
   branding: {},

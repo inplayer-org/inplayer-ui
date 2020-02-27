@@ -64,7 +64,6 @@ const Preview4 = ({
   const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-  const widthNumber = width ? Number(width.slice(0, -1)) : 0;
 
   return (
     <StyledPreviewBox
@@ -90,7 +89,7 @@ const Preview4 = ({
         </StyledIconWrapper>
         <PreviewImage src={assetPreviewImage} />
         <StyledTextWrapper isFullPreview={isFullPreview}>
-          <TextElement width={widthNumber}>
+          <TextElement width={width}>
             <TextEditor
               value={previewTitle}
               displayToolbar={false}
@@ -100,7 +99,7 @@ const Preview4 = ({
               readOnly
             />
           </TextElement>
-          <TextElement width={widthNumber}>
+          <TextElement width={width}>
             <TextEditor
               value={previewDescription}
               displayToolbar={false}
