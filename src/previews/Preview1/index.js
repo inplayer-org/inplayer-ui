@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import colors from 'config/colors';
-import Grid from 'blocks';
+import { Grid } from 'blocks';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
