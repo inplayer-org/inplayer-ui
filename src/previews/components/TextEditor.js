@@ -64,7 +64,7 @@ const EditorContainer = styled.div`
       }
 
       .ql-clipboard {
-        display: none;
+        visibility: hidden;
       }
 
       .ql-editor p,
