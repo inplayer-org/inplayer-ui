@@ -24,7 +24,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1000000,
+              limit: 8192,
               mimetype: 'application/font-woff',
               name: 'fonts/[name].[ext]',
             },
@@ -38,8 +38,22 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1000000,
+              limit: 8192,
               mimetype: 'application/octet-stream',
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              mimetype: 'image/svg+xml',
               name: 'fonts/[name].[ext]',
             },
           },
@@ -71,7 +85,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1000000,
+              limit: 8192,
               mimetype: 'application/vnd.ms-fontobject',
               name: 'fonts/[name].[ext]',
             },
