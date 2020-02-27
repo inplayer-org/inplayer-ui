@@ -63,6 +63,10 @@ const EditorContainer = styled.div`
         padding-left: 0;
       }
 
+      .ql-clipboard {
+        display: none;
+      }
+
       .ql-editor p,
       .ql-editor ol,
       .ql-editor ul,
