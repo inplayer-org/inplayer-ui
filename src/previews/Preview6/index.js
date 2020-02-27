@@ -25,8 +25,10 @@ import {
 
 type Props = {
   branding?: Branding,
-  width: number,
-  height: number,
+  width?: string,
+  height?: string,
+  minHeight?: string,
+  minWidth?: string,
 };
 
 const Preview6 = ({
@@ -40,8 +42,10 @@ const Preview6 = ({
   } = {},
   width,
   height,
+  minWidth,
+  minHeight,
 }: Props) => (
-  <StyledPreviewBox width={width} height={height}>
+  <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
     <ImageWrapper backgroundImage={coverPhoto} />
     <ItemDetails>
       <TextEditor value={title} displayToolbar={false} readOnly />
@@ -65,6 +69,10 @@ const Preview6 = ({
 
 Preview6.defaultProps = {
   branding: {},
+  minWidth: undefined,
+  minHeight: undefined,
+  height: undefined,
+  width: undefined,
 };
 
 export default Preview6;

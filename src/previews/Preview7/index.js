@@ -31,8 +31,10 @@ type Props = {
   assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
-  width: number,
-  height: number,
+  width?: string,
+  height?: string,
+  minHeight?: string,
+  minWidth?: string,
 };
 
 const Preview7 = ({
@@ -52,14 +54,16 @@ const Preview7 = ({
   previewNotAvailable,
   width,
   height,
+  minWidth,
+  minHeight,
 }: Props) => {
   const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
   const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
 
   return (
     <StyledPreviewBox
-      minWidth="400px"
-      minHeight="460px"
+      minWidth={minWidth}
+      minHeight={minHeight}
       topBorder={previewTopBorder}
       circleImage
       width={width}
@@ -100,6 +104,10 @@ Preview7.defaultProps = {
   assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
+  minWidth: '400px',
+  minHeight: '460px',
+  height: undefined,
+  width: undefined,
 };
 
 export default Preview7;
