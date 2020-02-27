@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { InPlayerIcon } from 'elements';
+import { InPlayerIcon, Typography } from 'elements';
 import colors from 'config/colors';
 
 // Images
@@ -8,6 +8,7 @@ import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
+
 import { type Branding } from '../types/branding';
 
 // Components
@@ -92,7 +93,7 @@ const Preview7 = ({
         </ButtonWrapper>
       )}
       <StyledPreviewFooter color={colors.fontGray}>
-        <p>Already have access? Login here with your account.</p>
+        <Typography variant="p">Already have access? Login here with your account.</Typography>
       </StyledPreviewFooter>
     </StyledPreviewBox>
   );
