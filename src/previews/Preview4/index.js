@@ -27,8 +27,6 @@ import { type Branding } from '../types/branding';
 
 type Props = {
   branding?: Branding,
-  assetCountrySetId?: number,
-  assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
   previewNotAvailable?: boolean,
   isFullPreview?: boolean,
@@ -54,8 +52,6 @@ const Preview4 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  assetCountrySetId,
-  assetDomainRestrictions,
   displayBuyButton,
   previewNotAvailable,
   isFullPreview,
@@ -64,8 +60,6 @@ const Preview4 = ({
   height,
   width,
 }: Props) => {
-  const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
-  const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
 
@@ -92,7 +86,7 @@ const Preview4 = ({
             <InPlayerIcon name="lock" />
           </Icon>
         </StyledIconWrapper>
-        <PreviewImage src={assetPreviewImage} />
+        <PreviewImage src={imageUrl} />
         <StyledTextWrapper isFullPreview={isFullPreview}>
           <TextElement width={width}>
             <TextEditor
@@ -123,8 +117,6 @@ const Preview4 = ({
 
 Preview4.defaultProps = {
   branding: {},
-  assetCountrySetId: 0,
-  assetDomainRestrictions: [],
   displayBuyButton: true,
   previewNotAvailable: false,
   isFullPreview: true,
