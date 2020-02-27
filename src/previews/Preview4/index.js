@@ -71,6 +71,7 @@ const Preview4 = ({
 
   return (
     <StyledPreviewBox
+      minWidth={minWidth}
       minHeight={minHeight}
       topBorderColor={buttonBgColor}
       isFullPreview={isFullPreview}
