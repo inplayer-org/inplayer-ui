@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.27] - 28-02-2020
+
+### Added
+
+- Set loginFooterLabel as optional prop and add default value
+
 # [2.0.0-beta.26] - 28-02-2020
 
 ### Added
