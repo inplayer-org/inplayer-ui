@@ -56,7 +56,7 @@ const Preview1 = ({
     preview_top_border: previewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
-    preview_buttons_text_color: buttonTextColor = colors.red,
+    preview_buttons_text_color: buttonTextColor = colors.white,
   },
   assetCountrySetId,
   assetDomainRestrictions,

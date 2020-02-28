@@ -35,7 +35,6 @@ export const TextElement = styled.div`
 
 export const Button = styled(TemplatesButton)`
   padding: 18px 26px;
-  height: 1rem;
 `;
 
 export const StyledTextWrapper = styled(TextWrapper)`
