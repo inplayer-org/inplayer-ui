@@ -29,6 +29,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview6 = ({
@@ -44,6 +45,7 @@ const Preview6 = ({
   height,
   minWidth,
   minHeight,
+  handleOpenModal,
 }: Props) => (
   <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
     <ImageWrapper backgroundImage={coverPhoto} />
@@ -52,7 +54,11 @@ const Preview6 = ({
       <TextEditor value={description} displayToolbar={false} readOnly />
       <FootService>
         <ButtonWrapper>
-          <Button buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          <Button
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
             <p>{buttonLabel}</p>
           </Button>
         </ButtonWrapper>

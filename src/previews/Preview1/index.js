@@ -5,7 +5,6 @@ import { Grid } from 'blocks';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import logo from 'assets/images/ip-icon-blue.svg';
 
 // Types
@@ -43,6 +42,7 @@ type Props = {
   minWidth?: string,
   height?: string,
   width?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview1 = ({
@@ -60,6 +60,7 @@ const Preview1 = ({
   previewNotAvailable,
   width,
   height,
+  handleOpenModal,
   minWidth,
 }: Props) => (
   <StyledPreviewBox minWidth={minWidth} width={width} height={height} topBorder={previewTopBorder}>
@@ -90,7 +91,11 @@ const Preview1 = ({
       </StyledCell>
       {displayBuyButton && (
         <Cell middle>
-          <TemplatesButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          <TemplatesButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
             <p>{previewButtonLabel}</p>
           </TemplatesButton>
         </Cell>
