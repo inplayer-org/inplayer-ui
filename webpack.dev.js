@@ -52,11 +52,19 @@ module.exports = {
     ],
   },
   resolve: {
+    modules: [path.resolve('./'), path.resolve('./node_modules')],
     extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {
       assets: path.resolve(__dirname, './src/assets'),
-      previews: path.resolve(__dirname, './src/previews'),
       components: path.resolve(__dirname, './src/components'),
+      blocks: path.resolve(__dirname, './src/blocks'),
+      elements: path.resolve(__dirname, './src/elements'),
+      modifiers: path.resolve(__dirname, './src/modifiers'),
+      utils: path.resolve(__dirname, './src/utils'),
+      config: path.resolve(__dirname, './src/config'),
+      types: path.resolve(__dirname, './src/types'),
+      theme: path.resolve(__dirname, './src/theme'),
+      previews: path.resolve(__dirname, './src/previews'),
     },
   },
   plugins: [
