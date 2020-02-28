@@ -29,7 +29,6 @@ type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
   previewUnavailable?: boolean,
-  isFullPreview?: boolean,
   width?: number,
   height?: number,
   minWidth?: string,
@@ -56,7 +55,6 @@ const Preview4 = ({
   },
   displayBuyButton,
   previewUnavailable,
-  isFullPreview,
   minWidth,
   minHeight,
   height,
@@ -72,7 +70,6 @@ const Preview4 = ({
       minWidth={minWidth}
       minHeight={minHeight}
       topBorderColor={buttonBgColor}
-      isFullPreview={isFullPreview}
       width={width}
       height={height}
     >
@@ -95,7 +92,7 @@ const Preview4 = ({
           </Icon>
         </StyledIconWrapper>
         <PreviewImage src={image} />
-        <StyledTextWrapper isFullPreview={isFullPreview}>
+        <StyledTextWrapper>
           <TextElement width={width}>
             <TextEditor
               value={previewTitle}
@@ -127,7 +124,6 @@ Preview4.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  isFullPreview: true,
   minWidth: undefined,
   minHeight: '390px',
   height: undefined,

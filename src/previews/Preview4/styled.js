@@ -40,7 +40,7 @@ export const Button = styled(TemplatesButton)`
 
 export const StyledTextWrapper = styled(TextWrapper)`
   align-items: self-end;
-  margin: ${ifProp('isFullPreview', '10% 5%', '5%')};
+  margin: 10% 5%;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
