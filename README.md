@@ -7,9 +7,9 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
 
+[![CI]][ci]
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
-[![CI]][ci]
 
 ```sh
 yarn add @inplayer-org/inplayer-ui styled-components
