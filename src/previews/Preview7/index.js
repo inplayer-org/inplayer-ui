@@ -35,6 +35,7 @@ type Props = {
   minHeight?: string,
   minWidth?: string,
   isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview7 = ({
@@ -54,46 +55,47 @@ const Preview7 = ({
   height,
   minWidth,
   minHeight,
-  isRestrictedAsset,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox
-      minWidth={minWidth}
-      minHeight={minHeight}
-      topBorder={previewTopBorder}
-      circleImage
-      width={width}
-      height={height}
-    >
-      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper>
-        <PreviewImage src={image} imageWidth="250px" imageBorderRadius />
-        <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
-          <InPlayerIcon name="lock" />
-        </StyledIconWrapper>
-      </StyledImageWrapper>
-      <ItemDetails>
-        <PreviewHeader>
-          <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
-        </PreviewHeader>
-        <ItemContent>
-          <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
-        </ItemContent>
-      </ItemDetails>
-      {displayBuyButton && (
-        <ButtonWrapper>
-          <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-            {previewButtonLabel}
-          </BuyButton>
-        </ButtonWrapper>
-      )}
-      <StyledPreviewFooter color={colors.fontGray}>
-        <Typography variant="p">Already have access? Login here with your account.</Typography>
-      </StyledPreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+  handleOpenModal,
+}: Props) => (
+  <StyledPreviewBox
+    minWidth={minWidth}
+    minHeight={minHeight}
+    topBorder={previewTopBorder}
+    circleImage
+    width={width}
+    height={height}
+  >
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <StyledImageWrapper>
+      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
+      <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
+        <InPlayerIcon name="lock" />
+      </StyledIconWrapper>
+    </StyledImageWrapper>
+    <ItemDetails>
+      <PreviewHeader>
+        <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
+      </PreviewHeader>
+      <ItemContent>
+        <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
+      </ItemContent>
+    </ItemDetails>
+    {displayBuyButton && (
+      <ButtonWrapper>
+        <BuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </BuyButton>
+      </ButtonWrapper>
+    )}
+    <StyledPreviewFooter color={colors.fontGray}>
+      <Typography variant="p">Already have access? Login here with your account.</Typography>
+    </StyledPreviewFooter>
+  </StyledPreviewBox>
+);
 
 Preview7.defaultProps = {
   branding: {},

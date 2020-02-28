@@ -32,6 +32,7 @@ type OwnProps = {
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview3 = ({
@@ -46,43 +47,46 @@ const Preview3 = ({
   height,
   minWidth,
   minHeight,
-  isRestrictedAsset,
-}: OwnProps) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox minWidth={minWidth} color={buttonBgColor} width={width} height={height}>
-      <StyledImageHolder backgroundImage={image}>
-        <Header color={colors.fontLightGray}>
-          Already have access? Login with your InPlayer account
-        </Header>
-        <StyledTextWrapper showInPreview={showInPreview}>
-          <PaywallExplain color={buttonBgColor}>
-            <PaywallExplainSpan>
-              <InPlayerIcon name="diamond" /> premium content
-            </PaywallExplainSpan>
-          </PaywallExplain>
-          <TitleWrapper>
-            <TitleBorder color={buttonBgColor}>
-              <TextEditor
-                value={previewTitle}
-                displayToolbar={false}
-                textColor={colors.white}
-                readOnly
-              />
-            </TitleBorder>
-            <StyledIcon name="play" color={buttonBgColor} />
-          </TitleWrapper>
-          <TextEditor
-            value={previewDescription}
-            displayToolbar={false}
-            textColor={colors.white}
-            readOnly
-          />
-        </StyledTextWrapper>
-      </StyledImageHolder>
-    </StyledPreviewBox>
-  );
-};
+  handleOpenModal,
+}: OwnProps) => (
+  <StyledPreviewBox
+    minHeight={minHeight}
+    minWidth={minWidth}
+    color={buttonBgColor}
+    width={width}
+    height={height}
+  >
+    <StyledImageHolder backgroundImage={imageUrl}>
+      <Header color={colors.fontLightGray}>
+        Already have access? Login with your InPlayer account
+      </Header>
+      <StyledTextWrapper showInPreview={showInPreview} onClick={handleOpenModal}>
+        <PaywallExplain color={buttonBgColor}>
+          <PaywallExplainSpan>
+            <InPlayerIcon name="diamond" /> premium content
+          </PaywallExplainSpan>
+        </PaywallExplain>
+        <TitleWrapper>
+          <TitleBorder color={buttonBgColor}>
+            <TextEditor
+              value={previewTitle}
+              displayToolbar={false}
+              textColor={colors.white}
+              readOnly
+            />
+          </TitleBorder>
+          <StyledIcon name="play" color={buttonBgColor} />
+        </TitleWrapper>
+        <TextEditor
+          value={previewDescription}
+          displayToolbar={false}
+          textColor={colors.white}
+          readOnly
+        />
+      </StyledTextWrapper>
+    </StyledImageHolder>
+  </StyledPreviewBox>
+);
 
 Preview3.defaultProps = {
   branding: {},

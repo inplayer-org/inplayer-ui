@@ -31,6 +31,7 @@ type Props = {
   minHeight?: string,
   minWidth?: string,
   isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview6 = ({
@@ -46,32 +47,33 @@ const Preview6 = ({
   height,
   minWidth,
   minHeight,
-  isRestrictedAsset,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
-      <ImageWrapper backgroundImage={image} />
-      <ItemDetails>
-        <TextEditor value={title} displayToolbar={false} readOnly />
-        <TextEditor value={description} displayToolbar={false} readOnly />
-        <FootService>
-          <ButtonWrapper>
-            <Button buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-              <p>{buttonLabel}</p>
-            </Button>
-          </ButtonWrapper>
-          <PreviewFooter>
-            <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
-            <IconHolder>
-              <Icon name="lock" />
-            </IconHolder>
-          </PreviewFooter>
-        </FootService>
-      </ItemDetails>
-    </StyledPreviewBox>
-  );
-};
+  handleOpenModal,
+}: Props) => (
+  <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
+    <ImageWrapper backgroundImage={coverPhoto} />
+    <ItemDetails>
+      <TextEditor value={title} displayToolbar={false} readOnly />
+      <TextEditor value={description} displayToolbar={false} readOnly />
+      <FootService>
+        <ButtonWrapper>
+          <Button
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            <p>{buttonLabel}</p>
+          </Button>
+        </ButtonWrapper>
+        <PreviewFooter>
+          <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
+          <IconHolder>
+            <Icon name="lock" />
+          </IconHolder>
+        </PreviewFooter>
+      </FootService>
+    </ItemDetails>
+  </StyledPreviewBox>
+);
 
 Preview6.defaultProps = {
   branding: {},
