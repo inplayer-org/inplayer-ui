@@ -7,6 +7,7 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
 
+[![Build Status][build-badge]][build]
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
 

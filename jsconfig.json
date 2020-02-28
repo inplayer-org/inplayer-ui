@@ -13,8 +13,9 @@
       "helpers/*": ["tests/helpers/*"],
       "config/*": ["src/config/*"],
       "types/*": ["src/types/*"],
-      "theme/*": ["src/theme/*"]
+      "theme/*": ["src/theme/*"],
+      "previews/*": ["src/previews/*"]
     }
   },
-  "exclude": ["node_modules", "docs", "dist"]
+  "exclude": ["node_modules", "docs", "build"]
 }
