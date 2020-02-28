@@ -11,6 +11,15 @@
   "directories": {
     "src": "src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inplayer-org/inplayer-ui"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inplayer-org/inplayer-ui/issues"
+  },
+  "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "prebuild": "rimraf ./build",
@@ -29,15 +38,6 @@
     "pregenerate:docs": "rimraf ./docs",
     "generate:docs": "yarn styleguide:build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/inplayer-org/inplayer-ui"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/inplayer-org/inplayer-ui/issues"
-  },
-  "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "peerDependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -112,5 +112,10 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }
