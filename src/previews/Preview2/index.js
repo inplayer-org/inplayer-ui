@@ -48,35 +48,39 @@ const Preview2 = ({
   height,
   width,
   handleOpenModal,
-}: Props) => (
-  <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
-    <StyledImageHolder
-      showInPreview={showInPreview}
-      backgroundImage={imageUrl}
-      descriptionLength={previewDescription.length}
-    />
-    <AssetDetails>
-      <PaywallExplain color={buttonBgColor}>
-        <PaywallExplainSpan>
-          <StyledIcon name="star" />
-          This premium content requires an account to access.
-        </PaywallExplainSpan>
-      </PaywallExplain>
-      <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-      <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-      <BuyButton
-        buttonBgColor={buttonBgColor}
-        buttonTextColor={buttonTextColor}
-        onClick={handleOpenModal}
-      >
-        {previewButtonLabel}
-      </BuyButton>
-      <Footer color={colors.fontGray}>
-        <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
-      </Footer>
-    </AssetDetails>
-  </StyledPreviewBox>
-);
+  isRestrictedAsset,
+}: Props) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
+      <StyledImageHolder
+        showInPreview={showInPreview}
+        backgroundImage={image}
+        descriptionLength={previewDescription.length}
+      />
+      <AssetDetails>
+        <PaywallExplain color={buttonBgColor}>
+          <PaywallExplainSpan>
+            <StyledIcon name="star" />
+            This premium content requires an account to access.
+          </PaywallExplainSpan>
+        </PaywallExplain>
+        <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+        <BuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </BuyButton>
+        <Footer color={colors.fontGray}>
+          <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
+        </Footer>
+      </AssetDetails>
+    </StyledPreviewBox>
+  );
+};
 
 Preview2.defaultProps = {
   showInPreview: true,
