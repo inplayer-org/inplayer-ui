@@ -23,7 +23,6 @@ import {
 } from './styled';
 
 type Props = {
-  showInPreview?: boolean,
   branding?: Branding,
   minWidth?: string,
   minHeight?: string,
@@ -42,7 +41,6 @@ const Preview2 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  showInPreview,
   minWidth,
   minHeight,
   height,
@@ -53,11 +51,7 @@ const Preview2 = ({
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
-      <StyledImageHolder
-        showInPreview={showInPreview}
-        backgroundImage={image}
-        descriptionLength={previewDescription.length}
-      />
+      <StyledImageHolder backgroundImage={image} descriptionLength={previewDescription.length} />
       <AssetDetails>
         <PaywallExplain color={buttonBgColor}>
           <PaywallExplainSpan>
@@ -83,7 +77,6 @@ const Preview2 = ({
 };
 
 Preview2.defaultProps = {
-  showInPreview: true,
   branding: {},
   minWidth: '500px',
   minHeight: '400px',

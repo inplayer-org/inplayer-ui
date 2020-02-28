@@ -54,7 +54,7 @@ export const PaywallExplainSpan = styled(ExplainSpan)`
 export const StyledTextWrapper = styled(TextWrapper)`
   position: relative;
   justify-content: flex-end;
-  height: ${ifProp('showInPreview', '350px', '700px')};
+  height: 350px;
   width: 50%;
   padding: 0 2%;
 `;

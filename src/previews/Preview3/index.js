@@ -26,7 +26,6 @@ import {
 
 type OwnProps = {
   branding?: Branding,
-  showInPreview?: boolean,
   width?: string,
   height?: string,
   minWidth?: string,
@@ -42,7 +41,6 @@ const Preview3 = ({
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
   },
-  showInPreview,
   width,
   height,
   minWidth,
@@ -63,7 +61,7 @@ const Preview3 = ({
         <Header color={colors.fontLightGray}>
           Already have access? Login with your InPlayer account
         </Header>
-        <StyledTextWrapper showInPreview={showInPreview} onClick={handleOpenModal}>
+        <StyledTextWrapper onClick={handleOpenModal}>
           <PaywallExplain color={buttonBgColor}>
             <PaywallExplainSpan>
               <InPlayerIcon name="diamond" /> premium content
@@ -94,7 +92,6 @@ const Preview3 = ({
 
 Preview3.defaultProps = {
   branding: {},
-  showInPreview: true,
   minWidth: '450px',
   minHeight: undefined,
   height: undefined,
