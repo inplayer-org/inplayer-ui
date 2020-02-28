@@ -85,7 +85,7 @@ Preview5.defaultProps = {
   minWidth: undefined,
   minHeight: '420px',
   height: '60vh',
-  width: '80vh',
+  width: '60vh',
 };
 
 export default Preview5;
