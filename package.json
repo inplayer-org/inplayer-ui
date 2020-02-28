@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "2.0.0-beta.25",
+  "version": "2.0.0-beta.26",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "build/inplayer-ui.min.js",
