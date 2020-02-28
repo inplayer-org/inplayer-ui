@@ -734,3 +734,121 @@ interface AvatarProps {
 }
 
 export declare const Avatar: FunctionComponent<AvatarProps>
+
+export interface Branding {
+  brand_name?: string;
+  isDefault?: boolean;
+  paywall_cover_photo?: string;
+  preview_top_border?: boolean;
+  inplayer_protected_label?: boolean;
+  preview_buttons_bg_color?: string;
+  preview_buttons_text_color?: string;
+  paywall_brand_logo?: string;
+  paywall_primary_color?: string;
+  paywall_secondary_color?: string;
+  paywall_buttons_bg_color?: string;
+  paywall_buttons_text_color?: string;
+  displayBtnColorPicker?: boolean;
+  displayTextColorPicker?: boolean;
+  displayPrimaryColorPicker?: boolean;
+  displaySecondaryColorPicker?: boolean;
+  displayModalBtnColorPicker?: boolean;
+  displayModalTextColorPicker?: boolean;
+  paywall_footer?: string;
+  [key: string]: any;
+}
+
+interface Preview1Props {
+  branding?: Branding,
+  displayBuyButton?: boolean,
+  previewUnavailable?: boolean,
+  minWidth?: string,
+  height?: string,
+  width?: string,
+  loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview1: FunctionComponent<Preview1Props>;
+
+interface Preview2Props {
+  branding?: Branding,
+  minWidth?: string,
+  minHeight?: string,
+  height?: string,
+  width?: string,
+  loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview2: FunctionComponent<Preview2Props>;
+
+interface Preview3Props {
+  branding?: Branding,
+  width?: string,
+  height?: string,
+  minWidth?: string,
+  minHeight?: string,
+  loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview3: FunctionComponent<Preview3Props>;
+
+interface Preview4Props {
+  branding?: Branding,
+  displayBuyButton?: boolean,
+  previewUnavailable?: boolean,
+  width?: number,
+  height?: number,
+  minWidth?: string,
+  minHeight?: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview4: FunctionComponent<Preview4Props>;
+
+interface Preview5Props {
+  branding?: Branding,
+  width?: string,
+  height?: string,
+  minWidth?: string,
+  minHeight?: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview5: FunctionComponent<Preview5Props>;
+
+interface Preview6Props {
+  branding?: Branding,
+  width?: string,
+  height?: string,
+  minHeight?: string,
+  minWidth?: string,
+  loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview6: FunctionComponent<Preview6Props>;
+
+interface Preview7Props {
+  branding?: Branding,
+  displayBuyButton?: boolean,
+  previewUnavailable?: boolean,
+  width?: string,
+  height?: string,
+  minHeight?: string,
+  minWidth?: string,
+  loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
+  handleOpenModal: (e: any) => any,
+}
+
+export declare const Preview7: FunctionComponent<Preview7Props>;
+
