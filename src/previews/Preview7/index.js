@@ -33,6 +33,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview7 = ({
@@ -52,6 +53,7 @@ const Preview7 = ({
   height,
   minWidth,
   minHeight,
+  handleOpenModal,
 }: Props) => (
   <StyledPreviewBox
     minWidth={minWidth}
@@ -78,7 +80,11 @@ const Preview7 = ({
     </ItemDetails>
     {displayBuyButton && (
       <ButtonWrapper>
-        <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+        <BuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
           {previewButtonLabel}
         </BuyButton>
       </ButtonWrapper>

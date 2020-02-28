@@ -33,6 +33,7 @@ type Props = {
   height?: number,
   minWidth?: string,
   minHeight?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const removeTags = (str: string) =>
@@ -58,6 +59,7 @@ const Preview4 = ({
   minHeight,
   height,
   width,
+  handleOpenModal,
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
@@ -74,7 +76,11 @@ const Preview4 = ({
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledContainer columns="1fr">
         {displayBuyButton && (
-          <Button buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          <Button
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
             {previewButtonLabel}
           </Button>
         )}

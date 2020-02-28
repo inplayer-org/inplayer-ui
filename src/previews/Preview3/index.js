@@ -30,6 +30,7 @@ type OwnProps = {
   height?: string,
   minWidth?: string,
   minHeight?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview3 = ({
@@ -44,6 +45,7 @@ const Preview3 = ({
   height,
   minWidth,
   minHeight,
+  handleOpenModal,
 }: OwnProps) => (
   <StyledPreviewBox
     minHeight={minHeight}
@@ -56,7 +58,7 @@ const Preview3 = ({
       <Header color={colors.fontLightGray}>
         Already have access? Login with your InPlayer account
       </Header>
-      <StyledTextWrapper showInPreview={showInPreview}>
+      <StyledTextWrapper showInPreview={showInPreview} onClick={handleOpenModal}>
         <PaywallExplain color={buttonBgColor}>
           <PaywallExplainSpan>
             <InPlayerIcon name="diamond" /> premium content
