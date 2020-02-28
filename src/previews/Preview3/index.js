@@ -5,6 +5,7 @@ import colors from 'config/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 import { Branding } from '../types/branding';
@@ -30,6 +31,7 @@ type OwnProps = {
   height?: string,
   minWidth?: string,
   minHeight?: string,
+  isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
 
@@ -46,45 +48,49 @@ const Preview3 = ({
   minWidth,
   minHeight,
   handleOpenModal,
-}: OwnProps) => (
-  <StyledPreviewBox
-    minHeight={minHeight}
-    minWidth={minWidth}
-    color={buttonBgColor}
-    width={width}
-    height={height}
-  >
-    <StyledImageHolder backgroundImage={imageUrl}>
-      <Header color={colors.fontLightGray}>
-        Already have access? Login with your InPlayer account
-      </Header>
-      <StyledTextWrapper showInPreview={showInPreview} onClick={handleOpenModal}>
-        <PaywallExplain color={buttonBgColor}>
-          <PaywallExplainSpan>
-            <InPlayerIcon name="diamond" /> premium content
-          </PaywallExplainSpan>
-        </PaywallExplain>
-        <TitleWrapper>
-          <TitleBorder color={buttonBgColor}>
-            <TextEditor
-              value={previewTitle}
-              displayToolbar={false}
-              textColor={colors.white}
-              readOnly
-            />
-          </TitleBorder>
-          <StyledIcon name="play" color={buttonBgColor} />
-        </TitleWrapper>
-        <TextEditor
-          value={previewDescription}
-          displayToolbar={false}
-          textColor={colors.white}
-          readOnly
-        />
-      </StyledTextWrapper>
-    </StyledImageHolder>
-  </StyledPreviewBox>
-);
+  isRestrictedAsset,
+}: OwnProps) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox
+      minHeight={minHeight}
+      minWidth={minWidth}
+      color={buttonBgColor}
+      width={width}
+      height={height}
+    >
+      <StyledImageHolder backgroundImage={image}>
+        <Header color={colors.fontLightGray}>
+          Already have access? Login with your InPlayer account
+        </Header>
+        <StyledTextWrapper showInPreview={showInPreview} onClick={handleOpenModal}>
+          <PaywallExplain color={buttonBgColor}>
+            <PaywallExplainSpan>
+              <InPlayerIcon name="diamond" /> premium content
+            </PaywallExplainSpan>
+          </PaywallExplain>
+          <TitleWrapper>
+            <TitleBorder color={buttonBgColor}>
+              <TextEditor
+                value={previewTitle}
+                displayToolbar={false}
+                textColor={colors.white}
+                readOnly
+              />
+            </TitleBorder>
+            <StyledIcon name="play" color={buttonBgColor} />
+          </TitleWrapper>
+          <TextEditor
+            value={previewDescription}
+            displayToolbar={false}
+            textColor={colors.white}
+            readOnly
+          />
+        </StyledTextWrapper>
+      </StyledImageHolder>
+    </StyledPreviewBox>
+  );
+};
 
 Preview3.defaultProps = {
   branding: {},
@@ -93,6 +99,7 @@ Preview3.defaultProps = {
   minHeight: undefined,
   height: undefined,
   width: undefined,
+  isRestrictedAsset: false,
 };
 
 export default Preview3;

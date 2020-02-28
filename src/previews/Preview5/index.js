@@ -5,6 +5,7 @@ import { lighten } from 'polished';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 import TextEditor from '../components/TextEditor';
@@ -32,6 +33,7 @@ type OwnProps = {
   height?: string,
   minWidth?: string,
   minHeight?: string,
+  isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
 
@@ -49,36 +51,40 @@ const Preview5 = ({
   minHeight,
   minWidth,
   handleOpenModal,
-}: OwnProps) => (
-  <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>
-    <ImageWrapper height={height} backgroundImage={imageUrl}>
-      <Overlay />
-      <BuyButtonHolder>
-        <BuyButtonBorder>
-          <BuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </BuyButton>
-        </BuyButtonBorder>
-      </BuyButtonHolder>
-    </ImageWrapper>
-    <ItemDetails height={height}>
-      <PaywallExplain color={lighten(0.01, buttonBgColor)}>
-        <StyledIcon name="diamond" />
-        <PaywallExplainSpan>Premium content</PaywallExplainSpan>
-      </PaywallExplain>
-      <TitleHolder>
-        <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-      </TitleHolder>
-      <DescriptionHolder>
-        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-      </DescriptionHolder>
-    </ItemDetails>
-  </StyledPreviewBox>
-);
+  isRestrictedAsset,
+}: OwnProps) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>
+      <ImageWrapper height={height} backgroundImage={image}>
+        <Overlay />
+        <BuyButtonHolder>
+          <BuyButtonBorder>
+            <BuyButton
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </BuyButton>
+          </BuyButtonBorder>
+        </BuyButtonHolder>
+      </ImageWrapper>
+      <ItemDetails height={height}>
+        <PaywallExplain color={lighten(0.01, buttonBgColor)}>
+          <StyledIcon name="diamond" />
+          <PaywallExplainSpan>Premium content</PaywallExplainSpan>
+        </PaywallExplain>
+        <TitleHolder>
+          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        </TitleHolder>
+        <DescriptionHolder>
+          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+        </DescriptionHolder>
+      </ItemDetails>
+    </StyledPreviewBox>
+  );
+};
 
 Preview5.defaultProps = {
   branding: {},
@@ -86,6 +92,7 @@ Preview5.defaultProps = {
   minHeight: '420px',
   height: '60vh',
   width: '60vh',
+  isRestrictedAsset: false,
 };
 
 export default Preview5;
