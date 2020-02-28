@@ -45,7 +45,13 @@ const Preview3 = ({
   minWidth,
   minHeight,
 }: OwnProps) => (
-  <StyledPreviewBox minWidth={minWidth} color={buttonBgColor} width={width} height={height}>
+  <StyledPreviewBox
+    minHeight={minHeight}
+    minWidth={minWidth}
+    color={buttonBgColor}
+    width={width}
+    height={height}
+  >
     <StyledImageHolder backgroundImage={imageUrl}>
       <Header color={colors.fontLightGray}>
         Already have access? Login with your InPlayer account
