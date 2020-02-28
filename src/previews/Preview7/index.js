@@ -23,6 +23,7 @@ import {
   ButtonWrapper,
   BuyButton,
   StyledPreviewFooter,
+  FooterLink,
 } from './styled';
 
 type Props = {
@@ -33,6 +34,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  loginFooterLabel: string,
   handleOpenModal: (e: any) => any,
 };
 
@@ -54,6 +56,7 @@ const Preview7 = ({
   minWidth,
   minHeight,
   handleOpenModal,
+  loginFooterLabel,
 }: Props) => (
   <StyledPreviewBox
     minWidth={minWidth}
@@ -90,7 +93,9 @@ const Preview7 = ({
       </ButtonWrapper>
     )}
     <StyledPreviewFooter color={colors.fontGray}>
-      <Typography variant="p">Already have access? Login here with your account.</Typography>
+      <FooterLink href="#login" onClick={handleOpenModal}>
+        {loginFooterLabel}
+      </FooterLink>
     </StyledPreviewFooter>
   </StyledPreviewBox>
 );

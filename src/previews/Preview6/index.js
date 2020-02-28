@@ -29,6 +29,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  loginFooterLabel: string,
   handleOpenModal: (e: any) => any,
 };
 
@@ -46,6 +47,7 @@ const Preview6 = ({
   minWidth,
   minHeight,
   handleOpenModal,
+  loginFooterLabel,
 }: Props) => (
   <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
     <ImageWrapper backgroundImage={coverPhoto} />
@@ -63,7 +65,9 @@ const Preview6 = ({
           </Button>
         </ButtonWrapper>
         <PreviewFooter>
-          <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
+          <FooterLink href="#login" onClick={handleOpenModal}>
+            {loginFooterLabel}
+          </FooterLink>
           <IconHolder>
             <Icon name="lock" />
           </IconHolder>

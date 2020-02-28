@@ -16,6 +16,16 @@ export const StyledPreviewBox = styled(PreviewBox)`
   flex-direction: column;
 `;
 
+export const FooterLink = styled.a`
+  margin: 0;
+  padding: 0;
+  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
+  vertical-align: baseline;
+  background: transparent;
+  line-height: inherit;
+  color: ${colors.fontGray};
+`;
+
 export const ImageWrapper = styled(ImageHolder)`
   height: 50%;
   width: 250px;
