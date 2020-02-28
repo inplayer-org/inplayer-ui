@@ -16,7 +16,7 @@ const directions = {
     left: "0,16 32,0 32,32"
 };
 
-export const Loader = ({ height = 100, width = 100, color = "#2062a1", lineWidth = 2, direction = "right" }: Props) => {
+const Loader = ({ height = 100, width = 100, color = "#2062a1", lineWidth = 2, direction = "right" }: Props) => {
     return (
         <StyledSpinner id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
             <polygon fill="transparent" stroke={color} strokeWidth={lineWidth} points={directions[direction]} />
@@ -39,3 +39,5 @@ const StyledSpinner = styled.svg`
         animation: ${dash} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
     }
 `;
+
+export default Loader;
