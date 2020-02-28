@@ -60,7 +60,6 @@ export const BuyButtonBorder = styled.div`
 
 export const BuyButton = styled(TemplatesButton)`
   background-color: ${({ buttonBgColor }) => transparentize(0.1, buttonBgColor)};
-  vertical-align: baseline;
   outline: none;
   border: none;
   font-size: ${({ theme }) => theme.font.sizes.large};
