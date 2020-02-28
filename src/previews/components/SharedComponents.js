@@ -216,7 +216,7 @@ export const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const PaywallExplain = styled.div`
+export const PaywallDescription = styled.div`
   color: ${({ color }) => color};
   display: block;
   font-size: ${({ theme }) => theme.font.sizes.small};
@@ -228,7 +228,7 @@ export const FooterLink = styled.a`
   color: inherit;
 `;
 
-export const ExplainSpan = styled.span`
+export const DescriptionSpan = styled.span`
   vertical-align: middle;
   display: inline-block;
   text-align: left;

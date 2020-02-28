@@ -11,14 +11,14 @@ import { type Branding } from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
-import { PaywallExplain, FooterLink } from '../components/SharedComponents';
+import { PaywallDescription, FooterLink } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
   AssetDetails,
   BuyButton,
   StyledIcon,
-  PaywallExplainSpan,
+  PaywallDescriptionSpan,
   Footer,
 } from './styled';
 
@@ -53,12 +53,12 @@ const Preview2 = ({
     <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
       <StyledImageHolder backgroundImage={image} descriptionLength={previewDescription.length} />
       <AssetDetails>
-        <PaywallExplain color={buttonBgColor}>
-          <PaywallExplainSpan>
+        <PaywallDescription color={buttonBgColor}>
+          <PaywallDescriptionSpan>
             <StyledIcon name="star" />
             This premium content requires an account to access.
-          </PaywallExplainSpan>
-        </PaywallExplain>
+          </PaywallDescriptionSpan>
+        </PaywallDescription>
         <TextEditor value={previewTitle} displayToolbar={false} readOnly />
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
         <BuyButton

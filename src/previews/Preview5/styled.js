@@ -7,7 +7,7 @@ import { transparentize } from 'polished';
 // Components
 import {
   PreviewBox,
-  ExplainSpan,
+  DescriptionSpan,
   ImageHolder,
   TemplatesButton,
 } from '../components/SharedComponents';
@@ -90,7 +90,7 @@ export const ItemDetails = styled.div`
   background: ${transparentize(0.1, colors.gray)};
 `;
 
-export const PaywallExplainSpan = styled(ExplainSpan)`
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   padding: 0;
   font-size: ${({ theme }) => theme.font.sizes.small};
   text-transform: uppercase;

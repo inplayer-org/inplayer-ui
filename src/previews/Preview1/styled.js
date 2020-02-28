@@ -11,8 +11,8 @@ import { fontSizes, fontWeights } from 'utils';
 import {
   PreviewFooter,
   PreviewBox,
-  PaywallExplain,
-  ExplainSpan,
+  PaywallDescription,
+  DescriptionSpan,
 } from '../components/SharedComponents';
 
 const { Cell } = Grid;
@@ -27,7 +27,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;
 `;
 
-export const StyledPaywallExplain = styled(PaywallExplain)`
+export const StyledPaywallDescription = styled(PaywallDescription)`
   background: ${transparentize(0.6, colors.black)};
   box-sizing: border-box;
   padding: 3% 3%;
@@ -50,7 +50,7 @@ export const Protected = styled.strong`
   text-align: right;
 `;
 
-export const PaywallExplainSpan = styled(ExplainSpan)`
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   font-size: ${fontSizes('extraSmall')};
   width: 100%;
 `;
