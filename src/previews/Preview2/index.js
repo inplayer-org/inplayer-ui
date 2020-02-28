@@ -28,7 +28,7 @@ type Props = {
   minHeight?: string,
   height?: string,
   width?: string,
-  loginFooterLabel: String,
+  loginFooterLabel: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
