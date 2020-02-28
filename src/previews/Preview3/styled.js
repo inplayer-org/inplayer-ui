@@ -9,7 +9,7 @@ import { ifProp } from 'styled-tools';
 import {
   PreviewFooter,
   PreviewBox,
-  ExplainSpan,
+  DescriptionSpan,
   ImageHolder,
   TextWrapper,
 } from '../components/SharedComponents';
@@ -45,7 +45,7 @@ export const StyledImageHolder = styled(ImageHolder)`
     url(${({ backgroundImage }) => backgroundImage});
 `;
 
-export const PaywallExplainSpan = styled(ExplainSpan)`
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   padding-bottom: 13px;
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.font.sizes.small};

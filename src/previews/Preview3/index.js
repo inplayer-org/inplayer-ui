@@ -12,12 +12,12 @@ import { Branding } from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
-import { PaywallExplain } from '../components/SharedComponents';
+import { PaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   TitleWrapper,
   StyledImageHolder,
-  PaywallExplainSpan,
+  PaywallDescriptionSpan,
   StyledTextWrapper,
   Header,
   StyledIcon,
@@ -64,11 +64,11 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <PaywallExplain color={buttonBgColor}>
-            <PaywallExplainSpan>
+          <PaywallDescription color={buttonBgColor}>
+            <PaywallDescriptionSpan>
               <InPlayerIcon name="diamond" /> premium content
-            </PaywallExplainSpan>
-          </PaywallExplain>
+            </PaywallDescriptionSpan>
+          </PaywallDescription>
           <TitleWrapper>
             <TitleBorder color={buttonBgColor}>
               <TextEditor

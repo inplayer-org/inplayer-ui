@@ -24,9 +24,9 @@ import {
 import {
   StyledCell,
   StyledPreviewBox,
-  StyledPaywallExplain,
+  StyledPaywallDescription,
   Protected,
-  PaywallExplainSpan,
+  PaywallDescriptionSpan,
   Title,
   Logo,
   LockIcon,
@@ -79,12 +79,12 @@ const Preview1 = ({
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <ImageHolder>
         <PreviewImage src={image} />
-        <StyledPaywallExplain displayProtectedLabel={protectedLabel} color={colors.white}>
+        <StyledPaywallDescription displayProtectedLabel={protectedLabel} color={colors.white}>
           <PremiumContent>
             <LockIcon name="lock" />
-            <PaywallExplainSpan>
+            <PaywallDescriptionSpan>
               This premium content requires an account to access.
-            </PaywallExplainSpan>
+            </PaywallDescriptionSpan>
           </PremiumContent>
           <PremiumContent>
             <Protected>Protected by InPlayer</Protected>
@@ -92,7 +92,7 @@ const Preview1 = ({
               <Logo src={logo} alt="logo" />
             </a>
           </PremiumContent>
-        </StyledPaywallExplain>
+        </StyledPaywallDescription>
       </ImageHolder>
       <StyledContainer height="30%" columns="1fr 10rem" margin="0.5rem 0">
         <StyledCell middle>

@@ -11,7 +11,7 @@ import {
   ImageHolder,
   TemplatesButton,
   PreviewFooter,
-  ExplainSpan,
+  DescriptionSpan,
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
@@ -76,7 +76,7 @@ export const StyledIcon = styled(InPlayerIcon)`
   position: relative;
 `;
 
-export const PaywallExplainSpan = styled(ExplainSpan)`
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   padding-bottom: 20px;
 `;
 

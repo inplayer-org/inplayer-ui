@@ -12,7 +12,7 @@ import TextEditor from '../components/TextEditor';
 import { type Branding } from '../types/branding';
 
 // Components
-import { PaywallExplain } from '../components/SharedComponents';
+import { PaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -22,7 +22,7 @@ import {
   BuyButton,
   ItemDetails,
   StyledIcon,
-  PaywallExplainSpan,
+  PaywallDescriptionSpan,
   TitleHolder,
   DescriptionHolder,
 } from './styled';
@@ -71,10 +71,10 @@ const Preview5 = ({
         </BuyButtonHolder>
       </ImageWrapper>
       <ItemDetails height={height}>
-        <PaywallExplain color={lighten(0.01, buttonBgColor)}>
+        <PaywallDescription color={lighten(0.01, buttonBgColor)}>
           <StyledIcon name="diamond" />
-          <PaywallExplainSpan>Premium content</PaywallExplainSpan>
-        </PaywallExplain>
+          <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>
+        </PaywallDescription>
         <TitleHolder>
           <TextEditor value={previewTitle} displayToolbar={false} readOnly />
         </TitleHolder>
