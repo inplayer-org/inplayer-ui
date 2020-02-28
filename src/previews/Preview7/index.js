@@ -28,7 +28,7 @@ import {
 type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   width?: string,
   height?: string,
   minHeight?: string,
@@ -48,7 +48,7 @@ const Preview7 = ({
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   width,
   height,
   minWidth,
@@ -63,7 +63,7 @@ const Preview7 = ({
     width={width}
     height={height}
   >
-    {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
     <StyledImageWrapper>
       <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
       <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
@@ -98,7 +98,7 @@ const Preview7 = ({
 Preview7.defaultProps = {
   branding: {},
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   minWidth: '400px',
   minHeight: '460px',
   height: undefined,

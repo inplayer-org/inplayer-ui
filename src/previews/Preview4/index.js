@@ -27,7 +27,7 @@ import { type Branding } from '../types/branding';
 type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   isFullPreview?: boolean,
   width?: number,
   height?: number,
@@ -53,7 +53,7 @@ const Preview4 = ({
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   isFullPreview,
   minWidth,
   minHeight,
@@ -73,7 +73,7 @@ const Preview4 = ({
       width={width}
       height={height}
     >
-      {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledContainer columns="1fr">
         {displayBuyButton && (
           <Button
@@ -123,7 +123,7 @@ const Preview4 = ({
 Preview4.defaultProps = {
   branding: {},
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   isFullPreview: true,
   minWidth: undefined,
   minHeight: '390px',

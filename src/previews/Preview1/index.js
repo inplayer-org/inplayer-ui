@@ -38,7 +38,7 @@ const { Cell } = Grid;
 type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   minWidth?: string,
   height?: string,
   width?: string,
@@ -57,14 +57,14 @@ const Preview1 = ({
     preview_buttons_text_color: buttonTextColor = colors.red,
   },
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   width,
   height,
   handleOpenModal,
   minWidth,
 }: Props) => (
   <StyledPreviewBox minWidth={minWidth} width={width} height={height} topBorder={previewTopBorder}>
-    {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
     <ImageHolder>
       <PreviewImage src={imageUrl} />
       <StyledPaywallExplain displayProtectedLabel={protectedLabel} color={colors.white}>
@@ -110,7 +110,7 @@ const Preview1 = ({
 Preview1.defaultProps = {
   branding: {},
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   minWidth: '520px',
   width: undefined,
   height: undefined,
