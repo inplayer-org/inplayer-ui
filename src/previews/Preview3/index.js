@@ -30,7 +30,7 @@ type OwnProps = {
   height?: string,
   minWidth?: string,
   minHeight?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
@@ -99,6 +99,7 @@ Preview3.defaultProps = {
   height: undefined,
   width: undefined,
   isRestrictedAsset: false,
+  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview3;

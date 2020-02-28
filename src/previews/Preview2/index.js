@@ -28,7 +28,7 @@ type Props = {
   minHeight?: string,
   height?: string,
   width?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
@@ -87,6 +87,7 @@ Preview2.defaultProps = {
   height: undefined,
   width: undefined,
   isRestrictedAsset: false,
+  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview2;
