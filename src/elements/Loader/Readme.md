@@ -1,25 +1,22 @@
-A simple spinner/loader to use as fallback when doing async operations.
-By default it inherits the `primary.main` theme color.
-Can be passed a `color` prop with a custom hex color.
+## Loader
 
-```jsx static
-import { Spinner } from '@inplayer-org/inplayer-ui';
-
-function Page({ isLoading }) {
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  return (/* Your page content */);
-}
-```
-
-### Demo
+### Usage
 
 ```jsx
-<Typography variant="h6">Standard loader</Typography>
-<Loader />
+import {Triangle} from '@inplayer-org/inplayer-ui'
 
-<Typography variant="h6">Loader with custom color</Typography>
-<Loader color="#8cb" />
+const Loager = () => (
+    <Triangle height={150} width={150} direction="left" color="red" lineWidth={4} />
+)
+
+export const Loader;
+
 ```
+
+|   name    |     types    |   default  | Detail                            | Possible inputs |
+| :-----:   | :----------: | :--------: | :-----------:                     | :------------:  |
+| height    | Number       |  100       | Height of the svg spinner         |   any number |
+| width     | Number       |  100       | Width of the svg spinner          |   any number |
+| color     | String       |  "#2062a1" | Defines the color of the spinner  |   any color |
+| lineWidth | Number       |  2         | Defines the width of the lines    |   any number |
+| direction | String       | "right"    | Direction of the spinner          |   "up", "right", "down", "left" |
