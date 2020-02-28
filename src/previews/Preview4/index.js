@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
 import { InPlayerIcon } from 'elements';
@@ -28,11 +29,11 @@ type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
   previewUnavailable?: boolean,
-  isFullPreview?: boolean,
   width?: number,
   height?: number,
   minWidth?: string,
   minHeight?: string,
+  isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
 
@@ -54,22 +55,21 @@ const Preview4 = ({
   },
   displayBuyButton,
   previewUnavailable,
-  isFullPreview,
   minWidth,
   minHeight,
   height,
   width,
+  isRestrictedAsset,
   handleOpenModal,
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
       minWidth={minWidth}
       minHeight={minHeight}
       topBorderColor={buttonBgColor}
-      isFullPreview={isFullPreview}
       width={width}
       height={height}
     >
@@ -91,8 +91,8 @@ const Preview4 = ({
             <InPlayerIcon name="lock" />
           </Icon>
         </StyledIconWrapper>
-        <PreviewImage src={imageUrl} />
-        <StyledTextWrapper isFullPreview={isFullPreview}>
+        <PreviewImage src={image} />
+        <StyledTextWrapper>
           <TextElement width={width}>
             <TextEditor
               value={previewTitle}
@@ -124,11 +124,11 @@ Preview4.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  isFullPreview: true,
   minWidth: undefined,
   minHeight: '390px',
   height: undefined,
   width: undefined,
+  isRestrictedAsset: false,
 };
 
 export default Preview4;

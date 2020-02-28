@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
-import { InPlayerIcon, Typography } from 'elements';
+import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 
@@ -35,6 +36,7 @@ type Props = {
   minHeight?: string,
   minWidth?: string,
   loginFooterLabel: string,
+  isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 };
 
@@ -56,49 +58,53 @@ const Preview7 = ({
   minWidth,
   minHeight,
   handleOpenModal,
+  isRestrictedAsset,
   loginFooterLabel,
-}: Props) => (
-  <StyledPreviewBox
-    minWidth={minWidth}
-    minHeight={minHeight}
-    topBorder={previewTopBorder}
-    circleImage
-    width={width}
-    height={height}
-  >
-    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-    <StyledImageWrapper>
-      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
-      <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
-        <InPlayerIcon name="lock" />
-      </StyledIconWrapper>
-    </StyledImageWrapper>
-    <ItemDetails>
-      <PreviewHeader>
-        <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
-      </PreviewHeader>
-      <ItemContent>
-        <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
-      </ItemContent>
-    </ItemDetails>
-    {displayBuyButton && (
-      <ButtonWrapper>
-        <BuyButton
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
-          onClick={handleOpenModal}
-        >
-          {previewButtonLabel}
-        </BuyButton>
-      </ButtonWrapper>
-    )}
-    <StyledPreviewFooter color={colors.fontGray}>
-      <FooterLink href="#login" onClick={handleOpenModal}>
-        {loginFooterLabel}
-      </FooterLink>
-    </StyledPreviewFooter>
-  </StyledPreviewBox>
-);
+}: Props) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox
+      minWidth={minWidth}
+      minHeight={minHeight}
+      topBorder={previewTopBorder}
+      circleImage
+      width={width}
+      height={height}
+    >
+      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+      <StyledImageWrapper>
+        <PreviewImage src={image} imageWidth="250px" imageBorderRadius />
+        <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
+          <InPlayerIcon name="lock" />
+        </StyledIconWrapper>
+      </StyledImageWrapper>
+      <ItemDetails>
+        <PreviewHeader>
+          <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
+        </PreviewHeader>
+        <ItemContent>
+          <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
+        </ItemContent>
+      </ItemDetails>
+      {displayBuyButton && (
+        <ButtonWrapper>
+          <BuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </BuyButton>
+        </ButtonWrapper>
+      )}
+      <StyledPreviewFooter color={colors.fontGray}>
+        <FooterLink href="#login" onClick={handleOpenModal}>
+          {loginFooterLabel}
+        </FooterLink>
+      </StyledPreviewFooter>
+    </StyledPreviewBox>
+  );
+};
 
 Preview7.defaultProps = {
   branding: {},
@@ -108,6 +114,7 @@ Preview7.defaultProps = {
   minHeight: '460px',
   height: undefined,
   width: undefined,
+  isRestrictedAsset: false,
 };
 
 export default Preview7;
