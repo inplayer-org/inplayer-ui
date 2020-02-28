@@ -28,11 +28,12 @@ import {
 type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   width?: string,
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview7 = ({
@@ -47,11 +48,12 @@ const Preview7 = ({
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   width,
   height,
   minWidth,
   minHeight,
+  handleOpenModal,
 }: Props) => (
   <StyledPreviewBox
     minWidth={minWidth}
@@ -61,7 +63,7 @@ const Preview7 = ({
     width={width}
     height={height}
   >
-    {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
     <StyledImageWrapper>
       <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
       <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
@@ -78,7 +80,11 @@ const Preview7 = ({
     </ItemDetails>
     {displayBuyButton && (
       <ButtonWrapper>
-        <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+        <BuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
           {previewButtonLabel}
         </BuyButton>
       </ButtonWrapper>
@@ -92,7 +98,7 @@ const Preview7 = ({
 Preview7.defaultProps = {
   branding: {},
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   minWidth: '400px',
   minHeight: '460px',
   height: undefined,

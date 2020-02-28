@@ -4,7 +4,6 @@ import { transparentize } from 'polished';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
 import { InPlayerIcon } from 'elements';
@@ -27,15 +26,14 @@ import { type Branding } from '../types/branding';
 
 type Props = {
   branding?: Branding,
-  assetCountrySetId?: number,
-  assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   isFullPreview?: boolean,
   width?: number,
   height?: number,
   minWidth?: string,
   minHeight?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const removeTags = (str: string) =>
@@ -54,18 +52,15 @@ const Preview4 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  assetCountrySetId,
-  assetDomainRestrictions,
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   isFullPreview,
   minWidth,
   minHeight,
   height,
   width,
+  handleOpenModal,
 }: Props) => {
-  const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
-  const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
 
@@ -78,10 +73,14 @@ const Preview4 = ({
       width={width}
       height={height}
     >
-      {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledContainer columns="1fr">
         {displayBuyButton && (
-          <Button buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          <Button
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
             {previewButtonLabel}
           </Button>
         )}
@@ -92,7 +91,7 @@ const Preview4 = ({
             <InPlayerIcon name="lock" />
           </Icon>
         </StyledIconWrapper>
-        <PreviewImage src={assetPreviewImage} />
+        <PreviewImage src={imageUrl} />
         <StyledTextWrapper isFullPreview={isFullPreview}>
           <TextElement width={width}>
             <TextEditor
@@ -123,10 +122,8 @@ const Preview4 = ({
 
 Preview4.defaultProps = {
   branding: {},
-  assetCountrySetId: 0,
-  assetDomainRestrictions: [],
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   isFullPreview: true,
   minWidth: undefined,
   minHeight: '390px',

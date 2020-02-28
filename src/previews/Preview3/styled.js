@@ -18,8 +18,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? '350px'};
   border-top: 3px solid ${({ color }) => color};
   background: ${colors.white};
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   padding: 1% 3% 2% 3%;
   box-sizing: border-box;
   color: ${colors.fontDarkGray};

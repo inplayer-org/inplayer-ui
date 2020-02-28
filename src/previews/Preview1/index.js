@@ -5,7 +5,6 @@ import { Grid } from 'blocks';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import logo from 'assets/images/ip-icon-blue.svg';
 
 // Types
@@ -38,13 +37,12 @@ const { Cell } = Grid;
 
 type Props = {
   branding?: Branding,
-  assetCountrySetId?: number,
-  assetDomainRestrictions?: Array<any>,
   displayBuyButton?: boolean,
-  previewNotAvailable?: boolean,
+  previewUnavailable?: boolean,
   minWidth?: string,
   height?: string,
   width?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview1 = ({
@@ -58,70 +56,61 @@ const Preview1 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  assetCountrySetId,
-  assetDomainRestrictions,
   displayBuyButton,
-  previewNotAvailable,
+  previewUnavailable,
   width,
   height,
+  handleOpenModal,
   minWidth,
-}: Props) => {
-  const isRestrictedAsset = assetCountrySetId || assetDomainRestrictions.length !== 0;
-  const assetPreviewImage = isRestrictedAsset ? restrictedAssetImg : imageUrl || previewImg;
-
-  return (
-    <StyledPreviewBox
-      minWidth={minWidth}
-      width={width}
-      height={height}
-      topBorder={previewTopBorder}
-    >
-      {previewNotAvailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <ImageHolder>
-        <PreviewImage src={assetPreviewImage} />
-        <StyledPaywallExplain displayProtectedLabel={protectedLabel} color={colors.white}>
-          <PremiumContent>
-            <LockIcon name="lock" />
-            <PaywallExplainSpan>
-              This premium content requires an account to access.
-            </PaywallExplainSpan>
-          </PremiumContent>
-          <PremiumContent>
-            <Protected>Protected by InPlayer</Protected>
-            <a href="https://inplayer.com" target="_blank" rel="noopener noreferrer">
-              <Logo src={logo} alt="logo" />
-            </a>
-          </PremiumContent>
-        </StyledPaywallExplain>
-      </ImageHolder>
-      <StyledContainer height="30%" columns="1fr 10rem" margin="0.5rem 0">
-        <StyledCell middle>
-          <Title>
-            <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-          </Title>
-          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-        </StyledCell>
-        {displayBuyButton && (
-          <Cell middle>
-            <TemplatesButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-              <p>{previewButtonLabel}</p>
-            </TemplatesButton>
-          </Cell>
-        )}
-      </StyledContainer>
-      <StyledPreviewFooter color={colors.fontGray}>
-        <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
-      </StyledPreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+}: Props) => (
+  <StyledPreviewBox minWidth={minWidth} width={width} height={height} topBorder={previewTopBorder}>
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <ImageHolder>
+      <PreviewImage src={imageUrl} />
+      <StyledPaywallExplain displayProtectedLabel={protectedLabel} color={colors.white}>
+        <PremiumContent>
+          <LockIcon name="lock" />
+          <PaywallExplainSpan>
+            This premium content requires an account to access.
+          </PaywallExplainSpan>
+        </PremiumContent>
+        <PremiumContent>
+          <Protected>Protected by InPlayer</Protected>
+          <a href="https://inplayer.com" target="_blank" rel="noopener noreferrer">
+            <Logo src={logo} alt="logo" />
+          </a>
+        </PremiumContent>
+      </StyledPaywallExplain>
+    </ImageHolder>
+    <StyledContainer height="30%" columns="1fr 10rem" margin="0.5rem 0">
+      <StyledCell middle>
+        <Title>
+          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        </Title>
+        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+      </StyledCell>
+      {displayBuyButton && (
+        <Cell middle>
+          <TemplatesButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            <p>{previewButtonLabel}</p>
+          </TemplatesButton>
+        </Cell>
+      )}
+    </StyledContainer>
+    <StyledPreviewFooter color={colors.fontGray}>
+      <FooterLink>Already have access? Login with your InPlayer account</FooterLink>
+    </StyledPreviewFooter>
+  </StyledPreviewBox>
+);
 
 Preview1.defaultProps = {
   branding: {},
-  assetCountrySetId: undefined,
-  assetDomainRestrictions: [],
   displayBuyButton: true,
-  previewNotAvailable: false,
+  previewUnavailable: false,
   minWidth: '520px',
   width: undefined,
   height: undefined,

@@ -32,6 +32,7 @@ type OwnProps = {
   height?: string,
   minWidth?: string,
   minHeight?: string,
+  handleOpenModal: (e: any) => any,
 };
 
 const Preview5 = ({
@@ -47,13 +48,18 @@ const Preview5 = ({
   height,
   minHeight,
   minWidth,
+  handleOpenModal,
 }: OwnProps) => (
   <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>
     <ImageWrapper height={height} backgroundImage={imageUrl}>
       <Overlay />
       <BuyButtonHolder>
         <BuyButtonBorder>
-          <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+          <BuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
             {previewButtonLabel}
           </BuyButton>
         </BuyButtonBorder>
