@@ -4,7 +4,6 @@ import { transparentize } from 'polished';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
 import { InPlayerIcon } from 'elements';
