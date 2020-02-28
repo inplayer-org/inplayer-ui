@@ -5,6 +5,7 @@ import colors from 'config/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 
@@ -33,6 +34,7 @@ type Props = {
   height?: string,
   minHeight?: string,
   minWidth?: string,
+  isRestrictedAsset?: boolean,
 };
 
 const Preview7 = ({
@@ -52,42 +54,46 @@ const Preview7 = ({
   height,
   minWidth,
   minHeight,
-}: Props) => (
-  <StyledPreviewBox
-    minWidth={minWidth}
-    minHeight={minHeight}
-    topBorder={previewTopBorder}
-    circleImage
-    width={width}
-    height={height}
-  >
-    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-    <StyledImageWrapper>
-      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
-      <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
-        <InPlayerIcon name="lock" />
-      </StyledIconWrapper>
-    </StyledImageWrapper>
-    <ItemDetails>
-      <PreviewHeader>
-        <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
-      </PreviewHeader>
-      <ItemContent>
-        <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
-      </ItemContent>
-    </ItemDetails>
-    {displayBuyButton && (
-      <ButtonWrapper>
-        <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
-          {previewButtonLabel}
-        </BuyButton>
-      </ButtonWrapper>
-    )}
-    <StyledPreviewFooter color={colors.fontGray}>
-      <Typography variant="p">Already have access? Login here with your account.</Typography>
-    </StyledPreviewFooter>
-  </StyledPreviewBox>
-);
+  isRestrictedAsset,
+}: Props) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox
+      minWidth={minWidth}
+      minHeight={minHeight}
+      topBorder={previewTopBorder}
+      circleImage
+      width={width}
+      height={height}
+    >
+      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+      <StyledImageWrapper>
+        <PreviewImage src={image} imageWidth="250px" imageBorderRadius />
+        <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
+          <InPlayerIcon name="lock" />
+        </StyledIconWrapper>
+      </StyledImageWrapper>
+      <ItemDetails>
+        <PreviewHeader>
+          <TextEditor value={previewTitle} displayToolbar={false} isTextCenter readOnly />
+        </PreviewHeader>
+        <ItemContent>
+          <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
+        </ItemContent>
+      </ItemDetails>
+      {displayBuyButton && (
+        <ButtonWrapper>
+          <BuyButton buttonBgColor={buttonBgColor} buttonTextColor={buttonTextColor}>
+            {previewButtonLabel}
+          </BuyButton>
+        </ButtonWrapper>
+      )}
+      <StyledPreviewFooter color={colors.fontGray}>
+        <Typography variant="p">Already have access? Login here with your account.</Typography>
+      </StyledPreviewFooter>
+    </StyledPreviewBox>
+  );
+};
 
 Preview7.defaultProps = {
   branding: {},
@@ -97,6 +103,7 @@ Preview7.defaultProps = {
   minHeight: '460px',
   height: undefined,
   width: undefined,
+  isRestrictedAsset: false,
 };
 
 export default Preview7;

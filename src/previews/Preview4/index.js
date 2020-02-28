@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
 import { InPlayerIcon } from 'elements';
@@ -33,6 +34,7 @@ type Props = {
   height?: number,
   minWidth?: string,
   minHeight?: string,
+  isRestrictedAsset?: boolean,
 };
 
 const removeTags = (str: string) =>
@@ -58,10 +60,11 @@ const Preview4 = ({
   minHeight,
   height,
   width,
+  isRestrictedAsset,
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
       minWidth={minWidth}
@@ -85,7 +88,7 @@ const Preview4 = ({
             <InPlayerIcon name="lock" />
           </Icon>
         </StyledIconWrapper>
-        <PreviewImage src={imageUrl} />
+        <PreviewImage src={image} />
         <StyledTextWrapper isFullPreview={isFullPreview}>
           <TextElement width={width}>
             <TextEditor
@@ -123,6 +126,7 @@ Preview4.defaultProps = {
   minHeight: '390px',
   height: undefined,
   width: undefined,
+  isRestrictedAsset: false,
 };
 
 export default Preview4;
