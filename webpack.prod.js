@@ -23,11 +23,11 @@ module.exports = {
     rules: [
       { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/',
@@ -36,11 +36,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|ico)$/i,
+        test: /\.(jpe?g|png|gif|ico|svg)$/i,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
           },
         ],
       },
