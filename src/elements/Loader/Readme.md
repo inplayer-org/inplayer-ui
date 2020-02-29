@@ -3,13 +3,13 @@
 ### Usage
 
 ```jsx
-import {Triangle} from '@inplayer-org/inplayer-ui'
+import { Loader } from '@inplayer-org/inplayer-ui'
 
-const Loager = () => (
-    <Triangle height={150} width={150} direction="left" color="red" lineWidth={4} />
+const App = () => (
+    <Loader height={150} width={150} direction="left" color="red" lineWidth={4} />
 )
 
-export const Loader;
+export const App;
 
 ```
 
