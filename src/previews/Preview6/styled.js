@@ -7,8 +7,9 @@ import colors from 'config/colors';
 import { PreviewBox, TemplatesButton, ImageHolder } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  width: ${({ width }) => width ?? '580px'};
-  height: ${({ height }) => height ?? '250px'};
+  width: ${({ width }) => width ?? '850px'};
+  height: ${({ height }) => height ?? 'auto'};
+  max-width: ${({ width }) => width ?? '850px'};
   border: 1px solid ${colors.gray};
   padding: 1em;
   overflow: hidden;
@@ -77,9 +78,10 @@ export const ButtonWrapper = styled.div`
 export const FootService = styled.div`
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
   bottom: 15px;
   margin-right: 10px;
+  margin-top: 10px;
 `;
 
 export const ItemDetails = styled.div`
@@ -110,8 +112,8 @@ export const ImageWrapper = styled(ImageHolder)`
   margin: 0;
   border: 0;
   outline: 0;
-  width: 40%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   vertical-align: middle;
   float: left;
   background-image: url('${({ backgroundImage }) => backgroundImage}');

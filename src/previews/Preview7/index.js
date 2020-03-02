@@ -12,7 +12,7 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import { type Branding } from '../types/branding';
 
 // Components
-import { PreviewImage, OverlayLabel } from '../components/SharedComponents';
+import { OverlayLabel } from '../components/SharedComponents';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
@@ -25,6 +25,7 @@ import {
   BuyButton,
   StyledPreviewFooter,
   FooterLink,
+  StyledPreviewImage,
 } from './styled';
 
 type Props = {
@@ -73,7 +74,7 @@ const Preview7 = ({
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledImageWrapper>
-        <PreviewImage src={image} imageWidth="250px" imageBorderRadius />
+        <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
         <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
           <InPlayerIcon name="lock" />
         </StyledIconWrapper>

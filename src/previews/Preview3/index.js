@@ -94,10 +94,10 @@ const Preview3 = ({
 
 Preview3.defaultProps = {
   branding: {},
-  minWidth: '450px',
+  minWidth: '700px',
   minHeight: undefined,
   height: undefined,
-  width: undefined,
+  width: '700px',
   isRestrictedAsset: false,
 };
 

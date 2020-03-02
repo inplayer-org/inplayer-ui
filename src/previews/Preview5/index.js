@@ -90,8 +90,8 @@ Preview5.defaultProps = {
   branding: {},
   minWidth: undefined,
   minHeight: '420px',
-  height: '60vh',
-  width: '60vh',
+  height: undefined,
+  width: '700px',
   isRestrictedAsset: false,
 };
 
