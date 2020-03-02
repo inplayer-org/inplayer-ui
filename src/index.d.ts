@@ -463,7 +463,11 @@ export interface LabelProps {
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
 export interface LoaderProps {
+  height?: number;
+  width?: number;
   color?: string;
+  lineWidth?: number;
+  direction?: Object;
 }
 
 export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
@@ -765,7 +769,7 @@ interface Preview1Props {
   minWidth?: string,
   height?: string,
   width?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 }
@@ -778,7 +782,7 @@ interface Preview2Props {
   minHeight?: string,
   height?: string,
   width?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 }
@@ -791,7 +795,7 @@ interface Preview3Props {
   height?: string,
   minWidth?: string,
   minHeight?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 }
@@ -830,7 +834,7 @@ interface Preview6Props {
   height?: string,
   minHeight?: string,
   minWidth?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 }
@@ -845,7 +849,7 @@ interface Preview7Props {
   height?: string,
   minHeight?: string,
   minWidth?: string,
-  loginFooterLabel: string,
+  loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
   handleOpenModal: (e: any) => any,
 }

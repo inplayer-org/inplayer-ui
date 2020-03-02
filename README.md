@@ -7,7 +7,7 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">Modern React UI library. Code less, do more.</p>
 
-[![Build Status][build-badge]][build]
+[![CI]][ci]
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
 
@@ -242,6 +242,7 @@ Licensed under the MIT License, Copyright © 2018-present InPlayer.
 
 See [LICENSE](https://github.com/inplayer-org/inplayer-ui/blob/master/LICENSE) for more information.
 
+[ci]: https://github.com/inplayer-org/inplayer-ui/workflows/CI/badge.svg
 [version-badge]: https://img.shields.io/npm/v/@inplayer-org/inplayer-ui.svg?colorB=blue
 [package]: https://www.npmjs.com/package/@inplayer-org/inplayer-ui
 [license-badge]: https://img.shields.io/npm/l/@inplayer-org/inplayer-ui.svg?style=flat-square
