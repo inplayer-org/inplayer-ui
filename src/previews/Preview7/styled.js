@@ -29,7 +29,8 @@ export const FooterLink = styled.a`
 `;
 
 export const ImageWrapper = styled(ImageHolder)`
-  height: 50%;
+  height: 250px;
+  max-height: 250px;
   width: 250px;
   margin: auto;
 `;
