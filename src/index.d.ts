@@ -463,7 +463,11 @@ export interface LabelProps {
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
 export interface LoaderProps {
+  height?: number;
+  width?: number;
   color?: string;
+  lineWidth?: number;
+  direction?: Object;
 }
 
 export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
