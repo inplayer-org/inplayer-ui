@@ -35,7 +35,7 @@ type Props = {
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 };
 
 const removeTags = (str: string) =>
@@ -129,6 +129,7 @@ Preview4.defaultProps = {
   minHeight: '390px',
   height: undefined,
   width: '700px',
+  handleOpenModal: () => {},
   isRestrictedAsset: false,
 };
 

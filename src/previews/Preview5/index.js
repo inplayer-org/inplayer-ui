@@ -34,7 +34,7 @@ type OwnProps = {
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 };
 
 const Preview5 = ({
@@ -92,6 +92,7 @@ Preview5.defaultProps = {
   minHeight: '420px',
   height: undefined,
   width: '700px',
+  handleOpenModal: () => {},
   isRestrictedAsset: false,
 };
 
