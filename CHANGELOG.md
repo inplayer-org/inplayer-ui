@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.28] - 02-03-2020
+
+### Change
+
+- Redesign the Loader component
+
 # [2.0.0-beta.27] - 28-02-2020
 
 ### Change
