@@ -1,32 +1,55 @@
+// @flow
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { prop, ifProp } from 'styled-tools';
-import { uiColors } from 'utils';
-import { transparentize } from 'polished';
+import uiColors from 'utils/uiColors';
 
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
+interface Props {
+  height?: number;
+  width?: number;
+  color?: string;
+  lineWidth?: number;
+  direction?: string;
+}
 
-  100% {
-    transform: rotate(360deg);
+const directions = {
+  up: '16,0 32,32 0,32',
+  down: '0,0 32,0 16,32',
+  right: '0,0 32,16 0,32',
+  left: '0,16 32,0 32,32',
+};
+
+const dash = keyframes`
+    to {
+        stroke-dashoffset: 136;
+    }
+`;
+
+const StyledSpinner = styled.svg`
+  transform-origin: 50% 65%;
+
+  polygon {
+    stroke-dasharray: 17;
+    animation: ${dash} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+    stroke: ${ifProp('stroke', prop('stroke'), uiColors('primary.main'))};
   }
 `;
 
-const Loader = styled.div`
-  border-radius: 50%;
-  width: 6em;
-  height: 6em;
-  font-size: 10px;
-  border: 1.1em solid
-    ${({ theme, color }) => transparentize(0.8, color || theme.palette.primary.main)};
-  border-left: 1.1em solid ${ifProp('color', prop('color'), uiColors('primary.main'))};
-  animation: ${spin} 0.8s infinite linear;
-
-  &::after {
-    width: 8em;
-    height: 8em;
-  }
-`;
+const Loader = ({
+  height = 100,
+  width = 100,
+  color,
+  lineWidth = 2,
+  direction = 'right',
+}: Props) => (
+  <StyledSpinner id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
+    <polygon
+      fill="transparent"
+      stroke={color}
+      strokeWidth={lineWidth}
+      points={directions[direction]}
+    />
+  </StyledSpinner>
+);
 
 export default Loader;
