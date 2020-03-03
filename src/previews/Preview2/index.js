@@ -61,7 +61,7 @@ const Preview2 = ({
             This premium content requires an account to access.
           </PaywallDescriptionSpan>
         </PaywallDescription>
-        <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        <TextEditor value={previewTitle} displayToolbar={false} readOnly paddingBottom />
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
         <BuyButton
           buttonBgColor={buttonBgColor}
