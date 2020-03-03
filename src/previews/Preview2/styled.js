@@ -28,7 +28,7 @@ export const StyledImageHolder = styled(ImageHolder)`
   display: inline-block;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   vertical-align: top;
-  height: 450px;
+  height: 100%;
   min-height: 450px;
 
   @media screen and (max-width: 700px) {
