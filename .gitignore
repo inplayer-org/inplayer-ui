@@ -1,7 +1,7 @@
 *.DS_Store
 *npm-debug.log
 *yarn-error.log
-/build
+/dist
 coverage
 node_modules/
 flow-typed/

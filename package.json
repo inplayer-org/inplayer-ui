@@ -3,10 +3,10 @@
   "version": "2.0.0-beta.28",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
-  "main": "build/inplayer-ui.min.js",
-  "types": "build/index.d.ts",
+  "main": "dist/inplayer-ui.min.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "build"
+    "dist"
   ],
   "directories": {
     "src": "src"
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "prebuild": "rimraf ./build",
+    "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack",
     "build:watch": "webpack --watch --progress",
     "lint": "yarn lint:js && yarn lint:style",

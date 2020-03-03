@@ -17,5 +17,5 @@
       "previews/*": ["src/previews/*"]
     }
   },
-  "exclude": ["node_modules", "docs", "build"]
+  "exclude": ["node_modules", "docs", "dist"]
 }
