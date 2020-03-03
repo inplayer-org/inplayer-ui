@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.29] - 03-03-2020
+
+### Change
+
+- Improve Paywall Previews look and feel
+
 # [2.0.0-beta.28] - 02-03-2020
 
 ### Change
