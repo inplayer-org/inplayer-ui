@@ -30,7 +30,7 @@ type Props = {
   width?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 };
 
 const Preview2 = ({
@@ -61,7 +61,7 @@ const Preview2 = ({
             This premium content requires an account to access.
           </PaywallDescriptionSpan>
         </PaywallDescription>
-        <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        <TextEditor value={previewTitle} displayToolbar={false} readOnly paddingBottom />
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
         <BuyButton
           buttonBgColor={buttonBgColor}
@@ -82,11 +82,12 @@ const Preview2 = ({
 
 Preview2.defaultProps = {
   branding: {},
-  minWidth: '500px',
-  minHeight: '400px',
+  minWidth: '700px',
+  minHeight: undefined,
   height: undefined,
-  width: undefined,
+  width: '700px',
   isRestrictedAsset: false,
+  handleOpenModal: () => {},
   loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 

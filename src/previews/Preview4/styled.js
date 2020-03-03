@@ -10,10 +10,11 @@ import {
   TemplatesButton,
   TextWrapper,
   IconWrapper,
+  PreviewImage,
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? '360px'};
+  height: ${({ height }) => height ?? 'auto'};
   background: ${colors.white};
   overflow: hidden;
   border-top: 4px solid
@@ -55,6 +56,7 @@ export const StyledIconWrapper = styled(IconWrapper)`
 
 export const ImageWrapper = styled(ImageHolder)`
   height: 100%;
+  min-height: 310px;
   margin: 0;
 `;
 
@@ -64,4 +66,8 @@ export const Icon = styled.div`
   top: 25px;
   left: 23px;
   transform: rotate(-45deg);
+`;
+
+export const StyledPreviewImage = styled(PreviewImage)`
+  position: absolute;
 `;

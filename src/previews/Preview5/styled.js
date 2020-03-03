@@ -14,8 +14,8 @@ import {
 
 export const StyledPreviewBox = styled(PreviewBox)`
   box-sizing: border-box;
-  width: ${({ width }) => width ?? '60vh'};
-  height: ${({ height }) => height ?? '60vh'};
+  width: ${({ width }) => width ?? '700px'};
+  height: ${({ height }) => height ?? 'auto'};
   border: none;
   background: transparent;
   border-radius: 0;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
 import { transparentize } from 'polished';
-import { ifProp } from 'styled-tools';
 
 // Components
 import {
@@ -15,7 +14,7 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? '350px'};
+  height: ${({ height }) => height ?? 'auto'};
   border-top: 3px solid ${({ color }) => color};
   background: ${colors.white};
   display: block;

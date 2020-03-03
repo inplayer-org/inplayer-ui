@@ -16,7 +16,7 @@ import {
 
 export const StyledPreviewBox = styled(PreviewBox)`
   font-size: ${fontSizes('large')};
-  height: ${({ height }) => height ?? '400px'};
+  height: ${({ height }) => height ?? 'auto'};
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
@@ -29,6 +29,7 @@ export const StyledImageHolder = styled(ImageHolder)`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   vertical-align: top;
   height: 100%;
+  min-height: 450px;
 
   @media screen and (max-width: 700px) {
     width: 100%;

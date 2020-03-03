@@ -23,7 +23,7 @@ export const StyledCell = styled(Cell)`
 `;
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? '450px'};
+  height: ${({ height }) => height ?? 'auto'};
   border-radius: 8px 8px 3px 3px;
 `;
 

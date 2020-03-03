@@ -21,6 +21,7 @@ type Props = {
   isTextCenter?: boolean,
   isPadding?: boolean,
   lineHeight?: number,
+  paddingBottom?: boolean,
 };
 
 const EditorContainer = styled.div`
@@ -64,7 +65,7 @@ const EditorContainer = styled.div`
       }
 
       .ql-clipboard {
-        visibility: hidden;
+        display: none;
       }
 
       .ql-editor p,
@@ -81,6 +82,7 @@ const EditorContainer = styled.div`
         font-weight: ${({ theme }) => theme.font.weights.normal};
         color: ${({ textColor }) => textColor || colors.black};
         padding: ${({ isPadding }) => isPadding && '0.5em'};
+        padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};
       }
     `}
@@ -97,6 +99,7 @@ const TextEditor = ({
   isTextCenter,
   isPadding,
   lineHeight,
+  paddingBottom,
 }: Props) => {
   const [editorState, setEditorState] = useState(value);
 
@@ -122,6 +125,7 @@ const TextEditor = ({
       isTextCenter={isTextCenter}
       isPadding={isPadding}
       lineHeight={lineHeight}
+      paddingBottom={paddingBottom}
     >
       <ReactQuill
         value={editorState || ''}
@@ -142,6 +146,7 @@ TextEditor.defaultProps = {
   isTextCenter: false,
   isPadding: false,
   lineHeight: 0,
+  paddingBottom: false,
 };
 
 export default TextEditor;

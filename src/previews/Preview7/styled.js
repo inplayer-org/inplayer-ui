@@ -8,10 +8,12 @@ import {
   ImageHolder,
   TemplatesButton,
   IconWrapper,
+  PreviewImage,
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;
+  height: ${({ height }) => height ?? 'auto'};
   display: flex;
   flex-direction: column;
 `;
@@ -27,7 +29,8 @@ export const FooterLink = styled.a`
 `;
 
 export const ImageWrapper = styled(ImageHolder)`
-  height: 50%;
+  height: 250px;
+  max-height: 250px;
   width: 250px;
   margin: auto;
 `;
@@ -89,4 +92,8 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
   text-align: center;
   padding-top: 5px;
   height: 5%;
+`;
+
+export const StyledPreviewImage = styled(PreviewImage)`
+  height: 250px;
 `;

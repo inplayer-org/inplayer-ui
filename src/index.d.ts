@@ -771,7 +771,7 @@ interface Preview1Props {
   width?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview1: FunctionComponent<Preview1Props>;
@@ -784,7 +784,7 @@ interface Preview2Props {
   width?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview2: FunctionComponent<Preview2Props>;
@@ -797,7 +797,7 @@ interface Preview3Props {
   minHeight?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview3: FunctionComponent<Preview3Props>;
@@ -806,12 +806,12 @@ interface Preview4Props {
   branding?: Branding,
   displayBuyButton?: boolean,
   previewUnavailable?: boolean,
-  width?: number,
-  height?: number,
+  width?: string,
+  height?: string,
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview4: FunctionComponent<Preview4Props>;
@@ -823,7 +823,7 @@ interface Preview5Props {
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview5: FunctionComponent<Preview5Props>;
@@ -836,7 +836,7 @@ interface Preview6Props {
   minWidth?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview6: FunctionComponent<Preview6Props>;
@@ -851,7 +851,7 @@ interface Preview7Props {
   minWidth?: string,
   loginFooterLabel?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 }
 
 export declare const Preview7: FunctionComponent<Preview7Props>;

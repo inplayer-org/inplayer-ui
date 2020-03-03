@@ -11,7 +11,7 @@ import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
 import StyledContainer from '../components/StyledContainer';
 import TextEditor from '../components/TextEditor';
-import { OverlayLabel, PreviewImage } from '../components/SharedComponents';
+import { OverlayLabel } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -20,6 +20,7 @@ import {
   StyledTextWrapper,
   StyledIconWrapper,
   Icon,
+  StyledPreviewImage,
 } from './styled';
 
 // Types
@@ -29,12 +30,12 @@ type Props = {
   branding?: Branding,
   displayBuyButton?: boolean,
   previewUnavailable?: boolean,
-  width?: number,
-  height?: number,
+  width?: string,
+  height?: string,
   minWidth?: string,
   minHeight?: string,
   isRestrictedAsset?: boolean,
-  handleOpenModal: (e: any) => any,
+  handleOpenModal?: (e: any) => any,
 };
 
 const removeTags = (str: string) =>
@@ -91,7 +92,7 @@ const Preview4 = ({
             <InPlayerIcon name="lock" />
           </Icon>
         </StyledIconWrapper>
-        <PreviewImage src={image} />
+        <StyledPreviewImage src={image} />
         <StyledTextWrapper>
           <TextElement width={width}>
             <TextEditor
@@ -124,10 +125,11 @@ Preview4.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  minWidth: undefined,
+  minWidth: '700px',
   minHeight: '390px',
   height: undefined,
-  width: undefined,
+  width: '700px',
+  handleOpenModal: () => {},
   isRestrictedAsset: false,
 };
 
