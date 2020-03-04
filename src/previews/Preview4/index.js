@@ -128,7 +128,7 @@ Preview4.defaultProps = {
   minWidth: '700px',
   minHeight: '390px',
   height: undefined,
-  width: '700px',
+  width: undefined,
   handleOpenModal: () => {},
   isRestrictedAsset: false,
 };

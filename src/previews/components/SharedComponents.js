@@ -119,9 +119,9 @@ export const PreviewFooter = styled.div`
 `;
 
 export const PreviewBox = styled.div`
-  width: ${({ width }) => width ?? '500px'};
+  width: ${({ width }) => width ?? '100%'};
   height: ${({ height }) => height ?? '580px'};
-  max-width: ${({ width }) => (width ? '' : '520px')};
+  max-width: ${({ width }) => (width ? '' : '100%')};
   min-width: ${({ minWidth }) => minWidth};
   min-height: ${({ minHeight }) => minHeight};
   margin: auto;
