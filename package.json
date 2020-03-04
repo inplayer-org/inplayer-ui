@@ -36,7 +36,8 @@
     "flow": "flow",
     "flow:watch": "flow-watch",
     "pregenerate:docs": "rimraf ./docs",
-    "generate:docs": "yarn styleguide:build"
+    "generate:docs": "yarn styleguide:build",
+    "docz:dev": "docz dev"
   },
   "peerDependencies": {
     "react": "^16.13.0",
@@ -62,6 +63,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
+    "docz": "^2.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
