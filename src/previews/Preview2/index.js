@@ -85,7 +85,7 @@ Preview2.defaultProps = {
   minWidth: '700px',
   minHeight: undefined,
   height: undefined,
-  width: '700px',
+  width: undefined,
   isRestrictedAsset: false,
   handleOpenModal: () => {},
   loginFooterLabel: 'Already have access? Login with your InPlayer account',

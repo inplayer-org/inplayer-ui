@@ -91,7 +91,7 @@ Preview5.defaultProps = {
   minWidth: undefined,
   minHeight: '420px',
   height: undefined,
-  width: '700px',
+  width: undefined,
   handleOpenModal: () => {},
   isRestrictedAsset: false,
 };
