@@ -6,7 +6,7 @@
   "main": "dist/inplayer-ui.min.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "src/"
   ],
   "directories": {
     "src": "src"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "scripts": {
+    "storybook": "start-storybook",
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack",
@@ -52,6 +53,11 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-flow": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-info": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/react": "^5.3.14",
     "@types/styled-components": "^5.0.1",
     "acorn-dynamic-import": "^4.0.0",
     "babel-eslint": "^10.1.0",
