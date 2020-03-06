@@ -18,14 +18,6 @@ const Container = styled.div`
   width: 90%;
 `;
 
-const InfoContainer = styled.p`
-  margin-top: 0;
-  margin-bottom: 2%;
-  color: #333;
-  font-size: inherit;
-  line-height: 1.5;
-`;
-
 export const demo = () => (
   <>
     <Container>
