@@ -7,9 +7,9 @@ import colors from 'config/colors';
 import { PreviewBox, TemplatesButton, ImageHolder } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  width: ${({ width }) => width ?? '850px'};
+  width: ${({ width }) => width ?? '100%'};
   height: ${({ height }) => height ?? 'auto'};
-  max-width: ${({ width }) => width ?? '850px'};
+  max-width: ${({ width }) => width ?? '100%'};
   border: 1px solid ${colors.gray};
   padding: 1em;
   overflow: hidden;

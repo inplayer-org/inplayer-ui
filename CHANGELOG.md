@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.30] - 03-04-2020
+
+### Change
+
+- Add full width and height to Paywall Previews
+
 # [2.0.0-beta.29] - 03-03-2020
 
 ### Change
