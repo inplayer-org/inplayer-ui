@@ -26,7 +26,7 @@ const InfoContainer = styled.p`
   line-height: 1.5;
 `;
 
-export const notificationDemo = () => (
+export const demo = () => (
   <>
     <Container>
       <Typography variant="h3" color="black">
