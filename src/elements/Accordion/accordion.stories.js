@@ -16,7 +16,7 @@ const Container = styled.div`
   margin-top: 2%;
   width: 90%;
 `;
-export const Demo = () => {
+export const demo = () => {
   const panels = [
     {
       label: 'Accordion1',
