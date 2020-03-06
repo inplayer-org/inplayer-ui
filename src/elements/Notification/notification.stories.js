@@ -34,8 +34,8 @@ export const notificationDemo = () => (
       </Typography>
       <Typography variant="p" description>
         The Notification exposes an API for creating notifications. The API consists of 4 functions:
-        <b>Notification.create</b>, <b>Notification.success</b>, <b>Notification.danger</b> and
-        <b>Notification.warning</b>. The latter 3 are simply abstractions over the first one which
+        <b> Notification.create</b>, <b>Notification.success</b>, <b>Notification.danger</b> and
+        <b> Notification.warning</b>. The latter 3 are simply abstractions over the first one which
         set the <b>variant</b> to <b>success</b>, <b>danger</b> and <b>warning</b> accordingly. If
         no variant is passed it will simply use a neutral grey color scheme (check the demo.). The
         functions take 2 arguments: first one is an object which represents the props of the
