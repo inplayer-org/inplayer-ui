@@ -15,6 +15,7 @@ type Props = {
   style?: Object,
   className?: string,
   numberOfMonths?: number,
+  disabled?: boolean,
 };
 
 const DayPicker = ({
@@ -26,6 +27,7 @@ const DayPicker = ({
   style,
   className,
   numberOfMonths,
+  disabled,
 }: Props) => (
   <DayPickerWrapper style={style} className={className}>
     <SingleDatePicker
@@ -35,6 +37,7 @@ const DayPicker = ({
       focused={focused}
       date={typeof date === 'string' ? moment(date) : date}
       numberOfMonths={numberOfMonths}
+      disabled={disabled}
     />
   </DayPickerWrapper>
 );
@@ -44,6 +47,7 @@ DayPicker.defaultProps = {
   style: {},
   className: '',
   numberOfMonths: 1,
+  disabled: false,
 };
 
 export default DayPicker;
