@@ -1,9 +1,0 @@
-dist
-docs
-src/assets
-node_modules
-coverage
-*.lock
-*.log
-*.md
-*.d.ts
