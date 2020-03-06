@@ -34,14 +34,14 @@ export const notificationDemo = () => (
       </Typography>
       <Typography variant="p" description>
         The Notification exposes an API for creating notifications. The API consists of 4 functions:
-        `Notification.create`, `Notification.success`, `Notification.danger` and
-        `Notification.warning`. The latter 3 are simply abstractions over the first one which set
-        the `variant` to `success`, `danger` and `warning` accordingly. If no variant is passed it
-        will simply use a neutral grey color scheme (check the demo.). The functions take 2
-        arguments: first one is an object which represents the props of the notification, the second
-        one is optional and is a reference to a parent DOM element for the notification. If the
-        parent DOM is not passed the notification will be mounted as a child on the `body` element.
-        The way it is used is:
+        <b>Notification.create</b>, <b>Notification.success</b>, <b>Notification.danger</b> and
+        <b>Notification.warning</b>. The latter 3 are simply abstractions over the first one which
+        set the <b>variant</b> to <b>success</b>, <b>danger</b> and <b>warning</b> accordingly. If
+        no variant is passed it will simply use a neutral grey color scheme (check the demo.). The
+        functions take 2 arguments: first one is an object which represents the props of the
+        notification, the second one is optional and is a reference to a parent DOM element for the
+        notification. If the parent DOM is not passed the notification will be mounted as a child on
+        the <b>body</b> element. The way it is used is:
       </Typography>
       <Button
         onClick={() =>
