@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import DatePicker from './index';
 import moment from '../../../../../.cache/typescript/3.7/node_modules/moment/moment';
 
