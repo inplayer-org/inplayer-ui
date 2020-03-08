@@ -20,7 +20,7 @@ const BoxContainer = styled.div`
 const HeadlineTypography = styled(Typography)`
   color: ${Colors.black};
 `;
-export const Demo = props => (
+export const Demo = () => (
   <Container>
     <HeadlineTypography variant="h3">Typography</HeadlineTypography>
     <Typography variant="p" description>
@@ -43,7 +43,7 @@ export const Demo = props => (
     </BoxContainer>
   </Container>
 );
-export const TypographyWithModifires = props => (
+export const TypographyWithModifires = () => (
   <Container>
     <HeadlineTypography variant="h4">Typography With Modifires</HeadlineTypography>
     <BoxContainer>
@@ -62,7 +62,7 @@ export const TypographyWithModifires = props => (
     </BoxContainer>
   </Container>
 );
-export const TypographyWithCustomColorProvideed = props => (
+export const TypographyWithCustomColorProvideed = () => (
   <Container>
     <HeadlineTypography variant="h4">Typography With Custom Color Provideed</HeadlineTypography>
     <BoxContainer>
