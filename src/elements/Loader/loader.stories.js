@@ -1,6 +1,6 @@
 import React from 'react';
 import { Loader, Typography } from 'src/index';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export default {
   component: Loader,
