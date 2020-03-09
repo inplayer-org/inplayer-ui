@@ -1,8 +1,6 @@
 // @flow
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { prop, ifProp } from 'styled-tools';
-import uiColors from 'utils/uiColors';
 
 interface Props {
   height?: number;
@@ -31,14 +29,13 @@ const StyledSpinner = styled.svg`
   polygon {
     stroke-dasharray: 17;
     animation: ${dash} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
-    stroke: ${ifProp('stroke', prop('stroke'), uiColors('primary.main'))};
   }
 `;
 
 const Loader = ({
   height = 100,
   width = 100,
-  color,
+  color = '#07AAE6',
   lineWidth = 2,
   direction = 'right',
 }: Props) => (
