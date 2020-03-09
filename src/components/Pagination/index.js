@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'config/colors';
 import { ifProp } from 'styled-tools';
-import InPlayerIcon from 'elements/InPlayerIcon';
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -183,10 +182,10 @@ const Pagination = ({
   return (
     <PaginationContainer>
       <PageBox type="button" disabled={activePage === 1} onClick={goToStart}>
-        <AiOutlineDoubleLeft />
+        <FaAngleDoubleLeft />
       </PageBox>
       <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
-        <InPlayerIcon name="angleLeft" />
+        <FaAngleLeft />
       </PageBox>
       {!visiblePages.some(index => index === 1) && (
         <PageBox type="button" hideBorder onClick={onDotsClick(false)}>
@@ -213,10 +212,10 @@ const Pagination = ({
         disabled={activePage === totalPages}
         onClick={onPageClick(activePage + 1)}
       >
-        <InPlayerIcon name="angleRight" />
+        <FaAngleRight />
       </PageBox>
       <PageBox type="button" disabled={activePage === totalPages} onClick={goToEnd}>
-        <AiOutlineDoubleRight />
+        <FaAngleDoubleRight />
       </PageBox>
     </PaginationContainer>
   );
