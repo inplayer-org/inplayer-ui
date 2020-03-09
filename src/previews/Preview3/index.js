@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
 
 // Images

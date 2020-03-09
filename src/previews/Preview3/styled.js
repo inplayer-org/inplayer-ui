@@ -1,6 +1,5 @@
 // @flow
 import styled from 'styled-components';
-import { InPlayerIcon } from 'elements';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import colors from 'config/colors';
 import { transparentize } from 'polished';

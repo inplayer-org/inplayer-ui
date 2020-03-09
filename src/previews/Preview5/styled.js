@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import InPlayerIcon from 'elements/InPlayerIcon';
+import { GiCutDiamond } from 'react-icons/gi';
 import colors from 'config/colors';
 import { transparentize } from 'polished';
 
@@ -96,7 +96,7 @@ export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   text-transform: uppercase;
 `;
 
-export const StyledIcon = styled(InPlayerIcon)`
+export const StyledIcon = styled(GiCutDiamond)`
   line-height: 15px;
   font-size: ${({ theme }) => theme.font.sizes.large};
   display: inline-block;
