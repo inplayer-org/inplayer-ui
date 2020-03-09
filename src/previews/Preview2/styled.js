@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import colors from 'config/colors';
 import { fontSizes } from 'utils';
-import InPlayerIcon from 'elements/InPlayerIcon';
+import { MdStar } from 'react-icons/md';
 
 // Components
 import {
@@ -67,7 +67,7 @@ export const BuyButton = styled(TemplatesButton)`
   }
 `;
 
-export const StyledIcon = styled(InPlayerIcon)`
+export const StyledIcon = styled(MdStar)`
   line-height: 15px;
   font-size: ${fontSizes('large')};
   display: inline-block;

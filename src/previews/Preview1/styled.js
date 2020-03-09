@@ -4,7 +4,7 @@ import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import colors from 'config/colors';
 import Grid from 'blocks/Grid';
-import InPlayerIcon from 'elements/InPlayerIcon';
+import { FaLock } from 'react-icons/fa';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
@@ -75,7 +75,7 @@ export const Logo = styled.img`
   line-height: 15px;
 `;
 
-export const LockIcon = styled(InPlayerIcon)`
+export const LockIcon = styled(FaLock)`
   margin: 0 0.4em 0 0;
 `;
 
