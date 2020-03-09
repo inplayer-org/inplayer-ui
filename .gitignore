@@ -1,8 +1,9 @@
 *.DS_Store
 *npm-debug.log
 *yarn-error.log
-/dist
+dist
 coverage
 node_modules/
 flow-typed/
 .vscode
+.docz
