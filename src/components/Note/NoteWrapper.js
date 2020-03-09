@@ -4,6 +4,8 @@ import { switchProp } from 'styled-tools';
 import { fontWeights, uiColors } from 'utils';
 
 const NoteWrapper = styled.p`
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   border: 1px solid ${colors.gray};
   padding: 1.125rem 2%;
