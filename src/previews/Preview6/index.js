@@ -20,7 +20,6 @@ import {
   PreviewFooter,
   FooterLink,
   IconHolder,
-  Icon,
 } from './styled';
 
 // Types
