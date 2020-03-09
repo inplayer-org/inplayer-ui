@@ -9,6 +9,10 @@ export default {
 export const DefaultLoader = () => (
   <>
     <Typography variant="h3">Standard Loader</Typography>
+    <Typography variant="p" description>
+      A simple spinner/loader to use as fallback when doing async operations. By default inherits
+      the primary.main (#07AAE6) theme color. Can be passed a color prop with a custom color.
+    </Typography>
     <Loader />
   </>
 );
@@ -16,6 +20,10 @@ export const DefaultLoader = () => (
 export const LoaderWithProps = () => (
   <>
     <Typography variant="h3">Loader with props</Typography>
-    <Loader height={150} width={150} direction="left" lineWidth={3} />
+    <Typography variant="p" description>
+      A simple spinner/loader to use as fallback when doing async operations. By default inherits
+      the primary.main (#07AAE6) theme color. Can be passed a color prop with a custom color.
+    </Typography>
+    <Loader color="red" height={150} width={150} direction="left" lineWidth={3} />
   </>
 );
