@@ -1,8 +1,10 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import { uiColors } from 'utils';
 
 // components
+import { MdInfo } from 'react-icons/md';
 import Accordion from './index';
 import Typography from '../Typography/index';
 
@@ -16,11 +18,16 @@ const Container = styled.div`
   margin-top: 2%;
   width: 90%;
 `;
+
+const StyledIcon = styled(MdInfo)`
+  color: ${uiColors('primary.main')};
+`;
+
 export const demo = () => {
   const panels = [
     {
       label: 'Accordion1',
-      icon: 'info-circle',
+      icon: <StyledIcon />,
       renderContent: ({ closePanel }) => (
         <div>
           <Typography variant="h1" color="black">
@@ -46,7 +53,7 @@ export const demo = () => {
     },
     {
       label: 'Accordion2',
-      icon: 'info-circle',
+      icon: <StyledIcon />,
       iconTooltip: {
         content: 'This is a disabled panel with optional icon with a tooltip',
         placement: 'left',
