@@ -9,7 +9,8 @@ export default {
 
 const Container = styled.div`
   margin-left: 5%;
-  width: 40%;
+  max-width: 20%;
+  max-height: 20%;
 `;
 
 export const LineProgress = () => (
