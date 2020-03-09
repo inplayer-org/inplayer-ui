@@ -7,10 +7,8 @@ import colors from 'config/colors';
 import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
-// Types
-import { Branding } from '../types/branding';
-
 // Components
+import { GiCutDiamond } from 'react-icons/gi';
 import TextEditor from '../components/TextEditor';
 import { PaywallDescription } from '../components/SharedComponents';
 import {
@@ -23,6 +21,9 @@ import {
   StyledIcon,
   TitleBorder,
 } from './styled';
+
+// Types
+import { Branding } from '../types/branding';
 
 type OwnProps = {
   branding?: Branding,
@@ -66,7 +67,7 @@ const Preview3 = ({
         <StyledTextWrapper onClick={handleOpenModal}>
           <PaywallDescription color={buttonBgColor}>
             <PaywallDescriptionSpan>
-              <InPlayerIcon name="diamond" /> premium content
+              <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>
           </PaywallDescription>
           <TitleWrapper>
@@ -78,7 +79,7 @@ const Preview3 = ({
                 readOnly
               />
             </TitleBorder>
-            <StyledIcon name="play" color={buttonBgColor} />
+            <StyledIcon color={buttonBgColor} />
           </TitleWrapper>
           <TextEditor
             value={previewDescription}

@@ -3,7 +3,7 @@ import colors from 'config/colors';
 import { transparentize, darken } from 'polished';
 import styled from 'styled-components';
 import { ifProp, prop } from 'styled-tools';
-import { InPlayerIcon, Typography } from 'elements';
+import { Typography } from 'elements';
 
 export const PaywallContainer = styled.div`
   width: 100%;
@@ -98,14 +98,6 @@ export const ForgotLabel = styled.label`
   display: inline-block;
   cursor: default;
   width: auto;
-`;
-
-export const StyledInPlayerIcon = styled(InPlayerIcon)`
-  position: absolute;
-  top: 15px;
-  left: 0;
-  font-size: ${({ theme }) => theme.font.sizes.large};
-  color: ${({ color }) => ifProp('color', color, colors.gray)};
 `;
 
 export const InputContainer = styled.div`
