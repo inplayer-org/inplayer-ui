@@ -7,8 +7,8 @@ import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
-import { InPlayerIcon } from 'elements';
 import colors from 'config/colors';
+import { FaLock } from 'react-icons/fa';
 import StyledContainer from '../components/StyledContainer';
 import TextEditor from '../components/TextEditor';
 import { OverlayLabel } from '../components/SharedComponents';
@@ -89,7 +89,7 @@ const Preview4 = ({
       <ImageWrapper>
         <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
           <Icon>
-            <InPlayerIcon name="lock" />
+            <FaLock />
           </Icon>
         </StyledIconWrapper>
         <StyledPreviewImage src={image} />

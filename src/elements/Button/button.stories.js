@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdWarning, MdInfo } from 'react-icons/md';
 import Button from './index';
 
 export default {
@@ -45,22 +46,16 @@ export const withModifiers = () => (
   </div>
 );
 
-// export const withIcon = () => (
-//   <div>
-//     <Button fullHeight icon="trash" buttonModifiers={['buttonDanger']} />
-//     <br />
-//     <Button buttonModifiers={['buttonDanger']} icon="exclamation-circle" iconPosition="right">
-//       Button with Icon on Right
-//     </Button>
-//     <br />
-//     <Button
-//       buttonModifiers={['buttonDanger']}
-//       iconModifiers={['statusColorWarning']}
-//       icon="exclamation-circle"
-//     >
-//       Button with Icon Color Modifier
-//     </Button>
-//     <br />
-//     <Button icon={<InPlayerIcon name="download" />}>Button with Custom Icon</Button>
-//   </div>
-// );
+export const withIcon = () => (
+  <div>
+    <Button fullHeight icon={<MdWarning />} buttonModifiers={['buttonDanger']} />
+    <br />
+    <Button buttonModifiers={['buttonDanger']} icon={<MdInfo />} iconPosition="right">
+      Button with Icon on Right
+    </Button>
+    <br />
+    <Button buttonModifiers={['buttonDanger']} icon={<MdInfo />}>
+      Button with Icon on left
+    </Button>
+  </div>
+);

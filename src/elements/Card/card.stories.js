@@ -25,7 +25,7 @@ const DescriptionTypography = styled(Typography)`
   margin-bottom: 40px;
 `;
 
-export const SimpleCard = props => (
+export const SimpleCard = () => (
   <StyledContainer>
     <HeadlineTypography variant="h4">Card without title</HeadlineTypography>
     <DescriptionTypography variant="p" description>
@@ -38,7 +38,8 @@ export const SimpleCard = props => (
     </Card>
   </StyledContainer>
 );
-export const WithTitle = props => (
+
+export const WithTitle = () => (
   <StyledContainer>
     <HeadlineTypography variant="h4">Card with title</HeadlineTypography>
     <DescriptionTypography variant="p" description>
