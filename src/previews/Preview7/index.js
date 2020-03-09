@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { InPlayerIcon } from 'elements';
+import { FaLock } from 'react-icons/fa';
 import colors from 'config/colors';
 
 // Images
@@ -76,7 +76,7 @@ const Preview7 = ({
       <StyledImageWrapper>
         <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
         <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
-          <InPlayerIcon name="lock" />
+          <FaLock />
         </StyledIconWrapper>
       </StyledImageWrapper>
       <ItemDetails>

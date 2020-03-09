@@ -1,7 +1,6 @@
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
-import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';

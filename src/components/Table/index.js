@@ -5,7 +5,6 @@ import { ifProp } from 'styled-tools';
 import colors from 'config/colors';
 import { uiColors, fontSizes, fontWeights } from 'utils';
 import Checkbox from 'components/Checkbox';
-import Icon from 'elements/Icon';
 import Loader from 'elements/Loader/index';
 import Button from 'elements/Button/index';
 import Grid from 'blocks/Grid';
@@ -88,16 +87,6 @@ const TableHeaderCell = styled.th`
   font-size: ${fontSizes('small')};
   text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
   white-space: normal;
-`;
-
-const ActionIcon = styled(Icon)`
-  padding: 0.125rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: ${uiColors('primary.main')};
-  }
 `;
 
 const LoaderContainer = styled.div`
@@ -235,18 +224,7 @@ class Table<T> extends React.Component<Props<T>, State> {
         const actionsContent =
           typeof rowActions === 'function'
             ? rowActions({ row: dataCell })
-            : rowActions.map((action, index) => {
-                if (action.render) {
-                  return action.render({ row: dataCell });
-                }
-                return (
-                  <ActionIcon
-                    key={index}
-                    name={action.icon}
-                    onClick={() => action.onClick(dataCell.id)}
-                  />
-                );
-              });
+            : rowActions.map((action, index) => action.render({ row: dataCell }));
         return {
           ...dataCell,
           actions: actionsContent,

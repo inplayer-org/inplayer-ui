@@ -1,6 +1,5 @@
 // @flow
 import styled from 'styled-components';
-import InPlayerIcon from 'elements/InPlayerIcon';
 import colors from 'config/colors';
 
 // Components
