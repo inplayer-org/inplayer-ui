@@ -181,7 +181,7 @@ export const withHeaderSection = () => {
               active: true,
               action: newData => console.log(newData),
             },
-            rowActions: ({ row }) => <Icon name={row.icon} />,
+            // rowActions: ({ row }) => <Icon name={row.icon} />,
             headerSection: renderHeaderSection(),
           }}
           tableButton={{
