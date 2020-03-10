@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Pagination, Typography, Colors } from 'src/index';
-import Paginaton from './index';
 
 export default {
   component: Pagination,

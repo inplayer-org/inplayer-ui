@@ -224,7 +224,7 @@ class Table<T> extends React.Component<Props<T>, State> {
         const actionsContent =
           typeof rowActions === 'function'
             ? rowActions({ row: dataCell })
-            : rowActions.map((action, index) => action.render({ row: dataCell }));
+            : rowActions.map(action => action.render({ row: dataCell }));
         return {
           ...dataCell,
           actions: actionsContent,

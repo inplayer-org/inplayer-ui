@@ -17,7 +17,7 @@ const HeadlineTypography = styled(Typography)`
   color: ${Colors.black};
 `;
 
-export const Demo = props => (
+export const Demo = () => (
   <Container>
     <HeadlineTypography variant="h3">TextArea</HeadlineTypography>
     <Typography variant="p" description>
