@@ -3,7 +3,6 @@ import React from 'react';
 
 // components
 import Input from './index';
-import InPlayerIcon from '../InPlayerIcon/index';
 
 export default {
   component: Input,
@@ -53,7 +52,7 @@ export const withCustomIcon = () => (
       placeholder="Input with custom icon"
       renderIcon={() => (
         <div style={{ marginLeft: '5px', top: '30px', position: 'relative' }}>
-          <InPlayerIcon name="download" modifiers={['statusColorSuccess']} />
+          {/* <InPlayerIcon name="download" modifiers={['statusColorSuccess']} /> */}
         </div>
       )}
     />

@@ -4,8 +4,6 @@ import styled from 'styled-components';
 
 // components
 import Dropdown from '../../elements/Dropdown/index';
-import Icon from '../../elements/Icon/index';
-import InPlayerIcon from '../../elements/InPlayerIcon/index';
 import Input from '../../elements/Input/index';
 import Typography from '../../elements/Typography/index';
 import Table from './index';
@@ -34,7 +32,6 @@ const columns = [
   {
     title: '',
     key: 'icon',
-    render: ({ value }) => <Icon name={value} />,
   },
   {
     title: 'Name',
@@ -189,7 +186,7 @@ export const withHeaderSection = () => {
           }}
           tableButton={{
             label: 'Add new',
-            icon: <InPlayerIcon name="add" />,
+            // icon: <InPlayerIcon name="add" />,
             onClick: () => console.log('Clicked'),
           }}
         />

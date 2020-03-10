@@ -123,5 +123,8 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.15"
   }
 }
