@@ -2,6 +2,7 @@
 import React from 'react';
 
 // components
+import { FaBeer } from 'react-icons/fa';
 import Input from './index';
 
 export default {
@@ -47,15 +48,7 @@ export const withCustomIcon = () => (
     <div>
       Text input is a input component for text. You can use it with a custom icon like this:
     </div>
-    <Input
-      type="text"
-      placeholder="Input with custom icon"
-      renderIcon={() => (
-        <div style={{ marginLeft: '5px', top: '30px', position: 'relative' }}>
-          {/* <InPlayerIcon name="download" modifiers={['statusColorSuccess']} /> */}
-        </div>
-      )}
-    />
+    <Input type="text" placeholder="Input with custom icon" icon={<FaBeer />} />
   </>
 );
 

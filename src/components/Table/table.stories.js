@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // components
+import { FaBeer } from 'react-icons/fa';
 import Dropdown from '../../elements/Dropdown/index';
 import Input from '../../elements/Input/index';
 import Typography from '../../elements/Typography/index';
@@ -109,11 +110,7 @@ export const withArrayOfRowFunctions = () => {
               active: true,
               action: newData => console.log(newData),
             },
-            rowActions: [
-              { icon: 'edit', onClick: id => console.log(id) },
-              { icon: 'cog', onClick: id => console.log(id) },
-              { icon: 'trash', onClick: id => console.log(id) },
-            ],
+            rowActions: ({ row }) => <FaBeer />,
           }}
         />
         <PaginationContainer>
@@ -181,12 +178,12 @@ export const withHeaderSection = () => {
               active: true,
               action: newData => console.log(newData),
             },
-            // rowActions: ({ row }) => <Icon name={row.icon} />,
+            rowActions: ({ row }) => <FaBeer />,
             headerSection: renderHeaderSection(),
           }}
           tableButton={{
             label: 'Add new',
-            // icon: <InPlayerIcon name="add" />,
+            icon: <FaBeer />,
             onClick: () => console.log('Clicked'),
           }}
         />
