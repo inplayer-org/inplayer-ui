@@ -31,7 +31,7 @@ const StyledSpinner = styled.svg`
   polygon {
     stroke-dasharray: 17;
     animation: ${dash} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
-    stroke: ${ifProp('stroke', prop('stroke'), uiColors('primary.main'))};
+    stroke: ${ifProp('color', prop('color'), uiColors('primary.main'))};
   }
 `;
 
@@ -42,7 +42,7 @@ const Loader = ({
   lineWidth = 2,
   direction = 'right',
 }: Props) => (
-  <StyledSpinner id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
+  <StyledSpinner color={color} id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
     <polygon
       fill="transparent"
       stroke={color}
