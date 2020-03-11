@@ -11,6 +11,7 @@ export default {
 const Container = styled.div`
   width: 90%;
   margin: auto;
+  margin-top: 2%;
 `;
 
 const BoxContainer = styled.div`
@@ -33,7 +34,7 @@ const defaultOption1 = { displayName: 'default value' };
 
 export const StandardDropdown = () => (
   <Container>
-    <HeadlineTypography variant="h3">Dropdown</HeadlineTypography>
+    <HeadlineTypography variant="h1">Dropdown</HeadlineTypography>
     <ParagraphContainer>
       <Typography variant="p" description>
         A simple Dropdown controlled component. Receives an <b>options</b> prop which is an array of{' '}
@@ -78,6 +79,7 @@ export const StandardDropdown = () => (
 
 export const CustomDropdown = () => (
   <Container>
+    <HeadlineTypography variant="h1">Custom dropdown</HeadlineTypography>
     <HeadlineTypography variant="h4">Font size modifiers</HeadlineTypography>
     <BoxContainer>
       <Dropdown

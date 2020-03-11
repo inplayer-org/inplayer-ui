@@ -11,11 +11,14 @@ const Container = styled.div`
   margin-left: 5%;
   max-width: 20%;
   max-height: 20%;
+  margin-top: 2%;
 `;
 
 export const LineProgress = () => (
   <Container>
-    <Typography variant="h3">Line Progress</Typography>
+    <Typography variant="h1" color="black">
+      Line Progress
+    </Typography>
     <Typography variant="p" description>
       Line Progress with initial 10% completed
     </Typography>
@@ -25,7 +28,9 @@ export const LineProgress = () => (
 
 export const CircleProgress = () => (
   <Container>
-    <Typography variant="h3">Circle Progress</Typography>
+    <Typography variant="h1" color="black">
+      Circle Progress
+    </Typography>
     <Typography variant="p" description>
       Circle Progress with initial 40% completed
     </Typography>

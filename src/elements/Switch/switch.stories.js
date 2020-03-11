@@ -9,6 +9,7 @@ export default {
 };
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 
@@ -23,7 +24,7 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Switch</HeadlineTypography>
+    <HeadlineTypography variant="h1">Switch</HeadlineTypography>
     <Typography variant="p" description>
       Toggle is a input component for flipswitch. You can use it directly like this:
     </Typography>

@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -23,7 +24,9 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Navigation Bar</HeadlineTypography>
+    <HeadlineTypography variant="h1" color="black">
+      Navigation Bar
+    </HeadlineTypography>
     <Typography variant="p" description>
       The Navbar is a horizontal navigation bar component. It takes an image string or element as
       the logo icon at the top. Menu items are rendered as children of the Navbar using the

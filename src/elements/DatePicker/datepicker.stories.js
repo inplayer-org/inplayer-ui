@@ -36,7 +36,9 @@ export const Demo = () => {
 
   return (
     <Container>
-      <Typography variant="h3">Date Picker</Typography>
+      <Typography variant="h1" color="black">
+        Date Picker
+      </Typography>
       <Typography variant="p" description>
         DatePicker is a component for picking range for dates. It takes:
         <br />

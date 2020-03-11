@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 
@@ -19,7 +20,7 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">TextArea</HeadlineTypography>
+    <HeadlineTypography variant="h1">TextArea</HeadlineTypography>
     <Typography variant="p" description>
       Text area is a input component for text area.{' '}
     </Typography>

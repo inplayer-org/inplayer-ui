@@ -9,6 +9,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -25,7 +26,7 @@ const paginateData = {
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Pagination</HeadlineTypography>
+    <HeadlineTypography variant="h1">Pagination</HeadlineTypography>
     <Typography variant="p" description>
       A component to render a pagination. It takes:
       <br /> - <b>totalItems</b> - the total number of the items
