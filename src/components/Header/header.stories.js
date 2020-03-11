@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -22,7 +23,9 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Header</HeadlineTypography>
+    <HeadlineTypography variant="h1" color="black">
+      Header
+    </HeadlineTypography>
     <Typography variant="p">
       The Header represents a versatile component which can house a title or a TabNavigation, as
       well as a UserMenu and Additional User Menu.

@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 
@@ -48,7 +49,9 @@ export const Demo = () => {
 
   return (
     <Container>
-      <Typography variant="h3">Step Wizard</Typography>
+      <Typography variant="h1" color="black">
+        Step Wizard
+      </Typography>
       <Typography variant="p" description>
         A software wizard or setup assistant is a user interface type that presents a user with a
         sequence of dialog boxes that lead the user through a series of well-defined steps. Tasks

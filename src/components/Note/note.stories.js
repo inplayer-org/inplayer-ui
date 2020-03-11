@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -23,7 +24,7 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Note</HeadlineTypography>
+    <HeadlineTypography variant="h1">Note</HeadlineTypography>
     <Typography variant="p" description>
       Note is a component for displaying information for notification. <br />
       The <b>type</b> attribute can be: informative, success, warning, danger. If not of the above

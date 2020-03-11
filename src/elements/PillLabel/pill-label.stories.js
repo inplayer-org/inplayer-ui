@@ -10,26 +10,33 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 
 export const Default = () => (
   <Container>
-    <Typography variant="h3">White PillLabel</Typography>
+    <Typography variant="h1" color="black">
+      White PillLabel
+    </Typography>
     <PillLabel>Test Pill</PillLabel>
   </Container>
 );
 
 export const Primary = () => (
   <Container>
-    <Typography variant="h3">Blue PillLabel</Typography>
+    <Typography variant="h1" color="black">
+      Blue PillLabel
+    </Typography>
     <PillLabel modifiers={['primary']}>Test Pill</PillLabel>
   </Container>
 );
 
 export const Warning = () => (
   <Container>
-    <Typography variant="h3">Yellow PillLabel</Typography>
+    <Typography variant="h1" color="black">
+      Yellow PillLabel
+    </Typography>
     <Typography variant="p" description>
       Warning Label with prop <b>size="lg"</b>
     </Typography>
@@ -41,7 +48,9 @@ export const Warning = () => (
 
 export const Danger = () => (
   <Container>
-    <Typography variant="h3">Red PillLabel</Typography>
+    <Typography variant="h1" color="black">
+      Red PillLabel
+    </Typography>
     <Typography variant="p" description>
       Danger Label with prop <b>size="sm"</b>
     </Typography>
@@ -53,7 +62,9 @@ export const Danger = () => (
 
 export const Success = () => (
   <Container>
-    <Typography variant="h3">Green PillLabel</Typography>
+    <Typography variant="h1" color="black">
+      Green PillLabel
+    </Typography>
     <Typography variant="p" description>
       Success Label with prop <b>size="xs"</b>
     </Typography>

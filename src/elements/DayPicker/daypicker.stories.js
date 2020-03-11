@@ -24,7 +24,9 @@ export const Demo = () => {
 
   return (
     <Container>
-      <Typography variant="h3">Day Picker</Typography>
+      <Typography variant="h1" color="black">
+        Day Picker
+      </Typography>
       <Typography variant="p" description>
         DayPicker is a component for picking single day. It takes:
         <br />- <b>date</b> as a momentPropTypes.momentObj, string or null)

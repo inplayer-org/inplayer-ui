@@ -78,7 +78,7 @@ export const withArrayOfRowFunctions = () => {
   return (
     <>
       <Container>
-        <Typography variant="h2" color="black">
+        <Typography variant="h1" color="black">
           Table
         </Typography>
         <Typography variant="p" description>
@@ -92,7 +92,7 @@ export const withArrayOfRowFunctions = () => {
           <br /> The <b>options</b> object contains table options like row selection and row
           actions.
         </Typography>
-        <Typography variant="h2" color="black">
+        <Typography variant="h1" color="black">
           With array of row actions
         </Typography>
         <Input
@@ -152,7 +152,7 @@ export const withHeaderSection = () => {
   return (
     <>
       <Container>
-        <Typography variant="h2" color="black">
+        <Typography variant="h1" color="black">
           Table
         </Typography>
         <Typography variant="p" description>
@@ -166,7 +166,7 @@ export const withHeaderSection = () => {
           <br /> The <b>options</b> object contains table options like row selection and row
           actions.
         </Typography>
-        <Typography variant="h2" color="black">
+        <Typography variant="h1" color="black">
           With header section
         </Typography>
         <br />

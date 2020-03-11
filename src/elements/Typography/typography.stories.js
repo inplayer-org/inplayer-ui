@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -22,7 +23,7 @@ const HeadlineTypography = styled(Typography)`
 `;
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Typography</HeadlineTypography>
+    <HeadlineTypography variant="h1">Typography</HeadlineTypography>
     <Typography variant="p" description>
       Typography is an element which allows you to control the style of your text. It has a
       `variant` prop which allows you to choose between the h1-h6 headings. It inherits the
@@ -43,9 +44,9 @@ export const Demo = () => (
     </BoxContainer>
   </Container>
 );
-export const TypographyWithModifires = () => (
+export const TypographyWithModifiers = () => (
   <Container>
-    <HeadlineTypography variant="h4">Typography With Modifires</HeadlineTypography>
+    <HeadlineTypography variant="h1">Typography with Modifiers</HeadlineTypography>
     <BoxContainer>
       <Typography variant="h1" modifiers={['textPrimary']}>
         Heading H1 with primary modifier
@@ -62,9 +63,9 @@ export const TypographyWithModifires = () => (
     </BoxContainer>
   </Container>
 );
-export const TypographyWithCustomColorProvideed = () => (
+export const TypographyWithCustomColorProvided = () => (
   <Container>
-    <HeadlineTypography variant="h4">Typography With Custom Color Provideed</HeadlineTypography>
+    <HeadlineTypography variant="h1">Typography with Custom Color provided</HeadlineTypography>
     <BoxContainer>
       <Typography variant="h1" color="red">
         Heading H1 with custom red color

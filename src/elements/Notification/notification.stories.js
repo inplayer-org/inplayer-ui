@@ -21,7 +21,7 @@ const Container = styled.div`
 export const demo = () => (
   <>
     <Container>
-      <Typography variant="h3" color="black">
+      <Typography variant="h1" color="black">
         Notification
       </Typography>
       <Typography variant="p" description>

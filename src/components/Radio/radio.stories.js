@@ -10,6 +10,7 @@ export default {
 
 const Container = styled.div`
   margin: auto;
+  margin-top: 2%;
   width: 90%;
 `;
 const BoxContainer = styled.div`
@@ -23,7 +24,7 @@ const HeadlineTypography = styled(Typography)`
 
 export const Demo = () => (
   <Container>
-    <HeadlineTypography variant="h3">Radio</HeadlineTypography>
+    <HeadlineTypography variant="h1">Radio</HeadlineTypography>
     <Typography variant="p" description>
       Radio Input is a input component for radio.
     </Typography>
