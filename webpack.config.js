@@ -21,7 +21,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(js|jsx|ts|tsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.(jpe?g|png|gif|ico|svg)$/i,
         exclude: /node_modules/,

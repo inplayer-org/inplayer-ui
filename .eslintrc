@@ -1,13 +1,14 @@
 {
   "root": true,
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
-    "prettier",
-    "prettier/react",
-    "plugin:flowtype/recommended"
+    "plugin:@typescript-eslint/recommended", // uses typescript-specific linting rules
+    "plugin:react/recommended", // uses react-specific linting rules
+    "plugin:prettier/recommended", // enables eslint-plugin-prettier and eslint-config-prettier
+    "prettier/react" // disables react-specific linting rules that conflict with prettier
   ],
-  "plugins": ["react", "prettier", "flowtype"],
+  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
@@ -22,7 +23,7 @@
     "commonjs": true,
     "es6": true,
     "node": true,
-    "jquery": true,
+    "jquery": true
   },
   "settings": {
     "import/resolver": {
@@ -125,6 +126,16 @@
         "aspects": ["invalidHref"]
       }
     ],
-    "no-cond-assign": ["error", "except-parens"]
+    "no-cond-assign": ["error", "except-parens"],
+    "react-hooks/rules-of-hooks": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/no-unresolved": "off",
+    "import/named": "off",
+    "@typescript-eslint/ban-ts-ignore": "warn"
   }
 }
