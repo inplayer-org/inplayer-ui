@@ -8,24 +8,24 @@
     "plugin:prettier/recommended", // enables eslint-plugin-prettier and eslint-config-prettier
     "prettier/react" // disables react-specific linting rules that conflict with prettier
   ],
-  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "parserOptions": {
-    "ecmaVersion": 8,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "impliedStrict": true,
-      "classes": true
+      "jsx": true
     }
   },
   "env": {
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true,
-    "jquery": true
+    "node": true
   },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "webpack": {
         "config": "webpack.config.js"
@@ -113,8 +113,10 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
+        "semi": true,
         "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "es5",
         "printWidth": 100,
         "endOfLine": "auto"
       }
