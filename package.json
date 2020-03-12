@@ -122,11 +122,6 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
   "dependencies": {
     "lodash-es": "^4.17.15"
   }
