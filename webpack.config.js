@@ -15,26 +15,13 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     filename: 'inplayer-ui.min.js',
     library: pkg.name,
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
     publicPath: '/',
     umdNamedDefine: true,
   },
   module: {
     rules: [
       { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
-      },
       {
         test: /\.(jpe?g|png|gif|ico|svg)$/i,
         exclude: /node_modules/,
