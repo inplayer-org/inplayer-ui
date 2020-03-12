@@ -7,6 +7,13 @@ export default {
   component: Card,
   title: 'Card',
 };
+
+const Container = styled.div`
+  margin: auto;
+  margin-top: 2%;
+  width: 90%;
+`;
+
 const StyledContainer = styled.div`
   width: 60vw;
   height: 60vh;
@@ -25,29 +32,40 @@ const DescriptionTypography = styled(Typography)`
   margin-bottom: 40px;
 `;
 
-export const SimpleCard = props => (
-  <StyledContainer>
-    <HeadlineTypography variant="h4">Card without title</HeadlineTypography>
-    <DescriptionTypography variant="p" description>
-      Cards contain content and actions about a single subject.
-    </DescriptionTypography>
-    <Card style={{ width: 400, marginLeft: 100 }}>
-      <Typography variant="p">Card content</Typography>
-      <Typography variant="p">Card content</Typography>
-      <Typography variant="p">Card content</Typography>
-    </Card>
-  </StyledContainer>
+export const cardWithoutTitle = () => (
+  <Container>
+    <Typography variant="h1" color="black">
+      Card Without Title
+    </Typography>
+    <StyledContainer>
+      <HeadlineTypography variant="h4">Card without title</HeadlineTypography>
+      <DescriptionTypography variant="p" description>
+        Cards contain content and actions about a single subject.
+      </DescriptionTypography>
+      <Card style={{ width: 400, marginLeft: 100 }}>
+        <Typography variant="p">Card content</Typography>
+        <Typography variant="p">Card content</Typography>
+        <Typography variant="p">Card content</Typography>
+      </Card>
+    </StyledContainer>
+  </Container>
 );
-export const WithTitle = props => (
-  <StyledContainer>
-    <HeadlineTypography variant="h4">Card with title</HeadlineTypography>
-    <DescriptionTypography variant="p" description>
-      Cards contain content and actions about a single subject.
-    </DescriptionTypography>
-    <Card title="Title" titleVariant="h1" style={{ width: 400, marginLeft: 100, marginTop: 40 }}>
-      <Typography variant="p">Card content</Typography>
-      <Typography variant="p">Card content</Typography>
-      <Typography variant="p">Card content</Typography>
-    </Card>
-  </StyledContainer>
+
+export const WithTitle = () => (
+  <Container>
+    <Typography variant="h1" color="black">
+      Card With Title
+    </Typography>
+    <StyledContainer>
+      <HeadlineTypography variant="h4">Card with title</HeadlineTypography>
+      <DescriptionTypography variant="p" description>
+        Cards contain content and actions about a single subject.
+      </DescriptionTypography>
+      <Card title="Title" titleVariant="h1" style={{ width: 400, marginLeft: 100, marginTop: 40 }}>
+        <Typography variant="p">Card content</Typography>
+        <Typography variant="p">Card content</Typography>
+        <Typography variant="p">Card content</Typography>
+      </Card>
+    </StyledContainer>
+  </Container>
 );

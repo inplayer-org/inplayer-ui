@@ -1,15 +1,13 @@
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
-import Icon from '../Icon';
 import ButtonWrapper from './ButtonWrapper';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type ContentProps = {
-  icon?: string | Node,
+  icon?: Node,
   iconPosition?: string,
-  iconModifiers?: Array<string>,
   children: Node,
 };
 
@@ -25,27 +23,22 @@ const ContentHolder = styled.span`
   padding: 0.2rem;
 `;
 
-const Content = ({ icon, iconPosition, iconModifiers, children }: ContentProps) => {
-  const iconContent =
-    typeof icon === 'string' ? <Icon name={icon} modifiers={iconModifiers} /> : icon;
-
-  return iconPosition === 'right' ? (
+const Content = ({ icon, iconPosition, children }: ContentProps) =>
+  iconPosition === 'right' ? (
     <>
       {children && <ContentHolder>{children}</ContentHolder>}
-      {icon && iconContent}
+      {icon}
     </>
   ) : (
     <>
-      {icon && iconContent}
+      {icon}
       {children && <ContentHolder>{children}</ContentHolder>}
     </>
   );
-};
 
 Content.defaultProps = {
   icon: null,
   iconPosition: 'left',
-  iconModifiers: [],
 };
 
 const Button = ({ size, buttonModifiers, className, style, ...rest }: Props) => (

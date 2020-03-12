@@ -6,11 +6,10 @@ import { ifProp, ifNotProp } from 'styled-tools';
 import { uiColors, fontWeights } from 'utils';
 
 // Components
-import Icon from 'elements/Icon';
 import Typography from 'elements/Typography';
 import Tooltip from 'components/Tooltip';
 import type { Props as TooltipProps } from 'components/Tooltip';
-import InPlayerIcon from 'elements/InPlayerIcon';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 const AccordionPanelContainer = styled.div`
   width: 100%;
@@ -65,9 +64,17 @@ const AccordionTitle = styled(Typography)`
   display: inline;
 `;
 
-const AccordionIcon = styled(Icon)`
-  color: ${uiColors('primary.main')};
-  ${({ pointer }) => (pointer ? 'cursor: pointer;' : '')}
+const createIconStyles = () => ({
+  color: colors.fontGray,
+  'margin-left': 'auto',
+});
+
+const StyledAngleDown = styled(FaAngleDown)`
+  ${createIconStyles}
+`;
+
+const StyledAngleUp = styled(FaAngleUp)`
+  ${createIconStyles}
 `;
 
 const AccordionPanelDetails = styled.div`
@@ -90,7 +97,7 @@ type Props = {
   label: string,
   isActive: boolean,
   isOtherPanelActive: boolean,
-  icon?: string,
+  icon?: Node,
   iconTooltip?: TooltipProps,
   contentHeight: string,
   togglePanel: (panel: number) => (e?: SyntheticEvent<*>) => void,
@@ -121,15 +128,8 @@ const AccordionPanel = ({
         {label}
       </AccordionTitle>
       <AccordionIconHolder isAccordionDisabled={disabled}>
-        {!isOtherPanelActive &&
-          (iconTooltip ? (
-            <Tooltip {...iconTooltip}>
-              <AccordionIcon name={icon} pointer />
-            </Tooltip>
-          ) : (
-            <AccordionIcon name={icon} />
-          ))}
-        {!disabled && <InPlayerIcon name={isActive ? 'angleUp' : 'angleDown'} />}
+        {!isOtherPanelActive && (iconTooltip ? <Tooltip {...iconTooltip}>{icon}</Tooltip> : icon)}
+        {!disabled && (isActive ? <StyledAngleUp /> : <StyledAngleDown />)}
       </AccordionIconHolder>
     </AccordionPanelHeader>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
@@ -139,7 +139,7 @@ const AccordionPanel = ({
 );
 
 AccordionPanel.defaultProps = {
-  icon: '',
+  icon: null,
   iconTooltip: null,
 };
 

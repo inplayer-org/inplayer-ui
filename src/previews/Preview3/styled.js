@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import { InPlayerIcon } from 'elements';
+import { FaRegPlayCircle } from 'react-icons/fa';
 import colors from 'config/colors';
 import { transparentize } from 'polished';
 
@@ -65,7 +65,7 @@ export const Header = styled(PreviewFooter)`
   padding-bottom: 1%;
 `;
 
-export const StyledIcon = styled(InPlayerIcon)`
+export const StyledIcon = styled(FaRegPlayCircle)`
   font-size: ${({ theme }) => theme.font.sizes.extraLarge};
   color: ${({ color }) => color};
 

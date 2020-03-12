@@ -1,14 +1,36 @@
 // @flow
 import React from 'react';
-import Icon from 'elements/Icon';
+import { MdInfoOutline, MdWarning } from 'react-icons/md';
+import { IoIosCheckmarkCircle } from 'react-icons/io';
+
+import colors from 'config/colors';
+import styled from 'styled-components';
 import NoteWrapper from './NoteWrapper';
+
+const createIconStyles = ({ color }: { color?: string }) => ({
+  width: '1.5rem',
+  height: '1.5rem',
+  color,
+  'margin-right': '0.5rem',
+});
+
+const SuccessIcon = styled(IoIosCheckmarkCircle)`
+  ${createIconStyles}
+`;
+
+const WarningIcon = styled(MdInfoOutline)`
+  ${createIconStyles}
+`;
+
+const DangerIcon = styled(MdWarning)`
+  ${createIconStyles}
+`;
 
 type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 
 type Props = {
   title: string,
   text: string,
-  icon: string,
   type: NoteType,
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
@@ -17,29 +39,18 @@ type Props = {
 
 const NoteIcon = {
   informative: null,
-  success: 'check-circle',
-  warning: 'info-circle',
-  danger: 'exclamation-triangle',
+  success: <SuccessIcon color={colors.green} />,
+  warning: <WarningIcon color={colors.yellow} />,
+  danger: <DangerIcon color={colors.red} />,
 };
 
-const NoteIconModifier = {
-  informative: null,
-  success: 'statusColorPrimary',
-  warning: 'statusColorWarning',
-  danger: 'statusColorDanger',
-};
+const getIconFromNoteType = (type: NoteType) => NoteIcon[type];
 
-const getIconFromNoteType = (icon: string, type: NoteType) =>
-  type !== 'informative' && (NoteIcon[type] || icon);
-
-const Note = ({ type, title, text, icon, className, style }: Props) => {
-  const iconType = getIconFromNoteType(icon, type);
+const Note = ({ type, title, text, className, style }: Props) => {
+  const Icon = getIconFromNoteType(type);
   return (
     <NoteWrapper type={type} className={className} style={style}>
-      {iconType && (
-        <Icon name={getIconFromNoteType(icon, type)} modifiers={[NoteIconModifier[type]]} />
-      )}{' '}
-      <strong>{title}</strong>
+      {Icon} <strong>{title}</strong>
       {text}
     </NoteWrapper>
   );

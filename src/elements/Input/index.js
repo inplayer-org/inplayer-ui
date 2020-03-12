@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'config/colors';
 import { ifProp, switchProp } from 'styled-tools';
-import InplayerIcon from 'elements/InPlayerIcon';
+import { MdSearch } from 'react-icons/md';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -28,7 +28,7 @@ const StyledInput = styled.input`
     border-bottom: 1px solid ${uiColors('primary.main')};
   }
 
-  padding-left: ${props => (props.iconName || props.renderIcon ? '2rem !important' : null)};
+  padding-left: ${props => (props.icon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`
@@ -66,7 +66,7 @@ const StyledInput = styled.input`
   })};
 `;
 
-const InputIcon = styled(InplayerIcon)`
+const IconContainer = styled.div`
   position: absolute;
   color: ${colors.darkGray};
   left: 0.5rem;
@@ -87,15 +87,11 @@ type Props = {
   size?: Size,
   style?: Object,
   className?: string,
-  iconName?: string,
-  renderIcon?: () => Node,
+  icon?: Node,
 };
 
 const Input = React.forwardRef(
-  (
-    { type, placeholder, onChange, size, style, className, iconName, renderIcon, ...rest }: Props,
-    ref
-  ) => {
+  ({ type, placeholder, onChange, size, style, className, icon, ...rest }: Props, ref) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
@@ -105,7 +101,9 @@ const Input = React.forwardRef(
 
     return type === 'search' ? (
       <InputWrapper style={style} className={className}>
-        <InputIcon size={size} name="search" />
+        <IconContainer>
+          <MdSearch />
+        </IconContainer>
         <StyledInput
           size={size}
           ref={ref}
@@ -117,16 +115,14 @@ const Input = React.forwardRef(
       </InputWrapper>
     ) : (
       <InputWrapper style={style} className={className}>
-        {iconName && <InputIcon size={size} name={iconName} />}
-        {renderIcon && renderIcon()}
+        <IconContainer>{icon}</IconContainer>
         <StyledInput
           size={size}
           ref={ref}
           type={type || 'text'}
           placeholder={placeholder}
           onChange={onInputChange}
-          iconName={iconName}
-          renderIcon={renderIcon}
+          icon={icon}
           {...rest}
         />
       </InputWrapper>
@@ -140,8 +136,7 @@ Input.defaultProps = {
   size: 'md',
   style: {},
   className: '',
-  iconName: '',
-  renderIcon: null,
+  icon: null,
 };
 
 /** @component */

@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import Icon from 'elements/Icon';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 
@@ -9,7 +8,7 @@ type TabInfo = {
 };
 
 type ContentProps = {
-  icon?: string,
+  icon?: Node,
   iconPosition?: string,
   iconModifiers?: Array<string>,
 };
@@ -24,15 +23,15 @@ type Props = HTMLDivElement &
     style?: Object,
   };
 
-const Content = ({ icon, iconPosition, iconModifiers, name }: any) =>
+const Content = ({ icon, iconPosition, name }: any) =>
   iconPosition === 'right' ? (
     <>
       {name}
-      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      {icon}
     </>
   ) : (
     <>
-      {icon && <Icon name={icon} modifiers={iconModifiers} />}
+      {icon}
       {name}
     </>
   );

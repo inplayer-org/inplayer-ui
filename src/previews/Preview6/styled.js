@@ -1,6 +1,5 @@
 // @flow
 import styled from 'styled-components';
-import InPlayerIcon from 'elements/InPlayerIcon';
 import colors from 'config/colors';
 
 // Components
@@ -92,20 +91,6 @@ export const ItemDetails = styled.div`
   justify-content: flex-start;
   margin: auto;
   padding: 0 0 0 1rem;
-`;
-
-export const Icon = styled(InPlayerIcon)`
-  font-size: 20px;
-  color: ${colors.fontGray};
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  line-height: 15px;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  position: relative;
 `;
 
 export const ImageWrapper = styled(ImageHolder)`

@@ -72,7 +72,7 @@ const Preview5 = ({
       </ImageWrapper>
       <ItemDetails height={height}>
         <PaywallDescription color={lighten(0.01, buttonBgColor)}>
-          <StyledIcon name="diamond" />
+          <StyledIcon />
           <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>
         </PaywallDescription>
         <TitleHolder>

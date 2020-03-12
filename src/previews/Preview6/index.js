@@ -6,10 +6,9 @@ import colors from 'config/colors';
 import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
-// Types
-import { type Branding } from '../types/branding';
-
 // Components
+import { FaLock } from 'react-icons/fa';
+import styled from 'styled-components';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
@@ -21,8 +20,14 @@ import {
   PreviewFooter,
   FooterLink,
   IconHolder,
-  Icon,
 } from './styled';
+
+// Types
+import { type Branding } from '../types/branding';
+
+const LockIcon = styled(FaLock)`
+  color: ${colors.fontGray};
+`;
 
 type Props = {
   branding?: Branding,
@@ -74,7 +79,7 @@ const Preview6 = ({
               {loginFooterLabel}
             </FooterLink>
             <IconHolder>
-              <Icon name="lock" />
+              <LockIcon />
             </IconHolder>
           </PreviewFooter>
         </FootService>
