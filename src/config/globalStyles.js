@@ -1,23 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-import ipicEot from 'assets/fonts/ipic18.eot';
-import ipicTtf from 'assets/fonts/ipic18.ttf';
-import ipicWoff from 'assets/fonts/ipic18.woff';
-import ipicSvg from 'assets/fonts/ipic18.svg';
-
 // Global styles but theme- and update-able!
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'ipic';
-    src: url(${ipicEot});
-    src: url(${ipicEot}) format('embedded-opentype'),
-      url(${ipicTtf}) format('truetype'),
-      url(${ipicWoff}) format('woff'),
-      url(${ipicSvg}) format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-
   html {
     height: 100%;
 
