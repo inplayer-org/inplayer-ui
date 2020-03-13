@@ -1,21 +1,21 @@
 import React, { ReactNode } from 'react';
-import { ThemeProvider as DefaultThemeProvider } from 'styled-components';
-import GlobalStyles from 'config/globalStyles';
-import { Theme, ITheme } from 'config/theme';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
+import GlobalStyles from 'theme/globalStyles';
+import { Theme } from './theme';
 
 interface Props {
   children: ReactNode;
-  theme?: ITheme;
+  theme?: DefaultTheme;
 }
 
 const ThemeWrapper = ({ children, theme }: Props) => {
   const appTheme = theme || Theme;
 
   return (
-    <DefaultThemeProvider theme={appTheme}>
+    <ThemeProvider theme={appTheme}>
       <GlobalStyles suppressMultiMountWarning />
       {children}
-    </DefaultThemeProvider>
+    </ThemeProvider>
   );
 };
 
