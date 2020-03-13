@@ -138,6 +138,7 @@
     "@typescript-eslint/no-namespace": "off",
     "import/no-unresolved": "off",
     "import/named": "off",
-    "@typescript-eslint/ban-ts-ignore": "warn"
+    "@typescript-eslint/ban-ts-ignore": "warn",
+    "@typescript-eslint/interface-name-prefix": "warn"
   }
 }

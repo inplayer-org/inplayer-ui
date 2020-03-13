@@ -1,16 +1,15 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider as DefaultThemeProvider } from 'styled-components';
 import GlobalStyles from 'config/globalStyles';
-import fallbackTheme from 'config/theme';
-import { Theme } from 'types/Theme';
+import { Theme, ITheme } from 'config/theme';
 
 interface Props {
   children: ReactNode;
-  theme?: Theme;
+  theme?: ITheme;
 }
 
 const ThemeWrapper = ({ children, theme }: Props) => {
-  const appTheme = theme || fallbackTheme;
+  const appTheme = theme || Theme;
 
   return (
     <DefaultThemeProvider theme={appTheme}>
