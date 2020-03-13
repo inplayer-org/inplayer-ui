@@ -1,5 +1,3 @@
 import getProp from './getProp';
 
-const uiColors = (color: string) => (props: any) => getProp(`palette.${color}`, props.theme);
-
-export default uiColors;
+export default (color: string) => (props: any) => getProp(`palette.${color}`, props.theme);
