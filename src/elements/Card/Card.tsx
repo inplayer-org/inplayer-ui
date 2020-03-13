@@ -1,8 +1,8 @@
 // @flow
-import React, { type Node } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import colors from 'config/colors';
-import Typography from 'elements/Typography';
+import { Typography } from 'elements';
 import CardContent from './CardContent';
 
 const CardWrapper = styled.div`
@@ -32,13 +32,13 @@ const CardTitle = styled(Typography)`
   display: inline-block;
 `;
 
-type Props = {
-  title?: string,
-  titleVariant?: string,
-  className?: string,
-  children: Node,
-  style?: Object,
-};
+interface Props {
+  title?: string;
+  titleVariant?: string;
+  className?: string;
+  children: ReactNode;
+  style?: Record<string, any>;
+}
 
 const Card = ({ title, titleVariant, className, children, style }: Props) => (
   <CardWrapper className={className} style={style}>
