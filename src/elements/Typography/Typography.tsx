@@ -1,8 +1,7 @@
-// @flow
-import React, { type Node } from 'react';
-import styled, { css } from 'styled-components';
-import { prop, ifProp } from 'styled-tools';
-import { uiColors, fontWeights, fontSizes } from 'utils';
+import React, { ReactNode } from 'react';
+import styled from 'styled-components';
+import { fontWeights, fontSizes } from 'utils';
+import colors from 'config/colors';
 import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -15,37 +14,42 @@ const typographyModifiers = {
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
-const Paragraph = styled.p`
-  font-size: ${fontSizes('medium')};
-  color: ${ifProp('color', prop('color'), uiColors('text.main'))};
-  ${ifProp(
-    'description',
-    css`
-      color: ${uiColors('text.light')};
-      font-size: ${fontSizes('large')};
-    `
-  )};
-  ${applyStyleModifiers(typographyModifiers)};
-`;
-
-const Heading = styled.h1`
-  font-family: ${prop('theme.font.primary')};
-  font-weight: ${fontWeights('thin')};
-  color: ${ifProp('color', prop('color'), uiColors('secondary.main'))};
-  font-size: ${({ theme, variant }) => theme.font.sizes[variant]};
-  ${applyStyleModifiers(typographyModifiers)};
-`;
-
-export type TypographyProps = {
-  variant: TypographyVariant,
-  description?: boolean,
-  children: Node,
-  /** A className can be passed down for further styling or extending with CSS-in-JS */
-  className?: string,
-  modifiers?: Array<String>,
-  color?: string,
-  style?: Object,
+const defaultProps = {
+  className: '',
+  modifiers: [],
+  color: '',
+  style: {},
+  description: false,
 };
+
+const Paragraph = styled.p<{ description?: any; modifiers?: any }>`
+  color: ${({ description }) => (description ? colors.fontGray : colors.fontDarkGray)};
+  font-size: ${({ description }) => (description ? fontSizes('large') : fontSizes('medium'))};
+`;
+
+const Heading = styled.h1<{
+  variant: TypographyVariant;
+  color?: string;
+  modifiers?: Array<string>;
+  description?: any;
+}>`
+  font-family: ${({ theme }) => theme.font.primary};
+  font-weight: ${fontWeights('thin')};
+  color: ${colors.blue};
+  font-size: ${({ variant, theme }) => theme.font.sizes[variant]};
+  ${applyStyleModifiers(typographyModifiers)};
+`;
+
+interface TypographyProps {
+  variant: TypographyVariant;
+  description?: boolean;
+  children: ReactNode;
+  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  className?: string;
+  modifiers?: Array<string>;
+  color?: string;
+  style?: Record<string, any>;
+}
 
 const Typography = ({
   variant,
@@ -83,12 +87,6 @@ const Typography = ({
   );
 };
 
-Typography.defaultProps = {
-  className: '',
-  modifiers: [],
-  color: '',
-  style: {},
-  description: false,
-};
+Typography.defaultProps = defaultProps;
 
 export default Typography;
