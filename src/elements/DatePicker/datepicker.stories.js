@@ -1,7 +1,9 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import DatePicker from './index';
+// eslint-disable-next-line import/no-named-as-default-member
 import Typography from '../Typography/index';
 
 const moment = require('moment');
