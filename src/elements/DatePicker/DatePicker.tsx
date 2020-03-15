@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
-import { DayPicker } from 'elements';
 import Label from '../Label';
 import DatePickerWrapper from '../DatePickerWrapper';
 
@@ -35,12 +34,12 @@ const DatePresetWrapper = styled.div`
   padding: 3.75rem 1.25rem 0.625rem;
 `;
 
-type Props = typeof DayPicker.defaultProps & {
+type Props = {
   startDate: Moment | null;
   endDate: Moment | null;
   startDateId?: string;
   endDateId?: string;
-  isOutsideRange?: boolean;
+  isOutsideRange?: (day: any) => boolean;
   onDateChange(arg: ChangeDate): void;
   style?: Record<string, any>;
   className?: string;
@@ -74,7 +73,8 @@ type Period =
   | 'custom date preset';
 
 class DatePicker extends React.Component<Props> {
-  static defaultPops = {
+  // eslint-disable-next-line react/static-property-placement
+  static defaultProps = {
     endDate: null,
     startDateId: 'startDate',
     endDateId: 'endDate',
