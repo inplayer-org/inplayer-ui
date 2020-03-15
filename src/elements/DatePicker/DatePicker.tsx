@@ -8,6 +8,7 @@ import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 import Label from '../Label';
 import DatePickerWrapper from '../DatePickerWrapper';
+import { PERIODS } from './periods';
 
 interface ChangeDate {
   startDate: Moment | null;
@@ -50,16 +51,6 @@ type Props = {
   customAllTimeDate?: number;
   activePeriodPreset?: string;
 };
-
-const THIS_WEEK = 'this week';
-const LAST_WEEK = 'last week';
-const LAST_TWO_WEEKS = 'last 2 weeks';
-const THIS_MONTH = 'this month';
-const LAST_MONTH = 'last month';
-const THIS_YEAR = 'this year';
-const LAST_SIX_MONTHS = 'last 6 months';
-const ALL_TIME = 'all time';
-const CUSTOM = 'custom date preset';
 
 type Period =
   | 'this week'
@@ -110,30 +101,30 @@ class DatePicker extends React.Component<Props> {
       : startDate.subtract(3, 'year');
 
     switch (period) {
-      case THIS_WEEK:
+      case PERIODS.THIS_WEEK:
         endDate = startDate.add(7, 'days');
         startDate = moment().endOf('day');
         break;
-      case LAST_WEEK:
+      case PERIODS.LAST_WEEK:
         startDate = startDate.subtract(7, 'days');
         break;
-      case LAST_TWO_WEEKS:
+      case PERIODS.LAST_TWO_WEEKS:
         startDate = startDate.subtract(14, 'days');
         break;
-      case THIS_MONTH:
+      case PERIODS.THIS_MONTH:
         endDate = startDate.add(1, 'month');
         startDate = moment().endOf('day');
         break;
-      case LAST_MONTH:
+      case PERIODS.LAST_MONTH:
         startDate = startDate.subtract(1, 'months');
         break;
-      case LAST_SIX_MONTHS:
+      case PERIODS.LAST_SIX_MONTHS:
         startDate = startDate.subtract(6, 'months');
         break;
-      case THIS_YEAR:
+      case PERIODS.THIS_YEAR:
         startDate = startDate.subtract(1, 'year');
         break;
-      case ALL_TIME:
+      case PERIODS.ALL_TIME:
         startDate = allTimeStartDate;
         break;
       default:
@@ -149,7 +140,13 @@ class DatePicker extends React.Component<Props> {
 
     let presets = [];
     if (displayPresets.includes('default')) {
-      presets = [THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR];
+      presets = [
+        PERIODS.THIS_WEEK,
+        PERIODS.LAST_WEEK,
+        PERIODS.THIS_MONTH,
+        PERIODS.LAST_MONTH,
+        PERIODS.THIS_YEAR,
+      ];
     } else {
       presets = [...displayPresets];
     }
@@ -171,7 +168,7 @@ class DatePicker extends React.Component<Props> {
 
   handleDateChange = ({ startDate, endDate }: ChangeDate) => {
     const { onDateChange } = this.props;
-    this.setState({ activePeriod: CUSTOM });
+    this.setState({ activePeriod: PERIODS.CUSTOM });
     onDateChange({ startDate, endDate });
   };
 
