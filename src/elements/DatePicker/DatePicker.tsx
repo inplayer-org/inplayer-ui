@@ -62,8 +62,6 @@ const DatePicker = ({
   }, []);
 
   const handleRangeClick = (period: Period) => {
-    console.log('PERIODS');
-    console.log(period);
     setActivePeriod(period);
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
