@@ -10,11 +10,6 @@ import Label from '../Label';
 import DatePickerWrapper from '../DatePickerWrapper';
 import { PERIODS } from './periods';
 
-interface ChangeDate {
-  startDate: Moment | null;
-  endDate: Moment | null;
-}
-
 const StyledLabel = styled(Label)`
   display: block;
   font-size: ${fontSizes('small')};
@@ -35,13 +30,18 @@ const DatePresetWrapper = styled.div`
   padding: 3.75rem 1.25rem 0.625rem;
 `;
 
+interface DateChangeArgs {
+  startDate: Moment | null;
+  endDate: Moment | null;
+}
+
 type Props = {
   startDate: Moment | null;
   endDate: Moment | null;
   startDateId?: string;
   endDateId?: string;
   isOutsideRange?: (day: any) => boolean;
-  onDateChange(arg: ChangeDate): void;
+  onDateChange(arg: DateChangeArgs): void;
   style?: Record<string, any>;
   className?: string;
   onFocusChange(focused: FocusedInputShape | null): void;
@@ -166,7 +166,7 @@ class DatePicker extends React.Component<Props> {
     );
   };
 
-  handleDateChange = ({ startDate, endDate }: ChangeDate) => {
+  handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {
     const { onDateChange } = this.props;
     this.setState({ activePeriod: PERIODS.CUSTOM });
     onDateChange({ startDate, endDate });
