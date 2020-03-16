@@ -4,7 +4,6 @@ import { FocusedInputShape, DateRangePicker } from 'react-dates';
 import DatePickerWrapper from 'elements/DatePickerWrapper';
 import { PERIODS } from './periods';
 import { Styled } from './styles';
-import 'react-dates/initialize';
 
 interface DateChangeArgs {
   startDate: Moment | null;
@@ -41,19 +40,21 @@ type Props = {
 
 const DatePicker = ({
   activePeriodPreset = '',
-  customAllTimeDate,
-  onDateChange,
-  displayPresets,
-  startDate: startDateProp,
-  endDate: endDateProp,
+  customAllTimeDate = moment()
+    .startOf('day')
+    .subtract(3, 'year'),
+  displayPresets = [],
+  endDate: endDateProp = null,
   startDateId = 'startDate',
   endDateId = 'endDate',
-  isOutsideRange,
-  style,
+  isOutsideRange = () => false,
+  style = {},
+  minimumNights = 0,
+  onDateChange,
+  startDate: startDateProp,
   className,
   onFocusChange,
   focusedInput,
-  minimumNights,
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
 
@@ -62,36 +63,35 @@ const DatePicker = ({
   }, []);
 
   const handleRangeClick = (period: Period) => {
-    console.log('PERIODS');
-    console.log(period);
     setActivePeriod(period);
     let startDate = moment().startOf('day');
     let endDate = moment().endOf('day');
+
     const allTimeStartDate = !customAllTimeDate ? startDate.subtract(3, 'year') : customAllTimeDate;
 
     switch (period) {
       case PERIODS.THIS_WEEK:
-        endDate = moment().add(7, 'days');
+        endDate = startDate.add(7, 'days');
         startDate = moment().endOf('day');
         break;
       case PERIODS.LAST_WEEK:
-        startDate = moment().subtract(7, 'days');
+        startDate = startDate.subtract(7, 'days');
         break;
       case PERIODS.LAST_TWO_WEEKS:
-        startDate = moment().subtract(14, 'days');
+        startDate = startDate.subtract(14, 'days');
         break;
       case PERIODS.THIS_MONTH:
-        endDate = moment().add(1, 'month');
+        endDate = startDate.add(1, 'month');
         startDate = moment().endOf('day');
         break;
       case PERIODS.LAST_MONTH:
-        startDate = moment().subtract(1, 'months');
+        startDate = startDate.subtract(1, 'months');
         break;
       case PERIODS.LAST_SIX_MONTHS:
-        startDate = moment().subtract(6, 'months');
+        startDate = startDate.subtract(6, 'months');
         break;
       case PERIODS.THIS_YEAR:
-        startDate = moment().subtract(1, 'year');
+        startDate = startDate.subtract(1, 'year');
         break;
       case PERIODS.ALL_TIME:
         startDate = allTimeStartDate;
@@ -150,7 +150,7 @@ const DatePicker = ({
         endDate={endDateProp}
         endDateId={endDateId}
         customArrowIcon="to"
-        calendarInfoPosition="after"
+        // calendarInfoPosition={hasPresets && 'before'}
         minimumNights={minimumNights}
         enableOutsideDays
         readOnly
