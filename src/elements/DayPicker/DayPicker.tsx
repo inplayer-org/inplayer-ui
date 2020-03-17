@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
@@ -7,12 +6,16 @@ import moment, { Moment } from 'moment';
 import DayPickerWrapper from './DayPickerWrapper';
 
 type Props = {
+  // required
+  id: string;
+  onDateChange: (date: Moment | null) => void;
+  onFocusChange: (arg: { focused: boolean | null }) => void;
+  focused: boolean | null;
+  date: Moment | string | null;
+
+  // input related props
   isOutsideRange?: (day: number) => any;
-  onDateChange: (date: Moment) => any;
-  onFocusChange: (focused: any) => any;
-  focused: boolean;
-  date: Moment | string;
-  style?: Object;
+  style?: Record<string, any>;
   className?: string;
   numberOfMonths?: number;
   disabled?: boolean;
