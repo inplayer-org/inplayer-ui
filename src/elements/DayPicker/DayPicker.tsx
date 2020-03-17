@@ -8,8 +8,8 @@ import DayPickerWrapper from './DayPickerWrapper';
 type Props = {
   // required
   id: string;
-  onDateChange: (date: Moment | null) => void;
-  onFocusChange: (arg: { focused: boolean | null }) => void;
+  onDateChange: (dateArg: Moment | null) => void;
+  onFocusChange: (arg: { focusedArg: boolean | null }) => void;
   focused: boolean | null;
   date: Moment | string | null;
 
