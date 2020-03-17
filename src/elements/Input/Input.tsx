@@ -1,12 +1,9 @@
-// @flow
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'utils';
-import colors from 'config/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
-
-type Size = 'xs' | 'sm' | 'md' | 'lg';
+import { fontWeights, fontSizes } from '../../utils';
+import colors from '../../theme/colors';
 
 const StyledInput = styled.input`
   width: 100%;
@@ -14,7 +11,7 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${uiColors('text.main')};
+  color: ${props => props.theme.palette.primary.main};
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
@@ -25,10 +22,10 @@ const StyledInput = styled.input`
   line-height: 1;
 
   &:focus {
-    border-bottom: 1px solid ${uiColors('primary.main')};
+    border-bottom: 1px solid ${props => props.theme.palette.primary.main};
   }
 
-  padding-left: ${props => (props.icon ? '2rem !important' : null)};
+  padding-left: ${(props: Props) => (props.icon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`
@@ -78,19 +75,19 @@ const InputWrapper = styled.div`
   position: relative;
 `;
 
-type Props = {
-  type: string,
-  placeholder: string,
-  id: string,
-  onChange: (e: ChangeEvent<HTMLInputElement>) => any,
-  value: string | Array<string> | number,
-  size?: Size,
-  style?: Object,
-  className?: string,
-  icon?: Node,
-};
+interface Props {
+  type: string;
+  placeholder: string;
+  id: string;
+  onChange: (e: SyntheticEvent<HTMLInputElement>) => any;
+  value: string | Array<string> | number;
+  size?: any;
+  style?: Record<string, any>;
+  className?: string;
+  icon?: Node;
+}
 
-const Input = React.forwardRef(
+const Input = React.forwardRef<HTMLInputElement, Props>(
   ({ type, placeholder, onChange, size, style, className, icon, ...rest }: Props, ref) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
@@ -136,8 +133,8 @@ Input.defaultProps = {
   size: 'md',
   style: {},
   className: '',
-  icon: null,
+  icon: undefined,
 };
 
-/** @component */
+/* @component */
 export default Input;
