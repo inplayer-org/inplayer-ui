@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 import { switchProp, prop } from 'styled-tools';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { transparentize } from 'polished';
 
 const notify = keyframes`

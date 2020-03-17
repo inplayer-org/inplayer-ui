@@ -6,7 +6,7 @@ import NotificationContainer, { CloseIcon } from './NotificationContainer';
 
 type NotificationVariant = 'success' | 'danger' | 'warning';
 
-type NotificationProps = {
+interface NotificationProps {
   title: string,
   content: string,
   variant?: NotificationVariant,
@@ -18,7 +18,7 @@ type NotificationProps = {
 
 const divs: Array<HTMLDivElement> = [];
 
-function useTimeout(callback, duration) {
+function useTimeout(callback: any, duration: any) {
   useEffect(() => {
     if (typeof duration === 'number' && duration >= 0) {
       const id = setTimeout(callback, duration);
@@ -39,16 +39,16 @@ const Notification = ({
   useTimeout(close, duration * 1000);
   return (
     <NotificationContainer
-      variant={variant}
-      duration={duration}
-      className={className}
-      style={style}
+      variant= { variant }
+  duration = { duration }
+  className = { className }
+  style = { style }
     >
-      <div>
-        <strong>{title}</strong> {content}
-      </div>
-      <CloseIcon onClick={close} />
-    </NotificationContainer>
+    <div>
+    <strong>{ title } < /strong> {content}
+    < /div>
+    < CloseIcon onClick = { close } />
+      </NotificationContainer>
   );
 };
 
@@ -61,16 +61,17 @@ function destroy(index) {
 
 function create(props: NotificationProps, parentDiv: ?HTMLDivElement) {
   const divIndex = divs.length;
-  const notificationInstance = <Notification {...props} close={() => destroy(divIndex)} />;
-  const div = document.createElement('div');
-  if (parentDiv) {
-    parentDiv.appendChild(div);
-  } else if (document.body) {
-    document.body.appendChild(div);
-  }
+  const notificationInstance = <Notification { ...props } close = {() => destroy(divIndex)
+} />;
+const div = document.createElement('div');
+if (parentDiv) {
+  parentDiv.appendChild(div);
+} else if (document.body) {
+  document.body.appendChild(div);
+}
 
-  ReactDOM.render(notificationInstance, div);
-  divs.push(div);
+ReactDOM.render(notificationInstance, div);
+divs.push(div);
 }
 
 Notification.create = create;
