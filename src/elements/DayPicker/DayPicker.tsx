@@ -31,9 +31,11 @@ const DayPicker = ({
   className,
   numberOfMonths,
   disabled,
+  id,
 }: Props) => (
   <DayPickerWrapper style={style} className={className}>
     <SingleDatePicker
+      id={id}
       isOutsideRange={isOutsideRange}
       onDateChange={onDateChange}
       onFocusChange={onFocusChange}
