@@ -22,15 +22,15 @@ type Props = {
 };
 
 const DayPicker = ({
-  isOutsideRange,
+  isOutsideRange = () => false,
+  style = {},
+  numberOfMonths = 1,
+  className = '',
+  disabled = false,
   onDateChange,
   onFocusChange,
   focused,
   date,
-  style,
-  className,
-  numberOfMonths,
-  disabled,
   id,
 }: Props) => (
   <DayPickerWrapper style={style} className={className}>
@@ -46,13 +46,5 @@ const DayPicker = ({
     />
   </DayPickerWrapper>
 );
-
-DayPicker.defaultProps = {
-  isOutsideRange: () => false,
-  style: {},
-  className: '',
-  numberOfMonths: 1,
-  disabled: false,
-};
 
 export default DayPicker;
