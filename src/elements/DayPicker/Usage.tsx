@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useState } from 'react';
 import moment, { Moment } from 'moment';
 import DayPicker from './DayPicker';
@@ -10,8 +11,8 @@ const DayPickerUsage = () => {
 
   return (
     <DayPicker
-      onFocusChange={({ focusedArg }) => setFocused(focusedArg)}
-      onDateChange={dateArg => setDate(dateArg)}
+      onFocusChange={({ focused }) => setFocused(focused)}
+      onDateChange={date => setDate(date)}
       id="date picker"
       date={date}
       focused={focused}
