@@ -80,7 +80,7 @@ interface Props {
   placeholder: string;
   id: string;
   onChange: (e: SyntheticEvent<HTMLInputElement>) => any;
-  value: string | Array<string> | number;
+  value?: string | Array<string> | number;
   size?: any;
   style?: Record<string, any>;
   className?: string;
