@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import colors from 'config/colors';
 import { switchProp } from 'styled-tools';
-import { fontWeights, uiColors } from 'utils';
+import { fontWeights } from 'utils';
+import colors from 'theme/colors';
 
-const NoteWrapper = styled.p`
+const NoteWrapper = styled.p<{ type?: string }>`
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ const NoteWrapper = styled.p`
   padding: 1.125rem 2%;
   border-radius: 3px;
   background: ${colors.white};
-  color: ${uiColors('text.main')};
+  color: ${colors.fontDarkGray};
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.01em;
   line-height: 1.8;
