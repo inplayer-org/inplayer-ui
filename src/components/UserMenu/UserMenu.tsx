@@ -1,13 +1,12 @@
 // @flow
-import React, { type Element } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'config/colors';
+import colors from 'theme/colors';
+import { fontSizes } from 'utils';
+import UserMenuDropdown, { UserMenuDropdownProps } from './UserMenuDropdown';
 
-import { uiColors, fontSizes } from 'utils/index';
-import UserMenuDropdown, { type UserMenuDropdownProps } from './UserMenuDropdown';
-
-const ProfileImage = styled.img`
+const ProfileImage = styled.img<{ src?: any }>`
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -28,7 +27,7 @@ const MenuButton = styled.div`
   }
 `;
 
-const MenuArrow = styled.i`
+const MenuArrow = styled.i<{ open?: any }>`
   border: solid ${colors.darkGray};
   border-width: 1px 0 0 1px;
   display: inline-block;
@@ -57,25 +56,25 @@ const CloseLayer = styled.div`
 `;
 
 const MenuTitle = styled.span`
-  color: ${uiColors('text.light')};
+  color: ${colors.fontGray};
   transition: color 0.3s ease;
   font-size: ${fontSizes('medium')};
   padding: 0 3px 0 10px;
 
   &:hover {
-    color: ${uiColors('text.main')};
+    color: ${colors.fontDarkGray};
   }
 `;
 
 export type UserMenuProps = UserMenuDropdownProps & {
-  image: Element<*> | string,
-  className?: string,
-  style?: Object,
-  menuTitle?: string,
+  image: Element | string;
+  className?: string;
+  style?: Record<string, any>;
+  menuTitle?: string;
 };
 
 type UserMenuState = {
-  open: boolean,
+  open: boolean;
 };
 
 class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
@@ -101,7 +100,6 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
           </MenuButton>
           {open && (
             <UserMenuDropdown
-              open={open}
               menuItems={menuItems}
               actionItem={actionItem}
               onClick={this.toggleMenuOpen}
@@ -113,10 +111,5 @@ class UserMenu extends React.Component<UserMenuProps, UserMenuState> {
     );
   }
 }
-
-UserMenu.defaultProps = {
-  className: '',
-  style: {},
-};
 
 export default UserMenu;

@@ -1,10 +1,10 @@
 // @flow
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { uiColors, fontWeights, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontWeights, fontSizes } from 'utils';
+import colors from 'theme/colors';
 
 const Container = styled.div`
   align-items: flex-start;
@@ -35,7 +35,7 @@ const Container = styled.div`
 `;
 
 const Item = styled.a`
-  color: ${uiColors('text.light')};
+  color: ${colors.fontGray};
   box-sizing: border-box;
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
@@ -48,12 +48,12 @@ const Item = styled.a`
   font-size: ${fontSizes('medium')};
 
   &:hover {
-    color: ${uiColors('text.main')};
+    color: ${colors.fontDarkGray};
   }
 `;
 
-const ActionItem = styled(Item)`
-  border-top: 1px solid ${uiColors('text.disabled')};
+const ActionItem = styled(Item)<{ smallSize?: any }>`
+  border-top: 1px solid ${colors.fontLightGray};
   margin-top: 0.75rem;
   padding-top: 1.125rem;
   ${ifProp(
@@ -78,18 +78,19 @@ const ItemImage = styled.img`
   margin-left: 0.625rem;
 `;
 
-type MenuItem = {
-  title: string,
-  href?: string,
-  image?: string,
-  onClick?: (e: SyntheticEvent<*>) => any,
-  smallSize?: boolean,
-};
+interface MenuItem {
+  title: string;
+  href?: string;
+  image?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => any;
+  smallSize?: boolean;
+}
 
-export type UserMenuDropdownProps = {
-  menuItems: Array<MenuItem>,
-  actionItem?: MenuItem,
-};
+export interface UserMenuDropdownProps {
+  menuItems: Array<MenuItem>;
+  actionItem?: MenuItem;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => any;
+}
 
 const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
   <Container>

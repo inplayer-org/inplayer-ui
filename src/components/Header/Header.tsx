@@ -2,12 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
-import colors from 'config/colors';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 
 // Components
-import UserMenu, { type UserMenuProps } from 'components/UserMenu';
-import TabNavigation, { type TabNavigationProps } from 'components/TabNavigation';
+
+import TabNavigation, { TabNavigationProps } from 'components/TabNavigation';
+import colors from 'theme/colors';
+import UserMenu, { UserMenuProps } from 'components/UserMenu';
 
 const Container = styled.header`
   align-items: center;
@@ -23,7 +24,7 @@ const Container = styled.header`
 `;
 
 const Title = styled.h3`
-  color: ${uiColors('text.main')};
+  color: ${colors.fontDarkGray};
   font-weight: ${fontWeights('light')};
   margin: 0;
 `;
@@ -33,14 +34,14 @@ const MenuWrapper = styled.div`
   justify-content: space-between;
 `;
 
-type HeaderProps = {
-  title?: string,
-  userMenuProps?: UserMenuProps,
-  additionalUserMenuProps?: UserMenuProps,
-  tabNavigationProps?: TabNavigationProps,
-  className?: string,
-  style?: Object,
-};
+interface HeaderProps {
+  title?: string;
+  userMenuProps?: UserMenuProps;
+  additionalUserMenuProps?: UserMenuProps;
+  tabNavigationProps?: TabNavigationProps;
+  className?: string;
+  style?: Record<string, any>;
+}
 
 const Header = ({
   title,
