@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import colors from 'theme/colors';
 
 export const AccordionWrapper = styled.div<{
-  width: string | undefined;
-  extendWidth: string | undefined;
+  width?: string;
+  extendWidth?: string;
   open: boolean;
   contentHeight: string;
 }>`
@@ -22,7 +22,5 @@ export const AccordionWrapper = styled.div<{
   transition: width 0.3s ease;
   ${({ open }) =>
     open &&
-    css`
-      ${(width, extendWidth) => width && `width: calc(${width} + ${extendWidth})`};
-    `}
+    `${(width: any, extendWidth: any) => width && `width: calc(${width} + ${extendWidth})`}`};
 `;

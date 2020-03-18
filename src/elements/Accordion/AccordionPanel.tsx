@@ -12,7 +12,7 @@ import { Typography } from 'elements';
 
 const AccordionPanelContainer = styled.div<{ isActive: boolean; contentHeight: string }>`
   width: 100%;
-  height: 3.5rem;
+  height: 80vh;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
@@ -56,7 +56,7 @@ const AccordionPanelHeader = styled.header<{ onClick: any; disabled: boolean; is
   )};
 `;
 
-const AccordionTitle = styled(Typography)<{ isActive: boolean; disabled: boolean }>`
+const AccordionTitle = styled.p<{ isActive: boolean; disabled: boolean; variant: string }>`
   font-weight: ${fontWeights('thin')};
   color: ${ifProp(
     'disabled',
@@ -96,18 +96,18 @@ const AccordionIconHolder = styled.div<{ isAccordionDisabled: boolean }>`
   )};
 `;
 
-type Props = {
+interface Props {
   label: string;
   isActive: boolean;
   isOtherPanelActive: boolean;
   icon?: Node;
   iconTooltip?: TooltipProps;
   contentHeight: string;
-  togglePanel: (panel: number) => (e: SyntheticEvent<Event, any>) => void;
+  togglePanel: (e: SyntheticEvent<Event, any>) => void;
   renderContent: (actions: { closePanel: (e?: SyntheticEvent<any>) => void }) => any;
   closePanel: (e?: SyntheticEvent<any>) => void;
   disabled: boolean;
-};
+}
 
 const AccordionPanel = ({
   label,
