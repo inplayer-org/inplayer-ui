@@ -2,14 +2,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 
-const Tab = styled.a`
+const Tab = styled.a<{ active: boolean }>`
   height: 100%;
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: ${uiColors('text.light')};
+  color: ${props => props.theme.palette.text.light};
   cursor: pointer;
   font-weight: ${fontWeights('light')};
   line-height: 2rem;
@@ -20,13 +20,13 @@ const Tab = styled.a`
   ${ifProp(
     'active',
     css`
-      border-color: ${uiColors('primary.main')};
-      color: ${uiColors('text.main')};
+      border-color: ${props => props.theme.palette.primary.main};
+      color: ${props => props.theme.palette.text.main};
     `
   )};
 
   &:hover {
-    color: ${uiColors('text.main')};
+    color: ${props => props.theme.palette.text.main};
   }
 `;
 
@@ -38,16 +38,16 @@ const TabContainer = styled.div`
 `;
 
 type NavigationTab = {
-  title: string,
+  title: string;
 };
 
-type Props = {
-  tabs: Array<NavigationTab>,
-  onTabClick: (index: number) => any,
-  selectedTabIndex: number,
-  className?: string,
-  style?: Object,
-};
+interface Props {
+  tabs: Array<NavigationTab>;
+  onTabClick: (index: number) => any;
+  selectedTabIndex: number;
+  className?: string;
+  style?: Record<string, any>;
+}
 
 export type TabNavigationProps = Props;
 
