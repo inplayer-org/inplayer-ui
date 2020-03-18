@@ -1473,14 +1473,14 @@
     uuid "^3.3.2"
 
 "@storybook/addon-info@^5.3.14":
-  version "5.3.14"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.3.14.tgz#2d5309f12816ff51c5a141616133a2701b39173b"
-  integrity sha512-xZCR1OmOIT2zz0r22PSMCUvcIqCWxTTpAc3R8ByJts9j/FxlvMerAgPYhZ8R9WNFEjG2Mszwyw66pU7Oj+qipg==
+  version "5.3.17"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.3.17.tgz#39704362d5d9688ac3d9dce96b63b868103ec32c"
+  integrity sha512-64+Prf+7t0MlrEmJplRwKNjXcZDqNFx+yNJ0kiWfR+Ueyq58kv5gawtImZnj2dRZNOR776GPVj30BlvaxK4jsA==
   dependencies:
-    "@storybook/addons" "5.3.14"
-    "@storybook/client-logger" "5.3.14"
-    "@storybook/components" "5.3.14"
-    "@storybook/theming" "5.3.14"
+    "@storybook/addons" "5.3.17"
+    "@storybook/client-logger" "5.3.17"
+    "@storybook/components" "5.3.17"
+    "@storybook/theming" "5.3.17"
     core-js "^3.0.1"
     global "^4.3.2"
     marksy "^8.0.0"
@@ -10978,12 +10978,7 @@ react-inspector@^4.0.0:
     prop-types "^15.6.1"
     storybook-chromatic "^2.2.2"
 
-react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6, react-is@^16.9.0:
-  version "16.11.0"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
-  integrity sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
-
-react-is@^16.8.3:
+react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.6, react-is@^16.9.0:
   version "16.13.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
   integrity sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
