@@ -17,7 +17,7 @@ const notify = keyframes`
   }
 `;
 
-const NotificationContainer = styled.div`
+const NotificationContainer = styled.div<{ variant: string | undefined; duration: number }>`
   box-sizing: border-box;
   border: 1px solid ${colors.gray};
   border-radius: 3px;

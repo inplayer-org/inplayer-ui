@@ -13,7 +13,7 @@ interface NotificationProps {
   variant?: NotificationVariant;
   className?: string;
   style?: Record<string, any>;
-  close: () => void;
+  close?: () => void;
 }
 
 const divs: Array<HTMLDivElement> = [];
