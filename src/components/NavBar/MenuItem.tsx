@@ -1,12 +1,12 @@
 // @flow
-import React, { type Node } from 'react';
+import React, { ReactNode, ChangeEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { uiColors, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontSizes } from 'utils';
+import colors from 'theme/colors';
 
-const MenuItemContainer = styled.div`
+const MenuItemContainer = styled.div<{ onClick: (e: ChangeEvent<HTMLElement>) => any }>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -19,8 +19,8 @@ const MenuItemContainer = styled.div`
   ${ifProp(
     'active',
     css`
-      background: ${uiColors('primary.dark')};
-      border-right: ${uiColors('primary.main')} 3px solid;
+      background: ${colors.navy};
+      border-right: ${colors.skyBlue} 3px solid;
       color: ${colors.white};
     `
   )};
@@ -36,15 +36,16 @@ const MenuItemIcon = styled.i`
   min-width: 20px;
 `;
 
-type MenuItemProps = {
-  active: boolean,
-  icon: ?string | ?Node,
-  onClick: ?(e: SyntheticEvent<HTMLDivElement>) => any,
-  children: ?Node,
-};
+interface MenuItemProps {
+  active: boolean;
+  icon?: string | ReactNode;
+  onClick: ((e: React.MouseEvent<HTMLElement, MouseEvent>) => void) &
+    ((e: React.ChangeEvent<HTMLElement>) => any);
+  children?: ReactNode;
+}
 
 const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
-  const onItemClick = e => {
+  const onItemClick = (e: ChangeEvent<HTMLElement>) => {
     e.stopPropagation();
     if (onClick && typeof onClick === 'function') {
       onClick(e);

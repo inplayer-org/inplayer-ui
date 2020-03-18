@@ -2,10 +2,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
-import colors from 'config/colors';
 import { transparentize } from 'polished';
+import colors from 'theme/colors';
 
-export const ArrowContainer = styled.div`
+export const ArrowContainer = styled.div<{
+  section?: any;
+  onClick?: ((e: React.MouseEvent<HTMLElement, MouseEvent>) => void) &
+    ((e: React.ChangeEvent<HTMLElement>) => any);
+}>`
   width: 18px;
   margin: 0 1rem 1rem 1rem;
   text-align: center;
@@ -23,7 +27,7 @@ export const ArrowContainer = styled.div`
   })};
 `;
 
-export const NavbarArrow = styled.i`
+export const NavbarArrow = styled.i<{ open?: boolean; section?: string }>`
   display: inline-block;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -43,11 +47,12 @@ export const NavbarArrow = styled.i`
   })};
 `;
 
-type Props = {
-  open: boolean,
-  section: string,
-  onClick: any,
-};
+interface Props {
+  open: boolean;
+  section: string;
+  onClick?: ((e: React.MouseEvent<HTMLElement, MouseEvent>) => void) &
+    ((e: React.ChangeEvent<HTMLElement>) => any);
+}
 
 const Arrow = ({ open, section, onClick }: Props) => (
   <ArrowContainer section={section} onClick={onClick}>

@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors } from 'utils';
 
-export const NavbarContainer = styled.div`
-  background-color: ${uiColors('secondary.dark')};
+import colors from 'theme/colors';
+
+export const NavbarContainer = styled.div<{
+  open?: any;
+  onClick?: ((e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void) | undefined;
+}>`
+  background-color: ${colors.darkBlue};
   width: ${ifProp('open', 190, 50)}px;
   height: 100%;
   display: flex;
@@ -14,7 +18,7 @@ export const NavbarContainer = styled.div`
   overflow: hidden;
 `;
 
-export const NavbarLogo = styled.img`
+export const NavbarLogo = styled.img<{ src?: any }>`
   align-self: center;
   height: 34px;
   margin: 0.5rem 0;
