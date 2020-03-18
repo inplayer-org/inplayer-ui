@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { uiColors } from 'utils';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 const RadioWrapper = styled.div`
   display: inline-block;
@@ -32,7 +31,7 @@ const RadioWrapper = styled.div`
       top: -0.1rem;
       left: 0.09rem;
       font-size: 1.4rem;
-      color: ${uiColors('primary.main')};
+      color: ${colors.skyBlue};
       transition: all 0.2s;
     }
   }
@@ -46,7 +45,7 @@ const RadioWrapper = styled.div`
 
   > input:checked + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${colors.skyBlue};
     }
 
     &::after {
@@ -56,7 +55,7 @@ const RadioWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${uiColors('text.disabled')};
+    color: ${colors.fontLightGray};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -65,7 +64,7 @@ const RadioWrapper = styled.div`
   }
 
   > input:disabled:checked + label {
-    color: ${uiColors('text.disabled')};
+    color: ${colors.fontLightGray};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -80,7 +79,7 @@ const RadioWrapper = styled.div`
 
   > input:checked:focus + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${colors.skyBlue};
     }
   }
 
