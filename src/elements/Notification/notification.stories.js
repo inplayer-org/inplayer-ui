@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // components
-import Notification from './index';
+import Notification from './Notification';
 import Button from '../Button/index';
 import Typography from '../Typography/index';
 
