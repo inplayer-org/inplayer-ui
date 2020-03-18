@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontWeights, fontSizes } from 'utils';
+import colors from 'theme/colors';
 
 const TextArea = styled.textarea`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${uiColors('text.main')};
+  color: ${colors.fontDarkGray};
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
@@ -21,9 +21,7 @@ const TextArea = styled.textarea`
   padding: 0.75rem 1.125rem;
 
   &:focus {
-    border-bottom: 1px solid ${uiColors('primary.main')};
+    border-bottom: 1px solid ${colors.skyBlue};
   }
 `;
-
-/** @component */
 export default TextArea;
