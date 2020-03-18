@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import colors from 'config/colors';
-import uiColors from 'utils/uiColors';
+import colors from 'theme/colors';
 
 const CheckboxWrapper = styled.div`
   > input {
@@ -35,11 +34,11 @@ const CheckboxWrapper = styled.div`
 
   > input:checked + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${props => props.theme.palette.primary.main};
     }
 
     &::after {
-      border: 2px solid ${uiColors('primary.main')};
+      border: 2px solid ${props => props.theme.palette.primary.main};
       border-top: none;
       border-right: none;
       width: 0.5rem;
@@ -64,18 +63,18 @@ const CheckboxWrapper = styled.div`
   > input:checked + label:hover {
     ::before {
       border-color: transparent;
-      background: ${uiColors('primary.light')};
+      background: ${props => props.theme.palette.primary.light};
     }
 
     ::after {
-      border-color: ${uiColors('primary.main')};
+      border-color: ${props => props.theme.palette.primary.main};
     }
   }
 
   > input:not(:checked) + label:hover {
     ::before {
-      border: 1px solid ${uiColors('primary.main')};
-      background-color: ${uiColors('primary.light')};
+      border: 1px solid ${props => props.theme.palette.primary.main};
+      background-color: ${props => props.theme.palette.primary.light};
     }
 
     ::after {
@@ -86,12 +85,12 @@ const CheckboxWrapper = styled.div`
   > input:checked:focus + label,
   input:not(:checked):focus + label {
     &::before {
-      border: 1px dotted ${uiColors('primary.light')};
+      border: 1px dotted ${props => props.theme.palette.primary.light};
     }
   }
 
   > input:disabled:checked + label {
-    color: ${uiColors('text.disabled')};
+    color: ${props => props.theme.palette.text.disabled};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -105,7 +104,7 @@ const CheckboxWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${uiColors('text.disabled')};
+    color: ${props => props.theme.palette.text.disabled};
 
     &::before {
       border: 1px solid ${colors.gray};
