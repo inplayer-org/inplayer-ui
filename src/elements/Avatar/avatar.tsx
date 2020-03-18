@@ -1,7 +1,6 @@
-// @flow
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components';
-import colors from 'config/colors';
+
 
 const ImageContainer = styled.div`
   width: 100%;
@@ -14,12 +13,13 @@ const ImageContainer = styled.div`
 const StyledImage = styled.img`
   border-radius: 50%;
   width: 140px;
-  border: 5px solid ${colors.white};
+  border: 5px solid white;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.4);
 `;
 
-type Props = {
-  imageUrl?: string,
+
+interface Props {
+  imageUrl?: string
 };
 
 const Avatar = ({ imageUrl }: Props) => (
@@ -31,5 +31,6 @@ const Avatar = ({ imageUrl }: Props) => (
 Avatar.defaultProps = {
   imageUrl: 'https://assets.inplayer.com/images/merchant-default-avatar.png',
 };
+
 
 export default Avatar;
