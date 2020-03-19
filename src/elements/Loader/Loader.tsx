@@ -1,8 +1,7 @@
 // @flow
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { prop, ifProp } from 'styled-tools';
-import uiColors from 'utils/uiColors';
+import colors from 'theme/colors';
 
 interface Props {
   height?: number;
@@ -12,7 +11,7 @@ interface Props {
   direction?: string;
 }
 
-const directions = {
+const directions: Record<string, any> = {
   up: '16,0 32,32 0,32',
   down: '0,0 32,0 16,32',
   right: '0,0 32,16 0,32',
@@ -25,13 +24,15 @@ const dash = keyframes`
     }
 `;
 
-const StyledSpinner = styled.svg`
+const StyledSpinner = styled.svg<{
+  color?: string;
+}>`
   transform-origin: 50% 65%;
+  stroke: ${({ color }) => color || colors.skyBlue};
 
   polygon {
     stroke-dasharray: 17;
     animation: ${dash} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
-    stroke: ${ifProp('color', prop('color'), uiColors('primary.main'))};
   }
 `;
 
