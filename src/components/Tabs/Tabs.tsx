@@ -4,24 +4,20 @@ import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 
 type TabInfo = {
-  name: string,
+  name: string;
 };
 
-type ContentProps = {
-  icon?: Node,
-  iconPosition?: string,
-  iconModifiers?: Array<string>,
-};
-
-type Props = HTMLDivElement &
-  ContentProps & {
-    tabs: Array<TabInfo>,
-    selectedTabIndex: number,
-    onTabClick: (index: number) => void,
-    /** A className can be passed down for further styling or extending with CSS-in-JS */
-    className?: string,
-    style?: Object,
-  };
+interface Props {
+  tabs: Array<TabInfo>;
+  selectedTabIndex: number;
+  onTabClick: (index: number) => void;
+  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  className?: string;
+  style?: Record<string, any>;
+  icon?: Node | string;
+  iconPosition?: string;
+  iconModifiers?: Array<string>;
+}
 
 const Content = ({ icon, iconPosition, name }: any) =>
   iconPosition === 'right' ? (

@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights } from 'utils';
-import colors from 'config/colors';
+import { fontWeights } from 'utils';
+import colors from 'theme/colors';
 import { ifProp } from 'styled-tools';
 
-const Tab = styled.div`
+const Tab = styled.div<{ selected: boolean }>`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;
@@ -23,19 +23,19 @@ const Tab = styled.div`
     'selected',
     css`
       background: ${colors.white};
-      color: ${uiColors('primary.main')};
+      color: ${props => props.theme.palette.primary.main};
     `,
     css`
       background: transparent;
-      color: ${uiColors('text.light')};
+      color: ${props => props.theme.palette.text.light};
 
       &:hover {
-        color: ${uiColors('text.main')};
+        color: ${props => props.theme.palette.text.main};
       }
 
       span {
         background: transparent;
-        color: ${uiColors('text.light')};
+        color: ${props => props.theme.palette.text.light};
       }
     `
   )};
