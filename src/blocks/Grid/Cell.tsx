@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 
-const Cell = styled.div`
+interface Props {
+  width: number;
+  height: number;
+  left: string;
+  top: string;
+  center: string;
+  area: string;
+  middle: string;
+}
+
+const Cell = styled.div<Props>`
   height: 100%;
   min-width: 0;
   grid-column-end: ${({ width = 1 }) => `span ${width}`};
