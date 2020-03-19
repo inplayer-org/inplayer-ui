@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { MouseEvent } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
@@ -106,9 +106,9 @@ interface Props {
   icon?: Node;
   iconTooltip?: TooltipProps;
   contentHeight: string;
-  togglePanel: (e: SyntheticEvent<Event, any>) => void;
-  renderContent: (actions: { closePanel: (e?: SyntheticEvent<any>) => void }) => any;
-  closePanel: (e?: SyntheticEvent<any>) => void;
+  togglePanel: (e: MouseEvent<HTMLButtonElement>) => void;
+  renderContent: (actions: { closePanel: (e?: MouseEvent<HTMLButtonElement>) => void }) => any;
+  closePanel: (e?: MouseEvent<HTMLButtonElement>) => void;
   disabled: boolean;
 }
 

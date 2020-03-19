@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 
 // Components
 import { Props as TooltipProps } from 'components/Tooltip';
@@ -42,12 +42,12 @@ const Accordion: React.FC<Props> = ({
     }
   };
 
-  const closePanel = (e?: SyntheticEvent<Event, any>) => {
+  const closePanel = (e?: MouseEvent<HTMLButtonElement>) => {
     if (e) e.stopPropagation();
     setActivePanel(-1);
   };
 
-  const togglePanel = (panelIndex: number) => (e: SyntheticEvent<Event, any>) => {
+  const togglePanel = (panelIndex: number) => (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (activePanel !== -1) {
       closePanel();

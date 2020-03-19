@@ -20,7 +20,5 @@ export const AccordionWrapper = styled.div<{
   flex-direction: column;
   justify-content: space-between;
   transition: width 0.3s ease;
-  ${({ open }) =>
-    open &&
-    `${(width: any, extendWidth: any) => width && `width: calc(${width} + ${extendWidth})`}`};
+  ${({ open, width, extendWidth }) => open && width && `width: calc(${width} + ${extendWidth})`};
 `;
