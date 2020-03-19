@@ -1,9 +1,10 @@
 // @flow
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import colors from 'config/colors';
+
 import { ifProp } from 'styled-tools';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import colors from 'theme/colors';
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -14,9 +15,9 @@ const getBoxStyles = ({
   disabled = false,
   selected = false,
 }: {
-  disabled?: boolean,
-  selected?: boolean,
-  hideBorder?: boolean,
+  disabled?: boolean;
+  selected?: boolean;
+  hideBorder?: boolean;
 }) => {
   if (disabled) {
     return css`
@@ -68,13 +69,13 @@ const PageBox = styled.button`
   ${getBoxStyles}
 `;
 
-type Props = {
-  onPageChange: (pageNumber: number) => any,
-  totalItems: number,
-  startPage?: number,
-  numberOfPagesDisplayed?: number,
-  itemsPerPage?: number,
-};
+interface Props {
+  onPageChange: (pageNumber: number) => any;
+  totalItems: number;
+  startPage?: number;
+  numberOfPagesDisplayed?: number;
+  itemsPerPage?: number;
+}
 
 // Kibana has limit of 9990 pages
 const pagesLimit = 9990;
