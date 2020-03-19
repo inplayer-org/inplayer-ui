@@ -23,19 +23,19 @@ const Tab = styled.div<{ selected: boolean }>`
     'selected',
     css`
       background: ${colors.white};
-      color: ${props => props.theme.palette.primary.main};
+      color: ${({ theme }) => theme.palette.primary.main};
     `,
     css`
       background: transparent;
-      color: ${props => props.theme.palette.text.light};
+      color: ${({ theme }) => theme.palette.text.light};
 
       &:hover {
-        color: ${props => props.theme.palette.text.main};
+        color: ${({ theme }) => theme.palette.text.main};
       }
 
       span {
         background: transparent;
-        color: ${props => props.theme.palette.text.light};
+        color: ${({ theme }) => theme.palette.text.light};
       }
     `
   )};

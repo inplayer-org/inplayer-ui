@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
@@ -16,7 +15,6 @@ interface Props {
   style?: Record<string, any>;
   icon?: Node | string;
   iconPosition?: string;
-  iconModifiers?: Array<string>;
 }
 
 const Content = ({ icon, iconPosition, name }: any) =>
@@ -31,12 +29,6 @@ const Content = ({ icon, iconPosition, name }: any) =>
       {name}
     </>
   );
-
-Content.defaultProps = {
-  icon: null,
-  iconPosition: 'left',
-  iconModifiers: [],
-};
 
 const renderTabs = (
   tabs: Array<TabInfo>,
@@ -67,6 +59,8 @@ const Tabs = ({ tabs, selectedTabIndex, onTabClick, className, style }: Props) =
 Tabs.defaultProps = {
   className: '',
   style: {},
+  icon: null,
+  iconPosition: 'left',
 };
 
 export default Tabs;
