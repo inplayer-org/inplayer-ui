@@ -1,4 +1,3 @@
-// @flow
 import React, { SyntheticEvent, useState } from 'react';
 
 // Components
@@ -107,5 +106,4 @@ Accordion.defaultProps = {
   onActivePanelChange: undefined,
 };
 
-/** @component */
 export default Accordion;

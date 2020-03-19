@@ -1,4 +1,3 @@
-// @flow
 import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
@@ -56,12 +55,16 @@ const AccordionPanelHeader = styled.header<{ onClick: any; disabled: boolean; is
   )};
 `;
 
-const AccordionTitle = styled.p<{ isActive: boolean; disabled: boolean; variant: string }>`
+const AccordionTitle = styled(Typography)<{
+  isActive: boolean;
+  disabled: boolean;
+  variant: string;
+}>`
   font-weight: ${fontWeights('thin')};
   color: ${ifProp(
     'disabled',
-    props => props.theme.palette.text.disabled,
-    props => props.theme.palette.text.main
+    ({ theme }) => theme.palette.text.disabled,
+    ({ theme }) => theme.palette.text.main
   )};
   margin: 0;
   display: inline;
