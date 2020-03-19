@@ -1,4 +1,3 @@
-// @flow
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -94,5 +93,4 @@ Notification.defaultProps = {
   style: {},
 };
 
-/** @component */
 export default Notification;
