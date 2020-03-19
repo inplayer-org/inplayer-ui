@@ -1,6 +1,5 @@
-// @flow
 import React, { ChangeEvent } from 'react';
-import Label from '../../elements/Label';
+import Label from 'elements/Label';
 import CheckboxWrapper from './CheckboxWrapper';
 
 type Props = {

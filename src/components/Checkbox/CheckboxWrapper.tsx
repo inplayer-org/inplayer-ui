@@ -34,11 +34,11 @@ const CheckboxWrapper = styled.div`
 
   > input:checked + label {
     &::before {
-      border: 1px solid ${props => props.theme.palette.primary.main};
+      border: 1px solid ${({ theme }) => theme.palette.primary.main};
     }
 
     &::after {
-      border: 2px solid ${props => props.theme.palette.primary.main};
+      border: 2px solid ${({ theme }) => theme.palette.primary.main};
       border-top: none;
       border-right: none;
       width: 0.5rem;
@@ -63,18 +63,18 @@ const CheckboxWrapper = styled.div`
   > input:checked + label:hover {
     ::before {
       border-color: transparent;
-      background: ${props => props.theme.palette.primary.light};
+      background: ${({ theme }) => theme.palette.primary.light};
     }
 
     ::after {
-      border-color: ${props => props.theme.palette.primary.main};
+      border-color: ${({ theme }) => theme.palette.primary.main};
     }
   }
 
   > input:not(:checked) + label:hover {
     ::before {
-      border: 1px solid ${props => props.theme.palette.primary.main};
-      background-color: ${props => props.theme.palette.primary.light};
+      border: 1px solid ${({ theme }) => theme.palette.primary.main};
+      background-color: ${({ theme }) => theme.palette.primary.light};
     }
 
     ::after {
@@ -85,12 +85,12 @@ const CheckboxWrapper = styled.div`
   > input:checked:focus + label,
   input:not(:checked):focus + label {
     &::before {
-      border: 1px dotted ${props => props.theme.palette.primary.light};
+      border: 1px dotted ${({ theme }) => theme.palette.primary.light};
     }
   }
 
   > input:disabled:checked + label {
-    color: ${props => props.theme.palette.text.disabled};
+    color: ${({ theme }) => theme.palette.text.disabled};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -104,7 +104,7 @@ const CheckboxWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${props => props.theme.palette.text.disabled};
+    color: ${({ theme }) => theme.palette.text.disabled};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -113,5 +113,4 @@ const CheckboxWrapper = styled.div`
   }
 `;
 
-/** @component */
 export default CheckboxWrapper;
