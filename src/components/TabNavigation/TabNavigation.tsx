@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
@@ -9,7 +8,7 @@ const Tab = styled.a<{ active: boolean }>`
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: ${props => props.theme.palette.text.light};
+  color: ${({ theme }) => theme.palette.text.light};
   cursor: pointer;
   font-weight: ${fontWeights('light')};
   line-height: 2rem;
@@ -20,13 +19,13 @@ const Tab = styled.a<{ active: boolean }>`
   ${ifProp(
     'active',
     css`
-      border-color: ${props => props.theme.palette.primary.main};
-      color: ${props => props.theme.palette.text.main};
+      border-color: ${({ theme }) => theme.palette.primary.main};
+      color: ${({ theme }) => theme.palette.text.main};
     `
   )};
 
   &:hover {
-    color: ${props => props.theme.palette.text.main};
+    color: ${({ theme }) => theme.palette.text.main};
   }
 `;
 
