@@ -1,5 +1,5 @@
 // @flow
-import React, { ReactNode } from 'react';
+import React, { ReactChild } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 
@@ -52,7 +52,7 @@ const fadeOutLeft = keyframes`
   }
 `;
 
-const StepWrapper = styled.div`
+const StepWrapper = styled.div<{ isActive: boolean; transition: string }>`
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -93,19 +93,15 @@ const StepWrapper = styled.div`
 `;
 
 type Props = {
-  children: ReactNode,
-  isActive: boolean,
-  transition?: string,
+  children: ReactChild;
+  isActive: boolean;
+  transition?: string;
 };
 
-const Step = ({ children, isActive, transition }: Props) => (
+const Step = ({ children, isActive, transition = 'fadeInLeft' }: Props) => (
   <StepWrapper isActive={isActive} transition={transition}>
     {children}
   </StepWrapper>
 );
-
-Step.defaultProps = {
-  transition: 'fadeInLeft',
-};
 
 export default Step;
