@@ -2,8 +2,8 @@ import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
-import { fontWeights, fontSizes } from '../../utils';
-import colors from '../../theme/colors';
+import colors from 'theme/colors';
+import { fontWeights, fontSizes } from 'utils';
 
 const StyledInput = styled.input`
   width: 100%;
