@@ -11,7 +11,7 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${props => props.theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
@@ -22,7 +22,7 @@ const StyledInput = styled.input`
   line-height: 1;
 
   &:focus {
-    border-bottom: 1px solid ${props => props.theme.palette.primary.main};
+    border-bottom: 1px solid ${({ theme }) => theme.palette.primary.main};
   }
 
   padding-left: ${(props: Props) => (props.icon ? '2rem !important' : null)};
@@ -136,5 +136,4 @@ Input.defaultProps = {
   icon: undefined,
 };
 
-/* @component */
 export default Input;
