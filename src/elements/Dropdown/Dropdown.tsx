@@ -1,16 +1,15 @@
-// @flow
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 import { prop, ifProp } from 'styled-tools';
-import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, fontSizes } from 'utils';
-import * as fontSizeModifiers from 'modifiers';
-import colors from 'config/colors';
+// import { applyStyleModifiers } from 'styled-components-modifiers';
+import { fontWeights, fontSizes } from 'utils';
+// import * as fontSizeModifiers from 'modifiers';
+import colors from 'theme/colors';
 
 const DropdownContainer = styled.select`
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  color: ${uiColors('text.light')};
+  color: ${colors.fontGray};
   cursor: pointer;
   font-size: ${fontSizes('small')};
   font-weight: ${fontWeights('light')};
@@ -26,48 +25,45 @@ const DropdownContainer = styled.select`
   margin: 0;
   box-sizing: border-box;
   appearance: none;
-
   &:hover {
-    color: ${ifProp('color', prop('color'), uiColors('primary.main'))};
+    color: ${ifProp('color', prop('color'), colors.skyBlue)};
   }
 
   &:hover,
   &:focus {
-    border-color: ${ifProp('color', prop('color'), uiColors('primary.main'))};
+    border-color: ${ifProp('color', prop('color'), colors.skyBlue)};
   }
-
   > option {
-    color: ${uiColors('text.light')};
+    color: ${colors.fontGray};
     font-weight: ${fontWeights('light')};
   }
-
-  ${applyStyleModifiers(fontSizeModifiers)};
 `;
+// ${applyStyleModifiers(fontSizeModifiers)};
 
-type Option = {
-  value: string,
-  displayName: string,
-};
+interface Option {
+  value: string;
+  displayName: string;
+}
 
-type DefaultOption = {
-  displayName: string,
-  disabled?: boolean,
-};
+interface DefaultOption {
+  displayName: string;
+  disabled?: boolean;
+}
 
-type Props = HTMLSelectElement & {
-  value: string,
-  onChange?: (value: string) => any,
-  className?: string,
-  color?: string,
+interface Props {
+  value: string;
+  onChange?: (value: string) => any;
+  className?: string;
+  color?: string;
   /** `Option` is a `{ value: string, displayName: string }` object */
-  options: Array<Option>,
-  style?: Object,
-  disabled?: boolean,
-  defaultOption?: DefaultOption,
-};
+  options: Array<Option>;
+  style?: Record<string, any>;
+  disabled?: boolean;
+  defaultOption?: DefaultOption;
+}
 
 const Dropdown = ({ options, onChange, style, className, defaultOption, ...rest }: Props) => {
-  const onDropdownChange = (e: SyntheticEvent<*>) => {
+  const onDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
     if (typeof onChange === 'function') {
       onChange(e.target.value);
     }
