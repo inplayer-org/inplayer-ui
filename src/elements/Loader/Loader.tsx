@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, CSSProperties } from 'styled-components';
 import colors from 'theme/colors';
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   color?: string;
   lineWidth?: number;
   direction?: string;
+  style?: CSSProperties;
 }
 
 const directions: Record<string, any> = {
@@ -42,8 +43,16 @@ const Loader = ({
   color,
   lineWidth = 2,
   direction = 'right',
+  style = {},
 }: Props) => (
-  <StyledSpinner color={color} id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
+  <StyledSpinner
+    style={style}
+    color={color}
+    id="triangle"
+    width={width}
+    height={height}
+    viewBox="-3 -4 39 39"
+  >
     <polygon
       fill="transparent"
       stroke={color}
