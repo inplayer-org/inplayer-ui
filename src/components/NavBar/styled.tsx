@@ -18,7 +18,7 @@ export const NavbarContainer = styled.div<{
   overflow: hidden;
 `;
 
-export const NavbarLogo = styled.img<{ src?: any }>`
+export const NavbarLogo = styled.img`
   align-self: center;
   height: 34px;
   margin: 0.5rem 0;

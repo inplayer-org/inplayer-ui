@@ -1,4 +1,3 @@
-// @flow
 import React, { ReactNode, useState } from 'react';
 
 // Components
