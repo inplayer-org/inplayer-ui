@@ -24,11 +24,6 @@ type Props = {
   onActivePanelChange?: (index: number) => void;
 };
 
-// type State = {
-//   activePanel: number;
-//   open: boolean;
-// };
-
 const Accordion = ({
   panels,
   contentHeight,
