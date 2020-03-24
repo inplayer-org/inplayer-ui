@@ -1,7 +1,6 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 const ImageContainer = styled.div`
   width: 100%;
@@ -19,7 +18,7 @@ const StyledImage = styled.img`
 `;
 
 type Props = {
-  imageUrl?: string,
+  imageUrl?: string;
 };
 
 const Avatar = ({ imageUrl }: Props) => (
@@ -27,9 +26,5 @@ const Avatar = ({ imageUrl }: Props) => (
     <StyledImage src={imageUrl} alt="avatar-image" />
   </ImageContainer>
 );
-
-Avatar.defaultProps = {
-  imageUrl: 'https://assets.inplayer.com/images/merchant-default-avatar.png',
-};
 
 export default Avatar;
