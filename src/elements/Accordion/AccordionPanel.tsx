@@ -156,3 +156,5 @@ const AccordionPanel = ({
     </AccordionPanelContainer>
   </>
 );
+
+export default AccordionPanel;
