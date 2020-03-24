@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.32] - 24-04-2020
+
+### Added
+
+- Add more colors
+
 # [2.0.0-beta.31] - 06-04-2020
 
 ### Change
