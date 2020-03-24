@@ -27,4 +27,8 @@ const Avatar = ({ imageUrl }: Props) => (
   </ImageContainer>
 );
 
+Avatar.defaultProps = {
+  imageUrl: 'https://assets.inplayer.com/images/merchant-default-avatar.png',
+};
+
 export default Avatar;
