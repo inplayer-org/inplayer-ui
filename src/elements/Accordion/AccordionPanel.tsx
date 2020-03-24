@@ -2,16 +2,32 @@ import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 
 // Components
 import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 import Typography from '../Typography';
 
+// Types
 type AccordionPanelContainerProps = {
   isActive: boolean;
   contentHeight: string;
+};
+
+type AccordionPanelHeaderProps = {
+  isActive: boolean;
+  disabled: boolean;
+  onClick: any;
+};
+
+type AccordionTitleProps = {
+  isActive: boolean;
+  disabled: boolean;
+};
+
+type AccordionIconHolderProps = {
+  isAccordionDisabled: boolean;
 };
 
 const AccordionPanelContainer = styled.div<AccordionPanelContainerProps>`
@@ -41,12 +57,6 @@ const AccordionPanelContainer = styled.div<AccordionPanelContainerProps>`
   )}
 `;
 
-type AccordionPanelHeaderProps = {
-  isActive: boolean;
-  disabled: boolean;
-  onClick: any;
-};
-
 const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
   margin: 0;
   padding: 1rem 3%;
@@ -66,11 +76,6 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
     `
   )}
 `;
-
-type AccordionTitleProps = {
-  isActive: boolean;
-  disabled: boolean;
-};
 
 const AccordionTitle = styled(Typography)<AccordionTitleProps>`
   font-weight: ${fontWeights('thin')};
@@ -96,10 +101,6 @@ const AccordionPanelDetails = styled.div`
   padding: 0;
   height: 100%;
 `;
-
-type AccordionIconHolderProps = {
-  isAccordionDisabled: boolean;
-};
 
 const AccordionIconHolder = styled.div<AccordionIconHolderProps>`
   ${ifNotProp(
