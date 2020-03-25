@@ -8,7 +8,12 @@ import { MdSearch } from 'react-icons/md';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
-const StyledInput = styled.input`
+type StyledInputProps = {
+  sizeProp?: Size;
+  icon?: Node | null;
+};
+
+const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
@@ -28,8 +33,7 @@ const StyledInput = styled.input`
     border-bottom: 1px solid ${colors.skyBlue};
   }
 
-  padding-left: ${(props: { icon: string }) =>
-    props.icon ? '2rem !important' : null};
+  padding-left: ${({ icon }) => (icon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`
@@ -84,12 +88,12 @@ type Props = {
   type: string;
   placeholder: string;
   id: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => any;
+  onChange: (e: SyntheticEvent<HTMLInputElement, Event>) => any;
   value: string | Array<string> | number;
   size?: Size;
   style?: Record<string, any>;
   className?: string;
-  icon?: Node;
+  icon?: Node | null;
 };
 
 const Input = React.forwardRef(
@@ -104,7 +108,11 @@ const Input = React.forwardRef(
       icon,
       ...rest
     }: Props,
-    ref
+    ref:
+      | ((instance: HTMLInputElement | null) => void)
+      | React.RefObject<HTMLInputElement>
+      | null
+      | undefined
   ) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
@@ -113,25 +121,28 @@ const Input = React.forwardRef(
       }
     };
 
-    return type === 'search' ? (
-      <InputWrapper style={style} className={className}>
-        <IconContainer>
-          <MdSearch />
-        </IconContainer>
-        <StyledInput
-          size={size}
-          ref={ref}
-          type={type}
-          placeholder={placeholder}
-          {...rest}
-          onChange={onInputChange}
-        />
-      </InputWrapper>
-    ) : (
+    if (type === 'search') {
+      return (
+        <InputWrapper style={style} className={className}>
+          <IconContainer>
+            <MdSearch />
+          </IconContainer>
+          <StyledInput
+            sizeProp={size}
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            {...rest}
+            onChange={onInputChange}
+          />
+        </InputWrapper>
+      );
+    }
+    return (
       <InputWrapper style={style} className={className}>
         <IconContainer>{icon}</IconContainer>
         <StyledInput
-          size={size}
+          sizeProp={size}
           ref={ref}
           type={type || 'text'}
           placeholder={placeholder}
