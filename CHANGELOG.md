@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 # [2.0.0-beta.33] - 24-04-2020
 
-### Added
+### Chore
 
 - Update all npm libs
 
