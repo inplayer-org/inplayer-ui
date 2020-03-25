@@ -13,7 +13,7 @@ const typographyModifiers = {
   textWarning,
 };
 
-type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
 const Paragraph = styled.p`
   font-size: ${fontSizes('medium')};
@@ -37,7 +37,7 @@ const Heading = styled.h1`
 `;
 
 export type TypographyProps = {
-  variant: TypographyVariant,
+  variant?: TypographyVariant,
   description?: boolean,
   children: Node,
   /** A className can be passed down for further styling or extending with CSS-in-JS */

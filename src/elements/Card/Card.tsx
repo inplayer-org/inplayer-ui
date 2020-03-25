@@ -1,8 +1,7 @@
-// @flow
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import colors from 'config/colors';
-import { Typography } from 'elements';
+import colors from 'theme/colors';
+import Typography, {TypographyVariant}  from '../../elements/Typography';
 import CardContent from './CardContent';
 
 const CardWrapper = styled.div`
@@ -34,7 +33,7 @@ const CardTitle = styled(Typography)`
 
 interface Props {
   title?: string;
-  titleVariant?: string;
+  titleVariant?: TypographyVariant;
   className?: string;
   children: ReactNode;
   style?: Record<string, any>;
