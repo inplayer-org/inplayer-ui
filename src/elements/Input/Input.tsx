@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { ChangeEvent, SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'theme/colors';
@@ -14,7 +14,7 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${uiColors('text.main')};
+  color: ${colors.fontDarkGray};
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: ${fontWeights('light')};
@@ -25,10 +25,11 @@ const StyledInput = styled.input`
   line-height: 1;
 
   &:focus {
-    border-bottom: 1px solid ${uiColors('primary.main')};
+    border-bottom: 1px solid ${colors.skyBlue};
   }
 
-  padding-left: ${(props: { icon: string }) => (props.icon ? '2rem !important' : null)};
+  padding-left: ${(props: { icon: string }) =>
+    props.icon ? '2rem !important' : null};
   ${ifProp(
     { type: 'search' },
     css`
@@ -36,7 +37,8 @@ const StyledInput = styled.input`
       ::placeholder {
         position: relative !important;
         left: 0.1rem !important;
-      }
+      }import { SyntheticEvent } from 'react';
+
 
       ::-webkit-search-decoration,
       ::-webkit-search-cancel-button,
@@ -91,7 +93,19 @@ type Props = {
 };
 
 const Input = React.forwardRef(
-  ({ type, placeholder, onChange, size, style, className, icon, ...rest }: Props, ref) => {
+  (
+    {
+      type,
+      placeholder,
+      onChange,
+      size,
+      style,
+      className,
+      icon,
+      ...rest
+    }: Props,
+    ref
+  ) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
