@@ -6,7 +6,7 @@
   "main": "dist/inplayer-ui.min.js",
   "types": "dist/index.d.ts",
   "files": [
-    "src/"
+    "dist"
   ],
   "directories": {
     "src": "src"
