@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
 
     body {
-      color: ${props => props.theme.palette.text.main};
-      font-size: ${props => props.theme.font.sizes.medium}px;
+      color: ${(props) => props.theme.palette.text.main};
+      font-size: ${(props) => props.theme.font.sizes.medium}px;
       height: 100%;
       margin: 0;
     }
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     textarea,
     select,
     button {
-      font-family: ${props => props.theme.font.primaryFallback};
+      font-family: ${(props) => props.theme.font.primaryFallback};
       font-weight: 300;
     }
 
@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
       textarea,
       select,
       button {
-        font-family: ${props => props.theme.font.primary};
+        font-family: ${(props) => props.theme.font.primary};
       }
 
       body,

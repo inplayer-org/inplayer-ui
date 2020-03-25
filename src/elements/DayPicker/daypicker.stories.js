@@ -44,7 +44,7 @@ export const Demo = () => {
         numberOfMonths={1}
         isOutsideRange={() => false}
         onFocusChange={({ focused }) => setFocused(focused)}
-        onDateChange={date => setDate(date)}
+        onDateChange={(date) => setDate(date)}
       />
     </Container>
   );

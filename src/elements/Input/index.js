@@ -28,7 +28,7 @@ const StyledInput = styled.input`
     border-bottom: 1px solid ${uiColors('primary.main')};
   }
 
-  padding-left: ${props => (props.icon ? '2rem !important' : null)};
+  padding-left: ${(props) => (props.icon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`

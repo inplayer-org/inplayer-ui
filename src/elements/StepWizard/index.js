@@ -16,9 +16,9 @@ type Props = {
 };
 
 const StepWizard = ({ steps, className, style, activeStep, onStepChange, transition }: Props) => {
-  const isInvalidStep = currentStep => currentStep < 0 || currentStep > steps.length;
+  const isInvalidStep = (currentStep) => currentStep < 0 || currentStep > steps.length;
 
-  const setActiveStep = currentStep => {
+  const setActiveStep = (currentStep) => {
     if (activeStep === currentStep) return;
     if (isInvalidStep(currentStep)) {
       console.error(`${currentStep} is an invalid step`);
@@ -30,7 +30,7 @@ const StepWizard = ({ steps, className, style, activeStep, onStepChange, transit
   };
 
   /** Go to step index */
-  const goToStep = step => setActiveStep(step);
+  const goToStep = (step) => setActiveStep(step);
 
   const renderSteps = steps.map((step, i) => {
     const isStepActive = i === activeStep;

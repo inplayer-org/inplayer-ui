@@ -30,7 +30,7 @@ export const Demo = () => {
     setEndDate(endDate);
   };
 
-  const onFocusChange = fInput => {
+  const onFocusChange = (fInput) => {
     setFocusedInput(fInput);
   };
 

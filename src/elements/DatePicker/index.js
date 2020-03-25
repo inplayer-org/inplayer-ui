@@ -137,7 +137,7 @@ class DatePicker extends React.Component<Props> {
 
     return (
       <DatePresetWrapper>
-        {presets.map(text => (
+        {presets.map((text) => (
           <StyledLabel
             active={activePeriod === text}
             key={text}
@@ -205,9 +205,7 @@ DatePicker.defaultProps = {
   className: '',
   minimumNights: 0,
   displayPresets: [],
-  customAllTimeDate: moment()
-    .startOf('day')
-    .subtract(3, 'year'),
+  customAllTimeDate: moment().startOf('day').subtract(3, 'year'),
   activePeriodPreset: '',
 };
 

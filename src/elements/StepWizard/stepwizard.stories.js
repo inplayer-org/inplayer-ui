@@ -38,7 +38,7 @@ const StepFour = () => (
 export const Demo = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const onStepChange = activeStep => setActiveStep(activeStep);
+  const onStepChange = (activeStep) => setActiveStep(activeStep);
 
   const steps = [
     { isDisabled: false, isCompleted: true, component: <StepOne /> },
