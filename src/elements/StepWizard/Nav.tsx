@@ -1,16 +1,19 @@
-// @flow
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontSizes } from 'utils';
+import colors from 'theme/colors';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;
   text-align: center;
 `;
 
-const StepAction = styled.span`
+const StepAction = styled.span<{
+  isActive: boolean;
+  isCompleted: boolean;
+  isDisabled: boolean;
+}>`
   cursor: pointer;
   font-size: ${fontSizes('extraLarge')};
   line-height: 1;
@@ -22,7 +25,7 @@ const StepAction = styled.span`
   ${ifProp(
     'isActive',
     css`
-      color: ${uiColors('primary.main')};
+      color: ${colors.skyBlue};
       opacity: 1;
       text-shadow: 0 0px 8px;
     `
@@ -44,15 +47,15 @@ const StepAction = styled.span`
 `;
 
 export type StepItem = {
-  isDisabled: boolean,
-  isCompleted: boolean,
-  component: React.ReactNode,
+  isDisabled: boolean;
+  isCompleted: boolean;
+  component: React.ReactChild;
 };
 
 type Props = {
-  steps: Array<StepItem>,
-  activeStep: number,
-  goToStep: (activeStep: number) => void,
+  steps: Array<StepItem>;
+  activeStep: number;
+  goToStep: (activeStep: number) => void;
 };
 
 const Nav = ({ steps, goToStep, activeStep }: Props) => (
@@ -61,9 +64,9 @@ const Nav = ({ steps, goToStep, activeStep }: Props) => (
       <StepAction
         key={`step-${i}`}
         isActive={i === activeStep}
-        isDisabled={isDisabled}
         isCompleted={isCompleted}
         onClick={() => goToStep(i)}
+        isDisabled={isDisabled}
       >
         &bull;
       </StepAction>
