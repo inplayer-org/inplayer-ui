@@ -28,7 +28,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint ./src --ext .js",
     "lint:js:watch": "esw -w src/**",
-    "lint:js:fix": "eslint src/** --fix",
+    "lint:js:fix": "eslint ./src --ext .js --fix",
     "prepublishOnly": "yarn build",
     "lint:style": "stylelint -- \"./src/**/*.js\"",
     "styleguide": "styleguidist server",
@@ -69,14 +69,12 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-config-react-app": "^5.2.1",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-loader": "^3.0.3",
-    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
     "eslint-watch": "^6.0.1",
     "file-loader": "^6.0.0",
     "flow-bin": "^0.121.0",
@@ -84,11 +82,11 @@
     "flow-watch": "^1.1.5",
     "html-webpack-plugin": "^4.0.1",
     "husky": "^4.2.3",
+    "lodash-es": "^4.17.15",
     "moment": "^2.24.0",
     "npm-run-all": "^4.1.5",
     "polished": "^3.5.1",
-    "prettier": "^1.19.1",
-    "prettierrc": "^0.0.0-5",
+    "prettier": "^2.0.2",
     "raf": "^3.4.1",
     "rc-progress": "^2.5.2",
     "react": "^16.13.1",
@@ -106,7 +104,7 @@
     "styled-components-modifiers": "^1.2.5",
     "styled-tools": "^1.7.1",
     "stylelint": "^13.2.1",
-    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "terser-webpack-plugin": "^2.3.5",
@@ -118,8 +116,5 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
-  },
-  "dependencies": {
-    "lodash-es": "^4.17.15"
   }
 }
