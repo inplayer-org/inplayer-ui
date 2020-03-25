@@ -44,14 +44,13 @@
   },
   "paths": {
     "assets/*": ["./assets/*"],
-    "components/*": ["./containers/*"],
     "blocks/*": ["./blocks/*"],
+    "components/*": ["./components/*"],
     "elements/*": ["./elements/*"],
-    "previews/*": ["./previews/*"],
     "modifiers/*": ["./modifiers/*"],
-    "config/*": ["./config/*"],
+    "previews/*": ["./previews/*"],
     "theme/*": ["./theme/*"],
-    "types/*": ["./types/*"]
+    "utils/*": ["./utils/*"]
   },
   "include": ["src/**/*", "index.d.ts"],
   "exclude": ["node_modules", "build"]

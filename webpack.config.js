@@ -53,8 +53,6 @@ module.exports = {
       elements: path.resolve(__dirname, './src/elements'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
       utils: path.resolve(__dirname, './src/utils'),
-      config: path.resolve(__dirname, './src/config'),
-      types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
       previews: path.resolve(__dirname, './src/previews'),
     },
