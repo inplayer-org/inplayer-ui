@@ -1,7 +1,6 @@
-// @flow
 import React, { ChangeEvent, SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'utils';
+import { fontWeights, fontSizes } from 'utils';
 import colors from 'theme/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
@@ -164,5 +163,4 @@ Input.defaultProps = {
   icon: null,
 };
 
-/** @component */
 export default Input;
