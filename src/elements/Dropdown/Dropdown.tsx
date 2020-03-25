@@ -1,5 +1,5 @@
 // @flow
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, SelectHTMLAttributes, DetailedHTMLProps } from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { fontWeights, fontSizes } from 'utils';
@@ -53,7 +53,10 @@ type DefaultOption = {
   disabled?: boolean;
 };
 
-type Props = HTMLSelectElement & {
+type Props = Omit<
+  DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>,
+  'ref'
+> & {
   value: string;
   onChange?: any;
   className?: string;
