@@ -1,19 +1,20 @@
-import React, { Node, CSSStyleDeclaration, ReactChild } from 'react';
+import React, { CSSProperties, ReactChild } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
 type Size = 'xs' | 'sx' | 'md' | 'lg';
 
 type ContentProps = {
-  icon?: Node;
+  icon?: Node | null;
   iconPosition?: string;
-  children: ReactChild;
+  children: any;
 };
 
-type Props = HTMLButtonElement &
+export type Props = HTMLButtonElement &
   ContentProps & {
     buttonModifiers?: Array<string>;
     size?: Size;
+    style?: CSSProperties;
     className?: string;
   };
 

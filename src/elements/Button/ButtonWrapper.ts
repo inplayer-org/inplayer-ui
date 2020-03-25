@@ -3,7 +3,8 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import { uiColors, fontWeights, fontSizes } from 'utils';
 import { transparentize } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
-import colors from 'config/colors';
+import colors from 'theme/colors';
+import { Props } from './Button';
 
 const modifiers = {
   hoverInfo: () => `
@@ -30,7 +31,7 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
-  buttonPrimary: ({ theme }) => `
+  buttonPrimary: ({ theme }: Record<string, any>) => `
     color: ${theme.palette.primary.main};
     border-color: ${theme.palette.primary.main};
     background: ${transparentize(0.94, theme.palette.primary.main)};
@@ -84,7 +85,7 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
-  buttonLink: ({ theme }) => `
+  buttonLink: ({ theme }: Record<string, any>) => `
     color: ${theme.palette.primary.main};
     border: none;
     background: transparent;
@@ -103,12 +104,12 @@ const modifiers = {
   `,
 };
 
-const ButtonWrapper = styled.button`
+const ButtonWrapper = styled.button<any>`
   display: flex;
   align-items: center;
   justify-content: center;
   background: ${colors.white};
-  color: ${uiColors('text.main')};
+  color: ${colors.skyBlue};
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
@@ -121,8 +122,8 @@ const ButtonWrapper = styled.button`
   line-height: 1;
 
   &:hover {
-    border-color: ${uiColors('primary.main')};
-    color: ${uiColors('primary.main')};
+    border-color: ${colors.skyBlue};
+    color: ${colors.skyBlue};
   }
 
   ${switchProp('size', {
@@ -147,7 +148,7 @@ const ButtonWrapper = styled.button`
   ${ifProp(
     'disabled',
     css`
-      color: ${uiColors('text.light')};
+      color: ${colors.fontGray};
       background-color: ${colors.lightGray};
       border-color: ${colors.gray};
       pointer-events: none;
@@ -171,5 +172,4 @@ ButtonWrapper.defaultProps = {
   size: 'md',
 };
 
-/** @component */
 export default ButtonWrapper;
