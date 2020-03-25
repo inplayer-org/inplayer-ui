@@ -95,6 +95,12 @@ type Props = {
   icon?: Node | null;
 };
 
+type RefType =
+  | ((instance: HTMLInputElement | null) => void)
+  | React.RefObject<HTMLInputElement>
+  | null
+  | undefined;
+
 const Input = React.forwardRef(
   (
     {
@@ -107,11 +113,7 @@ const Input = React.forwardRef(
       icon,
       ...rest
     }: Props,
-    ref:
-      | ((instance: HTMLInputElement | null) => void)
-      | React.RefObject<HTMLInputElement>
-      | null
-      | undefined
+    ref: RefType
   ) => {
     const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
       e.persist();
