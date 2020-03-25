@@ -98,7 +98,7 @@ export const demo = () => {
         <br /> - <b>onActivePanelChange</b> - function to be executed when the accordion tab changes
       </Typography>
       <Accordion
-        onActivePanelChange={index => console.log(index)}
+        onActivePanelChange={(index) => console.log(index)}
         panels={panels}
         contentHeight="100vh"
         isExtendable

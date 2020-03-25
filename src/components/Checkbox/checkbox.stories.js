@@ -29,21 +29,21 @@ export const demo = () => (
       name="checkboxUnchecked"
       id="checkboxUnchecked"
       label="Check me!"
-      onChange={e => console.log(e)}
+      onChange={(e) => console.log(e)}
     />
     <Checkbox
       checked
       name="checkboxChecked"
       id="checkboxChecked"
       label="Checked by default!"
-      onChange={e => console.log(e)}
+      onChange={(e) => console.log(e)}
     />
     <Checkbox
       disabled
       name="checkboxDisabledUnchecked"
       id="checkboxDisabledUnchecked"
       label="Disabled and unchecked!"
-      onChange={e => console.log(e)}
+      onChange={(e) => console.log(e)}
     />
     <Checkbox
       checked
@@ -51,7 +51,7 @@ export const demo = () => (
       name="checkboxDisabledChecked"
       id="checkboxDisabledChecked"
       label="Disabled and checked!"
-      onChange={e => console.log(e)}
+      onChange={(e) => console.log(e)}
     />
   </Container>
 );

@@ -24,7 +24,7 @@ const fadeAnimation = keyframes`
   }
 `;
 
-const animation = props => css`
+const animation = (props) => css`
   animation: ${props.fadeDuration}ms ${props.fadeEasing} 0s 1 ${fadeAnimation};
 `;
 
@@ -32,36 +32,36 @@ const Base = styled('div')`
   position: absolute;
   width: max-content;
   white-space: pre-line;
-  ${props => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
-  ${props => props.zIndex && `z-index: ${props.zIndex};`};
+  ${(props) => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
+  ${(props) => props.zIndex && `z-index: ${props.zIndex};`};
 `;
 
 const Top = styled(Base)`
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: ${props => props.offset}px;
+  margin-bottom: ${(props) => props.offset}px;
 `;
 
 const Bottom = styled(Base)`
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: ${props => props.offset}px;
+  margin-top: ${(props) => props.offset}px;
 `;
 
 const Left = styled(Base)`
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
-  margin-right: ${props => props.offset}px;
+  margin-right: ${(props) => props.offset}px;
 `;
 
 const Right = styled(Base)`
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: ${props => props.offset}px;
+  margin-left: ${(props) => props.offset}px;
 `;
 
 const tooltips = {

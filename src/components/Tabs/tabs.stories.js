@@ -32,7 +32,7 @@ export const demo = () => {
         tabs={tabs}
         style={{ 'margin-top': '2%' }}
         selectedTabIndex={0}
-        onTabClick={index => console.log(index)}
+        onTabClick={(index) => console.log(index)}
       />
     </Container>
   );
@@ -57,7 +57,7 @@ export const withIcons = () => {
         tabs={tabs}
         style={{ 'margin-top': '2%' }}
         selectedTabIndex={0}
-        onTabClick={index => console.log(index)}
+        onTabClick={(index) => console.log(index)}
       />
     </Container>
   );

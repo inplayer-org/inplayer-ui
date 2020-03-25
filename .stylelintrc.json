@@ -5,7 +5,8 @@
     "stylelint-config-styled-components"
   ],
   "rules": {
-    "declaration-colon-newline-after": null,
+    "declaration-colon-newline-after": 0,
+    "value-keyword-case": 0,
     "indentation": [
       2,
       {

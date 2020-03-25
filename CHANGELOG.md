@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.34] - 25-04-2020
+
+### Change
+
+- Modify eslint, stylelint and prettier rules
+
+### Fixes
+
+- Include types in build folder
+
+# [2.0.0-beta.33] - 24-04-2020
+
+### Chore
+
+- Update all npm libs
+
+# [2.0.0-beta.32] - 24-04-2020
+
+### Added
+
+- Add more colors
+
 # [2.0.0-beta.31] - 06-04-2020
 
 ### Change

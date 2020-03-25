@@ -48,9 +48,9 @@ const AlignmentHeadings = styled(Typography)`
 `;
 
 export const traditionalGrid = () => {
-  const rows = counts =>
-    flatMap(counts, number =>
-      range(number).map(i => (
+  const rows = (counts) =>
+    flatMap(counts, (number) =>
+      range(number).map((i) => (
         <StyledCell width={12 / number} key={`${number}_${i}`}>
           {i + 1}/{number}
         </StyledCell>
@@ -73,9 +73,9 @@ export const traditionalGrid = () => {
 };
 
 export const transponsedGrid = () => {
-  const columns = counts =>
+  const columns = (counts) =>
     flatMap(counts, (count, i) =>
-      range(count).map(number => (
+      range(count).map((number) => (
         <StyledCell height={12 / count} key={`${number}_${i}`}>
           {number + 1}/{count}
         </StyledCell>
@@ -224,8 +224,8 @@ export const horizontalAndVerticalAlignment = () => {
       </Typography>
       <StyledContainer columns="repeat(auto-fit, minmax(200px, 1fr))">
         {alignments
-          .filter(x => x !== 'stretch')
-          .map(alignment => (
+          .filter((x) => x !== 'stretch')
+          .map((alignment) => (
             <StyledCellNoPos style={{ display: 'flex', flexDirection: 'column' }} key={alignment}>
               <AlignmentHeadings variant="p" color="#286090">
                 {alignment}
@@ -244,7 +244,7 @@ export const horizontalAndVerticalAlignment = () => {
         Vertical alignment of rows can be modified using the alignContent.
       </Typography>
       <StyledContainer columns="repeat(auto-fit, minmax(130px, 1fr))" minRowHeight="150px">
-        {alignments.map(alignment => (
+        {alignments.map((alignment) => (
           <StyledCellNoPos key={alignment} style={{ display: 'flex', flexDirection: 'column' }}>
             <AlignmentHeadings variant="p" color="#286090">
               {alignment}
