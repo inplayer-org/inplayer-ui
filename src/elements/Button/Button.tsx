@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactChild } from 'react';
+import React, { CSSProperties } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
