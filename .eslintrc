@@ -3,11 +3,10 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "prettier",
-    "prettier/react",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "plugin:flowtype/recommended"
   ],
-  "plugins": ["react", "prettier", "flowtype"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
@@ -22,7 +21,7 @@
     "commonjs": true,
     "es6": true,
     "node": true,
-    "jquery": true,
+    "jquery": true
   },
   "settings": {
     "import/resolver": {
@@ -32,14 +31,42 @@
     }
   },
   "rules": {
+    // prettier rules
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "endOfLine": "auto"
+      }
+    ],
+    // plugin:react rules
     "react/sort-comp": 0,
     "react/default-props-match-prop-types": 0,
     "react/no-danger": 0,
     "react/prop-types": "warn",
     "react/no-did-update-set-state": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-curly-newline": 0,
+    "react/display-name": 1,
+    "react/no-array-index-key": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-unescaped-entities": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    // jsx-a11y rules
     "jsx-a11y/mouse-events-have-key-events": 0,
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/label-has-for": 0,
+    // eslint rules
     "import/no-extraneous-dependencies": 0,
     "linebreak-style": "off",
     "no-debugger": 0,
@@ -79,20 +106,7 @@
     "import/extensions": 0,
     "no-underscore-dangle": 0,
     "consistent-return": 0,
-    "react/display-name": 1,
-    "react/no-array-index-key": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/no-unescaped-entities": 0,
     "jsx-a11y/accessible-emoji": 0,
-    "react/state-in-constructor": 0,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
     "radix": 0,
     "no-shadow": [
       2,
@@ -107,15 +121,6 @@
       {
         "avoidEscape": true,
         "allowTemplateLiterals": true
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 100,
-        "endOfLine": "auto"
       }
     ],
     "jsx-a11y/href-no-hash": "off",
