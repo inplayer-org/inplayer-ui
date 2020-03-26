@@ -109,6 +109,7 @@
     "stylelint-processor-styled-components": "^1.10.0",
     "terser-webpack-plugin": "^2.3.5",
     "url-loader": "^4.0.0",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
