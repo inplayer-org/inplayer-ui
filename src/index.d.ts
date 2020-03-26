@@ -586,7 +586,6 @@ export interface Theme {
   };
   font: {
     primary: string;
-    primaryFallback: string;
     weights: {
       thin?: number;
       light?: number;
