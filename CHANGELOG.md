@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.35] - 25-04-2020
+
+### Added
+
+- Web fonts loader
+
 # [2.0.0-beta.34] - 25-04-2020
 
 ### Change
