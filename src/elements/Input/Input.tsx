@@ -1,34 +1,37 @@
-// @flow
-import React from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights, fontSizes } from 'utils';
 import colors from 'theme/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
-const StyledInput = styled.input`
+type StyledInputProps = {
+  sizeProp?: Size;
+  icon?: ReactNode | null;
+};
+
+const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${uiColors('text.main')};
+  color: ${colors.fontDarkGray};
   transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: ${fontWeights('light')};
+  font-weight: 300;
   padding: 0.375em 0.75em;
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  font-size: ${fontSizes('medium')};
+  font-size: rem(16);
   line-height: 1;
 
   &:focus {
-    border-bottom: 1px solid ${uiColors('primary.main')};
+    border-bottom: 1px solid ${colors.skyBlue};
   }
 
-  padding-left: ${(props: { icon: string }) => (props.icon ? '2rem !important' : null)};
+  padding-left: ${({ icon }) => (icon ? '2rem !important' : null)};
   ${ifProp(
     { type: 'search' },
     css`
@@ -46,21 +49,21 @@ const StyledInput = styled.input`
       }
     `
   )};
-  ${switchProp('size', {
+  ${switchProp('sizeProp', {
     xs: css`
-      font-size: ${fontSizes('extraSmall')};
-      padding: 0.1875rem 0.25rem;
-    `,
+            font-size: rem(12)
+            padding: 0.1875rem 0.25rem;
+        `,
     sm: css`
-      font-size: ${fontSizes('small')};
-      padding: 0.375rem 0.5rem;
-    `,
+            font-size: rem(14)
+            padding: 0.375rem 0.5rem;
+        `,
     md: css`
-      font-size: ${fontSizes('medium')};
+      font-size: rem(16);
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size: ${fontSizes('large')};
+      font-size: rem(18);
       padding: 0.75rem 1rem;
     `,
   })};
@@ -84,40 +87,61 @@ type Props = {
   id: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   value: string | Array<string> | number;
-  size?: Size;
+  sizeProp?: Size;
   style?: Record<string, any>;
   className?: string;
-  icon?: Node;
+  icon?: ReactNode;
 };
 
+type RefType =
+  | ((instance: HTMLInputElement | null) => void)
+  | React.RefObject<HTMLInputElement>
+  | null
+  | undefined;
+
 const Input = React.forwardRef(
-  ({ type, placeholder, onChange, size, style, className, icon, ...rest }: Props, ref) => {
-    const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
+  (
+    {
+      type,
+      placeholder,
+      onChange,
+      sizeProp,
+      style,
+      className,
+      icon,
+      ...rest
+    }: Props,
+    ref: RefType
+  ) => {
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
         onChange(e);
       }
     };
 
-    return type === 'search' ? (
-      <InputWrapper style={style} className={className}>
-        <IconContainer>
-          <MdSearch />
-        </IconContainer>
-        <StyledInput
-          size={size}
-          ref={ref}
-          type={type}
-          placeholder={placeholder}
-          {...rest}
-          onChange={onInputChange}
-        />
-      </InputWrapper>
-    ) : (
+    if (type === 'search') {
+      return (
+        <InputWrapper style={style} className={className}>
+          <IconContainer>
+            <MdSearch />
+          </IconContainer>
+          <StyledInput
+            sizeProp={sizeProp}
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            {...rest}
+            onChange={onInputChange}
+          />
+        </InputWrapper>
+      );
+    }
+    return (
       <InputWrapper style={style} className={className}>
         <IconContainer>{icon}</IconContainer>
         <StyledInput
-          size={size}
+          sizeProp={sizeProp}
           ref={ref}
           type={type || 'text'}
           placeholder={placeholder}
@@ -133,11 +157,10 @@ const Input = React.forwardRef(
 Input.displayName = 'Input';
 
 Input.defaultProps = {
-  size: 'md',
+  sizeProp: 'md',
   style: {},
   className: '',
   icon: null,
 };
 
-/** @component */
 export default Input;
