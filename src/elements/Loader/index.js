@@ -20,9 +20,9 @@ const directions = {
 };
 
 const dash = keyframes`
-    to {
-        stroke-dashoffset: 136;
-    }
+  to {
+      stroke-dashoffset: 136;
+  }
 `;
 
 const StyledSpinner = styled.svg`
