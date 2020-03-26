@@ -36,7 +36,6 @@ const Notification = ({
   close = () => destroy(divs.length),
   style = {},
 }: NotificationProps) => {
-  console.log(close);
   useTimeout(close, duration * 1000);
   return (
     <NotificationContainer
@@ -54,7 +53,6 @@ const Notification = ({
 };
 
 const destroy = (index: number) => {
-  console.log('DESTROY - CLOSE');
   if (divs[index]) {
     ReactDOM.unmountComponentAtNode(divs[index]);
     document.body.removeChild(divs[index]);
