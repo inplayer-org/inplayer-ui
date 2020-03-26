@@ -22,7 +22,7 @@ const Label = styled.label<{ disabled?: boolean }>`
   font-weight: ${fontWeights('light')};
   cursor: pointer;
   vertical-align: middle;
-  color: ${colors.skyBlue};
+  color: ${colors.fontDarkGray};
   transition: all ease 300ms;
   line-height: 20px;
   position: relative;
