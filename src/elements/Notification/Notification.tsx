@@ -13,7 +13,7 @@ type NotificationProps = {
   duration?: number;
   className?: string;
   style?: CSSProperties;
-  close: () => void;
+  close?: () => void;
 };
 
 const divs: Array<HTMLDivElement> = [];
@@ -33,9 +33,10 @@ const Notification = ({
   variant = '',
   duration = 0,
   className = '',
-  close,
+  close = () => destroy(divs.length),
   style = {},
 }: NotificationProps) => {
+  console.log(close);
   useTimeout(close, duration * 1000);
   return (
     <NotificationContainer
@@ -53,6 +54,7 @@ const Notification = ({
 };
 
 const destroy = (index: number) => {
+  console.log('DESTROY - CLOSE');
   if (divs[index]) {
     ReactDOM.unmountComponentAtNode(divs[index]);
     document.body.removeChild(divs[index]);
