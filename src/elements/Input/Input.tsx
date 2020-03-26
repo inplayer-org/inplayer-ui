@@ -1,6 +1,5 @@
-import React, { ChangeEvent, SyntheticEvent } from 'react';
+import React, { ChangeEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import { fontWeights, fontSizes } from 'utils';
 import colors from 'theme/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
@@ -9,7 +8,7 @@ type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type StyledInputProps = {
   sizeProp?: Size;
-  icon?: Node | null;
+  icon?: ReactNode | null;
 };
 
 const StyledInput = styled.input<StyledInputProps>`
@@ -21,11 +20,11 @@ const StyledInput = styled.input<StyledInputProps>`
   color: ${colors.fontDarkGray};
   transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: ${fontWeights('light')};
+  font-weight: 300;
   padding: 0.375em 0.75em;
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  font-size: ${fontSizes('medium')};
+  font-size: rem(16);
   line-height: 1;
 
   &:focus {
@@ -40,8 +39,7 @@ const StyledInput = styled.input<StyledInputProps>`
       ::placeholder {
         position: relative !important;
         left: 0.1rem !important;
-      }import { SyntheticEvent } from 'react';
-
+      }
 
       ::-webkit-search-decoration,
       ::-webkit-search-cancel-button,
@@ -51,21 +49,21 @@ const StyledInput = styled.input<StyledInputProps>`
       }
     `
   )};
-  ${switchProp('size', {
+  ${switchProp('sizeProp', {
     xs: css`
-      font-size: ${fontSizes('extraSmall')};
-      padding: 0.1875rem 0.25rem;
-    `,
+            font-size: rem(12)
+            padding: 0.1875rem 0.25rem;
+        `,
     sm: css`
-      font-size: ${fontSizes('small')};
-      padding: 0.375rem 0.5rem;
-    `,
+            font-size: rem(14)
+            padding: 0.375rem 0.5rem;
+        `,
     md: css`
-      font-size: ${fontSizes('medium')};
+      font-size: rem(16);
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size: ${fontSizes('large')};
+      font-size: rem(18);
       padding: 0.75rem 1rem;
     `,
   })};
@@ -87,12 +85,12 @@ type Props = {
   type: string;
   placeholder: string;
   id: string;
-  onChange: (e: SyntheticEvent<HTMLInputElement, Event>) => any;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   value: string | Array<string> | number;
-  size?: Size;
+  sizeProp?: Size;
   style?: Record<string, any>;
   className?: string;
-  icon?: Node | null;
+  icon?: ReactNode;
 };
 
 type RefType =
@@ -107,7 +105,7 @@ const Input = React.forwardRef(
       type,
       placeholder,
       onChange,
-      size,
+      sizeProp,
       style,
       className,
       icon,
@@ -115,7 +113,7 @@ const Input = React.forwardRef(
     }: Props,
     ref: RefType
   ) => {
-    const onInputChange = (e: SyntheticEvent<HTMLInputElement>): any => {
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
         onChange(e);
@@ -129,7 +127,7 @@ const Input = React.forwardRef(
             <MdSearch />
           </IconContainer>
           <StyledInput
-            sizeProp={size}
+            sizeProp={sizeProp}
             ref={ref}
             type={type}
             placeholder={placeholder}
@@ -143,7 +141,7 @@ const Input = React.forwardRef(
       <InputWrapper style={style} className={className}>
         <IconContainer>{icon}</IconContainer>
         <StyledInput
-          sizeProp={size}
+          sizeProp={sizeProp}
           ref={ref}
           type={type || 'text'}
           placeholder={placeholder}
@@ -159,7 +157,7 @@ const Input = React.forwardRef(
 Input.displayName = 'Input';
 
 Input.defaultProps = {
-  size: 'md',
+  sizeProp: 'md',
   style: {},
   className: '',
   icon: null,
