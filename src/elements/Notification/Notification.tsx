@@ -47,6 +47,7 @@ const Notification = ({
       <div>
         <strong>{title}</strong> {content}
       </div>
+      <CloseIcon onClick={close} />
     </NotificationContainer>
   );
 };
