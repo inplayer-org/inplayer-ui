@@ -280,7 +280,7 @@ export interface ActionButtonRenderProps {
 
 export interface AccordionPanel {
   label: string;
-  icon?: string;
+  icon?: ReactNode;
   iconTooltip?: TooltipProps;
   disabled?: boolean;
   renderContent: (actions: {closePanel: (e?: SyntheticEvent<any>) => void}) => any;
