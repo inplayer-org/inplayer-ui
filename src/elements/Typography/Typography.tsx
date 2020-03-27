@@ -1,6 +1,6 @@
 import React, { ReactChild, CSSProperties } from 'react';
-import styled, { css, DefaultTheme } from 'styled-components';
-import { prop, ifProp } from 'styled-tools';
+import styled, { DefaultTheme } from 'styled-components';
+import { prop } from 'styled-tools';
 import { fontWeights, fontSizes } from 'utils';
 import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
