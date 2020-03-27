@@ -14,13 +14,14 @@ type Props = {
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string,
   style?: Object,
+  icons?: boolean,
 };
 
 const MarginLeftLabel = styled(Label)`
   margin-left: 0.5rem;
 `;
 
-const Switch = ({ id, checked, label, disabled, onChange, className, style }: Props) => {
+const Switch = ({ id, checked, label, disabled, onChange, className, style, icons }: Props) => {
   const onToggleChange = (e: SyntheticInputEvent<*>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -33,7 +34,7 @@ const Switch = ({ id, checked, label, disabled, onChange, className, style }: Pr
         disabled={disabled}
         checked={checked}
         onChange={onToggleChange}
-        icons={false}
+        icons={icons}
       />
       <MarginLeftLabel disabled={disabled} htmlFor={id}>
         {label}
@@ -46,6 +47,7 @@ Switch.defaultProps = {
   className: '',
   style: {},
   disabled: false,
+  icons: false,
 };
 
 /** @component */

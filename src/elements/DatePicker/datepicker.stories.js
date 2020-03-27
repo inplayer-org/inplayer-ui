@@ -57,6 +57,8 @@ export const Demo = () => {
         <br />- <b>activePeriod</b> prop is a string where the user defines which presets period to
         be selected to the date picker. Available presets periods are those present in
         displayPresets
+        <br />- <b>disabled</b> (optional paremeter - a boolean to disable clicking or opening the
+        DatePicker) - default <b>false</b>
       </Typography>
       <DatePicker
         startDate={startDate}
