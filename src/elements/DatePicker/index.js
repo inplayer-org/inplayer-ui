@@ -57,6 +57,7 @@ type Props = {
   displayPresets?: Array,
   customAllTimeDate?: number,
   activePeriodPreset?: string,
+  disabled?: boolean,
 };
 
 type Period =
@@ -169,6 +170,7 @@ class DatePicker extends React.Component<Props> {
       onFocusChange,
       focusedInput,
       minimumNights,
+      disabled,
     } = this.props;
 
     const hasPresets = displayPresets.length !== 0;
@@ -189,6 +191,7 @@ class DatePicker extends React.Component<Props> {
           calendarInfoPosition={hasPresets && 'before'}
           minimumNights={minimumNights}
           enableOutsideDays
+          disabled={disabled}
         />
       </DatePickerWrapper>
     );
@@ -207,6 +210,7 @@ DatePicker.defaultProps = {
   displayPresets: [],
   customAllTimeDate: moment().startOf('day').subtract(3, 'year'),
   activePeriodPreset: '',
+  disabled: 'false',
 };
 
 export default DatePicker;

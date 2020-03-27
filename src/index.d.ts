@@ -391,6 +391,7 @@ export interface DatePickerProps {
   minimumNights?: number;
   customAllTimeDate?: number;
   activePeriodPreset?: string;
+  disabled?: boolean;
 }
 
 interface DatePickerState {
