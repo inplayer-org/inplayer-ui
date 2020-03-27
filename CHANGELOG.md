@@ -2,13 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.35] - 25-04-2020
+# [2.0.0-beta.36] - 27-03-2020
+
+### Added
+
+- Added optional disabled prop to DatePicker
+- Added icon boolean prop to Switch
+
+# [2.0.0-beta.35] - 25-03-2020
 
 ### Added
 
 - Web fonts loader
 
-# [2.0.0-beta.34] - 25-04-2020
+# [2.0.0-beta.34] - 25-03-2020
 
 ### Change
 
@@ -18,25 +25,25 @@ All notable changes to this project will be documented in this file.
 
 - Include types in build folder
 
-# [2.0.0-beta.33] - 24-04-2020
+# [2.0.0-beta.33] - 24-03-2020
 
 ### Chore
 
 - Update all npm libs
 
-# [2.0.0-beta.32] - 24-04-2020
+# [2.0.0-beta.32] - 24-03-2020
 
 ### Added
 
 - Add more colors
 
-# [2.0.0-beta.31] - 06-04-2020
+# [2.0.0-beta.31] - 06-03-2020
 
 ### Change
 
 - Add disabled option to DayPicker component
 
-# [2.0.0-beta.30] - 03-04-2020
+# [2.0.0-beta.30] - 04-03-2020
 
 ### Change
 
