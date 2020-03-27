@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.37] - 27-03-2020
+
+### Fixes
+
+- Fix icon prop type in AccordionPanel
+
 # [2.0.0-beta.36] - 27-03-2020
 
 ### Added
