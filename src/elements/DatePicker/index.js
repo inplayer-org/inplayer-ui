@@ -210,7 +210,7 @@ DatePicker.defaultProps = {
   displayPresets: [],
   customAllTimeDate: moment().startOf('day').subtract(3, 'year'),
   activePeriodPreset: '',
-  disabled: 'false',
+  disabled: false,
 };
 
 export default DatePicker;
