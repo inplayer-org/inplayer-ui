@@ -31,12 +31,9 @@
     "lint:js:fix": "eslint ./src --ext .js --fix",
     "prepublishOnly": "yarn build",
     "lint:style": "stylelint -- \"./src/**/*.js\"",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
     "flow": "flow",
     "flow:watch": "flow-watch",
-    "pregenerate:docs": "rimraf ./docs",
-    "generate:docs": "yarn styleguide:build"
+    "pregenerate:docs": "rimraf ./docs"
   },
   "peerDependencies": {
     "react": "^16.13.1",

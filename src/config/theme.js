@@ -1,7 +1,7 @@
-const { rem } = require('polished');
-const colors = require('./colors');
+import { rem } from 'polished';
+import colors from './colors';
 
-module.exports = {
+export default {
   palette: {
     primary: {
       main: colors.skyBlue,
