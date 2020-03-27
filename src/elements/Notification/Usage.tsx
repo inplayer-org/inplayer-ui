@@ -45,7 +45,6 @@ const Usage = () => (
           variant: 'danger',
           content: 'This is a danger notification',
           duration: 3,
-          close: () => console.log('CLOSE'),
         })
       }
     >
