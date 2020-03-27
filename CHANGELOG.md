@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
 - Added optional disabled prop to DatePicker
 - Added icon boolean prop to Switch
 
+### Fixes
+
+- Use ES exports everywhere
+
 # [2.0.0-beta.35] - 25-03-2020
 
 ### Added
