@@ -1,7 +1,9 @@
 import styled, { keyframes, css } from 'styled-components';
 import { switchProp, prop } from 'styled-tools';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { transparentize } from 'polished';
+import { CSSProperties } from 'react';
+import { NotificationVariant } from './Notification';
 
 const notify = keyframes`
   0%,
@@ -17,7 +19,14 @@ const notify = keyframes`
   }
 `;
 
-const NotificationContainer = styled.div`
+type NotificationContainerProps = {
+  variant?: NotificationVariant;
+  duration?: number;
+  className?: string;
+  style?: CSSProperties;
+};
+
+const NotificationContainer = styled.div<NotificationContainerProps>`
   box-sizing: border-box;
   border: 1px solid ${colors.gray};
   border-radius: 3px;
