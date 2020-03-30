@@ -1,5 +1,5 @@
-import React, { SyntheticEvent } from 'react'
-import { Label } from 'elements/Label'
+import React, { SyntheticEvent } from 'react';
+import { Label } from 'elements/Label';
 import { RadioWrapper } from './RadioWrapper';
 
 interface Props {
@@ -11,13 +11,33 @@ interface Props {
   onBlur?: (e: any) => any;
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string;
-  style?: Object;
+  style?: Record<string, any>;
   disabled?: boolean;
-};
+}
 
-export const Radio = ({ label, id, checked, onChange, className, style, ...rest }: Props) => (
+export const Radio: React.FC<Props> = ({
+  label,
+  id,
+  checked,
+  onChange,
+  className = '',
+  style = {},
+  onBlur = () => {},
+  disabled = false,
+  ...rest
+}) => (
   <RadioWrapper>
-    <input type="radio" id={id} checked={checked} onChange={onChange} {...rest} />
+    <input
+      type="radio"
+      id={id}
+      checked={checked}
+      onChange={onChange}
+      onBlur={onBlur}
+      style={style}
+      disabled={disabled}
+      className={className}
+      {...rest}
+    />
     <Label htmlFor={id}>{label}</Label>
   </RadioWrapper>
 );
