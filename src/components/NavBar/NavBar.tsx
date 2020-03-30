@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, Component, ReactChild } from 'react';
+import React, { useState, ReactChild } from 'react';
 
 // Components
 import { CSSProperties } from 'styled-components';
