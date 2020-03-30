@@ -1,12 +1,11 @@
-// @flow
-import React, { type Node } from 'react';
+import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { uiColors, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontSizes } from 'utils';
+import colors from 'theme/colors';
 
-const MenuItemContainer = styled.div`
+const MenuItemContainer = styled.div<{ active: boolean }>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -19,8 +18,8 @@ const MenuItemContainer = styled.div`
   ${ifProp(
     'active',
     css`
-      background: ${uiColors('primary.dark')};
-      border-right: ${uiColors('primary.main')} 3px solid;
+      background: ${colors.navy};
+      border-right: ${colors.skyBlue} 3px solid;
       color: ${colors.white};
     `
   )};
@@ -37,14 +36,14 @@ const MenuItemIcon = styled.i`
 `;
 
 type MenuItemProps = {
-  active: boolean,
-  icon: ?string | ?Node,
-  onClick: ?(e: SyntheticEvent<HTMLDivElement>) => any,
-  children: ?Node,
+  active: boolean;
+  icon?: string | Node;
+  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
+  children?: Node;
 };
 
 const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
-  const onItemClick = (e) => {
+  const onItemClick = (e: SyntheticEvent<HTMLDivElement, Event>) => {
     e.stopPropagation();
     if (onClick && typeof onClick === 'function') {
       onClick(e);
