@@ -45,7 +45,7 @@ export const NavbarArrow = styled.i<{ open: boolean; section: string }>`
 type Props = {
   open: boolean;
   section: string;
-  onClick: any;
+  onClick?: any;
 };
 
 const Arrow = ({ open, section, onClick }: Props) => (

@@ -1,10 +1,10 @@
 // @flow
-import React, { type Node, type Element } from 'react';
+import React, { ReactChild } from 'react';
 import { LogoMenuContainer, NavbarLogo, MenuContainer } from './styled';
 
 type Props = {
-  logo: ?Element<*> | ?string,
-  children: Node,
+  logo?: Element | string;
+  children: ReactChild;
 };
 
 const MenuWithLogo = ({ logo, children }: Props) => (
