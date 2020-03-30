@@ -1,11 +1,10 @@
-// @flow
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { transparentize } from 'polished';
 
-export const ArrowContainer = styled.div`
+export const ArrowContainer = styled.div<{ section: string }>`
   width: 18px;
   margin: 0 1rem 1rem 1rem;
   text-align: center;
@@ -23,7 +22,7 @@ export const ArrowContainer = styled.div`
   })};
 `;
 
-export const NavbarArrow = styled.i`
+export const NavbarArrow = styled.i<{ open: boolean; section: string }>`
   display: inline-block;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -44,9 +43,9 @@ export const NavbarArrow = styled.i`
 `;
 
 type Props = {
-  open: boolean,
-  section: string,
-  onClick: any,
+  open: boolean;
+  section: string;
+  onClick: any;
 };
 
 const Arrow = ({ open, section, onClick }: Props) => (
