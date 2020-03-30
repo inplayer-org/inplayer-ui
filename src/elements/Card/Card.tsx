@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import colors from 'theme/colors';
-import Typography, {TypographyVariant}  from '../../elements/Typography';
+import Typography, { TypographyVariant } from '../Typography/Typography';
 import CardContent from './CardContent';
 
 const CardWrapper = styled.div`
