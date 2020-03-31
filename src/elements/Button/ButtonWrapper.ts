@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontWeights, fontSizes } from 'utils';
+import { fontWeights, fontSizes } from 'utils';
 import { transparentize } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
 import colors from 'theme/colors';
-import { Props } from './Button';
+import { Size } from './Button';
 
 const modifiers = {
   hoverInfo: () => `
@@ -31,7 +31,7 @@ const modifiers = {
       border-color: ${colors.green};
     }
   `,
-  buttonPrimary: ({ theme }: Record<string, any>) => `
+  buttonPrimary: (theme: DefaultTheme) => `
     color: ${theme.palette.primary.main};
     border-color: ${theme.palette.primary.main};
     background: ${transparentize(0.94, theme.palette.primary.main)};
@@ -104,7 +104,14 @@ const modifiers = {
   `,
 };
 
-const ButtonWrapper = styled.button<any>`
+type ButtonWrapperProps = {
+  size: Size;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+};
+
+const ButtonWrapper = styled.button<ButtonWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
