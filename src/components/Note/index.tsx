@@ -1,13 +1,25 @@
-// @flow
 import React from 'react';
+import styled from 'styled-components';
 import { MdInfoOutline, MdWarning } from 'react-icons/md';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 
-import colors from 'config/colors';
-import styled from 'styled-components';
-import NoteWrapper from './NoteWrapper';
+import colors from 'theme/colors';
 
-const createIconStyles = ({ color }: { color?: string }) => ({
+import NoteWrapper, { NoteType } from './NoteWrapper';
+
+interface Props {
+  title: string;
+  text: string;
+  type: NoteType;
+  className?: string;
+  style?: any;
+}
+
+interface IconProps {
+  color?: string;
+}
+
+const createIconStyles = ({ color }: IconProps) => ({
   width: '1.5rem',
   height: '1.5rem',
   color,
@@ -26,17 +38,6 @@ const DangerIcon = styled(MdWarning)`
   ${createIconStyles}
 `;
 
-type NoteType = 'informative' | 'success' | 'warning' | 'danger';
-
-type Props = {
-  title: string,
-  text: string,
-  type: NoteType,
-  /** A className can be passed down for further styling or extending with CSS-in-JS */
-  className?: string,
-  style?: Object,
-};
-
 const NoteIcon = {
   informative: null,
   success: <SuccessIcon color={colors.green} />,
@@ -46,7 +47,7 @@ const NoteIcon = {
 
 const getIconFromNoteType = (type: NoteType) => NoteIcon[type];
 
-const Note = ({ type, title, text, className, style }: Props) => {
+const Note = ({ type, title, text, className = '', style = {} }: Props) => {
   const Icon = getIconFromNoteType(type);
   return (
     <NoteWrapper type={type} className={className} style={style}>
@@ -54,11 +55,6 @@ const Note = ({ type, title, text, className, style }: Props) => {
       {text}
     </NoteWrapper>
   );
-};
-
-Note.defaultProps = {
-  className: '',
-  style: {},
 };
 
 export default Note;
