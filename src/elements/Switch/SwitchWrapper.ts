@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import uiColors from 'utils/uiColors';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { transparentize } from 'polished';
 
 const SwitchWrapper = styled.span`
@@ -54,13 +53,13 @@ const SwitchWrapper = styled.span`
   }
 
   .react-toggle--checked .react-toggle-track {
-    border: 1px solid ${uiColors('primary.main')};
-    background: ${uiColors('primary.main')};
+    border: 1px solid ${colors.skyBlue};
+    background: ${colors.skyBlue};
   }
 
   &:hover .react-toggle-track {
     background: ${transparentize(0.94, colors.skyBlue)};
-    border: 1px solid ${uiColors('primary.main')};
+    border: 1px solid ${colors.skyBlue};
   }
 
   .react-toggle.react-toggle--disabled {
@@ -81,7 +80,7 @@ const SwitchWrapper = styled.span`
   }
 
   &:hover .react-toggle:not(.react-toggle--disabled) .react-toggle-thumb {
-    border: 1px solid ${uiColors('primary.main')};
+    border: 1px solid ${colors.skyBlue};
   }
 
   .react-toggle-track-check {
@@ -122,5 +121,4 @@ const SwitchWrapper = styled.span`
   }
 `;
 
-/** @component */
 export default SwitchWrapper;
