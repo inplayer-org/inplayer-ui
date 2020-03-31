@@ -280,7 +280,7 @@ export interface ActionButtonRenderProps {
 
 export interface AccordionPanel {
   label: string;
-  icon?: string;
+  icon?: ReactNode;
   iconTooltip?: TooltipProps;
   disabled?: boolean;
   renderContent: (actions: {closePanel: (e?: SyntheticEvent<any>) => void}) => any;
@@ -391,6 +391,7 @@ export interface DatePickerProps {
   minimumNights?: number;
   customAllTimeDate?: number;
   activePeriodPreset?: string;
+  disabled?: boolean;
 }
 
 interface DatePickerState {
@@ -527,6 +528,7 @@ export interface SwitchProps {
   onChange: (checked: boolean) => any;
   className?: string;
   style?: CSSProperties;
+  icons?: boolean;
 }
 
 export declare const Switch: FunctionComponent<SwitchProps>;
@@ -586,7 +588,6 @@ export interface Theme {
   };
   font: {
     primary: string;
-    primaryFallback: string;
     weights: {
       thin?: number;
       light?: number;

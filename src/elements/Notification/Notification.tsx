@@ -1,40 +1,40 @@
-// @flow
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import NotificationContainer, { CloseIcon } from './NotificationContainer';
+import { CSSProperties } from 'styled-components';
 
-type NotificationVariant = 'success' | 'danger' | 'warning';
+export type NotificationVariant = 'success' | 'danger' | 'warning' | '';
 
 type NotificationProps = {
-  title: string,
-  content: string,
-  variant?: NotificationVariant,
-  duration?: number,
-  className?: string,
-  style?: Object,
-  close: () => void,
+  title: string;
+  content: string;
+  variant?: NotificationVariant;
+  duration?: number;
+  className?: string;
+  style?: CSSProperties;
+  close?: () => void;
 };
 
 const divs: Array<HTMLDivElement> = [];
 
-function useTimeout(callback, duration) {
+const useTimeout = (callback: () => void, duration: number) => {
   useEffect(() => {
     if (typeof duration === 'number' && duration >= 0) {
       const id = setTimeout(callback, duration);
       return () => clearTimeout(id);
     }
   }, [duration]);
-}
+};
 
 const Notification = ({
   title,
   content,
-  variant,
-  duration,
-  className,
-  close,
-  style,
+  variant = '',
+  duration = 0,
+  className = '',
+  close = () => destroy(divs.length),
+  style = {},
 }: NotificationProps) => {
   useTimeout(close, duration * 1000);
   return (
@@ -52,16 +52,18 @@ const Notification = ({
   );
 };
 
-function destroy(index) {
+const destroy = (index: number) => {
   if (divs[index]) {
     ReactDOM.unmountComponentAtNode(divs[index]);
     document.body.removeChild(divs[index]);
   }
-}
+};
 
-function create(props: NotificationProps, parentDiv: ?HTMLDivElement) {
+const create = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   const divIndex = divs.length;
-  const notificationInstance = <Notification {...props} close={() => destroy(divIndex)} />;
+  const notificationInstance = (
+    <Notification {...props} close={() => destroy(divIndex)} />
+  );
   const div = document.createElement('div');
   if (parentDiv) {
     parentDiv.appendChild(div);
@@ -71,28 +73,23 @@ function create(props: NotificationProps, parentDiv: ?HTMLDivElement) {
 
   ReactDOM.render(notificationInstance, div);
   divs.push(div);
-}
+};
 
-Notification.create = create;
-
-Notification.success = function success(props: NotificationProps, parentDiv: ?HTMLDivElement) {
+const success = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'success' }, parentDiv);
 };
 
-Notification.warning = function warning(props: NotificationProps, parentDiv: ?HTMLDivElement) {
+const warning = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'warning' }, parentDiv);
 };
 
-Notification.danger = function danger(props: NotificationProps, parentDiv: ?HTMLDivElement) {
+const danger = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'danger' }, parentDiv);
 };
 
-Notification.defaultProps = {
-  variant: '',
-  duration: 0,
-  className: '',
-  style: {},
-};
+Notification.create = create;
+Notification.success = success;
+Notification.warning = warning;
+Notification.danger = danger;
 
-/** @component */
 export default Notification;
