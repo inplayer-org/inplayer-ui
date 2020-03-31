@@ -26,7 +26,7 @@ export const Theme: DefaultTheme = {
   },
   font: {
     primary: 'Roboto',
-    primaryFallback: 'Helvetica, Arial, sans-serif',
+    secondary: 'Open Sans',
     weights: {
       thin: 100,
       light: 300,

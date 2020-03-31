@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "2.0.0-beta.34",
+  "version": "2.0.0-beta.38",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "dist/inplayer-ui.min.js",
@@ -30,11 +30,7 @@
     "lint:js:watch": "esw -w src/**",
     "lint:js:fix": "eslint ./src --ext .js --fix",
     "prepublishOnly": "yarn build",
-    "lint:style": "stylelint -- \"./src/**/*.js\"",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "pregenerate:docs": "rimraf ./docs",
-    "generate:docs": "yarn styleguide:build"
+    "lint:style": "stylelint -- \"./src/**/*.js\""
   },
   "peerDependencies": {
     "react": "^16.13.1",
@@ -114,6 +110,7 @@
     "url-loader": "^4.0.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "@types/react-dates": "^17.1.10"
