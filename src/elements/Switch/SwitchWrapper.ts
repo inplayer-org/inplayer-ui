@@ -21,7 +21,7 @@ const SwitchWrapper = styled.span`
   }
 
   .react-toggle-track {
-    width: 34px;
+    width: 42px;
     height: 18px;
     padding: 0;
     border-radius: 30px;
@@ -72,7 +72,7 @@ const SwitchWrapper = styled.span`
   }
 
   .react-toggle--checked .react-toggle-thumb {
-    left: 14px;
+    left: 24px;
   }
 
   &:hover .react-toggle--disabled .react-toggle-track .react-toggle-thumb {
