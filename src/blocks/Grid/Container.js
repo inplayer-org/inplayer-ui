@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const autoRows = ({ minRowHeight = '20px' }) => `minmax(${minRowHeight}, auto)`;
 
-const frGetter = value => (typeof value === 'number' ? `repeat(${value}, 1fr)` : value);
+const frGetter = (value) => (typeof value === 'number' ? `repeat(${value}, 1fr)` : value);
 
-const formatAreas = areas => areas.map(area => `"${area}"`).join(' ');
+const formatAreas = (areas) => areas.map((area) => `"${area}"`).join(' ');
 
 const GridContainer = styled.div`
   display: grid;

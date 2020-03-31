@@ -29,15 +29,20 @@ export const Demo = () => (
       Radio Input is a input component for radio.
     </Typography>
     <BoxContainer>
-      <Radio id="radioUnchecked" label="Check me!" onChange={e => console.log(e)} />
+      <Radio id="radioUnchecked" label="Check me!" onChange={(e) => console.log(e)} />
       <br />
-      <Radio id="radioChecked" label="Checked by default!" checked onChange={e => console.log(e)} />
+      <Radio
+        id="radioChecked"
+        label="Checked by default!"
+        checked
+        onChange={(e) => console.log(e)}
+      />
       <br />
       <Radio
         id="radioDisabledUnchecked"
         disabled
         label="Disabled and unchecked!"
-        onChange={e => console.log(e)}
+        onChange={(e) => console.log(e)}
       />
       <br />
       <Radio
@@ -45,7 +50,7 @@ export const Demo = () => (
         disabled
         checked
         label="Disabled and checked!"
-        onChange={e => console.log(e)}
+        onChange={(e) => console.log(e)}
       />
     </BoxContainer>
   </Container>

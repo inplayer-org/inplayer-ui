@@ -44,7 +44,7 @@ type MenuItemProps = {
 };
 
 const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
-  const onItemClick = e => {
+  const onItemClick = (e) => {
     e.stopPropagation();
     if (onClick && typeof onClick === 'function') {
       onClick(e);

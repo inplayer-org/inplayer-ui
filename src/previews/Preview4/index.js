@@ -38,11 +38,7 @@ type Props = {
   handleOpenModal?: (e: any) => any,
 };
 
-const removeTags = (str: string) =>
-  str
-    .replace(/<.*?>/g, ' ')
-    .replace(/ +/g, ' ')
-    .trim();
+const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
 
 const Preview4 = ({
   branding: {

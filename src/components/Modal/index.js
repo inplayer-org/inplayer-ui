@@ -37,7 +37,7 @@ const ModalContainer = styled.div`
 
 const Modal = ({ isModalOpen, closeModal, children, title, className, style }: Props) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
-    <ModalContainer className={className} style={style} onClick={e => e.stopPropagation()}>
+    <ModalContainer className={className} style={style} onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
       <ModalContent>{children}</ModalContent>
     </ModalContainer>

@@ -71,7 +71,7 @@ export const withArrayOfRowFunctions = () => {
 
   const limitPerPage = 10;
 
-  const onPageChange = newPageNum => {
+  const onPageChange = (newPageNum) => {
     setPage(newPageNum);
   };
 
@@ -108,7 +108,7 @@ export const withArrayOfRowFunctions = () => {
           options={{
             rowSelection: {
               active: true,
-              action: newData => console.log(newData),
+              action: (newData) => console.log(newData),
             },
             rowActions: ({ row }) => <FaBeer />,
           }}
@@ -132,7 +132,7 @@ export const withHeaderSection = () => {
 
   const limitPerPage = 10;
 
-  const onPageChange = newPageNum => {
+  const onPageChange = (newPageNum) => {
     setPage(newPageNum);
   };
 
@@ -176,7 +176,7 @@ export const withHeaderSection = () => {
           options={{
             rowSelection: {
               active: true,
-              action: newData => console.log(newData),
+              action: (newData) => console.log(newData),
             },
             rowActions: ({ row }) => <FaBeer />,
             headerSection: renderHeaderSection(),

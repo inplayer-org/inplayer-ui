@@ -48,7 +48,7 @@ class Tooltip extends PureComponent<Props, State> {
   };
 
   timeDelay = (msDuration: number) =>
-    new Promise(resolve => setTimeout(() => resolve(true), msDuration));
+    new Promise((resolve) => setTimeout(() => resolve(true), msDuration));
 
   showTooltip = () => {
     this.setState({ isOpen: true });

@@ -93,8 +93,8 @@ const Pagination = ({
   totalPages = Math.min(totalPages, pagesLimit);
   const numberOfPagesDisplayedScaled =
     totalPages < numberOfPagesDisplayed ? totalPages : numberOfPagesDisplayed;
-  const isVisibleLess = !visiblePages.some(index => index === 1);
-  const isVisibleMore = !visiblePages.some(index => index === totalPages);
+  const isVisibleLess = !visiblePages.some((index) => index === 1);
+  const isVisibleMore = !visiblePages.some((index) => index === totalPages);
 
   useEffect(() => {
     let minVisiblePage = 0;
@@ -107,7 +107,7 @@ const Pagination = ({
 
     // Create the pages that are visible for selection
     const initialPagesVisible = Array.from(Array(numberOfPagesDisplayedScaled).keys()).map(
-      i => i + minVisiblePage
+      (i) => i + minVisiblePage
     );
 
     setVisiblePages(initialPagesVisible);
@@ -127,7 +127,7 @@ const Pagination = ({
     }
 
     if (offset !== 0) {
-      setVisiblePages(pages => pages.map(page => page + offset));
+      setVisiblePages((pages) => pages.map((page) => page + offset));
     }
     setActivePage(pageNumber);
     onPageChange(pageNumber);
@@ -152,7 +152,7 @@ const Pagination = ({
       onPageChange(visiblePages[numberOfPagesDisplayedScaled - 1] + 1);
     }
 
-    setVisiblePages(pages => pages.map(page => page + offset));
+    setVisiblePages((pages) => pages.map((page) => page + offset));
   };
 
   const goToEnd = () => {
@@ -160,7 +160,7 @@ const Pagination = ({
     const endPages = Array.from(
       Array(Math.min(Math.ceil(totalItems / itemsPerPage), numberOfPagesDisplayedScaled)).keys()
     )
-      .map(number => totalPages - number)
+      .map((number) => totalPages - number)
       .reverse();
     setVisiblePages(endPages);
     onPageChange(totalPages);
@@ -170,7 +170,7 @@ const Pagination = ({
     setActivePage(1);
     const startPages = Array.from(
       Array(Math.min(Math.ceil(totalItems / itemsPerPage), numberOfPagesDisplayedScaled)).keys()
-    ).map(number => number + 1);
+    ).map((number) => number + 1);
     setVisiblePages(startPages);
     onPageChange(1);
   };
@@ -187,12 +187,12 @@ const Pagination = ({
       <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
         <FaAngleLeft />
       </PageBox>
-      {!visiblePages.some(index => index === 1) && (
+      {!visiblePages.some((index) => index === 1) && (
         <PageBox type="button" hideBorder onClick={onDotsClick(false)}>
           •••
         </PageBox>
       )}
-      {visiblePages.map(index => (
+      {visiblePages.map((index) => (
         <PageBox
           type="button"
           selected={activePage === index}
@@ -202,7 +202,7 @@ const Pagination = ({
           {index}
         </PageBox>
       ))}
-      {!visiblePages.some(index => index === totalPages) && (
+      {!visiblePages.some((index) => index === totalPages) && (
         <PageBox type="button" hideBorder onClick={onDotsClick(true)}>
           •••
         </PageBox>
