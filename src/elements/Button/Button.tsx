@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, DetailedHTMLProps, SelectHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
@@ -10,13 +10,15 @@ type ContentProps = {
   children: any;
 };
 
-export type Props = HTMLButtonElement &
-  ContentProps & {
-    buttonModifiers?: Array<string>;
-    size?: Size;
-    style?: CSSProperties;
-    className?: string;
-  };
+export type Props = Omit<
+  DetailedHTMLProps<SelectHTMLAttributes<ContentProps>, ContentProps>,
+  'ref'
+> & {
+  buttonModifiers?: Array<string>;
+  size?: Size;
+  style?: CSSProperties;
+  className?: string;
+};
 
 const ContentHolder = styled.span`
   padding: 0.2rem;
