@@ -1,10 +1,9 @@
-// @flow
-import React, { type Node } from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 
-type Props = {
-  children: Node,
-};
+interface Props {
+  children: ReactChild;
+}
 
 const ContentContainer = styled.div`
   padding: 0.625rem 1.25rem;

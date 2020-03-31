@@ -1,22 +1,27 @@
-// @flow
-import React, { type Node } from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'config/colors';
 import { transparentize } from 'polished';
+
+import colors from 'theme/colors';
+
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 
-type Props = {
-  isModalOpen: boolean,
-  closeModal: () => any,
-  children: Node,
-  title: string,
-  className?: string,
-  style?: Object,
-};
+interface Props {
+  isModalOpen: boolean;
+  closeModal: () => any;
+  children: ReactChild;
+  title: string;
+  className?: string;
+  style?: any;
+}
 
-const ModalWrapper = styled.div`
+interface ModalWrapperProps {
+  isOpen: boolean;
+}
+
+const ModalWrapper = styled.div<ModalWrapperProps>`
   display: ${ifProp('isOpen', 'flex', 'none')};
   height: 100%;
   width: 100%;
@@ -35,7 +40,7 @@ const ModalContainer = styled.div`
   margin: auto;
 `;
 
-const Modal = ({ isModalOpen, closeModal, children, title, className, style }: Props) => (
+const Modal = ({ isModalOpen, closeModal, children, title, className = '', style = {} }: Props) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
     <ModalContainer className={className} style={style} onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
@@ -43,10 +48,5 @@ const Modal = ({ isModalOpen, closeModal, children, title, className, style }: P
     </ModalContainer>
   </ModalWrapper>
 );
-
-Modal.defaultProps = {
-  className: '',
-  style: {},
-};
 
 export default Modal;
