@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "2.0.0-beta.34",
+  "version": "2.0.0-beta.38",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "dist/inplayer-ui.min.js",
@@ -114,6 +114,7 @@
     "url-loader": "^4.0.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "@types/react-dates": "^17.1.10"
