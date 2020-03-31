@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.38] - 31-03-2020
+
+### Fixes
+
+- Font loading
+
 # [2.0.0-beta.37] - 27-03-2020
 
 ### Fixes
