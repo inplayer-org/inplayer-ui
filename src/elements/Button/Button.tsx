@@ -1,24 +1,24 @@
-import React, { CSSProperties, DetailedHTMLProps, SelectHTMLAttributes } from 'react';
+import React, { CSSProperties, ButtonHTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
-export type Size = 'xs' | 'sx' | 'md' | 'lg';
+export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type ContentProps = {
-  icon?: Node | null;
+  icon?: ReactNode | null;
   iconPosition?: string;
-  children: any;
+  children?: any;
 };
 
-export type Props = Omit<
-  DetailedHTMLProps<SelectHTMLAttributes<ContentProps>, ContentProps>,
-  'ref'
-> & {
-  buttonModifiers?: Array<string>;
-  size?: Size;
-  style?: CSSProperties;
-  className?: string;
-};
+export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
+  ContentProps & {
+    buttonModifiers?: Array<string>;
+    sizeType?: Size;
+    style?: CSSProperties;
+    className?: string;
+    fullWidth?: boolean;
+    fullHeight?: boolean;
+  };
 
 const ContentHolder = styled.span`
   padding: 0.2rem;
@@ -42,18 +42,32 @@ const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps)
   );
 };
 
-const Button = ({ size = 'md', buttonModifiers, className = '', style, ...rest }: Props) => {
-  return (
-    <ButtonWrapper
-      className={className}
-      style={style}
-      size={size}
-      modifiers={buttonModifiers}
-      {...rest}
-    >
-      <Content {...rest} />
-    </ButtonWrapper>
-  );
-};
+const Button = ({
+  sizeType = 'md',
+  buttonModifiers,
+  className = '',
+  style,
+  icon,
+  iconPosition,
+  children,
+  fullWidth,
+  fullHeight,
+  ...rest
+}: Props) => (
+  <ButtonWrapper
+    className={className}
+    style={style}
+    sizeType={sizeType}
+    modifiers={buttonModifiers}
+    fullWidth={fullWidth}
+    fullHeight={fullHeight}
+    {...rest}
+  >
+    <Content icon={icon} iconPosition={iconPosition}>
+      {' '}
+      {children}{' '}
+    </Content>
+  </ButtonWrapper>
+);
 
 export default Button;
