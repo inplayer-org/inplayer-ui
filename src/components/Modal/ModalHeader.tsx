@@ -1,14 +1,13 @@
-// @flow
-import React, { type Node } from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
-import colors from 'config/colors';
-import { uiColors } from 'utils';
-import { Typography } from 'elements';
 
-type Props = {
-  children: Node,
-  closeModal: () => any,
-};
+import colors from 'theme/colors';
+import { Typography } from 'elements/Typography';
+
+interface Props {
+  children: ReactChild;
+  closeModal: () => any;
+}
 
 const HeaderWrapper = styled.div`
   padding: 1.25rem;
@@ -31,7 +30,7 @@ const IconClose = styled.span`
 
   &::before {
     content: '✕';
-    color: ${uiColors('secondary.main')};
+    color: ${({ theme }) => theme.palette.secondary.main};
   }
 `;
 
