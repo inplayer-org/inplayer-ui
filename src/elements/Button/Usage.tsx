@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdDelete } from 'react-icons/md';
+import { MdDelete, MdErrorOutline } from 'react-icons/md';
 import { Button } from '.';
 
 const Usage = () => (
@@ -16,6 +16,7 @@ const Usage = () => (
       </Button>
       <br />
       <Button icon={<MdDelete />}>Button with Custom Icon</Button>
+      <Button icon={<MdDelete color="red" />}>Button with Custom Icon Color</Button>
     </div>
     <div>
       <Button sizeType="xs">Button XS</Button> <br />
