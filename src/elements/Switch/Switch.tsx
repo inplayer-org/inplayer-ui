@@ -15,7 +15,7 @@ type Props = {
 };
 
 const MarginLeftLabel = styled(Label)`
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 `;
 
 const Switch = ({
