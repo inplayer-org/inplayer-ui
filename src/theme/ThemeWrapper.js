@@ -15,7 +15,7 @@ type Props = {
 
 const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
   const appTheme = theme || fallbackTheme;
-  loadFonts(appTheme);
+  loadFonts();
 
   return (
     <Provider theme={appTheme}>

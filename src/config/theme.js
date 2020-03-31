@@ -24,7 +24,8 @@ export default {
     borderRadius: '2px',
   },
   font: {
-    primary: 'Roboto, Helvetica, Arial, sans-serif',
+    primary: 'Roboto',
+    secondary: 'Open Sans',
     weights: {
       thin: 100,
       light: 300,
