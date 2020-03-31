@@ -35,11 +35,16 @@ const Switch = ({
 
   return (
     <SwitchWrapper className={className} style={style}>
-      <Toggle id={id} disabled={disabled} checked={checked} onChange={onToggleChange} icons={false}>
-        <MarginLeftLabel disabled={disabled} htmlFor={id}>
-          {label}
-        </MarginLeftLabel>
-      </Toggle>
+      <MarginLeftLabel disabled={disabled} htmlFor={id}>
+        {label}
+      </MarginLeftLabel>
+      <Toggle
+        id={id}
+        disabled={disabled}
+        checked={checked}
+        onChange={onToggleChange}
+        icons={false}
+       />
     </SwitchWrapper>
   );
 };
