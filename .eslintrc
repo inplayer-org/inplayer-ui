@@ -62,7 +62,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     // jsx-a11y rules

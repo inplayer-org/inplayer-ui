@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-import colors from 'config/colors';
-import uiColors from 'utils/uiColors';
+import styled, { DefaultTheme } from 'styled-components';
+import colors from 'theme/colors';
 
-const CheckboxWrapper = styled.div`
+const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
   > input {
     display: none;
   }
@@ -19,7 +18,7 @@ const CheckboxWrapper = styled.div`
       width: 1rem;
       height: 1rem;
       border: 1px solid ${colors.gray};
-      background: ${colors.white};
+      background: ${({ theme }) => theme.palette.primary.main};
       border-radius: 2px;
       transition: all ease 300ms;
     }
@@ -35,11 +34,11 @@ const CheckboxWrapper = styled.div`
 
   > input:checked + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${colors.skyBlue};
     }
 
     &::after {
-      border: 2px solid ${uiColors('primary.main')};
+      border: 2px solid ${colors.skyBlue};
       border-top: none;
       border-right: none;
       width: 0.5rem;
@@ -64,18 +63,18 @@ const CheckboxWrapper = styled.div`
   > input:checked + label:hover {
     ::before {
       border-color: transparent;
-      background: ${uiColors('primary.light')};
+      background: ${colors.lightSkyBlue};
     }
 
     ::after {
-      border-color: ${uiColors('primary.main')};
+      border-color: ${colors.skyBlue};
     }
   }
 
   > input:not(:checked) + label:hover {
     ::before {
-      border: 1px solid ${uiColors('primary.main')};
-      background-color: ${uiColors('primary.light')};
+      border: 1px solid ${colors.skyBlue};
+      background-color: ${colors.lightSkyBlue};
     }
 
     ::after {
@@ -86,12 +85,12 @@ const CheckboxWrapper = styled.div`
   > input:checked:focus + label,
   input:not(:checked):focus + label {
     &::before {
-      border: 1px dotted ${uiColors('primary.light')};
+      border: 1px dotted ${colors.lightSkyBlue};
     }
   }
 
   > input:disabled:checked + label {
-    color: ${uiColors('text.disabled')};
+    color: ${colors.fontLightGray};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -105,7 +104,7 @@ const CheckboxWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${uiColors('text.disabled')};
+    color: ${colors.fontLightGray};
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -114,5 +113,4 @@ const CheckboxWrapper = styled.div`
   }
 `;
 
-/** @component */
 export default CheckboxWrapper;
