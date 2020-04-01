@@ -1,12 +1,26 @@
-import styled from 'styled-components';
+import styled, { CSSProperties, CSSObject } from 'styled-components';
 
 const autoRows = ({ minRowHeight = '20px' }) => `minmax(${minRowHeight}, auto)`;
 
-const frGetter = (value) => (typeof value === 'number' ? `repeat(${value}, 1fr)` : value);
+const frGetter = (value: any) => (typeof value === 'number' ? `repeat(${value}, 1fr)` : value);
 
-const formatAreas = (areas) => areas.map((area) => `"${area}"`).join(' ');
+const formatAreas = (areas: any[]) => areas.map((area: any) => `"${area}"`).join(' ');
 
-const GridContainer = styled.div`
+type GridContainerProps = {
+  height: CSSObject;
+  flow: CSSObject;
+  minRowHeight: string;
+  rows: CSSProperties;
+  columns: CSSProperties;
+  gap: string;
+  columnGap: CSSProperties;
+  rowGap: CSSProperties;
+  areas: any;
+  justifyContent: CSSProperties;
+  alignContent: CSSProperties;
+};
+
+const GridContainer = styled.div<GridContainerProps>`
   display: grid;
   height: ${({ height = 'auto' }) => height};
   grid-auto-flow: ${({ flow = 'row' }) => flow};

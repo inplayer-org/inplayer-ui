@@ -1,6 +1,16 @@
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
-const Cell = styled.div`
+type CellProps = {
+  width: CSSProperties;
+  height: CSSProperties;
+  left: CSSProperties;
+  top: CSSProperties;
+  center: CSSProperties;
+  area: CSSProperties;
+  middle: CSSProperties;
+};
+
+const Cell = styled.div<CellProps>`
   height: 100%;
   min-width: 0;
   grid-column-end: ${({ width = 1 }) => `span ${width}`};
