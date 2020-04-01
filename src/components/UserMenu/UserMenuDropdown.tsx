@@ -9,14 +9,13 @@ const Container = styled.div`
   align-items: flex-start;
   box-shadow: 0 1px 5px 0 ${transparentize(0.8, '#000')};
   z-index: 1000;
-  min-width: 100%;
+  min-width: 98%;
   background: ${colors.white};
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.125rem 0;
   position: absolute;
-  right: 1%;
   top: 40px;
 
   &::before {
@@ -51,15 +50,20 @@ const Item = styled.a`
   }
 `;
 
-const ActionItem = styled(Item)<{ smallSize?: boolean }>`
-  border-top: 1px solid ${({ theme }) => theme.palette.text.disabled};
-  margin-top: 0.75rem;
-  padding-top: 1.125rem;
+const ActionItem = styled(Item)<{
+  moreThanOneItem: boolean;
+  smallSize?: boolean;
+}>`
+  ${({ moreThanOneItem }) =>
+    moreThanOneItem
+      ? `border-top: 1px solid ${colors.fontLightGray};
+                  margin-top: 0.75rem;
+                  padding-top: 1.125rem;`
+      : null};
   ${ifProp(
     'smallSize',
     css`
       font-size: ${fontSizes('small')};
-      border-top: none;
     `
   )};
 `;
@@ -88,6 +92,7 @@ type MenuItem = {
 export type UserMenuDropdownProps = {
   menuItems?: Array<MenuItem>;
   actionItem?: MenuItem | null;
+  onClick?: any;
 };
 
 const UserMenuDropdown = ({ menuItems = [], actionItem = null }: UserMenuDropdownProps) => (
@@ -102,6 +107,7 @@ const UserMenuDropdown = ({ menuItems = [], actionItem = null }: UserMenuDropdow
     ))}
     {actionItem && (
       <ActionItem
+        moreThanOneItem={menuItems.length > 0}
         href={actionItem.href}
         onClick={actionItem.onClick}
         smallSize={actionItem.smallSize}
