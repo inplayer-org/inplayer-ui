@@ -86,11 +86,11 @@ type MenuItem = {
 };
 
 export type UserMenuDropdownProps = {
-  menuItems: Array<MenuItem>;
+  menuItems?: Array<MenuItem>;
   actionItem?: MenuItem | null;
 };
 
-const UserMenuDropdown = ({ menuItems, actionItem = null }: UserMenuDropdownProps) => (
+const UserMenuDropdown = ({ menuItems = [], actionItem = null }: UserMenuDropdownProps) => (
   <Container>
     {menuItems.map((item, i) => (
       <ItemContainer key={i}>
