@@ -20,7 +20,7 @@ function App() {
         tabs={tabs}
         selectedTabIndex={selectedTab}
         onTabClick={(index) => setSelectedTab(index)}
-       />
+      />
     </>
   );
 }
