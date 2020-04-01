@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
+import { ifProp } from 'styled-tools';
 import { fontWeights } from 'utils';
 import colors from 'theme/colors';
-import { ifProp } from 'styled-tools';
 
-const Tab = styled.div`
+const Tab = styled.div<{ selected: boolean }>`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;
