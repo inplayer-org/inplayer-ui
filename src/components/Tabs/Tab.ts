@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 import colors from 'theme/colors';
 import { ifProp } from 'styled-tools';
 
-const Tab = styled.div<{ theme: Record<string, any> }>`
+const Tab = styled.div`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;
