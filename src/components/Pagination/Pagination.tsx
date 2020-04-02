@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PageBox, PaginationContainer, getBoxStyles } from './styled';
