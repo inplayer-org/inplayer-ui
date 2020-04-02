@@ -7,7 +7,7 @@ export const PaginationContainer = styled.div`
   justify-content: center;
 `;
 
-export const getBoxStyles = ({
+const getBoxStyles = ({
   disabled = false,
   selected = false,
 }: {
