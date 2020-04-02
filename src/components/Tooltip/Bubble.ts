@@ -7,11 +7,11 @@ type BubbleProps = {
   radius?: number;
   border: string;
   padding?: number;
-  fontSize?: number;
+  fontSize?: string;
   fontFamily: string;
 };
 
-const Bubble = styled('div')<BubbleProps>`
+const Bubble = styled.div<BubbleProps>`
   color: ${colors.white};
   background: ${({ background }) => background || colors.blue};
   border-radius: ${({ radius }) => `${radius}px` || '0.3em'};

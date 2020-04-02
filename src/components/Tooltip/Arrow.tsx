@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ifProp, prop } from 'styled-tools';
 import colors from 'theme/colors';
 
 type ArrowsProps = {
   width: number;
   background?: string;
   border: string;
+  placement: string;
 };
 
-const Base = styled('div')<ArrowsProps>`
+const Base = styled.div<ArrowsProps>`
   position: absolute;
   ${({ width }) => width && `width: ${width}px`};
   ${({ width }) => width && `height: ${width}px`};
-  ${({ background }) =>
-    background ? `background: ${background}` : `${colors.blue}`};
+  ${({ background }) => (background ? `background: ${background}` : `${colors.blue}`)};
 `;
 
 const Up = styled(Base)`
@@ -65,11 +64,7 @@ type Props = {
 
 const Arrow = ({ background, border, placement, width }: Props) => {
   const Component = arrows[placement] || arrows.top;
-  return (
-    width > 0 && (
-      <Component background={background} border={border} width={width} />
-    )
-  );
+  return width > 0 ? <Component background={background} border={border} width={width} /> : null;
 };
 
 export default Arrow;
