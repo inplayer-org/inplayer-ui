@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import { prop } from 'styled-tools';
-import colors from 'config/colors';
-import { uiColors, fontWeights } from 'utils';
+import colors from 'theme/colors';
+import { fontWeights } from 'utils';
 
 // Components
-import UserMenu, { type UserMenuProps } from 'components/UserMenu';
-import TabNavigation, { type TabNavigationProps } from 'components/TabNavigation';
+import UserMenu, { UserMenuProps } from 'components/UserMenu';
+import TabNavigation, { TabNavigationProps } from 'components/TabNavigation';
 
 const Container = styled.header`
   align-items: center;
@@ -23,7 +23,7 @@ const Container = styled.header`
 `;
 
 const Title = styled.h3`
-  color: ${uiColors('text.main')};
+  color: ${({ theme }) => theme.palette.text.main};
   font-weight: ${fontWeights('light')};
   margin: 0;
 `;
@@ -34,21 +34,21 @@ const MenuWrapper = styled.div`
 `;
 
 type HeaderProps = {
-  title?: string,
-  userMenuProps?: UserMenuProps,
-  additionalUserMenuProps?: UserMenuProps,
-  tabNavigationProps?: TabNavigationProps,
-  className?: string,
-  style?: Object,
+  title?: string | null;
+  userMenuProps?: UserMenuProps | null;
+  additionalUserMenuProps?: UserMenuProps | null;
+  tabNavigationProps?: TabNavigationProps | null;
+  className?: string;
+  style?: CSSProperties;
 };
 
 const Header = ({
-  title,
-  userMenuProps,
-  additionalUserMenuProps,
-  tabNavigationProps,
-  className,
-  style,
+  title = null,
+  userMenuProps = null,
+  additionalUserMenuProps = null,
+  tabNavigationProps = null,
+  className = '',
+  style = {},
 }: HeaderProps) => (
   <Container className={className} style={style}>
     {title && <Title>{title}</Title>}
@@ -59,14 +59,5 @@ const Header = ({
     </MenuWrapper>
   </Container>
 );
-
-Header.defaultProps = {
-  title: null,
-  userMenuProps: null,
-  additionalUserMenuProps: null,
-  tabNavigationProps: null,
-  className: '',
-  style: {},
-};
 
 export default Header;
