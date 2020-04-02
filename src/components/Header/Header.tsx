@@ -6,8 +6,10 @@ import colors from 'theme/colors';
 import { fontWeights } from 'utils';
 
 // Components
-import UserMenu, { UserMenuProps } from 'components/UserMenu';
-import TabNavigation, { TabNavigationProps } from 'components/TabNavigation';
+import { UserMenu } from '../UserMenu';
+import { UserMenuProps } from '../UserMenu/UserMenu';
+import { TabNavigation } from '../TabNavigation/';
+import { TabNavigationProps } from '../TabNavigation';
 
 const Container = styled.header`
   align-items: center;
@@ -18,7 +20,7 @@ const Container = styled.header`
   height: ${prop('height', 50)}px;
   justify-content: space-between;
   margin: 0;
-  width: 100%;
+  width: 98%;
   z-index: 3;
 `;
 
