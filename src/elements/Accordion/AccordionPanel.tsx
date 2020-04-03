@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
@@ -7,7 +7,7 @@ import { fontWeights } from 'utils';
 // Components
 import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
-import Typography from '../Typography';
+import { Typography } from '../Typography';
 
 // Types
 type AccordionPanelContainerProps = {
@@ -117,10 +117,10 @@ type Props = {
   label: string;
   isActive: boolean;
   isOtherPanelActive: boolean;
-  icon?: Node;
+  icon?: ReactNode | null;
   iconTooltip?: TooltipProps;
   contentHeight: string;
-  togglePanel: (e?: SyntheticEvent) => void;
+  togglePanel: (e?: SyntheticEvent<Element, Event>) => void;
   renderContent: (actions: { closePanel: (e?: SyntheticEvent) => void }) => any;
   closePanel: (e?: SyntheticEvent) => void;
   disabled: boolean;

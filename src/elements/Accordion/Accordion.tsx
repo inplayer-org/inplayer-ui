@@ -9,10 +9,10 @@ import Arrow from '../../components/NavBar/Arrow';
 // Types
 type Panel = {
   label: string;
-  icon?: Node;
+  icon?: ReactNode | null;
   iconTooltip?: TooltipProps;
   renderContent: () => any;
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 type Props = {
@@ -47,7 +47,7 @@ const Accordion = ({
     setActivePanel(-1);
   };
 
-  const togglePanel = (panelIndex: number) => (e: SyntheticEvent<any, Event>) => {
+  const togglePanel = (panelIndex: number) => (e: any) => {
     e.stopPropagation();
     if (activePanel !== -1) {
       closePanel();
@@ -69,7 +69,7 @@ const Accordion = ({
     >
       <div>
         {panels.map((panel, index) => {
-          const { icon, iconTooltip, label, renderContent, disabled } = panel;
+          const { icon, iconTooltip, label, renderContent, disabled = false } = panel;
           const isActive = activePanel === index;
           const isOtherPanelActive = !isActive && activePanel !== -1;
 
