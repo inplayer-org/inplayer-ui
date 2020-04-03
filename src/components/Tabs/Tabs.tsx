@@ -1,46 +1,38 @@
-// @flow
-import React from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
+import { CSSProperties } from 'styled-components';
 
 type TabInfo = {
-  name: string,
+  name: string;
 };
 
 type ContentProps = {
-  icon?: Node,
-  iconPosition?: string,
-  iconModifiers?: Array<string>,
+  icon?: ReactNode | null;
+  iconPosition?: string;
 };
 
-type Props = HTMLDivElement &
+type Props = HTMLAttributes<HTMLDivElement> &
   ContentProps & {
-    tabs: Array<TabInfo>,
-    selectedTabIndex: number,
-    onTabClick: (index: number) => void,
-    /** A className can be passed down for further styling or extending with CSS-in-JS */
-    className?: string,
-    style?: Object,
+    tabs: Array<TabInfo>;
+    selectedTabIndex: number;
+    onTabClick: (index: number) => void;
+    className?: string;
+    style?: CSSProperties;
   };
 
-const Content = ({ icon, iconPosition, name }: any) =>
+const Content = ({ icon = null, iconPosition = 'left', name }: any) =>
   iconPosition === 'right' ? (
     <>
-      {name}
+      <span>{name}</span>
       {icon}
     </>
   ) : (
     <>
       {icon}
-      {name}
+      <span>{name}</span>
     </>
   );
-
-Content.defaultProps = {
-  icon: null,
-  iconPosition: 'left',
-  iconModifiers: [],
-};
 
 const renderTabs = (
   tabs: Array<TabInfo>,
@@ -61,16 +53,18 @@ const renderTabs = (
     </Tab>
   ));
 
-const Tabs = ({ tabs, selectedTabIndex, onTabClick, className, style }: Props) =>
+const Tabs = ({
+  tabs,
+  selectedTabIndex,
+  onTabClick,
+  className = '',
+  style = {},
+  ...rest
+}: Props) =>
   tabs ? (
-    <TabsWrapper className={className} style={style}>
+    <TabsWrapper className={className} style={style} {...rest}>
       {renderTabs(tabs, selectedTabIndex, onTabClick)}
     </TabsWrapper>
   ) : null;
-
-Tabs.defaultProps = {
-  className: '',
-  style: {},
-};
 
 export default Tabs;
