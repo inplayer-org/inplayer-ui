@@ -13,7 +13,7 @@ const Base = styled.div<ArrowsProps>`
   position: absolute;
   ${({ width }) => width && `width: ${width}px`};
   ${({ width }) => width && `height: ${width}px`};
-  ${({ background }) => (background ? `background: ${background}` : `background: ${colors.blue}`)};
+  background: ${({ background }) => background || colors.blue};
 `;
 
 const Up = styled(Base)`
