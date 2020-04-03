@@ -24,6 +24,10 @@ const App = () => (
     </Tooltip>
     <br />
     <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <Tooltip content="Hello!" behavior="click" placement="right">
       <Button>Click me!</Button>
     </Tooltip>
