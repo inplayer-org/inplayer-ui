@@ -15,7 +15,7 @@ interface Props {
   disabled?: boolean;
 }
 
-export const Radio: React.FC<Props> = ({
+const Radio: React.FC<Props> = ({
   label,
   id,
   checked,
@@ -41,3 +41,5 @@ export const Radio: React.FC<Props> = ({
     <Label htmlFor={id}>{label}</Label>
   </RadioWrapper>
 );
+
+export default Radio;
