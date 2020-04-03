@@ -13,6 +13,17 @@ type Props = {
   fadeDuration: number;
 };
 
+type ZIndexType = {
+  zIndex: number;
+};
+
+type BaseProps = AnimationProps & ZIndexType;
+
+type AnimationProps = {
+  fadeDuration: number;
+  fadeEasing: FadeEasing;
+};
+
 const fadeAnimation = keyframes`
     0% {
         opacity: 0;
@@ -22,22 +33,11 @@ const fadeAnimation = keyframes`
     }
 `;
 
-type AnimationProps = {
-  fadeDuration: number;
-  fadeEasing: FadeEasing;
-};
-
 const animation = ({ fadeDuration, fadeEasing }: AnimationProps) => css`
   animation: ${fadeDuration}ms ${fadeEasing} 0s 1 ${fadeAnimation};
 `;
 
-type ZIndexType = {
-  zIndex: number;
-};
-
-type BaseProps = AnimationProps & ZIndexType;
-
-const Base = styled('div')<BaseProps>`
+const Base = styled.div<BaseProps>`
   position: absolute;
   width: max-content;
   white-space: pre-line;
@@ -45,36 +45,32 @@ const Base = styled('div')<BaseProps>`
   ${(props) => props.zIndex && `z-index: ${props.zIndex};`}
 `;
 
-type OffsetType = {
-  offset: number;
-};
-
-const Top = ({ offset }: OffsetType) => styled(Base)`
+const Top = styled(Base)<{ offset: number }>`
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: ${offset}px;
+  margin-bottom: ${(props) => props.offset}px;
 `;
 
-const Bottom = ({ offset }: OffsetType) => styled(Base)`
+const Bottom = styled(Base)<{ offset: number }>`
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: ${offset}px;
+  margin-top: ${(props) => props.offset}px;
 `;
 
-const Left = ({ offset }: OffsetType) => styled(Base)`
+const Left = styled(Base)<{ offset: number }>`
   right: 100%;
   top: 50%;
   transform: translateY(-50%);
-  margin-right: ${offset}px;
+  margin-right: ${(props) => props.offset}px;
 `;
 
-const Right = ({ offset }: OffsetType) => styled(Base)`
-  right: 100%;
+const Right = styled(Base)<{ offset: number }>`
+  left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: ${offset}px;
+  margin-left: ${(props) => props.offset}px;
 `;
 
 const toolTips: Record<string, any> = {
@@ -92,7 +88,6 @@ const TooltipWrapper = ({
   zIndex,
   fadeDuration,
   fadeEasing,
-  ...props
 }: Props) => {
   const Component = toolTips[placement] || toolTips.top;
 
@@ -101,13 +96,7 @@ const TooltipWrapper = ({
   }
 
   return (
-    <Component
-      offset={offset}
-      zIndex={zIndex}
-      fadeDuration={fadeDuration}
-      fadeEasing={fadeEasing}
-      {...props}
-    >
+    <Component offset={offset} zIndex={zIndex} fadeDuration={fadeDuration} fadeEasing={fadeEasing}>
       {children}
     </Component>
   );
