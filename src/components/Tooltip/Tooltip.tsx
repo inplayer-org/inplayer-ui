@@ -100,7 +100,7 @@ const Tooltip = ({
     </TooltipWrapper>
   );
 
-  return children ? (
+  return (
     <Container
       style={style}
       className={className}
@@ -108,12 +108,10 @@ const Tooltip = ({
       onMouseEnter={behavior === 'hover' && !fixed ? showTooltip : undefined}
       onMouseLeave={behavior === 'hover' && !fixed ? hideTooltip : undefined}
     >
-      {children}
-      {tooltipElement}
-    </Container>
-  ) : (
-    <Container className={className} style={style}>
-      {tooltipElement}
+      <>
+        {children}
+        {tooltipElement}
+      </>
     </Container>
   );
 };
