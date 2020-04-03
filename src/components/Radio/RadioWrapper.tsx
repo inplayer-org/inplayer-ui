@@ -56,7 +56,7 @@ const RadioContainer = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${Colors.gray};
+    color: ${Colors.fontLightGray};
 
     &::before {
       border: 1px solid ${Colors.gray};
@@ -65,7 +65,7 @@ const RadioContainer = styled.div`
   }
 
   > input:disabled:checked + label {
-    color: ${Colors.gray};
+    color: ${Colors.fontLightGray};
 
     &::before {
       border: 1px solid ${Colors.gray};
