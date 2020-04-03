@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from 'react';
+import React, { useState, SyntheticEvent, ReactNode } from 'react';
 
 // Components
 import { Props as TooltipProps } from 'components/Tooltip';
