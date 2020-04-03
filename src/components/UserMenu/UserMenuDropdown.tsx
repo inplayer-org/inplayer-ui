@@ -1,23 +1,21 @@
-// @flow
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { uiColors, fontWeights, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontWeights, fontSizes } from 'utils';
+import colors from 'theme/colors';
 
 const Container = styled.div`
   align-items: flex-start;
   box-shadow: 0 1px 5px 0 ${transparentize(0.8, '#000')};
   z-index: 1000;
-  min-width: 100%;
+  min-width: 98%;
   background: ${colors.white};
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.125rem 0;
   position: absolute;
-  right: 1%;
   top: 40px;
 
   &::before {
@@ -35,7 +33,7 @@ const Container = styled.div`
 `;
 
 const Item = styled.a`
-  color: ${uiColors('text.light')};
+  color: ${({ theme }) => theme.palette.text.light};
   box-sizing: border-box;
   font-weight: ${fontWeights('light')};
   letter-spacing: 0.02em;
@@ -48,19 +46,24 @@ const Item = styled.a`
   font-size: ${fontSizes('medium')};
 
   &:hover {
-    color: ${uiColors('text.main')};
+    color: ${({ theme }) => theme.palette.text.main};
   }
 `;
 
-const ActionItem = styled(Item)`
-  border-top: 1px solid ${uiColors('text.disabled')};
-  margin-top: 0.75rem;
-  padding-top: 1.125rem;
+const ActionItem = styled(Item)<{
+  moreThanOneItem: boolean;
+  smallSize?: boolean;
+}>`
+  ${({ moreThanOneItem }) =>
+    moreThanOneItem
+      ? `border-top: 1px solid ${colors.fontLightGray};
+                  margin-top: 0.75rem;
+                  padding-top: 1.125rem;`
+      : null};
   ${ifProp(
     'smallSize',
     css`
       font-size: ${fontSizes('small')};
-      border-top: none;
     `
   )};
 `;
@@ -79,19 +82,20 @@ const ItemImage = styled.img`
 `;
 
 type MenuItem = {
-  title: string,
-  href?: string,
-  image?: string,
-  onClick?: (e: SyntheticEvent<*>) => any,
-  smallSize?: boolean,
+  title: string;
+  href?: string;
+  image?: string;
+  onClick?: (e: SyntheticEvent) => any;
+  smallSize?: boolean;
 };
 
 export type UserMenuDropdownProps = {
-  menuItems: Array<MenuItem>,
-  actionItem?: MenuItem,
+  menuItems?: Array<MenuItem>;
+  actionItem?: MenuItem | null;
+  onClick?: any;
 };
 
-const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
+const UserMenuDropdown = ({ menuItems = [], actionItem = null }: UserMenuDropdownProps) => (
   <Container>
     {menuItems.map((item, i) => (
       <ItemContainer key={i}>
@@ -103,6 +107,7 @@ const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
     ))}
     {actionItem && (
       <ActionItem
+        moreThanOneItem={menuItems.length > 0}
         href={actionItem.href}
         onClick={actionItem.onClick}
         smallSize={actionItem.smallSize}
@@ -112,9 +117,5 @@ const UserMenuDropdown = ({ menuItems, actionItem }: UserMenuDropdownProps) => (
     )}
   </Container>
 );
-
-UserMenuDropdown.defaultProps = {
-  actionItem: null,
-};
 
 export default UserMenuDropdown;
