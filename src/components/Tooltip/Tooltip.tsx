@@ -29,7 +29,7 @@ export type Props = {
   placement?: Placement;
   radius?: number;
   zIndex?: number;
-  children?: ReactChild | null;
+  children?: ReactChild | ReactNode | null;
 };
 
 const Container = styled.div`
