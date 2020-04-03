@@ -93,7 +93,7 @@ const Accordion = ({
         })}
       </div>
       {isExtendable && activePanel === -1 && (
-        <Arrow onClick={toggleOpen} open={open} section="acordion" />
+        <Arrow onClick={toggleOpen} open={open} section="accordion" />
       )}
     </AccordionWrapper>
   );
