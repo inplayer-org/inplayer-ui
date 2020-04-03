@@ -1,15 +1,14 @@
-// @flow
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, CSSProperties } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 
-const Tab = styled.a`
+const Tab = styled.a<{ active: boolean }>`
   height: 100%;
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: ${uiColors('text.light')};
+  color: ${({ theme }) => theme.palette.text.light};
   cursor: pointer;
   font-weight: ${fontWeights('light')};
   line-height: 2rem;
@@ -20,13 +19,13 @@ const Tab = styled.a`
   ${ifProp(
     'active',
     css`
-      border-color: ${uiColors('primary.main')};
-      color: ${uiColors('text.main')};
+      border-color: ${({ theme }) => theme.palette.primary.main};
+      color: ${({ theme }) => theme.palette.text.main};
     `
   )};
 
   &:hover {
-    color: ${uiColors('text.main')};
+    color: ${({ theme }) => theme.palette.text.main};
   }
 `;
 
@@ -38,20 +37,26 @@ const TabContainer = styled.div`
 `;
 
 type NavigationTab = {
-  title: string,
+  title: string;
 };
 
 type Props = {
-  tabs: Array<NavigationTab>,
-  onTabClick: (index: number) => any,
-  selectedTabIndex: number,
-  className?: string,
-  style?: Object,
+  tabs: Array<NavigationTab>;
+  onTabClick: (index: number) => void;
+  selectedTabIndex: number;
+  className?: string;
+  style?: CSSProperties;
 };
 
 export type TabNavigationProps = Props;
 
-const TabNavigation = ({ tabs, onTabClick, selectedTabIndex, className, style }: Props) => (
+const TabNavigation = ({
+  tabs,
+  onTabClick,
+  selectedTabIndex,
+  className = '',
+  style = {},
+}: Props) => (
   <TabContainer className={className} style={style}>
     {tabs.map((tab, index) => (
       <Tab key={tab.title} onClick={() => onTabClick(index)} active={selectedTabIndex === index}>
@@ -60,10 +65,5 @@ const TabNavigation = ({ tabs, onTabClick, selectedTabIndex, className, style }:
     ))}
   </TabContainer>
 );
-
-TabNavigation.defaultProps = {
-  className: '',
-  style: {},
-};
 
 export default TabNavigation;
