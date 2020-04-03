@@ -5,12 +5,12 @@ import { Button } from '../../elements/Button';
 const App = () => (
   <div style={{ margin: '300px' }}>
     <Tooltip content="😎">
-      <Button>Hover me!</Button>
+      <Button>Default hover me! (top)</Button>
     </Tooltip>
     <br />
     <br />
     <Tooltip content="Tooltip at the left" placement="left" background="red">
-      <Button>Hover me too!</Button>
+      <Button>Custom color hover</Button>
     </Tooltip>
     <br />
     <br />
