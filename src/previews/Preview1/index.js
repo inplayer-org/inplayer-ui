@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import colors from 'config/colors';
-import { Grid } from 'blocks';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -12,29 +11,27 @@ import logo from 'assets/images/ip-icon-blue.svg';
 import { type Branding } from '../types/branding';
 
 // Components
-import StyledContainer from '../components/StyledContainer';
 import TextEditor from '../components/TextEditor';
 import {
   OverlayLabel,
-  PreviewImage,
   ImageHolder,
-  TemplatesButton,
+  PreviewImage,
   FooterLink,
 } from '../components/SharedComponents';
 import {
-  StyledCell,
   StyledPreviewBox,
   StyledPaywallDescription,
-  Protected,
-  PaywallDescriptionSpan,
-  Title,
-  Logo,
-  LockIcon,
-  StyledPreviewFooter,
   PremiumContent,
+  LockIcon,
+  PaywallDescriptionSpan,
+  Protected,
+  Logo,
+  ItemDetails,
+  Title,
+  BuyButtonWrapper,
+  StyledBuyButton,
+  StyledPreviewFooter,
 } from './styled';
-
-const { Cell } = Grid;
 
 type Props = {
   branding?: Branding,
@@ -51,8 +48,8 @@ type Props = {
 const Preview1 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Title</strong></h1>`,
-    preview_description: previewDescription = `<p>Description</p>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
+    preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
     preview_top_border: previewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
@@ -94,25 +91,23 @@ const Preview1 = ({
           </PremiumContent>
         </StyledPaywallDescription>
       </ImageHolder>
-      <StyledContainer height="30%" columns="1fr 10rem" margin="0.5rem 0">
-        <StyledCell middle>
-          <Title>
-            <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-          </Title>
-          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-        </StyledCell>
-        {displayBuyButton && (
-          <Cell middle>
-            <TemplatesButton
-              buttonBgColor={buttonBgColor}
-              buttonTextColor={buttonTextColor}
-              onClick={handleOpenModal}
-            >
-              <p>{previewButtonLabel}</p>
-            </TemplatesButton>
-          </Cell>
-        )}
-      </StyledContainer>
+      <ItemDetails>
+        <Title variant="h3">
+          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+        </Title>
+        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+      </ItemDetails>
+      {displayBuyButton && (
+        <BuyButtonWrapper>
+          <StyledBuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </StyledBuyButton>
+        </BuyButtonWrapper>
+      )}
       <StyledPreviewFooter color={colors.fontGray}>
         <FooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
@@ -126,7 +121,7 @@ Preview1.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  minWidth: '520px',
+  minWidth: '250px',
   width: undefined,
   height: undefined,
   isRestrictedAsset: false,
