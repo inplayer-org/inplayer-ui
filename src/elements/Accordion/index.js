@@ -10,7 +10,7 @@ import Arrow from '../../components/NavBar/Arrow';
 // Types
 type Panel = {
   label: string,
-  icon?: string,
+  icon?: Node,
   iconTooltip?: TooltipProps,
   renderContent: () => any,
   disabled: boolean,
