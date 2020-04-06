@@ -8,7 +8,7 @@ import MenuItem from './MenuItem';
 import MenuWithLogo from './MenuWithLogo';
 
 type Props = {
-  children: ReactChild;
+  children: any;
   logo?: Element | string;
   /** A className can be passed down for further styling or extending with CSS-in-JS */
   className?: string;
