@@ -5,7 +5,7 @@ import { transparentize } from 'polished';
 import { fontSizes } from 'utils';
 import colors from 'theme/colors';
 
-const MenuItemContainer = styled.div<{ active: boolean }>`
+const MenuItemContainer = styled.div<{ active: any }>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -15,6 +15,7 @@ const MenuItemContainer = styled.div<{ active: boolean }>`
   overflow: hidden;
   white-space: nowrap;
   font-size: ${fontSizes('small')};
+  box-sizing: border-box;
   ${ifProp(
     'active',
     css`
@@ -36,10 +37,10 @@ const MenuItemIcon = styled.i`
 `;
 
 type MenuItemProps = {
-  active: boolean;
-  icon?: string | Node;
+  active?: boolean;
+  icon?: ReactNode;
   onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
-  children?: Node;
+  children?: any;
 };
 
 const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
@@ -51,12 +52,7 @@ const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
   };
   return (
     <MenuItemContainer active={active} onClick={onItemClick}>
-      {typeof icon === 'string' ? (
-        <MenuItemIcon className={icon} />
-      ) : (
-        <MenuItemIcon>{icon}</MenuItemIcon>
-      )}
-
+      <MenuItemIcon>{icon}</MenuItemIcon>
       {children}
     </MenuItemContainer>
   );
