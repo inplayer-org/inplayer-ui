@@ -30,12 +30,14 @@ type Column = {
   key: string;
   render: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
+  alignRight: any;
 };
 
 type RowActions<T> =
   | Array<{
       icon: string;
       onClick: (id: number | string) => any;
+      render: any;
     }>
   | ((props: { row: T }) => Node);
 
@@ -44,7 +46,7 @@ type TableOptions<T> = {
     active: boolean;
     action: (selectedItems: Array<T>) => any;
   };
-  rowActions: RowActions<T>;
+  rowActions: RowActions<Data>;
   headerSection?: Node;
 };
 
@@ -82,7 +84,7 @@ class Table<T> extends Component<Props<T>, State> {
     selectedAll: false,
   };
 
-  toggleRow = (id: number) => () => {
+  toggleRow = (id: number | string) => () => {
     const { selected } = this.state;
     const isSelected = !selected[id];
     const newSelected = {
@@ -173,14 +175,14 @@ class Table<T> extends Component<Props<T>, State> {
     return newColumns;
   };
 
-  renderColumns = (columns: Array<Column>): Array<Node> =>
+  renderColumns = (columns: Array<Column>): Array<JSX.Element> =>
     this.generateColumns(columns).map((column, index) => (
       <TableHeaderCell key={index} alignRight={column.alignRight}>
         {column.title}
       </TableHeaderCell>
     ));
 
-  renderData = (columns: Array<Column>, data: Array<Data>) => {
+  renderData = (columns: Array<Column>, data: Array<any>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 

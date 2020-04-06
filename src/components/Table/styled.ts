@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import { Checkbox } from 'components/Checkbox';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
@@ -13,7 +14,7 @@ const TableWithHeaderSectionContainer = styled(Grid.Container)`
   border-radius: 2px;
 `;
 
-const TableWrapper = styled.table`
+const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
   font-family: Roboto, sans-serif;
   background: ${colors.white};
   width: 100%;
@@ -58,7 +59,7 @@ const ButtonTableRow = styled(TableRow)`
   border-top: 1px solid ${colors.gray};
 `;
 
-const TableCell = styled.td<{ isActionsCel?: string }>`
+const TableCell = styled.td<{ isActionsCell?: boolean }>`
   font-size: ${fontSizes('medium')};
   padding: 0.4375rem 1%;
   vertical-align: middle;
@@ -78,7 +79,7 @@ const TableCell = styled.td<{ isActionsCel?: string }>`
   }
 `;
 
-const TableHeaderCell = styled.th<{ alignRight?: string }>`
+const TableHeaderCell = styled.th<any>`
   padding: 1rem 1%;
   font-weight: ${fontWeights('light')};
   font-size: ${fontSizes('small')};
@@ -100,7 +101,9 @@ const TableCheckbox = styled(Checkbox)<any>`
   }
 `;
 
-const TableButton = styled(Button)`
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & any;
+
+const TableButton = styled(Button)<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
