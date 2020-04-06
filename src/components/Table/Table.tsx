@@ -27,7 +27,7 @@ type Render = {
 
 type Column = {
   title: string;
-  key: string;
+  key: string | number;
   render: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight: any;
@@ -52,7 +52,7 @@ type TableOptions<T> = {
 
 type Props<T = Data> = {
   columns: Array<Column>;
-  data: Array<T>;
+  data: Array<any>;
   className?: string;
   style?: CSSProperties;
   options: TableOptions<T>;
@@ -150,10 +150,10 @@ class Table<T> extends Component<Props<T>, State> {
     const { options } = this.props;
     const { rowSelection, rowActions } = options;
 
-    let newColumns = [...columns];
+    let newColumns: any = [...columns];
 
     if (rowSelection && rowSelection.active) {
-      const rowCheckbox = {
+      const rowCheckbox: any = {
         title: (
           <TableCheckbox id="toggleAll" checked={selectedAll} onChange={this.toggleSelectAll} />
         ),
@@ -176,7 +176,7 @@ class Table<T> extends Component<Props<T>, State> {
   };
 
   renderColumns = (columns: Array<Column>): Array<JSX.Element> =>
-    this.generateColumns(columns).map((column, index) => (
+    this.generateColumns(columns).map((column: Column, index: number) => (
       <TableHeaderCell key={index} alignRight={column.alignRight}>
         {column.title}
       </TableHeaderCell>
@@ -190,7 +190,7 @@ class Table<T> extends Component<Props<T>, State> {
 
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
-        {newColumns.map((column, index) => (
+        {newColumns.map((column: Column, index: number) => (
           <TableCell
             key={index}
             isActionsCell={column.key === 'actions'}
