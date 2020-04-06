@@ -1,8 +1,8 @@
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { uiColors } from 'utils';
-import colors from 'config/colors';
+import Colors from '../../theme/colors';
 
-const RadioWrapper = styled.div`
+const RadioContainer = styled.div`
   display: inline-block;
 
   > input {
@@ -21,8 +21,8 @@ const RadioWrapper = styled.div`
       top: 1px;
       width: 1rem;
       height: 1rem;
-      border: 1px solid ${colors.gray};
-      background: ${colors.white};
+      border: 1px solid ${Colors.gray};
+      background: ${Colors.white};
       border-radius: 100%;
     }
 
@@ -32,7 +32,7 @@ const RadioWrapper = styled.div`
       top: -0.1rem;
       left: 0.09rem;
       font-size: 1.4rem;
-      color: ${uiColors('primary.main')};
+      color: ${Colors.skyBlue};
       transition: all 0.2s;
     }
   }
@@ -46,7 +46,7 @@ const RadioWrapper = styled.div`
 
   > input:checked + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${Colors.skyBlue};
     }
 
     &::after {
@@ -56,40 +56,43 @@ const RadioWrapper = styled.div`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${uiColors('text.disabled')};
+    color: ${Colors.fontLightGray};
 
     &::before {
-      border: 1px solid ${colors.gray};
+      border: 1px solid ${Colors.gray};
       background: transparent;
     }
   }
 
   > input:disabled:checked + label {
-    color: ${uiColors('text.disabled')};
+    color: ${Colors.fontLightGray};
 
     &::before {
-      border: 1px solid ${colors.gray};
+      border: 1px solid ${Colors.gray};
       background: transparent;
     }
 
     &::after {
-      color: ${colors.gray};
+      color: ${Colors.gray};
       background: transparent;
     }
   }
 
   > input:checked:focus + label {
     &::before {
-      border: 1px solid ${uiColors('primary.main')};
+      border: 1px solid ${Colors.skyBlue};
     }
   }
 
   > input:not(:checked):focus + label {
     &::before {
-      border: 1px solid ${colors.gray};
+      border: 1px solid ${Colors.gray};
     }
   }
 `;
 
-/** @component */
-export default RadioWrapper;
+interface Props {
+  children: ReactNode;
+}
+
+export const RadioWrapper = ({ children }: Props) => <RadioContainer> {children} </RadioContainer>;
