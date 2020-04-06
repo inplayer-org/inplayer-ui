@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import colors from 'config/colors';
 import { transparentize } from 'polished';
+
+// utils
+import colors from 'config/colors';
+import { fontWeights, fontSizes } from 'utils';
 
 // Components
 import {
   PreviewBox,
   ImageHolder,
-  TemplatesButton,
+  BuyButton,
   TextWrapper,
   IconWrapper,
   PreviewImage,
@@ -14,7 +17,6 @@ import {
 
 export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? 'auto'};
-  background: ${colors.white};
   overflow: hidden;
   border-top: 4px solid ${({ topBorderColor }) => topBorderColor};
   display: flex;
@@ -22,24 +24,16 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 3px 3px 0 0;
 `;
 
-export const TextElement = styled.div`
-  overflow-wrap: break-word;
-  font-weight: ${({ theme }) => theme.font.weights.normal};
-  font-size: ${({ theme }) => theme.font.sizes.medium};
-  line-height: 1.3em;
+export const StyledButton = styled(BuyButton)`
   margin: 0;
-  max-width: ${({ width }) => (width < 45 ? '80%' : '55%')};
-  z-index: 1;
+  padding: 10px 60px;
+  height: 3rem;
 `;
 
-export const Button = styled(TemplatesButton)`
-  padding: 18px 26px;
-  height: 1rem;
-`;
-
-export const StyledTextWrapper = styled(TextWrapper)`
-  align-items: self-end;
-  margin: 10% 5%;
+export const ImageWrapper = styled(ImageHolder)`
+  height: 100%;
+  min-height: 310px;
+  margin: 0;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -52,12 +46,6 @@ export const StyledIconWrapper = styled(IconWrapper)`
   z-index: 1;
 `;
 
-export const ImageWrapper = styled(ImageHolder)`
-  height: 100%;
-  min-height: 310px;
-  margin: 0;
-`;
-
 export const Icon = styled.div`
   color: ${colors.white};
   position: absolute;
@@ -68,4 +56,19 @@ export const Icon = styled.div`
 
 export const StyledPreviewImage = styled(PreviewImage)`
   position: absolute;
+`;
+
+export const StyledTextWrapper = styled(TextWrapper)`
+  align-items: self-end;
+  margin: 10% 5%;
+`;
+
+export const TextElement = styled.div`
+  overflow-wrap: break-word;
+  font-weight: ${fontWeights('normal')};
+  font-size: ${fontSizes('medium')};
+  line-height: 1.3em;
+  margin: 0;
+  max-width: ${({ width }) => (width < 45 ? '80%' : '55%')};
+  z-index: 1;
 `;

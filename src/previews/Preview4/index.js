@@ -14,13 +14,13 @@ import TextEditor from '../components/TextEditor';
 import { OverlayLabel } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
+  StyledButton,
   ImageWrapper,
-  TextElement,
-  Button,
-  StyledTextWrapper,
   StyledIconWrapper,
   Icon,
   StyledPreviewImage,
+  StyledTextWrapper,
+  TextElement,
 } from './styled';
 
 // Types
@@ -74,13 +74,13 @@ const Preview4 = ({
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledContainer columns="1fr">
         {displayBuyButton && (
-          <Button
+          <StyledButton
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
           >
             {previewButtonLabel}
-          </Button>
+          </StyledButton>
         )}
       </StyledContainer>
       <ImageWrapper>

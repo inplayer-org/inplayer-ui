@@ -19,7 +19,7 @@ import {
   Overlay,
   BuyButtonHolder,
   BuyButtonBorder,
-  BuyButton,
+  StyledBuyButton,
   ItemDetails,
   StyledIcon,
   PaywallDescriptionSpan,
@@ -61,13 +61,13 @@ const Preview5 = ({
         <Overlay />
         <BuyButtonHolder>
           <BuyButtonBorder>
-            <BuyButton
+            <StyledBuyButton
               buttonBgColor={buttonBgColor}
               buttonTextColor={buttonTextColor}
               onClick={handleOpenModal}
             >
               {previewButtonLabel}
-            </BuyButton>
+            </StyledBuyButton>
           </BuyButtonBorder>
         </BuyButtonHolder>
       </ImageWrapper>

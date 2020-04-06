@@ -1,12 +1,14 @@
 // @flow
 import styled from 'styled-components';
-import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import colors from 'config/colors';
 import { FaLock } from 'react-icons/fa';
+
+// utils
+import colors from 'config/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
+import { Typography } from 'elements';
 import {
   PreviewFooter,
   PreviewBox,
@@ -28,10 +30,24 @@ export const StyledPaywallDescription = styled(PaywallDescription)`
   bottom: 0;
   width: 100%;
   line-height: 15px;
-  display: ${ifProp('displayProtectedLabel', 'flex', 'none')};
+  display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'flex' : 'none')};
   justify-content: space-between;
   vertical-align: middle;
   align-items: center;
+`;
+
+export const PremiumContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const LockIcon = styled(FaLock)`
+  margin: 0 0.4em 0 0;
+`;
+
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
+  font-size: ${fontSizes('extraSmall')};
+  width: 100%;
 `;
 
 export const Protected = styled.strong`
@@ -41,20 +57,6 @@ export const Protected = styled.strong`
   color: ${colors.fontLightGray};
   font-weight: normal;
   text-align: right;
-`;
-
-export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  font-size: ${fontSizes('extraSmall')};
-  width: 100%;
-`;
-
-export const Title = styled.h3`
-  overflow-wrap: break-word;
-  font-weight: ${fontWeights('normal')};
-  font-size: ${fontSizes('medium')};
-  line-height: 1.3em;
-  color: ${colors.black};
-  margin: 0;
 `;
 
 export const Logo = styled.img`
@@ -68,22 +70,6 @@ export const Logo = styled.img`
   line-height: 15px;
 `;
 
-export const LockIcon = styled(FaLock)`
-  margin: 0 0.4em 0 0;
-`;
-
-export const StyledPreviewFooter = styled(PreviewFooter)`
-  border-top: 1px solid ${transparentize(0.9, colors.black)};
-  margin-top: 10px;
-  text-align: center;
-  padding-top: 5px;
-`;
-
-export const PremiumContent = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const ItemDetails = styled.div`
   width: 69%;
   display: inline-block;
@@ -93,6 +79,15 @@ export const ItemDetails = styled.div`
   @media screen and (max-width: 1100px) {
     width: 100%;
   }
+`;
+
+export const Title = styled(Typography)`
+  overflow-wrap: break-word;
+  font-weight: ${fontWeights('normal')};
+  font-size: ${fontSizes('medium')};
+  line-height: 1.3em;
+  color: ${colors.black};
+  margin: 0;
 `;
 
 export const BuyButtonWrapper = styled.div`
@@ -111,4 +106,13 @@ export const BuyButtonWrapper = styled.div`
 
 export const StyledBuyButton = styled(BuyButton)`
   margin-bottom: 1.8em;
+  padding: 0.85em 4em;
+  float: right;
+`;
+
+export const StyledPreviewFooter = styled(PreviewFooter)`
+  border-top: 1px solid ${transparentize(0.9, colors.black)};
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 5px;
 `;

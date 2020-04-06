@@ -12,20 +12,19 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import { type Branding } from '../types/branding';
 
 // Components
-import { OverlayLabel } from '../components/SharedComponents';
+import { OverlayLabel, PreviewFooterLink } from '../components/SharedComponents';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
+  StyledPreviewImage,
   StyledIconWrapper,
   ItemDetails,
   PreviewHeader,
   ItemContent,
   ButtonWrapper,
-  BuyButton,
+  StyledBuyButton,
   StyledPreviewFooter,
-  FooterLink,
-  StyledPreviewImage,
 } from './styled';
 
 type Props = {
@@ -80,7 +79,7 @@ const Preview7 = ({
         </StyledIconWrapper>
       </StyledImageWrapper>
       <ItemDetails>
-        <PreviewHeader>
+        <PreviewHeader variant="h4">
           <TextEditor
             value={previewTitle}
             displayToolbar={false}
@@ -89,25 +88,25 @@ const Preview7 = ({
             paddingBottom
           />
         </PreviewHeader>
-        <ItemContent>
+        <ItemContent variant="p">
           <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
         </ItemContent>
       </ItemDetails>
       {displayBuyButton && (
         <ButtonWrapper>
-          <BuyButton
+          <StyledBuyButton
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
           >
             {previewButtonLabel}
-          </BuyButton>
+          </StyledBuyButton>
         </ButtonWrapper>
       )}
       <StyledPreviewFooter color={colors.fontGray}>
-        <FooterLink href="#login" onClick={handleOpenModal}>
+        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
-        </FooterLink>
+        </PreviewFooterLink>
       </StyledPreviewFooter>
     </StyledPreviewBox>
   );

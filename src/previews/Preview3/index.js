@@ -12,14 +12,14 @@ import TextEditor from '../components/TextEditor';
 import { StyledPaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
-  TitleWrapper,
-  DescriptionWrapper,
   StyledImageHolder,
-  PaywallDescriptionSpan,
-  StyledTextWrapper,
   Header,
-  StyledIcon,
+  StyledTextWrapper,
+  PaywallDescriptionSpan,
+  TitleWrapper,
   TitleBorder,
+  StyledIcon,
+  DescriptionWrapper,
 } from './styled';
 
 // Types

@@ -11,15 +11,15 @@ import { type Branding } from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
-import { FooterLink, BuyButton, StyledPaywallDescription } from '../components/SharedComponents';
+import { StyledPaywallDescription, BuyButton, FooterLink } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
   AssetDetails,
-  StyledIcon,
   PaywallDescriptionSpan,
-  Footer,
   BuyButtonWrapper,
+  StyledIcon,
+  Footer,
 } from './styled';
 
 type Props = {

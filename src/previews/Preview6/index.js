@@ -17,10 +17,9 @@ import {
   FootService,
   ButtonWrapper,
   PreviewFooter,
-  FooterLink,
   IconHolder,
 } from './styled';
-import { BuyButton } from '../components/SharedComponents';
+import { BuyButton, PreviewFooterLink } from '../components/SharedComponents';
 
 // Types
 import { type Branding } from '../types/branding';
@@ -77,9 +76,9 @@ const Preview6 = ({
           </BuyButton>
         </ButtonWrapper>
         <PreviewFooter>
-          <FooterLink href="#login" onClick={handleOpenModal}>
+          <PreviewFooterLink href="#login" onClick={handleOpenModal}>
             {loginFooterLabel}
-          </FooterLink>
+          </PreviewFooterLink>
           <IconHolder protectedLabel={protectedLabel}>
             <LockIcon />
           </IconHolder>

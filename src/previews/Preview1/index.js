@@ -14,23 +14,23 @@ import { type Branding } from '../types/branding';
 import TextEditor from '../components/TextEditor';
 import {
   OverlayLabel,
-  PreviewImage,
   ImageHolder,
+  PreviewImage,
   FooterLink,
 } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   StyledPaywallDescription,
-  Protected,
-  PaywallDescriptionSpan,
-  Title,
-  Logo,
-  LockIcon,
-  StyledPreviewFooter,
   PremiumContent,
+  LockIcon,
+  PaywallDescriptionSpan,
+  Protected,
+  Logo,
   ItemDetails,
+  Title,
   BuyButtonWrapper,
   StyledBuyButton,
+  StyledPreviewFooter,
 } from './styled';
 
 type Props = {
@@ -92,7 +92,7 @@ const Preview1 = ({
         </StyledPaywallDescription>
       </ImageHolder>
       <ItemDetails>
-        <Title>
+        <Title variant="h3">
           <TextEditor value={previewTitle} displayToolbar={false} readOnly />
         </Title>
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
@@ -104,7 +104,7 @@ const Preview1 = ({
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
           >
-            <p>{previewButtonLabel}</p>
+            {previewButtonLabel}
           </StyledBuyButton>
         </BuyButtonWrapper>
       )}
