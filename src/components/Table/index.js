@@ -207,7 +207,7 @@ class Table<T> extends React.Component<Props<T>, State> {
     if (rowSelection && rowSelection.active) {
       const { selected } = this.state;
 
-      newData = data.map(dataCell => ({
+      newData = data.map((dataCell) => ({
         ...dataCell,
         check: (
           <TableCheckbox
@@ -220,11 +220,11 @@ class Table<T> extends React.Component<Props<T>, State> {
     }
 
     if (rowActionsExist(rowActions)) {
-      newData = newData.map(dataCell => {
+      newData = newData.map((dataCell) => {
         const actionsContent =
           typeof rowActions === 'function'
             ? rowActions({ row: dataCell })
-            : rowActions.map(action => action.render({ row: dataCell }));
+            : rowActions.map((action) => action.render({ row: dataCell }));
         return {
           ...dataCell,
           actions: actionsContent,
@@ -274,7 +274,7 @@ class Table<T> extends React.Component<Props<T>, State> {
 
     const { tableButton } = this.props;
 
-    return newData.map(row => (
+    return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column, index) => (
           <TableCell

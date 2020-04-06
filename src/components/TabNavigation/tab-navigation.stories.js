@@ -27,7 +27,7 @@ const TabNavContainer = styled.div`
 export const demo = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
-  const onTabClick = index => {
+  const onTabClick = (index) => {
     setSelectedTabIndex(index);
   };
   return (
