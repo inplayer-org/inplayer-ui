@@ -1,5 +1,5 @@
 // @flow
-import React, { ReactNode, SyntheticEvent } from 'react';
+import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { Loader } from 'elements/Loader';
 import { CSSProperties } from 'styled-components';
 import { Grid } from 'index';
@@ -53,7 +53,7 @@ type Props<T = Data> = {
   data: Array<T>;
   className?: string;
   style?: CSSProperties;
-  options?: TableOptions<T>;
+  options: TableOptions<T>;
   showLoader?: boolean;
   renderEmptyTable?: boolean;
   tableButton?: {
@@ -65,7 +65,10 @@ type Props<T = Data> = {
 };
 
 type State = {
-  selected: Record<number | string, boolean>;
+  // selected: Record<number | string, boolean>;
+  selected: {
+    [key in number | string]: any;
+  };
   selectedAll: boolean;
 };
 
@@ -73,8 +76,8 @@ const rowActionsExist = (actions: RowActions<any>) =>
   typeof actions === 'function' ||
   (typeof actions === 'object' && Array.isArray(actions) && actions.length);
 
-class Table<T> extends React.Component<Props<T>, State> {
-  state = {
+class Table<T> extends Component<Props<T>, State> {
+  state: State = {
     selected: {},
     selectedAll: false,
   };
@@ -106,13 +109,13 @@ class Table<T> extends React.Component<Props<T>, State> {
 
   generateRows = (data: Array<Data>) => {
     const { options } = this.props;
-    const { rowSelection, rowActions } = options;
+    const { rowSelection, rowActions }: TableOptions<T> = options;
     let newData = [...data];
 
     if (rowSelection && rowSelection.active) {
       const { selected } = this.state;
 
-      newData = data.map((dataCell) => ({
+      newData = data.map((dataCell): any => ({
         ...dataCell,
         check: (
           <TableCheckbox

@@ -94,7 +94,7 @@ const LoaderContainer = styled.div`
   align-items: center;
 `;
 
-const TableCheckbox = styled(Checkbox)`
+const TableCheckbox = styled(Checkbox)<any>`
   label {
     top: -10px;
   }
