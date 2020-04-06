@@ -1,114 +1,14 @@
 // @flow
-import colors from 'config/colors';
-import { transparentize, darken } from 'polished';
+import { darken, transparentize } from 'polished';
 import styled from 'styled-components';
-import { ifProp, prop } from 'styled-tools';
-import { Typography } from 'elements';
+import { prop } from 'styled-tools';
 
-export const PaywallContainer = styled.div`
-  width: 100%;
-  max-width: 375px;
-  margin: auto;
-  background: ${colors.pale};
-  box-shadow: 0 1px 8px 0 ${colors.darkGray};
-  border-radius: 2px;
-  overflow: hidden;
-  transition: all 250ms ease-out;
-  position: relative;
-  font-weight: ${({ theme }) => theme.font.weights.light};
-  line-height: 20px;
-`;
+// utils
+import colors from 'config/colors';
+import { fontWeights, fontSizes } from 'utils';
 
-export const SectionContainer = styled.section`
-  background: ${colors.white};
-  border-top: 1px solid ${colors.gray};
-  padding: 2vh 0;
-  position: relative;
-`;
-
-export const FormContainer = styled.div`
-  position: relative;
-  width: 60%;
-  max-width: 225px;
-  min-width: 190px;
-  margin: 8px auto;
-`;
-
-export const StyledInput = styled.input`
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-radius: 0;
-  border-bottom: 1px solid ${({ borderColor }) => ifProp('borderColor', borderColor, colors.gray)};
-  margin: 0 auto 10px;
-  margin-right: ${ifProp('first', '1px', 'auto')};
-  line-height: 20px;
-  font-weight: ${({ theme }) => theme.font.weights.light};
-  width: 100%;
-  color: ${colors.black};
-  letter-spacing: 0.04em;
-  transition: all 0.3s ease;
-  background: transparent;
-  font-size: ${({ theme }) => theme.font.sizes.small};
-  padding: 15px 16px 4px 20px;
-`;
-
-export const ButtonHolder = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const Button = styled.button`
-  text-rendering: auto;
-  word-spacing: normal;
-  text-indent: 0;
-  text-shadow: none;
-  display: inline-block;
-  border-radius: 2px;
-  border: 1px solid
-    ${({ borderTextColor }) => ifProp('borderTextColor', borderTextColor, colors.skyBlue)};
-  font-size: ${({ theme }) => theme.font.sizes.small};
-  font-weight: ${({ theme }) => theme.font.weights.normal};
-  text-align: center;
-  color: ${({ borderTextColor }) => ifProp('borderTextColor', borderTextColor, colors.skyBlue)};
-  background: ${colors.white};
-  box-sizing: border-box;
-  padding: 8px 0;
-  cursor: default;
-  margin: 10px 0;
-  width: 100%;
-  transition: all 0.35s ease;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  align-items: flex-start;
-`;
-
-export const PasswordResetContainer = styled.div`
-  height: auto;
-  overflow: hidden;
-  transition: all 0.25s ease;
-  max-height: 50px;
-  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
-  color: ${transparentize(0.45, colors.fontDarkGray)};
-  text-align: left;
-`;
-
-export const ForgotLabel = styled.label`
-  display: inline-block;
-  cursor: default;
-  width: auto;
-`;
-
-export const InputContainer = styled.div`
-  position: relative;
-`;
-
-export const PreviewFooter = styled.div`
-  color: ${({ color }) => color};
-  font-size: ${({ theme }) => theme.font.sizes.small};
-  line-height: 1.3rem;
-`;
+// components
+import { Typography, Button } from 'elements';
 
 export const PreviewBox = styled.div`
   width: ${({ width }) => width ?? '100%'};
@@ -119,12 +19,11 @@ export const PreviewBox = styled.div`
   margin: auto;
   border: 1px solid ${colors.gray};
   clear: both;
-  padding: ${ifProp('circleImage', '26px', '18px')} 3%;
-  background: ${ifProp(
-    'topBorder',
-    `${colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`,
-    `${colors.white}`
-  )};
+  padding: ${({ circleImage }) => (circleImage ? '26px' : '18px')} 3%;
+  background: ${({ topBorder }) =>
+    topBorder
+      ? `${colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`
+      : `${colors.white}`};
   background-size: 100% 4px;
   position: relative;
   transition: all ease 200ms;
@@ -133,7 +32,7 @@ export const PreviewBox = styled.div`
 
 export const PreviewImage = styled.img`
   width: ${prop('imageWidth', '100%')};
-  border-radius: ${ifProp('imageBorderRadius', '50%')};
+  border-radius: ${({ imageBorderRadius }) => imageBorderRadius && '50%'};
   object-fit: cover;
   object-position: 50% 50%;
   vertical-align: middle;
@@ -148,7 +47,7 @@ export const PreviewImage = styled.img`
 
 export const OverlayLabel = styled(Typography)`
   color: ${colors.white};
-  font-weight: ${({ theme }) => theme.font.weights.semiBold};
+  font-weight: ${fontWeights('semiBold')};
   position: absolute;
   top: 0;
   right: 0;
@@ -160,7 +59,7 @@ export const OverlayLabel = styled(Typography)`
   margin: 0;
   text-align: center;
   z-index: 30;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${transparentize(0.5, colors.black)};
 `;
 
 export const ImageHolder = styled.div`
@@ -176,48 +75,24 @@ export const ImageHolder = styled.div`
   background-position: center center;
 `;
 
-export const TemplatesButton = styled.div`
-  color: ${({ buttonTextColor }) => buttonTextColor};
-  background-color: ${({ buttonBgColor }) => buttonBgColor};
-  border: ${({ buttonBgColor }) => `1px solid ${buttonBgColor}`};
-  text-transform: uppercase;
-  font-weight: ${({ theme }) => theme.font.weights.bold};
-  border-radius: 2px;
-  word-break: break-all;
-  height: 3rem;
-  overflow: hidden;
-  transition: background ease 500ms;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const PaywallDescription = styled.div`
+  color: ${({ color }) => color};
+  font-size: ${fontSizes('small')};
+`;
 
-  &:hover {
-    outline: none;
-    background: ${({ buttonBgColor }) => darken(0.1, buttonBgColor)};
-  }
+export const StyledPaywallDescription = styled(PaywallDescription)`
+  display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'block' : 'none')};
 `;
 
 export const IconWrapper = styled.div`
   background: ${({ backgroundColor }) => backgroundColor};
-  display: ${ifProp('protectedLabel', 'block', 'none')};
+  display: ${({ protectedLabel }) => (protectedLabel ? 'block' : 'none')};
   position: absolute;
 `;
 
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const PaywallDescription = styled.div`
-  color: ${({ color }) => color};
-  display: block;
-  font-size: ${({ theme }) => theme.font.sizes.small};
-`;
-
-export const FooterLink = styled.a`
-  margin-bottom: 0.6em;
-  line-height: inherit;
-  color: inherit;
 `;
 
 export const DescriptionSpan = styled.span`
@@ -227,4 +102,46 @@ export const DescriptionSpan = styled.span`
   margin: 0;
   position: relative;
   line-height: 15px;
+  padding: 0;
+`;
+
+export const BuyButton = styled(Button)`
+  color: ${({ buttonTextColor }) => buttonTextColor};
+  background-color: ${({ buttonBgColor }) => buttonBgColor};
+  border: none;
+  text-transform: uppercase;
+  font-weight: ${fontWeights('bold')};
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0.85em 2em;
+  font-size: ${fontSizes('small')};
+  min-width: 80%;
+  margin: 1.5em 0 0;
+
+  &:hover {
+    border: none;
+    color: ${({ buttonTextColor }) => buttonTextColor};
+    background-color: ${({ buttonBgColor }) => darken(0.1, buttonBgColor)};
+  }
+`;
+
+export const PreviewFooter = styled.div`
+  color: ${({ color }) => color};
+  font-size: ${fontSizes('small')};
+  line-height: 1.3rem;
+`;
+
+export const FooterLink = styled.a`
+  margin-bottom: 0.6em;
+  line-height: inherit;
+  color: inherit;
+`;
+
+export const PreviewFooterLink = styled(FooterLink)`
+  margin: 0;
+  padding: 0;
+  font-size: ${fontSizes('extraSmall')};
+  vertical-align: baseline;
+  background: transparent;
+  color: ${colors.fontGray};
 `;

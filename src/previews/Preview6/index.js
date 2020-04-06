@@ -16,11 +16,10 @@ import {
   ItemDetails,
   FootService,
   ButtonWrapper,
-  Button,
   PreviewFooter,
-  FooterLink,
   IconHolder,
 } from './styled';
+import { BuyButton, PreviewFooterLink } from '../components/SharedComponents';
 
 // Types
 import { type Branding } from '../types/branding';
@@ -43,11 +42,12 @@ type Props = {
 const Preview6 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: title = '<h1><strong>Title</strong></h1>',
-    preview_description: description = '<p>Description</p>',
+    preview_title: title = '<h3>Asset title</h3>',
+    preview_description: description = '<p>Asset description</p>',
     preview_button_label: buttonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
+    inplayer_protected_label: protectedLabel = true,
   } = {},
   width,
   height,
@@ -64,33 +64,33 @@ const Preview6 = ({
       <ItemDetails>
         <TextEditor value={title} displayToolbar={false} readOnly />
         <TextEditor value={description} displayToolbar={false} readOnly />
-        <FootService>
-          <ButtonWrapper>
-            <Button
-              buttonBgColor={buttonBgColor}
-              buttonTextColor={buttonTextColor}
-              onClick={handleOpenModal}
-            >
-              <p>{buttonLabel}</p>
-            </Button>
-          </ButtonWrapper>
-          <PreviewFooter>
-            <FooterLink href="#login" onClick={handleOpenModal}>
-              {loginFooterLabel}
-            </FooterLink>
-            <IconHolder>
-              <LockIcon />
-            </IconHolder>
-          </PreviewFooter>
-        </FootService>
       </ItemDetails>
+      <FootService>
+        <ButtonWrapper>
+          <BuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {buttonLabel}
+          </BuyButton>
+        </ButtonWrapper>
+        <PreviewFooter>
+          <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+            {loginFooterLabel}
+          </PreviewFooterLink>
+          <IconHolder protectedLabel={protectedLabel}>
+            <LockIcon />
+          </IconHolder>
+        </PreviewFooter>
+      </FootService>
     </StyledPreviewBox>
   );
 };
 
 Preview6.defaultProps = {
   branding: {},
-  minWidth: undefined,
+  minWidth: '250px',
   minHeight: undefined,
   height: undefined,
   width: undefined,

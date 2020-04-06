@@ -1,12 +1,16 @@
 import styled from 'styled-components';
+
+// utils
 import colors from 'config/colors';
+import { fontSizes, fontWeights } from 'utils';
 
 // Components
+import { Typography } from 'elements';
 import {
   PreviewFooter,
   PreviewBox,
   ImageHolder,
-  TemplatesButton,
+  BuyButton,
   IconWrapper,
   PreviewImage,
 } from '../components/SharedComponents';
@@ -18,58 +22,16 @@ export const StyledPreviewBox = styled(PreviewBox)`
   flex-direction: column;
 `;
 
-export const FooterLink = styled.a`
-  margin: 0;
-  padding: 0;
-  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
-  vertical-align: baseline;
-  background: transparent;
-  line-height: inherit;
-  color: ${colors.fontGray};
-`;
-
-export const ImageWrapper = styled(ImageHolder)`
+export const StyledImageWrapper = styled(ImageHolder)`
   height: 250px;
   max-height: 250px;
   width: 250px;
   margin: auto;
+  background: ${colors.white};
 `;
 
-export const PreviewHeader = styled.h4`
-  font-size: ${({ theme }) => theme.font.sizes.h4};
-  line-height: 1.4em;
-  margin: 0;
-`;
-
-export const ItemDetails = styled.div`
-  width: 100%;
-  height: 30%;
-  padding-top: 20px;
-`;
-
-export const ItemContent = styled.p`
-  margin: 0;
-  line-height: 1.5;
-  text-align: center;
-  font-weight: ${({ theme }) => theme.font.weights.light};
-`;
-
-export const ButtonWrapper = styled.div`
-  text-align: center;
-  width: 100%;
-  height: 15%;
-`;
-
-export const BuyButton = styled(TemplatesButton)`
-  vertical-align: middle;
-  box-sizing: border-box;
-  outline: none;
-  padding: 0.85em 2em;
-  border: none;
-  font-size: ${({ theme }) => theme.font.sizes.medium};
-  min-width: 80%;
-  width: 80%;
-  margin: auto;
+export const StyledPreviewImage = styled(PreviewImage)`
+  height: 250px;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -82,8 +44,33 @@ export const StyledIconWrapper = styled(IconWrapper)`
   line-height: 3%;
 `;
 
-export const StyledImageWrapper = styled(ImageWrapper)`
-  background: ${colors.white};
+export const ItemDetails = styled.div`
+  width: 100%;
+  padding-top: 20px;
+`;
+
+export const PreviewHeader = styled(Typography)`
+  font-size: ${fontSizes('h4')};
+  line-height: 1.4em;
+  margin: 0;
+`;
+
+export const ItemContent = styled(Typography)`
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: ${fontWeights('light')};
+`;
+
+export const ButtonWrapper = styled.div`
+  text-align: center;
+  width: 100%;
+  height: 15%;
+`;
+
+export const StyledBuyButton = styled(BuyButton)`
+  margin: 1.5em auto 1.8em;
+  font-size: ${fontSizes('medium')};
 `;
 
 export const StyledPreviewFooter = styled(PreviewFooter)`
@@ -92,8 +79,4 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
   text-align: center;
   padding-top: 5px;
   height: 5%;
-`;
-
-export const StyledPreviewImage = styled(PreviewImage)`
-  height: 250px;
 `;

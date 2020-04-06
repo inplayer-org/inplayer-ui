@@ -1,27 +1,27 @@
 // @flow
 import styled from 'styled-components';
 import { GiCutDiamond } from 'react-icons/gi';
-import colors from 'config/colors';
 import { transparentize } from 'polished';
+
+// utils
+import colors from 'config/colors';
+import { fontSizes, fontWeights } from 'utils';
 
 // Components
 import {
   PreviewBox,
   DescriptionSpan,
   ImageHolder,
-  TemplatesButton,
+  BuyButton,
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  box-sizing: border-box;
-  width: ${({ width }) => width ?? '100%'};
   height: ${({ height }) => height ?? 'auto'};
   border: none;
   background: transparent;
-  border-radius: 0;
-  font-size: ${({ theme }) => theme.font.sizes.medium};
+  font-size: ${fontSizes('medium')};
   line-height: 1.6em;
-  font-weight: ${({ theme }) => theme.font.weights.light};
+  font-weight: ${fontWeights('light')};
   display: flex;
   flex-direction: column;
 `;
@@ -59,22 +59,14 @@ export const BuyButtonBorder = styled.div`
   overflow: hidden;
 `;
 
-export const BuyButton = styled(TemplatesButton)`
-  background-color: ${({ buttonBgColor }) => transparentize(0.1, buttonBgColor)};
-  outline: none;
-  border: none;
-  font-size: ${({ theme }) => theme.font.sizes.large};
+export const StyledBuyButton = styled(BuyButton)`
+  background-color: ${({ buttonBgColor }) => transparentize(0.2, buttonBgColor)};
+  font-size: ${fontSizes('large')};
+  margin: 0;
   padding: 10px 60px;
-  height: 2rem;
-  vertical-align: middle;
-  display: table-cell;
 
-  &:hover {
-    outline: none;
-  }
-
-  @media screen and (max-width: 700px) {
-    padding: 10px 30px;
+  @media screen and (max-width: 1100px) {
+    padding: 10px 35px;
   }
 `;
 
@@ -90,20 +82,20 @@ export const ItemDetails = styled.div`
   background: ${transparentize(0.1, colors.gray)};
 `;
 
-export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  padding: 0;
-  font-size: ${({ theme }) => theme.font.sizes.small};
-  text-transform: uppercase;
-`;
-
 export const StyledIcon = styled(GiCutDiamond)`
   line-height: 15px;
-  font-size: ${({ theme }) => theme.font.sizes.large};
+  font-size: ${fontSizes('large')};
   display: inline-block;
   vertical-align: middle;
   text-align: left;
   margin: 0 0.4em 0 0;
   position: relative;
+`;
+
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
+  padding: 0;
+  font-size: ${fontSizes('small')};
+  text-transform: uppercase;
 `;
 
 export const TitleHolder = styled.div`
