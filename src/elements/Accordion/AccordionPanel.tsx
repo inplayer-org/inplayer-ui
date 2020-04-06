@@ -1,17 +1,36 @@
-// @flow
-import React from 'react';
+import React, { SyntheticEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
-import { uiColors, fontWeights } from 'utils';
+import { fontWeights } from 'utils';
 
 // Components
-import Typography from 'elements/Typography';
-import Tooltip from 'components/Tooltip';
-import type { Props as TooltipProps } from 'components/Tooltip';
+import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import { Typography } from '../Typography';
 
-const AccordionPanelContainer = styled.div`
+// Types
+type AccordionPanelContainerProps = {
+  isActive: boolean;
+  contentHeight: string;
+};
+
+type AccordionPanelHeaderProps = {
+  isActive: boolean;
+  disabled: boolean;
+  onClick: any;
+};
+
+type AccordionTitleProps = {
+  isActive: boolean;
+  disabled: boolean;
+};
+
+type AccordionIconHolderProps = {
+  isAccordionDisabled: boolean;
+};
+
+const AccordionPanelContainer = styled.div<AccordionPanelContainerProps>`
   width: 100%;
   height: 3.5rem;
   box-sizing: border-box;
@@ -23,7 +42,8 @@ const AccordionPanelContainer = styled.div`
     'isActive',
     css`
       position: absolute;
-      ${({ contentHeight }) => contentHeight && `height: calc(${contentHeight} - 11rem)`};
+      ${({ contentHeight }: AccordionPanelContainerProps) =>
+        contentHeight && `height: calc(${contentHeight} - 11rem)`};
       top: 0;
       z-index: 30;
       border-bottom: none;
@@ -34,10 +54,10 @@ const AccordionPanelContainer = styled.div`
     css`
       height: 0;
     `
-  )};
+  )}
 `;
 
-const AccordionPanelHeader = styled.header`
+const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
   margin: 0;
   padding: 1rem 3%;
   width: 100%;
@@ -54,12 +74,12 @@ const AccordionPanelHeader = styled.header`
       position: absolute;
       top: 0;
     `
-  )};
+  )}
 `;
 
-const AccordionTitle = styled(Typography)`
+const AccordionTitle = styled(Typography)<AccordionTitleProps>`
   font-weight: ${fontWeights('thin')};
-  color: ${ifProp('disabled', uiColors('text.disabled'), uiColors('text.main'))};
+  color: ${ifProp('disabled', colors.fontLightGray, colors.fontDarkGray)};
   margin: 0;
   display: inline;
 `;
@@ -82,28 +102,28 @@ const AccordionPanelDetails = styled.div`
   height: 100%;
 `;
 
-const AccordionIconHolder = styled.div`
+const AccordionIconHolder = styled.div<AccordionIconHolderProps>`
   ${ifNotProp(
     'isAccordionDisabled',
     css`
       display: flex;
       width: 3rem;
-      justify-content: space-between;
+      justify-content: space-beetween;
     `
-  )};
+  )}
 `;
 
 type Props = {
-  label: string,
-  isActive: boolean,
-  isOtherPanelActive: boolean,
-  icon?: Node,
-  iconTooltip?: TooltipProps,
-  contentHeight: string,
-  togglePanel: (panel: number) => (e?: SyntheticEvent<*>) => void,
-  renderContent: (actions: { closePanel: (e?: SyntheticEvent<any>) => void }) => any,
-  closePanel: (e?: SyntheticEvent<*>) => void,
-  disabled: boolean,
+  label: string;
+  isActive: boolean;
+  isOtherPanelActive: boolean;
+  icon?: ReactNode | null;
+  iconTooltip?: TooltipProps;
+  contentHeight: string;
+  togglePanel: (e?: SyntheticEvent<Element, Event>) => void;
+  renderContent: (actions: { closePanel: (e?: SyntheticEvent) => void }) => any;
+  closePanel: (e?: SyntheticEvent) => void;
+  disabled: boolean;
 };
 
 const AccordionPanel = ({
@@ -137,10 +157,5 @@ const AccordionPanel = ({
     </AccordionPanelContainer>
   </>
 );
-
-AccordionPanel.defaultProps = {
-  icon: null,
-  iconTooltip: null,
-};
 
 export default AccordionPanel;

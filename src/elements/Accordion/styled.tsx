@@ -1,7 +1,14 @@
 import styled, { css } from 'styled-components';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
-export const AccordionWrapper = styled.div`
+type AccordionWrapperProps = {
+  width?: string;
+  extendWidth?: string;
+  contentHeight: string;
+  open: boolean;
+};
+
+export const AccordionWrapper = styled.div<AccordionWrapperProps>`
   ${({ width }) => width && `width: ${width}`};
   margin-left: 0%;
   position: relative;
@@ -18,6 +25,7 @@ export const AccordionWrapper = styled.div`
   ${({ open }) =>
     open &&
     css`
-      ${({ width, extendWidth }) => width && `width: calc(${width} + ${extendWidth})`};
+      ${({ width, extendWidth }: AccordionWrapperProps) =>
+        width && `width: calc(${width} + ${extendWidth})`};
     `}
 `;
