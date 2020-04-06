@@ -1,67 +1,75 @@
 // @flow
-import React, { type Node } from 'react';
-import styled, { css } from 'styled-components';
-import { ifProp } from 'styled-tools';
-import colors from 'config/colors';
-import { uiColors, fontSizes, fontWeights } from 'utils';
-import Checkbox from 'components/Checkbox';
-import Loader from 'elements/Loader/index';
-import Button from 'elements/Button/index';
-import Grid from 'blocks/Grid';
-
-
+import React, { ReactNode, SyntheticEvent } from 'react';
+import { Loader } from 'elements/Loader';
+import { CSSProperties } from 'styled-components';
+import { Grid } from 'index';
+import {
+  ButtonTableRow,
+  LoaderContainer,
+  TableButton,
+  TableCell,
+  TableRow,
+  TableCheckbox,
+  TableHeadRow,
+  TableHeaderCell,
+  TableWithHeaderSectionContainer,
+  TableWrapper,
+} from './styled';
 
 interface Data {
   id: string;
 }
 
+type Render = {
+  value: string;
+  rowValues: Data;
+};
+
 type Column = {
-  title: string,
-  key: string,
-  render: ({ value: string, rowValues: Data }) => Node,
-  style?: Object,
+  title: string;
+  key: string;
+  render: ({ value, rowValues }: Render) => ReactNode;
+  style?: CSSProperties;
 };
 
 type RowActions<T> =
   | Array<{
-      icon: string,
-      onClick: (id: number | string) => any,
+      icon: string;
+      onClick: (id: number | string) => any;
     }>
   | ((props: { row: T }) => Node);
 
 type TableOptions<T> = {
   rowSelection: {
-    active: boolean,
-    action: (selectedItems: Array<T>) => any,
-  },
-  rowActions: RowActions<T>,
-  headerSection?: Node,
+    active: boolean;
+    action: (selectedItems: Array<T>) => any;
+  };
+  rowActions: RowActions<T>;
+  headerSection?: Node;
 };
 
 type Props<T = Data> = {
-  columns: Array<Column>,
-  data: Array<T>,
-  className?: string,
-  style?: Object,
-  options?: TableOptions<T>,
-  showLoader?: boolean,
-  renderEmptyTable?: boolean,
+  columns: Array<Column>;
+  data: Array<T>;
+  className?: string;
+  style?: CSSProperties;
+  options?: TableOptions<T>;
+  showLoader?: boolean;
+  renderEmptyTable?: boolean;
   tableButton?: {
-    label: string,
-    icon?: string | Node,
-    onClick: (e: SyntheticEvent) => any,
-    type: string,
-  },
+    label: string;
+    icon?: string | Node;
+    onClick: (e: SyntheticEvent) => any;
+    type: string;
+  };
 };
 
 type State = {
-  selected: {
-    [number | string]: boolean,
-  },
-  selectedAll: boolean,
+  selected: Record<number | string, boolean>;
+  selectedAll: boolean;
 };
 
-const rowActionsExist = (actions: RowActions) =>
+const rowActionsExist = (actions: RowActions<any>) =>
   typeof actions === 'function' ||
   (typeof actions === 'object' && Array.isArray(actions) && actions.length);
 
@@ -151,7 +159,11 @@ class Table<T> extends React.Component<Props<T>, State> {
     }
 
     if (rowActionsExist(rowActions)) {
-      const actionsColumn = { title: 'Actions', key: 'actions', alignRight: true };
+      const actionsColumn = {
+        title: 'Actions',
+        key: 'actions',
+        alignRight: true,
+      };
       newColumns = [...newColumns, actionsColumn];
     }
 

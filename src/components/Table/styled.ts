@@ -116,6 +116,7 @@ export {
   TableWrapper,
   TableHeadRow,
   ButtonTableRow,
+  TableRow,
   TableCell,
   TableHeaderCell,
   LoaderContainer,
