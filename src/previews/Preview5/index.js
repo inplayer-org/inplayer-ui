@@ -12,7 +12,7 @@ import TextEditor from '../components/TextEditor';
 import { type Branding } from '../types/branding';
 
 // Components
-import { PaywallDescription } from '../components/SharedComponents';
+import { StyledPaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -40,11 +40,12 @@ type OwnProps = {
 const Preview5 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Asset title</strong></h1>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = lighten(0.01, colors.green),
     preview_buttons_text_color: buttonTextColor = colors.black,
+    inplayer_protected_label: protectedLabel = true,
   },
   width,
   height,
@@ -71,10 +72,13 @@ const Preview5 = ({
         </BuyButtonHolder>
       </ImageWrapper>
       <ItemDetails height={height}>
-        <PaywallDescription color={lighten(0.01, buttonBgColor)}>
+        <StyledPaywallDescription
+          color={lighten(0.01, buttonBgColor)}
+          displayProtectedLabel={protectedLabel}
+        >
           <StyledIcon />
           <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>
-        </PaywallDescription>
+        </StyledPaywallDescription>
         <TitleHolder>
           <TextEditor value={previewTitle} displayToolbar={false} readOnly />
         </TitleHolder>
@@ -88,7 +92,7 @@ const Preview5 = ({
 
 Preview5.defaultProps = {
   branding: {},
-  minWidth: undefined,
+  minWidth: '250px',
   minHeight: '420px',
   height: undefined,
   width: undefined,

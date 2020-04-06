@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import colors from 'config/colors';
-import Grid from 'blocks/Grid';
 import { FaLock } from 'react-icons/fa';
 import { fontSizes, fontWeights } from 'utils';
 
@@ -13,14 +12,8 @@ import {
   PreviewBox,
   PaywallDescription,
   DescriptionSpan,
+  BuyButton,
 } from '../components/SharedComponents';
-
-const { Cell } = Grid;
-
-export const StyledCell = styled(Cell)`
-  flex-flow: column;
-  width: fit-content;
-`;
 
 export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? 'auto'};
@@ -88,4 +81,34 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
 
 export const PremiumContent = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+export const ItemDetails = styled.div`
+  width: 69%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 30%;
+
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
+`;
+
+export const BuyButtonWrapper = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.6em;
+  line-height: inherit;
+  text-align: right;
+  width: 30%;
+
+  @media screen and (max-width: 1100px) {
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+export const StyledBuyButton = styled(BuyButton)`
+  margin-bottom: 1.8em;
 `;

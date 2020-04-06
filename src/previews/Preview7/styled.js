@@ -43,7 +43,6 @@ export const PreviewHeader = styled.h4`
 
 export const ItemDetails = styled.div`
   width: 100%;
-  height: 30%;
   padding-top: 20px;
 `;
 
@@ -65,11 +64,10 @@ export const BuyButton = styled(TemplatesButton)`
   box-sizing: border-box;
   outline: none;
   padding: 0.85em 2em;
+  margin: 1.5em 1em 1.8em;
   border: none;
   font-size: ${({ theme }) => theme.font.sizes.medium};
   min-width: 80%;
-  width: 80%;
-  margin: auto;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`

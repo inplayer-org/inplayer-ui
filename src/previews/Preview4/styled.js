@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import colors from 'config/colors';
-import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
 // Components
@@ -17,8 +16,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? 'auto'};
   background: ${colors.white};
   overflow: hidden;
-  border-top: 4px solid
-    ${({ topBorderColor }) => ifProp('topBorderColor', `${topBorderColor}`, `${colors.white}`)};
+  border-top: 4px solid ${({ topBorderColor }) => topBorderColor};
   display: flex;
   flex-direction: column-reverse;
   border-radius: 3px 3px 0 0;

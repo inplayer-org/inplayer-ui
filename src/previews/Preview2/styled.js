@@ -9,7 +9,6 @@ import { MdStar } from 'react-icons/md';
 import {
   PreviewBox,
   ImageHolder,
-  TemplatesButton,
   PreviewFooter,
   DescriptionSpan,
 } from '../components/SharedComponents';
@@ -24,14 +23,12 @@ export const StyledPreviewBox = styled(PreviewBox)`
 
 export const StyledImageHolder = styled(ImageHolder)`
   width: 50%;
+  padding-bottom: 60%;
   margin: 0;
   display: inline-block;
   background-image: url(${({ backgroundImage }) => backgroundImage});
-  vertical-align: top;
-  height: 100%;
-  min-height: 450px;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1100px) {
     width: 100%;
   }
 `;
@@ -45,24 +42,7 @@ export const AssetDetails = styled.div`
   max-width: 600px;
   margin: 6px auto;
 
-  @media screen and (max-width: 700px) {
-    width: 100%;
-  }
-`;
-
-export const BuyButton = styled(TemplatesButton)`
-  text-align: center;
-  vertical-align: baseline;
-  box-sizing: border-box;
-  outline: none;
-  padding: 0.85em 2em;
-  border: none;
-  font-size: ${fontSizes('medium')};
-  min-width: 60%;
-  margin-top: 1.5em;
-
-  @media screen and (max-width: 700px) {
-    text-align: center;
+  @media screen and (max-width: 1100px) {
     width: 100%;
   }
 `;
@@ -86,4 +66,14 @@ export const Footer = styled(PreviewFooter)`
   margin-top: 1.6em;
   text-align: left;
   padding-top: 0.5em;
+`;
+
+export const BuyButtonWrapper = styled.div`
+  text-align: left;
+  width: 80%;
+
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    text-align: center;
+  }
 `;

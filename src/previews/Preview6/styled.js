@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import colors from 'config/colors';
 
 // Components
-import { PreviewBox, TemplatesButton, ImageHolder } from '../components/SharedComponents';
+import { PreviewBox, ImageHolder } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   width: ${({ width }) => width ?? '100%'};
@@ -14,7 +14,10 @@ export const StyledPreviewBox = styled(PreviewBox)`
   overflow: hidden;
   background: ${colors.white};
   border-radius: 8px 8px 3px 3px;
-  display: flex;
+  margin: 0 auto;
+  box-sizing: border-box;
+  clear: both;
+  position: relative;
 `;
 
 export const FooterLink = styled.a`
@@ -33,73 +36,72 @@ export const IconHolder = styled.div`
   outline: 0;
   background: transparent;
   float: right;
-  display: block;
+  display: ${({ protectedLabel }) => (protectedLabel ? 'block' : 'none')};
   font-size: ${({ theme }) => theme.font.sizes.small};
   margin-left: 0.4rem;
 `;
 
 export const PreviewFooter = styled.div`
-  margin: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
-  background: transparent;
-  width: 50%;
   float: right;
+  width: 50%;
   text-align: right;
-  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
+  padding-top: 0.8em;
   line-height: 1.3em;
-  display: flex;
-  align-items: center;
-`;
-
-export const Button = styled(TemplatesButton)`
-  border-radius: 2px;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  min-width: 60%;
-  margin: 0;
-  width: 140px;
 `;
 
 export const ButtonWrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
-  background: transparent;
   text-align: left;
+  width: 50%;
   display: inline-block;
 `;
 
 export const FootService = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  bottom: 15px;
-  margin-right: 10px;
-  margin-top: 10px;
+  width: 72%;
+  padding: 0 0 0 3%;
+  box-sizing: border-box;
+  margin: 6px auto;
+  display: inline-block;
+  vertical-align: bottom;
+
+  @media screen and (max-width: 1350px) {
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 0 auto;
+  }
 `;
 
 export const ItemDetails = styled.div`
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: auto;
-  padding: 0 0 0 1rem;
+  display: inline-block;
+  width: 72%;
+  padding: 1% 0 0 3%;
+  box-sizing: border-box;
+  margin: 6px auto;
+  vertical-align: middle;
+
+  @media screen and (max-width: 1350px) {
+    vertical-align: top;
+    margin: 0;
+  }
 `;
 
 export const ImageWrapper = styled(ImageHolder)`
   margin: 0;
   border: 0;
   outline: 0;
-  width: 200px;
+  width: 26%;
   height: 200px;
   vertical-align: middle;
+  padding-bottom: 26%;
+  overflow: hidden;
   float: left;
+  position: relative;
   background-image: url('${({ backgroundImage }) => backgroundImage}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @media screen and (max-width: 1350px) {
+    vertical-align: top;
+    margin: 0;
+  }
 `;

@@ -44,11 +44,12 @@ const Preview4 = ({
   branding: {
     inplayer_protected_label: protectedLabel = true,
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Asset Title</strong></h1>`,
-    preview_description: previewDescription = `<p>Asset Description</p>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
+    preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
+    preview_top_border: previewTopBorder = true,
   },
   displayBuyButton,
   previewUnavailable,
@@ -66,7 +67,7 @@ const Preview4 = ({
     <StyledPreviewBox
       minWidth={minWidth}
       minHeight={minHeight}
-      topBorderColor={buttonBgColor}
+      topBorderColor={previewTopBorder ? buttonBgColor : colors.white}
       width={width}
       height={height}
     >
@@ -121,7 +122,7 @@ Preview4.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  minWidth: '700px',
+  minWidth: '250px',
   minHeight: '390px',
   height: undefined,
   width: undefined,

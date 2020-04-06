@@ -9,10 +9,11 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 // Components
 import { GiCutDiamond } from 'react-icons/gi';
 import TextEditor from '../components/TextEditor';
-import { PaywallDescription } from '../components/SharedComponents';
+import { StyledPaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   TitleWrapper,
+  DescriptionWrapper,
   StyledImageHolder,
   PaywallDescriptionSpan,
   StyledTextWrapper,
@@ -38,9 +39,11 @@ type OwnProps = {
 const Preview3 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Asset title</strong></h1>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
+    preview_top_border: previewTopBorder = true,
+    inplayer_protected_label: protectedLabel = true,
   },
   width,
   height,
@@ -55,7 +58,7 @@ const Preview3 = ({
     <StyledPreviewBox
       minHeight={minHeight}
       minWidth={minWidth}
-      color={buttonBgColor}
+      color={previewTopBorder ? buttonBgColor : colors.white}
       width={width}
       height={height}
     >
@@ -64,11 +67,11 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <PaywallDescription color={buttonBgColor}>
+          <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
             <PaywallDescriptionSpan>
               <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>
-          </PaywallDescription>
+          </StyledPaywallDescription>
           <TitleWrapper>
             <TitleBorder color={buttonBgColor}>
               <TextEditor
@@ -80,12 +83,14 @@ const Preview3 = ({
             </TitleBorder>
             <StyledIcon color={buttonBgColor} />
           </TitleWrapper>
-          <TextEditor
-            value={previewDescription}
-            displayToolbar={false}
-            textColor={colors.white}
-            readOnly
-          />
+          <DescriptionWrapper>
+            <TextEditor
+              value={previewDescription}
+              displayToolbar={false}
+              textColor={colors.white}
+              readOnly
+            />
+          </DescriptionWrapper>
         </StyledTextWrapper>
       </StyledImageHolder>
     </StyledPreviewBox>
@@ -94,7 +99,7 @@ const Preview3 = ({
 
 Preview3.defaultProps = {
   branding: {},
-  minWidth: '700px',
+  minWidth: '250px',
   minHeight: undefined,
   height: undefined,
   width: undefined,

@@ -11,15 +11,15 @@ import { type Branding } from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
-import { PaywallDescription, FooterLink } from '../components/SharedComponents';
+import { FooterLink, BuyButton, StyledPaywallDescription } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
   AssetDetails,
-  BuyButton,
   StyledIcon,
   PaywallDescriptionSpan,
   Footer,
+  BuyButtonWrapper,
 } from './styled';
 
 type Props = {
@@ -36,9 +36,11 @@ type Props = {
 const Preview2 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Title</strong></h1>`,
-    preview_description: previewDescription = `<p>Description</p>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
+    preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
+    preview_top_border: previewTopBorder = true,
+    inplayer_protected_label: protectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
@@ -52,24 +54,32 @@ const Preview2 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
-      <StyledImageHolder backgroundImage={image} descriptionLength={previewDescription.length} />
+    <StyledPreviewBox
+      minHeight={minHeight}
+      minWidth={minWidth}
+      height={height}
+      width={width}
+      topBorder={previewTopBorder}
+    >
+      <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
-        <PaywallDescription color={buttonBgColor}>
+        <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
           <PaywallDescriptionSpan>
             <StyledIcon name="star" />
             This premium content requires an account to access.
           </PaywallDescriptionSpan>
-        </PaywallDescription>
+        </StyledPaywallDescription>
         <TextEditor value={previewTitle} displayToolbar={false} readOnly paddingBottom />
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-        <BuyButton
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
-          onClick={handleOpenModal}
-        >
-          {previewButtonLabel}
-        </BuyButton>
+        <BuyButtonWrapper>
+          <BuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </BuyButton>
+        </BuyButtonWrapper>
         <Footer color={colors.fontGray}>
           <FooterLink href="#login" onClick={handleOpenModal}>
             {loginFooterLabel}
@@ -82,7 +92,7 @@ const Preview2 = ({
 
 Preview2.defaultProps = {
   branding: {},
-  minWidth: '700px',
+  minWidth: '250px',
   minHeight: undefined,
   height: undefined,
   width: undefined,

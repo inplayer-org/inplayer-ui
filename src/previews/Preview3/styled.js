@@ -30,6 +30,10 @@ export const TitleWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
+export const DescriptionWrapper = styled.div`
+  margin-bottom: 1rem;
+`;
+
 export const StyledImageHolder = styled(ImageHolder)`
   height: 100%;
   margin: 0;

@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import ReactQuill from 'react-quill';
 import colors from 'config/colors';
+import { fontSizes, fontWeights } from 'utils';
 
 // editor styles
 import 'react-quill/dist/quill.snow.css';
@@ -13,7 +14,7 @@ import throttle from 'lodash/throttle';
 type Props = {
   value: string | any,
   readOnly?: boolean,
-  onChange: (e: any) => any,
+  onChange?: (e: any) => any,
   displayToolbar?: boolean,
   isAssetPreviewTitle?: boolean,
   textBackground?: string,
@@ -27,6 +28,19 @@ type Props = {
 const EditorContainer = styled.div`
   width: 100%;
 
+  .ql-editor {
+    box-sizing: border-box;
+    line-height: 1.42;
+    height: 100%;
+    outline: none;
+    overflow-y: auto;
+    padding: 12px 15px;
+    tab-size: 4;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
   .ql-editor p,
   .ql-editor ol,
   .ql-editor ul,
@@ -38,11 +52,28 @@ const EditorContainer = styled.div`
   .ql-editor h4,
   .ql-editor h5,
   .ql-editor h6 {
-    font-weight: ${({ theme }) => theme.font.weights.light};
     line-height: ${({ lineHeight }) => lineHeight || 1};
-    font-size: ${({ theme }) => theme.font.sizes.medium};
     color: ${({ textColor }) => textColor || colors.fontDarkGray};
     text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
+  }
+
+  .ql-snow .ql-editor p,
+  .ql-snow .ql-editor ol,
+  .ql-snow .ql-editor ul,
+  .ql-snow .ql-editor pre,
+  .ql-snow .ql-editor blockquote {
+    font-weight: ${fontWeights('light')};
+    font-size: ${fontSizes('medium')};
+  }
+
+  .ql-snow .ql-editor h1,
+  .ql-snow .ql-editor h2,
+  .ql-snow .ql-editor h3,
+  .ql-snow .ql-editor h4,
+  .ql-snow .ql-editor h5,
+  .ql-snow .ql-editor h6 {
+    font-weight: ${fontWeights('bold')};
+    font-size: ${fontSizes('large')};
   }
 
   ${({ isAssetPreviewTitle }) =>
@@ -79,7 +110,6 @@ const EditorContainer = styled.div`
       .ql-editor h4,
       .ql-editor h5,
       .ql-editor h6 {
-        font-weight: ${({ theme }) => theme.font.weights.normal};
         color: ${({ textColor }) => textColor || colors.black};
         padding: ${({ isPadding }) => isPadding && '0.5em'};
         padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
@@ -147,6 +177,7 @@ TextEditor.defaultProps = {
   isPadding: false,
   lineHeight: 0,
   paddingBottom: false,
+  onChange: () => {},
 };
 
 export default TextEditor;
