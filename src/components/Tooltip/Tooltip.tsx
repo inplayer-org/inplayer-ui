@@ -1,120 +1,118 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import React, { useState, ReactChild, ReactNode } from 'react';
+import styled, { CSSProperties } from 'styled-components';
 
-export type FadeEasing =
-  | 'linear'
-  | 'ease'
-  | 'ease-in'
-  | 'ease-out'
-  | 'ease-in-out';
+import Arrow from './Arrow';
+import TooltipWrapper, { FadeEasing } from './TooltipWrapper';
+import Bubble from './Bubble';
 
-type Props = {
-  children: Node;
-  offset: number;
-  isOpen: boolean;
-  placement: string;
-  zIndex: number;
-  fadeEasing: FadeEasing;
-  fadeDuration: number;
+export type Placement = 'left' | 'right' | 'top' | 'bottom';
+export type TooltipBehavior = 'hover' | 'click' | 'ref';
+
+export type Props = {
+  behavior?: TooltipBehavior;
+  durationOnClick?: number;
+  arrowWidth?: number;
+  background?: string;
+  border?: string;
+  childre?: ReactChild;
+  color?: string;
+  content?: ReactNode;
+  fadeEasing?: FadeEasing;
+  className?: string;
+  style?: CSSProperties;
+  fadeDuration?: number;
+  fixed?: boolean;
+  fontFamily?: string;
+  fontSize?: string;
+  offset?: number;
+  padding?: number;
+  placement?: Placement;
+  radius?: number;
+  zIndex?: number;
+  children?: ReactChild | ReactNode | null;
 };
 
-const fadeAnimation = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+const Container = styled.div`
+  position: relative;
+  display: inline-block;
 `;
 
-type AnimationProps = {
-  fadeDuration: number;
-  fadeEasing: FadeEasing;
-};
-
-const animation = ({ fadeDuration, fadeEasing }: AnimationProps) => css`
-  animation: ${fadeDuration}ms ${fadeEasing} 0s 1 ${fadeAnimation};
-`;
-
-type ZIndexType = {
-  zIndex: number;
-};
-
-type BaseProps = AnimationProps & ZIndexType;
-
-const Base = styled('div')<BaseProps>`
-  position: absolute;
-  width: max-content;
-  white-space: pre-line;
-  ${props => props.fadeDuration && props.fadeDuration > 0 && animation(props)};
-  ${props => props.zIndex && `z-index: ${props.zIndex};`}
-`;
-
-type OffsetType = {
-  offset: number;
-};
-
-const Top = ({ offset }: OffsetType) => styled(Base)`
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: ${offset}px;
-`;
-
-const Bottom = ({ offset }: OffsetType) => styled(Base)`
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: ${offset}px;
-`;
-
-const Left = ({ offset }: OffsetType) => styled(Base)`
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: ${offset}px;
-`;
-
-const Right = ({ offset }: OffsetType) => styled(Base)`
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: ${offset}px;
-`;
-
-const toolTips: Record<string, any> = {
-  left: Left,
-  top: Top,
-  right: Right,
-  bottom: Bottom,
-};
-
-const ToolTip = ({
-  children,
-  offset,
-  isOpen,
-  placement,
-  zIndex,
-  fadeDuration,
-  fadeEasing,
-  ...props
+const Tooltip = ({
+  behavior = 'hover',
+  arrowWidth = 8,
+  background = '',
+  border = '',
+  children = null,
+  color = '',
+  content,
+  style,
+  className,
+  fadeDuration = 150,
+  fadeEasing = 'linear',
+  fixed = false,
+  fontFamily = 'inherit',
+  fontSize = '',
+  offset = 0,
+  padding = 0.7,
+  placement = 'top',
+  radius = 0,
+  zIndex = 1,
+  durationOnClick = 1000,
 }: Props) => {
-  const Component = toolTips[placement] || toolTips.top;
+  const [isOpen, setIsOpen] = useState(false);
 
-  if (!isOpen) {
-    return null;
-  }
+  const timeDelay = (msDuration: number) =>
+    new Promise((resolve) => setTimeout(() => resolve(true), msDuration));
+
+  const showTooltip = () => setIsOpen(true);
+
+  const hideTooltip = () => setIsOpen(false);
+
+  const flashTooltip = async () => {
+    if (isOpen) return;
+
+    showTooltip();
+    await timeDelay(durationOnClick);
+    hideTooltip();
+  };
+
+  const tooltipElement = (
+    <TooltipWrapper
+      isOpen={!children || fixed ? true : isOpen}
+      placement={placement}
+      offset={offset + arrowWidth}
+      zIndex={zIndex}
+      fadeEasing={fadeEasing}
+      fadeDuration={fadeDuration}
+    >
+      <Bubble
+        background={background}
+        border={border}
+        color={color}
+        radius={radius}
+        fontFamily={fontFamily}
+        fontSize={fontSize}
+        padding={padding}
+      >
+        <Arrow width={arrowWidth} background={background} border={border} placement={placement} />
+        {content}
+      </Bubble>
+    </TooltipWrapper>
+  );
 
   return (
-    <Component
-      offset={offset}
-      zIndex={zIndex}
-      fadeDuration={fadeDuration}
-      fadeEasing={fadeEasing}
-      {...props}
+    <Container
+      style={style}
+      className={className}
+      onClick={behavior === 'click' ? flashTooltip : undefined}
+      onMouseEnter={behavior === 'hover' && !fixed ? showTooltip : undefined}
+      onMouseLeave={behavior === 'hover' && !fixed ? hideTooltip : undefined}
     >
-      {children}
-    </Component>
+      <>
+        {children}
+        {tooltipElement}
+      </>
+    </Container>
   );
 };
 
