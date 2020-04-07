@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import colors from 'theme/colors';
 import { transparentize } from 'polished';
-
-import colors from 'config/colors';
-import { uiColors, fontWeights, fontSizes } from 'utils';
+import { fontWeights, fontSizes } from 'utils';
 
 const DatePickerWrapper = styled.span`
   .PresetDateRangePicker_panel {
@@ -14,7 +13,7 @@ const DatePickerWrapper = styled.span`
     height: 100%;
     text-align: center;
     background: 0 0;
-    color: ${uiColors('primary.main')};
+    color: ${({ theme }) => theme.palette.primary.main};
     padding: 0.25rem 0.75rem;
     margin-right: 0.5rem;
     font: inherit;
@@ -30,7 +29,7 @@ const DatePickerWrapper = styled.span`
 
   .PresetDateRangePicker_button__selected {
     color: ${colors.white};
-    background: ${uiColors('primary.main')};
+    background: ${({ theme }) => theme.palette.primary.main};
   }
 
   .DayPickerKeyboardShortcuts_buttonReset {
@@ -42,7 +41,7 @@ const DatePickerWrapper = styled.span`
     box-sizing: border-box;
     height: 37px;
     width: 37px;
-    color: ${uiColors('text.main')};
+    color: ${({ theme }) => theme.palette.text.main};
     text-align: center;
     font-size: ${fontSizes('small')};
     line-height: 32px;
@@ -62,7 +61,7 @@ const DatePickerWrapper = styled.span`
 
   .CalendarDay__default {
     border: 1px solid ${colors.gray};
-    color: ${uiColors('text.main')};
+    color: ${({ theme }) => theme.palette.text.main};
     background: ${colors.white};
   }
 
@@ -78,7 +77,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .CalendarDay__selected_span {
-    color: ${uiColors('primary.main')};
+    color: ${({ theme }) => theme.palette.primary.main};
     background: ${transparentize(0.94, colors.lightSkyBlue)};
   }
 
@@ -94,7 +93,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .CalendarDay__selected {
-    background: ${uiColors('primary.main')};
+    background: ${({ theme }) => theme.palette.primary.main};
     color: ${colors.white};
     font-weight: 500;
     cursor: pointer;
@@ -109,13 +108,13 @@ const DatePickerWrapper = styled.span`
   .CalendarDay__hovered_span,
   .CalendarDay__hovered_span:hover {
     border: 1px double ${colors.gray};
-    color: ${uiColors('primary.main')};
+    color: ${({ theme }) => theme.palette.primary.main};
     background: ${transparentize(0.94, colors.lightSkyBlue)};
   }
 
   .CalendarDay__hovered_span:active {
     border: 1px double ${colors.gray};
-    color: ${uiColors('primary.main')};
+    color: ${({ theme }) => theme.palette.primary.main};
     background: ${transparentize(0.94, colors.lightSkyBlue)};
   }
 
@@ -124,7 +123,7 @@ const DatePickerWrapper = styled.span`
   .CalendarDay__blocked_calendar:hover {
     background: ${colors.lightGray};
     border: 1px solid ${colors.lightGray};
-    color: ${uiColors('text.disabled')};
+    color: ${({ theme }) => theme.palette.text.disabled};
   }
 
   .CalendarDay__blocked_out_of_range,
@@ -132,7 +131,7 @@ const DatePickerWrapper = styled.span`
   .CalendarDay__blocked_out_of_range:hover {
     background: ${colors.white};
     border: 1px solid ${colors.lightGray};
-    color: ${uiColors('text.disabled')};
+    color: ${({ theme }) => theme.palette.text.disabled};
   }
 
   .CalendarMonth {
@@ -244,11 +243,11 @@ const DatePickerWrapper = styled.span`
   }
 
   .DayPickerNavigation_button__default:hover {
-    border-color: ${uiColors('primary.main')};
+    border-color: ${({ theme }) => theme.palette.primary.main};
   }
 
   .DayPickerNavigation_button__default:hover svg {
-    fill: ${uiColors('primary.main')};
+    fill: ${({ theme }) => theme.palette.primary.main};
   }
 
   .DayPickerNavigation_button__horizontalDefault {
@@ -369,7 +368,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DayPicker_weekHeader {
-    color: ${uiColors('text.light')};
+    color: ${({ theme }) => theme.palette.text.light};
     font-size: ${fontSizes('medium')};
     position: absolute;
     top: 62px;
@@ -452,7 +451,7 @@ const DatePickerWrapper = styled.span`
 
   .DateInput__disabled {
     background: ${colors.lightGray};
-    color: ${uiColors('text.disabled')};
+    color: ${({ theme }) => theme.palette.text.disabled};
   }
 
   .DateInput_input {
@@ -469,7 +468,7 @@ const DatePickerWrapper = styled.span`
     font-size: ${fontSizes('medium')};
     line-height: 28px;
     cursor: pointer;
-    color: ${uiColors('text.main')};
+    color: ${({ theme }) => theme.palette.text.main};
     text-align: center;
     padding: 0;
   }
@@ -490,7 +489,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DateInput_input__focused {
-    border-bottom: 2px solid ${uiColors('primary.main')};
+    border-bottom: 2px solid ${({ theme }) => theme.palette.primary.main};
   }
 
   .DateInput_input__disabled {
@@ -551,7 +550,7 @@ const DatePickerWrapper = styled.span`
     padding: 0.3125rem 0.625rem;
     font-size: ${fontSizes('small')};
     line-height: 1rem;
-    color: ${uiColors('text.light')};
+    color: ${({ theme }) => theme.palette.text.light};
     font-weight: ${fontWeights('light')};
   }
 

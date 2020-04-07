@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment, { Moment } from 'moment';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
-import DatePickerWrapper from 'elements/DatePickerWrapper';
+import DatePickerWrapper from 'elements/DatePicker/DatePickerWrapper';
 import { PERIODS } from './periods';
 import { Styled } from './styles';
 import 'react-dates/initialize';
@@ -116,7 +116,7 @@ const DatePicker = ({
 
     return (
       <Styled.DatePresetWrapper>
-        {presets.map(text => (
+        {presets.map((text: string) => (
           <Styled.StyledLabel
             active={activePeriod === text}
             key={text}
