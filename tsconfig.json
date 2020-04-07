@@ -22,13 +22,7 @@
     "esModuleInterop": true,
     // use typescript to transpile jsx to js
     "jsx": "react",
-    "lib": [
-      "es2015",
-      "dom.iterable",
-      "es2016.array.include",
-      "es2017.object",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "module": "esnext",
     "removeComments": true,
     "alwaysStrict": true,
@@ -40,7 +34,12 @@
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "declaration": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "paths": {
     "assets/*": ["./assets/*"],
