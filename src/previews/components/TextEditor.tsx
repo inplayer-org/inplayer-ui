@@ -1,8 +1,8 @@
 // @flow
 import React, { useEffect, useMemo, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, StyledComponent, DefaultTheme } from 'styled-components';
 import ReactQuill from 'react-quill';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // editor styles
@@ -11,21 +11,24 @@ import 'react-quill/dist/quill.snow.css';
 // utils
 import throttle from 'lodash/throttle';
 
-type Props = {
-  value: string | any,
-  readOnly?: boolean,
-  onChange?: (e: any) => any,
-  displayToolbar?: boolean,
-  isAssetPreviewTitle?: boolean,
-  textBackground?: string,
-  textColor?: string,
-  isTextCenter?: boolean,
-  isPadding?: boolean,
-  lineHeight?: number,
-  paddingBottom?: boolean,
-};
+interface EditorContainerProps {
+  readOnly?: boolean;
+  displayToolbar?: boolean;
+  isAssetPreviewTitle?: boolean;
+  textBackground?: string;
+  textColor?: string;
+  isTextCenter?: boolean;
+  isPadding?: boolean;
+  lineHeight?: number;
+  paddingBottom?: boolean;
+}
 
-const EditorContainer = styled.div`
+interface Props extends EditorContainerProps {
+  value: string | any;
+  onChange?: (e: any) => any;
+}
+
+const EditorContainer = styled.div<EditorContainerProps>`
   width: 100%;
 
   .ql-editor {
@@ -110,8 +113,8 @@ const EditorContainer = styled.div`
       .ql-editor h4,
       .ql-editor h5,
       .ql-editor h6 {
-        color: ${({ textColor }) => textColor || colors.black};
         padding: ${({ isPadding }) => isPadding && '0.5em'};
+        color: ${({ textColor }) => textColor || colors.black};
         padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};
       }
@@ -121,15 +124,15 @@ const EditorContainer = styled.div`
 const TextEditor = ({
   value,
   onChange,
-  readOnly,
-  displayToolbar,
-  isAssetPreviewTitle,
-  textBackground,
-  textColor,
-  isTextCenter,
-  isPadding,
-  lineHeight,
-  paddingBottom,
+  readOnly = false,
+  displayToolbar = false,
+  isAssetPreviewTitle = false,
+  textBackground = '',
+  textColor = '',
+  isTextCenter = false,
+  isPadding = false,
+  lineHeight = 0,
+  paddingBottom = false,
 }: Props) => {
   const [editorState, setEditorState] = useState(value);
 
@@ -165,19 +168,6 @@ const TextEditor = ({
       />
     </EditorContainer>
   );
-};
-
-TextEditor.defaultProps = {
-  readOnly: false,
-  displayToolbar: false,
-  isAssetPreviewTitle: false,
-  textBackground: '',
-  textColor: '',
-  isTextCenter: false,
-  isPadding: false,
-  lineHeight: 0,
-  paddingBottom: false,
-  onChange: () => {},
 };
 
 export default TextEditor;
