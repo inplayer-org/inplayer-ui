@@ -1,12 +1,11 @@
-// @flow
-import React, { type Node } from 'react';
+import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { uiColors, fontSizes } from 'utils';
-import colors from 'config/colors';
+import { fontSizes } from 'utils';
+import colors from 'theme/colors';
 
-const MenuItemContainer = styled.div`
+const MenuItemContainer = styled.div<{ active: any }>`
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -16,11 +15,12 @@ const MenuItemContainer = styled.div`
   overflow: hidden;
   white-space: nowrap;
   font-size: ${fontSizes('small')};
+  box-sizing: border-box;
   ${ifProp(
     'active',
     css`
-      background: ${uiColors('primary.dark')};
-      border-right: ${uiColors('primary.main')} 3px solid;
+      background: ${colors.navy};
+      border-right: ${colors.skyBlue} 3px solid;
       color: ${colors.white};
     `
   )};
@@ -37,14 +37,14 @@ const MenuItemIcon = styled.i`
 `;
 
 type MenuItemProps = {
-  active: boolean,
-  icon: ?string | ?Node,
-  onClick: ?(e: SyntheticEvent<HTMLDivElement>) => any,
-  children: ?Node,
+  active?: boolean;
+  icon?: ReactNode;
+  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
+  children?: any;
 };
 
 const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
-  const onItemClick = (e) => {
+  const onItemClick = (e: SyntheticEvent<HTMLDivElement, Event>) => {
     e.stopPropagation();
     if (onClick && typeof onClick === 'function') {
       onClick(e);
@@ -52,12 +52,7 @@ const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
   };
   return (
     <MenuItemContainer active={active} onClick={onItemClick}>
-      {typeof icon === 'string' ? (
-        <MenuItemIcon className={icon} />
-      ) : (
-        <MenuItemIcon>{icon}</MenuItemIcon>
-      )}
-
+      <MenuItemIcon>{icon}</MenuItemIcon>
       {children}
     </MenuItemContainer>
   );
