@@ -1,9 +1,19 @@
 import styled from 'styled-components';
-import { Grid } from 'blocks';
+import Grid from 'blocks';
 
 const { Container } = Grid;
 
-const StyledContainer = styled(Container)`
+interface Props {
+  margin?: string;
+  padding?: string;
+  maxHeight?: string;
+  overflow?: string;
+  borderTop?: string;
+  backgroundColor?: string;
+  height?: string;
+}
+
+const StyledContainer = styled(Container)<Props>`
   ${({ margin }) => margin && `margin: ${margin}`};
   ${({ padding }) => padding && `padding: ${padding}`};
   ${({ maxHeight }) => maxHeight && `max-height: ${maxHeight}`};
