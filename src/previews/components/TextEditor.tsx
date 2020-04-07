@@ -113,7 +113,7 @@ const EditorContainer = styled.div<EditorContainerProps>`
       .ql-editor h4,
       .ql-editor h5,
       .ql-editor h6 {
-        padding: ${({ isPadding }) => isPadding && '0.5em'};
+        padding: ${({ isPadding }: EditorContainerProps) => isPadding && '0.5em'};
         color: ${({ textColor }) => textColor || colors.black};
         padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};

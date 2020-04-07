@@ -128,7 +128,7 @@ export const DescriptionSpan = styled.span`
 
 interface BuyButtonProps {
   buttonTextColor?: string;
-  buttonBgColor?: string;
+  buttonBgColor: string;
 }
 
 export const BuyButton = styled(Button)<BuyButtonProps>`
