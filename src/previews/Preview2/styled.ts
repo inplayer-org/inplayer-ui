@@ -4,7 +4,7 @@ import { transparentize } from 'polished';
 import { MdStar } from 'react-icons/md';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes } from 'utils';
 
 // Components
@@ -15,14 +15,16 @@ import {
   DescriptionSpan,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+export const StyledPreviewBox = styled(PreviewBox)<any>`
   font-size: ${fontSizes('large')};
   height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
 `;
 
-export const StyledImageHolder = styled(ImageHolder)`
+export const StyledImageHolder = styled(ImageHolder)<{
+  backgroundImage: string;
+}>`
   width: 50%;
   padding-bottom: 60%;
   margin: 0;
