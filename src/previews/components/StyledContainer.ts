@@ -4,16 +4,16 @@ import { HTMLAttributes } from 'react';
 
 const { Container } = Grid;
 
-type Props = HTMLAttributes<HTMLDivElement> & {
-  margin?: string;
-  padding?: string;
-  maxHeight?: string;
-  overflow?: string;
-  borderTop?: string;
-  backgroundColor?: string;
-  height?: string;
-  columns?: string;
-};
+// type Props = HTMLAttributes<HTMLDivElement> & {
+//   margin?: string;
+//   padding?: string;
+//   maxHeight?: string;
+//   overflow?: string;
+//   borderTop?: string;
+//   backgroundColor?: string;
+//   height?: string;
+//   columns?: string;
+// };
 // Problem: line 74 Preview4.tsx
 
 const StyledContainer = styled(Container)<any>`
