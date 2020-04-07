@@ -7,17 +7,17 @@ const frGetter = (value: any) => (typeof value === 'number' ? `repeat(${value}, 
 const formatAreas = (areas: any[]) => areas.map((area: any) => `"${area}"`).join(' ');
 
 type GridContainerProps = {
-  height: CSSObject;
-  flow: CSSObject;
-  minRowHeight: string;
-  rows: CSSProperties;
-  columns: CSSProperties;
-  gap: string;
-  columnGap: CSSProperties;
-  rowGap: CSSProperties;
-  areas: any;
-  justifyContent: CSSProperties;
-  alignContent: CSSProperties;
+  height?: CSSObject;
+  flow?: CSSObject;
+  minRowHeight?: string;
+  rows?: CSSProperties;
+  columns?: CSSProperties;
+  gap?: string;
+  columnGap?: CSSProperties;
+  rowGap?: CSSProperties;
+  areas?: any;
+  justifyContent?: CSSProperties;
+  alignContent?: CSSProperties;
 };
 
 const GridContainer = styled.div<GridContainerProps>`

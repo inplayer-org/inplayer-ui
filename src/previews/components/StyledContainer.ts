@@ -1,22 +1,20 @@
 import styled from 'styled-components';
 import Grid from 'blocks';
-import { HTMLAttributes } from 'react';
 
 const { Container } = Grid;
 
-// type Props = HTMLAttributes<HTMLDivElement> & {
-//   margin?: string;
-//   padding?: string;
-//   maxHeight?: string;
-//   overflow?: string;
-//   borderTop?: string;
-//   backgroundColor?: string;
-//   height?: string;
-//   columns?: string;
-// };
-// Problem: line 74 Preview4.tsx
+type Props = {
+  margin?: string;
+  padding?: string;
+  maxHeight?: string;
+  overflow?: string;
+  borderTop?: string;
+  backgroundColor?: string;
+  height?: string;
+  columns?: string;
+};
 
-const StyledContainer = styled(Container)<any>`
+const StyledContainer = styled(Container)<Props>`
   ${({ margin }) => margin && `margin: ${margin}`};
   ${({ padding }) => padding && `padding: ${padding}`};
   ${({ maxHeight }) => maxHeight && `max-height: ${maxHeight}`};
