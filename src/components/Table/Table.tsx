@@ -18,6 +18,9 @@ import {
 
 interface Data {
   id: string;
+  row: {
+    [key in string]: any;
+  };
 }
 
 type Render = {
