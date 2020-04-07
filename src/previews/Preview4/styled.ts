@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontWeights, fontSizes } from 'utils';
 
 // Components
@@ -15,7 +15,15 @@ import {
   PreviewImage,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+type StyledPreviewBoxProps = {
+  minWidth?: string;
+  minHeight?: string;
+  topBorderColor?: string;
+  width?: any;
+  height?: string;
+};
+
+export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
   border-top: 4px solid ${({ topBorderColor }) => topBorderColor};
@@ -63,7 +71,7 @@ export const StyledTextWrapper = styled(TextWrapper)`
   margin: 10% 5%;
 `;
 
-export const TextElement = styled.div`
+export const TextElement = styled.div<{ width: any }>`
   overflow-wrap: break-word;
   font-weight: ${fontWeights('normal')};
   font-size: ${fontSizes('medium')};

@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { transparentize } from 'polished';
 
@@ -7,7 +6,7 @@ import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Components
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { FaLock } from 'react-icons/fa';
 import StyledContainer from '../components/StyledContainer';
 import TextEditor from '../components/TextEditor';
@@ -24,18 +23,18 @@ import {
 } from './styled';
 
 // Types
-import { type Branding } from '../types/branding';
+import Branding from '../types/branding';
 
 type Props = {
-  branding?: Branding,
-  displayBuyButton?: boolean,
-  previewUnavailable?: boolean,
-  width?: string,
-  height?: string,
-  minWidth?: string,
-  minHeight?: string,
-  isRestrictedAsset?: boolean,
-  handleOpenModal?: (e: any) => any,
+  branding: Branding;
+  displayBuyButton?: boolean;
+  previewUnavailable?: boolean;
+  width?: string | number;
+  height?: string;
+  minWidth?: string;
+  minHeight?: string;
+  isRestrictedAsset?: boolean;
+  handleOpenModal?: (e: any) => any;
 };
 
 const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
