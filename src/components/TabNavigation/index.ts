@@ -1,1 +1,3 @@
-export { default as TabNavigation } from './TabNavigation';
+import TabNavigation from './TabNavigation';
+
+export default TabNavigation;
