@@ -18,7 +18,7 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
       width: 1rem;
       height: 1rem;
       border: 1px solid ${colors.gray};
-      background: ${({ theme }) => theme.palette.primary.main};
+      background: ${colors.white};
       border-radius: 2px;
       transition: all ease 300ms;
     }
