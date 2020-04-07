@@ -1,4 +1,4 @@
-import React, { useState, ReactChild } from 'react';
+import React, { useState } from 'react';
 
 // Components
 import { CSSProperties } from 'styled-components';
