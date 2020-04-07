@@ -27,7 +27,7 @@ type Render = {
 
 type Column = {
   title: string;
-  key: string | number;
+  key: string;
   render: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight: any;
@@ -79,6 +79,22 @@ const rowActionsExist = (actions: RowActions<any>) =>
   (typeof actions === 'object' && Array.isArray(actions) && actions.length);
 
 class Table<T> extends Component<Props<T>, State> {
+  // eslint-disable-next-line react/static-property-placement
+  static defaultProps: {
+    className: '';
+    style: {};
+    options: {
+      rowSelection: {
+        active: false;
+      };
+      rowActions: [];
+      headerSection: undefined;
+    };
+    showLoader: false;
+    renderEmptyTable: false;
+    tableButton: null;
+  };
+
   state: State = {
     selected: {},
     selectedAll: false,
@@ -182,7 +198,7 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
-  renderData = (columns: Array<Column>, data: Array<any>) => {
+  renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
@@ -285,20 +301,5 @@ class Table<T> extends Component<Props<T>, State> {
     return this.renderTableWithHeaderSection();
   }
 }
-
-Table.defaultProps = {
-  className: '',
-  style: {},
-  options: {
-    rowSelection: {
-      active: false,
-    },
-    rowActions: [],
-    headerSection: undefined,
-  },
-  showLoader: false,
-  renderEmptyTable: false,
-  tableButton: null,
-};
 
 export default Table;
