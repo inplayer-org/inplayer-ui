@@ -1,13 +1,13 @@
 import styled, { CSSProperties } from 'styled-components';
 
 type CellProps = {
-  width: CSSProperties;
-  height: CSSProperties;
-  left: CSSProperties;
-  top: CSSProperties;
-  center: CSSProperties;
-  area: CSSProperties;
-  middle: CSSProperties;
+  width?: CSSProperties;
+  height?: CSSProperties;
+  left?: CSSProperties;
+  top?: CSSProperties;
+  center?: CSSProperties;
+  area?: CSSProperties;
+  middle?: CSSProperties;
 };
 
 const Cell = styled.div<CellProps>`
