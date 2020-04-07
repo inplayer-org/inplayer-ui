@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
@@ -30,7 +30,7 @@ export const StyledImageWrapper = styled(ImageHolder)`
   background: ${colors.white};
 `;
 
-export const StyledPreviewImage = styled(PreviewImage)`
+export const StyledPreviewImage = styled(PreviewImage)<any>`
   height: 250px;
 `;
 
