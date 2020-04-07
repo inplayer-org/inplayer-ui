@@ -1,4 +1,3 @@
-// @flow
 import styled from 'styled-components';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
@@ -25,9 +24,11 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 3px 3px 0 0;
 `;
 
-export const StyledImageHolder = styled(ImageHolder)<{
+type StyledImageHolderProps = {
   backgroundImage: string;
-}>`
+};
+
+export const StyledImageHolder = styled(ImageHolder)<StyledImageHolderProps>`
   height: 100%;
   margin: 0;
   display: flex;
