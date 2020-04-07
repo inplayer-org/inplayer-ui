@@ -1,20 +1,9 @@
-// module.exports = {
-//   stories: ['../src/**/*.stories.[tj]s'],
-// };
-
 module.exports = {
+  stories: ['../src/**/*.stories.tsx'],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: require.resolve('ts-loader'),
-        },
-        // Optional
-        {
-          loader: require.resolve('react-docgen-typescript-loader'),
-        },
-      ],
+      loader: require.resolve('babel-loader'),
     });
     config.resolve.extensions.push('.ts', '.tsx');
     return config;
