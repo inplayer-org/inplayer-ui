@@ -1,10 +1,9 @@
-// @flow
 import styled from 'styled-components';
 import { GiCutDiamond } from 'react-icons/gi';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
@@ -15,7 +14,7 @@ import {
   BuyButton,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+export const StyledPreviewBox = styled(PreviewBox)<any>`
   height: ${({ height }) => height ?? 'auto'};
   border: none;
   background: transparent;
@@ -64,7 +63,7 @@ export const BuyButtonBorder = styled.div`
   overflow: hidden;
 `;
 
-export const StyledBuyButton = styled(BuyButton)`
+export const StyledBuyButton = styled(BuyButton)<any>`
   background-color: ${({ buttonBgColor }) => transparentize(0.2, buttonBgColor)};
   font-size: ${fontSizes('large')};
   margin: 0;
