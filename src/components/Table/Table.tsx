@@ -1,4 +1,3 @@
-// @flow
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { Loader } from 'elements/Loader';
 import { CSSProperties } from 'styled-components';
@@ -18,9 +17,7 @@ import {
 
 interface Data {
   id: string;
-  row: {
-    [key in string]: any;
-  };
+  [row: string]: any;
 }
 
 type Render = {
