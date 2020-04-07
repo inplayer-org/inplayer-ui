@@ -4,16 +4,24 @@ import styled from 'styled-components';
 import { prop } from 'styled-tools';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontWeights, fontSizes } from 'utils';
 
 // components
 import { Typography, Button } from 'elements';
 
-export const PreviewBox = styled.div`
+interface PreviewBoxProps {
+  width?: string;
+  height?: string;
+  minWidth?: string;
+  minHeight?: string;
+  circleImage?: boolean;
+  topBorder?: boolean;
+}
+
+export const PreviewBox = styled.div<PreviewBoxProps>`
   width: ${({ width }) => width ?? '100%'};
   height: ${({ height }) => height ?? '580px'};
-  max-width: ${({ width }) => (width ? '' : '100%')};
   min-width: ${({ minWidth }) => minWidth};
   min-height: ${({ minHeight }) => minHeight};
   margin: auto;
@@ -30,7 +38,11 @@ export const PreviewBox = styled.div`
   box-sizing: border-box;
 `;
 
-export const PreviewImage = styled.img`
+interface PreviewImageProps {
+  imageBorderRadius?: string;
+}
+
+export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};
   border-radius: ${({ imageBorderRadius }) => imageBorderRadius && '50%'};
   object-fit: cover;
@@ -80,11 +92,20 @@ export const PaywallDescription = styled.div`
   font-size: ${fontSizes('small')};
 `;
 
-export const StyledPaywallDescription = styled(PaywallDescription)`
+interface StyledPaywallDescriptionProps {
+  displayProtectedLabel?: boolean;
+}
+
+export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywallDescriptionProps>`
   display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'block' : 'none')};
 `;
 
-export const IconWrapper = styled.div`
+interface IconWrapperProps {
+  backgroundColor?: string;
+  protectedLabel?: boolean;
+}
+
+export const IconWrapper = styled.div<IconWrapperProps>`
   background: ${({ backgroundColor }) => backgroundColor};
   display: ${({ protectedLabel }) => (protectedLabel ? 'block' : 'none')};
   position: absolute;
@@ -105,7 +126,12 @@ export const DescriptionSpan = styled.span`
   padding: 0;
 `;
 
-export const BuyButton = styled(Button)`
+interface BuyButtonProps {
+  buttonTextColor?: string;
+  buttonBgColor?: string;
+}
+
+export const BuyButton = styled(Button)<BuyButtonProps>`
   color: ${({ buttonTextColor }) => buttonTextColor};
   background-color: ${({ buttonBgColor }) => buttonBgColor};
   border: none;
@@ -125,7 +151,11 @@ export const BuyButton = styled(Button)`
   }
 `;
 
-export const PreviewFooter = styled.div`
+interface PreviewFooterProps {
+  color?: string;
+}
+
+export const PreviewFooter = styled.div<PreviewFooterProps>`
   color: ${({ color }) => color};
   font-size: ${fontSizes('small')};
   line-height: 1.3rem;
