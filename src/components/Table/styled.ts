@@ -5,9 +5,9 @@ import { ifProp } from 'styled-tools';
 import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 import { Button } from 'elements/Button';
-import { Grid } from 'blocks';
+import { Container } from 'blocks/Grid';
 
-const TableWithHeaderSectionContainer = styled(Grid.Container)`
+const TableWithHeaderSectionContainer = styled(Container)<any>`
   padding: 1rem;
   background-color: ${colors.white};
   border: 1px solid ${colors.gray};

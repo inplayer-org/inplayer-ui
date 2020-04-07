@@ -1,7 +1,7 @@
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { Loader } from 'elements/Loader';
 import { CSSProperties } from 'styled-components';
-import { Grid } from 'index';
+import { Cell } from 'blocks/Grid';
 import {
   ButtonTableRow,
   LoaderContainer,
@@ -30,14 +30,14 @@ type Column = {
   key: string;
   render: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
-  alignRight: any;
+  alignRight?: any;
 };
 
 type RowActions<T> =
   | Array<{
       icon: string;
       onClick: (id: number | string) => any;
-      render: any;
+      render?: any;
     }>
   | ((props: { row: T }) => Node);
 
@@ -51,7 +51,7 @@ type TableOptions<T> = {
 };
 
 type Props<T = Data> = {
-  columns: Array<Column>;
+  columns: Array<Column> | any;
   data: Array<any>;
   className?: string;
   style?: CSSProperties;
@@ -67,7 +67,6 @@ type Props<T = Data> = {
 };
 
 type State = {
-  // selected: Record<number | string, boolean>;
   selected: {
     [key in number | string]: any;
   };
@@ -145,18 +144,18 @@ class Table<T> extends Component<Props<T>, State> {
       }));
     }
 
-    if (rowActionsExist(rowActions)) {
-      newData = newData.map((dataCell) => {
-        const actionsContent =
-          typeof rowActions === 'function'
-            ? rowActions({ row: dataCell })
-            : rowActions.map((action) => action.render({ row: dataCell }));
-        return {
-          ...dataCell,
-          actions: actionsContent,
-        };
-      });
-    }
+    // if (rowActionsExist(rowActions)) {
+    //   newData = newData.map((dataCell) => {
+    //     const actionsContent =
+    //       typeof rowActions === 'function'
+    //         ? rowActions({ row: dataCell })
+    //         : rowActions.map((action) => action.render({ row: dataCell }));
+    //     return {
+    //       ...dataCell,
+    //       actions: actionsContent,
+    //     };
+    //   });
+    // }
 
     return newData;
   };
@@ -285,8 +284,8 @@ class Table<T> extends Component<Props<T>, State> {
 
     return (
       <TableWithHeaderSectionContainer columns={1}>
-        <Grid.Cell>{headerSection}</Grid.Cell>
-        <Grid.Cell>{this.renderTable()}</Grid.Cell>
+        <Cell>{headerSection}</Cell>
+        <Cell>{this.renderTable()}</Cell>
       </TableWithHeaderSectionContainer>
     );
   };
