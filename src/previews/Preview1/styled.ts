@@ -4,7 +4,7 @@ import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
@@ -17,12 +17,14 @@ import {
   BuyButton,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+export const StyledPreviewBox = styled(PreviewBox)<any>`
   height: ${({ height }) => height ?? 'auto'};
   border-radius: 8px 8px 3px 3px;
 `;
 
-export const StyledPaywallDescription = styled(PaywallDescription)`
+export const StyledPaywallDescription = styled(PaywallDescription)<{
+  displayProtectedLabel: boolean;
+}>`
   background: ${transparentize(0.6, colors.black)};
   box-sizing: border-box;
   padding: 3% 3%;
@@ -104,7 +106,7 @@ export const BuyButtonWrapper = styled.div`
   }
 `;
 
-export const StyledBuyButton = styled(BuyButton)`
+export const StyledBuyButton = styled(BuyButton)<any>`
   margin-bottom: 1.8em;
   padding: 0.85em 4em;
   float: right;
