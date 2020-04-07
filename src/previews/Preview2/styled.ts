@@ -15,7 +15,15 @@ import {
   DescriptionSpan,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)<any>`
+type StyledPreviewBoxProps = {
+  minHeight?: string;
+  minWidth?: string;
+  height?: string;
+  width?: string;
+  topBorder?: boolean;
+};
+
+export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   font-size: ${fontSizes('large')};
   height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
