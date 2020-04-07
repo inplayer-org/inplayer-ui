@@ -1,5 +1,5 @@
 // this is the primary export for Components
-// the main export for this lib is `src/index.js`
+// the main export for this lib is `src/index.ts`
 import Tabs from './Tabs';
 import Checkbox from './Checkbox';
 import Tooltip from './Tooltip';

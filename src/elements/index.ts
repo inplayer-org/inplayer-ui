@@ -1,5 +1,5 @@
 // this is the primary export for Elements
-// the main export for this lib is `src/index.js`
+// the main export for this lib is `src/index.ts`
 
 import Accordion from './Accordion';
 import Avatar from './Avatar';
