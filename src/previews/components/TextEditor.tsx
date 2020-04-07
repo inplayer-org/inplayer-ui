@@ -1,6 +1,6 @@
 // @flow
 import React, { useEffect, useMemo, useState } from 'react';
-import styled, { css, StyledComponent, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 import ReactQuill from 'react-quill';
 import colors from 'theme/colors';
 import { fontSizes, fontWeights } from 'utils';
