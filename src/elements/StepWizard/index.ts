@@ -1,1 +1,3 @@
-export { default as StepWizard } from './StepWizard';
+import StepWizard from './StepWizard';
+
+export default StepWizard;

@@ -1,1 +1,3 @@
-export { default as DayPicker } from './DayPicker';
+import DayPicker from './DayPicker';
+
+export default DayPicker;
