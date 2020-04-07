@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -23,17 +23,17 @@ import {
 } from './styled';
 
 // Types
-import { Branding } from '../types/branding';
+import Branding from '../types/branding';
 
 type OwnProps = {
-  branding?: Branding,
-  width?: string,
-  height?: string,
-  minWidth?: string,
-  minHeight?: string,
-  loginFooterLabel?: string,
-  isRestrictedAsset?: boolean,
-  handleOpenModal?: (e: any) => any,
+  branding: Branding;
+  width?: string;
+  height?: string;
+  minWidth?: string;
+  minHeight?: string;
+  loginFooterLabel?: string;
+  isRestrictedAsset?: boolean;
+  handleOpenModal?: (e: any) => any;
 };
 
 const Preview3 = ({
@@ -67,7 +67,10 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
+          <StyledPaywallDescription
+            color={buttonBgColor}
+            displayProtectedLabel={protectedLabel}
+          >
             <PaywallDescriptionSpan>
               <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>

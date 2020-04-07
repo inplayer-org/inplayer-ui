@@ -25,7 +25,9 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 3px 3px 0 0;
 `;
 
-export const StyledImageHolder = styled(ImageHolder)`
+export const StyledImageHolder = styled(ImageHolder)<{
+  backgroundImage: string;
+}>`
   height: 100%;
   margin: 0;
   display: flex;
@@ -68,7 +70,8 @@ export const TitleWrapper = styled.div`
 export const TitleBorder = styled.div`
   margin-bottom: 2%;
   width: 300px;
-  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
+  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left
+    no-repeat;
   background-size: 35% 4px;
 `;
 
