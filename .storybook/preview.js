@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { version } from '../package.json';
-import theme from '../src/config/theme';
+import theme from '../src/theme/theme';
 
 // Storybook theme
 const storybookTheme = create({

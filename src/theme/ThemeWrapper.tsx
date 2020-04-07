@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import GlobalStyles from 'theme/globalStyles';
 import { Theme } from './theme';
-import loadFonts from 'config/loadFonts';
+import loadFonts from './loadFonts';
 
 interface Props {
   children: ReactNode;
