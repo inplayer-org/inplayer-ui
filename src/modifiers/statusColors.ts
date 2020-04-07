@@ -1,4 +1,4 @@
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 export const statusColorPrimary = ({ theme }) => `
    color: ${theme.palette.primary.main};

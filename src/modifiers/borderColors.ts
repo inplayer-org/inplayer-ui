@@ -1,4 +1,4 @@
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 export const borderPrimary = ({ theme }) => `
   border: 1px solid ${theme.palette.primary.main};

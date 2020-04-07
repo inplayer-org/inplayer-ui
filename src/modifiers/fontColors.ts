@@ -1,4 +1,4 @@
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 export const textPrimary = ({ theme }) => `
   color: ${theme.palette.text.main};
