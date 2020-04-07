@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // utils
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { fontSizes } from 'utils/index';
 
 // Components
@@ -16,7 +16,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
   margin: 0 auto;
 `;
 
-export const ImageWrapper = styled(ImageHolder)`
+export const ImageWrapper = styled(ImageHolder)<{ backgroundImage: any }>`
   margin: 0;
   border: 0;
   outline: 0;
@@ -75,7 +75,7 @@ export const PreviewFooter = styled.div`
   padding-top: 0.8em;
 `;
 
-export const IconHolder = styled.div`
+export const IconHolder = styled.div<{ protectedLabel: boolean }>`
   padding: 0;
   border: 0;
   outline: 0;

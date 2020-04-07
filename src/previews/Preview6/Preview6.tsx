@@ -1,6 +1,5 @@
-// @flow
 import React from 'react';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -22,21 +21,21 @@ import {
 import { BuyButton, PreviewFooterLink } from '../components/SharedComponents';
 
 // Types
-import { type Branding } from '../types/branding';
+import Branding from '../types/branding';
 
 const LockIcon = styled(FaLock)`
   color: ${colors.fontGray};
 `;
 
 type Props = {
-  branding?: Branding,
-  width?: string,
-  height?: string,
-  minHeight?: string,
-  minWidth?: string,
-  loginFooterLabel?: string,
-  isRestrictedAsset?: boolean,
-  handleOpenModal?: (e: any) => any,
+  branding?: Branding;
+  width?: string;
+  height?: string;
+  minHeight?: string;
+  minWidth?: string;
+  loginFooterLabel?: string;
+  isRestrictedAsset?: boolean;
+  handleOpenModal?: (e: any) => any;
 };
 
 const Preview6 = ({
