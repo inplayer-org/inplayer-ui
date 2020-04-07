@@ -1,2 +1,4 @@
-export { default as Container } from './Container';
-export { default as Cell } from './Cell';
+import Container from './Container';
+import Cell from './Cell';
+
+export default { Container, Cell };
