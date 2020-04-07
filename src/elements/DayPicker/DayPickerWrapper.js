@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { uiColors } from 'utils';
-import DatePickerWrapper from '../DatePickerWrapper';
+import DatePickerWrapper from '../DatePicker/DatePickerWrapper';
 
 const DayPickerWrapper = styled(DatePickerWrapper)`
   .DateInput {
