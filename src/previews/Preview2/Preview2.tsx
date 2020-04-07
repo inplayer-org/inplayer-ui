@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
-import { type Branding } from '../types/branding';
+import Branding from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
@@ -23,14 +23,14 @@ import {
 } from './styled';
 
 type Props = {
-  branding?: Branding,
-  minWidth?: string,
-  minHeight?: string,
-  height?: string,
-  width?: string,
-  loginFooterLabel?: string,
-  isRestrictedAsset?: boolean,
-  handleOpenModal?: (e: any) => any,
+  branding: Branding;
+  minWidth?: string;
+  minHeight?: string;
+  height?: string;
+  width?: string;
+  loginFooterLabel?: string;
+  isRestrictedAsset?: boolean;
+  handleOpenModal?: (e: any) => any;
 };
 
 const Preview2 = ({
