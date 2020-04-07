@@ -1,26 +1,21 @@
 // @flow
 import styled from 'styled-components';
-import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import colors from 'config/colors';
-import Grid from 'blocks/Grid';
 import { FaLock } from 'react-icons/fa';
+
+// utils
+import colors from 'config/colors';
 import { fontSizes, fontWeights } from 'utils';
 
 // Components
+import { Typography } from 'elements';
 import {
   PreviewFooter,
   PreviewBox,
   PaywallDescription,
   DescriptionSpan,
+  BuyButton,
 } from '../components/SharedComponents';
-
-const { Cell } = Grid;
-
-export const StyledCell = styled(Cell)`
-  flex-flow: column;
-  width: fit-content;
-`;
 
 export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? 'auto'};
@@ -35,10 +30,24 @@ export const StyledPaywallDescription = styled(PaywallDescription)`
   bottom: 0;
   width: 100%;
   line-height: 15px;
-  display: ${ifProp('displayProtectedLabel', 'flex', 'none')};
+  display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'flex' : 'none')};
   justify-content: space-between;
   vertical-align: middle;
   align-items: center;
+`;
+
+export const PremiumContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const LockIcon = styled(FaLock)`
+  margin: 0 0.4em 0 0;
+`;
+
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
+  font-size: ${fontSizes('extraSmall')};
+  width: 100%;
 `;
 
 export const Protected = styled.strong`
@@ -48,20 +57,6 @@ export const Protected = styled.strong`
   color: ${colors.fontLightGray};
   font-weight: normal;
   text-align: right;
-`;
-
-export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  font-size: ${fontSizes('extraSmall')};
-  width: 100%;
-`;
-
-export const Title = styled.h3`
-  overflow-wrap: break-word;
-  font-weight: ${fontWeights('normal')};
-  font-size: ${fontSizes('medium')};
-  line-height: 1.3em;
-  color: ${colors.black};
-  margin: 0;
 `;
 
 export const Logo = styled.img`
@@ -75,8 +70,44 @@ export const Logo = styled.img`
   line-height: 15px;
 `;
 
-export const LockIcon = styled(FaLock)`
-  margin: 0 0.4em 0 0;
+export const ItemDetails = styled.div`
+  width: 69%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 30%;
+
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
+`;
+
+export const Title = styled(Typography)`
+  overflow-wrap: break-word;
+  font-weight: ${fontWeights('normal')};
+  font-size: ${fontSizes('medium')};
+  line-height: 1.3em;
+  color: ${colors.black};
+  margin: 0;
+`;
+
+export const BuyButtonWrapper = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.6em;
+  line-height: inherit;
+  text-align: right;
+  width: 30%;
+
+  @media screen and (max-width: 1100px) {
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+export const StyledBuyButton = styled(BuyButton)`
+  margin-bottom: 1.8em;
+  padding: 0.85em 4em;
+  float: right;
 `;
 
 export const StyledPreviewFooter = styled(PreviewFooter)`
@@ -84,8 +115,4 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
   margin-top: 10px;
   text-align: center;
   padding-top: 5px;
-`;
-
-export const PremiumContent = styled.div`
-  display: flex;
 `;

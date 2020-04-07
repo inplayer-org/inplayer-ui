@@ -1,6 +1,6 @@
 {
   "name": "@inplayer-org/inplayer-ui",
-  "version": "2.0.0-beta.38",
+  "version": "2.0.0-beta.39",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
   "main": "dist/inplayer-ui.min.js",
@@ -72,7 +72,7 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^5.2.1",
     "eslint-import-resolver-webpack": "^0.12.1",
-    "eslint-loader": "^3.0.3",
+    "eslint-loader": "^4.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",

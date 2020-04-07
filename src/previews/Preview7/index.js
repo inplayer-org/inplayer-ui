@@ -12,20 +12,19 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import { type Branding } from '../types/branding';
 
 // Components
-import { OverlayLabel } from '../components/SharedComponents';
+import { OverlayLabel, PreviewFooterLink } from '../components/SharedComponents';
 import TextEditor from '../components/TextEditor';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
+  StyledPreviewImage,
   StyledIconWrapper,
   ItemDetails,
   PreviewHeader,
   ItemContent,
   ButtonWrapper,
-  BuyButton,
+  StyledBuyButton,
   StyledPreviewFooter,
-  FooterLink,
-  StyledPreviewImage,
 } from './styled';
 
 type Props = {
@@ -46,8 +45,8 @@ const Preview7 = ({
     preview_top_border: previewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle = `<h1><strong>Asset Title</strong></h1>`,
-    preview_description: previewDescription = `<p>Asset Description</p>`,
+    preview_title: previewTitle = `<h3>Asset title</h3>`,
+    preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
@@ -80,7 +79,7 @@ const Preview7 = ({
         </StyledIconWrapper>
       </StyledImageWrapper>
       <ItemDetails>
-        <PreviewHeader>
+        <PreviewHeader variant="h4">
           <TextEditor
             value={previewTitle}
             displayToolbar={false}
@@ -89,25 +88,25 @@ const Preview7 = ({
             paddingBottom
           />
         </PreviewHeader>
-        <ItemContent>
+        <ItemContent variant="p">
           <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
         </ItemContent>
       </ItemDetails>
       {displayBuyButton && (
         <ButtonWrapper>
-          <BuyButton
+          <StyledBuyButton
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
           >
             {previewButtonLabel}
-          </BuyButton>
+          </StyledBuyButton>
         </ButtonWrapper>
       )}
       <StyledPreviewFooter color={colors.fontGray}>
-        <FooterLink href="#login" onClick={handleOpenModal}>
+        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
-        </FooterLink>
+        </PreviewFooterLink>
       </StyledPreviewFooter>
     </StyledPreviewBox>
   );
@@ -117,7 +116,7 @@ Preview7.defaultProps = {
   branding: {},
   displayBuyButton: true,
   previewUnavailable: false,
-  minWidth: '400px',
+  minWidth: '280px',
   minHeight: '460px',
   height: undefined,
   width: undefined,

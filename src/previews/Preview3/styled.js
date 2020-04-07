@@ -1,8 +1,11 @@
 // @flow
 import styled from 'styled-components';
 import { FaRegPlayCircle } from 'react-icons/fa';
-import colors from 'config/colors';
 import { transparentize } from 'polished';
+
+// utils
+import colors from 'config/colors';
+import { fontSizes } from 'utils';
 
 // Components
 import {
@@ -16,18 +19,10 @@ import {
 export const StyledPreviewBox = styled(PreviewBox)`
   height: ${({ height }) => height ?? 'auto'};
   border-top: 3px solid ${({ color }) => color};
-  background: ${colors.white};
   display: block;
   padding: 1% 3% 2% 3%;
-  box-sizing: border-box;
   color: ${colors.fontDarkGray};
   border-radius: 3px 3px 0 0;
-`;
-
-export const TitleWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
 `;
 
 export const StyledImageHolder = styled(ImageHolder)`
@@ -35,7 +30,6 @@ export const StyledImageHolder = styled(ImageHolder)`
   margin: 0;
   display: flex;
   flex-direction: column;
-  position: relative;
   background-image: linear-gradient(
       45deg,
       ${transparentize(0.2, colors.black)} 0%,
@@ -44,10 +38,11 @@ export const StyledImageHolder = styled(ImageHolder)`
     url(${({ backgroundImage }) => backgroundImage});
 `;
 
-export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  padding-bottom: 13px;
-  text-transform: uppercase;
-  font-size: ${({ theme }) => theme.font.sizes.small};
+export const Header = styled(PreviewFooter)`
+  border-bottom: 1px solid ${transparentize(0.6, colors.darkGray)};
+  margin: 3%;
+  text-align: right;
+  padding-bottom: 1%;
 `;
 
 export const StyledTextWrapper = styled(TextWrapper)`
@@ -58,15 +53,27 @@ export const StyledTextWrapper = styled(TextWrapper)`
   padding: 0 2%;
 `;
 
-export const Header = styled(PreviewFooter)`
-  border-bottom: 1px solid ${transparentize(0.6, colors.darkGray)};
-  margin: 3%;
-  text-align: right;
-  padding-bottom: 1%;
+export const PaywallDescriptionSpan = styled(DescriptionSpan)`
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  font-size: ${fontSizes('small')};
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+export const TitleBorder = styled.div`
+  margin-bottom: 2%;
+  width: 300px;
+  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
+  background-size: 35% 4px;
 `;
 
 export const StyledIcon = styled(FaRegPlayCircle)`
-  font-size: ${({ theme }) => theme.font.sizes.extraLarge};
+  font-size: ${fontSizes('extraLarge')};
   color: ${({ color }) => color};
 
   :hover {
@@ -76,9 +83,6 @@ export const StyledIcon = styled(FaRegPlayCircle)`
   }
 `;
 
-export const TitleBorder = styled.div`
-  margin-bottom: 2%;
-  width: 300px;
-  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
-  background-size: 35% 4px;
+export const DescriptionWrapper = styled.div`
+  margin-bottom: 1rem;
 `;
