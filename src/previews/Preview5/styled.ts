@@ -26,7 +26,12 @@ export const StyledPreviewBox = styled(PreviewBox)`
   flex-direction: column;
 `;
 
-export const ImageWrapper = styled(ImageHolder)`
+type ImageWrapperProps = {
+  height: any;
+  backgroundImage: any;
+};
+
+export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
   height: ${({ height }) => (height < 75 ? '45%' : '65%')};
   background-image: url(${({ backgroundImage }) => backgroundImage});
   margin: 0;
@@ -70,7 +75,7 @@ export const StyledBuyButton = styled(BuyButton)`
   }
 `;
 
-export const ItemDetails = styled.div`
+export const ItemDetails = styled.div<{ height?: any }>`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

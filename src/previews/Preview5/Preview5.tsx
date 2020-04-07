@@ -1,6 +1,5 @@
-// @flow
 import React from 'react';
-import colors from 'config/colors';
+import colors from 'theme/colors';
 import { lighten } from 'polished';
 
 // Images
@@ -9,7 +8,7 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 import TextEditor from '../components/TextEditor';
-import { type Branding } from '../types/branding';
+import Branding from '../types/branding';
 
 // Components
 import { StyledPaywallDescription } from '../components/SharedComponents';
@@ -28,13 +27,13 @@ import {
 } from './styled';
 
 type OwnProps = {
-  branding?: Branding,
-  width?: string,
-  height?: string,
-  minWidth?: string,
-  minHeight?: string,
-  isRestrictedAsset?: boolean,
-  handleOpenModal?: (e: any) => any,
+  branding: Branding;
+  width?: string;
+  height?: string;
+  minWidth?: string;
+  minHeight?: string;
+  isRestrictedAsset?: boolean;
+  handleOpenModal?: (e: any) => any;
 };
 
 const Preview5 = ({
