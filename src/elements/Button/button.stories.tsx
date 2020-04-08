@@ -1,9 +1,36 @@
 import React from 'react';
+import styled from 'styled-components';
+import colors from 'theme/colors';
+import Typography from 'elements/Typography';
 import { MdDelete, MdErrorOutline } from 'react-icons/md';
-import Button from '.';
+import Button from './Button';
 
-const Usage = () => (
-  <>
+export default {
+  component: Button,
+  title: 'Button',
+};
+
+const Container = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
+`;
+
+const BoxContainer = styled.div`
+  border: solid 1px ${colors.darkGray};
+  width: 90%;
+  padding: 25px;
+`;
+const ParagraphContainer = styled.div`
+  width: 90%;
+`;
+const HeadlineTypography = styled(Typography)`
+  color: ${colors.black};
+`;
+
+export const StandardDropdown = () => (
+  <Container>
+    <HeadlineTypography variant="h1">Button</HeadlineTypography>
     <div>
       <Button fullHeight icon={<MdDelete />} buttonModifiers={['buttonDanger']} />
       <br />
@@ -41,7 +68,5 @@ const Usage = () => (
       <Button disabled>Button Disabled</Button> <br />
       <Button buttonModifiers={['buttonLink']}>Button Link</Button>
     </div>
-  </>
+  </Container>
 );
-
-export default Usage;
