@@ -22,6 +22,9 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
 
 const ContentHolder = styled.span`
   padding: 0.2rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.2em;
 `;
 
 const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps) => {
