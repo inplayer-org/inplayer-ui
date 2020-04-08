@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "scripts": {
-    "storybook": "start-storybook",
+    "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s ./public",
     "prebuild": "rimraf ./dist",
     "build": "webpack",
     "build:watch": "webpack --watch --progress",
