@@ -53,6 +53,7 @@ export const PaywallDescriptionSpan = styled(DescriptionSpan)`
 `;
 
 export const BuyButtonWrapper = styled.div`
+  display: grid;
   text-align: left;
   width: 80%;
 

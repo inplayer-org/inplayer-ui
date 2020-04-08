@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 
 // utils
-import colors from 'config/colors';
 import { fontSizes } from 'utils/index';
 
 // Components
@@ -20,10 +19,9 @@ export const ImageWrapper = styled(ImageHolder)`
   margin: 0;
   border: 0;
   outline: 0;
-  width: 26%;
-  height: 200px;
+  width: 30%;
   vertical-align: middle;
-  padding-bottom: 26%;
+  padding-bottom: 30%;
   float: left;
   background-image: url('${({ backgroundImage }) => backgroundImage}');
 
@@ -35,7 +33,7 @@ export const ImageWrapper = styled(ImageHolder)`
 
 export const ItemDetails = styled.div`
   display: inline-block;
-  width: 72%;
+  width: 70%;
   padding: 1% 0 0 3%;
   box-sizing: border-box;
   margin: 6px auto;
@@ -48,7 +46,7 @@ export const ItemDetails = styled.div`
 `;
 
 export const FootService = styled.div`
-  width: 72%;
+  width: 70%;
   padding: 0 0 0 3%;
   box-sizing: border-box;
   margin: 6px auto;

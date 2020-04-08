@@ -12,6 +12,7 @@ import { Typography } from 'elements';
 import {
   PreviewFooter,
   PreviewBox,
+  ImageHolder,
   PaywallDescription,
   DescriptionSpan,
   BuyButton,
@@ -22,8 +23,13 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;
 `;
 
+export const StyledImageHolder = styled(ImageHolder)`
+  height: 320px;
+  min-height: 220px;
+`;
+
 export const StyledPaywallDescription = styled(PaywallDescription)`
-  background: ${transparentize(0.6, colors.black)};
+  background: ${transparentize(0.4, colors.black)};
   box-sizing: border-box;
   padding: 3% 3%;
   position: absolute;
@@ -91,15 +97,15 @@ export const Title = styled(Typography)`
 `;
 
 export const BuyButtonWrapper = styled.div`
-  display: inline-block;
+  display: inline-flex;
   vertical-align: middle;
   margin-bottom: 0.6em;
   line-height: inherit;
-  text-align: right;
-  width: 30%;
+  justify-content: flex-end;
+  width: 31%;
 
   @media screen and (max-width: 1100px) {
-    text-align: center;
+    justify-content: center;
     width: 100%;
   }
 `;
