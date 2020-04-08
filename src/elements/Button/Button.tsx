@@ -27,18 +27,18 @@ const ContentHolder = styled.span`
 const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps) => {
   if (iconPosition === 'right') {
     return (
-      <>
-        {children && <ContentHolder>{children}</ContentHolder>}
+      <ContentHolder>
+        {children}
         {icon}
-      </>
+      </ContentHolder>
     );
   }
 
   return (
-    <>
+    <ContentHolder>
       {icon}
-      {children && <ContentHolder>{children}</ContentHolder>}
-    </>
+      {children}
+    </ContentHolder>
   );
 };
 
