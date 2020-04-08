@@ -38,14 +38,16 @@ export const StandardDropdown = () => (
     <HeadlineTypography variant="h1">Dropdown</HeadlineTypography>
     <ParagraphContainer>
       <Typography variant="p" description>
-        A simple Dropdown controlled component. Receives an <b>options</b> prop which is an array of{' '}
-        <b>{'{ value, displayName }'}</b> pairs and <b>defaultOption</b> prop which is an object of{' '}
-        <b>{'{displayName, disabled}'}</b>. <b>value</b> is passed to the <b>option</b> tag as{' '}
-        <b>value</b> prop while <b>displayName</b> is the value used in the dropdown UI.
-        <br />
-        <br />
-        Can accept a custom <b>color</b> parameter, otherwise it uses the theme <b>primary.main</b>{' '}
-        color.
+        <>
+          A simple Dropdown controlled component. Receives an <b>options</b> prop which is an array
+          of <b>{'{ value, displayName }'}</b> pairs and <b>defaultOption</b> prop which is an
+          object of <b>{'{displayName, disabled}'}</b>. <b>value</b> is passed to the tag as{' '}
+          <b>value</b> prop while <b>displayName</b> is the value used in the dropdown UI.
+          <br />
+          <br />
+          Can accept a custom <b>color</b> parameter, otherwise it uses the theme{' '}
+          <b>primary.main</b> color.
+        </>
       </Typography>
     </ParagraphContainer>
 

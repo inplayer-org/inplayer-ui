@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { version } from '../package.json';
-import theme from '../src/theme/theme';
+import { Theme } from '../src/theme/theme';
 
 // Storybook theme
 const storybookTheme = create({
@@ -28,6 +28,6 @@ addParameters({
 
 // Decorators
 addDecorator(withInfo);
-addDecorator(storyFn => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+addDecorator((storyFn) => (
+  <ThemeProvider theme={Theme}>{storyFn()}</ThemeProvider>
 ));
