@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Typography, Colors } from 'src/index';
-import Dropdown from './index';
+import Colors from '../../theme/colors';
+import Typography from '../Typography';
+import Dropdown from '.';
 
 export default {
   component: Dropdown,

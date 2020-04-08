@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import colors from 'theme/colors';
-import { uiColors } from 'utils';
 import DatePickerWrapper from '../DatePicker/DatePickerWrapper';
 
 const DayPickerWrapper = styled(DatePickerWrapper)`
@@ -15,7 +14,7 @@ const DayPickerWrapper = styled(DatePickerWrapper)`
   }
 
   .CalendarDay__selected:hover {
-    background: ${uiColors('primary.main')};
+    background: ${colors.skyBlue};
     color: ${colors.white};
   }
 
