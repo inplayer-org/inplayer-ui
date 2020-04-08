@@ -34,16 +34,6 @@
     }
   },
   "rules": {
-    // prettier rules
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 100,
-        "endOfLine": "auto"
-      }
-    ],
     // plugin:react rules
     "react/sort-comp": 0,
     "react/default-props-match-prop-types": 0,
