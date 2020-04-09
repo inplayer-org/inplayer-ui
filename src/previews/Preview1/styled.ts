@@ -1,4 +1,3 @@
-// @flow
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
@@ -12,19 +11,31 @@ import { Typography } from 'elements';
 import {
   PreviewFooter,
   PreviewBox,
+  ImageHolder,
   PaywallDescription,
   DescriptionSpan,
   BuyButton,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)<any>`
+interface StyledPreviewBoxProps {
+  height?: string;
+}
+
+export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   height: ${({ height }) => height ?? 'auto'};
   border-radius: 8px 8px 3px 3px;
 `;
 
-export const StyledPaywallDescription = styled(PaywallDescription)<{
+export const StyledImageHolder = styled(ImageHolder)`
+  height: 320px;
+  min-height: 220px;
+`;
+
+interface StyledPaywallDescriptionProps {
   displayProtectedLabel: boolean;
-}>`
+}
+
+export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywallDescriptionProps>`
   background: ${transparentize(0.6, colors.black)};
   box-sizing: border-box;
   padding: 3% 3%;
@@ -77,7 +88,6 @@ export const ItemDetails = styled.div`
   display: inline-block;
   vertical-align: middle;
   height: 30%;
-
   @media screen and (max-width: 1100px) {
     width: 100%;
   }
@@ -93,20 +103,19 @@ export const Title = styled(Typography)`
 `;
 
 export const BuyButtonWrapper = styled.div`
-  display: inline-block;
+  display: inline-flex;
   vertical-align: middle;
   margin-bottom: 0.6em;
   line-height: inherit;
-  text-align: right;
-  width: 30%;
-
+  justify-content: flex-end;
+  width: 31%;
   @media screen and (max-width: 1100px) {
-    text-align: center;
+    justify-content: center;
     width: 100%;
   }
 `;
 
-export const StyledBuyButton = styled(BuyButton)<any>`
+export const StyledBuyButton = styled(BuyButton)`
   margin-bottom: 1.8em;
   padding: 0.85em 4em;
   float: right;

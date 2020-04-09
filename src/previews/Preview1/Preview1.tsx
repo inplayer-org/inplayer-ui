@@ -11,14 +11,10 @@ import Branding from '../types/branding';
 
 // Components
 import TextEditor from '../components/TextEditor';
-import {
-  OverlayLabel,
-  ImageHolder,
-  PreviewImage,
-  FooterLink,
-} from '../components/SharedComponents';
+import { OverlayLabel, PreviewImage, FooterLink } from '../components/SharedComponents';
 import {
   StyledPreviewBox,
+  StyledImageHolder,
   StyledPaywallDescription,
   PremiumContent,
   LockIcon,
@@ -73,7 +69,7 @@ const Preview1 = ({
       topBorder={previewTopBorder}
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <ImageHolder>
+      <StyledImageHolder>
         <PreviewImage src={image} />
         <StyledPaywallDescription displayProtectedLabel={protectedLabel} color={colors.white}>
           <PremiumContent>
@@ -89,7 +85,7 @@ const Preview1 = ({
             </a>
           </PremiumContent>
         </StyledPaywallDescription>
-      </ImageHolder>
+      </StyledImageHolder>
       <ItemDetails>
         <Title variant="h3">
           <TextEditor value={previewTitle} displayToolbar={false} readOnly />
