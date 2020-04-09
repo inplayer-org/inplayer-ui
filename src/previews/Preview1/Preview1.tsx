@@ -51,14 +51,14 @@ const Preview1 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  displayBuyButton,
-  previewUnavailable,
-  width,
-  height,
+  displayBuyButton = true,
+  previewUnavailable = false,
+  width = '',
+  minWidth = '',
+  height = '',
+  isRestrictedAsset = false,
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
   handleOpenModal,
-  minWidth,
-  isRestrictedAsset,
-  loginFooterLabel,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -88,9 +88,9 @@ const Preview1 = ({
       </StyledImageHolder>
       <ItemDetails>
         <Title variant="h3">
-          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+          <TextEditor value={previewTitle} readOnly />
         </Title>
-        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+        <TextEditor value={previewDescription} readOnly />
       </ItemDetails>
       {displayBuyButton && (
         <BuyButtonWrapper>
@@ -110,18 +110,6 @@ const Preview1 = ({
       </StyledPreviewFooter>
     </StyledPreviewBox>
   );
-};
-
-Preview1.defaultProps = {
-  branding: {},
-  displayBuyButton: true,
-  previewUnavailable: false,
-  minWidth: '250px',
-  width: undefined,
-  height: undefined,
-  isRestrictedAsset: false,
-  handleOpenModal: () => {},
-  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview1;

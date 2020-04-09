@@ -19,10 +19,12 @@ import {
 
 interface StyledPreviewBoxProps {
   height?: string;
+  minWidth?: string;
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   height: ${({ height }) => height ?? 'auto'};
+  min-width: ${({ minWidth }) => minWidth ?? '250px'};
   border-radius: 8px 8px 3px 3px;
 `;
 
