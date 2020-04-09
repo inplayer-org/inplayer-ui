@@ -4,35 +4,59 @@ import Button from '../Button/'
 import { MdDelete, MdErrorOutline } from 'react-icons/md';
 import { ButtonWrapperDocs } from './DocsStyle.tsx';
 
-<Meta title="Button" component={<Button />} parameters={{ previewTabs: { 'canvas': { hidden: true }}}} />
+<Meta title="Button" component={<Button />} />
 
 # Button
+
+Button is a component which supports different kind of types, starting from `color`, `size`, `modifiers` etc.
 
 ```jsx
 import { Button } from '@inplayer-org/inplayer-ui';
 
-function Page(props) {
-  return <Button>Buy now</Button>;
-}
-
+const Page = () => (
+  <Button>Buy now</Button>
+)
 ```
+
+### Default Button
 <Preview withSource="open">
-  <Story name="standard">
+  <Story name="default">
     <div>
-        <Button>Standard button</Button>
+        <Button>Buy now</Button>
     </div>
   </Story>
 </Preview>
 
+### Buttons with different sizes
 <Preview withSource="open">
-  <Story name="modifiers">
+  <Story name="sizes">
+    <div>
+      <Button sizeType="xs">Button XS</Button> <br />
+      <Button sizeType="sm">Button SM</Button> <br />
+      <Button sizeType="md">Button MD</Button> <br />
+      <Button sizeType="lg">Button LG</Button> <br />
+      <Button fullWidth>Button Full Width</Button> <br />
+    </div>
+  </Story>
+</Preview>
+
+### On hover Buttons
+<Preview withSource="open">
+  <Story name="hover">
     <ButtonWrapperDocs>
         <Button>No Modifier</Button> 
         <Button buttonModifiers={['hoverInfo']}>Hover Info</Button> 
         <Button buttonModifiers={['hoverDanger']}>Hover Danger</Button> 
         <Button buttonModifiers={['hoverWarning']}>Hover Warning</Button> 
         <Button buttonModifiers={['hoverSuccess']}>Hover Success</Button>
-        <h3>Button types:</h3>
+      </ButtonWrapperDocs>
+  </Story>
+</Preview>
+
+### Different types of Buttons
+<Preview withSource="open">
+  <Story name="types">
+    <ButtonWrapperDocs>
         <Button buttonModifiers={['buttonInfo']}>Button Info</Button>
         <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> 
         <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> 
@@ -44,15 +68,22 @@ function Page(props) {
   </Story>
 </Preview>
 
-## some markdown here
+### Buttons with icons
 <Preview withSource="open">
-  <Story name="size">
-      <div>
-        <Button sizeType="xs">Button XS</Button> <br />
-        <Button sizeType="sm">Button SM</Button> <br />
-        <Button sizeType="md">Button MD</Button> <br />
-        <Button sizeType="lg">Button LG</Button> <br />
-        <Button fullWidth>Button Full Width</Button> <br />
-      </div>
+  <Story name="with icons">
+    <div>
+        <Button fullHeight icon={<MdDelete />} buttonModifiers={['buttonDanger']} />
+        <br />
+        <Button buttonModifiers={['buttonDanger']} icon={<MdErrorOutline />} iconPosition="right">
+          Button with Icon on Right!
+        </Button>
+        <br />
+        <Button buttonModifiers={['buttonDanger']} icon={<MdErrorOutline />}>
+          Button with Icon Color Modifier
+        </Button>
+        <br />
+        <Button icon={<MdDelete />}>Button with Custom Icon</Button>
+        <Button icon={<MdDelete color="red" />}>Button with Custom Icon Color</Button>
+    </div>
   </Story>
 </Preview>
