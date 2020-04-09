@@ -19,14 +19,16 @@ type StyledPreviewBoxProps = {
   minWidth?: string;
   height?: string;
   width?: string;
-  topBorder?: boolean;
 };
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   font-size: ${fontSizes('large')};
-  height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
+  height: ${({ height }) => height ?? 'auto'};
+  min-height: ${({ minHeight }) => minHeight ?? 'auto'};
+  width: ${({ width }) => width ?? 'auto'};
+  min-width: ${({ minWidth }) => minWidth ?? '250px'};
 `;
 
 interface StyledImageHolder {
