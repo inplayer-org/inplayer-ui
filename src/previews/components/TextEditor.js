@@ -61,19 +61,15 @@ const EditorContainer = styled.div`
   .ql-snow .ql-editor ol,
   .ql-snow .ql-editor ul,
   .ql-snow .ql-editor pre,
-  .ql-snow .ql-editor blockquote {
-    font-weight: ${fontWeights('light')};
-    font-size: ${fontSizes('medium')};
-  }
-
+  .ql-snow .ql-editor blockquote,
   .ql-snow .ql-editor h1,
   .ql-snow .ql-editor h2,
   .ql-snow .ql-editor h3,
   .ql-snow .ql-editor h4,
   .ql-snow .ql-editor h5,
   .ql-snow .ql-editor h6 {
-    font-weight: ${fontWeights('bold')};
-    font-size: ${fontSizes('large')};
+    font-weight: ${fontWeights('light')};
+    font-size: ${fontSizes('medium')};
   }
 
   ${({ isAssetPreviewTitle }) =>
