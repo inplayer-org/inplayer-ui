@@ -1,4 +1,3 @@
-// @flow
 import React, { useEffect, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import ReactQuill from 'react-quill';
@@ -30,7 +29,6 @@ interface Props extends EditorContainerProps {
 
 const EditorContainer = styled.div<EditorContainerProps>`
   width: 100%;
-
   .ql-editor {
     box-sizing: border-box;
     line-height: 1.42;
@@ -43,7 +41,6 @@ const EditorContainer = styled.div<EditorContainerProps>`
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-
   .ql-editor p,
   .ql-editor ol,
   .ql-editor ul,
@@ -59,26 +56,20 @@ const EditorContainer = styled.div<EditorContainerProps>`
     color: ${({ textColor }) => textColor || colors.fontDarkGray};
     text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
   }
-
   .ql-snow .ql-editor p,
   .ql-snow .ql-editor ol,
   .ql-snow .ql-editor ul,
   .ql-snow .ql-editor pre,
-  .ql-snow .ql-editor blockquote {
-    font-weight: ${fontWeights('light')};
-    font-size: ${fontSizes('medium')};
-  }
-
+  .ql-snow .ql-editor blockquote,
   .ql-snow .ql-editor h1,
   .ql-snow .ql-editor h2,
   .ql-snow .ql-editor h3,
   .ql-snow .ql-editor h4,
   .ql-snow .ql-editor h5,
   .ql-snow .ql-editor h6 {
-    font-weight: ${fontWeights('bold')};
-    font-size: ${fontSizes('large')};
+    font-weight: ${fontWeights('light')};
+    font-size: ${fontSizes('medium')};
   }
-
   ${({ isAssetPreviewTitle }) =>
     isAssetPreviewTitle &&
     css`
@@ -86,22 +77,18 @@ const EditorContainer = styled.div<EditorContainerProps>`
         display: none !important;
       }
     `}
-
   ${({ readOnly }) =>
     readOnly &&
     css`
       .ql-container.ql-snow {
         border: 0;
       }
-
       .ql-editor {
         padding-left: 0;
       }
-
       .ql-clipboard {
         display: none;
       }
-
       .ql-editor p,
       .ql-editor ol,
       .ql-editor ul,
@@ -114,7 +101,7 @@ const EditorContainer = styled.div<EditorContainerProps>`
       .ql-editor h5,
       .ql-editor h6 {
         padding: ${({ isPadding }: EditorContainerProps) => isPadding && '0.5em'};
-        color: ${({ textColor }) => textColor || colors.black};
+        color: ${({ textColor }) => textColor || colors.black};chn
         padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};
       }
