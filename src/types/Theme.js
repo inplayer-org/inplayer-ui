@@ -23,7 +23,6 @@ export type Theme = {
   },
   font: {
     primary: string,
-    primaryFallback: string,
     weights: {
       thin: ?number,
       light: ?number,
