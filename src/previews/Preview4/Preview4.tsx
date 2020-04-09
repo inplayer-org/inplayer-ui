@@ -96,7 +96,7 @@ const Preview4 = ({
               displayToolbar={false}
               textBackground={previewTitleText ? transparentize(0.3, colors.black) : 'none'}
               textColor={buttonBgColor}
-              isPadding
+              padding="0.5rem"
               readOnly
             />
           </TextElement>
@@ -107,7 +107,7 @@ const Preview4 = ({
               textBackground={previewDescriptionText ? transparentize(0.3, colors.black) : 'none'}
               textColor={colors.white}
               lineHeight={1.5}
-              isPadding
+              padding="0.5rem"
               readOnly
             />
           </TextElement>

@@ -17,9 +17,8 @@ interface EditorContainerProps {
   textBackground?: string;
   textColor?: string;
   isTextCenter?: boolean;
-  isPadding?: boolean;
   lineHeight?: number;
-  paddingBottom?: boolean;
+  padding?: string;
 }
 
 interface Props extends EditorContainerProps {
@@ -100,9 +99,8 @@ const EditorContainer = styled.div<EditorContainerProps>`
       .ql-editor h4,
       .ql-editor h5,
       .ql-editor h6 {
-        padding: ${({ isPadding }: EditorContainerProps) => isPadding && '0.5em'};
-        color: ${({ textColor }) => textColor || colors.black};chn
-        padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
+        padding: ${({ padding }: EditorContainerProps) => padding};
+        color: ${({ textColor }) => textColor || colors.black};
         background: ${({ textBackground }) => textBackground || 'transparent'};
       }
     `}
@@ -117,9 +115,8 @@ const TextEditor = ({
   textBackground = '',
   textColor = '',
   isTextCenter = false,
-  isPadding = false,
+  padding = '',
   lineHeight = 0,
-  paddingBottom = false,
 }: Props) => {
   const [editorState, setEditorState] = useState(value);
 
@@ -143,9 +140,8 @@ const TextEditor = ({
       textBackground={textBackground}
       textColor={textColor}
       isTextCenter={isTextCenter}
-      isPadding={isPadding}
+      padding={padding}
       lineHeight={lineHeight}
-      paddingBottom={paddingBottom}
     >
       <ReactQuill
         value={editorState || ''}
