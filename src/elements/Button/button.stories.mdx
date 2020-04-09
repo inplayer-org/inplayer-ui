@@ -1,0 +1,37 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { withKnobs, select, boolean } from "@storybook/addon-knobs";
+import Button from '../Button/'
+import { MdDelete, MdErrorOutline } from 'react-icons/md';
+
+<Meta title="Button" component={<Button />} parameters={{ previewTabs: { 'canvas': { hidden: true }}}} />
+
+# Button
+
+```jsx
+import { Button } from '@inplayer-org/inplayer-ui';
+
+function Page(props) {
+  return <Button>Buy now</Button>;
+}
+
+```
+<Preview>
+  <Story name="standard">
+    <div>
+        <Button>Standard button</Button>
+      </div>
+  </Story>
+</Preview>
+
+## some markdown here
+<Preview>
+  <Story name="size">
+      <div>
+        <Button sizeType="xs">Button XS</Button> <br />
+        <Button sizeType="sm">Button SM</Button> <br />
+        <Button sizeType="md">Button MD</Button> <br />
+        <Button sizeType="lg">Button LG</Button> <br />
+        <Button fullWidth>Button Full Width</Button> <br />
+      </div>
+  </Story>
+</Preview>
