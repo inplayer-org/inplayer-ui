@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.39] - 09-04-2020
+# [2.0.0-beta.40] - 09-04-2020
 
 ### Change
 
