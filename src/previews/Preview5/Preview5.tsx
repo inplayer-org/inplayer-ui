@@ -79,10 +79,10 @@ const Preview5 = ({
           <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TitleHolder>
-          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+          <TextEditor value={previewTitle} readOnly />
         </TitleHolder>
         <DescriptionHolder>
-          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+          <TextEditor value={previewDescription} readOnly />
         </DescriptionHolder>
       </ItemDetails>
     </StyledPreviewBox>

@@ -61,8 +61,8 @@ const Preview6 = ({
     <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
       <ImageWrapper backgroundImage={image} />
       <ItemDetails>
-        <TextEditor value={title} displayToolbar={false} readOnly />
-        <TextEditor value={description} displayToolbar={false} readOnly />
+        <TextEditor value={title} readOnly />
+        <TextEditor value={description} readOnly />
       </ItemDetails>
       <FootService>
         <ButtonWrapper>

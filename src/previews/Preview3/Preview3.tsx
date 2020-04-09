@@ -78,7 +78,6 @@ const Preview3 = ({
             <TitleBorder color={buttonBgColor}>
               <TextEditor
                 value={previewTitle}
-                displayToolbar={false}
                 textColor={colors.white}
                 readOnly
               />
@@ -88,7 +87,6 @@ const Preview3 = ({
           <DescriptionWrapper>
             <TextEditor
               value={previewDescription}
-              displayToolbar={false}
               textColor={colors.white}
               readOnly
             />

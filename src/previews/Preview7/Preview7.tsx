@@ -79,16 +79,10 @@ const Preview7 = ({
       </StyledImageWrapper>
       <ItemDetails>
         <PreviewHeader variant="h4">
-          <TextEditor
-            value={previewTitle}
-            displayToolbar={false}
-            isTextCenter
-            readOnly
-            paddingBottom
-          />
+          <TextEditor value={previewTitle} isTextCenter readOnly padding="0 0 0.5rem 0" />
         </PreviewHeader>
         <ItemContent variant="p">
-          <TextEditor value={previewDescription} displayToolbar={false} isTextCenter readOnly />
+          <TextEditor value={previewDescription} isTextCenter readOnly />
         </ItemContent>
       </ItemDetails>
       {displayBuyButton && (
