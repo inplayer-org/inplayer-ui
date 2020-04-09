@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.39] - 09-04-2020
+
+### Change
+
+- Change position of buy button and remove bold style for title (it will be set in preview asset section).
+
 # [2.0.0-beta.39] - 06-04-2020
 
 ### Change
