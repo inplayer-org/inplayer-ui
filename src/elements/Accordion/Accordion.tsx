@@ -1,7 +1,7 @@
 import React, { useState, SyntheticEvent, ReactNode } from 'react';
 
 // Components
-import { Props as TooltipProps } from 'components/Tooltip';
+import { Props as TooltipProps } from 'components/Tooltip/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
 import Arrow from '../../components/NavBar/Arrow';
@@ -16,6 +16,9 @@ type Panel = {
 };
 
 type Props = {
+  /**
+   * description of prop here
+   */
   panels: Array<Panel>;
   contentHeight: string;
   width?: string;
@@ -24,7 +27,7 @@ type Props = {
   onActivePanelChange?: (index: number) => void;
 };
 
-const Accordion = ({
+export const Accordion = ({
   panels,
   contentHeight,
   width,
