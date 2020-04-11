@@ -32,25 +32,30 @@ const CardTitle = styled(Typography)`
 `;
 
 interface Props {
+  /**
+   * Title of the Card
+   */
   title?: string;
+  /**
+   * Type of the variant
+   */
   titleVariant?: TypographyVariant;
+  /**
+   * External CSS class name
+   */
   className?: string;
   children: ReactNode;
+  /**
+   * Inline CSS
+   */
   style?: Record<string, any>;
 }
 
-const Card = ({ title, titleVariant, className, children, style }: Props) => (
+const Card = ({ title, titleVariant = 'h1', className, children, style }: Props) => (
   <CardWrapper className={className} style={style}>
     {title && <CardTitle variant={titleVariant}>{title}</CardTitle>}
     <CardContent>{children}</CardContent>
   </CardWrapper>
 );
-
-Card.defaultProps = {
-  title: '',
-  titleVariant: 'h1',
-  className: '',
-  style: {},
-};
 
 export default Card;
