@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import { MdInfo } from 'react-icons/md';
-import { Accordion } from '.';
+import Accordion from '.';
 
 const Usage = () => {
   const panels = [
