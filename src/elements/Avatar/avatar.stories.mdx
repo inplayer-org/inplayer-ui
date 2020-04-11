@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Avatar from '../Avatar/'
+
+<Meta title="Avatar" component={<Avatar/>} />
+
+# Avatar 
+
+```jsx
+import { Avatar } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Avatar />
+)
+```
+### Props
+<Props of={Avatar}/>
+
+### Default Avatar
+<Preview withSource="open">
+  <Story name="default">
+    <div>
+        <Avatar />
+    </div>
+  </Story>
+</Preview>
+
+### Avatar with image provided
+<Preview withSource="open">
+  <Story name="image">
+    <div>
+        <Avatar imageUrl="https://clipartstation.com/wp-content/uploads/2018/09/avatars-clipart-1.png"/>
+    </div>
+  </Story>
+</Preview>
+
