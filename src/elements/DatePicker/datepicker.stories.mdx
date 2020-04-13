@@ -1,0 +1,70 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import DatePicker from '.'
+import moment from 'moment'
+
+<Meta title="DatePicker" component={<DatePicker/>} />
+
+# DateRangePicker
+
+The DateRangePicker is a fully controlled component that allows users to select a date range. 
+You can control the selected dates using the startDate, endDate, and onDatesChange props as shown below. 
+The DateRangePicker also manages internal state for partial dates entered by typing (although onDatesChange 
+will not trigger until a date has been entered completely in that case). 
+Similarly, you can control which input is focused as well as calendar visibility (the calendar is only visible if focusedInput is defined) 
+with the focusedInput and onFocusChange props as shown below.
+
+Here is the minimum `REQUIRED` setup you need to get the DateRangePicker working:
+
+```jsx
+import { DatePicker } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+    <DatePicker
+        startDate={startDate}
+        startDateId="startDate"
+        endDate={endDate}
+        endDateId="endDate"
+        onDateChange={onDateChange}
+        focusedInput={focusedInput}
+        onFocusChange={onFocusChange}
+    />
+)
+```
+
+### Props
+<Props of={DatePicker}/>
+
+### DateRangePicker
+<Preview withSource="open">
+  <Story name="default">
+    { ()=> {
+    const initialStartDate = moment().subtract(1, 'month');
+    const initialEndDate = moment();
+    const [startDate, setStartDate] = useState(initialStartDate);
+    const [endDate, setEndDate] = useState(initialEndDate);
+    const [focusedInput, setFocusedInput] = useState(null);
+    const onDateChange = ({startDate, endDate}) => {
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+    const onFocusChange = (fInput) => {
+        setFocusedInput(fInput);
+    }
+        return (
+            <div style={{ height: '330px'}}>
+                <DatePicker
+                    startDate={startDate}
+                    startDateId="startDate"
+                    endDate={endDate}
+                    endDateId="endDate"
+                    onDateChange={onDateChange}
+                    focusedInput={focusedInput}
+                    onFocusChange={onFocusChange}
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
