@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactNode } from 'react';
+import React, { ChangeEvent, ReactNode, forwardRef, RefObject } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, switchProp } from 'styled-tools';
@@ -95,22 +95,13 @@ type Props = {
 
 type RefType =
   | ((instance: HTMLInputElement | null) => void)
-  | React.RefObject<HTMLInputElement>
+  | RefObject<HTMLInputElement>
   | null
   | undefined;
 
-const Input = React.forwardRef(
+const Input = forwardRef(
   (
-    {
-      type,
-      placeholder,
-      onChange,
-      sizeProp,
-      style,
-      className,
-      icon,
-      ...rest
-    }: Props,
+    { type, placeholder, onChange, sizeProp, style, className, icon, ...rest }: Props,
     ref: RefType
   ) => {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {

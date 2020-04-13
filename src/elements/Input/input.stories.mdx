@@ -1,0 +1,72 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Input from '.'
+import { FaLinkedin } from 'react-icons/fa';
+
+<Meta title="Input" component={<Input/>} />
+
+# Input
+
+```jsx
+import { Input } from '@inplayer-org/inplayer-ui';
+
+const Page = () => {
+  const [val, setVal] = useState('');
+  return (
+    <Input
+        type="search"
+        onChange={(e) => setVal(e.target.value)}
+        placeholder="enter your username"
+        value={val}
+        id="1"
+        sizeProp="md"
+    />
+  )
+}
+```
+
+### Search Input
+<Preview withSource="open">
+  <Story name="search">
+  { ()=> {
+    const [val, setVal] = useState('');
+        return (
+            <div>
+                <p>Input value: {val}</p>
+                <Input
+                    type="search"
+                    onChange={(e) => setVal(e.target.value)}
+                    placeholder="enter your username"
+                    value={val}
+                    id="1"
+                    sizeProp="md"
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
+### Text Input
+<Preview withSource="open">
+  <Story name="text">
+  { ()=> {
+    const [val, setVal] = useState('');
+        return (
+            <div>
+                <p>Input value: {val}</p>
+                <Input
+                    type="text"
+                    onChange={(e) => setVal(e.target.value)}
+                    placeholder="enter your username"
+                    value={val}
+                    id="1"
+                    sizeProp="md"
+                    icon={<FaLinkedin />}
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
