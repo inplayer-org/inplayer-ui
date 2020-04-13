@@ -1,0 +1,55 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import DatePicker from '.'
+import moment from 'moment'
+
+<Meta title="Component" component={<DatePicker/>} />
+
+# Component name
+
+description of the component here ...
+
+```jsx
+import { Component } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Component/>
+)
+```
+
+### Component type. ex. Default Button
+<Preview withSource="open">
+  <Story name="default">
+    { ()=> {
+    const initialStartDate = moment().subtract(1, 'month');
+    const initialEndDate = moment();
+    const [startDate, setStartDate] = useState(initialStartDate);
+    const [endDate, setEndDate] = useState(initialEndDate);
+    const [focusedInput, setFocusedInput] = useState(null);
+    const onDateChange = ({startDate, endDate}) => {
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+    const onFocusChange = (fInput) => {
+        setFocusedInput(fInput);
+    }
+        return (
+            <div style={{ maxHeight: '600px', overflow: 'visible', zIndex: '10'}}>
+                <DatePicker
+                    startDate={startDate}
+                    startDateId="startDate"
+                    endDate={endDate}
+                    endDateId="endDate"
+                    onDateChange={onDateChange}
+                    isOutsideRange={() => false}
+                    onFocusChange={onFocusChange}
+                    focusedInput={focusedInput}
+                    activePeriodPreset="last month"
+                    displayPresets={['default']}
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
