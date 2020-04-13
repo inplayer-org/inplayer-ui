@@ -1,13 +1,11 @@
 import React from 'react';
-import { Label } from './index';
+import Label from '.';
 
-const Usage = () => {
-  return (
-    <>
-      <Label> Label </Label>
-      <br />
-      <Label disabled> Label disabled </Label>
-    </>
-  );
-};
+const Usage = () => (
+  <>
+    <Label> Label </Label>
+    <br />
+    <Label disabled> Label disabled </Label>
+  </>
+);
 export default Usage;
