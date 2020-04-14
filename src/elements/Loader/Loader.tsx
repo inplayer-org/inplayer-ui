@@ -1,16 +1,32 @@
-// @flow
 import React from 'react';
 import styled, { keyframes, CSSProperties } from 'styled-components';
-import colors from 'theme/colors';
 
-interface Props {
+type LoaderProps = {
+  /**
+   * Height of the svg spinner
+   */
   height?: number;
+  /**
+   * Width of the svg spinner
+   */
   width?: number;
+  /**
+   * Defines the color of the spinner
+   */
   color?: string;
+  /**
+   * Defines the width of the lines
+   */
   lineWidth?: number;
+  /**
+   * Direction of the spinner
+   */
   direction?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
-}
+};
 
 const directions: Record<string, any> = {
   up: '16,0 32,32 0,32',
@@ -29,7 +45,7 @@ const StyledSpinner = styled.svg<{
   color?: string;
 }>`
   transform-origin: 50% 65%;
-  stroke: ${({ color }) => color || colors.skyBlue};
+  stroke: ${({ color }) => color};
 
   polygon {
     stroke-dasharray: 17;
@@ -40,11 +56,11 @@ const StyledSpinner = styled.svg<{
 const Loader = ({
   height = 100,
   width = 100,
-  color,
+  color = '#07AAE6',
   lineWidth = 2,
   direction = 'right',
   style = {},
-}: Props) => (
+}: LoaderProps) => (
   <StyledSpinner
     style={style}
     color={color}
