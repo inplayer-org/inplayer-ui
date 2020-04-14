@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.41] - 14-04-2020
+
+### Fixes
+
+- Add missing icon prop in type definitions of Input
+
 # [2.0.0-beta.40] - 09-04-2020
 
 ### Change
