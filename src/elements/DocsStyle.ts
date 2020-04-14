@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const ButtonWrapperDocs = styled.div`
+export const SeparateElements = styled.div`
   width: 90%;
-  Button {
+  > * {
     display: inline;
     margin: 10px;
   }

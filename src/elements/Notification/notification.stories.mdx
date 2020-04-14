@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import Notification from '.'
 import Button from '../Button'
-import { ButtonWrapperDocs } from '../Button/DocsStyle'
+import { SeparateElements } from '../DocsStyle.ts'
 
 <Meta title="Notification" component={<Notification/>} />
 
@@ -41,7 +41,7 @@ const Page = () => (
 ### Notification types
 <Preview withSource="open">
   <Story name="default">
-    <ButtonWrapperDocs>
+    <SeparateElements>
         <Button
         onClick={() =>
             Notification.create({
@@ -89,7 +89,7 @@ const Page = () => (
         >
         DANGER
         </Button>
-    </ButtonWrapperDocs>
+    </SeparateElements>
   </Story>
 </Preview>
 

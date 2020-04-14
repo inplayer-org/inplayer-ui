@@ -2,7 +2,7 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withKnobs, select, boolean } from "@storybook/addon-knobs";
 import Button from '../Button/'
 import { MdDelete, MdErrorOutline } from 'react-icons/md';
-import { ButtonWrapperDocs } from './DocsStyle.tsx';
+import { SeparateElements } from '../DocsStyle'
 
 <Meta title="Button" component={<Button />} />
 
@@ -43,20 +43,20 @@ const Page = () => (
 ### On hover Buttons
 <Preview withSource="open">
   <Story name="hover">
-    <ButtonWrapperDocs>
+    <SeparateElements>
         <Button>No Modifier</Button> 
         <Button buttonModifiers={['hoverInfo']}>Hover Info</Button> 
         <Button buttonModifiers={['hoverDanger']}>Hover Danger</Button> 
         <Button buttonModifiers={['hoverWarning']}>Hover Warning</Button> 
         <Button buttonModifiers={['hoverSuccess']}>Hover Success</Button>
-      </ButtonWrapperDocs>
+      </SeparateElements>
   </Story>
 </Preview>
 
 ### Different types of Buttons
 <Preview withSource="open">
   <Story name="types">
-    <ButtonWrapperDocs>
+      <SeparateElements>
         <Button buttonModifiers={['buttonInfo']}>Button Info</Button>
         <Button buttonModifiers={['buttonPrimary']}>Button Primary</Button> 
         <Button buttonModifiers={['buttonWarning']}>Button Warning</Button> 
@@ -64,7 +64,7 @@ const Page = () => (
         <Button buttonModifiers={['buttonDanger']}>Button Danger</Button> 
         <Button disabled>Button Disabled</Button>
         <Button buttonModifiers={['buttonLink']}>Button Link</Button>
-      </ButtonWrapperDocs>
+      </SeparateElements>
   </Story>
 </Preview>
 

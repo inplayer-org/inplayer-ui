@@ -1,5 +1,5 @@
 import React from 'react';
-import { PillLabel } from './index';
+import PillLabel from '.';
 
 const PillLabelUsage = () => (
   <div style={{ marginTop: '20px', marginLeft: '20px' }}>
