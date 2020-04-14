@@ -1,0 +1,55 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Progress from '.'
+
+<Meta title="Progress" component={<Progress/>} />
+
+# Progress
+
+```jsx
+import { Progress } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Progress type="line" percent="10" strokeWidth="2" />
+)
+```
+### Props
+
+<Props of={Progress}/>
+
+### Line Progress
+<Preview withSource="open">
+  <Story name="line">
+  {() => {
+    const containerStyle = {
+        width: '250px',
+    };
+    return(
+    <div>
+        <h3>Line Progress 10%</h3>
+        <div style={containerStyle}>
+        <Progress type="line" percent="10" strokeWidth="2" />
+        </div>
+    </div>
+    )
+  }}
+  </Story>
+</Preview>
+
+### Circle Progress
+<Preview withSource="open">
+  <Story name="circle">
+  {() => {
+    const containerStyle = {
+        width: '250px',
+    };
+    return(
+    <div>
+        <h3>Circle Progress 40%</h3>
+        <div style={containerStyle}>
+        <Progress type="circle" percent="40" strokeWidth="3" />
+        </div>
+    </div>
+    )
+  }}
+  </Story>
+</Preview>
