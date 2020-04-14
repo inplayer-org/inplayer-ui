@@ -1,5 +1,5 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import Component from '../../'
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Component from '.'
 
 <Meta title="Component" component={<Component/>} />
 
@@ -11,9 +11,11 @@ description of the component here ...
 import { Component } from '@inplayer-org/inplayer-ui';
 
 const Page = () => (
-  <Component/>
+  <Component />
 )
 ```
+
+<Props of={Component}/>
 
 ### Component type. ex. Default Button
 <Preview withSource="open">
