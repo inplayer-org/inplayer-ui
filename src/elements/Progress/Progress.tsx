@@ -1,10 +1,59 @@
 import React from 'react';
-import { Line, Circle, RCProgressProps } from 'rc-progress';
+import { Line, Circle } from 'rc-progress';
 
 type ProgressType = 'circle' | 'line';
 
 type Type = {
+  /**
+   * Progress type
+   */
   type?: ProgressType;
+};
+type RCProgressProps = {
+  /**
+   * Width of the stroke. Unit is percentage of SVG canvas size
+   */
+  strokeWidth?: number;
+  /**
+   * Width of the trail stroke. Unit is percentage of SVG canvas size. Trail is always centered relative to actual progress path. If trailWidth are not defined, it same as strokeWidth.
+   */
+  trailWidth?: number;
+  /**
+   * External CSS class name
+   */
+  className?: string;
+  /**
+   * The percent of the progress
+   */
+  percent?: number | number[];
+  /**
+   * Stroke color
+   */
+  strokeColor?: string | string[] | object;
+  /**
+   * Color for lighter trail stroke underneath the actual progress path
+   */
+  trailColor?: string;
+  /**
+   * The shape to be used at the end of the progress bar, can be `butt`, `square` or `round`.
+   */
+  strokeLinecap?: 'butt' | 'square' | 'round';
+  /**
+   * Prefix className for component
+   */
+  prefixCls?: string;
+  /**
+   * Inline CSS
+   */
+  style?: React.CSSProperties;
+  /**
+   * The gap degree of half circle, 0 - 360
+   */
+  gapDegree?: number;
+  /**
+   * The gap position, value: top, bottom, left, right.
+   */
+  gapPosition?: 'top' | 'right' | 'bottom' | 'left';
 };
 
 type Props = Type & RCProgressProps;
