@@ -14,12 +14,12 @@ import {
   DescriptionSpan,
 } from '../components/SharedComponents';
 
-type StyledPreviewBoxProps = {
+interface StyledPreviewBoxProps {
   minHeight?: string;
   minWidth?: string;
   height?: string;
   width?: string;
-};
+}
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   font-size: ${fontSizes('large')};

@@ -15,9 +15,20 @@ import {
   TextWrapper,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+interface StyledPreviewBoxProps {
+  minHeight?: string;
+  minWidth?: string;
+  height?: string;
+  width?: string;
+  borderColor?: string;
+}
+
+export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   height: ${({ height }) => height ?? 'auto'};
-  border-top: 3px solid ${({ color }) => color};
+  min-height: ${({ minHeight }) => minHeight ?? 'auto'};
+  width: ${({ width }) => width ?? 'auto'};
+  min-width: ${({ minWidth }) => minWidth ?? '250px'};
+  border-top: 3px solid ${({ borderColor }) => borderColor};
   display: block;
   padding: 1% 3% 2% 3%;
   color: ${colors.fontDarkGray};
@@ -71,8 +82,7 @@ export const TitleWrapper = styled.div`
 export const TitleBorder = styled.div`
   margin-bottom: 2%;
   width: 300px;
-  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left
-    no-repeat;
+  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
   background-size: 35% 4px;
 `;
 
