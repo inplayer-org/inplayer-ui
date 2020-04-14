@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown } from './';
+import Dropdown from '.';
 
 const Usage = () => {
   const options = [
