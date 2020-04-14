@@ -1,18 +1,39 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import NotificationContainer, { CloseIcon } from './NotificationContainer';
 import { CSSProperties } from 'styled-components';
+import NotificationContainer, { CloseIcon } from './NotificationContainer';
 
 export type NotificationVariant = 'success' | 'danger' | 'warning' | '';
 
 type NotificationProps = {
+  /**
+   * Notification title
+   */
   title: string;
+  /**
+   * Notification content
+   */
   content: string;
+  /**
+   * Variant type
+   */
   variant?: NotificationVariant;
+  /**
+   * Duration (in seconds) of the notification before it dissapears
+   */
   duration?: number;
+  /**
+   * External CSS class name
+   */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
+  /**
+   * Function to close the notification
+   */
   close?: () => void;
 };
 
@@ -33,6 +54,7 @@ const Notification = ({
   variant = '',
   duration = 0,
   className = '',
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   close = () => destroy(divs.length),
   style = {},
 }: NotificationProps) => {
@@ -61,9 +83,7 @@ const destroy = (index: number) => {
 
 const create = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   const divIndex = divs.length;
-  const notificationInstance = (
-    <Notification {...props} close={() => destroy(divIndex)} />
-  );
+  const notificationInstance = <Notification {...props} close={() => destroy(divIndex)} />;
   const div = document.createElement('div');
   if (parentDiv) {
     parentDiv.appendChild(div);
