@@ -2,11 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PageBox, PaginationContainer } from './styled';
 
-type Props = {
+type PaginationProps = {
+  /**
+   * Page change handler. Receive pageNumber as arg
+   */
   onPageChange: (pageNumber: number) => void;
+  /**
+   * Total count of items which you are going to display
+   */
   totalItems: number;
+  /**
+   * Start page / Active page
+   */
   startPage?: number;
+  /**
+   * Range of pages in paginator, exclude navigation blocks (prev, next, first, last pages)
+   */
   numberOfPagesDisplayed?: number;
+  /**
+   * Count of items per page
+   */
   itemsPerPage?: number;
 };
 
@@ -19,7 +34,7 @@ const Pagination = ({
   totalItems,
   startPage = 1,
   itemsPerPage = 15,
-}: Props) => {
+}: PaginationProps) => {
   const [activePage, setActivePage] = useState(startPage);
   const [visiblePages, setVisiblePages] = useState<number[]>([]);
 
