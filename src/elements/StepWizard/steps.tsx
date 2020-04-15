@@ -1,47 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Typography } from 'elements';
-import StepWizard from './StepWizard';
 
-const StepOne = () => (
+export const StepOne = () => (
   <div>
     <Typography variant="h2">Step One!</Typography>
   </div>
 );
 
-const StepTwo = () => (
+export const StepTwo = () => (
   <div>
     <Typography variant="h2">Step Two!</Typography>
   </div>
 );
 
-const StepThree = () => (
+export const StepThree = () => (
   <div>
     <Typography variant="h2">Step Three!</Typography>
   </div>
 );
 
-const StepFour = () => (
+export const StepFour = () => (
   <div>
     <Typography variant="h2">Step Four!</Typography>
   </div>
 );
 
-const steps = [
+export const steps = [
   { isDisabled: false, isCompleted: true, component: <StepOne /> },
   { isDisabled: false, isCompleted: false, component: <StepTwo /> },
   { isDisabled: true, isCompleted: false, component: <StepThree /> },
   { isDisabled: true, isCompleted: false, component: <StepFour /> },
 ];
-
-const Usage = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  return (
-    <StepWizard
-      steps={steps}
-      activeStep={activeStep}
-      onStepChange={(step) => setActiveStep(step)}
-    />
-  );
-};
-
-export default Usage;
