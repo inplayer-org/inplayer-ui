@@ -56,12 +56,30 @@ const Heading = styled.h1<HeadingProps>`
 `;
 
 export type TypographyProps = {
+  /**
+   * Variant type
+   */
   variant?: TypographyVariant;
+  /**
+   * When prop is set, the paragraph element has `palette.primary.fontGray` color
+   */
   description?: boolean;
   children: ReactChild;
-  className?: string;
+  /**
+   * Text color modifiers
+   */
   modifiers?: Array<string>;
+  /**
+   * Text color
+   */
   color?: string;
+  /**
+   * External CSS class name
+   */
+  className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
 };
 
