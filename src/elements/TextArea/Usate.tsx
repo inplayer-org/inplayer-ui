@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea } from './index';
+import TextArea from '.';
 
 const Usage = () => <TextArea defaultValue="Write Something ..." />;
 
