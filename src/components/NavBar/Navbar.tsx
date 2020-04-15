@@ -9,9 +9,17 @@ import MenuWithLogo from './MenuWithLogo';
 
 type Props = {
   children: any;
+  /**
+   * Navbar logo
+   */
   logo?: Element | string;
-  /** A className can be passed down for further styling or extending with CSS-in-JS */
+  /** 
+   * External CSS class name 
+   * */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
 };
 
