@@ -91,8 +91,10 @@ const RadioContainer = styled.div`
   }
 `;
 
-interface Props {
+type RadioWrapperProps = {
   children: ReactNode;
-}
+};
 
-export const RadioWrapper = ({ children }: Props) => <RadioContainer> {children} </RadioContainer>;
+export const RadioWrapper = ({ children }: RadioWrapperProps) => (
+  <RadioContainer> {children} </RadioContainer>
+);
