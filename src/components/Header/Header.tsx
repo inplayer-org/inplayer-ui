@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { prop } from 'styled-tools';
@@ -6,10 +5,10 @@ import colors from 'theme/colors';
 import { fontWeights } from 'utils';
 
 // Components
-import { UserMenu } from '../UserMenu';
+import UserMenu from '../UserMenu';
 import { UserMenuProps } from '../UserMenu/UserMenu';
-import { TabNavigation } from '../TabNavigation/';
-import { TabNavigationProps } from '../TabNavigation';
+import TabNavigation from '../TabNavigation';
+import { TabNavigationProps } from '../TabNavigation/TabNavigation';
 
 const Container = styled.header`
   align-items: center;
@@ -36,11 +35,29 @@ const MenuWrapper = styled.div`
 `;
 
 type HeaderProps = {
+  /**
+   * Header title
+   */
   title?: string | null;
+  /**
+   * User menu item properties: `image`, `menuTitle`, `menuItems`, `actionItem` and `onClick`
+   */
   userMenuProps?: UserMenuProps | null;
+  /**
+   * Additional user menu
+   */
   additionalUserMenuProps?: UserMenuProps | null;
+  /**
+   * Tab related properties: `tabs`, `onTabClick`, `selectedTabIndex`, `style` and `className`
+   */
   tabNavigationProps?: TabNavigationProps | null;
+  /**
+   * External CSS class name
+   */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
 };
 
