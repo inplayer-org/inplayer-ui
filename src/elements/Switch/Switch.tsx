@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import Toggle from 'react-toggle';
 import SwitchWrapper from './SwitchWrapper';
-import { Label } from '../Label';
+import Label from '../Label';
 
 type Props = {
   checked: boolean;
@@ -44,7 +44,7 @@ const Switch = ({
         checked={checked}
         onChange={onToggleChange}
         icons={false}
-       />
+      />
     </SwitchWrapper>
   );
 };
