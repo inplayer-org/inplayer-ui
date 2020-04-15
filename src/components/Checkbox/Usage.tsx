@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox } from './index';
+import Checkbox from '.';
 
 const Usage = () => {
   const [checkMe, setCheckMe] = useState(false);
@@ -37,3 +37,5 @@ const Usage = () => {
     </>
   );
 };
+
+export default Usage;
