@@ -10,7 +10,7 @@ import {
   UserMenuContainer,
 } from './styles';
 
-type UserMenuProps = UserMenuDropdownProps & {
+export type UserMenuProps = UserMenuDropdownProps & {
   image?: string;
   className?: string;
   style?: CSSProperties;
