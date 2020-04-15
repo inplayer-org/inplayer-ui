@@ -1,8 +1,8 @@
 import React, { SyntheticEvent } from 'react';
-import { Label } from 'elements/Label';
+import Label from 'elements/Label';
 import { RadioWrapper } from './RadioWrapper';
 
-interface Props {
+interface RadioProps {
   label: string;
   id: string;
   name?: string;
@@ -15,7 +15,7 @@ interface Props {
   disabled?: boolean;
 }
 
-const Radio: React.FC<Props> = ({
+const Radio = ({
   label,
   id,
   checked,
@@ -24,8 +24,8 @@ const Radio: React.FC<Props> = ({
   style = {},
   onBlur = () => {},
   disabled = false,
-  ...rest
-}) => (
+  name = '',
+}: RadioProps) => (
   <RadioWrapper>
     <input
       type="radio"
@@ -36,7 +36,7 @@ const Radio: React.FC<Props> = ({
       style={style}
       disabled={disabled}
       className={className}
-      {...rest}
+      name={name}
     />
     <Label htmlFor={id}>{label}</Label>
   </RadioWrapper>
