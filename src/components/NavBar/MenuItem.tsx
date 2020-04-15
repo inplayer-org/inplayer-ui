@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
