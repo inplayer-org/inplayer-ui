@@ -1,0 +1,22 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import TextArea from '.'
+
+<Meta title="TextArea" component={<TextArea/>} />
+
+# TextArea
+
+```jsx
+import { TextArea } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <TextArea defaultValue="Write Something ..." />
+)
+```
+
+### Usage
+<Preview withSource="open">
+  <Story name="default">
+    <TextArea defaultValue="Write Something ..." />
+  </Story>
+</Preview>
+
