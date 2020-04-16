@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tooltip } from '.';
-import { Button } from '../../elements/Button';
+import Tooltip from '.';
+import Button from '../../elements/Button';
 
 const App = () => (
   <div style={{ margin: '300px' }}>
