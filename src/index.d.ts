@@ -543,7 +543,7 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   style?: CSSProperties;
   className?: string;
   iconName?: string;
-  renderIcon?: () => ReactNode;
+  icon?: ReactNode;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;
