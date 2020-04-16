@@ -1,7 +1,8 @@
+import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
-import { Loader } from 'elements/Loader';
+import Loader from 'elements/Loader';
 import { CSSProperties } from 'styled-components';
-import { Cell } from 'blocks/Grid';
+import Grid from 'blocks/Grid';
 import {
   ButtonTableRow,
   LoaderContainer,
@@ -284,8 +285,8 @@ class Table<T> extends Component<Props<T>, State> {
 
     return (
       <TableWithHeaderSectionContainer columns={1}>
-        <Cell>{headerSection}</Cell>
-        <Cell>{this.renderTable()}</Cell>
+        <Grid.Cell>{headerSection}</Grid.Cell>
+        <Grid.Cell>{this.renderTable()}</Grid.Cell>
       </TableWithHeaderSectionContainer>
     );
   };
