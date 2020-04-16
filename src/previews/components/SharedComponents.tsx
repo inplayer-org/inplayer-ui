@@ -1,4 +1,3 @@
-// @flow
 import { darken, transparentize } from 'polished';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
@@ -10,14 +9,14 @@ import { fontWeights, fontSizes } from 'utils';
 // components
 import { Typography, Button } from 'elements';
 
-interface PreviewBoxProps {
+type PreviewBoxProps = {
   width?: string;
   height?: string;
   minWidth?: string;
   minHeight?: string;
   circleImage?: boolean;
   topBorder?: boolean;
-}
+};
 
 export const PreviewBox = styled.div<PreviewBoxProps>`
   width: ${({ width }) => width ?? '100%'};
@@ -151,9 +150,9 @@ export const BuyButton = styled(Button)<BuyButtonProps>`
   }
 `;
 
-interface PreviewFooterProps {
+type PreviewFooterProps = {
   color?: string;
-}
+};
 
 export const PreviewFooter = styled.div<PreviewFooterProps>`
   color: ${({ color }) => color};
