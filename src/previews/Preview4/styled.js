@@ -16,9 +16,9 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
+  max-width: ${({ width }) => (width ? '' : '70vh')};
   overflow: hidden;
-  border-top: 4px solid ${({ topBorderColor }) => topBorderColor};
+  ${({ topBorderColor }) => topBorderColor && `border-top: 4px solid ${topBorderColor}`};
   display: flex;
   flex-direction: column-reverse;
   border-radius: 3px 3px 0 0;

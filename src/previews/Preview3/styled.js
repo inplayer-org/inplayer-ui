@@ -17,8 +17,8 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
-  border-top: 3px solid ${({ color }) => color};
+  max-width: ${({ width }) => (width ? '' : '70vh')};
+  ${({ color }) => color && `border-top: 3px solid ${color}`};
   display: block;
   padding: 1% 3% 2% 3%;
   color: ${colors.fontDarkGray};
@@ -75,6 +75,7 @@ export const TitleBorder = styled.div`
 export const StyledIcon = styled(FaRegPlayCircle)`
   font-size: ${fontSizes('extraLarge')};
   color: ${({ color }) => color};
+  cursor: pointer;
 
   :hover {
     outline: none;

@@ -16,8 +16,8 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
+  max-width: ${({ width }) => (width ? '' : '70vh')};
   font-size: ${fontSizes('large')};
-  height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
 `;

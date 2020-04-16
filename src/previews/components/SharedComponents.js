@@ -12,8 +12,7 @@ import { Typography, Button } from 'elements';
 
 export const PreviewBox = styled.div`
   width: ${({ width }) => width ?? '100%'};
-  height: ${({ height }) => height ?? '580px'};
-  max-width: ${({ width }) => (width ? '' : '100%')};
+  height: ${({ height }) => height ?? 'auto'};
   min-width: ${({ minWidth }) => minWidth};
   min-height: ${({ minHeight }) => minHeight};
   margin: auto;

@@ -16,8 +16,8 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
+  max-width: ${({ width }) => (width ? '' : '500px')};
   border-radius: 8px 8px 3px 3px;
-  height: ${({ height }) => height ?? 'auto'};
   display: flex;
   flex-direction: column;
 `;

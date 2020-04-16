@@ -19,7 +19,7 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
+  max-width: ${({ width }) => (width ? '' : '70vh')};
   border-radius: 8px 8px 3px 3px;
 `;
 
