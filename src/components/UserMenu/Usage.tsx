@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserMenu } from '.';
+import UserMenu from '.';
 
 const Usage = () => (
   <>
