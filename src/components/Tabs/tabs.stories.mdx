@@ -1,0 +1,79 @@
+import { useState } from 'react';
+import { FaUserCircle, FaUserAlt } from 'react-icons/fa';
+import { MdPermContactCalendar } from 'react-icons/md'
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Tabs from '.'
+
+<Meta title="Tabs" component={<Tabs/>} />
+
+# Tabs
+
+Tabs component accepts `tabs`, `selectedTabIndex` and `onTabClick` props.
+
+- `tabs` prop is an array of objects which contains `name` and `iconModifiers`. 
+It can also have an `icon` key which should be a `react-icon` icon and `iconPosition` 
+which specifies whether the icon position is on the right or on the left side of the text. <br/>
+- `selectedTabIndex` is a number which represents the selected tab index. <br/>
+- `onTabClick` is a function which runs everytime the selected tab changes. 
+
+```jsx
+import { Tabs } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Tabs />
+)
+```
+
+### Default Tabs
+<Preview withSource="open">
+  <Story name="default">
+    {() => {
+        const [selectedTab, setSelectedTab] = useState(0);
+        const tabs = [
+            {
+            name: 'Account',
+            iconModifiers: 'statusColorWarning',
+            },
+            { name: 'User'},
+            { name: 'Contact'}
+        ];
+        return (
+            <div style={{width: '90%'}}>
+                <Tabs
+                    tabs={tabs}
+                    selectedTabIndex={selectedTab}
+                    onTabClick={(index) => setSelectedTab(index)}
+                />
+            </div>
+        )
+    }}
+  </Story>
+</Preview>
+
+### Tabs with icons
+<Preview withSource="open">
+  <Story name="icons">
+    {() => {
+        const [selectedTab, setSelectedTab] = useState(0);
+        const tabs = [
+            {
+            name: 'Account',
+            icon: <FaUserCircle />,
+            iconModifiers: 'statusColorWarning',
+            },
+            { name: 'User', icon: <FaUserAlt />, iconPosition: 'right' },
+            { name: 'Contact', icon: <MdPermContactCalendar /> }
+        ];
+        return (
+            <div style={{width: '90%'}}>
+                <Tabs
+                    tabs={tabs}
+                    selectedTabIndex={selectedTab}
+                    onTabClick={(index) => setSelectedTab(index)}
+                />
+            </div>
+        )
+    }}
+  </Story>
+</Preview>
+
