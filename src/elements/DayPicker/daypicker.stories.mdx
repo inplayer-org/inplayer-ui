@@ -11,15 +11,7 @@ import DayPicker from '.'
 import { DayPicker } from '@inplayer-org/inplayer-ui';
 
 const Page = () => (
-    <DayPicker 
-        onFocusChange={({ focused }) => setFocused(focused)}
-        onDateChange={(date) => setDate(date)}
-        id="date picker"
-        date={date}
-        focused={focused}
-        numberOfMonths={1}
-        isOutsideRange={() => false}
-    />
+    <DayPicker />
 )
 ```
 
