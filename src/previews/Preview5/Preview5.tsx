@@ -26,7 +26,7 @@ import {
   DescriptionHolder,
 } from './styled';
 
-type OwnProps = {
+type Preview5Props = {
   /**
    * Branding type
    */
@@ -73,7 +73,7 @@ const Preview5 = ({
   minWidth,
   handleOpenModal,
   isRestrictedAsset,
-}: OwnProps) => {
+}: Preview5Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>

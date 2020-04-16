@@ -24,7 +24,7 @@ import {
 // Types
 import Branding from '../types/branding';
 
-type OwnProps = {
+type Preview3Props = {
   /**
    * Branding type
    */
@@ -75,7 +75,7 @@ const Preview3 = ({
   handleOpenModal,
   isRestrictedAsset,
   loginFooterLabel,
-}: OwnProps) => {
+}: Preview3Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
