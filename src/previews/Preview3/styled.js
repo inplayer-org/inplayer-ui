@@ -75,6 +75,7 @@ export const TitleBorder = styled.div`
 export const StyledIcon = styled(FaRegPlayCircle)`
   font-size: ${fontSizes('extraLarge')};
   color: ${({ color }) => color};
+  cursor: pointer;
 
   :hover {
     outline: none;
