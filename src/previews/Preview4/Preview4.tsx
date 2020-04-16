@@ -26,14 +26,45 @@ import {
 import Branding from '../types/branding';
 
 type Props = {
+  /**
+   * Branding type
+   */
   branding: Branding;
+  /**
+   * Whether to show the button or not
+   */
   displayBuyButton?: boolean;
+  /**
+   * Preview unavailable
+   */
   previewUnavailable?: boolean;
-  width?: string | number;
-  height?: string;
+  /**
+   * Minimum width
+   */
   minWidth?: string;
+  /**
+   * Minimum height
+   */
   minHeight?: string;
+  /**
+   * Preview height
+   */
+  height?: string;
+  /**
+   * Preview width
+   */
+  width?: string;
+  /**
+   * Login footer label
+   */
+  loginFooterLabel?: string;
+  /**
+   * Whether the asset is restricted or not
+   */
   isRestrictedAsset?: boolean;
+  /**
+   * Function which handles the modal state changes
+   */
   handleOpenModal?: (e: any) => any;
 };
 

@@ -27,12 +27,33 @@ import {
 } from './styled';
 
 type OwnProps = {
+  /**
+   * Branding type
+   */
   branding: Branding;
-  width?: string;
-  height?: string;
+  /**
+   * Minimum width
+   */
   minWidth?: string;
+  /**
+   * Minimum height
+   */
   minHeight?: string;
+  /**
+   * Preview height
+   */
+  height?: string;
+  /**
+   * Preview width
+   */
+  width?: string;
+  /**
+   * Whether the asset is restricted or not
+   */
   isRestrictedAsset?: boolean;
+  /**
+   * Function which handles the modal state changes
+   */
   handleOpenModal?: (e: any) => any;
 };
 
