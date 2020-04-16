@@ -16,7 +16,7 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
+  max-width: ${({ width }) => (width ? '' : '60vh')};
   border: none;
   background: transparent;
   font-size: ${fontSizes('medium')};
