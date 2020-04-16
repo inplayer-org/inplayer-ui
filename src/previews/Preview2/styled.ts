@@ -1,4 +1,3 @@
-// @flow
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { MdStar } from 'react-icons/md';
@@ -24,8 +23,8 @@ type StyledPreviewBoxProps = {
 };
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
+  max-width: ${({ width }) => (width ? '' : '70vh')};
   font-size: ${fontSizes('large')};
-  height: ${({ height }) => height ?? 'auto'};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
 `;
