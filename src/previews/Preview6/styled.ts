@@ -1,15 +1,11 @@
-// @flow
 import styled from 'styled-components';
-
-// utils
-import colors from 'theme/colors';
 import { fontSizes } from 'utils/index';
 
 // Components
 import { PreviewBox, ImageHolder } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
+  max-width: ${({ width }) => (width ? '' : '850px')};
   padding: 1em;
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
@@ -72,7 +68,7 @@ export const PreviewFooter = styled.div`
   float: right;
   width: 50%;
   text-align: right;
-  padding-top: 0.8em;
+  padding-top: 2em;
 `;
 
 export const IconHolder = styled.div<{ protectedLabel: boolean }>`

@@ -37,9 +37,9 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   box-sizing: border-box;
 `;
 
-interface PreviewImageProps {
+type PreviewImageProps = {
   imageBorderRadius?: string;
-}
+};
 
 export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};
@@ -99,10 +99,10 @@ export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywall
   display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'block' : 'none')};
 `;
 
-interface IconWrapperProps {
+type IconWrapperProps = {
   backgroundColor?: string;
   protectedLabel?: boolean;
-}
+};
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   background: ${({ backgroundColor }) => backgroundColor};
@@ -125,10 +125,10 @@ export const DescriptionSpan = styled.span`
   padding: 0;
 `;
 
-interface BuyButtonProps {
+type BuyButtonProps = {
   buttonTextColor?: string;
   buttonBgColor: string;
-}
+};
 
 export const BuyButton = styled(Button)<BuyButtonProps>`
   color: ${({ buttonTextColor }) => buttonTextColor};

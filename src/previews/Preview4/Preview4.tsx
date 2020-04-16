@@ -66,7 +66,7 @@ const Preview4 = ({
     <StyledPreviewBox
       minWidth={minWidth}
       minHeight={minHeight}
-      topBorderColor={previewTopBorder ? buttonBgColor : colors.white}
+      topBorderColor={previewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >

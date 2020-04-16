@@ -57,7 +57,7 @@ const Preview3 = ({
     <StyledPreviewBox
       minHeight={minHeight}
       minWidth={minWidth}
-      color={previewTopBorder ? buttonBgColor : colors.white}
+      color={previewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >
@@ -66,10 +66,7 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription
-            color={buttonBgColor}
-            displayProtectedLabel={protectedLabel}
-          >
+          <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
             <PaywallDescriptionSpan>
               <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>
