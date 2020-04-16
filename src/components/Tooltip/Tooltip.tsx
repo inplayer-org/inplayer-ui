@@ -8,26 +8,79 @@ import Bubble from './Bubble';
 export type Placement = 'left' | 'right' | 'top' | 'bottom';
 export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
-export type Props = {
+export type TooltipProps = {
+  /**
+   * Tooltip behaviour: `hover` | `click` | `ref`
+   */
   behavior?: TooltipBehavior;
+  /**
+   * How long should the tooltip be present (ms)
+   */
   durationOnClick?: number;
+  /**
+   * Arrow width
+   */
   arrowWidth?: number;
+  /**
+   * Tooltip background color
+   */
   background?: string;
-  border?: string;
-  childre?: ReactChild;
   color?: string;
+  /**
+   * Tooltip content
+   */
   content?: ReactNode;
+  /**
+   * Fade easing type: `linear` | `ease` | `ease-in` | `ease-out` | `ease-in-out`
+   */
   fadeEasing?: FadeEasing;
-  className?: string;
-  style?: CSSProperties;
-  fadeDuration?: number;
-  fixed?: boolean;
-  fontFamily?: string;
-  fontSize?: string;
-  offset?: number;
-  padding?: number;
+  /**
+   * Tooltip placement: `left` | `right` | `top` | `bottom`
+   */
   placement?: Placement;
+  /**
+   * External CSS class name
+   */
+  className?: string;
+  /**
+   * Inline CSS
+   */
+  style?: CSSProperties;
+  /**
+   * Fade duration in milliseconds
+   */
+  fadeDuration?: number;
+  /**
+   * Tooltip border
+   */
+  border?: string;
+  /**
+   * Fixed tooltip
+   */
+  fixed?: boolean;
+  /**
+   * CSS font-family
+   */
+  fontFamily?: string;
+  /**
+   * CSS font-size
+   */
+  fontSize?: string;
+  /**
+   * Offset
+   */
+  offset?: number;
+  /**
+   * CSS padding
+   */
+  padding?: number;
+  /**
+   * Radius
+   */
   radius?: number;
+  /**
+   * CSS z-index
+   */
   zIndex?: number;
   children?: ReactChild | ReactNode | null;
 };
@@ -58,7 +111,7 @@ const Tooltip = ({
   radius = 0,
   zIndex = 1,
   durationOnClick = 1000,
-}: Props) => {
+}: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const timeDelay = (msDuration: number) =>
