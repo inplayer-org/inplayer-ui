@@ -32,15 +32,42 @@ import {
   StyledPreviewFooter,
 } from './styled';
 
-type Props = {
+type Preview1Props = {
+  /**
+   * Branding type
+   */
   branding: Branding;
+  /**
+   * Whether to show the button or not
+   */
   displayBuyButton?: boolean;
+  /**
+   * Preview unavailable
+   */
   previewUnavailable?: boolean;
+  /**
+   * Minimum width
+   */
   minWidth?: string;
+  /**
+   * Preview height
+   */
   height?: string;
+  /**
+   * Preview width
+   */
   width?: string;
+  /**
+   * Login footer label
+   */
   loginFooterLabel?: string;
+  /**
+   * Whether the asset is restricted or not
+   */
   isRestrictedAsset?: boolean;
+  /**
+   * Function which handles the modal state changes
+   */
   handleOpenModal?: (e: any) => any;
 };
 

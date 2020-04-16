@@ -1,0 +1,45 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import TabNavigation from '.'
+
+<Meta title="TabNavigation" component={<TabNavigation/>} />
+
+# TabNavigation
+
+TabNavigation is recommended for usage as a secondary navigation, the primary one being the Navbar.
+
+```jsx
+import { TabNavigation } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <TabNavigation />
+)
+```
+### Props
+
+<Props of={TabNavigation}/>
+
+### TabNavigation example
+<Preview withSource="open">
+  <Story name="tabnavigation">
+    {() => {
+        const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+        const onTabClick = (index) => setSelectedTabIndex(index);
+        return(
+            <TabNavigation
+                tabs={[
+                    {
+                        title: 'Hello',
+                    },
+                    {
+                        title: 'Tabs',
+                    },
+                ]}
+                selectedTabIndex={selectedTabIndex}
+                onTabClick={onTabClick}    
+            />
+        )
+    }}
+  </Story>
+</Preview>
+

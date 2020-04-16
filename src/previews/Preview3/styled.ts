@@ -16,11 +16,10 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
-  height: ${({ height }) => height ?? 'auto'};
-  border-top: 3px solid ${({ color }) => color};
+  max-width: ${({ width }) => (width ? '' : '70vh')};
+  ${({ color }) => color && `border-top: 3px solid ${color}`};
   display: block;
   padding: 1% 3% 2% 3%;
-  color: ${colors.fontDarkGray};
   border-radius: 3px 3px 0 0;
 `;
 
@@ -71,14 +70,14 @@ export const TitleWrapper = styled.div`
 export const TitleBorder = styled.div`
   margin-bottom: 2%;
   width: 300px;
-  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left
-    no-repeat;
+  background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
   background-size: 35% 4px;
 `;
 
 export const StyledIcon = styled(FaRegPlayCircle)`
   font-size: ${fontSizes('extraLarge')};
   color: ${({ color }) => color};
+  cursor: pointer;
 
   :hover {
     outline: none;

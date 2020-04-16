@@ -1,4 +1,3 @@
-// @flow
 import { darken, transparentize } from 'polished';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
@@ -10,14 +9,14 @@ import { fontWeights, fontSizes } from 'utils';
 // components
 import { Typography, Button } from 'elements';
 
-interface PreviewBoxProps {
+type PreviewBoxProps = {
   width?: string;
   height?: string;
   minWidth?: string;
   minHeight?: string;
   circleImage?: boolean;
   topBorder?: boolean;
-}
+};
 
 export const PreviewBox = styled.div<PreviewBoxProps>`
   width: ${({ width }) => width ?? '100%'};
@@ -38,9 +37,9 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   box-sizing: border-box;
 `;
 
-interface PreviewImageProps {
+type PreviewImageProps = {
   imageBorderRadius?: string;
-}
+};
 
 export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};
@@ -100,10 +99,10 @@ export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywall
   display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'block' : 'none')};
 `;
 
-interface IconWrapperProps {
+type IconWrapperProps = {
   backgroundColor?: string;
   protectedLabel?: boolean;
-}
+};
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   background: ${({ backgroundColor }) => backgroundColor};
@@ -126,10 +125,10 @@ export const DescriptionSpan = styled.span`
   padding: 0;
 `;
 
-interface BuyButtonProps {
+type BuyButtonProps = {
   buttonTextColor?: string;
   buttonBgColor: string;
-}
+};
 
 export const BuyButton = styled(Button)<BuyButtonProps>`
   color: ${({ buttonTextColor }) => buttonTextColor};
@@ -151,9 +150,9 @@ export const BuyButton = styled(Button)<BuyButtonProps>`
   }
 `;
 
-interface PreviewFooterProps {
+type PreviewFooterProps = {
   color?: string;
-}
+};
 
 export const PreviewFooter = styled.div<PreviewFooterProps>`
   color: ${({ color }) => color};

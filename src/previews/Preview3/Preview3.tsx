@@ -24,14 +24,38 @@ import {
 // Types
 import Branding from '../types/branding';
 
-type OwnProps = {
+type Preview3Props = {
+  /**
+   * Branding type
+   */
   branding: Branding;
-  width?: string;
-  height?: string;
+  /**
+   * Minimum width
+   */
   minWidth?: string;
+  /**
+   * Minimum height
+   */
   minHeight?: string;
+  /**
+   * Preview height
+   */
+  height?: string;
+  /**
+   * Preview width
+   */
+  width?: string;
+  /**
+   * Login footer label
+   */
   loginFooterLabel?: string;
+  /**
+   * Whether the asset is restricted or not
+   */
   isRestrictedAsset?: boolean;
+  /**
+   * Function which handles the modal state changes
+   */
   handleOpenModal?: (e: any) => any;
 };
 
@@ -51,13 +75,13 @@ const Preview3 = ({
   handleOpenModal,
   isRestrictedAsset,
   loginFooterLabel,
-}: OwnProps) => {
+}: Preview3Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
       minHeight={minHeight}
       minWidth={minWidth}
-      color={previewTopBorder ? buttonBgColor : colors.white}
+      color={previewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >
@@ -66,10 +90,7 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription
-            color={buttonBgColor}
-            displayProtectedLabel={protectedLabel}
-          >
+          <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
             <PaywallDescriptionSpan>
               <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>
