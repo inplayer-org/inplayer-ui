@@ -41,10 +41,25 @@ type NavigationTab = {
 };
 
 type Props = {
+  /**
+   * Navigation tabs
+   */
   tabs: Array<NavigationTab>;
+  /**
+   * Function which takes as an argument the index of the selected tab
+   */
   onTabClick: (index: number) => void;
+  /**
+   * Selected tab index
+   */
   selectedTabIndex: number;
+  /**
+   * External CSS class name
+   */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
 };
 
