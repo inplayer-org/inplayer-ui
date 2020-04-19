@@ -36,7 +36,7 @@ type Column = {
 
 type RowActions<T> =
   | Array<{
-      icon: string;
+      icon: string | Node;
       onClick: (id: number | string) => any;
       render?: any;
     }>
@@ -51,7 +51,8 @@ type TableOptions<T> = {
   headerSection?: Node;
 };
 
-type Props<T = Data> = {
+// eslint-disable-next-line @typescript-eslint/no-use-before-define
+type Props<T = Data> = typeof Table.defaultProps & {
   columns: Array<Column> | any;
   data: Array<any>;
   className?: string;
@@ -80,19 +81,19 @@ const rowActionsExist = (actions: RowActions<any>) =>
 
 class Table<T> extends Component<Props<T>, State> {
   // eslint-disable-next-line react/static-property-placement
-  static defaultProps: {
-    className: '';
-    style: {};
+  static defaultProps = {
+    className: '',
+    style: {},
     options: {
       rowSelection: {
-        active: false;
-      };
-      rowActions: [];
-      headerSection: undefined;
-    };
-    showLoader: false;
-    renderEmptyTable: false;
-    tableButton: null;
+        active: false,
+      },
+      rowActions: [],
+      headerSection: undefined,
+    },
+    showLoader: false,
+    renderEmptyTable: false,
+    tableButton: null,
   };
 
   state: State = {

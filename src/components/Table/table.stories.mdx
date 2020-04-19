@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import Table from '.'
+import Pagination from '../Pagination'
+import { columns, data } from './data.tsx'
 
 <Meta title="Table" component={<Table/>} />
 
@@ -22,7 +24,30 @@ const Page = () => (
 ### Component type. ex. Default Button
 <Preview withSource="open">
   <Story name="default">
-    <h1>asdad</h1>
+    <>
+        <Table
+              columns={columns}
+              data={data}
+              options={{
+                  rowSelection: {
+                      active: true,
+                      action: (data) => console.log(data),
+                  },
+                  rowActions: [
+                      { icon: "edit", onClick: (id) => console.log(id) },
+                      { icon: "cog", onClick: (id) => console.log(id) },
+                      { icon: "trash", onClick: (id) => console.log(id) },
+                  ],
+              }}
+          />
+          <Pagination
+              onPageChange={console.log}
+              totalItems={50}
+              startPage={4}
+              numberOfPagesDisplayed={10}
+              itemsPerPage={12}
+          />
+      </>
   </Story>
 </Preview>
 

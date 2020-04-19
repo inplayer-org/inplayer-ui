@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMusic } from 'react-icons/fa';
+import { FaMusic, FaCode } from 'react-icons/fa';
 
 export const columns = [
   {
@@ -28,15 +28,15 @@ export const columns = [
 
 export const data = [
   {
-    id: 22,
-    icon: 'music',
+    id: 2,
+    icon: <FaMusic />,
     name: "Won't You Be My Neighbour?",
     director: 'Morgan Neville',
     dateCreated: '2018/07/24',
   },
   {
-    id: 28,
-    icon: 'code',
+    id: 8,
+    icon: <FaCode />,
     name: 'Soundtrack: No Country',
     director: 'Coen Brothers',
     dateCreated: '2018/07/21',
