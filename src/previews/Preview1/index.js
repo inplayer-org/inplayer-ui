@@ -62,6 +62,7 @@ const Preview1 = ({
   loginFooterLabel,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+
   return (
     <StyledPreviewBox
       minWidth={minWidth}
@@ -72,7 +73,7 @@ const Preview1 = ({
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledImageHolder className="inplayer-imageholder">
-        <PreviewImage src={image} className="inplayer-paywall" />
+        <PreviewImage src={image} />
         <StyledPaywallDescription
           className="inplayer-paywallexplain"
           displayProtectedLabel={protectedLabel}
