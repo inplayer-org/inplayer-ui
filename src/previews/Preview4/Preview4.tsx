@@ -124,21 +124,19 @@ const Preview4 = ({
           <TextElement width={width}>
             <TextEditor
               value={previewTitle}
-              displayToolbar={false}
               textBackground={previewTitleText ? transparentize(0.3, colors.black) : 'none'}
               textColor={buttonBgColor}
-              isPadding
+              padding="0.5rem"
               readOnly
             />
           </TextElement>
           <TextElement width={width}>
             <TextEditor
               value={previewDescription}
-              displayToolbar={false}
               textBackground={previewDescriptionText ? transparentize(0.3, colors.black) : 'none'}
               textColor={colors.white}
               lineHeight={1.5}
-              isPadding
+              padding="0.5rem"
               readOnly
             />
           </TextElement>

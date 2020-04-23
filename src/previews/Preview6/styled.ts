@@ -12,17 +12,19 @@ export const StyledPreviewBox = styled(PreviewBox)`
   margin: 0 auto;
 `;
 
-export const ImageWrapper = styled(ImageHolder)<{ backgroundImage: any }>`
+interface ImageWrapperProps {
+  backgroundImage: string;
+}
+
+export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
   margin: 0;
   border: 0;
   outline: 0;
-  width: 26%;
-  height: 200px;
+  width: 30%;
   vertical-align: middle;
-  padding-bottom: 26%;
+  padding-bottom: 30%;
   float: left;
   background-image: url('${({ backgroundImage }) => backgroundImage}');
-
   @media screen and (max-width: 1350px) {
     vertical-align: top;
     margin: 0;
@@ -31,12 +33,11 @@ export const ImageWrapper = styled(ImageHolder)<{ backgroundImage: any }>`
 
 export const ItemDetails = styled.div`
   display: inline-block;
-  width: 72%;
+  width: 70%;
   padding: 1% 0 0 3%;
   box-sizing: border-box;
   margin: 6px auto;
   vertical-align: middle;
-
   @media screen and (max-width: 1350px) {
     vertical-align: top;
     margin: 0;
@@ -44,13 +45,12 @@ export const ItemDetails = styled.div`
 `;
 
 export const FootService = styled.div`
-  width: 72%;
+  width: 70%;
   padding: 0 0 0 3%;
   box-sizing: border-box;
   margin: 6px auto;
   display: inline-block;
   vertical-align: bottom;
-
   @media screen and (max-width: 1350px) {
     width: 100%;
     padding: 0 0 0 0;
@@ -71,7 +71,11 @@ export const PreviewFooter = styled.div`
   padding-top: 2em;
 `;
 
-export const IconHolder = styled.div<{ protectedLabel: boolean }>`
+interface IconHolderProps {
+  protectedLabel: string;
+}
+
+export const IconHolder = styled.div<IconHolderProps>`
   padding: 0;
   border: 0;
   outline: 0;

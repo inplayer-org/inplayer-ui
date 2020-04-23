@@ -15,9 +15,14 @@ import {
   TextWrapper,
 } from '../components/SharedComponents';
 
-export const StyledPreviewBox = styled(PreviewBox)`
+interface PreviewBoxProps {
+  width?: string;
+  borderColor?: string;
+}
+
+export const StyledPreviewBox = styled(PreviewBox)<PreviewBoxProps>`
   max-width: ${({ width }) => (width ? '' : '70vh')};
-  ${({ color }) => color && `border-top: 3px solid ${color}`};
+  ${({ borderColor }) => borderColor && `border-top: 3px solid ${borderColor}`};
   display: block;
   padding: 1% 3% 2% 3%;
   border-radius: 3px 3px 0 0;

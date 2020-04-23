@@ -24,7 +24,7 @@ import {
 // Types
 import Branding from '../types/branding';
 
-type Preview3Props = {
+type Props = {
   /**
    * Branding type
    */
@@ -65,23 +65,23 @@ const Preview3 = ({
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
-    preview_top_border: previewTopBorder = true,
+    preview_top_border: hasTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
   },
-  width,
-  height,
-  minWidth,
-  minHeight,
+  minWidth = '',
+  minHeight = '',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
   handleOpenModal,
-  isRestrictedAsset,
-  loginFooterLabel,
-}: Preview3Props) => {
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
+}: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
       minHeight={minHeight}
       minWidth={minWidth}
-      color={previewTopBorder ? buttonBgColor : ''}
+      borderColor={hasTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >
@@ -97,38 +97,17 @@ const Preview3 = ({
           </StyledPaywallDescription>
           <TitleWrapper>
             <TitleBorder color={buttonBgColor}>
-              <TextEditor
-                value={previewTitle}
-                displayToolbar={false}
-                textColor={colors.white}
-                readOnly
-              />
+              <TextEditor value={previewTitle} textColor={colors.white} readOnly />
             </TitleBorder>
             <StyledIcon color={buttonBgColor} />
           </TitleWrapper>
           <DescriptionWrapper>
-            <TextEditor
-              value={previewDescription}
-              displayToolbar={false}
-              textColor={colors.white}
-              readOnly
-            />
+            <TextEditor value={previewDescription} textColor={colors.white} readOnly />
           </DescriptionWrapper>
         </StyledTextWrapper>
       </StyledImageHolder>
     </StyledPreviewBox>
   );
-};
-
-Preview3.defaultProps = {
-  branding: {},
-  minWidth: '250px',
-  minHeight: undefined,
-  height: undefined,
-  width: undefined,
-  isRestrictedAsset: false,
-  handleOpenModal: () => {},
-  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview3;

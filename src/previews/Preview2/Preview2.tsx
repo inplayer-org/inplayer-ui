@@ -21,7 +21,7 @@ import {
   Footer,
 } from './styled';
 
-type Preview2Props = {
+type Props = {
   /**
    * Branding type
    */
@@ -62,38 +62,34 @@ const Preview2 = ({
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
-    preview_top_border: previewTopBorder = true,
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: displayProtectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  minWidth,
-  minHeight,
-  height,
-  width,
+  minWidth = '',
+  minHeight = '',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
   handleOpenModal,
-  isRestrictedAsset,
-  loginFooterLabel,
-}: Preview2Props) => {
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
+}: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox
-      minHeight={minHeight}
-      minWidth={minWidth}
-      height={height}
-      width={width}
-      topBorder={previewTopBorder}
-    >
+    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
       <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
-        <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
+        <StyledPaywallDescription
+          color={buttonBgColor}
+          displayProtectedLabel={displayProtectedLabel}
+        >
           <PaywallDescriptionSpan>
             <StyledIcon name="star" />
             This premium content requires an account to access.
           </PaywallDescriptionSpan>
         </StyledPaywallDescription>
-        <TextEditor value={previewTitle} displayToolbar={false} readOnly paddingBottom />
-        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+        <TextEditor value={previewTitle} readOnly padding="0 0 0.5rem 0" />
+        <TextEditor value={previewDescription} readOnly />
         <BuyButtonWrapper>
           <BuyButton
             buttonBgColor={buttonBgColor}
@@ -111,17 +107,6 @@ const Preview2 = ({
       </AssetDetails>
     </StyledPreviewBox>
   );
-};
-
-Preview2.defaultProps = {
-  branding: {},
-  minWidth: '250px',
-  minHeight: undefined,
-  height: undefined,
-  width: undefined,
-  isRestrictedAsset: false,
-  handleOpenModal: () => {},
-  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview2;
