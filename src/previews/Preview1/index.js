@@ -68,11 +68,16 @@ const Preview1 = ({
       width={width}
       height={height}
       topBorder={previewTopBorder}
+      className="inplayer-preview-box"
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageHolder>
-        <PreviewImage src={image} />
-        <StyledPaywallDescription displayProtectedLabel={protectedLabel} color={colors.white}>
+      <StyledImageHolder className="inplayer-imageholder">
+        <PreviewImage src={image} className="inplayer-paywall" />
+        <StyledPaywallDescription
+          className="inplayer-paywallexplain"
+          displayProtectedLabel={protectedLabel}
+          color={colors.white}
+        >
           <PremiumContent>
             <LockIcon name="lock" />
             <PaywallDescriptionSpan>
@@ -87,15 +92,16 @@ const Preview1 = ({
           </PremiumContent>
         </StyledPaywallDescription>
       </StyledImageHolder>
-      <ItemDetails>
-        <Title variant="h3">
+      <ItemDetails className="inplayer-itemdetails">
+        <Title variant="h3" className="inplayer-title">
           <TextEditor value={previewTitle} displayToolbar={false} readOnly />
         </Title>
         <TextEditor value={previewDescription} displayToolbar={false} readOnly />
       </ItemDetails>
       {displayBuyButton && (
-        <BuyButtonWrapper>
+        <BuyButtonWrapper className="inplayer-buybutton">
           <StyledBuyButton
+            className="inplayer-button"
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
@@ -104,7 +110,7 @@ const Preview1 = ({
           </StyledBuyButton>
         </BuyButtonWrapper>
       )}
-      <StyledPreviewFooter color={colors.fontGray}>
+      <StyledPreviewFooter className="inplayer-preview-footer" color={colors.fontGray}>
         <FooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
         </FooterLink>
