@@ -71,7 +71,7 @@ type Props = {
 
 const Preview7 = ({
   branding: {
-    preview_top_border: previewTopBorder = true,
+    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
     paywall_cover_photo: imageUrl = previewImg,
     preview_title: previewTitle = `<h3>Asset title</h3>`,
@@ -95,7 +95,7 @@ const Preview7 = ({
     <StyledPreviewBox
       minWidth={minWidth}
       minHeight={minHeight}
-      topBorder={previewTopBorder}
+      hasPreviewTopBorder={hasPreviewTopBorder}
       circleImage
       width={width}
       height={height}

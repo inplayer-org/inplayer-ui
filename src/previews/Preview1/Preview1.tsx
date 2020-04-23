@@ -73,7 +73,7 @@ const Preview1 = ({
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
-    preview_top_border: previewTopBorder = true,
+    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: protectedLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
@@ -93,7 +93,7 @@ const Preview1 = ({
       minWidth={minWidth}
       width={width}
       height={height}
-      topBorder={previewTopBorder}
+      hasPreviewTopBorder={hasPreviewTopBorder}
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledImageHolder>

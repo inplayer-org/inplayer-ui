@@ -9,14 +9,14 @@ import { fontWeights, fontSizes } from 'utils';
 // components
 import { Typography, Button } from 'elements';
 
-type PreviewBoxProps = {
+export interface PreviewBoxProps {
   width?: string;
   height?: string;
   minWidth?: string;
   minHeight?: string;
   circleImage?: boolean;
-  topBorder?: boolean;
-};
+  hasPreviewTopBorder?: boolean;
+}
 
 export const PreviewBox = styled.div<PreviewBoxProps>`
   width: ${({ width }) => width ?? '100%'};
@@ -27,8 +27,8 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   border: 1px solid ${colors.gray};
   clear: both;
   padding: ${({ circleImage }) => (circleImage ? '26px' : '18px')} 3%;
-  background: ${({ topBorder }) =>
-    topBorder
+  background: ${({ hasPreviewTopBorder }) =>
+    hasPreviewTopBorder
       ? `${colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`
       : `${colors.white}`};
   background-size: 100% 4px;

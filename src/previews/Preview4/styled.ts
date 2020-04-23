@@ -13,15 +13,12 @@ import {
   TextWrapper,
   IconWrapper,
   PreviewImage,
+  PreviewBoxProps,
 } from '../components/SharedComponents';
 
-type StyledPreviewBoxProps = {
-  minWidth?: string;
-  minHeight?: string;
+interface StyledPreviewBoxProps extends PreviewBoxProps {
   topBorderColor?: string;
-  width?: any;
-  height?: string;
-};
+}
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
   max-width: ${({ width }) => (width ? '' : '70vh')};

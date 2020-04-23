@@ -79,7 +79,7 @@ const Preview4 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-    preview_top_border: previewTopBorder = true,
+    preview_top_border: hasPreviewTopBorder = true,
   },
   displayBuyButton = true,
   previewUnavailable = false,
@@ -97,7 +97,7 @@ const Preview4 = ({
     <StyledPreviewBox
       minWidth={minWidth}
       minHeight={minHeight}
-      topBorderColor={previewTopBorder ? buttonBgColor : ''}
+      topBorderColor={hasPreviewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >
