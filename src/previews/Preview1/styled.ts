@@ -28,7 +28,7 @@ export const StyledImageHolder = styled(ImageHolder)`
 `;
 
 interface StyledPaywallDescriptionProps {
-  displayProtectedLabel: boolean;
+  hasProtectedByLabel: boolean;
 }
 
 export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywallDescriptionProps>`
@@ -39,7 +39,7 @@ export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywall
   bottom: 0;
   width: 100%;
   line-height: 15px;
-  display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'flex' : 'none')};
+  display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'flex' : 'none')};
   justify-content: space-between;
   vertical-align: middle;
   align-items: center;

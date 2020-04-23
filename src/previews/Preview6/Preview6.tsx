@@ -70,7 +70,7 @@ const Preview6 = ({
     preview_button_label: buttonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
   },
   handleOpenModal,
   minWidth = '250px',
@@ -102,7 +102,7 @@ const Preview6 = ({
           <PreviewFooterLink href="#login" onClick={handleOpenModal}>
             {loginFooterLabel}
           </PreviewFooterLink>
-          <IconHolder protectedLabel={protectedLabel}>
+          <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
             <LockIcon />
           </IconHolder>
         </PreviewFooter>

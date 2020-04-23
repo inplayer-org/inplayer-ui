@@ -65,7 +65,7 @@ const Preview5 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = lighten(0.01, colors.green),
     preview_buttons_text_color: buttonTextColor = colors.black,
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
   },
   width = '',
   height = '',
@@ -94,7 +94,7 @@ const Preview5 = ({
       <ItemDetails height={height}>
         <StyledPaywallDescription
           color={lighten(0.01, buttonBgColor)}
-          displayProtectedLabel={protectedLabel}
+          hasProtectedByLabel={hasProtectedByLabel}
         >
           <StyledIcon />
           <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>

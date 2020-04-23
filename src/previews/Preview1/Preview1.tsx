@@ -74,7 +74,7 @@ const Preview1 = ({
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
     preview_top_border: hasPreviewTopBorder = true,
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
@@ -98,7 +98,7 @@ const Preview1 = ({
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledImageHolder>
         <PreviewImage src={image} />
-        <StyledPaywallDescription displayProtectedLabel={protectedLabel} color={colors.white}>
+        <StyledPaywallDescription hasProtectedByLabel={hasProtectedByLabel} color={colors.white}>
           <PremiumContent>
             <LockIcon name="lock" />
             <PaywallDescriptionSpan>

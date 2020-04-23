@@ -66,7 +66,7 @@ const Preview3 = ({
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_top_border: hashasPreviewTopBorder = true,
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
   },
   minWidth = '',
   minHeight = '',
@@ -90,7 +90,7 @@ const Preview3 = ({
           {loginFooterLabel}
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription color={buttonBgColor} displayProtectedLabel={protectedLabel}>
+          <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
             <PaywallDescriptionSpan>
               <GiCutDiamond /> premium content
             </PaywallDescriptionSpan>

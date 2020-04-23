@@ -72,7 +72,7 @@ export const PreviewFooter = styled.div`
 `;
 
 interface IconHolderProps {
-  protectedLabel: boolean;
+  hasProtectedByLabel: boolean;
 }
 
 export const IconHolder = styled.div<IconHolderProps>`
@@ -81,7 +81,7 @@ export const IconHolder = styled.div<IconHolderProps>`
   outline: 0;
   background: transparent;
   float: right;
-  display: ${({ protectedLabel }) => (protectedLabel ? 'block' : 'none')};
+  display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
   font-size: ${fontSizes('small')};
   margin-left: 0.4rem;
 `;

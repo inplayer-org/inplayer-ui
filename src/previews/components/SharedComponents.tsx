@@ -92,21 +92,21 @@ export const PaywallDescription = styled.div`
 `;
 
 interface StyledPaywallDescriptionProps {
-  displayProtectedLabel?: boolean;
+  hasProtectedByLabel?: boolean;
 }
 
 export const StyledPaywallDescription = styled(PaywallDescription)<StyledPaywallDescriptionProps>`
-  display: ${({ displayProtectedLabel }) => (displayProtectedLabel ? 'block' : 'none')};
+  display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
 `;
 
 type IconWrapperProps = {
   backgroundColor?: string;
-  protectedLabel?: boolean;
+  hasProtectedByLabel?: boolean;
 };
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   background: ${({ backgroundColor }) => backgroundColor};
-  display: ${({ protectedLabel }) => (protectedLabel ? 'block' : 'none')};
+  display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
   position: absolute;
 `;
 

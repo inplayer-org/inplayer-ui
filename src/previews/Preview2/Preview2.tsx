@@ -62,7 +62,7 @@ const Preview2 = ({
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_button_label: previewButtonLabel = 'Buy',
-    inplayer_protected_label: displayProtectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
@@ -81,7 +81,7 @@ const Preview2 = ({
       <AssetDetails>
         <StyledPaywallDescription
           color={buttonBgColor}
-          displayProtectedLabel={displayProtectedLabel}
+          hasProtectedByLabel={hasProtectedByLabel}
         >
           <PaywallDescriptionSpan>
             <StyledIcon name="star" />

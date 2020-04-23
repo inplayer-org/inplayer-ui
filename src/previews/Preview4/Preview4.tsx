@@ -72,7 +72,7 @@ const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' 
 
 const Preview4 = ({
   branding: {
-    inplayer_protected_label: protectedLabel = true,
+    inplayer_protected_label: hasProtectedByLabel = true,
     paywall_cover_photo: imageUrl = previewImg,
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
@@ -114,7 +114,7 @@ const Preview4 = ({
         )}
       </StyledContainer>
       <ImageWrapper>
-        <StyledIconWrapper backgroundColor={buttonBgColor} protectedLabel={protectedLabel}>
+        <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
           <Icon>
             <FaLock />
           </Icon>
