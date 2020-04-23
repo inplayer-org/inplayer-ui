@@ -27,7 +27,7 @@ const LockIcon = styled(FaLock)`
   color: ${colors.fontGray};
 `;
 
-type Preview6Props = {
+type Props = {
   /**
    * Branding type
    */
@@ -79,7 +79,7 @@ const Preview6 = ({
   handleOpenModal,
   isRestrictedAsset,
   loginFooterLabel,
-}: Preview6Props) => {
+}: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>

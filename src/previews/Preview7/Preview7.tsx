@@ -26,7 +26,7 @@ import {
   StyledPreviewFooter,
 } from './styled';
 
-type Preview7Props = {
+type Props = {
   /**
    * Branding type
    */
@@ -89,7 +89,7 @@ const Preview7 = ({
   handleOpenModal,
   isRestrictedAsset,
   loginFooterLabel,
-}: Preview7Props) => {
+}: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox

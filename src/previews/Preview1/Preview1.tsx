@@ -28,7 +28,7 @@ import {
   StyledPreviewFooter,
 } from './styled';
 
-type Preview1Props = {
+type Props = {
   /**
    * Branding type
    */

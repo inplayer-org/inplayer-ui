@@ -25,7 +25,7 @@ import {
 // Types
 import Branding from '../types/branding';
 
-type Preview4Props = {
+type Props = {
   /**
    * Branding type
    */
@@ -89,7 +89,7 @@ const Preview4 = ({
   width,
   isRestrictedAsset,
   handleOpenModal,
-}: Preview4Props) => {
+}: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
