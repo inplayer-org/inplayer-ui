@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.43] - 23-04-2020
+
+### Change
+
+- Add classNames for Preview1
+
 
 # [2.0.0-beta.42] - 16-04-2020
 
