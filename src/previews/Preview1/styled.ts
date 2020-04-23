@@ -17,11 +17,7 @@ import {
   BuyButton,
 } from '../components/SharedComponents';
 
-interface StyledPreviewBoxProps {
-  width?: string;
-}
-
-export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
+export const StyledPreviewBox = styled(PreviewBox)`
  max-width: ${ ({ width }) => (width ? '' : '70vh') };
  border-radius: 8px 8px 3px 3px;
 `;

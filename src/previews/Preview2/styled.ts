@@ -14,14 +14,7 @@ import {
   DescriptionSpan,
 } from '../components/SharedComponents';
 
-interface StyledPreviewBoxProps {
-  minHeight?: string;
-  minWidth?: string;
-  height?: string;
-  width?: string;
-}
-
-export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
+export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '70vh')};
   font-size: ${fontSizes('large')};
   overflow: hidden;

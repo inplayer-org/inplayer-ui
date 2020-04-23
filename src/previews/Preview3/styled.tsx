@@ -13,16 +13,16 @@ import {
   DescriptionSpan,
   ImageHolder,
   TextWrapper,
+  PreviewBoxProps,
 } from '../components/SharedComponents';
 
-interface PreviewBoxProps {
-  width?: string;
-  borderColor?: string;
+interface Preview3BoxProps extends PreviewBoxProps {
+  topBorderColor?: string;
 }
 
-export const StyledPreviewBox = styled(PreviewBox)<PreviewBoxProps>`
+export const StyledPreviewBox = styled(PreviewBox)<Preview3BoxProps>`
   max-width: ${({ width }) => (width ? '' : '70vh')};
-  ${({ borderColor }) => borderColor && `border-top: 3px solid ${borderColor}`};
+  ${({ topBorderColor }) => topBorderColor && `border-top: 3px solid ${topBorderColor}`};
   display: block;
   padding: 1% 3% 2% 3%;
   border-radius: 3px 3px 0 0;
