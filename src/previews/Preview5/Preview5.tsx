@@ -67,12 +67,12 @@ const Preview5 = ({
     preview_buttons_text_color: buttonTextColor = colors.black,
     inplayer_protected_label: protectedLabel = true,
   },
-  width,
-  height,
-  minHeight,
-  minWidth,
+  width = '',
+  height = '',
+  minHeight = '420px',
+  minWidth = '250px',
   handleOpenModal,
-  isRestrictedAsset,
+  isRestrictedAsset = false,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -108,16 +108,6 @@ const Preview5 = ({
       </ItemDetails>
     </StyledPreviewBox>
   );
-};
-
-Preview5.defaultProps = {
-  branding: {},
-  minWidth: '250px',
-  minHeight: '420px',
-  height: undefined,
-  width: undefined,
-  handleOpenModal: () => {},
-  isRestrictedAsset: false,
 };
 
 export default Preview5;

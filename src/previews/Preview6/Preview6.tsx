@@ -71,14 +71,14 @@ const Preview6 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
     inplayer_protected_label: protectedLabel = true,
-  } = {},
-  width,
-  height,
-  minWidth,
-  minHeight,
+  },
   handleOpenModal,
-  isRestrictedAsset,
-  loginFooterLabel,
+  minWidth = '250px',
+  minHeight = '',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -109,17 +109,6 @@ const Preview6 = ({
       </FootService>
     </StyledPreviewBox>
   );
-};
-
-Preview6.defaultProps = {
-  branding: {},
-  minWidth: '250px',
-  minHeight: undefined,
-  height: undefined,
-  width: undefined,
-  isRestrictedAsset: false,
-  handleOpenModal: () => {},
-  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview6;

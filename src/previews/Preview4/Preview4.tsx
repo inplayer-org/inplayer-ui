@@ -81,13 +81,13 @@ const Preview4 = ({
     preview_buttons_text_color: buttonTextColor = colors.white,
     preview_top_border: previewTopBorder = true,
   },
-  displayBuyButton,
-  previewUnavailable,
-  minWidth,
-  minHeight,
-  height,
-  width,
-  isRestrictedAsset,
+  displayBuyButton = true,
+  previewUnavailable = false,
+  minWidth = '250px',
+  minHeight = '390px',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
   handleOpenModal,
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
@@ -144,18 +144,6 @@ const Preview4 = ({
       </ImageWrapper>
     </StyledPreviewBox>
   );
-};
-
-Preview4.defaultProps = {
-  branding: {},
-  displayBuyButton: true,
-  previewUnavailable: false,
-  minWidth: '250px',
-  minHeight: '390px',
-  height: undefined,
-  width: undefined,
-  handleOpenModal: () => {},
-  isRestrictedAsset: false,
 };
 
 export default Preview4;

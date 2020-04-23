@@ -80,15 +80,15 @@ const Preview7 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
   },
-  displayBuyButton,
-  previewUnavailable,
-  width,
-  height,
-  minWidth,
-  minHeight,
   handleOpenModal,
-  isRestrictedAsset,
-  loginFooterLabel,
+  displayBuyButton = true,
+  previewUnavailable = false,
+  minWidth = '280px',
+  minHeight ='460px',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -133,19 +133,6 @@ const Preview7 = ({
       </StyledPreviewFooter>
     </StyledPreviewBox>
   );
-};
-
-Preview7.defaultProps = {
-  branding: {},
-  displayBuyButton: true,
-  previewUnavailable: false,
-  minWidth: '280px',
-  minHeight: '460px',
-  height: undefined,
-  width: undefined,
-  isRestrictedAsset: false,
-  handleOpenModal: () => {},
-  loginFooterLabel: 'Already have access? Login with your InPlayer account',
 };
 
 export default Preview7;
