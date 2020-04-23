@@ -5,9 +5,9 @@ import { ifProp, ifNotProp } from 'styled-tools';
 import { fontWeights } from 'utils';
 
 // Components
-import Tooltip, { Props as TooltipProps } from 'components/Tooltip';
+import Tooltip, { Props as TooltipProps } from 'components/Tooltip/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
-import { Typography } from '../Typography';
+import Typography from '../Typography';
 
 // Types
 type AccordionPanelContainerProps = {

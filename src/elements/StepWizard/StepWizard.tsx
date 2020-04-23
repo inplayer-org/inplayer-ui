@@ -1,16 +1,35 @@
 // @flow
 import React from 'react';
+import { CSSProperties } from 'styled-components';
 import Nav, { StepItem } from './Nav';
 import Step from './Step';
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
-type Props = {
+type StepWizardProps = {
+  /**
+   * Array of objects containing steps information and components
+   */
   steps: Array<StepItem>;
+  /**
+   * Active step of step wizard
+   */
   activeStep: number;
+  /**
+   * External CSS class name
+   */
   className?: string;
-  style?: Record<string, any>;
+  /**
+   * Inline CSS
+   */
+  style?: CSSProperties;
+  /**
+   * Function which runs when the step changes
+   */
   onStepChange?: (activeStep: number) => void;
+  /**
+   * CSS transition type
+   */
   transition?: TransitionVariant;
 };
 
@@ -21,7 +40,7 @@ const StepWizard = ({
   style = {},
   onStepChange = () => {},
   transition = 'fadeInRight',
-}: Props) => {
+}: StepWizardProps) => {
   const isInvalidStep = (currentStep: number) => currentStep < 0 || currentStep > steps.length;
 
   const setActiveStep = (currentStep: number) => {

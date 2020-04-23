@@ -2,15 +2,36 @@ import React, { ChangeEvent } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import Toggle from 'react-toggle';
 import SwitchWrapper from './SwitchWrapper';
-import { Label } from '../Label';
+import Label from '../Label';
 
-type Props = {
+type SwitchProps = {
+  /**
+   * Whether the switch is checked or not
+   */
   checked: boolean;
+  /**
+   * Disable switch
+   */
   disabled?: boolean;
+  /**
+   * Id
+   */
   id: string;
+  /**
+   * Switch label
+   */
   label: string;
+  /**
+   * Function executed when the switch value changes
+   */
   onChange: (checked: boolean) => void;
+  /**
+   * External CSS class name
+   */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: CSSProperties;
 };
 
@@ -26,7 +47,7 @@ const Switch = ({
   onChange,
   className = '',
   style = {},
-}: Props) => {
+}: SwitchProps) => {
   const onToggleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -44,7 +65,7 @@ const Switch = ({
         checked={checked}
         onChange={onToggleChange}
         icons={false}
-       />
+      />
     </SwitchWrapper>
   );
 };

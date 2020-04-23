@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Card from '.'
+import Typography from '../Typography'
+
+<Meta title="Card" component={<Card/>} />
+
+# Component name
+
+```jsx
+import { Card } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Card />
+)
+```
+
+### Props
+<Props of={Card}/>
+
+### Simple Card
+<Preview withSource="open">
+  <Story name="simple card">
+    <div>
+        <Card title={'Card with title'} titleVariant="h2" style={{ width: 400 }}>
+            <Typography variant="p">Card content</Typography>
+            <Typography variant="p">Card content</Typography>
+            <Typography variant="p">Card content</Typography>
+        </Card>
+    </div>
+  </Story>
+</Preview>
+
+### No title Card
+<Preview withSource="open">
+  <Story name="only body">
+    <div>
+        <Card style={{ width: 400 }}>
+            <Typography variant="p">Card content</Typography>
+            <Typography variant="p">Card content</Typography>
+            <Typography variant="p">Card content</Typography>
+        </Card>
+    </div>
+  </Story>
+</Preview>
+

@@ -36,7 +36,11 @@ const steps = [
 const Usage = () => {
   const [activeStep, setActiveStep] = useState(0);
   return (
-    <StepWizard steps={steps} activeStep={activeStep} onStepChange={step => setActiveStep(step)} />
+    <StepWizard
+      steps={steps}
+      activeStep={activeStep}
+      onStepChange={(step) => setActiveStep(step)}
+    />
   );
 };
 

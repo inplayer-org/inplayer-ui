@@ -1,5 +1,5 @@
 import React from 'react';
-import Progress from './Progress';
+import Progress from '.';
 
 const containerStyle = {
   width: '250px',

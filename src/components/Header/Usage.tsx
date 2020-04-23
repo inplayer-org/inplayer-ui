@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header } from '.';
+import Header from '.';
 
 const App = () => {
   const [tabSelected, setTabSelected] = useState(0);
@@ -39,7 +39,7 @@ const App = () => {
           },
         ],
         selectedTabIndex: tabSelected,
-        onTabClick: (index) => setTabSelected(index),
+        onTabClick: (index: number) => setTabSelected(index),
       }}
     />
   );

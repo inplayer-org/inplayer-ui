@@ -2,7 +2,7 @@ import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 
 import colors from 'theme/colors';
-import { Typography } from 'elements/Typography';
+import Typography from 'elements/Typography';
 
 interface Props {
   children: ReactChild;

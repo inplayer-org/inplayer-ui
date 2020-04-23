@@ -18,14 +18,12 @@ import {
 } from '../components/SharedComponents';
 
 interface StyledPreviewBoxProps {
-  height?: string;
-  minWidth?: string;
+  width?: string;
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
-  height: ${({ height }) => height ?? 'auto'};
-  min-width: ${({ minWidth }) => minWidth ?? '250px'};
-  border-radius: 8px 8px 3px 3px;
+ max-width: ${ ({ width }) => (width ? '' : '70vh') };
+ border-radius: 8px 8px 3px 3px;
 `;
 
 export const StyledImageHolder = styled(ImageHolder)`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaUserCircle, FaUserAlt } from 'react-icons/fa';
-import { Tabs } from '.';
+import Tabs from '.';
 
 function App() {
   const [selectedTab, setSelectedTab] = useState(0);

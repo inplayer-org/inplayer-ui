@@ -23,32 +23,62 @@ type Period =
   | 'custom date preset';
 
 type Props = {
+  /**
+   * Start date
+   */
   startDate: Moment | null;
+  /**
+   * End date
+   */
   endDate: Moment | null;
+  /**
+   * Function which takes `startDate` and `endDate` as arguments and sets the date range to the corresponding dates
+   */
+  onDateChange(arg: DateChangeArgs): void;
+  /**
+   * It can be either `startDate` or `endDate`
+   */
+  focusedInput: FocusedInputShape | null;
+  /**
+   * Function which takes a boolean argument on whether it is focused or not
+   */
+  onFocusChange(focused: FocusedInputShape | null): void;
+  displayPresets?: Array<string>;
   startDateId?: string;
   endDateId?: string;
+  /**
+   * Function which specifies the days that are not allowed to be choosed
+   * (ex. isOutsideRange={day => day.isBefore(moment())})
+   */
   isOutsideRange?: (day: any) => boolean;
-  onDateChange(arg: DateChangeArgs): void;
+  /**
+   * Inline CSS
+   */
   style?: Record<string, any>;
+  /**
+   * External CSS class name
+   */
   className?: string;
-  onFocusChange(focused: FocusedInputShape | null): void;
-  focusedInput: FocusedInputShape | null;
   minimumNights?: number;
-  displayPresets: Array<string>;
   customAllTimeDate?: Moment;
   activePeriodPreset?: string;
+  /**
+   * Boolean indicating whether to show presets or not
+   */
+  showPresets?: boolean;
 };
 
 const DatePicker = ({
   activePeriodPreset = '',
   customAllTimeDate,
   onDateChange,
-  displayPresets,
+  showPresets = false,
+  displayPresets = ['default'],
   startDate: startDateProp,
   endDate: endDateProp,
   startDateId = 'startDate',
   endDateId = 'endDate',
-  isOutsideRange,
+  isOutsideRange = () => false,
   style,
   className,
   onFocusChange,
@@ -114,19 +144,20 @@ const DatePicker = ({
       presets = [...displayPresets];
     }
 
-    return (
-      <Styled.DatePresetWrapper>
-        {presets.map((text: string) => (
-          <Styled.StyledLabel
-            active={activePeriod === text}
-            key={text}
-            onClick={() => handleRangeClick(text as Period)}
-          >
-            {text}
-          </Styled.StyledLabel>
-        ))}
-      </Styled.DatePresetWrapper>
-    );
+    if (showPresets)
+      return (
+        <Styled.DatePresetWrapper>
+          {presets.map((text: string) => (
+            <Styled.StyledLabel
+              active={activePeriod === text}
+              key={text}
+              onClick={() => handleRangeClick(text as Period)}
+            >
+              {text}
+            </Styled.StyledLabel>
+          ))}
+        </Styled.DatePresetWrapper>
+      );
   };
 
   const handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {

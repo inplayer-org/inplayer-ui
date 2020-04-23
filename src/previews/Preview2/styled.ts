@@ -22,6 +22,7 @@ interface StyledPreviewBoxProps {
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
+  max-width: ${({ width }) => (width ? '' : '70vh')};
   font-size: ${fontSizes('large')};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;

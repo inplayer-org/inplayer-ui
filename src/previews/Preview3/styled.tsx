@@ -15,23 +15,16 @@ import {
   TextWrapper,
 } from '../components/SharedComponents';
 
-interface StyledPreviewBoxProps {
-  minHeight?: string;
-  minWidth?: string;
-  height?: string;
+interface PreviewBoxProps {
   width?: string;
   borderColor?: string;
 }
 
-export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
-  height: ${({ height }) => height ?? 'auto'};
-  min-height: ${({ minHeight }) => minHeight ?? 'auto'};
-  width: ${({ width }) => width ?? 'auto'};
-  min-width: ${({ minWidth }) => minWidth ?? '250px'};
-  border-top: 3px solid ${({ borderColor }) => borderColor};
+export const StyledPreviewBox = styled(PreviewBox)<PreviewBoxProps>`
+  max-width: ${({ width }) => (width ? '' : '70vh')};
+  ${({ borderColor }) => borderColor && `border-top: 3px solid ${borderColor}`};
   display: block;
   padding: 1% 3% 2% 3%;
-  color: ${colors.fontDarkGray};
   border-radius: 3px 3px 0 0;
 `;
 
@@ -89,6 +82,7 @@ export const TitleBorder = styled.div`
 export const StyledIcon = styled(FaRegPlayCircle)`
   font-size: ${fontSizes('extraLarge')};
   color: ${({ color }) => color};
+  cursor: pointer;
 
   :hover {
     outline: none;

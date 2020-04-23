@@ -8,12 +8,27 @@ import colors from 'theme/colors';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 
-interface Props {
+interface ModalProps {
+  /**
+   * Modal state
+   */
   isModalOpen: boolean;
+  /**
+   * Close modal
+   */
   closeModal: () => any;
   children: ReactChild;
+  /**
+   * Modal title
+   */
   title: string;
+  /**
+   * External CSS class name
+   */
   className?: string;
+  /**
+   * Inline CSS
+   */
   style?: any;
 }
 
@@ -40,7 +55,14 @@ const ModalContainer = styled.div`
   margin: auto;
 `;
 
-const Modal = ({ isModalOpen, closeModal, children, title, className = '', style = {} }: Props) => (
+const Modal = ({
+  isModalOpen,
+  closeModal,
+  children,
+  title,
+  className = '',
+  style = {},
+}: ModalProps) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
     <ModalContainer className={className} style={style} onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
