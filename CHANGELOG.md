@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file.
 
 # [2.0.0-beta.43] - 23-04-2020
 
-### Change
+### Added
 
-- Add classNames for Preview1
-
+- Preview1 classNames because of client implementations based on this classes and ids
 
 # [2.0.0-beta.42] - 16-04-2020
 
@@ -20,7 +19,6 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Add missing icon prop in type definitions of Input
-
 
 # [2.0.0-beta.40] - 09-04-2020
 
