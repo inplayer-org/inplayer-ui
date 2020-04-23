@@ -72,7 +72,7 @@ export const PreviewFooter = styled.div`
 `;
 
 interface IconHolderProps {
-  protectedLabel: string;
+  protectedLabel: boolean;
 }
 
 export const IconHolder = styled.div<IconHolderProps>`
