@@ -65,7 +65,7 @@ const Preview3 = ({
     preview_title: previewTitle = `<h3>Asset title</h3>`,
     preview_description: previewDescription = `<p>Asset description</p>`,
     preview_buttons_bg_color: buttonBgColor = colors.green,
-    preview_top_border: hashasPreviewTopBorder = true,
+    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: hasProtectedByLabel = true,
   } = {},
   minWidth = '',
@@ -81,7 +81,7 @@ const Preview3 = ({
     <StyledPreviewBox
       minHeight={minHeight}
       minWidth={minWidth}
-      topBorderColor={hashasPreviewTopBorder ? buttonBgColor : ''}
+      topBorderColor={hasPreviewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >
