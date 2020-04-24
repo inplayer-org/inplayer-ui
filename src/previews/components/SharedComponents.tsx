@@ -49,7 +49,7 @@ export const PreviewImage = styled.img<PreviewImageProps>`
   vertical-align: middle;
   border: 0;
   height: 100%;
-  position: relative;
+  position: absolute;
   margin: 0;
   padding: 0;
   top: 0;
