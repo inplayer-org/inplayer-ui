@@ -60,7 +60,6 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
   externals: {
     react: {
