@@ -77,7 +77,7 @@ const Preview1 = ({
     inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-  },
+  } = {},
   displayBuyButton = true,
   previewUnavailable = false,
   width = '',

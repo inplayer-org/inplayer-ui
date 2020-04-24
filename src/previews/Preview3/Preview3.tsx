@@ -67,7 +67,7 @@ const Preview3 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_top_border: hashasPreviewTopBorder = true,
     inplayer_protected_label: hasProtectedByLabel = true,
-  },
+  } = {},
   minWidth = '',
   minHeight = '',
   height = '',

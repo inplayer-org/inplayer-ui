@@ -71,7 +71,7 @@ const Preview6 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
     inplayer_protected_label: hasProtectedByLabel = true,
-  },
+  } = {},
   handleOpenModal,
   minWidth = '250px',
   minHeight = '',

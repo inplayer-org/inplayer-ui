@@ -80,7 +80,7 @@ const Preview4 = ({
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
     preview_top_border: hasPreviewTopBorder = true,
-  },
+  } = {},
   displayBuyButton = true,
   previewUnavailable = false,
   minWidth = '250px',
@@ -114,7 +114,10 @@ const Preview4 = ({
         )}
       </StyledContainer>
       <ImageWrapper>
-        <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+        <StyledIconWrapper
+          backgroundColor={buttonBgColor}
+          hasProtectedByLabel={hasProtectedByLabel}
+        >
           <Icon>
             <FaLock />
           </Icon>

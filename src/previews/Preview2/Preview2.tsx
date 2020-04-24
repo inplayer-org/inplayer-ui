@@ -65,7 +65,7 @@ const Preview2 = ({
     inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-  },
+  } = {},
   minWidth = '',
   minHeight = '',
   height = '',
@@ -79,10 +79,7 @@ const Preview2 = ({
     <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
       <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
-        <StyledPaywallDescription
-          color={buttonBgColor}
-          hasProtectedByLabel={hasProtectedByLabel}
-        >
+        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
           <PaywallDescriptionSpan>
             <StyledIcon name="star" />
             This premium content requires an account to access.

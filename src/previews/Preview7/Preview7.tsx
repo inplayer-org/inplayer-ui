@@ -79,12 +79,12 @@ const Preview7 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-  },
+  } = {},
   handleOpenModal,
   displayBuyButton = true,
   previewUnavailable = false,
   minWidth = '280px',
-  minHeight ='460px',
+  minHeight = '460px',
   height = '',
   width = '',
   isRestrictedAsset = false,
@@ -103,7 +103,10 @@ const Preview7 = ({
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <StyledImageWrapper>
         <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
-        <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+        <StyledIconWrapper
+          backgroundColor={buttonBgColor}
+          hasProtectedByLabel={hasProtectedByLabel}
+        >
           <FaLock />
         </StyledIconWrapper>
       </StyledImageWrapper>
