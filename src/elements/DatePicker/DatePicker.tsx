@@ -165,7 +165,6 @@ const DatePicker = ({
     onDateChange({ startDate, endDate });
   };
 
-  const hasPresets = displayPresets.length !== 0;
   return (
     <DatePickerWrapper style={style} className={className}>
       <DateRangePicker
