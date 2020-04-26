@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { uiColors, fontWeights } from 'utils';
+import { uiColors, fontWeights, fontSizes } from 'utils';
 import { ifProp } from 'styled-tools';
 import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
@@ -12,8 +12,11 @@ const typographyModifiers = {
 };
 
 const Label = styled.label`
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
   text-decoration: none;
-  font-weight: ${fontWeights('light')};
+  font-size: ${fontSizes('medium')};
+  font-weight: ${fontWeights('normal')};
   cursor: pointer;
   vertical-align: middle;
   color: ${uiColors('text.main')};
