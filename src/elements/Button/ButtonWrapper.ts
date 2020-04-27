@@ -136,7 +136,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
 
   ${switchProp('sizeType', {
     xs: css`
-      font-size: ${fontSizes('extraSmall')};
+      font-size: ${({ theme }) => theme.font.sizes.extraSmall};
       padding: 0.1875rem 0.25rem;
     `,
     sm: css`

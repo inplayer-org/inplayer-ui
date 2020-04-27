@@ -169,7 +169,7 @@ export const FooterLink = styled.a`
 export const PreviewFooterLink = styled(FooterLink)`
   margin: 0;
   padding: 0;
-  font-size: ${fontSizes('extraSmall')};
+  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
   vertical-align: baseline;
   background: transparent;
   color: ${({ theme }) => theme.palette.text.light};

@@ -55,7 +55,7 @@ export const LockIcon = styled(FaLock)`
 `;
 
 export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  font-size: ${fontSizes('extraSmall')};
+  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
   width: 100%;
 `;
 
