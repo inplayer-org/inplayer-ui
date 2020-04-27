@@ -17,7 +17,7 @@ const StyledInput = styled.input<StyledInputProps>`
   box-sizing: border-box;
   overflow: hidden;
   outline: none;
-  color: ${colors.fontDarkGray};
+  color: ${({ theme }) => theme.palette.text.main};
   transition: all ease 300ms;
   background: ${colors.white};
   font-weight: 300;

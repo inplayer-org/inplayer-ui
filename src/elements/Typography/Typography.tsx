@@ -37,7 +37,7 @@ type HeadingProps = {
 
 const Paragraph = styled.p<ParagraphProps>`
   font-size:${({ theme }) => theme.font.sizes.medium};
-  color: ${({ color }) => color || `${colors.fontDarkGray}`};
+  color: ${({ color }) => color || `${({ theme }) => theme.palette.text.main}`};
   ${({ description, theme: { palette, font } }) =>
     description &&
     `

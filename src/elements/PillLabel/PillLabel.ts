@@ -35,7 +35,7 @@ const modifiers = {
 const PillLabel = styled.span<{ size?: string; modifiers?: Array<string> }>`
   display: inline-block;
   background: ${colors.white};
-  color: ${colors.fontDarkGray};
+  color: ${({ theme }) => theme.palette.text.main};
   font-weight: 300;
   border: 1px solid ${colors.gray};
   border-radius: 1rem;

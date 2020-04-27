@@ -117,7 +117,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   align-items: center;
   justify-content: center;
   background: ${colors.white};
-  color: ${colors.fontDarkGray};
+  color: ${({ theme }) => theme.palette.text.main};
   font-weight: ${({ theme }) => theme.font.weights.light};
   border: 1px solid ${colors.gray};
   border-radius: 3px;

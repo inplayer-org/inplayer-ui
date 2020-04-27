@@ -74,7 +74,7 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
     color: ${({ theme }) => theme.palette.text.light}
 
     &:hover {
-      color: ${colors.fontDarkGray};
+      color: ${({ theme }) => theme.palette.text.main};
     }
   }
 `;
