@@ -18,7 +18,7 @@ export const StyledPreviewBox = styled(PreviewBox)<any>`
   max-width: ${({ width }) => (width ? '' : '60vh')};
   border: none;
   background: transparent;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   line-height: 1.6em;
   font-weight: ${fontWeights('light')};
   display: flex;
@@ -65,7 +65,7 @@ export const BuyButtonBorder = styled.div`
 
 export const StyledBuyButton = styled(BuyButton)<any>`
   background-color: ${({ buttonBgColor }) => transparentize(0.2, buttonBgColor)};
-  font-size: ${fontSizes('large')};
+  font-size:${({ theme }) => theme.font.sizes.large};
   margin: 0;
   padding: 10px 60px;
 
@@ -88,7 +88,7 @@ export const ItemDetails = styled.div<{ height?: any }>`
 
 export const StyledIcon = styled(GiCutDiamond)`
   line-height: 15px;
-  font-size: ${fontSizes('large')};
+  font-size:${({ theme }) => theme.font.sizes.large};
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -98,7 +98,7 @@ export const StyledIcon = styled(GiCutDiamond)`
 
 export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   padding: 0;
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   text-transform: uppercase;
 `;
 

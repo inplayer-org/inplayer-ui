@@ -16,7 +16,7 @@ import {
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '70vh')};
-  font-size: ${fontSizes('large')};
+  font-size:${({ theme }) => theme.font.sizes.large};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;
   height: ${({ height }) => height ?? 'auto'};
@@ -69,7 +69,7 @@ export const BuyButtonWrapper = styled.div`
 
 export const StyledIcon = styled(MdStar)`
   line-height: 15px;
-  font-size: ${fontSizes('large')};
+  font-size:${({ theme }) => theme.font.sizes.large};
   display: inline-block;
   vertical-align: middle;
   text-align: left;

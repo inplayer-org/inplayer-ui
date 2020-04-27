@@ -5,7 +5,7 @@ import Label from '../Label';
 
 const StyledLabel = styled(Label)<{ active: boolean }>`
   display: block;
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   transition: ease 200ms color;
   cursor: pointer;
   padding: 0.4375rem;

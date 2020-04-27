@@ -60,7 +60,7 @@ export const PaywallDescriptionSpan = styled(DescriptionSpan)`
 `;
 
 export const Protected = styled.strong`
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   color: ${colors.fontLightGray};
@@ -92,7 +92,7 @@ export const ItemDetails = styled.div`
 export const Title = styled(Typography)`
   overflow-wrap: break-word;
   font-weight: ${fontWeights('normal')};
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   line-height: 1.3em;
   color: ${colors.black};
   margin: 0;

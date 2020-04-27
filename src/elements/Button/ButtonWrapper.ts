@@ -121,7 +121,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   outline: none;
   transition: all ease 300ms;
   cursor: pointer;
@@ -140,15 +140,15 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
       padding: 0.1875rem 0.25rem;
     `,
     sm: css`
-      font-size: ${fontSizes('small')};
+      font-size:${({ theme }) => theme.font.sizes.small};
       padding: 0.375rem 0.5rem;
     `,
     md: css`
-      font-size: ${fontSizes('medium')};
+      font-size:${({ theme }) => theme.font.sizes.medium};
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size: ${fontSizes('large')};
+      font-size:${({ theme }) => theme.font.sizes.large};
       padding: 0.75rem 1rem;
     `,
   })};

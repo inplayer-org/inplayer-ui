@@ -70,7 +70,7 @@ export const ButtonWrapper = styled.div`
 
 export const StyledBuyButton = styled(BuyButton)`
   margin: 1.5em auto 1.8em;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
 `;
 
 export const StyledPreviewFooter = styled(PreviewFooter)`

@@ -14,7 +14,7 @@ const MenuItemContainer = styled.div<{ active: any }>`
   transition: color 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   box-sizing: border-box;
   ${ifProp(
     'active',

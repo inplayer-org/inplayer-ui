@@ -43,7 +43,7 @@ const Item = styled.a`
   transition: color 0.3s ease;
   white-space: nowrap;
   width: 100%;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.main};
@@ -63,7 +63,7 @@ const ActionItem = styled(Item)<{
   ${ifProp(
     'smallSize',
     css`
-      font-size: ${fontSizes('small')};
+      font-size:${({ theme }) => theme.font.sizes.small};
     `
   )};
 `;

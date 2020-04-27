@@ -36,13 +36,13 @@ type HeadingProps = {
 };
 
 const Paragraph = styled.p<ParagraphProps>`
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   color: ${({ color }) => color || `${colors.fontDarkGray}`};
   ${({ description }) =>
     description &&
     `
      color: ${colors.fontGray};
-     font-size: ${fontSizes('large')};
+     font-size:${({ theme }) => theme.font.sizes.large};
    `}
   ${applyStyleModifiers(typographyModifiers)}
 `;

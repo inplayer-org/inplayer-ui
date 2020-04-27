@@ -88,7 +88,7 @@ export const ImageHolder = styled.div`
 
 export const PaywallDescription = styled.div`
   color: ${({ color }) => color};
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
 `;
 
 interface StyledPaywallDescriptionProps {
@@ -139,7 +139,7 @@ export const BuyButton = styled(Button)<BuyButtonProps>`
   box-sizing: border-box;
   overflow: hidden;
   padding: 0.85em 2em;
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   min-width: 80%;
   margin: 1.5em 0 0;
 
@@ -156,7 +156,7 @@ type PreviewFooterProps = {
 
 export const PreviewFooter = styled.div<PreviewFooterProps>`
   color: ${({ color }) => color};
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   line-height: 1.3rem;
 `;
 

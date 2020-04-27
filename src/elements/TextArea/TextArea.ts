@@ -13,7 +13,7 @@ const TextArea = styled.textarea`
   font-weight: ${fontWeights('light')};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   line-height: 1.4em;
   min-height: 7em;
   width: 100%;

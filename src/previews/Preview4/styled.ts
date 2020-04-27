@@ -71,7 +71,7 @@ export const StyledTextWrapper = styled(TextWrapper)`
 export const TextElement = styled.div<{ width: any }>`
   overflow-wrap: break-word;
   font-weight: ${fontWeights('normal')};
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   line-height: 1.3em;
   margin: 0;
   max-width: ${({ width }) => (width < 45 ? '80%' : '55%')};

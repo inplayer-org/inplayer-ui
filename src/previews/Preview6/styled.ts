@@ -82,6 +82,6 @@ export const IconHolder = styled.div<IconHolderProps>`
   background: transparent;
   float: right;
   display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   margin-left: 0.4rem;
 `;

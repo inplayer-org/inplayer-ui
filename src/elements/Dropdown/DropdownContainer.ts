@@ -16,7 +16,7 @@ const DropdownContainer = styled.select`
   border-radius: 0.188em;
   color: ${colors.fontGray};
   cursor: pointer;
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   font-weight: ${fontWeights('light')};
   outline: none;
   transition: all 0.3s ease;

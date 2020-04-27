@@ -55,7 +55,7 @@ export const CloseLayer = styled.div`
 export const MenuTitle = styled.span`
   color: ${({ theme }) => theme.palette.text.light};
   transition: color 0.3s ease;
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   padding: 0 3px 0 10px;
 
   &:hover {

@@ -60,7 +60,7 @@ const ButtonTableRow = styled(TableRow)`
 `;
 
 const TableCell = styled.td<{ isActionsCell?: boolean }>`
-  font-size: ${fontSizes('medium')};
+  font-size:${({ theme }) => theme.font.sizes.medium};
   padding: 0.4375rem 1%;
   vertical-align: middle;
   line-height: 30px;
@@ -82,7 +82,7 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
 const TableHeaderCell = styled.th<any>`
   padding: 1rem 1%;
   font-weight: ${fontWeights('light')};
-  font-size: ${fontSizes('small')};
+  font-size:${({ theme }) => theme.font.sizes.small};
   text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
   white-space: normal;
 `;
