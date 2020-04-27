@@ -39,26 +39,26 @@ const PillLabel = styled.span<{ size?: string; modifiers?: Array<string> }>`
   font-weight: 300;
   border: 1px solid ${colors.gray};
   border-radius: 1rem;
-  font-size: rem(16);
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   outline: none;
   vertical-align: middle;
   letter-spacing: 0.015em;
   line-height: 1;
   ${switchProp('size', {
     xs: css`
-      font-size: rem(14);
+      font-size: ${({ theme }) => theme.font.sizes.extraSmall};
       padding: 0.1875rem 0.25rem;
     `,
     sm: css`
-      font-size: rem(14);
+      font-size: ${({ theme }) => theme.font.sizes.small};
       padding: 0.375rem 0.5rem;
     `,
     md: css`
-      font-size: rem(16);
+      font-size: ${({ theme }) => theme.font.sizes.medium};
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size: rem(18);
+      font-size: ${({ theme }) => theme.font.sizes.large};
       padding: 0.75rem 1rem;
     `,
   })};

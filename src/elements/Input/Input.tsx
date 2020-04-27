@@ -24,7 +24,7 @@ const StyledInput = styled.input<StyledInputProps>`
   padding: 0.375em 0.75em;
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  font-size: rem(16);
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1;
 
   &:focus {
@@ -51,19 +51,19 @@ const StyledInput = styled.input<StyledInputProps>`
   )};
   ${switchProp('sizeProp', {
     xs: css`
-            font-size: rem(12)
+            font-size: ${({ theme }) => theme.font.sizes.extraSmall}
             padding: 0.1875rem 0.25rem;
         `,
     sm: css`
-            font-size: rem(14)
+            font-size: ${({ theme }) => theme.font.sizes.small}
             padding: 0.375rem 0.5rem;
         `,
     md: css`
-      font-size: rem(16);
+      font-size: ${({ theme }) => theme.font.sizes.medium};
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size: rem(18);
+      font-size: ${({ theme }) => theme.font.sizes.large};
       padding: 0.75rem 1rem;
     `,
   })};
