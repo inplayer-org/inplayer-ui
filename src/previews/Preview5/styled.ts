@@ -4,7 +4,6 @@ import { transparentize } from 'polished';
 
 // utils
 import colors from 'theme/colors';
-import { fontSizes, fontWeights } from 'utils';
 
 // Components
 import {

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css, CSSProperties } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { fontWeights } from 'utils';
 
 const Tab = styled.a<{ active: boolean }>`
   height: 100%;

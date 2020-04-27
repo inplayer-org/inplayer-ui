@@ -4,7 +4,7 @@ import { FaLock } from 'react-icons/fa';
 
 // utils
 import colors from 'theme/colors';
-import { fontSizes, fontWeights } from 'utils';
+
 
 // Components
 import { Typography } from 'elements';

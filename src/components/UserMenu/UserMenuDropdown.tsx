@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { fontWeights, fontSizes } from 'utils';
+
 import colors from 'theme/colors';
 
 const Container = styled.div`

@@ -2,7 +2,7 @@ import React, { SyntheticEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
-import { fontWeights } from 'utils';
+
 
 // Components
 import Tooltip, { Props as TooltipProps } from 'components/Tooltip/Tooltip';

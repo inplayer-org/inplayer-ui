@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import colors from 'theme/colors';
 import { transparentize } from 'polished';
-import { fontWeights, fontSizes } from 'utils';
 
 const DatePickerWrapper = styled.span`
   .PresetDateRangePicker_panel {

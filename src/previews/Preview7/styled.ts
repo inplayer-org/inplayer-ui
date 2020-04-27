@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 // utils
 import colors from 'theme/colors';
-import { fontSizes, fontWeights } from 'utils';
 
 // Components
 import { Typography } from 'elements';

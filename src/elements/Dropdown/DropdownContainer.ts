@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { fontWeights, fontSizes } from 'utils';
+
 import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
 import colors from 'theme/colors';
 

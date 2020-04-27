@@ -3,7 +3,7 @@ import Checkbox from 'components/Checkbox';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'theme/colors';
-import { fontSizes, fontWeights } from 'utils';
+
 import Button from 'elements/Button';
 import Grid from 'blocks/Grid';
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { fontWeights, fontSizes } from 'utils';
+
 import { transparentize } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
 import colors from 'theme/colors';

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { fontWeights } from 'utils';
+
 import colors from 'theme/colors';
 
 const Tab = styled.div<{ selected: boolean }>`

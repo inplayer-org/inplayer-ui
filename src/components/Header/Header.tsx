@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { prop } from 'styled-tools';
 import colors from 'theme/colors';
-import { fontWeights } from 'utils';
 
 // Components
 import UserMenu from '../UserMenu';

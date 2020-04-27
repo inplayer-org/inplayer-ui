@@ -1,7 +1,7 @@
 import React, { ReactChild, CSSProperties } from 'react';
 import styled, { DefaultTheme } from 'styled-components';
 import { prop } from 'styled-tools';
-import { fontWeights, fontSizes } from 'utils';
+
 import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import colors from 'theme/colors';
@@ -36,7 +36,7 @@ type HeadingProps = {
 };
 
 const Paragraph = styled.p<ParagraphProps>`
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size:${({ theme }) => theme.font.sizes.extraSmall};
   color: ${({ color, theme }) => color || `${theme.palette.text.main}`};
   ${({ description, theme: { palette, font } }) =>
     description &&

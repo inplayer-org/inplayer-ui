@@ -4,7 +4,6 @@ import { prop } from 'styled-tools';
 
 // utils
 import colors from 'theme/colors';
-import { fontWeights, fontSizes } from 'utils';
 
 // components
 import { Typography, Button } from 'elements';

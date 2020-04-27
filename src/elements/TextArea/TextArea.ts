@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontWeights, fontSizes } from 'utils';
+
 import colors from 'theme/colors';
 
 const TextArea = styled.textarea`
