@@ -132,6 +132,7 @@ const DatePicker = ({
 
   const renderDatePresets = () => {
     let presets = [];
+
     if (displayPresets[0] === 'default') {
       presets = [
         PERIODS.THIS_WEEK,
