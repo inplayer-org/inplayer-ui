@@ -15,18 +15,18 @@ const Label = styled.label<{ disabled?: boolean }>`
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-decoration: none;
-  font-size:${({ theme }) => theme.font.sizes.medium};
-  font-weight: ${({ theme }) => theme.font.weights.normal}
+  font-size: ${({ theme }) => theme.font.sizes.medium};
+  font-weight: ${({ theme }) => theme.font.weights.normal};
   cursor: pointer;
   vertical-align: middle;
-  color: ${uiColors('text.main')};
+  color: ${({ theme }) => theme.palette.text.main};
   transition: all ease 300ms;
   line-height: 20px;
   position: relative;
   display: inline-flex;
 
   &:not(:disabled):hover {
-    color: ${uiColors('text.light')};
+    color: ${({ theme }) => theme.palette.text.light};
   }
 
   ${ifProp(
