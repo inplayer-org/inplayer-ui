@@ -9,7 +9,8 @@ const StyledLabel = styled(Label)<{ active: boolean }>`
   transition: ease 200ms color;
   cursor: pointer;
   padding: 0.4375rem;
-  font-weight: ${({ active }) => (active ? fontWeights('normal') : fontWeights('light'))};
+  font-weight: ${({ active, theme: { font } }) =>
+    active ? font.weights.normal : font.weights.light};
   color: ${({ active }) => (active ? colors.navy : colors.fontGray)};
   &:hover {
     color: ${colors.navy} !important;
