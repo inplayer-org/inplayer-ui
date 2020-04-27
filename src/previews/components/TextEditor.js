@@ -55,6 +55,7 @@ const EditorContainer = styled.div`
     line-height: ${({ lineHeight }) => lineHeight || 1};
     color: ${({ textColor }) => textColor || colors.fontDarkGray};
     text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
+
     /* Must be set to overwrite browser(user agent) fall-back (browsers defaults) */
     margin: 0;
   }
@@ -72,6 +73,7 @@ const EditorContainer = styled.div`
   .ql-snow .ql-editor h6 {
     font-weight: ${fontWeights('light')};
     font-size: ${fontSizes('medium')};
+
     /* Must be set to overwrite browser(user agent) fall-back (browsers defaults) */
     margin: 0;
   }
@@ -114,6 +116,7 @@ const EditorContainer = styled.div`
         padding: ${({ isPadding }) => isPadding && '0.5em'};
         padding-bottom: ${({ paddingBottom }) => paddingBottom && '0.5em'};
         background: ${({ textBackground }) => textBackground || 'transparent'};
+
         /* Must be set to overwrite browser(user agent) fall-back (browsers defaults) */
         margin: 0;
       }
