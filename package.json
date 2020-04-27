@@ -24,13 +24,12 @@
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s ./public",
     "prebuild": "rimraf ./dist",
     "build": "webpack",
-    "postbuild": "tsc --emitDeclarationOnly",
     "build:watch": "webpack --watch --progress",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint ./src --ext .js",
     "lint:js:watch": "esw -w src/**",
     "lint:js:fix": "eslint ./src --ext .js --fix",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn build && tsc --emitDeclarationOnly",
     "lint:style": "stylelint -- \"./src/**/*.js\""
   },
   "peerDependencies": {
