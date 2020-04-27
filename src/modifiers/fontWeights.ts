@@ -1,20 +1,17 @@
-import { fontWeights } from 'utils';
 import { DefaultTheme } from 'styled-components';
 
-export const fontWeightModifiers = {};
-
-export const fontLight = ({ theme }: DefaultTheme) => `
-  font-weight: ${fontWeights('light', theme)};
+export const fontLight = ({ font }: DefaultTheme) => `
+  font-weight: ${font.weights.light};
 `;
 
-export const fontNormal = ({ theme }: DefaultTheme) => `
-  font-weight: ${fontWeights('normal', theme)};
+export const fontNormal = ({ font }: DefaultTheme) => `
+  font-weight: ${font.weights.normal};
 `;
 
-export const fontSemiBold = ({ theme }: DefaultTheme) => `
-  font-weight: ${fontWeights('semiBold', theme)};
+export const fontSemiBold = ({ font }: DefaultTheme) => `
+  font-weight: ${font.weights.semiBold};
 `;
 
-export const fontBold = ({ theme }: DefaultTheme) => `
-  font-weight: ${fontWeights('bold', theme)};
+export const fontBold = ({ font }: DefaultTheme) => `
+  font-weight: ${font.weights.bold};;
 `;
