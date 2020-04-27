@@ -1,7 +1,8 @@
 import colors from 'theme/colors';
+import { DefaultTheme } from 'styled-components';
 
-export const borderPrimary = ({ theme }) => `
-  border: 1px solid ${theme.palette.primary.main};
+export const borderPrimary = ({ palette: { primary } }: DefaultTheme) => `
+  border: 1px solid ${primary.main};
 `;
 
 export const borderInfo = () => `
