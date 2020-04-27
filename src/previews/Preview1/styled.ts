@@ -63,7 +63,7 @@ export const Protected = styled.strong`
   font-size: ${({ theme }) => theme.font.sizes.small};
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  color: ${colors.fontLightGray};
+  color: ${({ theme }) => theme.palette.text.disabled}
   font-weight: normal;
   text-align: right;
 `;

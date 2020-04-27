@@ -54,9 +54,14 @@ const ActionItem = styled(Item)<{
   moreThanOneItem: boolean;
   smallSize?: boolean;
 }>`
-  ${({ moreThanOneItem }) =>
+  ${({
+    moreThanOneItem,
+    theme: {
+      palette: { text },
+    },
+  }) =>
     moreThanOneItem
-      ? `border-top: 1px solid ${colors.fontLightGray};
+      ? `border-top: 1px solid ${text.disabled}
                   margin-top: 0.75rem;
                   padding-top: 1.125rem;`
       : null};

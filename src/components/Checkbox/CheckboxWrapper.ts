@@ -90,7 +90,7 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
   }
 
   > input:disabled:checked + label {
-    color: ${colors.fontLightGray};
+    color: ${({ theme }) => theme.palette.text.disabled}
 
     &::before {
       border: 1px solid ${colors.gray};
@@ -104,7 +104,7 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
   }
 
   > input:disabled:not(:checked) + label {
-    color: ${colors.fontLightGray};
+    color: ${({ theme }) => theme.palette.text.disabled}
 
     &::before {
       border: 1px solid ${colors.gray};
