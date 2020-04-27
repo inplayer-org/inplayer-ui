@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.44] - 27-04-2020
+
+### Added
+
+- Text editor style changes: Set margin to overwrite browser(user agent) fall-back (browsers defaults)
+
 # [2.0.0-beta.43] - 23-04-2020
 
 ### Added
