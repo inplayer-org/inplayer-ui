@@ -58,7 +58,7 @@ export const PreviewImage = styled.img<PreviewImageProps>`
 
 export const OverlayLabel = styled(Typography)`
   color: ${colors.white};
-  font-weight: ${fontWeights('semiBold')};
+  font-weight: ${({ theme }) => theme.font.weights.semiBold}
   position: absolute;
   top: 0;
   right: 0;
@@ -88,7 +88,7 @@ export const ImageHolder = styled.div`
 
 export const PaywallDescription = styled.div`
   color: ${({ color }) => color};
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
 `;
 
 interface StyledPaywallDescriptionProps {
@@ -135,7 +135,7 @@ export const BuyButton = styled(Button)<BuyButtonProps>`
   background-color: ${({ buttonBgColor }) => buttonBgColor};
   border: none;
   text-transform: uppercase;
-  font-weight: ${fontWeights('bold')};
+  font-weight: ${({ theme }) => theme.font.weights.bold}
   box-sizing: border-box;
   overflow: hidden;
   padding: 0.85em 2em;
@@ -156,7 +156,7 @@ type PreviewFooterProps = {
 
 export const PreviewFooter = styled.div<PreviewFooterProps>`
   color: ${({ color }) => color};
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   line-height: 1.3rem;
 `;
 

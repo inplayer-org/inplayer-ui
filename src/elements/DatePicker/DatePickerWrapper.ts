@@ -17,7 +17,7 @@ const DatePickerWrapper = styled.span`
     padding: 0.25rem 0.75rem;
     margin-right: 0.5rem;
     font: inherit;
-    font-weight: ${fontWeights('bold')};
+    font-weight: ${({ theme }) => theme.font.weights.bold}
     line-height: normal;
     overflow: visible;
     cursor: pointer;
@@ -47,7 +47,7 @@ const DatePickerWrapper = styled.span`
     line-height: 32px;
     margin: 0;
     border: 1px solid ${colors.gray};
-    font-weight: ${fontWeights('light')};
+    font-weight: ${({ theme }) => theme.font.weights.light}
     cursor: pointer;
   }
 
@@ -398,7 +398,7 @@ const DatePickerWrapper = styled.span`
     padding-left: 0;
     padding-right: 0;
     font-size:${({ theme }) => theme.font.sizes.medium};
-    font-weight: ${fontWeights('light')};
+    font-weight: ${({ theme }) => theme.font.weights.light}
   }
 
   .DayPicker_weekHeader_li {
@@ -455,7 +455,7 @@ const DatePickerWrapper = styled.span`
   }
 
   .DateInput_input {
-    font-weight: ${fontWeights('thin')};
+    font-weight: ${({ theme }) => theme.font.weights.thin}
     background-color: ${colors.white};
     width: 100%;
     border: 0;
@@ -551,7 +551,7 @@ const DatePickerWrapper = styled.span`
     font-size:${({ theme }) => theme.font.sizes.small};
     line-height: 1rem;
     color: ${({ theme }) => theme.palette.text.light};
-    font-weight: ${fontWeights('light')};
+    font-weight: ${({ theme }) => theme.font.weights.light}
   }
 
   .DateRangePicker {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { fontSizes } from 'utils';
+
 import colors from 'theme/colors';
 
 const StepNavigation = styled.div`

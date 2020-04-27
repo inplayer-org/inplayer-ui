@@ -118,10 +118,10 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   justify-content: center;
   background: ${colors.white};
   color: ${colors.fontDarkGray};
-  font-weight: ${fontWeights('light')};
+  font-weight: ${({ theme }) => theme.font.weights.light};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   outline: none;
   transition: all ease 300ms;
   cursor: pointer;
@@ -140,15 +140,15 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
       padding: 0.1875rem 0.25rem;
     `,
     sm: css`
-      font-size:${({ theme }) => theme.font.sizes.small};
+      font-size: ${({ theme }) => theme.font.sizes.small};
       padding: 0.375rem 0.5rem;
     `,
     md: css`
-      font-size:${({ theme }) => theme.font.sizes.medium};
+      font-size: ${({ theme }) => theme.font.sizes.medium};
       padding: 0.5625rem 0.75rem;
     `,
     lg: css`
-      font-size:${({ theme }) => theme.font.sizes.large};
+      font-size: ${({ theme }) => theme.font.sizes.large};
       padding: 0.75rem 1rem;
     `,
   })};

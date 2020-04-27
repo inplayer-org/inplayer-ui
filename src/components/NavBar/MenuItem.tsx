@@ -2,7 +2,6 @@ import React, { SyntheticEvent, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import { fontSizes } from 'utils';
 import colors from 'theme/colors';
 
 const MenuItemContainer = styled.div<{ active: any }>`

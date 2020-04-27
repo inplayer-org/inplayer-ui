@@ -16,7 +16,7 @@ const Label = styled.label<{ disabled?: boolean }>`
   text-transform: uppercase;
   text-decoration: none;
   font-size:${({ theme }) => theme.font.sizes.medium};
-  font-weight: ${fontWeights('normal')};
+  font-weight: ${({ theme }) => theme.font.weights.normal}
   cursor: pointer;
   vertical-align: middle;
   color: ${uiColors('text.main')};

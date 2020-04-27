@@ -78,7 +78,7 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
 `;
 
 const AccordionTitle = styled(Typography)<AccordionTitleProps>`
-  font-weight: ${fontWeights('thin')};
+  font-weight: ${({ theme }) => theme.font.weights.thin}
   color: ${ifProp('disabled', colors.fontLightGray, colors.fontDarkGray)};
   margin: 0;
   display: inline;

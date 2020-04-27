@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import colors from 'theme/colors';
-import { fontSizes } from 'utils';
+
 
 type BubbleProps = {
   background?: string;

@@ -10,7 +10,7 @@ const Tab = styled.a<{ active: boolean }>`
   border-bottom: 2px solid transparent;
   color: ${({ theme }) => theme.palette.text.light};
   cursor: pointer;
-  font-weight: ${fontWeights('light')};
+  font-weight: ${({ theme }) => theme.font.weights.light}
   line-height: 2rem;
   margin-right: 1rem;
   padding: 0 0.25rem;

@@ -35,7 +35,7 @@ const Container = styled.div`
 const Item = styled.a`
   color: ${({ theme }) => theme.palette.text.light};
   box-sizing: border-box;
-  font-weight: ${fontWeights('light')};
+  font-weight: ${({ theme }) => theme.font.weights.light}
   letter-spacing: 0.02em;
   line-height: 2;
   padding: 0.375rem 0.625rem;
@@ -63,7 +63,7 @@ const ActionItem = styled(Item)<{
   ${ifProp(
     'smallSize',
     css`
-      font-size:${({ theme }) => theme.font.sizes.small};
+      font-size: ${({ theme }) => theme.font.sizes.small};
     `
   )};
 `;

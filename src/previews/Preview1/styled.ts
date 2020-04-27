@@ -18,8 +18,8 @@ import {
 } from '../components/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
- max-width: ${ ({ width }) => (width ? '' : '70vh') };
- border-radius: 8px 8px 3px 3px;
+  max-width: ${({ width }) => (width ? '' : '70vh')};
+  border-radius: 8px 8px 3px 3px;
 `;
 
 export const StyledImageHolder = styled(ImageHolder)`
@@ -60,7 +60,7 @@ export const PaywallDescriptionSpan = styled(DescriptionSpan)`
 `;
 
 export const Protected = styled.strong`
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   color: ${colors.fontLightGray};
@@ -91,7 +91,7 @@ export const ItemDetails = styled.div`
 
 export const Title = styled(Typography)`
   overflow-wrap: break-word;
-  font-weight: ${fontWeights('normal')};
+  font-weight: ${({ theme }) => theme.font.weights.normal}
   font-size:${({ theme }) => theme.font.sizes.medium};
   line-height: 1.3em;
   color: ${colors.black};

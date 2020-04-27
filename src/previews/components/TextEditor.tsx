@@ -66,7 +66,7 @@ const EditorContainer = styled.div<EditorContainerProps>`
   .ql-snow .ql-editor h4,
   .ql-snow .ql-editor h5,
   .ql-snow .ql-editor h6 {
-    font-weight: ${fontWeights('light')};
+    font-weight: ${({ theme }) => theme.font.weights.light}
     font-size:${({ theme }) => theme.font.sizes.medium};
   }
   ${({ isAssetPreviewTitle }) =>

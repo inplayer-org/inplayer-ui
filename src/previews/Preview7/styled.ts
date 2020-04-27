@@ -59,7 +59,7 @@ export const ItemContent = styled(Typography)`
   margin: 0;
   line-height: 1.5;
   text-align: center;
-  font-weight: ${fontWeights('light')};
+  font-weight: ${({ theme }) => theme.font.weights.light};
 `;
 
 export const ButtonWrapper = styled.div`
@@ -70,7 +70,7 @@ export const ButtonWrapper = styled.div`
 
 export const StyledBuyButton = styled(BuyButton)`
   margin: 1.5em auto 1.8em;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
 `;
 
 export const StyledPreviewFooter = styled(PreviewFooter)`

@@ -4,7 +4,7 @@ import { MdStar } from 'react-icons/md';
 
 // utils
 import colors from 'theme/colors';
-import { fontSizes } from 'utils';
+
 
 // Components
 import {
