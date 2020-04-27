@@ -1,7 +1,8 @@
 import colors from 'theme/colors';
+import { DefaultTheme } from 'styled-components';
 
-export const backgroundPrimary = ({ theme }) => `
-  background: ${theme.palette.primary.main};
+export const backgroundPrimary = ({ palette: { primary } }: DefaultTheme) => `
+  background: ${primary.main};
 `;
 
 export const backgroundInfo = () => `

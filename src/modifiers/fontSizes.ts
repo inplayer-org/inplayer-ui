@@ -1,15 +1,17 @@
-export const fontSizeExtraSmall = ({ theme }) => `
-  font-size: ${theme.font.sizes.extraSmall};
+import { DefaultTheme } from 'styled-components';
+
+export const fontSizeExtraSmall = ({ font: { sizes: fontSize } }: DefaultTheme) => `
+  font-size: ${fontSize.extraSmall};
 `;
 
-export const fontSizeSmall = ({ theme }) => `
-  font-size: ${theme.font.sizes.small};
+export const fontSizeSmall = ({ font: { sizes: fontSize } }: DefaultTheme) => `
+  font-size: ${fontSize.small};
 `;
 
-export const fontSizeMedium = ({ theme }) => `
-  font-size: ${theme.font.sizes.medium};
+export const fontSizeMedium = ({ font: { sizes: fontSize } }: DefaultTheme) => `
+  font-size: ${fontSize.medium};
 `;
 
-export const fontSizeLarge = ({ theme }) => `
-  font-size: ${theme.font.sizes.large};
+export const fontSizeLarge = ({ font: { sizes: fontSize } }: DefaultTheme) => `
+  font-size: ${fontSize.large};
 `;
