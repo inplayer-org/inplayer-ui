@@ -71,7 +71,7 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
   white-space: normal;
 
   a {
-    color: ${colors.fontGray};
+    color: ${({ theme }) => theme.palette.text.light}
 
     &:hover {
       color: ${colors.fontDarkGray};
@@ -107,7 +107,7 @@ const TableButton = styled(Button)<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: ${colors.fontGray};
+  color: ${({ theme }) => theme.palette.text.light}
 
   &:hover {
     color: ${({ theme }) => theme.palette.primary.main};

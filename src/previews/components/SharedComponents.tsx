@@ -172,5 +172,5 @@ export const PreviewFooterLink = styled(FooterLink)`
   font-size: ${fontSizes('extraSmall')};
   vertical-align: baseline;
   background: transparent;
-  color: ${colors.fontGray};
+  color: ${({ theme }) => theme.palette.text.light};
 `;

@@ -24,7 +24,7 @@ import { BuyButton, PreviewFooterLink } from '../components/SharedComponents';
 import Branding from '../types/branding';
 
 const LockIcon = styled(FaLock)`
-  color: ${colors.fontGray};
+  color: ${({ theme }) => theme.palette.text.light}
 `;
 
 type Props = {

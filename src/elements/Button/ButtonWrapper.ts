@@ -156,7 +156,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   ${ifProp(
     'disabled',
     css`
-      color: ${colors.fontGray};
+      color: ${({ theme }) => theme.palette.text.light}
       background-color: ${colors.lightGray};
       border-color: ${colors.gray};
       pointer-events: none;
