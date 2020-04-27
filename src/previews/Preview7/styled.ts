@@ -49,7 +49,7 @@ export const ItemDetails = styled.div`
 `;
 
 export const PreviewHeader = styled(Typography)`
-  font-size: ${fontSizes('h4')};
+  font-size: ${({ theme }) => theme.font.sizes.h4};
   line-height: 1.4em;
   margin: 0;
 `;

@@ -5,7 +5,6 @@ import { transparentize } from 'polished';
 // utils
 import colors from 'theme/colors';
 
-
 // Components
 import {
   PreviewFooter,
@@ -63,7 +62,7 @@ export const StyledTextWrapper = styled(TextWrapper)`
 export const PaywallDescriptionSpan = styled(DescriptionSpan)`
   padding-bottom: 13px;
   text-transform: uppercase;
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
 `;
 
 export const TitleWrapper = styled.div`
@@ -80,7 +79,7 @@ export const TitleBorder = styled.div`
 `;
 
 export const StyledIcon = styled(FaRegPlayCircle)`
-  font-size:${({ theme }) => theme.font.sizes.extraLarge};
+  font-size: ${({ theme }) => theme.font.sizes.extraLarge};
   color: ${({ color }) => color};
   cursor: pointer;
 

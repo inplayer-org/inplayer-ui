@@ -17,9 +17,9 @@ export const StyledPreviewBox = styled(PreviewBox)<any>`
   max-width: ${({ width }) => (width ? '' : '60vh')};
   border: none;
   background: transparent;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1.6em;
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   display: flex;
   flex-direction: column;
 `;

@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import { uiColors, fontSizes, fontWeights } from "utils";
 
 const typographyModifiers = {
   fontSizeExtraSmall,
@@ -32,7 +31,7 @@ const Label = styled.label<{ disabled?: boolean }>`
   ${ifProp(
     'disabled',
     css`
-      color: ${uiColors('text.disabled')};
+      color: ${({ theme }) => theme.palette.text.disabled};
       pointer-events: none;
     `
   )};

@@ -151,15 +151,15 @@ const DatePickerWrapper = styled.span`
 
   .CalendarMonth_caption {
     color: ${colors.navy};
-    font-size: ${fontSizes('h6')};
+    font-size: ${({ theme }) => theme.font.sizes.h6};
     text-align: center;
     padding-top: 1.25rem;
     padding-bottom: 3.125rem;
-    font-weight: ${fontWeights('light')} !important;
+    font-weight: ${({ theme }) => theme.font.weights.light} !important;
   }
 
   .CalendarMonth_caption strong {
-    font-weight: ${fontWeights('light')} !important;
+    font-weight: ${({ theme }) => theme.font.weights.light} !important;
   }
 
   .CalendarMonth_caption__verticalScrollable {

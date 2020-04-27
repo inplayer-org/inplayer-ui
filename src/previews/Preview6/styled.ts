@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { fontSizes } from 'utils/index';
 
 // Components
 import { PreviewBox, ImageHolder } from '../components/SharedComponents';
@@ -82,6 +81,6 @@ export const IconHolder = styled.div<IconHolderProps>`
   background: transparent;
   float: right;
   display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   margin-left: 0.4rem;
 `;
