@@ -9,7 +9,7 @@ export const columns = [
   {
     title: '',
     key: 'icon',
-    render: ({ value }: any) => <FaMusic />,
+    render: () => <FaMusic />,
   },
   {
     title: 'Name',

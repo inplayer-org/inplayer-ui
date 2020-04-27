@@ -128,7 +128,7 @@ class Table<T> extends Component<Props<T>, State> {
 
   generateRows = (data: Array<Data>) => {
     const { options } = this.props;
-    const { rowSelection, rowActions }: TableOptions<T> = options;
+    const { rowSelection }: TableOptions<T> = options;
     let newData = [...data];
 
     if (rowSelection && rowSelection.active) {
@@ -145,19 +145,6 @@ class Table<T> extends Component<Props<T>, State> {
         ),
       }));
     }
-
-    // if (rowActionsExist(rowActions)) {
-    //   newData = newData.map((dataCell) => {
-    //     const actionsContent =
-    //       typeof rowActions === 'function'
-    //         ? rowActions({ row: dataCell })
-    //         : rowActions.map((action) => action.render({ row: dataCell }));
-    //     return {
-    //       ...dataCell,
-    //       actions: actionsContent,
-    //     };
-    //   });
-    // }
 
     return newData;
   };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TabNavigation } from '.';
+import TabNavigation from './TabNavigation';
 
 const Usage = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -15,7 +15,7 @@ const Usage = () => {
         },
       ]}
       selectedTabIndex={selectedTabIndex}
-      onTabClick={(index) => setSelectedTabIndex(index)}
+      onTabClick={(index: number) => setSelectedTabIndex(index)}
     />
   );
 };
