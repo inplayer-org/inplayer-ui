@@ -8,7 +8,7 @@ const Tab = styled.div<{ selected: boolean }>`
   padding: 0.5rem 0;
   display: flex;
   border-right: 1px solid ${colors.gray};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   justify-content: center;
   align-items: center;
   flex: 1;

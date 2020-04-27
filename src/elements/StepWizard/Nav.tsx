@@ -15,7 +15,7 @@ const StepAction = styled.span<{
   isDisabled: boolean;
 }>`
   cursor: pointer;
-  font-size:${({ theme }) => theme.font.sizes.extraLarge};
+  font-size: ${({ theme }) => theme.font.sizes.extraLarge};
   line-height: 1;
   margin: 0 1.5rem;
   opacity: 0.4;

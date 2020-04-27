@@ -5,7 +5,6 @@ import { FaLock } from 'react-icons/fa';
 // utils
 import colors from 'theme/colors';
 
-
 // Components
 import { Typography } from 'elements';
 import {
@@ -63,7 +62,7 @@ export const Protected = styled.strong`
   font-size: ${({ theme }) => theme.font.sizes.small};
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.palette.text.disabled}
+  color: ${({ theme }) => theme.palette.text.disabled};
   font-weight: normal;
   text-align: right;
 `;
@@ -91,8 +90,8 @@ export const ItemDetails = styled.div`
 
 export const Title = styled(Typography)`
   overflow-wrap: break-word;
-  font-weight: ${({ theme }) => theme.font.weights.normal}
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-weight: ${({ theme }) => theme.font.weights.normal};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1.3em;
   color: ${colors.black};
   margin: 0;

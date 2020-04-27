@@ -14,10 +14,10 @@ const fontSizeModifiers = {
 const DropdownContainer = styled.select`
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  color: ${({ theme }) => theme.palette.text.light}
+  color: ${({ theme }) => theme.palette.text.light};
   cursor: pointer;
-  font-size:${({ theme }) => theme.font.sizes.small};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-size: ${({ theme }) => theme.font.sizes.small};
+  font-weight: ${({ theme }) => theme.font.weights.light};
   outline: none;
   transition: all 0.3s ease;
   padding: 0.6em 1.8em 0.5em 0.8em;
@@ -37,8 +37,8 @@ const DropdownContainer = styled.select`
   }
 
   > option {
-    color: ${({ theme }) => theme.palette.text.light}
-    font-weight: ${({ theme }) => theme.font.weights.light}
+    color: ${({ theme }) => theme.palette.text.light};
+    font-weight: ${({ theme }) => theme.font.weights.light};
   }
 
   ${applyStyleModifiers(fontSizeModifiers)};

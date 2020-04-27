@@ -57,7 +57,7 @@ export const PreviewImage = styled.img<PreviewImageProps>`
 
 export const OverlayLabel = styled(Typography)`
   color: ${colors.white};
-  font-weight: ${({ theme }) => theme.font.weights.semiBold}
+  font-weight: ${({ theme }) => theme.font.weights.semiBold};
   position: absolute;
   top: 0;
   right: 0;
@@ -134,11 +134,11 @@ export const BuyButton = styled(Button)<BuyButtonProps>`
   background-color: ${({ buttonBgColor }) => buttonBgColor};
   border: none;
   text-transform: uppercase;
-  font-weight: ${({ theme }) => theme.font.weights.bold}
+  font-weight: ${({ theme }) => theme.font.weights.bold};
   box-sizing: border-box;
   overflow: hidden;
   padding: 0.85em 2em;
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   min-width: 80%;
   margin: 1.5em 0 0;
 

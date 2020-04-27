@@ -35,7 +35,7 @@ const Container = styled.div`
 const Item = styled.a`
   color: ${({ theme }) => theme.palette.text.light};
   box-sizing: border-box;
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   letter-spacing: 0.02em;
   line-height: 2;
   padding: 0.375rem 0.625rem;
@@ -43,7 +43,7 @@ const Item = styled.a`
   transition: color 0.3s ease;
   white-space: nowrap;
   width: 100%;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.main};

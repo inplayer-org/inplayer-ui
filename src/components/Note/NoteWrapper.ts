@@ -14,7 +14,7 @@ const NoteWrapper = styled.p<{ type: NoteType }>`
   border-radius: 3px;
   background: ${colors.white};
   color: ${({ theme }) => theme.palette.text.main};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   letter-spacing: 0.01em;
   line-height: 1.8;
 

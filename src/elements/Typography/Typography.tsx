@@ -49,7 +49,7 @@ const Paragraph = styled.p<ParagraphProps>`
 
 const Heading = styled.h1<HeadingProps>`
   font-family: ${prop('theme.font.primary')};
-  font-weight: ${({ theme }) => theme.font.weights.thin}
+  font-weight: ${({ theme }) => theme.font.weights.thin};
   color: ${({ color }) => color || colors.blue};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};
   ${applyStyleModifiers(typographyModifiers)}

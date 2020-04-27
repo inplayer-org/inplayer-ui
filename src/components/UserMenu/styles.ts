@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'theme/colors';
 
-
 export const ProfileImage = styled.img`
   border-radius: 50%;
   height: 30px;
@@ -55,7 +54,7 @@ export const CloseLayer = styled.div`
 export const MenuTitle = styled.span`
   color: ${({ theme }) => theme.palette.text.light};
   transition: color 0.3s ease;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   padding: 0 3px 0 10px;
 
   &:hover {

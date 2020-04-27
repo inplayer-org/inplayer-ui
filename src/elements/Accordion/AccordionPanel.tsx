@@ -3,9 +3,8 @@ import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
 
-
 // Components
-import Tooltip, { Props as TooltipProps } from 'components/Tooltip/Tooltip';
+import Tooltip, { TooltipProps } from 'components/Tooltip/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 import Typography from '../Typography';
 
@@ -78,7 +77,7 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
 `;
 
 const AccordionTitle = styled(Typography)<AccordionTitleProps>`
-  font-weight: ${({ theme }) => theme.font.weights.thin}
+  font-weight: ${({ theme }) => theme.font.weights.thin};
   color: ${ifProp('disabled', colors.fontLightGray, colors.fontDarkGray)};
   margin: 0;
   display: inline;

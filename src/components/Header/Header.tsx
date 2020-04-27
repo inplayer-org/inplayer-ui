@@ -24,7 +24,7 @@ const Container = styled.header`
 
 const Title = styled.h3`
   color: ${({ theme }) => theme.palette.text.main};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   margin: 0;
 `;
 

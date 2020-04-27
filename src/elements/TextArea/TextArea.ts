@@ -10,10 +10,10 @@ const TextArea = styled.textarea`
   color: ${({ theme }) => theme.palette.text.main};
   transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   border: 1px solid ${colors.gray};
   border-radius: 3px;
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1.4em;
   min-height: 7em;
   width: 100%;
