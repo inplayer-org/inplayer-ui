@@ -52,7 +52,7 @@ type TableOptions<T> = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
-type Props<T = Data> = typeof Table.defaultProps & {
+type Props<T = Data> = {
   columns: Array<Column> | any;
   data: Array<any>;
   className?: string;
