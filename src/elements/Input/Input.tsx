@@ -13,19 +13,13 @@ type StyledInputProps = {
 
 const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
-  vertical-align: middle;
-  box-sizing: border-box;
-  overflow: hidden;
-  outline: none;
   color: ${({ theme }) => theme.palette.text.main};
-  transition: all ease 300ms;
   background: ${colors.white};
-  font-weight: 300;
+  font-weight: ${({ theme }) => theme.font.weights.light};
   padding: 0.375em 0.75em;
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
   font-size: ${({ theme }) => theme.font.sizes.medium};
-  line-height: 1;
 
   &:focus {
     border-bottom: 1px solid ${colors.skyBlue};
