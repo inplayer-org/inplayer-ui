@@ -1,5 +1,6 @@
 import React from 'react';
 import colors from 'theme/colors';
+import styled from 'styled-components';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -67,6 +68,12 @@ type Props = {
   handleOpenModal?: (e: any) => any;
 };
 
+const FlexContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+`;
+
 const Preview1 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
@@ -94,11 +101,16 @@ const Preview1 = ({
       width={width}
       height={height}
       hasPreviewTopBorder={hasPreviewTopBorder}
+      className="inplayer-preview-box"
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageHolder>
+      <StyledImageHolder className="inplayer-imageholder">
         <PreviewImage src={image} />
-        <StyledPaywallDescription hasProtectedByLabel={hasProtectedByLabel} color={colors.white}>
+        <StyledPaywallDescription
+          className="inplayer-paywallexplain"
+          hasProtectedByLabel={hasProtectedByLabel}
+          color={colors.white}
+        >
           <PremiumContent>
             <LockIcon name="lock" />
             <PaywallDescriptionSpan>
@@ -113,24 +125,27 @@ const Preview1 = ({
           </PremiumContent>
         </StyledPaywallDescription>
       </StyledImageHolder>
-      <ItemDetails>
-        <Title variant="h3">
-          <TextEditor value={previewTitle} readOnly />
-        </Title>
-        <TextEditor value={previewDescription} readOnly />
-      </ItemDetails>
-      {displayBuyButton && (
-        <BuyButtonWrapper>
-          <StyledBuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </StyledBuyButton>
-        </BuyButtonWrapper>
-      )}
-      <StyledPreviewFooter color={colors.fontGray}>
+      <FlexContainer>
+        <ItemDetails className="inplayer-itemdetails">
+          <Title variant="h3" className="inplayer-title">
+            <TextEditor value={previewTitle} readOnly />
+          </Title>
+          <TextEditor value={previewDescription} readOnly />
+        </ItemDetails>
+        {displayBuyButton && (
+          <BuyButtonWrapper className="inplayer-buybutton">
+            <StyledBuyButton
+              className="inplayer-button"
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </StyledBuyButton>
+          </BuyButtonWrapper>
+        )}
+      </FlexContainer>
+      <StyledPreviewFooter className="inplayer-preview-footer" color={colors.fontGray}>
         <FooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
         </FooterLink>
