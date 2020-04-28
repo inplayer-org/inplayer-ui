@@ -46,7 +46,6 @@ const FlexContainer = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: nowrap;
-  height: 100%;
 `;
 
 const Preview1 = ({
