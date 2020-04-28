@@ -45,7 +45,7 @@ type Props = {
 const FlexContainer = styled.div`
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   height: 100%;
 `;
 

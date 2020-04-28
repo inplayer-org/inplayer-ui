@@ -77,7 +77,7 @@ export const Logo = styled.img`
 `;
 
 export const ItemDetails = styled.div`
-  display: inline-block;
+  flex-basis: 70%;
 
   @media screen and (max-width: 1100px) {
     width: 100%;
@@ -94,12 +94,7 @@ export const Title = styled(Typography)`
 `;
 
 export const BuyButtonWrapper = styled.div`
-  display: inline-flex;
-  vertical-align: middle;
-  margin-bottom: 0.6em;
-  line-height: inherit;
-  justify-content: flex-end;
-  width: 31%;
+  flex-basis: 30%;
 
   @media screen and (max-width: 1100px) {
     justify-content: center;
