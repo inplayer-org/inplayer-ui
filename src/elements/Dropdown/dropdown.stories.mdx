@@ -63,51 +63,6 @@ const Page = () => (
   </Story>
 </Preview>
 
-### Font size modifiers
-<Preview withSource="open">
-  <Story name="size modifiers">
-    { ()=> {
-    const options = [
-        { value: 'Option 1', displayName: 'Option 1' },
-        { value: 'Option 2', displayName: 'Option 2' },
-    ];
-    const [fontSizeExtraSmallValue, setFontSizeExtraSmallValue] = useState(options[0].value);
-    const [fontSizeSmallValue, setFontSizeSmallValue] = useState(options[0].value);
-    const [fontSizeMediumValue, setFontSizeMediumValue] = useState(options[0].value);
-    const [fontSizeLargeValue, setFontSizeLargeValue] = useState(options[0].value);
-    const defaultOption = { displayName: 'default value', disabled: true };
-    return (
-        <DropdownWrapperDocs> 
-            <Dropdown
-                modifiers={['fontSizeExtraSmall']}
-                options={options}
-                value={fontSizeExtraSmallValue}
-                onChange={(e) => setFontSizeExtraSmallValue(e.target.value)}
-            />
-            <Dropdown
-                modifiers={['fontSizeSmall']}
-                options={options}
-                value={fontSizeSmallValue}
-                onChange={(e) => setFontSizeSmallValue(e.target.value)}
-            />
-            <Dropdown
-                modifiers={['fontSizeMedium']}
-                options={options}
-                value={fontSizeMediumValue}
-                onChange={(e) => setFontSizeMediumValue(e.target.value)}
-            />
-            <Dropdown
-                modifiers={['fontSizeLarge']}
-                options={options}
-                value={fontSizeLargeValue}
-                onChange={(e) => setFontSizeLargeValue(e.target.value)}
-            />
-        </DropdownWrapperDocs>
-    )
-  }}
-  </Story>
-</Preview>
-
 ### Custom color Dropdown
 <Preview withSource="open">
   <Story name="custom color">
