@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.47] - 28-04-2020
+
+### Fixes
+
+- Preview1 remove fixed 100% height
+
+# [2.0.0-beta.46] - 28-04-2020
+
+### Fixes
+
+- Preview1 flex layout improvements
+
 # [2.0.0-beta.45] - 28-04-2020
 
 ### Fixes
