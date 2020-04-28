@@ -31,7 +31,7 @@ const NotificationContainer = styled.div<NotificationContainerProps>`
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   background: ${colors.lightGray};
-  color: ${({ theme }) => theme.palette.text.main};
+  color: ${colors.fontDarkGray};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,7 +103,7 @@ export const CloseIcon = styled.div`
 
   &:hover {
     background: ${colors.white};
-    color: ${({ theme }) => theme.palette.text.main};
+    color: ${colors.fontDarkGray}
   }
 `;
 
