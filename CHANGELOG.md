@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Preview1 layout
 
+### Changes
+
+- Use font-weight 300 for Label
+
 # [2.0.0-beta.44] - 27-04-2020
 
 ### Added
