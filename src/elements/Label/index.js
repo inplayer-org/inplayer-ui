@@ -16,7 +16,7 @@ const Label = styled.label`
   text-transform: uppercase;
   text-decoration: none;
   font-size: ${fontSizes('medium')};
-  font-weight: ${fontWeights('normal')};
+  font-weight: ${fontWeights('light')};
   cursor: pointer;
   vertical-align: middle;
   color: ${uiColors('text.main')};
