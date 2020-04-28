@@ -1,4 +1,4 @@
-import React, { SelectHTMLAttributes, CSSProperties, ChangeEvent } from 'react';
+import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
 import DropdownContainer from './DropdownContainer';
 
 type Option = {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 // Components
-import { CSSProperties } from 'styled-components';
 import Arrow from './Arrow';
 import { NavbarContainer } from './styled';
 import MenuItem from './MenuItem';

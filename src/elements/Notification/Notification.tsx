@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-
-import { CSSProperties } from 'styled-components';
 import NotificationContainer, { CloseIcon } from './NotificationContainer';
 
 export type NotificationVariant = 'success' | 'danger' | 'warning' | '';
 
-type NotificationProps = {
+type Props = {
   /**
    * Notification title
    */
@@ -53,7 +51,7 @@ const Notification = ({
   variant = '',
   duration = 0,
   close = () => destroy(divs.length),
-}: NotificationProps) => {
+}: Props) => {
   useTimeout(close, duration * 1000);
   return (
     <NotificationContainer variant={variant} duration={duration}>

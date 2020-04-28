@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 import Toggle from 'react-toggle';
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';

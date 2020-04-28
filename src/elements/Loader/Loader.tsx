@@ -1,29 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-type LoaderProps = {
-  /**
-   * Height of the svg spinner
-   */
-  height?: number;
-  /**
-   * Width of the svg spinner
-   */
-  width?: number;
-  /**
-   * Defines the color of the spinner
-   */
-  color?: string;
-  /**
-   * Defines the width of the lines
-   */
-  lineWidth?: number;
-  /**
-   * Direction of the spinner
-   */
-  direction?: string;
-};
-
 const directions: Record<string, any> = {
   up: '16,0 32,32 0,32',
   down: '0,0 32,0 16,32',

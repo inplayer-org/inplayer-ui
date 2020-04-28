@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css, CSSProperties } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 
 const Tab = styled.a<{ active: boolean }>`

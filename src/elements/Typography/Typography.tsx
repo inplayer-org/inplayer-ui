@@ -1,4 +1,4 @@
-import React, { ReactChild, CSSProperties } from 'react';
+import React from 'react';
 import styled, { DefaultTheme } from 'styled-components';
 import { prop } from 'styled-tools';
 

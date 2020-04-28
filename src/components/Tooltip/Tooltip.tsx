@@ -1,5 +1,5 @@
 import React, { useState, ReactChild, ReactNode } from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 
 import Arrow from './Arrow';
 import TooltipWrapper, { FadeEasing } from './TooltipWrapper';
