@@ -31,7 +31,6 @@ const EditorContainer = styled.div`
   .ql-editor {
     box-sizing: border-box;
     line-height: 1.42;
-    height: 100%;
     outline: none;
     overflow-y: auto;
     padding: 12px 15px;

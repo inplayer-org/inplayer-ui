@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import colors from 'config/colors';
+import styled from 'styled-components';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
@@ -40,6 +41,13 @@ type Props = {
   isRestrictedAsset?: boolean,
   handleOpenModal?: (e: any) => any,
 };
+
+const FlexContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+`;
 
 const Preview1 = ({
   branding: {
@@ -93,24 +101,26 @@ const Preview1 = ({
           </PremiumContent>
         </StyledPaywallDescription>
       </StyledImageHolder>
-      <ItemDetails className="inplayer-itemdetails">
-        <Title variant="h3" className="inplayer-title">
-          <TextEditor value={previewTitle} displayToolbar={false} readOnly />
-        </Title>
-        <TextEditor value={previewDescription} displayToolbar={false} readOnly />
-      </ItemDetails>
-      {displayBuyButton && (
-        <BuyButtonWrapper className="inplayer-buybutton">
-          <StyledBuyButton
-            className="inplayer-button"
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </StyledBuyButton>
-        </BuyButtonWrapper>
-      )}
+      <FlexContainer>
+        <ItemDetails className="inplayer-itemdetails">
+          <Title variant="h3" className="inplayer-title">
+            <TextEditor value={previewTitle} displayToolbar={false} readOnly />
+          </Title>
+          <TextEditor value={previewDescription} displayToolbar={false} readOnly />
+        </ItemDetails>
+        {displayBuyButton && (
+          <BuyButtonWrapper className="inplayer-buybutton">
+            <StyledBuyButton
+              className="inplayer-button"
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </StyledBuyButton>
+          </BuyButtonWrapper>
+        )}
+      </FlexContainer>
       <StyledPreviewFooter className="inplayer-preview-footer" color={colors.fontGray}>
         <FooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}

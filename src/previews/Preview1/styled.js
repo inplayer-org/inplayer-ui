@@ -77,10 +77,7 @@ export const Logo = styled.img`
 `;
 
 export const ItemDetails = styled.div`
-  width: 69%;
   display: inline-block;
-  vertical-align: middle;
-  height: 30%;
 
   @media screen and (max-width: 1100px) {
     width: 100%;
