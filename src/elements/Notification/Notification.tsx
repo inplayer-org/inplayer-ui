@@ -63,7 +63,7 @@ const Notification = ({
   );
 };
 
-const create = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
+const create = (props: Props, parentDiv?: HTMLDivElement) => {
   const divIndex = divs.length;
   const notificationInstance = <Notification {...props} close={() => destroy(divIndex)} />;
   const div = document.createElement('div');
@@ -77,15 +77,15 @@ const create = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
   divs.push(div);
 };
 
-const success = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
+const success = (props: Props, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'success' }, parentDiv);
 };
 
-const warning = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
+const warning = (props: Props, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'warning' }, parentDiv);
 };
 
-const danger = (props: NotificationProps, parentDiv?: HTMLDivElement) => {
+const danger = (props: Props, parentDiv?: HTMLDivElement) => {
   create({ ...props, variant: 'danger' }, parentDiv);
 };
 
