@@ -82,8 +82,6 @@ type Props = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   value: string | Array<string> | number;
   sizeProp?: Size;
-  style?: Record<string, any>;
-  className?: string;
   icon?: ReactNode;
 };
 
@@ -94,10 +92,7 @@ type RefType =
   | undefined;
 
 const Input = forwardRef(
-  (
-    { type, placeholder, onChange, sizeProp, style, className, icon, ...rest }: Props,
-    ref: RefType
-  ) => {
+  ({ type, placeholder, onChange, sizeProp, icon, ...rest }: Props, ref: RefType) => {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
@@ -107,7 +102,7 @@ const Input = forwardRef(
 
     if (type === 'search') {
       return (
-        <InputWrapper style={style} className={className}>
+        <InputWrapper>
           <IconContainer>
             <MdSearch />
           </IconContainer>
@@ -122,8 +117,9 @@ const Input = forwardRef(
         </InputWrapper>
       );
     }
+
     return (
-      <InputWrapper style={style} className={className}>
+      <InputWrapper>
         <IconContainer>{icon}</IconContainer>
         <StyledInput
           sizeProp={sizeProp}
@@ -143,8 +139,6 @@ Input.displayName = 'Input';
 
 Input.defaultProps = {
   sizeProp: 'md',
-  style: {},
-  className: '',
   icon: null,
 };
 

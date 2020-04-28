@@ -25,29 +25,13 @@ type SwitchProps = {
    * Function executed when the switch value changes
    */
   onChange: (checked: boolean) => void;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
 const MarginLeftLabel = styled(Label)`
   margin-right: 0.5rem;
 `;
 
-const Switch = ({
-  id,
-  checked,
-  label,
-  disabled = false,
-  onChange,
-  className = '',
-  style = {},
-}: SwitchProps) => {
+const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps) => {
   const onToggleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -55,7 +39,7 @@ const Switch = ({
   };
 
   return (
-    <SwitchWrapper className={className} style={style}>
+    <SwitchWrapper>
       <MarginLeftLabel disabled={disabled} htmlFor={id}>
         {label}
       </MarginLeftLabel>

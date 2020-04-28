@@ -39,7 +39,7 @@ type NavigationTab = {
   title: string;
 };
 
-type Props = {
+export type Props = {
   /**
    * Navigation tabs
    */
@@ -52,26 +52,10 @@ type Props = {
    * Selected tab index
    */
   selectedTabIndex: number;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
-export type TabNavigationProps = Props;
-
-const TabNavigation = ({
-  tabs,
-  onTabClick,
-  selectedTabIndex,
-  className = '',
-  style = {},
-}: Props) => (
-  <TabContainer className={className} style={style}>
+const TabNavigation: React.FC<Props> = ({ tabs, onTabClick, selectedTabIndex }) => (
+  <TabContainer>
     {tabs.map((tab, index) => (
       <Tab key={tab.title} onClick={() => onTabClick(index)} active={selectedTabIndex === index}>
         {tab.title}

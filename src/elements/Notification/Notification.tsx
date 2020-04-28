@@ -24,14 +24,6 @@ type NotificationProps = {
    */
   duration?: number;
   /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
-  /**
    * Function to close the notification
    */
   close?: () => void;
@@ -48,37 +40,29 @@ const useTimeout = (callback: () => void, duration: number) => {
   }, [duration]);
 };
 
+const destroy = (index: number) => {
+  if (divs[index]) {
+    ReactDOM.unmountComponentAtNode(divs[index]);
+    document.body.removeChild(divs[index]);
+  }
+};
+
 const Notification = ({
   title,
   content,
   variant = '',
   duration = 0,
-  className = '',
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   close = () => destroy(divs.length),
-  style = {},
 }: NotificationProps) => {
   useTimeout(close, duration * 1000);
   return (
-    <NotificationContainer
-      variant={variant}
-      duration={duration}
-      className={className}
-      style={style}
-    >
+    <NotificationContainer variant={variant} duration={duration}>
       <div>
         <strong>{title}</strong> {content}
       </div>
       <CloseIcon onClick={close} />
     </NotificationContainer>
   );
-};
-
-const destroy = (index: number) => {
-  if (divs[index]) {
-    ReactDOM.unmountComponentAtNode(divs[index]);
-    document.body.removeChild(divs[index]);
-  }
 };
 
 const create = (props: NotificationProps, parentDiv?: HTMLDivElement) => {

@@ -9,6 +9,7 @@ type Type = {
    */
   type?: ProgressType;
 };
+
 type RCProgressProps = {
   /**
    * Width of the stroke. Unit is percentage of SVG canvas size
@@ -18,10 +19,6 @@ type RCProgressProps = {
    * Width of the trail stroke. Unit is percentage of SVG canvas size. Trail is always centered relative to actual progress path. If trailWidth are not defined, it same as strokeWidth.
    */
   trailWidth?: number;
-  /**
-   * External CSS class name
-   */
-  className?: string;
   /**
    * The percent of the progress
    */
@@ -43,10 +40,6 @@ type RCProgressProps = {
    */
   prefixCls?: string;
   /**
-   * Inline CSS
-   */
-  style?: React.CSSProperties;
-  /**
    * The gap degree of half circle, 0 - 360
    */
   gapDegree?: number;
@@ -58,7 +51,7 @@ type RCProgressProps = {
 
 type Props = Type & RCProgressProps;
 
-const Progress = ({ type, ...rest }: Props) =>
+const Progress: React.FC<Props> = ({ type, ...rest }: Props) =>
   type === 'circle' ? <Circle {...rest} /> : <Line {...rest} />;
 
 Progress.defaultProps = {
@@ -69,11 +62,9 @@ Progress.defaultProps = {
   trailColor: '#d7dde5',
   strokeLinecap: 'round',
   prefixCls: 'rc-progress',
-  className: '',
   percent: 0,
   gapDegree: 0,
   gapPosition: 'top',
-  style: {},
 };
 
 export default Progress;

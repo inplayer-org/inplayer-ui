@@ -51,14 +51,6 @@ type Props = {
    * (ex. isOutsideRange={day => day.isBefore(moment())})
    */
   isOutsideRange?: (day: any) => boolean;
-  /**
-   * Inline CSS
-   */
-  style?: Record<string, any>;
-  /**
-   * External CSS class name
-   */
-  className?: string;
   minimumNights?: number;
   customAllTimeDate?: Moment;
   activePeriodPreset?: string;
@@ -79,8 +71,6 @@ const DatePicker = ({
   startDateId = 'startDate',
   endDateId = 'endDate',
   isOutsideRange = () => false,
-  style,
-  className,
   onFocusChange,
   focusedInput,
   minimumNights,
@@ -167,7 +157,7 @@ const DatePicker = ({
   };
 
   return (
-    <DatePickerWrapper style={style} className={className}>
+    <DatePickerWrapper>
       <DateRangePicker
         isOutsideRange={isOutsideRange}
         onDatesChange={handleDateChange}

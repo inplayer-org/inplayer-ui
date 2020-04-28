@@ -55,7 +55,7 @@ const Heading = styled.h1<HeadingProps>`
   ${applyStyleModifiers(typographyModifiers)}
 `;
 
-export type TypographyProps = {
+export type Props = {
   /**
    * Variant type
    */
@@ -64,7 +64,6 @@ export type TypographyProps = {
    * When prop is set, the paragraph element has `palette.primary.fontGray` color
    */
   description?: boolean;
-  children: ReactChild;
   /**
    * Text color modifiers
    */
@@ -73,33 +72,21 @@ export type TypographyProps = {
    * Text color
    */
   color?: string;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
-const Typography = ({
+const Typography: React.FC<Props> = ({
   variant = 'h1',
   children,
   description = false,
-  className = '',
   modifiers = [],
   color = '',
-  style = {},
-}: TypographyProps) => {
+}) => {
   if (variant === 'p') {
     return (
       <Paragraph
-        className={className}
         description={description}
         modifiers={modifiers}
         color={color}
-        style={style}
       >
         {children}
       </Paragraph>
@@ -108,11 +95,9 @@ const Typography = ({
   return (
     <Heading
       as={variant}
-      className={className}
       variant={variant}
       modifiers={modifiers}
       color={color}
-      style={style}
     >
       {children}
     </Heading>

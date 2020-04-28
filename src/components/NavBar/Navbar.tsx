@@ -13,23 +13,15 @@ type Props = {
    * Navbar logo
    */
   logo?: Element | string;
-  /** 
-   * External CSS class name 
-   * */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
-const Navbar = ({ children, logo, className = '', style = {} }: Props) => {
+const Navbar = ({ children, logo }: Props) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => setOpen(!open);
 
   return (
-    <NavbarContainer className={className} style={style} open={open} onClick={toggleOpen}>
+    <NavbarContainer open={open} onClick={toggleOpen}>
       <MenuWithLogo logo={logo}>{children}</MenuWithLogo>
       <Arrow open={open} section="navbar" />
     </NavbarContainer>

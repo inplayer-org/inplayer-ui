@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import colors from 'theme/colors';
 import Typography, { TypographyVariant } from '../Typography/Typography';
@@ -40,19 +40,10 @@ interface Props {
    * Type of the variant
    */
   titleVariant?: TypographyVariant;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  children: ReactNode;
-  /**
-   * Inline CSS
-   */
-  style?: Record<string, any>;
 }
 
-const Card = ({ title, titleVariant = 'h1', className, children, style }: Props) => (
-  <CardWrapper className={className} style={style}>
+const Card: React.FC<Props> = ({ title, titleVariant = 'h1', children }) => (
+  <CardWrapper>
     {title && <CardTitle variant={titleVariant}>{title}</CardTitle>}
     <CardContent>{children}</CardContent>
   </CardWrapper>

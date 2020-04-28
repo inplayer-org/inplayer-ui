@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 import { MdInfoOutline, MdWarning } from 'react-icons/md';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 
@@ -7,7 +7,7 @@ import colors from 'theme/colors';
 
 import NoteWrapper, { NoteType } from './NoteWrapper';
 
-interface NoteProps {
+interface Props {
   /**
    * Title note
    */
@@ -20,14 +20,6 @@ interface NoteProps {
    * Note type
    */
   type: NoteType;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 }
 
 interface IconProps {
@@ -62,10 +54,10 @@ const NoteIcon = {
 
 const getIconFromNoteType = (type: NoteType) => NoteIcon[type];
 
-const Note = ({ type, title, text, className = '', style = {} }: NoteProps) => {
+const Note: React.FC<Props> = ({ type, title, text }) => {
   const Icon = getIconFromNoteType(type);
   return (
-    <NoteWrapper type={type} className={className} style={style}>
+    <NoteWrapper type={type}>
       {Icon} <strong>{title}</strong>
       {text}
     </NoteWrapper>

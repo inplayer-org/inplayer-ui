@@ -27,17 +27,8 @@ type Props = {
    * Date
    */
   date: Moment | string | null;
-
   // input related props
   isOutsideRange?: (day: number) => any;
-  /**
-   * Inline CSS
-   */
-  style?: Record<string, any>;
-  /**
-   * External CSS class name
-   */
-  className?: string;
   /**
    * Number of months to show
    */
@@ -48,19 +39,17 @@ type Props = {
   disabled?: boolean;
 };
 
-const DayPicker = ({
+const DayPicker: React.FC<Props> = ({
   isOutsideRange = () => false,
-  style = {},
   numberOfMonths = 1,
-  className = '',
   disabled = false,
   onDateChange,
   onFocusChange,
   focused,
   date,
   id,
-}: Props) => (
-  <DayPickerWrapper style={style} className={className}>
+}) => (
+  <DayPickerWrapper>
     <SingleDatePicker
       id={id}
       isOutsideRange={isOutsideRange}

@@ -9,9 +9,6 @@ interface RadioProps {
   checked: boolean;
   onChange: (e: SyntheticEvent<HTMLInputElement>) => any;
   onBlur?: (e: any) => any;
-  /** A className can be passed down for further styling or extending with CSS-in-JS */
-  className?: string;
-  style?: Record<string, any>;
   disabled?: boolean;
 }
 
@@ -20,8 +17,6 @@ const Radio = ({
   id,
   checked,
   onChange,
-  className = '',
-  style = {},
   onBlur = () => {},
   disabled = false,
   name = '',
@@ -33,9 +28,7 @@ const Radio = ({
       checked={checked}
       onChange={onChange}
       onBlur={onBlur}
-      style={style}
       disabled={disabled}
-      className={className}
       name={name}
     />
     <Label htmlFor={id}>{label}</Label>

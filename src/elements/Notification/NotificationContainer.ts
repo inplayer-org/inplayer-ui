@@ -2,7 +2,6 @@ import styled, { keyframes, css } from 'styled-components';
 import { switchProp, prop } from 'styled-tools';
 import colors from 'theme/colors';
 import { transparentize } from 'polished';
-import { CSSProperties } from 'react';
 import { NotificationVariant } from './Notification';
 
 const notify = keyframes`
@@ -22,8 +21,6 @@ const notify = keyframes`
 type NotificationContainerProps = {
   variant?: NotificationVariant;
   duration?: number;
-  className?: string;
-  style?: CSSProperties;
 };
 
 const NotificationContainer = styled.div<NotificationContainerProps>`
@@ -103,7 +100,7 @@ export const CloseIcon = styled.div`
 
   &:hover {
     background: ${colors.white};
-    color: ${colors.fontDarkGray}
+    color: ${colors.fontDarkGray};
   }
 `;
 

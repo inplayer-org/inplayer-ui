@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes, CSSProperties } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 type LoaderProps = {
   /**
@@ -22,10 +22,6 @@ type LoaderProps = {
    * Direction of the spinner
    */
   direction?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
 const directions: Record<string, any> = {
@@ -53,22 +49,37 @@ const StyledSpinner = styled.svg<{
   }
 `;
 
-const Loader = ({
+type Props = {
+  /**
+   * Height of the svg spinner
+   */
+  height?: number;
+  /**
+   * Width of the svg spinner
+   */
+  width?: number;
+  /**
+   * Defines the color of the spinner
+   */
+  color?: string;
+  /**
+   * Defines the width of the lines
+   */
+  lineWidth?: number;
+  /**
+   * Direction of the spinner
+   */
+  direction?: string;
+};
+
+const Loader: React.FC<Props> = ({
   height = 100,
   width = 100,
   color = '#07AAE6',
   lineWidth = 2,
   direction = 'right',
-  style = {},
-}: LoaderProps) => (
-  <StyledSpinner
-    style={style}
-    color={color}
-    id="triangle"
-    width={width}
-    height={height}
-    viewBox="-3 -4 39 39"
-  >
+}) => (
+  <StyledSpinner color={color} id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
     <polygon
       fill="transparent"
       stroke={color}

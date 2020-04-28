@@ -1,7 +1,6 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import Loader from 'elements/Loader';
-import { CSSProperties } from 'styled-components';
 import Grid from 'blocks/Grid';
 import {
   ButtonTableRow,
@@ -30,7 +29,6 @@ type Column = {
   title: string;
   key: string;
   render: ({ value, rowValues }: Render) => ReactNode;
-  style?: CSSProperties;
   alignRight?: any;
 };
 
@@ -55,8 +53,6 @@ type TableOptions<T> = {
 type Props<T = Data> = {
   columns: Array<Column> | any;
   data: Array<any>;
-  className?: string;
-  style?: CSSProperties;
   options: TableOptions<T>;
   showLoader?: boolean;
   renderEmptyTable?: boolean;
@@ -82,8 +78,6 @@ const rowActionsExist = (actions: RowActions<any>) =>
 class Table<T> extends Component<Props<T>, State> {
   // eslint-disable-next-line react/static-property-placement
   static defaultProps = {
-    className: '',
-    style: {},
     options: {
       rowSelection: {
         active: false,
@@ -195,11 +189,7 @@ class Table<T> extends Component<Props<T>, State> {
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column: Column, index: number) => (
-          <TableCell
-            key={index}
-            isActionsCell={column.key === 'actions'}
-            style={column.style || {}}
-          >
+          <TableCell key={index} isActionsCell={column.key === 'actions'}>
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
@@ -213,8 +203,6 @@ class Table<T> extends Component<Props<T>, State> {
     const {
       columns,
       data,
-      className,
-      style,
       showLoader,
       renderEmptyTable,
       tableButton,
@@ -238,7 +226,7 @@ class Table<T> extends Component<Props<T>, State> {
     const hasHeaderSection = typeof headerSection !== 'undefined';
 
     return (
-      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
+      <TableWrapper hasHeaderSection={hasHeaderSection}>
         <thead>
           <TableHeadRow>{columnContent}</TableHeadRow>
         </thead>

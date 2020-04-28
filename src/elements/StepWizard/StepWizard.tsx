@@ -1,6 +1,4 @@
-// @flow
 import React from 'react';
-import { CSSProperties } from 'styled-components';
 import Nav, { StepItem } from './Nav';
 import Step from './Step';
 
@@ -16,14 +14,6 @@ type StepWizardProps = {
    */
   activeStep: number;
   /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
-  /**
    * Function which runs when the step changes
    */
   onStepChange?: (activeStep: number) => void;
@@ -36,8 +26,6 @@ type StepWizardProps = {
 const StepWizard = ({
   steps,
   activeStep,
-  className = '',
-  style = {},
   onStepChange = () => {},
   transition = 'fadeInRight',
 }: StepWizardProps) => {
@@ -72,10 +60,10 @@ const StepWizard = ({
   });
 
   return (
-    <div className={className} style={style}>
+    <>
       <Nav steps={steps} activeStep={activeStep} goToStep={goToStep} />
       <div>{renderSteps}</div>
-    </div>
+    </>
   );
 };
 

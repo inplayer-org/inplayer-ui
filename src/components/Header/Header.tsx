@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import colors from 'theme/colors';
 
@@ -7,7 +7,7 @@ import colors from 'theme/colors';
 import UserMenu from '../UserMenu';
 import { UserMenuProps } from '../UserMenu/UserMenu';
 import TabNavigation from '../TabNavigation';
-import { TabNavigationProps } from '../TabNavigation/TabNavigation';
+import { Props as TabNavigationProps } from '../TabNavigation/TabNavigation';
 
 const Container = styled.header`
   align-items: center;
@@ -33,7 +33,7 @@ const MenuWrapper = styled.div`
   justify-content: space-between;
 `;
 
-type HeaderProps = {
+type Props = {
   /**
    * Header title
    */
@@ -47,28 +47,18 @@ type HeaderProps = {
    */
   additionalUserMenuProps?: UserMenuProps | null;
   /**
-   * Tab related properties: `tabs`, `onTabClick`, `selectedTabIndex`, `style` and `className`
+   * Tab related properties: `tabs`, `onTabClick`, `selectedTabIndex`
    */
   tabNavigationProps?: TabNavigationProps | null;
-  /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
 };
 
-const Header = ({
+const Header: React.FC<Props> = ({
   title = null,
   userMenuProps = null,
   additionalUserMenuProps = null,
   tabNavigationProps = null,
-  className = '',
-  style = {},
-}: HeaderProps) => (
-  <Container className={className} style={style}>
+}) => (
+  <Container>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
     <MenuWrapper>

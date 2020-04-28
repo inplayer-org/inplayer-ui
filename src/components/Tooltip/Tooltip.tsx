@@ -39,14 +39,6 @@ export type TooltipProps = {
    */
   placement?: Placement;
   /**
-   * External CSS class name
-   */
-  className?: string;
-  /**
-   * Inline CSS
-   */
-  style?: CSSProperties;
-  /**
    * Fade duration in milliseconds
    */
   fadeDuration?: number;
@@ -98,8 +90,6 @@ const Tooltip = ({
   children = null,
   color = '',
   content,
-  style,
-  className,
   fadeDuration = 150,
   fadeEasing = 'linear',
   fixed = false,
@@ -155,8 +145,6 @@ const Tooltip = ({
 
   return (
     <Container
-      style={style}
-      className={className}
       onClick={behavior === 'click' ? flashTooltip : undefined}
       onMouseEnter={behavior === 'hover' && !fixed ? showTooltip : undefined}
       onMouseLeave={behavior === 'hover' && !fixed ? hideTooltip : undefined}

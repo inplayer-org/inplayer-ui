@@ -1,4 +1,4 @@
-import React, { CSSProperties, ButtonHTMLAttributes, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
@@ -14,8 +14,6 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   ContentProps & {
     buttonModifiers?: Array<string>;
     sizeType?: Size;
-    style?: CSSProperties;
-    className?: string;
     fullWidth?: boolean;
     fullHeight?: boolean;
   };
@@ -48,8 +46,6 @@ const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps)
 const Button = ({
   sizeType = 'md',
   buttonModifiers,
-  className = '',
-  style,
   icon,
   iconPosition,
   children,
@@ -58,8 +54,6 @@ const Button = ({
   ...rest
 }: Props) => (
   <ButtonWrapper
-    className={className}
-    style={style}
     sizeType={sizeType}
     modifiers={buttonModifiers}
     fullWidth={fullWidth}
@@ -67,8 +61,7 @@ const Button = ({
     {...rest}
   >
     <Content icon={icon} iconPosition={iconPosition}>
-      {' '}
-      {children}{' '}
+      {children}
     </Content>
   </ButtonWrapper>
 );
