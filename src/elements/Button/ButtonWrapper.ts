@@ -114,7 +114,6 @@ type ButtonWrapperProps = {
 
 const ButtonWrapper = styled.button<ButtonWrapperProps>`
   display: flex;
-  align-items: center;
   justify-content: center;
   background: ${colors.white};
   color: ${({ theme }) => theme.palette.text.main};
@@ -122,12 +121,8 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   border: 1px solid ${colors.gray};
   border-radius: 3px;
   font-size: ${({ theme }) => theme.font.sizes.medium};
-  outline: none;
-  transition: all ease 300ms;
   cursor: pointer;
-  vertical-align: middle;
-  letter-spacing: 0.015em;
-  line-height: 1;
+  letter-spacing: 0.02em;
 
   &:hover {
     border-color: ${colors.skyBlue};
