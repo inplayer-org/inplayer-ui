@@ -1,8 +1,4 @@
-import { DefaultTheme } from 'styled-components';
-
-export interface ModifierProps {
-  theme: DefaultTheme;
-}
+import { ModifierProps } from './types';
 
 export const fontSizeExtraSmall = ({ theme }: ModifierProps) => `
   font-size: ${theme.font.sizes.extraSmall};
