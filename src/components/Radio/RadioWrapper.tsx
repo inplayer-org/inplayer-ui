@@ -29,8 +29,8 @@ const RadioContainer = styled.div`
     &::after {
       content: '●';
       position: absolute;
-      top: -0.1rem;
-      left: 0.09rem;
+      top: -0.22rem;
+      left: 0.1rem;
       font-size: 1.4rem;
       color: ${Colors.skyBlue};
       transition: all 0.2s;
