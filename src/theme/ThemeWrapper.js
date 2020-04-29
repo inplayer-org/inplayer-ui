@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Node, ComponentType } from 'react';
 import { ThemeProvider as DefaultThemeProvider } from 'styled-components';
 import GlobalStyles from 'config/globalStyles';
@@ -15,7 +15,9 @@ type Props = {
 
 const ThemeWrapper = ({ children, theme, withProvider: Provider }: Props) => {
   const appTheme = theme || fallbackTheme;
-  loadFonts();
+  useEffect(() => {
+    loadFonts();
+  }, []);
 
   return (
     <Provider theme={appTheme}>

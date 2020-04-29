@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.48] - 29-04-2020
+
+### Fixes
+
+- Fix loading fonts on every rerender
+
 # [2.0.0-beta.47] - 28-04-2020
 
 ### Fixes
