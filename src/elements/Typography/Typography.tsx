@@ -31,8 +31,6 @@ type HeadingProps = {
     h5: string;
     h6: string;
   };
-  theme: DefaultTheme;
-  modifiers: any;
 };
 
 const Paragraph = styled.p<ParagraphProps>`
