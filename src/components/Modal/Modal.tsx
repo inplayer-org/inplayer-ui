@@ -46,7 +46,7 @@ type Props = {
   title: string;
 };
 
-const Modal: React.FC<Props> = ({ isModalOpen, closeModal, children, title }) => (
+const Modal = ({ isModalOpen, closeModal, children, title }: Props) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
     <ModalContainer onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
