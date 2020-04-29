@@ -54,7 +54,7 @@ const NoteIcon = {
 
 const getIconFromNoteType = (type: NoteType) => NoteIcon[type];
 
-const Note: React.FC<Props> = ({ type, title, text }) => {
+const Note = ({ type, title, text }: Props) => {
   const Icon = getIconFromNoteType(type);
   return (
     <NoteWrapper type={type}>
