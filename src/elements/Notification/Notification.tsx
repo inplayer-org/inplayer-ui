@@ -18,7 +18,7 @@ type Props = {
    */
   variant?: NotificationVariant;
   /**
-   * Duration (in seconds) of the notification before it dissapears
+   * Duration (in seconds) of the notification before it disappears
    */
   duration?: number;
   /**
