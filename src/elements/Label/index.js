@@ -12,8 +12,6 @@ const typographyModifiers = {
 };
 
 const Label = styled.label`
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
   text-decoration: none;
   font-size: ${fontSizes('medium')};
   font-weight: ${fontWeights('light')};
