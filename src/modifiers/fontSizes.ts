@@ -1,17 +1,21 @@
 import { DefaultTheme } from 'styled-components';
 
-export const fontSizeExtraSmall = ({ font: { sizes: fontSize } }: DefaultTheme) => `
-  font-size: ${fontSize.extraSmall};
+export interface ModifierProps {
+  theme: DefaultTheme;
+}
+
+export const fontSizeExtraSmall = ({ theme }: ModifierProps) => `
+  font-size: ${theme.font.sizes.extraSmall};
 `;
 
-export const fontSizeSmall = ({ font: { sizes: fontSize } }: DefaultTheme) => `
-  font-size: ${fontSize.small};
+export const fontSizeSmall = ({ theme }: ModifierProps) => `
+  font-size: ${theme.font.sizes.small};
 `;
 
-export const fontSizeMedium = ({ font: { sizes: fontSize } }: DefaultTheme) => `
-  font-size: ${fontSize.medium};
+export const fontSizeMedium = ({ theme }: ModifierProps) => `
+  font-size: ${theme.font.sizes.medium};
 `;
 
-export const fontSizeLarge = ({ font: { sizes: fontSize } }: DefaultTheme) => `
-  font-size: ${fontSize.large};
+export const fontSizeLarge = ({ theme }: ModifierProps) => `
+  font-size: ${theme.font.sizes.large};
 `;
