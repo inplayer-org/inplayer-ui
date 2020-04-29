@@ -25,7 +25,7 @@ export const Theme: DefaultTheme = {
     borderRadius: '2px',
   },
   font: {
-    primary: 'Roboto',
+    primary: `'Roboto', sans-serif;`,
     secondary: 'Open Sans',
     weights: {
       thin: 100,
