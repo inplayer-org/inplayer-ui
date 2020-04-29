@@ -1,8 +1,8 @@
 import colors from 'theme/colors';
-import { DefaultTheme } from 'styled-components';
+import { ModifierProps } from './types';
 
-export const backgroundPrimary = ({ palette: { primary } }: DefaultTheme) => `
-  background: ${primary.main};
+export const backgroundPrimary = ({ theme }: ModifierProps) => `
+  background: ${theme.palette.primary.main};
 `;
 
 export const backgroundInfo = () => `

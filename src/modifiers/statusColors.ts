@@ -1,16 +1,16 @@
 import colors from 'theme/colors';
-import { DefaultTheme } from 'styled-components';
+import { ModifierProps } from './types';
 
-export const statusColorPrimary = ({ palette: { primary } }: DefaultTheme) => `
-   color: ${primary.main};
+export const statusColorPrimary = ({ theme }: ModifierProps) => `
+   color: ${theme.palette.primary.main};
 `;
 
 export const statusColorWarning = () => `
    color: ${colors.yellow};
 `;
 
-export const statusColorInfo = ({ palette: { text } }: DefaultTheme) => `
-   color: ${text.light};
+export const statusColorInfo = ({ theme }: ModifierProps) => `
+   color: ${theme.palette.primary.light};
 `;
 
 export const statusColorSuccess = () => `
