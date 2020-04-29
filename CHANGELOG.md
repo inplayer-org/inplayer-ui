@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Fix loading fonts on every rerender
 
+## Change
+
+- Remove letter-spacing nad text-transform in Label
+
 # [2.0.0-beta.47] - 28-04-2020
 
 ### Fixes
