@@ -1,16 +1,16 @@
 import colors from 'theme/colors';
-import { DefaultTheme } from 'styled-components';
+import { ModifierProps } from './types';
 
-export const textPrimary = ({ palette: { text } }: DefaultTheme) => `
-  color: ${text.main};
+export const textPrimary = ({ theme }: ModifierProps) => `
+  color: ${theme.palette.text.main};
 `;
 
-export const textLight = ({ palette: { text } }: DefaultTheme) => `
-  color: ${text.light};
+export const textLight = ({ theme }: ModifierProps) => `
+  color: ${theme.palette.text.light};
 `;
 
-export const textDisabled = ({ palette: { text } }: DefaultTheme) => `
-  color: ${text.disabled};
+export const textDisabled = ({ theme }: ModifierProps) => `
+  color: ${theme.palette.text.disabled};
 `;
 
 export const textDanger = () => `

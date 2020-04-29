@@ -1,17 +1,17 @@
-import { DefaultTheme } from 'styled-components';
+import { ModifierProps } from './types';
 
-export const fontLight = ({ font }: DefaultTheme) => `
-  font-weight: ${font.weights.light};
+export const fontLight = ({ theme }: ModifierProps) => `
+  font-weight: ${theme.font.weights.light};
 `;
 
-export const fontNormal = ({ font }: DefaultTheme) => `
-  font-weight: ${font.weights.normal};
+export const fontNormal = ({ theme }: ModifierProps) => `
+  font-weight: ${theme.font.weights.normal};
 `;
 
-export const fontSemiBold = ({ font }: DefaultTheme) => `
-  font-weight: ${font.weights.semiBold};
+export const fontSemiBold = ({ theme }: ModifierProps) => `
+  font-weight: ${theme.font.weights.semiBold};
 `;
 
-export const fontBold = ({ font }: DefaultTheme) => `
-  font-weight: ${font.weights.bold};;
+export const fontBold = ({ theme }: ModifierProps) => `
+  font-weight: ${theme.font.weights.bold};
 `;
