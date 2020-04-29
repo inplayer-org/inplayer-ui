@@ -52,12 +52,12 @@ type Props = {
   tabNavigationProps?: TabNavigationProps | null;
 };
 
-const Header: React.FC<Props> = ({
+const Header = ({
   title = null,
   userMenuProps = null,
   additionalUserMenuProps = null,
   tabNavigationProps = null,
-}) => (
+}: Props) => (
   <Container>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}

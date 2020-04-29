@@ -39,7 +39,7 @@ type Props = {
   disabled?: boolean;
 };
 
-const DayPicker: React.FC<Props> = ({
+const DayPicker = ({
   isOutsideRange = () => false,
   numberOfMonths = 1,
   disabled = false,
@@ -48,7 +48,7 @@ const DayPicker: React.FC<Props> = ({
   focused,
   date,
   id,
-}) => (
+}: Props) => (
   <DayPickerWrapper>
     <SingleDatePicker
       id={id}

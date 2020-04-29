@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled from 'styled-components';
 import { prop } from 'styled-tools';
 
 import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
@@ -31,10 +31,11 @@ type HeadingProps = {
     h5: string;
     h6: string;
   };
+  modifiers: Array<string>;
 };
 
 const Paragraph = styled.p<ParagraphProps>`
-  font-size:${({ theme }) => theme.font.sizes.extraSmall};
+  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
   color: ${({ color, theme }) => color || `${theme.palette.text.main}`};
   ${({ description, theme: { palette, font } }) =>
     description &&
@@ -72,31 +73,22 @@ export type Props = {
   color?: string;
 };
 
-const Typography: React.FC<Props> = ({
+const Typography = ({
   variant = 'h1',
   children,
   description = false,
   modifiers = [],
   color = '',
-}) => {
+}: Props) => {
   if (variant === 'p') {
     return (
-      <Paragraph
-        description={description}
-        modifiers={modifiers}
-        color={color}
-      >
+      <Paragraph description={description} modifiers={modifiers} color={color}>
         {children}
       </Paragraph>
     );
   }
   return (
-    <Heading
-      as={variant}
-      variant={variant}
-      modifiers={modifiers}
-      color={color}
-    >
+    <Heading as={variant} variant={variant} modifiers={modifiers} color={color}>
       {children}
     </Heading>
   );

@@ -40,10 +40,11 @@ interface Props {
    * Type of the variant
    */
   titleVariant?: TypographyVariant;
+  style?: Record<string, any>;
 }
 
-const Card: React.FC<Props> = ({ title, titleVariant = 'h1', children }) => (
-  <CardWrapper>
+const Card = ({ title, titleVariant = 'h1', style, children }: Props) => (
+  <CardWrapper style={style}>
     {title && <CardTitle variant={titleVariant}>{title}</CardTitle>}
     <CardContent>{children}</CardContent>
   </CardWrapper>
