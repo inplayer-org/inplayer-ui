@@ -49,13 +49,13 @@ type Props = {
   direction?: string;
 };
 
-const Loader: React.FC<Props> = ({
+const Loader = ({
   height = 100,
   width = 100,
   color = '#07AAE6',
   lineWidth = 2,
   direction = 'right',
-}) => (
+}: Props) => (
   <StyledSpinner color={color} id="triangle" width={width} height={height} viewBox="-3 -4 39 39">
     <polygon
       fill="transparent"

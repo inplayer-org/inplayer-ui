@@ -54,7 +54,7 @@ export type Props = {
   selectedTabIndex: number;
 };
 
-const TabNavigation: React.FC<Props> = ({ tabs, onTabClick, selectedTabIndex }) => (
+const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
   <TabContainer>
     {tabs.map((tab, index) => (
       <Tab key={tab.title} onClick={() => onTabClick(index)} active={selectedTabIndex === index}>

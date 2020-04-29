@@ -6,7 +6,7 @@ type TabInfo = {
   name: string;
 };
 
-type ContentProps = {
+type ContentProps = TabInfo & {
   icon?: ReactNode | null;
   iconPosition?: string;
 };
@@ -18,7 +18,7 @@ type TabsProps = HTMLAttributes<HTMLDivElement> &
     onTabClick: (index: number) => void;
   };
 
-const Content = ({ icon = null, iconPosition = 'left', name }: any) =>
+const Content = ({ icon = null, iconPosition = 'left', name }: ContentProps) =>
   iconPosition === 'right' ? (
     <>
       <span>{name}</span>

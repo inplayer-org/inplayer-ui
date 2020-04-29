@@ -51,7 +51,7 @@ type RCProgressProps = {
 
 type Props = Type & RCProgressProps;
 
-const Progress: React.FC<Props> = ({ type, ...rest }: Props) =>
+const Progress = ({ type, ...rest }: Props) =>
   type === 'circle' ? <Circle {...rest} /> : <Line {...rest} />;
 
 Progress.defaultProps = {
