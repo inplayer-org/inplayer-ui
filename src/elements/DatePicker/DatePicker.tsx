@@ -121,6 +121,8 @@ const DatePicker = ({
   };
 
   const renderDatePresets = () => {
+    if (!showPresets) return '';
+
     let presets = [];
 
     if (displayPresets[0] === 'default') {
@@ -135,20 +137,19 @@ const DatePicker = ({
       presets = [...displayPresets];
     }
 
-    if (showPresets)
-      return (
-        <Styled.DatePresetWrapper>
-          {presets.map((text: string) => (
-            <Styled.StyledLabel
-              active={activePeriod === text}
-              key={text}
-              onClick={() => handleRangeClick(text as Period)}
-            >
-              {text}
-            </Styled.StyledLabel>
-          ))}
-        </Styled.DatePresetWrapper>
-      );
+    return (
+      <Styled.DatePresetWrapper>
+        {presets.map((text: string) => (
+          <Styled.StyledLabel
+            active={activePeriod === text}
+            key={text}
+            onClick={() => handleRangeClick(text as Period)}
+          >
+            {text}
+          </Styled.StyledLabel>
+        ))}
+      </Styled.DatePresetWrapper>
+    );
   };
 
   const handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {
