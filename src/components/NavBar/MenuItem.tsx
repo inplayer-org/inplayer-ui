@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, ReactNode } from 'react';
+import React, { SyntheticEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
@@ -13,7 +13,7 @@ const MenuItemContainer = styled.div<{ active: any }>`
   transition: color 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   box-sizing: border-box;
   ${ifProp(
     'active',
@@ -29,7 +29,7 @@ const MenuItemContainer = styled.div<{ active: any }>`
   }
 `;
 
-const MenuItemIcon = styled.i`
+const IconContainer = styled.div`
   margin: 0 1rem;
   width: 20px;
   min-width: 20px;
@@ -37,7 +37,7 @@ const MenuItemIcon = styled.i`
 
 type MenuItemProps = {
   active?: boolean;
-  icon?: ReactNode;
+  icon?: ReactElement;
   onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
   children?: any;
 };
@@ -51,7 +51,7 @@ const MenuItem = ({ active, icon, onClick, children }: MenuItemProps) => {
   };
   return (
     <MenuItemContainer active={active} onClick={onItemClick}>
-      <MenuItemIcon>{icon}</MenuItemIcon>
+      <IconContainer>{icon}</IconContainer>
       {children}
     </MenuItemContainer>
   );
