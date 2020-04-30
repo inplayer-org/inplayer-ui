@@ -1,8 +1,8 @@
 linter:
   eslint:
-    dir: ./src
+    dir: src
     config: .eslintrc
-    ext: '.js,.jsx,.ts, .tsx'
+    ext: '.js, .jsx, .ts, .tsx'
     ignore-path: .eslintingore
     no-ignore: true
     ignore-pattern: '/src/assets/*'
