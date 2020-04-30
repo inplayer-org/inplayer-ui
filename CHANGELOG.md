@@ -2,11 +2,73 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.0.0-beta.39] - 06-04-2020
+# [2.0.0-beta.48] - 29-04-2020
+
+### Fixes
+
+- Fix loading fonts on every rerender
+
+## Change
+
+- Remove letter-spacing nad text-transform in Label
+
+# [2.0.0-beta.47] - 28-04-2020
+
+### Fixes
+
+- Preview1 remove fixed 100% height
+
+# [2.0.0-beta.46] - 28-04-2020
+
+### Fixes
+
+- Preview1 flex layout improvements
+
+# [2.0.0-beta.45] - 28-04-2020
+
+### Fixes
+
+- Preview1 layout
+
+### Changes
+
+- Use font-weight 300 for Label
+
+# [2.0.0-beta.44] - 27-04-2020
+
+### Added
+
+- Text editor style changes: Set margin to overwrite browser(user agent) fall-back (browsers defaults)
+
+# [2.0.0-beta.43] - 23-04-2020
+
+### Added
+
+- Preview1 classNames because of client implementations based on this classes and ids
+
+# [2.0.0-beta.42] - 16-04-2020
+
+### Change
+
+- Add fix min-width for all preview boxes
+
+# [2.0.0-beta.41] - 14-04-2020
+
+### Fixes
+
+- Add missing icon prop in type definitions of Input
+
+# [2.0.0-beta.40] - 09-04-2020
 
 ### Change
 
 - Improve Paywall Previews look
+
+# [2.0.0-beta.39] - 06-04-2020
+
+### Change
+
+- Change position of buy button and remove bold style for title (it will be set in preview asset section)
 
 # [2.0.0-beta.38] - 31-03-2020
 

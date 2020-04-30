@@ -30,7 +30,6 @@ const EditorContainer = styled.div<EditorContainerProps>`
   .ql-editor {
     box-sizing: border-box;
     line-height: 1.42;
-    height: 100%;
     outline: none;
     overflow-y: auto;
     padding: 12px 15px;
@@ -53,6 +52,9 @@ const EditorContainer = styled.div<EditorContainerProps>`
     line-height: ${({ lineHeight }) => lineHeight || 1};
     color: ${({ textColor }) => textColor || colors.fontDarkGray};
     text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
+
+    /* Must be set to overwrite browser(user agent) fall-back (browsers defaults) */
+    margin: 0;
   }
   .ql-snow .ql-editor p,
   .ql-snow .ql-editor ol,
@@ -101,6 +103,9 @@ const EditorContainer = styled.div<EditorContainerProps>`
         padding: ${({ padding }: EditorContainerProps) => padding};
         color: ${({ textColor }) => textColor || colors.black};
         background: ${({ textBackground }) => textBackground || 'transparent'};
+
+        /* Must be set to overwrite browser(user agent) fall-back (browsers defaults) */
+        margin: 0;
       }
     `}
 `;
