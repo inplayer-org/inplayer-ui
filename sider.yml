@@ -8,3 +8,11 @@ linter:
     ignore-pattern: '/src/assets/*'
     global: 'require,exports:true'
     quiet: true
+  stylelint:
+    npm_install: false
+    config: .stylelintrc.json
+    syntax: sugarss
+    ignore-path: .gitignore
+    ignore-disables: true
+    report-needless-disables: true
+    quiet: true
