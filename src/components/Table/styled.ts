@@ -24,7 +24,7 @@ const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
   border: ${ifProp('hasHeaderSection', '0', `1px solid ${colors.gray}`)};
   border-radius: 3px;
   position: relative;
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-collapse: collapse;
@@ -60,7 +60,7 @@ const ButtonTableRow = styled(TableRow)`
 `;
 
 const TableCell = styled.td<{ isActionsCell?: boolean }>`
-  font-size:${({ theme }) => theme.font.sizes.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   padding: 0.4375rem 1%;
   vertical-align: middle;
   text-align: ${ifProp('isActionsCell', 'right', 'left')};
@@ -81,7 +81,7 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
 const TableHeaderCell = styled.th<any>`
   padding: 1rem 1%;
   font-weight: ${({ theme }) => theme.font.weights.light};
-  font-size:${({ theme }) => theme.font.sizes.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
   text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
   white-space: normal;
 `;
@@ -106,7 +106,7 @@ const TableButton = styled(Button)<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: ${({ theme }) => theme.palette.text.light}
+  color: ${({ theme }) => theme.palette.text.light};
 
   &:hover {
     color: ${({ theme }) => theme.palette.primary.main};
