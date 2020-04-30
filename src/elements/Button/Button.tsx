@@ -1,11 +1,11 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import styled from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 type ContentProps = {
-  icon?: ReactNode | null;
+  icon?: ReactElement | null;
   iconPosition?: string;
   children?: any;
 };

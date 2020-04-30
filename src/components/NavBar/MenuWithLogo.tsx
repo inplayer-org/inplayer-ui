@@ -1,4 +1,3 @@
-// @flow
 import React, { ReactChild } from 'react';
 import { LogoMenuContainer, NavbarLogo, MenuContainer } from './styled';
 

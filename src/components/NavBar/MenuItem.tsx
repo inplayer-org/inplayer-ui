@@ -4,7 +4,7 @@ import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import colors from 'theme/colors';
 
-const MenuItemContainer = styled.div<{ active: any }>`
+const MenuItemContainer = styled.div<{ active?: boolean }>`
   display: inline-flex;
   align-items: center;
   width: 100%;

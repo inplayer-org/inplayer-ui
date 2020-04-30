@@ -7,7 +7,7 @@ type TabInfo = {
 };
 
 type ContentProps = TabInfo & {
-  icon?: ReactNode | null;
+  icon?: ReactElement | null;
   iconPosition?: string;
 };
 

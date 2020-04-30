@@ -48,7 +48,7 @@ export const Accordion = ({
   width = '100%',
   extendWidth = '20%',
   isExtendable = false,
-  onActivePanelChange = (index: number) => console.log(index),
+  onActivePanelChange,
 }: Props) => {
   const [activePanel, setActivePanel] = useState(-1);
   const [open, setOpen] = useState(false);

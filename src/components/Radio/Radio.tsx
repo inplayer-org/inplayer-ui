@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { ChangeEvent } from 'react';
 import Label from 'elements/Label';
 import { RadioWrapper } from './RadioWrapper';
 
@@ -7,7 +7,7 @@ interface RadioProps {
   id: string;
   name?: string;
   checked: boolean;
-  onChange: (e: SyntheticEvent<HTMLInputElement>) => any;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   onBlur?: (e: any) => any;
   disabled?: boolean;
 }

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, ReactNode } from 'react';
+import React, { SyntheticEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
@@ -107,7 +107,7 @@ const AccordionIconHolder = styled.div<AccordionIconHolderProps>`
     css`
       display: flex;
       width: 3rem;
-      justify-content: space-beetween;
+      justify-content: space-between;
     `
   )}
 `;
@@ -116,7 +116,7 @@ type Props = {
   label: string;
   isActive: boolean;
   isOtherPanelActive: boolean;
-  icon?: ReactNode | null;
+  icon?: ReactElement | null;
   iconTooltip?: TooltipProps;
   contentHeight: string;
   togglePanel: (e?: SyntheticEvent<Element, Event>) => void;
