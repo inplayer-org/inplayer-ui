@@ -55,6 +55,7 @@ export const PageBox = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: ${colors.white};
+  outline: none;
   ${ifProp(
     'hideBorder',
     css`

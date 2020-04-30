@@ -94,13 +94,13 @@ type MenuItem = {
   smallSize?: boolean;
 };
 
-export type UserMenuDropdownProps = {
+export type Props = {
   menuItems?: Array<MenuItem>;
   actionItem?: MenuItem | null;
   onClick?: any;
 };
 
-const UserMenuDropdown = ({ menuItems = [], actionItem = null }: UserMenuDropdownProps) => (
+const UserMenuDropdown = ({ menuItems = [], actionItem = null }: Props) => (
   <Container>
     {menuItems.map((item, i) => (
       <ItemContainer key={i}>

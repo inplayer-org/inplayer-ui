@@ -123,6 +123,7 @@ const ButtonWrapper = styled.button<ButtonWrapperProps>`
   font-size: ${({ theme }) => theme.font.sizes.medium};
   cursor: pointer;
   letter-spacing: 0.02em;
+  outline: none;
 
   &:hover {
     border-color: ${colors.skyBlue};

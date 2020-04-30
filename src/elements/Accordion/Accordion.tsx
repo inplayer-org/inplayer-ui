@@ -111,7 +111,7 @@ export const Accordion = ({
         })}
       </div>
       {isExtendable && activePanel === -1 && (
-        <Arrow onClick={toggleOpen} open={open} section="accordion" />
+        <Arrow onClick={toggleOpen} open={!open} section="accordion" />
       )}
     </AccordionWrapper>
   );

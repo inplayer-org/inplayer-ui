@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 
@@ -71,6 +71,11 @@ export type Props = {
    * Text color
    */
   color?: string;
+  /**
+   * External class name
+   */
+  className?: string;
+  children: ReactChild;
 };
 
 const Typography = ({
@@ -79,6 +84,7 @@ const Typography = ({
   description = false,
   modifiers = [],
   color = '',
+  className = '',
 }: Props) => {
   if (variant === 'p') {
     return (
@@ -88,7 +94,13 @@ const Typography = ({
     );
   }
   return (
-    <Heading as={variant} variant={variant} modifiers={modifiers} color={color}>
+    <Heading
+      className={className}
+      as={variant}
+      variant={variant}
+      modifiers={modifiers}
+      color={color}
+    >
       {children}
     </Heading>
   );
