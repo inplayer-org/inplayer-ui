@@ -45,6 +45,7 @@ const Page = () => (
   <Story name="default">
     <SeparateElements>
         <Button
+        buttonModifiers={['buttonPrimary']}
         onClick={() =>
             Notification.create({
             title: 'Notification',
@@ -56,6 +57,7 @@ const Page = () => (
         REGULAR
         </Button>
         <Button
+        buttonModifiers={['buttonSuccess']}
         onClick={() =>
             Notification.create({
             title: 'Hooray! ',
@@ -68,6 +70,7 @@ const Page = () => (
         SUCCESS
         </Button>
         <Button
+        buttonModifiers={['buttonWarning']}
         onClick={() =>
             Notification.create({
             title: 'Warning! ',
@@ -80,6 +83,7 @@ const Page = () => (
         WARNING
         </Button>
         <Button
+        buttonModifiers={['buttonDanger']}
         onClick={() =>
             Notification.create({
             title: 'Danger! ',

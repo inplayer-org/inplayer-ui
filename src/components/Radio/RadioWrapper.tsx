@@ -30,7 +30,7 @@ const RadioContainer = styled.div`
       content: '●';
       position: absolute;
       top: -0.22rem;
-      left: 0.1rem;
+      left: 0.125rem;
       font-size: 1.4rem;
       color: ${Colors.skyBlue};
       transition: all 0.2s;

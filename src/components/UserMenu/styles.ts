@@ -50,6 +50,12 @@ export const CloseLayer = styled.div`
   z-index: 1;
 `;
 
+export const MenuTitleContainer = styled.span`
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+`;
+
 export const MenuTitle = styled.span`
   color: ${({ theme }) => theme.palette.text.light};
   transition: color 0.3s ease;

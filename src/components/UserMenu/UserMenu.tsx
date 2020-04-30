@@ -7,6 +7,7 @@ import {
   MenuTitle,
   ProfileImage,
   UserMenuContainer,
+  MenuTitleContainer,
 } from './styles';
 
 export type Props = UserMenuDropdownProps & {
@@ -23,10 +24,12 @@ const UserMenu = ({ image = defaultImage, menuItems, actionItem, menuTitle }: Pr
     <>
       <UserMenuContainer>
         {image && <ProfileImage src={image} />}
-        <MenuTitle onClick={() => setOpen(!open)}>{menuTitle}</MenuTitle>
-        <MenuButton>
-          <MenuArrow open={open} />
-        </MenuButton>
+        <MenuTitleContainer onClick={() => setOpen(!open)}>
+          <MenuTitle>{menuTitle}</MenuTitle>
+          <MenuButton>
+            <MenuArrow open={open} />
+          </MenuButton>
+        </MenuTitleContainer>
         {open && (
           <UserMenuDropdown
             menuItems={menuItems}
