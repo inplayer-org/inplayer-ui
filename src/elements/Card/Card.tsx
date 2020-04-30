@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 import colors from 'theme/colors';
 import Typography, { TypographyVariant } from '../Typography/Typography';
@@ -18,6 +18,7 @@ const CardWrapper = styled.div`
   margin: 0;
   padding: 0 1.5rem;
   list-style: none;
+  width: 300px;
 `;
 
 const CardTitle = styled(Typography)`
@@ -40,11 +41,11 @@ interface Props {
    * Type of the variant
    */
   titleVariant?: TypographyVariant;
-  style?: Record<string, any>;
+  children: ReactChild;
 }
 
-const Card = ({ title, titleVariant = 'h1', style, children }: Props) => (
-  <CardWrapper style={style}>
+const Card = ({ title, titleVariant = 'h1', children }: Props) => (
+  <CardWrapper>
     {title && <CardTitle variant={titleVariant}>{title}</CardTitle>}
     <CardContent>{children}</CardContent>
   </CardWrapper>

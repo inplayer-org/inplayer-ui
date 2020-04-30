@@ -34,7 +34,6 @@ export const MenuArrow = styled.i<{ open: boolean }>`
 
 export const UserMenuContainer = styled.div`
   align-items: center;
-  cursor: pointer;
   display: flex;
   justify-content: flex-end;
   max-width: 100%;
@@ -56,6 +55,7 @@ export const MenuTitle = styled.span`
   transition: color 0.3s ease;
   font-size: ${({ theme }) => theme.font.sizes.medium};
   padding: 0 3px 0 10px;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.palette.text.main};

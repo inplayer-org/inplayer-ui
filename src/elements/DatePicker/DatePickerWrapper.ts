@@ -470,6 +470,7 @@ const DatePickerWrapper = styled.span`
     color: ${({ theme }) => theme.palette.text.main};
     text-align: center;
     padding: 0;
+    outline: none;
   }
 
   .DateInput_input__small {

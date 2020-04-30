@@ -5,7 +5,7 @@ import colors from 'theme/colors';
 
 // Components
 import UserMenu from '../UserMenu';
-import { UserMenuProps } from '../UserMenu/UserMenu';
+import { Props as UserMenuProps } from '../UserMenu/UserMenu';
 import TabNavigation from '../TabNavigation';
 import { Props as TabNavigationProps } from '../TabNavigation/TabNavigation';
 

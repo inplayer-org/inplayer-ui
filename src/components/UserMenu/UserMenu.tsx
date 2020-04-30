@@ -21,9 +21,9 @@ const UserMenu = ({ image = defaultImage, menuItems, actionItem, menuTitle }: Pr
 
   return (
     <>
-      <UserMenuContainer onClick={() => setOpen(!open)}>
+      <UserMenuContainer>
         {image && <ProfileImage src={image} />}
-        <MenuTitle>{menuTitle}</MenuTitle>
+        <MenuTitle onClick={() => setOpen(!open)}>{menuTitle}</MenuTitle>
         <MenuButton>
           <MenuArrow open={open} />
         </MenuButton>
