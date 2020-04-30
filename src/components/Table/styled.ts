@@ -63,15 +63,14 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
   font-size:${({ theme }) => theme.font.sizes.medium};
   padding: 0.4375rem 1%;
   vertical-align: middle;
-  line-height: 30px;
   text-align: ${ifProp('isActionsCell', 'right', 'left')};
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: normal;
 
   a {
-    color: ${({ theme }) => theme.palette.text.light}
+    color: ${({ theme }) => theme.palette.text.light};
 
     &:hover {
       color: ${({ theme }) => theme.palette.text.main};
@@ -81,7 +80,7 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
 
 const TableHeaderCell = styled.th<any>`
   padding: 1rem 1%;
-  font-weight: ${({ theme }) => theme.font.weights.light}
+  font-weight: ${({ theme }) => theme.font.weights.light};
   font-size:${({ theme }) => theme.font.sizes.small};
   text-align: ${({ alignRight }) => (alignRight ? 'right' : 'left')};
   white-space: normal;

@@ -1,6 +1,7 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import Loader from 'elements/Loader';
+import { CSSProperties } from 'styled-components';
 import Grid from 'blocks/Grid';
 import {
   ButtonTableRow,
@@ -29,6 +30,7 @@ type Column = {
   title: string;
   key: string;
   render: ({ value, rowValues }: Render) => ReactNode;
+  style?: CSSProperties;
   alignRight?: any;
 };
 
@@ -53,6 +55,8 @@ type TableOptions<T> = {
 type Props<T = Data> = {
   columns: Array<Column> | any;
   data: Array<any>;
+  className?: string;
+  style?: CSSProperties;
   options: TableOptions<T>;
   showLoader?: boolean;
   renderEmptyTable?: boolean;
@@ -78,6 +82,8 @@ const rowActionsExist = (actions: RowActions<any>) =>
 class Table<T> extends Component<Props<T>, State> {
   // eslint-disable-next-line react/static-property-placement
   static defaultProps = {
+    className: '',
+    style: {},
     options: {
       rowSelection: {
         active: false,
@@ -95,7 +101,7 @@ class Table<T> extends Component<Props<T>, State> {
     selectedAll: false,
   };
 
-  toggleRow = (id: number | string) => {
+  toggleRow = (id: number | string) => () => {
     const { selected } = this.state;
     const isSelected = !selected[id];
     const newSelected = {
@@ -122,7 +128,7 @@ class Table<T> extends Component<Props<T>, State> {
 
   generateRows = (data: Array<Data>) => {
     const { options } = this.props;
-    const { rowSelection }: TableOptions<T> = options;
+    const { rowSelection, rowActions }: TableOptions<T> = options;
     let newData = [...data];
 
     if (rowSelection && rowSelection.active) {
@@ -138,6 +144,19 @@ class Table<T> extends Component<Props<T>, State> {
           />
         ),
       }));
+    }
+
+    if (rowActionsExist(rowActions)) {
+      newData = newData.map((dataCell) => {
+        const actionsContent =
+          typeof rowActions === 'function'
+            ? rowActions({ row: dataCell })
+            : rowActions.map((action) => action.render({ row: dataCell }));
+        return {
+          ...dataCell,
+          actions: actionsContent,
+        };
+      });
     }
 
     return newData;
@@ -189,7 +208,11 @@ class Table<T> extends Component<Props<T>, State> {
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column: Column, index: number) => (
-          <TableCell key={index} isActionsCell={column.key === 'actions'}>
+          <TableCell
+            key={index}
+            isActionsCell={column.key === 'actions'}
+            style={column.style || {}}
+          >
             {column.render
               ? column.render({ value: row[column.key], rowValues: row })
               : row[column.key]}
@@ -203,6 +226,8 @@ class Table<T> extends Component<Props<T>, State> {
     const {
       columns,
       data,
+      className,
+      style,
       showLoader,
       renderEmptyTable,
       tableButton,
@@ -226,7 +251,7 @@ class Table<T> extends Component<Props<T>, State> {
     const hasHeaderSection = typeof headerSection !== 'undefined';
 
     return (
-      <TableWrapper hasHeaderSection={hasHeaderSection}>
+      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
         <thead>
           <TableHeadRow>{columnContent}</TableHeadRow>
         </thead>
