@@ -4,8 +4,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    // Target latest version of ECMAScript.
-    "target": "esnext",
+    "target": "es6",
     // path to output directory
     "outDir": "./dist/",
     // enable strict null checks as a best practice
@@ -51,6 +50,6 @@
     "theme/*": ["./theme/*"],
     "utils/*": ["./utils/*"]
   },
-  "include": ["src/**/*", "index.d.ts"],
-  "exclude": ["node_modules", "build"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
