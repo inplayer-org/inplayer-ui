@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent, ReactNode } from 'react';
+import React, { useState, SyntheticEvent, ReactElement } from 'react';
 
 // Components
 import { TooltipProps } from '../Tooltip/Tooltip';
@@ -9,7 +9,7 @@ import Arrow from '../NavBar/Arrow';
 // Types
 type Panel = {
   label: string;
-  icon?: ReactNode | null;
+  icon?: ReactElement;
   iconTooltip?: TooltipProps;
   renderContent: () => any;
   disabled?: boolean;
