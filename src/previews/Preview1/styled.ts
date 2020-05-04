@@ -6,7 +6,7 @@ import { FaLock } from 'react-icons/fa';
 import colors from 'theme/colors';
 
 // Components
-import { Typography } from 'elements';
+import { Typography } from 'components/Typography';
 import {
   PreviewFooter,
   PreviewBox,

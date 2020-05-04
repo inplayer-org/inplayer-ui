@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // components
 import Cell from './Cell';
 import Container from './Container';
-import Typography from '../../elements/Typography/index';
+import Typography from '../Typography';
 
 export default {
   component: Cell,

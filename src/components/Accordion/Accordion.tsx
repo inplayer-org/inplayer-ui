@@ -1,10 +1,10 @@
 import React, { useState, SyntheticEvent, ReactNode } from 'react';
 
 // Components
-import { TooltipProps } from 'components/Tooltip/Tooltip';
+import { TooltipProps } from '../Tooltip/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
-import Arrow from '../../components/NavBar/Arrow';
+import Arrow from '../NavBar/Arrow';
 
 // Types
 type Panel = {

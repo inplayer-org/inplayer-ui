@@ -1,8 +1,8 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
-import Loader from 'elements/Loader';
 import { CSSProperties } from 'styled-components';
-import Grid from 'blocks/Grid';
+import Grid from '../Grid';
+import Loader from '../Loader';
 import {
   ButtonTableRow,
   LoaderContainer,

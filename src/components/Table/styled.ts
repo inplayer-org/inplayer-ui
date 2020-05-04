@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes } from 'react';
-import Checkbox from 'components/Checkbox';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from 'theme/colors';
+import Checkbox from '../Checkbox';
 
-import Button from 'elements/Button';
-import Grid from 'blocks/Grid';
+import Button from '../Button';
+import Grid from '../Grid';
 
 const TableWithHeaderSectionContainer = styled(Grid.Container)<any>`
   padding: 1rem;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'elements';
+import { Button } from 'components';
 import Modal from './Modal';
 
 const Usage = () => {

@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import Label from 'elements/Label';
+import Label from '../Label';
 import { RadioWrapper } from './RadioWrapper';
 
 interface RadioProps {

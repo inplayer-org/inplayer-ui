@@ -4,8 +4,8 @@ import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
 
 // Components
-import Tooltip, { TooltipProps } from 'components/Tooltip/Tooltip';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import Tooltip, { TooltipProps } from '../Tooltip/Tooltip';
 import Typography from '../Typography';
 
 // Types

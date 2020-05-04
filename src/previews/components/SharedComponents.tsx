@@ -6,7 +6,7 @@ import { prop } from 'styled-tools';
 import colors from 'theme/colors';
 
 // components
-import { Typography, Button } from 'elements';
+import { Typography, Button } from 'components';
 
 export interface PreviewBoxProps {
   width?: string;

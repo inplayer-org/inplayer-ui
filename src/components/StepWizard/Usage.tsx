@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography } from 'elements';
+import Typography from '../Typography';
 import StepWizard from './StepWizard';
 
 const StepOne = () => (

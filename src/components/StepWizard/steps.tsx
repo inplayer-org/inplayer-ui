@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from 'elements';
+import Typography from '../Typography';
 
 export const StepOne = () => (
   <div>

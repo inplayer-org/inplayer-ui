@@ -1,5 +1,5 @@
 import React, { ChangeEvent, RefObject } from 'react';
-import Label from '../../elements/Label';
+import Label from '../Label';
 import CheckboxWrapper from './CheckboxWrapper';
 
 type Props = {

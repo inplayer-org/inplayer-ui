@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment, { Moment } from 'moment';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
-import DatePickerWrapper from 'elements/DatePicker/DatePickerWrapper';
+import DatePickerWrapper from './DatePickerWrapper';
 import { PERIODS } from './periods';
 import { Styled } from './styles';
 import 'react-dates/initialize';
