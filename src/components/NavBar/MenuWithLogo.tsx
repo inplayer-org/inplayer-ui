@@ -1,9 +1,9 @@
-import React, { ReactChild } from 'react';
+import React, { ReactNode } from 'react';
 import { LogoMenuContainer, NavbarLogo, MenuContainer } from './styled';
 
 type Props = {
-  logo?: Element | string;
-  children: ReactChild;
+  logo?: string;
+  children: ReactNode;
 };
 
 const MenuWithLogo = ({ logo, children }: Props) => (

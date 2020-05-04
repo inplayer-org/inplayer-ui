@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
@@ -44,6 +44,7 @@ type Props = {
    * Modal title
    */
   title: string;
+  children: ReactNode;
 };
 
 const Modal = ({ isModalOpen, closeModal, children, title }: Props) => (

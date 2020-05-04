@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactElement } from 'react';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 

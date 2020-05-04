@@ -17,6 +17,7 @@ function App() {
   return (
     <>
       <Tabs
+        name="name"
         tabs={tabs}
         selectedTabIndex={selectedTab}
         onTabClick={(index) => setSelectedTab(index)}

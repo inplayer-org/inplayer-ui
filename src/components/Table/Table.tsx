@@ -152,10 +152,11 @@ class Table<T> extends Component<Props<T>, State> {
           typeof rowActions === 'function'
             ? rowActions({ row: dataCell })
             : rowActions.map((action) => {
-                if (action.render) {
-                  return action.render({ row: dataCell });
-                }
+                if (!action.render) return;
+
+                return action.render({ row: dataCell });
               });
+
         return {
           ...dataCell,
           actions: actionsContent,

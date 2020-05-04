@@ -11,7 +11,7 @@ type Props = {
   /**
    * Navbar logo
    */
-  logo?: Element | string;
+  logo?: string;
 };
 
 const Navbar = ({ children, logo }: Props) => {
