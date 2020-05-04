@@ -27,10 +27,8 @@
     "prebuild": "rimraf ./dist",
     "build": "webpack",
     "build:watch": "webpack --watch --progress",
-    "lint": "yarn lint:js && yarn lint:style",
-    "lint:js": "eslint ./src --ext .js",
-    "lint:js:watch": "esw -w src/**",
-    "lint:js:fix": "eslint ./src --ext .js --fix",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint:watch": "esw -w src/**",
     "prepublishOnly": "yarn build && tsc --emitDeclarationOnly",
     "lint:style": "stylelint -- \"./src/**/*.js\""
   },
