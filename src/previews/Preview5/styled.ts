@@ -6,7 +6,7 @@ import { transparentize } from 'polished';
 import colors from 'theme/colors';
 
 // Components
-import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/SharedComponents';
+import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)<any>`
   max-width: ${({ width }) => (width ? '' : '60vh')};

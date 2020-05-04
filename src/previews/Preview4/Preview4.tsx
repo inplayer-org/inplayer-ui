@@ -10,7 +10,7 @@ import colors from 'theme/colors';
 import { FaLock } from 'react-icons/fa';
 import StyledContainer from '../shared/StyledContainer';
 import TextEditor from '../shared/TextEditor';
-import { OverlayLabel } from '../shared/SharedComponents';
+import { OverlayLabel } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledButton,

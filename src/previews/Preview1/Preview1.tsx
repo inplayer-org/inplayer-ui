@@ -12,7 +12,7 @@ import Branding from '../types/branding';
 
 // Components
 import TextEditor from '../shared/TextEditor';
-import { OverlayLabel, PreviewImage, FooterLink } from '../shared/SharedComponents';
+import { OverlayLabel, PreviewImage, FooterLink } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,

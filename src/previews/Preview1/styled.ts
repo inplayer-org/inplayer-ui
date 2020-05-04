@@ -14,7 +14,7 @@ import {
   PaywallDescription,
   DescriptionSpan,
   BuyButton,
-} from '../shared/SharedComponents';
+} from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '70vh')};

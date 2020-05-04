@@ -18,7 +18,7 @@ import {
   PreviewFooter,
   IconHolder,
 } from './styled';
-import { BuyButton, PreviewFooterLink } from '../shared/SharedComponents';
+import { BuyButton, PreviewFooterLink } from '../shared/PreviewComponents';
 
 // Types
 import Branding from '../types/branding';

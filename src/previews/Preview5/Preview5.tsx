@@ -11,7 +11,7 @@ import TextEditor from '../shared/TextEditor';
 import Branding from '../types/branding';
 
 // Components
-import { StyledPaywallDescription } from '../shared/SharedComponents';
+import { StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,

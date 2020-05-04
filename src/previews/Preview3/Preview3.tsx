@@ -8,7 +8,7 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 // Components
 import { GiCutDiamond } from 'react-icons/gi';
 import TextEditor from '../shared/TextEditor';
-import { StyledPaywallDescription } from '../shared/SharedComponents';
+import { StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
