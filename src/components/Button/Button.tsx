@@ -51,14 +51,14 @@ const Button = ({
   children,
   fullWidth,
   fullHeight,
-  ...rest
+  disabled,
 }: Props) => (
   <ButtonWrapper
     sizeType={sizeType}
     modifiers={buttonModifiers}
     fullWidth={fullWidth}
     fullHeight={fullHeight}
-    {...rest}
+    disabled={disabled}
   >
     <Content icon={icon} iconPosition={iconPosition}>
       {children}
