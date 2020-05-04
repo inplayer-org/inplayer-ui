@@ -1,0 +1,49 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Label from '.'
+
+<Meta title="Label" component={<Label/>} />
+
+# Label
+
+Label is an element used with input elements. You can use it directly like this:
+```jsx
+import { Label } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Label />
+)
+```
+
+### Default Label
+<Preview withSource="open">
+  <Story name="default">
+    <div>
+        <Label>Label</Label>
+    </div>
+  </Story>
+</Preview>
+
+### Disabled Label
+<Preview withSource="open">
+  <Story name="disabled">
+    <div>
+        <Label disabled>Disabled label</Label>
+    </div>
+  </Story>
+</Preview>
+
+### Label with font size modifiers
+<Preview withSource="open">
+  <Story name="modifiers">
+    <>
+        <Label modifiers={['fontSizeExtraSmall']}>Extra Small</Label>
+        <br />
+        <Label modifiers={['fontSizeSmall']}>Small</Label>
+        <br />
+        <Label modifiers={['fontSizeMedium']}>Medium</Label>
+        <br />
+        <Label modifiers={['fontSizeLarge']}>Large</Label>
+    </>
+  </Story>
+</Preview>
+

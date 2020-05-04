@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const pkg = require('./package.json');
 
@@ -21,7 +20,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(js|jsx|ts|tsx)$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.(jpe?g|png|gif|ico|svg)$/i,
         exclude: /node_modules/,
@@ -53,8 +52,6 @@ module.exports = {
       elements: path.resolve(__dirname, './src/elements'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
       utils: path.resolve(__dirname, './src/utils'),
-      config: path.resolve(__dirname, './src/config'),
-      types: path.resolve(__dirname, './src/types'),
       theme: path.resolve(__dirname, './src/theme'),
       previews: path.resolve(__dirname, './src/previews'),
     },
@@ -62,7 +59,6 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
   externals: {
     react: {

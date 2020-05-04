@@ -1,0 +1,95 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Accordion from '../Accordion/'
+import { panels } from './panels.tsx'
+
+<Meta title="Accordion" component={<Accordion/>} />
+
+# Accordion
+
+
+Accordion or expansion panel is a component that generates Accordion component with more accordion panels. <br/> 
+It takes `panels` - array of objects and each object should/could contain:
+- `label` (title)
+- `renderContent` (action used to render the content)
+- `icon` (optional parameter - icon displayed next to the title)
+- `iconTooltip` (optional parameter - a tooltip to display on hovering the icon, see Tooltip's prop list) - default null
+- `disabled` (optional paremeter - a boolean to disable clicking or opening the panel) - default false
+
+<Props of={Accordion} />
+
+### Panels example
+
+```jsx
+import { MdInfo } from 'react-icons/md';
+
+const panels = [
+  {
+    label: 'Accordion1',
+    icon: <MdInfo color="orange" />,
+    renderContent: () => (
+      <div>
+        <h1>Long Content for the accordion1</h1>
+        <h1>Long Content for the accordion1</h1>
+        <h1>Long Content for the accordion1</h1>
+        <h1>Long Content for the accordion1</h1>
+        <h1>Long Content for the accordion1</h1>
+        <h1>Long Content for the accordion1</h1>
+      </div>
+    ),
+  },
+  {
+    label: 'Disabled Accordion',
+    icon: <MdInfo color="gray" />,
+    renderContent: () => (
+      <div>
+        <h1>Long Content for the accordion</h1>
+        <h1>Long Content for the accordion</h1>
+        <h1>Long Content for the accordion</h1>
+        <h1>Long Content for the accordion</h1>
+        <h1>Long Content for the accordion</h1>
+        <h1>Long Content for the accordion</h1>
+      </div>
+    ),
+    disabled: true,
+  },
+  {
+    label: 'Accordion3',
+    icon: <MdInfo color="green" />,
+    renderContent: () => (
+      <div>
+        <h1>Long Content for the accordion3</h1>
+        <h1>Long Content for the accordion3</h1>
+        <h1>Long Content for the accordion3</h1>
+        <h1>Long Content for the accordion3</h1>
+        <h1>Long Content for the accordion3</h1>
+        <h1>Long Content for the accordion3</h1>
+      </div>
+    ),
+  },
+];
+
+```
+
+```jsx
+import { Accordion } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+      <Accordion />
+)
+```
+
+### Accordion example
+
+<Preview withSource="open">
+  <Story name="accordion">
+    <div>
+        <Accordion
+            panels={panels}
+            contentHeight="46vh"
+            isExtendable
+            width="80%"
+        />
+    </div>
+  </Story>
+</Preview>
+

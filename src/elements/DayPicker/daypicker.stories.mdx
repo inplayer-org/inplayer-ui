@@ -1,0 +1,66 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import moment from 'moment';
+import DayPicker from '.'
+
+<Meta title="DayPicker" component={<DayPicker/>} />
+
+# DayPicker
+
+```jsx
+import { DayPicker } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+    <DayPicker />
+)
+```
+
+### Props
+<Props of={DayPicker}/>
+
+### Date provided as a string
+<Preview withSource="open">
+  <Story name="string">
+    { ()=> {
+      const stringDate = '2014-02-27T10:00:00';
+      const [date, setDate] = useState(stringDate);
+      const [focused, setFocused] = useState(false);
+      return (
+        <div style={{ height: '330px'}}>
+          <DayPicker 
+            onFocusChange={({ focused }) => setFocused(focused)}
+            onDateChange={(date) => setDate(date)}
+            id="date picker"
+            date={date}
+            focused={focused}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+          />
+        </div>
+      );
+  }}
+  </Story>
+</Preview>
+
+### Date provided as an object
+<Preview withSource="open">
+  <Story name="object">
+    { ()=> {
+      const momentFormatDate = moment();
+      const [date, setDate] = useState(momentFormatDate);
+      const [focused, setFocused] = useState(false);
+      return (
+        <div style={{ height: '330px'}}>
+          <DayPicker
+            id="date picker"
+            onDateChange={(date) => setDate(date)}
+            onFocusChange={({ focused }) => setFocused(focused)}
+            focused={focused}
+            date={date}
+          />
+        </div>
+      );
+  }}
+  </Story>
+</Preview>
+

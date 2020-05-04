@@ -1,0 +1,28 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Component from '.'
+
+<Meta title="Component" component={<Component/>} />
+
+# Component name
+
+description of the component here ...
+
+```jsx
+import { Component } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Component />
+)
+```
+
+<Props of={Component}/>
+
+### Component type. ex. Default Button
+<Preview withSource="open">
+  <Story name="default">
+    <div>
+        <Button>Buy now</Button>
+    </div>
+  </Story>
+</Preview>
+

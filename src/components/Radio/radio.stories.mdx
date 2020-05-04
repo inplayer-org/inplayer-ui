@@ -1,0 +1,50 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Radio from '.'
+
+<Meta title="Radio" component={<Radio/>} />
+
+# Radio
+
+```jsx
+import { Radio } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Radio />
+)
+```
+
+### Radio example
+<Preview withSource="open">
+  <Story name="example">
+    <>
+        <Radio id="ag1" label="0-30" name="age" value="30" onChange={e => console.log(e)} />
+        <br />
+        <Radio id="ag2" label="31-60" name="age" value="60" onChange={e => console.log(e)} />
+        <br />
+        <Radio id="ag3" label="61-100" name="age" value="100" onChange={e => console.log(e)} />
+    </>
+  </Story>
+</Preview>
+
+### Checked by default
+<Preview withSource="open">
+  <Story name="checked">
+        <Radio id="radioChecked" label="Checked by default!" checked onChange={e => console.log(e)} />
+  </Story>
+</Preview>
+
+### Unckecked - disabled
+<Preview withSource="open">
+  <Story name="unchecked - disabled">
+        <Radio id="radioDisabledUnchecked" disabled label="Disabled and unchecked!" onChange={e => console.log(e)} />
+  </Story>
+</Preview>
+
+### Checked - disabled
+<Preview withSource="open">
+  <Story name="checked - disabled">
+        <Radio id="radioDisabledChecked" disabled checked label="Disabled and checked!" onChange={e => console.log(e)} />
+  </Story>
+</Preview>
+

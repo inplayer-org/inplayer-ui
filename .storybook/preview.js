@@ -1,10 +1,11 @@
 import React from 'react';
 import { create } from '@storybook/theming';
 import { withInfo } from '@storybook/addon-info';
-import { addDecorator, addParameters, configure } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import { ThemeProvider } from 'styled-components';
 import { version } from '../package.json';
-import theme from '../src/config/theme';
+import { Theme } from '../src/theme/theme';
 
 // Storybook theme
 const storybookTheme = create({
@@ -24,10 +25,12 @@ addParameters({
     storySort: undefined,
     isToolshown: true,
   },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
 });
 
 // Decorators
 addDecorator(withInfo);
-addDecorator(storyFn => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
-));
+addDecorator((storyFn) => <ThemeProvider theme={Theme}>{storyFn()}</ThemeProvider>);

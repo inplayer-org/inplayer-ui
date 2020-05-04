@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Loader from '.'
+
+<Meta title="Loder" component={<Loader/>} />
+
+# Loader
+
+A simple spinner/loader to use as fallback when doing async operations. By default it inherits the `primary.main` theme color. 
+
+Can be passed a `color` prop with a custom hex color.
+
+```jsx
+import { Loader } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Loader />
+)
+```
+
+### Props
+<Props of={Loader} />
+
+### Default Loader
+<Preview withSource="open">
+  <Story name="default">
+    <Loader />
+  </Story>
+</Preview>
+
+### Modified Loader
+<Preview withSource="open">
+  <Story name="modified">
+    <Loader color="black" lineWidth={5} direction="up" height={150} width={150} />
+  </Story>
+</Preview>
