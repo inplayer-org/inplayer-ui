@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import Table from '.'
+import { MdDelete, MdErrorOutline } from 'react-icons/md';
 import Pagination from '../Pagination'
 import { columns, data } from './data.tsx'
 
@@ -26,9 +27,9 @@ const Page = () => (
                     action: (data) => console.log(data),
                 },
                 rowActions: [
-                    { icon: "edit", onClick: (id) => console.log(id), render: () => (<h1>Hello</h1>) },
-                    { icon: "cog", onClick: (id) => console.log(id), render: () => (<h1>Hello</h1>) },
-                    { icon: "trash", onClick: (id) => console.log(id), render: () => (<h1>Hello</h1>) },
+                    { icon: <MdDelete />, onClick: (id) => console.log(id), render: () => (<p>render</p>)},
+                      { icon: "cog", onClick: (id) => console.log(id), render: () => <p>render</p>},
+                      { icon: "trash", onClick: (id) => console.log(id) },
                 ],
             }}
         />
