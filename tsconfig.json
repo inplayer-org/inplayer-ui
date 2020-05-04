@@ -42,13 +42,10 @@
   },
   "paths": {
     "assets/*": ["./assets/*"],
-    "blocks/*": ["./blocks/*"],
     "components/*": ["./components/*"],
-    "elements/*": ["./elements/*"],
     "modifiers/*": ["./modifiers/*"],
     "previews/*": ["./previews/*"],
-    "theme/*": ["./theme/*"],
-    "utils/*": ["./utils/*"]
+    "theme/*": ["./theme/*"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
