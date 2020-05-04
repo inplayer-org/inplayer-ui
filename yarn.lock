@@ -8299,9 +8299,9 @@ mkdirp@^1.0.3:
   integrity sha512-6uCP4Qc0sWsgMLy1EOqqS/3rjDHOEnsStVr/4vtAIK2Y5i2kA7lFFejYrpIyiN9w0pYf4ckeCYT9f1r1P9KX5g==
 
 moment@>=1.6.0, moment@^2.18.1, moment@^2.24.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.0.tgz#e961ab9a5848a1cf2c52b1af4e6c82a8401e7fe9"
-  integrity sha512-vbrf6kJGpevOxmDRvCCvGuCSXvRj93264WcFzjm3Z3pV4lfjrXll8rvSP+EbmCte64udj1LkJMILxQnjXAQBzg==
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.1.tgz#1cb546dca1eccdd607c9324747842200b683465d"
+  integrity sha512-nRKMf9wDS4Fkyd0C9LXh2FFXinD+iwbJ5p/lh3CHitW9kZbRbJ8hCruiadiIXZVbeAqKZzqcTvHnK3mRhFjb6w==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
