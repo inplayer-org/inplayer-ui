@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // Components
-import { PreviewBox, ImageHolder } from '../components/SharedComponents';
+import { PreviewBox, ImageHolder } from '../shared/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '850px')};

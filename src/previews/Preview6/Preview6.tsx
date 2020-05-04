@@ -8,7 +8,7 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 // Components
 import { FaLock } from 'react-icons/fa';
 import styled from 'styled-components';
-import TextEditor from '../components/TextEditor';
+import TextEditor from '../shared/TextEditor';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -18,7 +18,7 @@ import {
   PreviewFooter,
   IconHolder,
 } from './styled';
-import { BuyButton, PreviewFooterLink } from '../components/SharedComponents';
+import { BuyButton, PreviewFooterLink } from '../shared/SharedComponents';
 
 // Types
 import Branding from '../types/branding';

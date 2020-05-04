@@ -6,7 +6,7 @@ import { FaLock } from 'react-icons/fa';
 import colors from 'theme/colors';
 
 // Components
-import { Typography } from 'components/Typography';
+import Typography from 'components/Typography';
 import {
   PreviewFooter,
   PreviewBox,
@@ -14,7 +14,7 @@ import {
   PaywallDescription,
   DescriptionSpan,
   BuyButton,
-} from '../components/SharedComponents';
+} from '../shared/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '70vh')};

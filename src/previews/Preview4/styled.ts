@@ -13,7 +13,7 @@ import {
   IconWrapper,
   PreviewImage,
   PreviewBoxProps,
-} from '../components/SharedComponents';
+} from '../shared/SharedComponents';
 
 interface StyledPreviewBoxProps extends PreviewBoxProps {
   topBorderColor?: string;

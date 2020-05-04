@@ -13,7 +13,7 @@ import {
   ImageHolder,
   TextWrapper,
   PreviewBoxProps,
-} from '../components/SharedComponents';
+} from '../shared/SharedComponents';
 
 interface Preview3BoxProps extends PreviewBoxProps {
   topBorderColor?: string;

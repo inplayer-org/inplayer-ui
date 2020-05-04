@@ -8,9 +8,9 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 // Components
 import colors from 'theme/colors';
 import { FaLock } from 'react-icons/fa';
-import StyledContainer from '../components/StyledContainer';
-import TextEditor from '../components/TextEditor';
-import { OverlayLabel } from '../components/SharedComponents';
+import StyledContainer from '../shared/StyledContainer';
+import TextEditor from '../shared/TextEditor';
+import { OverlayLabel } from '../shared/SharedComponents';
 import {
   StyledPreviewBox,
   StyledButton,

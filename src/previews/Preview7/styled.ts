@@ -12,7 +12,7 @@ import {
   BuyButton,
   IconWrapper,
   PreviewImage,
-} from '../components/SharedComponents';
+} from '../shared/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '500px')};

@@ -11,7 +11,7 @@ import {
   ImageHolder,
   PreviewFooter,
   DescriptionSpan,
-} from '../components/SharedComponents';
+} from '../shared/SharedComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '70vh')};

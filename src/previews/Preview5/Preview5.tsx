@@ -7,11 +7,11 @@ import previewImg from 'assets/images/ip-preview-premium.png';
 import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
-import TextEditor from '../components/TextEditor';
+import TextEditor from '../shared/TextEditor';
 import Branding from '../types/branding';
 
 // Components
-import { StyledPaywallDescription } from '../components/SharedComponents';
+import { StyledPaywallDescription } from '../shared/SharedComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,

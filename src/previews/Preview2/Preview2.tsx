@@ -9,8 +9,8 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import Branding from '../types/branding';
 
 // Components
-import TextEditor from '../components/TextEditor';
-import { StyledPaywallDescription, BuyButton, FooterLink } from '../components/SharedComponents';
+import TextEditor from '../shared/TextEditor';
+import { StyledPaywallDescription, BuyButton, FooterLink } from '../shared/SharedComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,

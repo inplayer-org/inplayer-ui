@@ -11,8 +11,8 @@ import logo from 'assets/images/ip-icon-blue.svg';
 import Branding from '../types/branding';
 
 // Components
-import TextEditor from '../components/TextEditor';
-import { OverlayLabel, PreviewImage, FooterLink } from '../components/SharedComponents';
+import TextEditor from '../shared/TextEditor';
+import { OverlayLabel, PreviewImage, FooterLink } from '../shared/SharedComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,

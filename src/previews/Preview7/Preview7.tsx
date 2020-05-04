@@ -11,8 +11,8 @@ import restrictedAssetImg from 'assets/images/restricted-asset.png';
 import Branding from '../types/branding';
 
 // Components
-import { OverlayLabel, PreviewFooterLink } from '../components/SharedComponents';
-import TextEditor from '../components/TextEditor';
+import { OverlayLabel, PreviewFooterLink } from '../shared/SharedComponents';
+import TextEditor from '../shared/TextEditor';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
