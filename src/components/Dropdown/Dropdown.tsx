@@ -21,8 +21,8 @@ type Props = SelectHTMLAttributes<HTMLSelectElement> & {
   defaultOption?: DefaultOption;
 };
 
-const Dropdown: React.FC<Props> = ({ options, onChange = () => null, defaultOption, ...rest }) => (
-  <DropdownContainer onChange={(e) => onChange(e)} {...rest}>
+const Dropdown: React.FC<Props> = ({ options, onChange = () => null, defaultOption }) => (
+  <DropdownContainer onChange={(e) => onChange(e)}>
     {defaultOption && (
       <option value="" disabled={defaultOption.disabled}>
         {defaultOption.displayName}
