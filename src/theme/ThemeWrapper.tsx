@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import GlobalStyles from 'theme/globalStyles';
 import { Theme } from './theme';
@@ -10,11 +10,12 @@ interface Props {
 }
 
 const ThemeWrapper = ({ children, theme }: Props) => {
-  const appTheme = theme || Theme;
-  loadFonts();
+  useEffect(() => {
+    loadFonts();
+  }, []);
 
   return (
-    <ThemeProvider theme={appTheme}>
+    <ThemeProvider theme={theme || Theme}>
       <GlobalStyles suppressMultiMountWarning />
       {children}
     </ThemeProvider>
