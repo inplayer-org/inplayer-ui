@@ -50,9 +50,9 @@ const renderTabs = (
     </Tab>
   ));
 
-const Tabs = ({ tabs, selectedTabIndex, onTabClick, ...rest }: TabsProps) =>
+const Tabs = ({ tabs, selectedTabIndex, onTabClick }: TabsProps) =>
   tabs ? (
-    <TabsWrapper {...rest}>{renderTabs(tabs, selectedTabIndex, onTabClick)}</TabsWrapper>
+    <TabsWrapper>{renderTabs(tabs, selectedTabIndex, onTabClick)}</TabsWrapper>
   ) : null;
 
 export default Tabs;
