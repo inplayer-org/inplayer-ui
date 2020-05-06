@@ -21,7 +21,7 @@ const Usage = () => {
     },
     {
       label: 'Disabled Accordion',
-      icon: null,
+      icon: <MdInfo color="orange" />,
       renderContent: () => (
         <div>
           <h1>Long Content for the accordion</h1>
@@ -36,7 +36,7 @@ const Usage = () => {
     },
     {
       label: 'Accordion3',
-      icon: null,
+      icon: <MdInfo color="orange" />,
       renderContent: () => (
         <div>
           <h1>Long Content for the accordion3</h1>
