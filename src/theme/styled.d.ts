@@ -27,7 +27,6 @@ declare module 'styled-components' {
     };
     font: {
       primary: string;
-      secondary: string;
       weights: {
         thin?: number;
         light?: number;
