@@ -33,8 +33,6 @@
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "declaration": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
