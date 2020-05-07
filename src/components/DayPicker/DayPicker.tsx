@@ -14,7 +14,7 @@ type Props = {
   /**
    * Function which takes `date` as argument and sets the current date
    */
-  onDateChange: (date: Moment | null) => string | Moment;
+  onDateChange: (date: Moment | null) => void;
   /**
    * Function which takes a boolean argument on whether it is focused or not
    */
