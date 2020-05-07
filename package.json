@@ -26,7 +26,6 @@
     "deploy-storybook": "storybook-to-ghpages",
     "prebuild": "rimraf ./dist",
     "build": "webpack",
-    "postbuild": "tsc --emitDeclarationOnly",
     "build:watch": "webpack --watch --progress",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "lint:watch": "esw -w src/**",
