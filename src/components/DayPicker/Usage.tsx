@@ -1,10 +1,10 @@
 /* eslint-disable no-shadow */
 import React, { useState } from 'react';
-import { Moment } from 'moment';
+import moment, { Moment } from 'moment';
 import DayPicker from './DayPicker';
 
 const DayPickerUsage = () => {
-  const stringDate = '2014-02-27T10:00:00';
+  const stringDate = moment();
   const [date, setDate] = useState<Moment | null | string>(stringDate);
   const [focused, setFocused] = useState<boolean | null>(false);
 
