@@ -1,7 +1,5 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
-import { prop } from 'styled-tools';
-
 import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import colors from 'theme/colors';
@@ -35,7 +33,7 @@ type HeadingProps = {
 };
 
 const Paragraph = styled.p<ParagraphProps>`
-  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
   color: ${({ color, theme }) => color || `${theme.palette.text.main}`};
   ${({ description, theme: { palette, font } }) =>
     description &&
@@ -47,7 +45,7 @@ const Paragraph = styled.p<ParagraphProps>`
 `;
 
 const Heading = styled.h1<HeadingProps>`
-  font-family: ${prop('theme.font.primary')};
+  font-family: ${({ theme }) => theme.font.primary};
   font-weight: ${({ theme }) => theme.font.weights.thin};
   color: ${({ color }) => color || colors.blue};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};
@@ -88,7 +86,12 @@ const Typography = ({
 }: Props) => {
   if (variant === 'p') {
     return (
-      <Paragraph description={description} modifiers={modifiers} color={color}>
+      <Paragraph
+        className={className}
+        description={description}
+        modifiers={modifiers}
+        color={color}
+      >
         {children}
       </Paragraph>
     );
