@@ -30,7 +30,7 @@ type Props = {
   /**
    * Branding type
    */
-  branding: Branding;
+  branding?: Branding;
   /**
    * Minimum width
    */

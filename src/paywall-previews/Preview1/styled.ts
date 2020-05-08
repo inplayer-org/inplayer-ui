@@ -96,9 +96,8 @@ export const Title = styled(Typography)`
 
 export const BuyButtonWrapper = styled.div`
   flex-basis: 30%;
-  @media screen and (max-width: 1100px) {
-    justify-content: center;
-    width: 100%;
+  @media (max-width: 768px) {
+    flex-basis: 100%;
   }
 `;
 

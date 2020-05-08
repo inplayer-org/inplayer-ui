@@ -30,7 +30,7 @@ type Props = {
   /**
    * Branding type
    */
-  branding: Branding;
+  branding?: Branding;
   /**
    * Whether to show the button or not
    */
