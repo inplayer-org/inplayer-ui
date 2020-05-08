@@ -101,7 +101,7 @@ class Table<T> extends Component<Props<T>, State> {
     selectedAll: false,
   };
 
-  toggleRow = (id: number | string) => {
+  toggleRow = (id: number | string) => () => {
     const { selected } = this.state;
     const isSelected = !selected[id];
     const newSelected = {
