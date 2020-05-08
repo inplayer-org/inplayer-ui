@@ -70,8 +70,11 @@ type Props = {
 
 const FlexContainer = styled.div`
   display: flex;
-  align-items: flex-start;
   flex-wrap: nowrap;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Preview1 = ({
