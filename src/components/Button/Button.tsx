@@ -11,7 +11,7 @@ type ContentProps = {
 };
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  modifiers?: Array<string>;
+  buttonModifiers?: Array<string>;
   sizeType?: Size;
   fullWidth?: boolean;
   fullHeight?: boolean;
@@ -46,7 +46,7 @@ const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps)
 
 const Button = ({
   sizeType = 'md',
-  modifiers,
+  buttonModifiers,
   icon,
   iconPosition,
   children,
@@ -57,7 +57,7 @@ const Button = ({
 }: Props) => (
   <ButtonWrapper
     sizeType={sizeType}
-    modifiers={modifiers}
+    modifiers={buttonModifiers}
     fullWidth={fullWidth}
     fullHeight={fullHeight}
     disabled={disabled}
