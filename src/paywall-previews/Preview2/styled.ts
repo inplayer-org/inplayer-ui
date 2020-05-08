@@ -14,6 +14,8 @@ import {
 } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
+  display: flex;
+  flex-wrap: wrap;
   max-width: ${({ width }) => (width ? '' : '70vh')};
   font-size: ${({ theme }) => theme.font.sizes.large};
   overflow: hidden;
@@ -30,11 +32,12 @@ interface StyledImageHolder {
 
 export const StyledImageHolder = styled(ImageHolder)<StyledImageHolder>`
   width: 50%;
+  height: auto;
   padding-bottom: 60%;
   margin: 0;
   display: inline-block;
   background-image: url(${({ backgroundImage }) => backgroundImage});
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -47,7 +50,8 @@ export const AssetDetails = styled.div`
   box-sizing: border-box;
   max-width: 600px;
   margin: 6px auto;
-  @media screen and (max-width: 1100px) {
+  align-self: flex-end;
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
