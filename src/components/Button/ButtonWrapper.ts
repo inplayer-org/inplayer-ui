@@ -4,7 +4,7 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import { transparentize } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
 import colors from 'theme/colors';
-import { Size } from './Button';
+import { ButtonProps } from './Button';
 
 const modifiers = {
   hoverInfo: () => `
@@ -77,7 +77,7 @@ const modifiers = {
   buttonSuccess: () => `
   color: ${colors.green};
   border-color: ${colors.green};
-   background: ${transparentize(0.94, colors.green)};
+  background: ${transparentize(0.94, colors.green)};
 
   &:hover, &:focus {
     color: ${colors.white};
@@ -104,15 +104,7 @@ const modifiers = {
 `,
 };
 
-type ButtonWrapperProps = {
-  sizeType: Size;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  fullHeight?: boolean;
-  modifiers?: Array<string>;
-};
-
-const ButtonWrapper = styled.button<ButtonWrapperProps>`
+const ButtonWrapper = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   background: ${colors.white};
