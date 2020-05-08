@@ -55,8 +55,8 @@ export const StyledTextWrapper = styled(TextWrapper)`
   position: relative;
   justify-content: flex-end;
   height: 350px;
-  width: 50%;
-  padding: 0 2%;
+  width: 100%;
+  padding: 0 1rem;
 `;
 
 export const PaywallDescriptionSpan = styled(DescriptionSpan)`
