@@ -104,7 +104,11 @@ const modifiers = {
 `,
 };
 
-const ButtonWrapper = styled.button<ButtonProps>`
+type ButtonWrapperProps = ButtonProps & {
+  modifiers?: Array<string>;
+};
+
+const ButtonWrapper = styled.button<ButtonWrapperProps>`
   display: flex;
   justify-content: center;
   background: ${colors.white};
