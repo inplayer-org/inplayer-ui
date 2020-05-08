@@ -22,7 +22,7 @@ const StyledContainer = styled(Container)`
 function App() {
   return (
     <ThemeWrapper withProvider={ThemeProvider}>
-      <StyledContainer gap="1rem">
+      <StyledContainer gap="4rem">
         <Cell width={6}>
           <Preview1 />
         </Cell>
