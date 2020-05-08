@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const pkg = require('./package.json');
 
@@ -59,6 +60,7 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
   externals: {
     react: {
