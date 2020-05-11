@@ -12,7 +12,7 @@ const Base = styled.div<ArrowsProps>`
   position: absolute;
   ${({ width }) => width && `width: ${width}px;`};
   ${({ width }) => width && `height: ${width}px;`};
-  background: ${(props) => props.background || props.theme.palette.secondary.main};
+  background: ${({ background, theme }) => background || theme.palette.secondary.main};
 `;
 
 const Up = styled(Base)`
