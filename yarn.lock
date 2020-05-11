@@ -5,7 +5,8 @@
 "@babel/cli@^7.8.4":
   version "7.8.4"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.8.4.tgz#505fb053721a98777b2b175323ea4f090b7d3c1c"
-  integrity sha512-XXLgAm6LBbaNxaGhMAznXXaxtCWfuv6PIDJ9Alsy9JYTOh+j2jJz+L/162kkfU1j/pTSxK1xGmlwI4pdIMkoag==
+  integrity sha512-XXLgAm6LBbaNxaGhMAznXXaxtCWfuv6PIDJ9Alsy9JYTOh+j2jJz+L/162kkfU1j/pTSxK1xGmlwI4pdIMkoag
+ 
   dependencies:
     commander "^4.0.1"
     convert-source-map "^1.1.0"
@@ -1329,16 +1330,16 @@
     react-lifecycles-compat "^3.0.4"
 
 "@storybook/addon-actions@^6.0.0-beta.3":
-  version "6.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.3.tgz#4d688315dda74079daddb3024c16f5e9ce52fc27"
-  integrity sha512-R/P70eErBSaxRMjVmP+3D4/pR2yOD1E6vu68KZHU0qQkuC7Dp08MFwTQVfAV08SxyhsaAcMJIdPXQDsmIOMdLg==
+  version "6.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.4.tgz#f8aaa27bed849440bcd3b9585f88e366c40336bb"
+  integrity sha512-hhDgnIog0gOledsQksiBIBPMbLn5NuwlKj6cpeZz+MjvgyNXyosq/+qvHsn/JwN6qxK4n7kzZyb4IIwFKPUegw==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.3"
-    "@storybook/api" "6.0.0-beta.3"
-    "@storybook/client-api" "6.0.0-beta.3"
-    "@storybook/components" "6.0.0-beta.3"
-    "@storybook/core-events" "6.0.0-beta.3"
-    "@storybook/theming" "6.0.0-beta.3"
+    "@storybook/addons" "6.0.0-beta.4"
+    "@storybook/api" "6.0.0-beta.4"
+    "@storybook/client-api" "6.0.0-beta.4"
+    "@storybook/components" "6.0.0-beta.4"
+    "@storybook/core-events" "6.0.0-beta.4"
+    "@storybook/theming" "6.0.0-beta.4"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
@@ -2080,6 +2081,20 @@
   version "6.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-6.0.0-beta.4.tgz#4c304ce2ba971782d65b15f01456214c1d536b37"
   integrity sha512-QJyGdTOOK0KI+A7kAjtWyvS8d5JZZzh760WliUVR1NEtPRsSZ82htuHIPcaaianfEAfnVnT70S1KUFyVMWAvGw==
+  dependencies:
+    "@reach/router" "^1.3.3"
+    "@storybook/csf" "0.0.1"
+    "@types/reach__router" "^1.2.3"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    memoizerific "^1.11.3"
+    qs "^6.6.0"
+
+"@storybook/source-loader@6.0.0-beta.3":
+  version "6.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.0.0-beta.3.tgz#5a807d4502175a2b9477e24ba678cdddcf35840e"
+  integrity sha512-Vv/4liBjJsEIE9eTWiEh30FpVbsXvlSTGiVh4RGYbP2Lo4rmVqp7HBt8GVt3ZOko6ctt2JPMmgOjbnmxMG3P0Q==
   dependencies:
     "@reach/router" "^1.3.3"
     "@storybook/csf" "0.0.1"
@@ -13428,15 +13443,10 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@^3.0.1, uuid@^3.1.0:
+uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-
-uuid@^3.3.2:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
-  integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
 
 uuid@^8.0.0:
   version "8.0.0"
