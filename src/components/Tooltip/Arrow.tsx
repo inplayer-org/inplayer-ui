@@ -18,7 +18,7 @@ const Base = styled.div<ArrowsProps>`
 
 const Up = styled(Base)`
   transform: translateX(-50%) translateY(50%) rotateZ(45deg);
-  bottom: 100%;
+  bottom: 98%;
   left: 50%;
   ${({ border }) => border && `border-left: 1px solid ${border}`}
   ${({ border }) => border && `border-top: 1px solid ${border}`}
@@ -26,7 +26,7 @@ const Up = styled(Base)`
 
 const Down = styled(Base)`
   transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
-  top: 100%;
+  top: 98%;
   left: 50%;
   ${({ border }) => border && `border-right: 1px solid ${border}`}
   ${({ border }) => border && `border-bottom: 1px solid ${border}`}
@@ -34,7 +34,7 @@ const Down = styled(Base)`
 
 const Left = styled(Base)`
   transform: translateX(50%) translateY(-50%) rotateZ(45deg);
-  right: 100%;
+  right: 99%;
   top: 50%;
   ${({ border }) => border && `border-left: 1px solid ${border}`}
   ${({ border }) => border && `border-bottom: 1px solid ${border}`}
@@ -42,7 +42,7 @@ const Left = styled(Base)`
 
 const Right = styled(Base)`
   transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
-  left: 100%;
+  left: 99%;
   top: 50%;
   ${({ border }) => border && `border-right: 1px solid ${border}`}
   ${({ border }) => border && `border-top: 1px solid ${border}`}
