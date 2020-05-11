@@ -1326,7 +1326,7 @@
     vue-docgen-api "^4.7.0"
     vue-docgen-loader "^1.4.0"
 
-"@storybook/addon-info@^6.0.0-alpha.2":
+"@storybook/addon-info@^6.0.0-alpha.3":
   version "6.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-6.0.0-alpha.2.tgz#2ee4e45f0692996afeeaa199ded5d6f3c3176383"
   integrity sha512-isr+LdrXVnJ2GODvrgyHN1pZF1lwDbSgCkLn9o04qe5SK9mP+3yyXjLinnF4KEfpc3WmQIffz3soZcqJ2osugw==
@@ -1695,94 +1695,6 @@
     webpack-hot-middleware "^2.25.0"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/core@6.0.0-beta.4":
-  version "6.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-6.0.0-beta.4.tgz#ebcfdc8feadbe5fc38a6ee6150483d9ba80a6507"
-  integrity sha512-EwWavT2wFepTGhFPTaTNl6WOYjeD+1pmpVFx3GrBtp9eiZHqgCJ/EOcA9uU1kkNTQftqx6B+nsZpwYbL5CCgog==
-  dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.8.3"
-    "@babel/plugin-proposal-export-default-from" "^7.8.3"
-    "@babel/plugin-proposal-object-rest-spread" "^7.9.6"
-    "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/plugin-transform-react-constant-elements" "^7.2.0"
-    "@babel/preset-env" "^7.9.6"
-    "@babel/preset-react" "^7.8.3"
-    "@babel/preset-typescript" "^7.8.3"
-    "@babel/register" "^7.8.3"
-    "@storybook/addons" "6.0.0-beta.4"
-    "@storybook/api" "6.0.0-beta.4"
-    "@storybook/channel-postmessage" "6.0.0-beta.4"
-    "@storybook/client-api" "6.0.0-beta.4"
-    "@storybook/client-logger" "6.0.0-beta.4"
-    "@storybook/core-events" "6.0.0-beta.4"
-    "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.0.0-beta.4"
-    "@storybook/router" "6.0.0-beta.4"
-    "@storybook/theming" "6.0.0-beta.4"
-    "@storybook/ui" "6.0.0-beta.4"
-    "@types/node-fetch" "^2.5.4"
-    airbnb-js-shims "^2.2.1"
-    ansi-to-html "^0.6.11"
-    autoprefixer "^9.7.2"
-    babel-loader "^8.0.6"
-    babel-plugin-add-react-displayname "^0.0.5"
-    babel-plugin-emotion "^10.0.20"
-    babel-plugin-macros "^2.8.0"
-    babel-preset-minify "^0.5.0 || 0.6.0-alpha.5"
-    better-opn "^2.0.0"
-    boxen "^4.1.0"
-    case-sensitive-paths-webpack-plugin "^2.2.0"
-    chalk "^4.0.0"
-    cli-table3 "0.6.0"
-    commander "^5.0.0"
-    core-js "^3.0.1"
-    css-loader "^3.5.3"
-    detect-port "^1.3.0"
-    dotenv-webpack "^1.7.0"
-    ejs "^3.1.2"
-    express "^4.17.0"
-    file-loader "^6.0.0"
-    file-system-cache "^1.0.5"
-    find-cache-dir "^3.0.0"
-    find-up "^4.1.0"
-    fs-extra "^9.0.0"
-    glob "^7.1.6"
-    glob-base "^0.3.0"
-    global "^4.3.2"
-    html-webpack-plugin "^4.2.1"
-    inquirer "^7.0.0"
-    interpret "^2.0.0"
-    ip "^1.1.5"
-    json5 "^2.1.1"
-    lazy-universal-dotenv "^3.0.1"
-    nanomatch "^1.2.13"
-    node-fetch "^2.6.0"
-    pkg-dir "^4.2.0"
-    pnp-webpack-plugin "1.6.4"
-    postcss-flexbugs-fixes "^4.1.0"
-    postcss-loader "^3.0.0"
-    pretty-hrtime "^1.0.3"
-    qs "^6.6.0"
-    raw-loader "^4.0.1"
-    react-dev-utils "^10.0.0"
-    regenerator-runtime "^0.13.3"
-    resolve "^1.17.0"
-    resolve-from "^5.0.0"
-    semver "^7.3.2"
-    serve-favicon "^2.5.0"
-    shelljs "^0.8.3"
-    stable "^0.1.8"
-    style-loader "^1.2.1"
-    terser-webpack-plugin "^3.0.0"
-    ts-dedent "^1.1.1"
-    unfetch "^4.1.0"
-    url-loader "^4.0.0"
-    util-deprecate "^1.0.2"
-    webpack "^4.43.0"
-    webpack-dev-middleware "^3.7.0"
-    webpack-hot-middleware "^2.25.0"
-    webpack-virtual-modules "^0.2.2"
-
 "@storybook/csf@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.1.tgz#95901507dc02f0bc6f9ac8ee1983e2fc5bb98ce6"
@@ -1801,20 +1713,10 @@
     npmlog "^4.1.2"
     pretty-hrtime "^1.0.3"
 
-"@storybook/node-logger@6.0.0-beta.4":
-  version "6.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.0.0-beta.4.tgz#2aa039e25e526b97307b85ac22879ce853c0a5fb"
-  integrity sha512-sWQuExUsnoASk6wGtfHKsDUN7502xStLucxuJpWmlYQ9/SW7malBV6Seb4SWkRVu5r3M2O1K+hhwww2RAJ34kw==
-  dependencies:
-    "@types/npmlog" "^4.1.2"
-    chalk "^4.0.0"
-    core-js "^3.0.1"
-    npmlog "^4.1.2"
-    pretty-hrtime "^1.0.3"
 "@storybook/postinstall@6.0.0-beta.4":
   version "6.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-6.0.0-beta.4.tgz#ba293798fb71496e1941e521062f08b0f8ddc034"
-  integrity sha512-i0gIt7FUnyEt0iiibpIofFB41lJZjbJUOQUMRuOuDGOweX9YAuLo/Xi2If/DQFgFmfAsZg1XuyEF/VOZf3VUhQ
+  integrity sha512-i0gIt7FUnyEt0iiibpIofFB41lJZjbJUOQUMRuOuDGOweX9YAuLo/Xi2If/DQFgFmfAsZg1XuyEF/VOZf3VUhQ==
   dependencies:
     core-js "^3.0.1"
 
@@ -1935,47 +1837,6 @@
     polished "^3.4.4"
     resolve-from "^5.0.0"
     ts-dedent "^1.1.1"
-
-"@storybook/ui@6.0.0-beta.4":
-  version "6.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-6.0.0-beta.4.tgz#4483fc5e5f7757c8108b998da80398f6b6ab58f3"
-  integrity sha512-mtkMjRfadyFXUiMdbx13KW93+JShsdyuRgdq5P6jPaj8TzJCFADm6d+pY2qA6EvW002XWki/Uaj5dD4rk9n9Pw==
-  dependencies:
-    "@emotion/core" "^10.0.20"
-    "@storybook/addons" "6.0.0-beta.4"
-    "@storybook/api" "6.0.0-beta.4"
-    "@storybook/channels" "6.0.0-beta.4"
-    "@storybook/client-logger" "6.0.0-beta.4"
-    "@storybook/components" "6.0.0-beta.4"
-    "@storybook/core-events" "6.0.0-beta.4"
-    "@storybook/router" "6.0.0-beta.4"
-    "@storybook/theming" "6.0.0-beta.4"
-    "@types/markdown-to-jsx" "^6.9.1"
-    "@types/rfdc" "^1.1.0"
-    copy-to-clipboard "^3.0.8"
-    core-js "^3.0.1"
-    core-js-pure "^3.0.1"
-    emotion-theming "^10.0.19"
-    fast-deep-equal "^3.1.1"
-    fuse.js "^3.6.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    markdown-to-jsx "^6.9.3"
-    memoizerific "^1.11.3"
-    polished "^3.4.4"
-    qs "^6.6.0"
-    react "^16.8.3"
-    react-dom "^16.8.3"
-    react-draggable "^4.0.3"
-    react-helmet-async "^1.0.2"
-    react-hotkeys "2.0.0"
-    react-sizeme "^2.6.7"
-    regenerator-runtime "^0.13.3"
-    resolve-from "^5.0.0"
-    rfdc "^1.1.4"
-    semver "^7.3.2"
-    store2 "^2.7.1"
-    telejson "^4.0.0"
 
 "@storybook/ui@6.0.0-beta.4":
   version "6.0.0-beta.4"
@@ -2332,7 +2193,7 @@
     "@types/react" "*"
     moment ">=2.17.1"
 
-"@types/react-dom@^16.9.7":
+"@types/react-dom@^16.9.8":
   version "16.9.8"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.8.tgz#fe4c1e11dfc67155733dfa6aa65108b4971cb423"
   integrity sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
@@ -2367,10 +2228,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.34":
-  version "16.9.34"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.34.tgz#f7d5e331c468f53affed17a8a4d488cd44ea9349"
-  integrity sha512-8AJlYMOfPe1KGLKyHpflCg5z46n0b5DbRfqDksxBLBTUpB75ypDBAO9eCUcjNwE6LCUslwTz00yyG/X9gaVtow==
+"@types/react@*", "@types/react@^16.9.35":
   version "16.9.35"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
   integrity sha512-q0n0SsWcGc8nDqH2GJfWQWUOmZSJhXV64CjVN5SvcNti3TdEaA3AH0D8DwNmMdzjMAC/78tB8nAZIlV8yTz+zQ==
@@ -9567,7 +9425,7 @@ pnp-webpack-plugin@1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polished@^3.3.1, polished@^3.4.4, polished@^3.6.0:
+polished@^3.3.1, polished@^3.4.4, polished@^3.6.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.6.3.tgz#68f4fe7ffad46530733029b939dd12978200cb59"
   integrity sha512-QJ0q0b6gX1+0OJtPMfgVJxV0vg5XTa4im+Rca989dAtmsd/fEky3X+0A+V+OUXq1nyiDGplJwqD853dTS0gkPg==
@@ -12119,7 +11977,7 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^3.0.0:
+terser-webpack-plugin@^3.0.0, terser-webpack-plugin@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.0.1.tgz#31928c9330a582fb5ec6f90805337289b85cb8fe"
   integrity sha512-eFDtq8qPUEa9hXcUzTwKXTnugIVtlqc1Z/ZVhG8LmRT3lgRY13+pQTnFLY2N7ATB6TKCHuW/IGjoAnZz9wOIqw==
@@ -12865,7 +12723,7 @@ webpack-dev-middleware@^3.7.0, webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.10.3:
+webpack-dev-server@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.11.0.tgz#8f154a3bce1bcfd1cc618ef4e703278855e7ff8c"
   integrity sha512-PUxZ+oSTxogFQgkTtFndEtJIPNmml7ExwufBZ9L2/Xyyd5PnOL5UreWe5ZT7IU25DSdykL9p1MLQzmLh2ljSeg==
