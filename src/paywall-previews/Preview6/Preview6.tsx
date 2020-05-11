@@ -13,12 +13,12 @@ import {
   StyledPreviewBox,
   ImageWrapper,
   ItemDetails,
-  FootService,
   ButtonWrapper,
   PreviewFooter,
   IconHolder,
+  StyledBuyButton,
 } from './styled';
-import { BuyButton, PreviewFooterLink } from '../shared/PreviewComponents';
+import { PreviewFooterLink } from '../shared/PreviewComponents';
 
 // Types
 import Branding from '../types/branding';
@@ -88,25 +88,23 @@ const Preview6 = ({
         <TextEditor value={title} readOnly />
         <TextEditor value={description} readOnly />
       </ItemDetails>
-      <FootService>
-        <ButtonWrapper>
-          <BuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {buttonLabel}
-          </BuyButton>
-        </ButtonWrapper>
-        <PreviewFooter>
-          <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-            {loginFooterLabel}
-          </PreviewFooterLink>
-          <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
-            <LockIcon />
-          </IconHolder>
-        </PreviewFooter>
-      </FootService>
+      <ButtonWrapper>
+        <StyledBuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {buttonLabel}
+        </StyledBuyButton>
+      </ButtonWrapper>
+      <PreviewFooter>
+        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+          {loginFooterLabel}
+        </PreviewFooterLink>
+        <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
+          <LockIcon />
+        </IconHolder>
+      </PreviewFooter>
     </StyledPreviewBox>
   );
 };
