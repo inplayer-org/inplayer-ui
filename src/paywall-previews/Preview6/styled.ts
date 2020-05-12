@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // Components
-import { PreviewBox, ImageHolder } from '../shared/PreviewComponents';
+import { PreviewBox, ImageHolder, BuyButton } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '850px')};
@@ -10,11 +10,11 @@ export const StyledPreviewBox = styled(PreviewBox)`
   border-radius: 8px 8px 3px 3px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 4rem;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 1fr auto;
   grid-column-gap: 1rem;
   @media screen and (max-width: 1100px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
   }
 `;
 
@@ -45,34 +45,32 @@ export const ItemDetails = styled.div`
   width: 100%;
   box-sizing: border-box;
   vertical-align: middle;
-`;
-
-export const FootService = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  align-items: flex-end;
-  @media screen and (max-width: 1100px) {
-    grid-column: 1 / span 2;
-  }
+  grid-column: 2 / span 2;
 `;
 
 export const ButtonWrapper = styled.div`
   text-align: left;
-  width: 30%;
+  margin-right: 2rem;
   display: inline-block;
   @media screen and (max-width: 1100px) {
-    width: 50%;
+    width: 100%;
+    margin: 0;
+  }
+`;
+
+export const StyledBuyButton = styled(BuyButton)`
+  @media screen and (max-width: 1100px) {
+    width: 100%;
   }
 `;
 
 export const PreviewFooter = styled.div`
   float: right;
-  width: 70%;
   text-align: right;
   display: flex;
   align-items: flex-end;
   @media screen and (max-width: 1100px) {
-    width: 50%;
+    grid-column: 2 / span 2;
   }
 `;
 

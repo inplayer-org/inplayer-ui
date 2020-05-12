@@ -18,7 +18,7 @@ const Container = styled.header`
   height: ${prop('height', 50)}px;
   justify-content: space-between;
   margin: 0;
-  width: 98%;
+  width: 100%;
   z-index: 3;
 `;
 
