@@ -30,7 +30,6 @@ const DropdownContainer = styled.select`
   margin: 0;
   box-sizing: border-box;
   appearance: none;
-  width: 100%;
 
   &:hover {
     color: ${({ color }) => color || colors.skyBlue};
