@@ -10,13 +10,14 @@ type ContentProps = {
   children?: any;
 };
 
-export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
-  ContentProps & {
-    buttonModifiers?: Array<string>;
-    sizeType?: Size;
-    fullWidth?: boolean;
-    fullHeight?: boolean;
-  };
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  buttonModifiers?: Array<string>;
+  sizeType?: Size;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+};
+
+export type Props = ButtonProps & ContentProps;
 
 const ContentHolder = styled.span`
   padding: 0.2rem;
@@ -52,6 +53,7 @@ const Button = ({
   fullWidth,
   fullHeight,
   disabled,
+  ...rest
 }: Props) => (
   <ButtonWrapper
     sizeType={sizeType}
@@ -59,6 +61,7 @@ const Button = ({
     fullWidth={fullWidth}
     fullHeight={fullHeight}
     disabled={disabled}
+    {...rest}
   >
     <Content icon={icon} iconPosition={iconPosition}>
       {children}

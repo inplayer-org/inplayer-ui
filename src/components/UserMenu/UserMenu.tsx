@@ -15,9 +15,7 @@ export type Props = UserMenuDropdownProps & {
   menuTitle?: string;
 };
 
-const defaultImage = 'https://www.impaact4tb.org/wp-content/uploads/2018/07/Generic-male-icon.png';
-
-const UserMenu = ({ image = defaultImage, menuItems, actionItem, menuTitle }: Props) => {
+const UserMenu = ({ image, menuItems, actionItem, menuTitle }: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
