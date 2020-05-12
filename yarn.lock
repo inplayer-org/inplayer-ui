@@ -1258,16 +1258,16 @@
     react-lifecycles-compat "^3.0.4"
 
 "@storybook/addon-actions@^6.0.0-beta.3":
-  version "6.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.4.tgz#f8aaa27bed849440bcd3b9585f88e366c40336bb"
-  integrity sha512-hhDgnIog0gOledsQksiBIBPMbLn5NuwlKj6cpeZz+MjvgyNXyosq/+qvHsn/JwN6qxK4n7kzZyb4IIwFKPUegw==
+  version "6.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.5.tgz#17178f9e1e0607bf13992525364f8569fb392bf4"
+  integrity sha512-JLVX25f+qug6+3//Wch0OuyJxNx4oH3rDHr5WwSj6EFwZxwd1TdTFEZ1IyFL+zts3NMz0Rwk6szynz5121jz9A==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.4"
-    "@storybook/api" "6.0.0-beta.4"
-    "@storybook/client-api" "6.0.0-beta.4"
-    "@storybook/components" "6.0.0-beta.4"
-    "@storybook/core-events" "6.0.0-beta.4"
-    "@storybook/theming" "6.0.0-beta.4"
+    "@storybook/addons" "6.0.0-beta.5"
+    "@storybook/api" "6.0.0-beta.5"
+    "@storybook/client-api" "6.0.0-beta.5"
+    "@storybook/components" "6.0.0-beta.5"
+    "@storybook/core-events" "6.0.0-beta.5"
+    "@storybook/theming" "6.0.0-beta.5"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
