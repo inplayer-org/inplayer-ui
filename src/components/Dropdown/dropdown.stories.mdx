@@ -34,10 +34,10 @@ const Page = () => (
     const [value, setValue] = useState(options[0].value);
     const defaultOption = { displayName: 'default value', disabled: true };
     return (
-        <>
+        <DropdownWrapperDocs>
             <p>Selected option: {value}</p>
             <Dropdown onChange={(e) => setValue(e.target.value)} options={options} value={value} />
-        </>
+        </DropdownWrapperDocs>
     )
   }}
   </Story>
@@ -54,10 +54,10 @@ const Page = () => (
     const [value, setValue] = useState(options[0].value);
     const defaultOption = { displayName: 'default value', disabled: true };
     return (
-        <>
+        <DropdownWrapperDocs>
             <p>Selected option: {value}</p>
             <Dropdown onChange={(e) => setValue(e.target.value)} defaultOption={defaultOption} options={options} value={value} />
-        </>
+        </DropdownWrapperDocs>
     )
   }}
   </Story>
@@ -74,14 +74,14 @@ const Page = () => (
     const [value, setValue] = useState(options[0].value);
     const defaultOption = { displayName: 'default value', disabled: true };
     return (
-        <>
+        <DropdownWrapperDocs>
             <Dropdown
                 options={options}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 color="#936"
             />
-        </>
+        </DropdownWrapperDocs>
     )
   }}
   </Story>
@@ -97,14 +97,14 @@ const Page = () => (
     ];
     const [value, setValue] = useState(options[0].value);
     return (
-        <>
+        <DropdownWrapperDocs>
             <Dropdown
                 options={options}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 disabled
             />
-        </>
+        </DropdownWrapperDocs>
     )
   }}
   </Story>

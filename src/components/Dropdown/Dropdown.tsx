@@ -14,15 +14,15 @@ type DefaultOption = {
 type Props = SelectHTMLAttributes<HTMLSelectElement> & {
   modifiers?: Array<string>;
   value: string;
-  onChange?: (value: string | number) => void;
+  onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
   color?: string;
   options: Array<Option>;
   disabled?: boolean;
   defaultOption?: DefaultOption;
 };
 
-const Dropdown: React.FC<Props> = ({ options, onChange = () => null, defaultOption }) => (
-  <DropdownContainer onChange={(e) => onChange(e.target.value)}>
+const Dropdown: React.FC<Props> = ({ options, onChange = () => null, defaultOption, ...rest }) => (
+  <DropdownContainer onChange={(e) => onChange(e)} {...rest}>
     {defaultOption && (
       <option value="" disabled={defaultOption.disabled}>
         {defaultOption.displayName}
