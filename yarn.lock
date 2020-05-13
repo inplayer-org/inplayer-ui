@@ -1952,16 +1952,16 @@
     core-js "^3.0.1"
 
 "@storybook/react@^6.0.0-beta.3":
-  version "6.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.0.0-beta.5.tgz#58398babee7fce4b4ab4eb77490eff9356fbc901"
-  integrity sha512-lmpjvwlZEP6LMaVb6qO/TglYKIExd+7Po/oXnUbt08r82AY5O7/Kp4K3usV4iJrx97WAiDaJQxvSH0T0g3A1eQ==
+  version "6.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.0.0-beta.6.tgz#a4ae72645508cf410166c6624ef0e95307659c9f"
+  integrity sha512-IkGWYase/hIRCqEToOsR/BNi2ntv08JCKmJOAodvdNfZYzjxVuv2Vrj4TbxbE66qYDdrhCnljiujjkDkTm83LQ==
   dependencies:
     "@babel/plugin-transform-react-constant-elements" "^7.6.3"
     "@babel/preset-flow" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
-    "@storybook/addons" "6.0.0-beta.5"
-    "@storybook/core" "6.0.0-beta.5"
-    "@storybook/node-logger" "6.0.0-beta.5"
+    "@storybook/addons" "6.0.0-beta.6"
+    "@storybook/core" "6.0.0-beta.6"
+    "@storybook/node-logger" "6.0.0-beta.6"
     "@svgr/webpack" "^5.4.0"
     "@types/webpack-env" "^1.15.2"
     babel-plugin-add-react-displayname "^0.0.5"
