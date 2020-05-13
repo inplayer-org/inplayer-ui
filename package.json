@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/inplayer-org/inplayer-ui#readme",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
     "storybook": "NODE_PATH=src start-storybook -p 3001 -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
@@ -70,7 +69,6 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-webpack-alias": "^2.1.2",
     "copy-webpack-plugin": "^5.1.1",
-    "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -85,7 +83,6 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "eslint-watch": "^6.0.1",
     "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "lodash-es": "^4.17.15",
     "moment": "^2.25.3",
@@ -117,7 +114,6 @@
     "url-loader": "^4.1.0",
     "webfontloader": "^1.6.28",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-cli": "^3.3.11"
   }
 }
