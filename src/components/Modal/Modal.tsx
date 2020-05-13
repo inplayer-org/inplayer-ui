@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { CSSProperties, ReactChild } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
@@ -44,16 +44,14 @@ type Props = {
    * Modal title
    */
   title: string;
-  children: ReactNode;
+  children: ReactChild;
 };
 
 const Modal = ({ isModalOpen, closeModal, children, title }: Props) => (
   <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
     <ModalContainer onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
-      <ModalContent>
-        <>{children}</>
-      </ModalContent>
+      <ModalContent>{children}</ModalContent>
     </ModalContainer>
   </ModalWrapper>
 );
