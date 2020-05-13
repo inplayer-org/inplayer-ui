@@ -111,7 +111,7 @@ export interface ModalProps {
   children: ReactNode;
   title: string;
   className?: string;
-  style?: CSSProperties;
+  isOverflowVisible?: boolean;
 }
 
 export declare const Modal: FunctionComponent<ModalProps>;
