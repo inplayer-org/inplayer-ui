@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.52] - 13-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.51] - 12-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.50] - 12-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
 # [2.0.0-beta.49] - 11-05-2020
 
 ### Fixes
