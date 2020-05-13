@@ -52,12 +52,9 @@ module.exports = {
     alias: {
       assets: path.resolve(__dirname, './src/assets'),
       components: path.resolve(__dirname, './src/components'),
-      blocks: path.resolve(__dirname, './src/blocks'),
-      elements: path.resolve(__dirname, './src/elements'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
-      utils: path.resolve(__dirname, './src/utils'),
       theme: path.resolve(__dirname, './src/theme'),
-      previews: path.resolve(__dirname, './src/previews'),
+      previews: path.resolve(__dirname, './src/paywall-previews'),
     },
   },
   plugins: [
