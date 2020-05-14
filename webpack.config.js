@@ -60,8 +60,22 @@ module.exports = {
     new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
   ],
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    'styled-components': 'styled-components',
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+    'styled-components': {
+      commonjs: 'styled-components',
+      commonjs2: 'styled-components',
+      amd: 'styled-components',
+    },
   },
 };
