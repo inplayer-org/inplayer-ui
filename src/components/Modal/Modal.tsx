@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactChild } from 'react';
+import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
@@ -21,14 +21,16 @@ const ModalWrapper = styled.div<ModalWrapperProps>`
   top: 0;
   left: 0;
   background: ${transparentize(0.28, colors.black)};
+  overflow-y: scroll;
 `;
 
-const ModalContainer = styled.div`
+const ModalContainer = styled.div<{ isOverflowVisible?: boolean }>`
   background: ${colors.white};
   width: 72%;
   max-width: 980px;
   border-radius: 3px;
   margin: auto;
+  overflow: ${({ isOverflowVisible }) => (isOverflowVisible ? 'visible;' : 'hidden;')};
 `;
 
 type Props = {
@@ -44,12 +46,31 @@ type Props = {
    * Modal title
    */
   title: string;
+  /**
+   * Modal overflow
+   */
+  isOverflowVisible?: boolean;
+  /**
+   * External class name
+   */
+  className?: string;
   children: ReactChild;
 };
 
-const Modal = ({ isModalOpen, closeModal, children, title }: Props) => (
-  <ModalWrapper isOpen={isModalOpen} onClick={isModalOpen ? closeModal : undefined}>
-    <ModalContainer onClick={(e) => e.stopPropagation()}>
+const Modal = ({
+  isOverflowVisible = false,
+  isModalOpen,
+  closeModal,
+  children,
+  title,
+  className = '',
+}: Props) => (
+  <ModalWrapper
+    className={className}
+    isOpen={isModalOpen}
+    onClick={isModalOpen ? closeModal : undefined}
+  >
+    <ModalContainer isOverflowVisible={isOverflowVisible} onClick={(e) => e.stopPropagation()}>
       <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
       <ModalContent>{children}</ModalContent>
     </ModalContainer>
