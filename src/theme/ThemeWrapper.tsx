@@ -16,8 +16,10 @@ const ThemeWrapper = ({ children, theme }: Props) => {
 
   return (
     <ThemeProvider theme={theme || Theme}>
-      <GlobalStyles suppressMultiMountWarning />
-      {children}
+      <>
+        <GlobalStyles suppressMultiMountWarning />
+        {children}
+      </>
     </ThemeProvider>
   );
 };
