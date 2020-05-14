@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.54] - 14-05-2020
+
+### Fixes
+
+- Webpack externals
+
 # [2.0.0-beta.53] - 14-05-2020
 
 ### Fixes
