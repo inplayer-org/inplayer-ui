@@ -42,7 +42,7 @@
     "assets/*": ["./assets/*"],
     "components/*": ["./components/*"],
     "modifiers/*": ["./modifiers/*"],
-    "previews/*": ["./paywall-previews/*"],
+    "paywall-previews/*": ["./paywall-previews/*"],
     "theme/*": ["./theme/*"]
   },
   "include": ["src/**/*"],
