@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.56] - 15-05-2020
+
+### Fixes
+
+- Incorrectly published version because of NPM being down
+
 # [2.0.0-beta.55] - 15-05-2020
 
 ### Fixes
