@@ -22,7 +22,6 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   height: ${({ height }) => height ?? '580px'};
   min-width: ${({ minWidth }) => minWidth};
   min-height: ${({ minHeight }) => minHeight};
-  margin: auto;
   border: 1px solid ${colors.gray};
   clear: both;
   padding: ${({ circleImage }) => (circleImage ? '26px' : '18px')} 3%;

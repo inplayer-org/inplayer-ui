@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.56] - 15-05-2020
+
+### Fixes
+
+- Incorrectly published version because of NPM being down
+
+# [2.0.0-beta.55] - 15-05-2020
+
+### Fixes
+
+- Remove margin auto from paywall preview
+
+# [2.0.0-beta.54] - 14-05-2020
+
+### Fixes
+
+- Webpack externals
+
+# [2.0.0-beta.53] - 14-05-2020
+
+### Fixes
+
+- Components layout fixes
+
 # [2.0.0-beta.52] - 13-05-2020
 
 ### Fixes

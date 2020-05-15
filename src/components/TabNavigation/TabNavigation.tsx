@@ -11,7 +11,9 @@ const Tab = styled.a<{ active: boolean }>`
   cursor: pointer;
   font-weight: ${({ theme }) => theme.font.weights.light};
   line-height: 2rem;
-  margin-right: 1rem;
+  :not(:last-child) {
+    margin-right: 1rem;
+  }
   padding: 0 0.25rem;
   text-decoration: none;
   transition: color 0.3s ease;
