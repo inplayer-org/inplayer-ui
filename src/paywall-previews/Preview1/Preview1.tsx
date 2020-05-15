@@ -29,10 +29,10 @@ type Props = {
   minWidth?: string;
   height?: string;
   width?: string;
-  loginFooterLabel?: string;
   handleOpenModal?: (e: any) => any;
-  protectedByLabel: boolean;
-  premiumContentLabel: string;
+  loginFooterLabel?: string;
+  protectedByLabel?: string;
+  premiumContentLabel?: string;
 };
 
 const Preview1 = ({
@@ -48,10 +48,10 @@ const Preview1 = ({
   } = {},
   displayBuyButton = true,
   previewUnavailable = false,
-  loginFooterLabel,
+  loginFooterLabel = 'Already have access? Login with your account.',
   handleOpenModal,
-  protectedByLabel,
-  premiumContentLabel,
+  protectedByLabel = 'Protected by',
+  premiumContentLabel = 'Premium content',
 }: Props) => {
   const isHtmlTitle = previewTitle.includes('</');
 
