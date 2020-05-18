@@ -797,6 +797,8 @@ interface Preview1Props {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  protectedByLabel?: string;
+  premiumContentLabel?: string;
 }
 
 export declare const Preview1: FunctionComponent<Preview1Props>;
