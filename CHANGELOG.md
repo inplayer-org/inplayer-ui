@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.59] - 18-05-2020
+
+### Fixes
+
+- Preview1 - minor css changes
+
 # [2.0.0-beta.58] - 18-05-2020
 
 ### Fixes
