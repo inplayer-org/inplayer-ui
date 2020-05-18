@@ -33,6 +33,8 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   font-weight: 300;
   font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: ${ifProp('hasPreviewTopBorder', '18px 3% 0 3%', '0')};
+  box-shadow: 0 0 33px 9px rgba(0, 0, 0, 0.21);
+
   @media screen and (max-height: 600px) {
     max-width: 580px;
   }
@@ -113,12 +115,17 @@ export const InplayerWhiteLogo = styled.div`
     margin-bottom: 2px;
     line-height: 15px;
   }
+
+  @media screen and (max-width: 476px) {
+    margin: 0px 0 0 0;
+  }
 `;
 
 export const ItemDetails = styled.div`
   display: inline-block;
   vertical-align: middle;
   width: 69%;
+  padding: 0 10px;
 
   h1,
   h2,
@@ -139,11 +146,6 @@ export const ItemDetails = styled.div`
 
   @media screen and (max-width: 600px) {
     width: 100%;
-  }
-
-  @media screen and (min-width: 600px) {
-    width: 66%;
-    padding: 0 10px;
   }
 `;
 
