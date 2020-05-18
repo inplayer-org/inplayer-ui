@@ -32,8 +32,7 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   text-align: left;
   font-weight: 300;
   font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 0;
-
+  padding: ${ifProp('hasPreviewTopBorder', '18px 3% 0 3%', 0)};
   @media screen and (max-height: 600px) {
     max-width: 580px;
   }
@@ -136,6 +135,10 @@ export const ItemDetails = styled.div`
 
   a {
     text-decoration: underline;
+  }
+
+  p {
+    text-align: center;
   }
 
   @media screen and (max-width: 600px) {
