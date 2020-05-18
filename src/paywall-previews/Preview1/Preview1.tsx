@@ -3,6 +3,7 @@ import colors from 'theme/colors';
 
 // Images
 import previewImg from 'assets/images/ip-preview-premium.png';
+import restrictedAssetImg from 'assets/images/restricted-asset.png';
 
 // Types
 import Branding from '../types/branding';
@@ -33,6 +34,7 @@ type Props = {
   loginFooterLabel?: string;
   protectedByLabel?: string;
   premiumContentLabel?: string;
+  isRestrictedAsset?: boolean;
 };
 
 const Preview1 = ({
@@ -52,8 +54,10 @@ const Preview1 = ({
   handleOpenModal,
   protectedByLabel = 'Protected by',
   premiumContentLabel = 'Premium content',
+  isRestrictedAsset = false,
 }: Props) => {
   const isHtmlTitle = previewTitle.includes('</');
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
 
   return (
     <InplayerPreviewBox hasPreviewTopBorder={hasPreviewTopBorder} className="inplayer-preview-box">
@@ -61,7 +65,7 @@ const Preview1 = ({
       <ImageHolder className="inplayer-imageholder">
         <PreviewImage
           alt="coverPhoto"
-          src={imageUrl}
+          src={image}
           role="presentation"
           className="inplayer-paywall"
         />

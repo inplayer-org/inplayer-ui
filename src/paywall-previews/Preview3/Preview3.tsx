@@ -57,6 +57,8 @@ type Props = {
    * Function which handles the modal state changes
    */
   handleOpenModal?: (e: any) => any;
+  // premium content label
+  premiumContentLabel?: string;
 };
 
 const Preview3 = ({
@@ -75,6 +77,7 @@ const Preview3 = ({
   isRestrictedAsset = false,
   handleOpenModal,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
+  premiumContentLabel = 'Premium content',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -92,7 +95,7 @@ const Preview3 = ({
         <StyledTextWrapper onClick={handleOpenModal}>
           <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
             <PaywallDescriptionSpan>
-              <GiCutDiamond /> premium content
+              <GiCutDiamond /> {premiumContentLabel}
             </PaywallDescriptionSpan>
           </StyledPaywallDescription>
           <TitleWrapper>

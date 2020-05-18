@@ -55,6 +55,8 @@ type Props = {
    * Function which handles the modal state changes
    */
   handleOpenModal?: (e: any) => any;
+  // premium content label
+  premiumContentLabel?: string;
 };
 
 const Preview5 = ({
@@ -73,6 +75,7 @@ const Preview5 = ({
   minWidth = '250px',
   handleOpenModal,
   isRestrictedAsset = false,
+  premiumContentLabel = 'Premium content',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -97,7 +100,7 @@ const Preview5 = ({
           hasProtectedByLabel={hasProtectedByLabel}
         >
           <StyledIcon />
-          <PaywallDescriptionSpan>Premium content</PaywallDescriptionSpan>
+          <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TitleHolder>
           <TextEditor value={previewTitle} readOnly />
