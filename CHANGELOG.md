@@ -8,7 +8,6 @@ All notable changes to this project will be documented in this file.
 
 - Reverted design (css and class names) for preview 1
 
-
 # [2.0.0-beta.56] - 15-05-2020
 
 ### Fixes
