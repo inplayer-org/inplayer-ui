@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.58] - 18-05-2020
+
+### Fixes
+
+- Preview1 branding label
+
 # [2.0.0-beta.57] - 18-05-2020
 
 ### Changes
