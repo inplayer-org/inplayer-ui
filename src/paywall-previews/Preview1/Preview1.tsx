@@ -62,7 +62,7 @@ const Preview1 = ({
   return (
     <InplayerPreviewBox hasPreviewTopBorder={hasPreviewTopBorder} className="inplayer-preview-box">
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <ImageHolder className="inplayer-imageholder">
+      <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
         <PreviewImage
           alt="coverPhoto"
           src={image}

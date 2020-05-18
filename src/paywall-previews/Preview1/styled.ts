@@ -22,8 +22,6 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   clear: both;
   background-size: 100% 4px;
   position: relative;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   overflow: hidden;
   font-size: 16px;
@@ -33,7 +31,6 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   font-weight: 300;
   font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 18px 3%;
-  box-shadow: 0 0 33px 9px rgba(0, 0, 0, 0.21);
 
   @media screen and (max-height: 600px) {
     max-width: 580px;
@@ -96,7 +93,7 @@ export const InplayerWhiteLogo = styled.div`
     text-transform: uppercase;
     display: inline-block;
     color: rgba(255, 255, 255, 0.8);
-    font-weight: normal;
+    font-weight: 400;
     max-width: 150px;
     text-align: right;
     line-height: 15px;
@@ -129,7 +126,6 @@ export const ItemDetails = styled.div`
   display: inline-block;
   vertical-align: middle;
   width: 69%;
-  padding: 0 10px;
 
   h1,
   h2,
@@ -224,8 +220,11 @@ export const PreviewImage = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+  cursor: pointer;
 `;
 
 export const LockIcon = styled(FaLock)`
-  margin: 0 0.4em 0 0;
+  margin: 0px 0.4em 0px 0px;
+  position: relative;
+  vertical-align: middle;
 `;
