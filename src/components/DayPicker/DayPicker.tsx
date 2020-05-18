@@ -59,6 +59,7 @@ const DayPicker = ({
       date={typeof date === 'string' ? moment(date) : date}
       numberOfMonths={numberOfMonths}
       disabled={disabled}
+      displayFormat="DD/MM/yyyy"
     />
   </DayPickerWrapper>
 );
