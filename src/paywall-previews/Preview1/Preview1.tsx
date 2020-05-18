@@ -38,10 +38,10 @@ type Props = {
 const Preview1 = ({
   branding: {
     paywall_cover_photo: imageUrl = previewImg,
-    preview_title: previewTitle,
-    preview_description: previewDescription,
-    preview_button_label: previewButtonLabel,
-    preview_top_border: hasPreviewTopBorder = false,
+    preview_title: previewTitle = '<h3>Asset title</h3>',
+    preview_description: previewDescription = '<p>Asset description</p>',
+    preview_button_label: previewButtonLabel = 'Buy',
+    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
