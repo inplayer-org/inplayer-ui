@@ -54,6 +54,8 @@ type Props = {
    * Function which handles the modal state changes
    */
   handleOpenModal?: (e: any) => any;
+  // premium content label
+  premiumContentLabel?: string;
 };
 
 const Preview2 = ({
@@ -73,6 +75,7 @@ const Preview2 = ({
   isRestrictedAsset = false,
   handleOpenModal,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
+  premiumContentLabel = 'Premium content',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -82,7 +85,7 @@ const Preview2 = ({
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
           <PaywallDescriptionSpan>
             <StyledIcon name="star" />
-            This premium content requires an account to access.
+            {premiumContentLabel}
           </PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TextEditor value={previewTitle} readOnly padding="0 0 0.5rem 0" />
