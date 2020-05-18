@@ -50,12 +50,16 @@ export const ImageHolder = styled.div`
   position: relative;
 `;
 
-export const PaywallExplain = styled.div<{ hasProtectedByLabel: boolean }>`
+interface PaywallExplainProps {
+  hasProtectedByLabel: boolean;
+}
+
+export const PaywallExplain = styled.div<PaywallExplainProps>`
   background: rgba(58, 71, 76, 0.6);
   box-sizing: border-box;
   padding: 2vh 3%;
   color: ${colors.white};
-  display: block;
+  display: ${ifProp('hasProtectedByLabel', 'block', 'none')};
   position: absolute;
   bottom: 0;
   width: 100%;
