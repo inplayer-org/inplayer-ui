@@ -1,63 +1,30 @@
-import Grid from './Grid';
-import Accordion from './Accordion';
-import Avatar from './Avatar';
-import Button from './Button';
-import Card from './Card';
-import DatePicker from './DatePicker';
-import DayPicker from './DayPicker';
-import Dropdown from './Dropdown';
-import Input from './Input';
-import Label from './Label';
-import Loader from './Loader';
-import Notification from './Notification';
-import PillLabel from './PillLabel';
-import Progress from './Progress';
-import StepWizard from './StepWizard';
-import Switch from './Switch';
-import TextArea from './TextArea';
-import Typography from './Typography';
-import Tabs from './Tabs';
-import Checkbox from './Checkbox';
-import Tooltip from './Tooltip';
-import Note from './Note';
-import Navbar from './NavBar';
-import UserMenu from './UserMenu';
-import TabNavigation from './TabNavigation';
-import Header from './Header';
-import Table from './Table';
-import Modal from './Modal';
-import Radio from './Radio';
-import Pagination from './Pagination';
-
-export {
-  Grid,
-  Tabs,
-  Checkbox,
-  Tooltip,
-  Note,
-  Navbar,
-  UserMenu,
-  TabNavigation,
-  Header,
-  Table,
-  Modal,
-  Radio,
-  Pagination,
-  Accordion,
-  Avatar,
-  Button,
-  Card,
-  DatePicker,
-  DayPicker,
-  Dropdown,
-  Input,
-  Label,
-  Loader,
-  Notification,
-  PillLabel,
-  Progress,
-  StepWizard,
-  Switch,
-  TextArea,
-  Typography,
-};
+export { default as Grid } from 'components/Grid';
+export { default as Accordion } from 'components/Accordion';
+export { default as Avatar } from 'components/Avatar';
+export { default as Button } from 'components/Button';
+export { default as Card } from 'components/Card';
+export { default as DatePicker } from 'components/DatePicker';
+export { default as DayPicker } from 'components/DayPicker';
+export { default as Dropdown } from 'components/Dropdown';
+export { default as Input } from 'components/Input';
+export { default as Label } from 'components/Label';
+export { default as Loader } from 'components/Loader';
+export { default as Notification } from 'components/Notification';
+export { default as PillLabel } from 'components/PillLabel';
+export { default as Progress } from 'components/Progress';
+export { default as StepWizard } from 'components/StepWizard';
+export { default as Switch } from 'components/Switch';
+export { default as TextArea } from 'components/TextArea';
+export { default as Typography } from 'components/Typography';
+export { default as Tabs } from 'components/Tabs';
+export { default as Checkbox } from 'components/Checkbox';
+export { default as Tooltip } from 'components/Tooltip';
+export { default as Note } from 'components/Note';
+export { default as Navbar } from 'components/NavBar';
+export { default as UserMenu } from 'components/UserMenu';
+export { default as TabNavigation } from 'components/TabNavigation';
+export { default as Header } from 'components/Header';
+export { default as Table } from 'components/Table';
+export { default as Modal } from 'components/Modal';
+export { default as Radio } from 'components/Radio';
+export { default as Pagination } from 'components/Pagination';
