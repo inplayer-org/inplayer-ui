@@ -11,7 +11,7 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: require.resolve('react-docgen-typescript-loader'),
+          loader: require.resolve('babel-loader'),
         },
       ],
     });
@@ -23,11 +23,4 @@ module.exports = {
       resolve: custom.resolve,
     };
   },
-  // webpackFinal: (config) => {
-  //   return {
-  //     ...config,
-  //     module: { ...config.module, rules: custom.module.rules },
-  //     resolve: custom.resolve,
-  //   };
-  // },
 };
