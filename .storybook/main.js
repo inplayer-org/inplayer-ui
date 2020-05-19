@@ -1,7 +1,7 @@
 const path = require('path');
 
 // your app's webpack.config.js
-const custom = require('../webpack.prod.js');
+const custom = require('../webpack.config.js');
 
 module.exports = {
   stories: ['../src/**/*.stories.(tsx|mdx)'],
