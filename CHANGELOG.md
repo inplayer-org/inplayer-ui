@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.60] - 19-05-2020
+
+### Fixes
+
+- Remove format from SingleDatePicker
+- Checkbox css update
+
 # [2.0.0-beta.59] - 18-05-2020
 
 ### Fixes
