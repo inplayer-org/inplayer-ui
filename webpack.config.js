@@ -51,7 +51,7 @@ module.exports = {
       components: path.resolve(__dirname, './src/components'),
       modifiers: path.resolve(__dirname, './src/modifiers'),
       theme: path.resolve(__dirname, './src/theme'),
-      previews: path.resolve(__dirname, './src/paywall-previews'),
+      'paywall-previews': path.resolve(__dirname, './src/paywall-previews'),
     },
   },
   plugins: [
