@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.61] - 20-05-2020
+
+### Fixes
+
+- Use Roboto as primary font
+
 # [2.0.0-beta.60] - 19-05-2020
 
 ### Fixes
