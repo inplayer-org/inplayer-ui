@@ -702,7 +702,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/plugin-transform-react-constant-elements@^7.2.0", "@babel/plugin-transform-react-constant-elements@^7.6.3", "@babel/plugin-transform-react-constant-elements@^7.9.0":
+"@babel/plugin-transform-react-constant-elements@^7.6.3", "@babel/plugin-transform-react-constant-elements@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-constant-elements/-/plugin-transform-react-constant-elements-7.9.0.tgz#a75abc936a3819edec42d3386d9f1c93f28d9d9e"
   integrity sha512-wXMXsToAUOxJuBBEHajqKLFWcCkOSLshTI2ChCFFj1zDd7od4IOxiwLCOObNUvOpkxLpjIuaIdBMmNt6ocCPAw==
@@ -926,7 +926,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.9.0"
     "@babel/plugin-transform-react-jsx-source" "^7.9.0"
 
-"@babel/preset-typescript@^7.1.0", "@babel/preset-typescript@^7.8.3", "@babel/preset-typescript@^7.9.0":
+"@babel/preset-typescript@^7.1.0", "@babel/preset-typescript@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.9.0.tgz#87705a72b1f0d59df21c179f7c3d2ef4b16ce192"
   integrity sha512-S4cueFnGrIbvYJgwsVFKdvOmpiL0XGw9MFW9D0vgRys5g36PBhZRL8NX8Gr2akz8XRtzq6HuDXPD/1nniagNUg==
@@ -1565,6 +1565,18 @@
     global "^4.3.2"
     telejson "^4.0.0"
 
+"@storybook/channel-postmessage@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.13.tgz#5b0379894706eb0fccfec187a37ea4a18c82964b"
+  integrity sha512-3QBp7i2XE7p9KYg6aRYJ9UPXj53hhvEQ04gZwmWWmCNW116VgsOPf0w68AsVFfMlSJQFq1Av9LL8igQvmd+Xfw==
+  dependencies:
+    "@storybook/channels" "6.0.0-beta.13"
+    "@storybook/client-logger" "6.0.0-beta.13"
+    "@storybook/core-events" "6.0.0-beta.13"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    telejson "^4.0.0"
+
 "@storybook/channel-postmessage@6.0.0-beta.8":
   version "6.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.8.tgz#57b95437d24bbbb76d50b626601e9fb06c4d7196"
@@ -1610,6 +1622,28 @@
     core-js "^3.0.1"
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
+
+"@storybook/client-api@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.0.0-beta.13.tgz#37b4a47bf4ef444847fd52f4d3dd968ec649a010"
+  integrity sha512-zN+5LqHGx5mvJh1ol2xUKhKEg2xVKQQkvmCm2031tSFB0Tb/Mo2RvrAcxdzFLotAiT9EBb65nEoEF/G8Cguv2Q==
+  dependencies:
+    "@storybook/addons" "6.0.0-beta.13"
+    "@storybook/channel-postmessage" "6.0.0-beta.13"
+    "@storybook/channels" "6.0.0-beta.13"
+    "@storybook/client-logger" "6.0.0-beta.13"
+    "@storybook/core-events" "6.0.0-beta.13"
+    "@storybook/csf" "0.0.1"
+    "@types/webpack-env" "^1.15.2"
+    core-js "^3.0.1"
+    eventemitter3 "^4.0.0"
+    global "^4.3.2"
+    is-plain-object "^3.0.0"
+    lodash "^4.17.15"
+    memoizerific "^1.11.3"
+    qs "^6.6.0"
+    stable "^0.1.8"
+    ts-dedent "^1.1.1"
 
 "@storybook/client-api@6.0.0-beta.13":
   version "6.0.0-beta.13"
@@ -1708,6 +1742,38 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
     ts-dedent "^1.1.0"
+
+"@storybook/components@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.0.0-beta.13.tgz#50fb5d64fb599be27d1a5d7e843a401f62f3162a"
+  integrity sha512-FCNmSUNEcjhIsXyKD75kB1h6+2cBNglmvBKh0YJ0j6BFNXZiyTWdQycvItF7KFbv9i+Hj8jknsdWf1FbJ75T8A==
+  dependencies:
+    "@storybook/client-logger" "6.0.0-beta.13"
+    "@storybook/csf" "0.0.1"
+    "@storybook/theming" "6.0.0-beta.13"
+    "@types/overlayscrollbars" "^1.9.0"
+    "@types/react-color" "^3.0.1"
+    "@types/react-syntax-highlighter" "11.0.4"
+    "@types/react-textarea-autosize" "^4.3.3"
+    core-js "^3.0.1"
+    fast-deep-equal "^3.1.1"
+    global "^4.3.2"
+    lodash "^4.17.15"
+    markdown-to-jsx "^6.11.4"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.10.2"
+    overlayscrollbars-react "^0.2.1"
+    polished "^3.4.4"
+    popper.js "^1.14.7"
+    react "^16.8.3"
+    react-color "^2.17.0"
+    react-dom "^16.8.3"
+    react-helmet-async "^1.0.2"
+    react-popper-tooltip "^2.11.0"
+    react-select "^3.0.8"
+    react-syntax-highlighter "^11.0.2"
+    react-textarea-autosize "^7.1.0"
+    ts-dedent "^1.1.1"
 
 "@storybook/components@6.0.0-beta.13":
   version "6.0.0-beta.13"
@@ -1900,31 +1966,40 @@
     webpack-hot-middleware "^2.25.0"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/core@6.0.0-beta.8":
-  version "6.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-6.0.0-beta.8.tgz#87ef3a23f2d2ce33e7b3882cbd9dc7ad19bb1e53"
-  integrity sha512-hrfPRpuYQ6vJUkN1AKtzPe6S966xM+VQwdgmLskS0/QwRnNpI5VDG4dY5BHBTSzY/ipdYTdj3d3C6reBetayGQ==
+"@storybook/core@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-6.0.0-beta.13.tgz#225dd744ccadd747f50f6ed1fc79ab8d222ed128"
+  integrity sha512-K2fXku1b5G3B3PxIE8qlMEnVia6bPV6A2qHtb/J7rjLzXPso2CGk8HVXPMDngucElp1w72fCofVMZ528y7DXvw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.8.3"
     "@babel/plugin-proposal-export-default-from" "^7.8.3"
     "@babel/plugin-proposal-object-rest-spread" "^7.9.6"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/plugin-transform-react-constant-elements" "^7.2.0"
+    "@babel/plugin-transform-arrow-functions" "^7.8.3"
+    "@babel/plugin-transform-block-scoping" "^7.8.3"
+    "@babel/plugin-transform-classes" "^7.9.5"
+    "@babel/plugin-transform-destructuring" "^7.9.5"
+    "@babel/plugin-transform-for-of" "^7.9.0"
+    "@babel/plugin-transform-parameters" "^7.9.5"
+    "@babel/plugin-transform-react-constant-elements" "^7.9.0"
+    "@babel/plugin-transform-shorthand-properties" "^7.8.3"
+    "@babel/plugin-transform-spread" "^7.8.3"
+    "@babel/plugin-transform-template-literals" "^7.8.3"
     "@babel/preset-env" "^7.9.6"
     "@babel/preset-react" "^7.8.3"
-    "@babel/preset-typescript" "^7.8.3"
+    "@babel/preset-typescript" "^7.9.0"
     "@babel/register" "^7.8.3"
-    "@storybook/addons" "6.0.0-beta.8"
-    "@storybook/api" "6.0.0-beta.8"
-    "@storybook/channel-postmessage" "6.0.0-beta.8"
-    "@storybook/client-api" "6.0.0-beta.8"
-    "@storybook/client-logger" "6.0.0-beta.8"
-    "@storybook/core-events" "6.0.0-beta.8"
+    "@storybook/addons" "6.0.0-beta.13"
+    "@storybook/api" "6.0.0-beta.13"
+    "@storybook/channel-postmessage" "6.0.0-beta.13"
+    "@storybook/client-api" "6.0.0-beta.13"
+    "@storybook/client-logger" "6.0.0-beta.13"
+    "@storybook/core-events" "6.0.0-beta.13"
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.0.0-beta.8"
-    "@storybook/router" "6.0.0-beta.8"
-    "@storybook/theming" "6.0.0-beta.8"
-    "@storybook/ui" "6.0.0-beta.8"
+    "@storybook/node-logger" "6.0.0-beta.13"
+    "@storybook/router" "6.0.0-beta.13"
+    "@storybook/theming" "6.0.0-beta.13"
+    "@storybook/ui" "6.0.0-beta.13"
     "@types/node-fetch" "^2.5.4"
     airbnb-js-shims "^2.2.1"
     ansi-to-html "^0.6.11"
@@ -1950,6 +2025,7 @@
     file-system-cache "^1.0.5"
     find-cache-dir "^3.0.0"
     find-up "^4.1.0"
+    fork-ts-checker-webpack-plugin "^4.1.4"
     fs-extra "^9.0.0"
     glob "^7.1.6"
     glob-base "^0.3.0"
@@ -2007,10 +2083,10 @@
     npmlog "^4.1.2"
     pretty-hrtime "^1.0.3"
 
-"@storybook/node-logger@6.0.0-beta.8":
-  version "6.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.0.0-beta.8.tgz#688b7835b5aa34a517eb61eacc857106c955b6f5"
-  integrity sha512-IZhYmrXry/Oj21mDUrZFIcnkzy+vmQQpDPjZOtkosfOcvbhw4CWnYeJl5if/yWZBVvBDprHaAvcliKe/SxqSlg==
+"@storybook/node-logger@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.0.0-beta.13.tgz#bb1d56eb04082c6fe891eacfa0f7e2202e8c7941"
+  integrity sha512-qFmXOOuedD6vD1vjNA3Pi5N8+fXWYWOsX6BkXWLIBAkDYGXw3MzmTxc8w+4y54saj7vjCd1984zUR3UvjlYURg==
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.0.0"
@@ -2026,16 +2102,16 @@
     core-js "^3.0.1"
 
 "@storybook/react@^6.0.0-beta.3":
-  version "6.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.0.0-beta.8.tgz#ccfd4a8d69fd8b9fe88b175c28ff9c7bf4e6e807"
-  integrity sha512-rWvMzjG5GJmkrR/o5IhpAjodHMeww4e7B+P5WUg93uOZKSX/De+x6p8ldv+m3o6jbw5IrUUj4BGOYAlgxx+y3A==
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.0.0-beta.13.tgz#a372aefc87c3c8a0e5c0fad12f3bdcf71bf22836"
+  integrity sha512-zpq5VPUdhy5e84hV9GnhdzVplvMJVS2CpKj4BsUhW+Gv76UWKhTIDzm6qCMJ6ZCvLb4o608QF3NUMUqkmHVDQw==
   dependencies:
     "@babel/plugin-transform-react-constant-elements" "^7.6.3"
     "@babel/preset-flow" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
-    "@storybook/addons" "6.0.0-beta.8"
-    "@storybook/core" "6.0.0-beta.8"
-    "@storybook/node-logger" "6.0.0-beta.8"
+    "@storybook/addons" "6.0.0-beta.13"
+    "@storybook/core" "6.0.0-beta.13"
+    "@storybook/node-logger" "6.0.0-beta.13"
     "@svgr/webpack" "^5.4.0"
     "@types/webpack-env" "^1.15.2"
     babel-plugin-add-react-displayname "^0.0.5"
@@ -2046,6 +2122,7 @@
     lodash "^4.17.15"
     prop-types "^15.7.2"
     react-dev-utils "^10.0.0"
+    react-docgen-typescript-loader "^3.7.2"
     regenerator-runtime "^0.13.3"
     semver "^7.3.2"
     ts-dedent "^1.1.1"
@@ -2248,21 +2325,21 @@
     store2 "^2.7.1"
     telejson "^4.0.0"
 
-"@storybook/ui@6.0.0-beta.8":
-  version "6.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-6.0.0-beta.8.tgz#7c10fa3d6c203ed2798cec902766434482675402"
-  integrity sha512-2aW4jQF3s51hLZxFgqxx/P6yfsMlleEhyjII2RyoQm6+CyTEhn/BRGIwh/DsMDEPlmGSt5a5puYtle5POVZrsQ==
+"@storybook/ui@6.0.0-beta.13":
+  version "6.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-6.0.0-beta.13.tgz#b1ea27cec246f706e61d1fbbbfaeb80485047705"
+  integrity sha512-e2dWbm5h1VldIf4SuFNuJJX6XvZPhRMhQ8bptEqb6aynXe+ydMmRMD2I3nx6sFOtHnu9LZraNPgmjaJ7z+EBNQ==
   dependencies:
     "@emotion/core" "^10.0.20"
-    "@storybook/addons" "6.0.0-beta.8"
-    "@storybook/api" "6.0.0-beta.8"
-    "@storybook/channels" "6.0.0-beta.8"
-    "@storybook/client-logger" "6.0.0-beta.8"
-    "@storybook/components" "6.0.0-beta.8"
-    "@storybook/core-events" "6.0.0-beta.8"
-    "@storybook/router" "6.0.0-beta.8"
-    "@storybook/theming" "6.0.0-beta.8"
-    "@types/markdown-to-jsx" "^6.9.1"
+    "@storybook/addons" "6.0.0-beta.13"
+    "@storybook/api" "6.0.0-beta.13"
+    "@storybook/channels" "6.0.0-beta.13"
+    "@storybook/client-logger" "6.0.0-beta.13"
+    "@storybook/components" "6.0.0-beta.13"
+    "@storybook/core-events" "6.0.0-beta.13"
+    "@storybook/router" "6.0.0-beta.13"
+    "@storybook/theming" "6.0.0-beta.13"
+    "@types/markdown-to-jsx" "^6.11.0"
     "@types/rfdc" "^1.1.0"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
@@ -2272,7 +2349,7 @@
     fuse.js "^3.6.1"
     global "^4.3.2"
     lodash "^4.17.15"
-    markdown-to-jsx "^6.9.3"
+    markdown-to-jsx "^6.11.4"
     memoizerific "^1.11.3"
     polished "^3.4.4"
     qs "^6.6.0"
