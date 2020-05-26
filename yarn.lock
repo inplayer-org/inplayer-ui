@@ -2867,9 +2867,9 @@
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
 "@types/webfontloader@^1.6.29":
-  version "1.6.30"
-  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.30.tgz#c4fbb1177ef0aa9c8284de237c06fca3291f6c20"
-  integrity sha512-Qn9CTW2hiDNX4UxIiFWUg450wTkNYGlMUh9pz1AO7KIkcqA1Ps0gOkeWtFF8DET/iMyXH1lobmxawQ0wjC8isA==
+  version "1.6.31"
+  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.31.tgz#bd161c9a091dc5f28c2bdb33ce06dff825a3d415"
+  integrity sha512-cBSMUmGBeX/5fUdcCLt6DNeypor/MP7vxHVHZYc+Ewi/pjXUNUbxnO1JQL0iVNjLVp+It+rEIP300hlqs4quIg==
 
 "@types/webpack-env@^1.15.2":
   version "1.15.2"
