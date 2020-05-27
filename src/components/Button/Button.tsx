@@ -21,10 +21,10 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
 
 const ContentHolder = styled.span`
   margin-top: 2px;
-  padding: 0.2rem;
 `;
 
-const TextIconWrapper = styled.span<{ center: boolean }>`
+const TextIconWrapper = styled.div<{ center: boolean }>`
+  padding: 0.2rem;
   ${({ center }) =>
     center &&
     css`
