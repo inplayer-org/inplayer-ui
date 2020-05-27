@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.62] - 26-05-2020
+
+### Fixes
+
+- Fix Pagination UI appearance for big numbers
+
+### Changes
+
+- Make all previews centered
+
+# [2.0.0-beta.61] - 20-05-2020
+
+### Fixes
+
+- Use Roboto as primary font
+
+# [2.0.0-beta.60] - 19-05-2020
+
+### Fixes
+
+- Remove format from SingleDatePicker
+- Checkbox css update
+
+# [2.0.0-beta.59] - 18-05-2020
+
+### Fixes
+
+- Preview1 - minor css changes
+
+# [2.0.0-beta.58] - 18-05-2020
+
+### Fixes
+
+- Preview1 branding label
+
+# [2.0.0-beta.57] - 18-05-2020
+
+### Changes
+
+- Reverted design (css and class names) for preview 1
+
 # [2.0.0-beta.56] - 15-05-2020
 
 ### Fixes

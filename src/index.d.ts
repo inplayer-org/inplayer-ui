@@ -797,6 +797,8 @@ interface Preview1Props {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  protectedByLabel?: string;
+  premiumContentLabel?: string;
 }
 
 export declare const Preview1: FunctionComponent<Preview1Props>;
@@ -810,6 +812,7 @@ interface Preview2Props {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  premiumContentLabel?: string;
 }
 
 export declare const Preview2: FunctionComponent<Preview2Props>;
@@ -823,6 +826,7 @@ interface Preview3Props {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  premiumContentLabel?: string;
 }
 
 export declare const Preview3: FunctionComponent<Preview3Props>;
@@ -849,6 +853,7 @@ interface Preview5Props {
   minHeight?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  premiumContentLabel?: string;
 }
 
 export declare const Preview5: FunctionComponent<Preview5Props>;

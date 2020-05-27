@@ -2,6 +2,8 @@ import styled, { DefaultTheme } from 'styled-components';
 import colors from 'theme/colors';
 
 const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
+  display: flex;
+
   > input {
     display: none;
   }
@@ -15,6 +17,7 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
       content: '';
       position: absolute;
       left: 0;
+      top: 0;
       width: 1rem;
       height: 1rem;
       border: 1px solid ${colors.gray};
