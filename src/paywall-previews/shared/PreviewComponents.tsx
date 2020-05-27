@@ -33,6 +33,7 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   position: relative;
   transition: all ease 200ms;
   box-sizing: border-box;
+  margin: 24px auto;
 `;
 
 type PreviewImageProps = {

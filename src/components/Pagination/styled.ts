@@ -45,7 +45,8 @@ const getBoxStyles = ({
 };
 
 export const PageBox = styled.button`
-  width: 2rem;
+  width: fit-content;
+  min-width: 2rem;
   height: 2rem;
   border-radius: 4px;
   margin: 0 0.2rem;
