@@ -19,7 +19,7 @@ module.exports = {
     Label: './src/components/Label/index.ts',
     Loader: './src/components/Loader/index.ts',
     Modal: './src/components/Modal/index.ts',
-    Navbar: './src/components/Navbar/index.ts',
+    Navbar: './src/components/Navbar/index.tsx',
     Note: './src/components/Note/index.ts',
     Notification: './src/components/Notification/index.ts',
     Pagination: './src/components/Pagination/index.ts',
