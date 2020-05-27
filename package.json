@@ -3,10 +3,10 @@
   "version": "2.0.0-beta.61",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
-  "main": "dist/inplayer-ui.min.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/main",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist"
+    "lib"
   ],
   "directories": {
     "src": "src"
@@ -24,7 +24,7 @@
     "storybook": "start-storybook -p 3001 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
-    "prebuild": "rimraf ./dist",
+    "prebuild": "rimraf ./lib",
     "build": "webpack",
     "build:watch": "webpack --watch --progress",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
