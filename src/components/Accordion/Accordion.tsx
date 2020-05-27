@@ -1,7 +1,7 @@
 import React, { useState, SyntheticEvent, ReactElement } from 'react';
 
 // Components
-import Arrow from 'components/Navbar/Arrow';
+import Arrow from 'components/NavBar/Arrow';
 import { TooltipProps } from 'components/Tooltip/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
