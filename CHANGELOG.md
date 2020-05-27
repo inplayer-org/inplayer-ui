@@ -8,10 +8,6 @@ All notable changes to this project will be documented in this file.
 
 - Webpack component code splitting
 
-### Change
-
-- Library name
-
 ### Fixes
 
 - Fix Pagination UI appearance for big numbers
