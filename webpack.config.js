@@ -42,6 +42,8 @@ module.exports = {
     Preview5: './src/paywall-previews/Preview5/index.ts',
     Preview6: './src/paywall-previews/Preview6/index.ts',
     Preview7: './src/paywall-previews/Preview7/index.ts',
+    ThemeWrapper: './src/theme/ThemeWrapper.tsx',
+    Colors: './src/theme/colors.ts',
   },
   mode: 'production',
   optimization: {
