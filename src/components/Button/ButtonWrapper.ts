@@ -122,6 +122,7 @@ const ButtonWrapper = styled.button<Props>`
   vertical-align: middle;
   letter-spacing: 0.015em;
   line-height: 1;
+  outline: none;
 
   &:hover {
     border-color: ${colors.skyBlue};
