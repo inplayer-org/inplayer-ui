@@ -75,7 +75,7 @@ export interface MenuItem {
 }
 
 export interface UserMenuDropdownProps {
-  menuItems: Array<MenuItem>;
+  menuItems?: Array<MenuItem>;
   actionItem?: MenuItem;
 }
 
