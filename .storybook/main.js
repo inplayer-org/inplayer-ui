@@ -1,7 +1,7 @@
 const path = require('path');
 
-// your app's webpack.config.js
-const custom = require('../webpack.config.js');
+// app's webpack.config.js
+const customWebpackConfig = require('../webpack.config.js');
 
 module.exports = {
   stories: ['../src/**/*.stories.(tsx|mdx)'],
@@ -16,11 +16,11 @@ module.exports = {
       ],
     });
 
-    config.resolve.extensions.push('.ts', '.tsx');
+    customWebpackConfig.resolve.extensions.push('.ts', '.tsx');
 
     return {
       ...config,
-      resolve: custom.resolve,
+      resolve: customWebpackConfig.resolve,
     };
   },
 };
