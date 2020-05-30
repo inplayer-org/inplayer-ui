@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.62] - 26-05-2020
+
+### Added
+
+- Webpack component code splitting
+
+### Fixes
+
+- Fix Pagination UI appearance for big numbers
+
+### Changes
+
+- Make all previews centered
+
 # [2.0.0-beta.61] - 20-05-2020
 
 ### Fixes

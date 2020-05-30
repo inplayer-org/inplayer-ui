@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, ReactElement } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
@@ -20,24 +20,35 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 const ContentHolder = styled.span`
+  margin-top: 2px;
+`;
+
+const TextIconWrapper = styled.div<{ center: boolean }>`
   padding: 0.2rem;
+  ${({ center }) =>
+    center &&
+    css`
+      display: grid;
+      grid-auto-flow: column;
+      place-items: center;
+    `}
 `;
 
 const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps) => {
   if (iconPosition === 'right') {
     return (
-      <>
+      <TextIconWrapper center={icon && children}>
         {children && <ContentHolder>{children}</ContentHolder>}
         {icon}
-      </>
+      </TextIconWrapper>
     );
   }
 
   return (
-    <>
+    <TextIconWrapper center={icon && children}>
       {icon}
       {children && <ContentHolder>{children}</ContentHolder>}
-    </>
+    </TextIconWrapper>
   );
 };
 
@@ -61,8 +72,7 @@ const Button = ({
     {...rest}
   >
     <Content icon={icon} iconPosition={iconPosition}>
-      {' '}
-      {children}{' '}
+      {children}
     </Content>
   </ButtonWrapper>
 );

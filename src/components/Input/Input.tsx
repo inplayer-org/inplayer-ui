@@ -83,6 +83,7 @@ type Props = {
   value: string | Array<string> | number;
   sizeProp?: Size;
   icon?: ReactNode;
+  className?: string;
 };
 
 type RefType =
@@ -92,7 +93,10 @@ type RefType =
   | undefined;
 
 const Input = forwardRef(
-  ({ type, placeholder, onChange, sizeProp, icon, ...rest }: Props, ref: RefType) => {
+  (
+    { type, placeholder, onChange, sizeProp, className = '', icon, ...rest }: Props,
+    ref: RefType
+  ) => {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
       e.persist();
       if (onChange) {
@@ -119,7 +123,7 @@ const Input = forwardRef(
     }
 
     return (
-      <InputWrapper>
+      <InputWrapper className={className}>
         <IconContainer>{icon}</IconContainer>
         <StyledInput
           sizeProp={sizeProp}
