@@ -22,7 +22,18 @@ const DatePresetWrapper = styled.div`
   padding: 3.75rem 1.25rem 0.625rem;
 `;
 
+const CustomMonthContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const DropdownContainer = styled.div`
+  margin: 0 0.1rem;
+`;
+
 export const Styled = {
   StyledLabel,
   DatePresetWrapper,
+  CustomMonthContainer,
+  DropdownContainer,
 };
