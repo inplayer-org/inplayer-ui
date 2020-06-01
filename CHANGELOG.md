@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.63] - 26-05-2020 - date to be changed
+
+### Added
+
+- Select options for month and year in date and day picker
+
 # [2.0.0-beta.62] - 26-05-2020
 
 ### Added

@@ -3,7 +3,26 @@ import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import moment, { Moment } from 'moment';
 
+import styled from 'styled-components';
 import DayPickerWrapper from './DayPickerWrapper';
+import Dropdown from '../Dropdown';
+import { getMonthOptions, getYearOptions } from '../../utils/helpers';
+
+const CustomMonthContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const DropdownContainer = styled.div`
+  margin: 0 0.1rem;
+`;
+
+export interface RenderMonthElementProps {
+  month: Moment;
+  onMonthSelect: (currentMonth: Moment, newMonthVal: string) => void;
+  onYearSelect: (currentMonth: Moment, newYearVal: string) => void;
+  isVisible: boolean;
+}
 
 type Props = {
   // required
@@ -48,19 +67,40 @@ const DayPicker = ({
   focused,
   date,
   id,
-}: Props) => (
-  <DayPickerWrapper>
-    <SingleDatePicker
-      id={id}
-      isOutsideRange={isOutsideRange}
-      onDateChange={onDateChange}
-      onFocusChange={onFocusChange}
-      focused={focused}
-      date={typeof date === 'string' ? moment(date) : date}
-      numberOfMonths={numberOfMonths}
-      disabled={disabled}
-    />
-  </DayPickerWrapper>
-);
+}: Props) => {
+  const renderMonthElement = ({ month, onMonthSelect, onYearSelect }: RenderMonthElementProps) => (
+    <CustomMonthContainer>
+      <DropdownContainer>
+        <Dropdown
+          options={getMonthOptions()}
+          value={month.month().toString()}
+          onChange={(val: any) => onMonthSelect(month, val)}
+        />
+      </DropdownContainer>
+      <DropdownContainer>
+        <Dropdown
+          options={getYearOptions()}
+          value={month.year().toString()}
+          onChange={(val: any) => onYearSelect(month, val)}
+        />
+      </DropdownContainer>
+    </CustomMonthContainer>
+  );
+  return (
+    <DayPickerWrapper>
+      <SingleDatePicker
+        id={id}
+        isOutsideRange={isOutsideRange}
+        onDateChange={onDateChange}
+        onFocusChange={onFocusChange}
+        renderMonthElement={renderMonthElement}
+        focused={focused}
+        date={typeof date === 'string' ? moment(date) : date}
+        numberOfMonths={numberOfMonths}
+        disabled={disabled}
+      />
+    </DayPickerWrapper>
+  );
+};
 
 export default DayPicker;
