@@ -1,9 +1,30 @@
-*.DS_Store
-*npm-debug.log
-*yarn-error.log
-lib
-coverage
-node_modules/
-flow-typed/
+
+# dependencies
+node_modules
+
+#IDEA
+.idea/**
 .vscode
-.docz
+
+# testing
+coverage
+
+#lock files
+package-lock.json
+
+# production
+dist
+storybook-static
+
+#logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+report*
+
+# misc
+.cache
+.env
+.tmp
+.eslintcache
+.DS_Store

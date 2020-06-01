@@ -3,14 +3,8 @@
   "version": "2.0.0-beta.62",
   "author": "InPlayer",
   "description": "InPlayer React UI Components",
-  "main": "lib/main",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib"
-  ],
-  "directories": {
-    "src": "src"
-  },
+  "main": "dist/inplayer-ui.min.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/inplayer-org/inplayer-ui"
@@ -24,7 +18,7 @@
     "storybook": "start-storybook -p 3001 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
-    "prebuild": "rimraf ./lib",
+    "prebuild": "rimraf ./dist",
     "build": "webpack",
     "build:watch": "webpack --watch --progress",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
@@ -113,7 +107,7 @@
     "typescript": "^3.8.3",
     "url-loader": "^4.1.0",
     "webfontloader": "^1.6.28",
-    "webpack": "^4.43.0",
+    "webpack": "^5.0.0-beta.16",
     "webpack-cli": "^3.3.11"
   }
 }
