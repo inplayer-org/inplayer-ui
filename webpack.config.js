@@ -20,9 +20,12 @@ module.exports = {
     ],
   },
   output: {
+    filename: 'inplayer-ui.min.js',
     path: path.join(__dirname, '/dist'),
     library: 'InPlayerUI',
     libraryTarget: 'umd',
+    publicPath: '/',
+    umdNamedDefine: true,
   },
   module: {
     rules: [
