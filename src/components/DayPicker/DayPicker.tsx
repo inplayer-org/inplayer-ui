@@ -37,6 +37,10 @@ type Props = {
    * Disabled DayPicker
    */
   disabled?: boolean;
+  /**
+   * Overwrite the default 'Date' placeholder
+   */
+  placeholder?: string;
 };
 
 const DayPicker = ({
@@ -48,6 +52,7 @@ const DayPicker = ({
   focused,
   date,
   id,
+  placeholder,
 }: Props) => (
   <DayPickerWrapper>
     <SingleDatePicker
@@ -59,6 +64,7 @@ const DayPicker = ({
       date={typeof date === 'string' ? moment(date) : date}
       numberOfMonths={numberOfMonths}
       disabled={disabled}
+      placeholder={placeholder}
     />
   </DayPickerWrapper>
 );
