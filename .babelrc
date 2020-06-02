@@ -1,22 +1,16 @@
 {
   "presets": [
-    "./tools/inplayer-babel-preset-es2015",
+    ["@babel/preset-env", { "loose": true, "modules": false }],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "babel-plugin-styled-components",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-transform-classes",
     [
-      "module-resolver",
+      "@babel/plugin-proposal-optional-chaining",
       {
-        "root": ["./", "./src/**"]
-      }
-    ],
-    [
-      "babel-plugin-webpack-alias",
-      {
-        "config": "./webpack.config.js"
+        "loose": true
       }
     ]
   ]
