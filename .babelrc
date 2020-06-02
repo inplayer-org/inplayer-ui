@@ -1,15 +1,6 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false,
-        "targets": {
-          "node": "current",
-          "browsers": ["last 2 versions"]
-        }
-      }
-    ],
+    "./tools/inplayer-babel-preset-es2015",
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
@@ -25,12 +16,6 @@
       "babel-plugin-webpack-alias",
       {
         "config": "./webpack.config.js"
-      }
-    ],
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "regenerator": true
       }
     ],
     "@babel/plugin-syntax-class-properties",
