@@ -18,7 +18,6 @@
         "config": "./webpack.config.js"
       }
     ],
-    "@babel/plugin-syntax-class-properties",
-    "transform-class-properties"
+    "@babel/plugin-proposal-class-properties"
   ]
 }
