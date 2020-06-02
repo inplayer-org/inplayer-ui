@@ -5,6 +5,7 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
+    "@babel/plugin-proposal-class-properties",
     "babel-plugin-styled-components",
     [
       "module-resolver",
@@ -17,7 +18,6 @@
       {
         "config": "./webpack.config.js"
       }
-    ],
-    "@babel/plugin-proposal-class-properties"
+    ]
   ]
 }
