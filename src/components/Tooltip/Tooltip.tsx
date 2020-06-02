@@ -74,6 +74,10 @@ export type TooltipProps = {
    * CSS z-index
    */
   zIndex?: number;
+  /**
+   * External class name
+   */
+  className?: string;
   children?: ReactChild | ReactNode | null;
 };
 
@@ -100,6 +104,7 @@ const Tooltip = ({
   placement = 'top',
   radius = 0,
   zIndex = 1,
+  className = '',
   durationOnClick = 1000,
 }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -145,6 +150,7 @@ const Tooltip = ({
 
   return (
     <Container
+      className={className}
       onClick={behavior === 'click' ? flashTooltip : undefined}
       onMouseEnter={behavior === 'hover' && !fixed ? showTooltip : undefined}
       onMouseLeave={behavior === 'hover' && !fixed ? hideTooltip : undefined}

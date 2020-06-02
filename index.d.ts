@@ -75,7 +75,7 @@ export interface MenuItem {
 }
 
 export interface UserMenuDropdownProps {
-  menuItems: Array<MenuItem>;
+  menuItems?: Array<MenuItem>;
   actionItem?: MenuItem;
 }
 
@@ -365,6 +365,7 @@ export interface DayPickerProps {
   className?: string;
   numberOfMonths?: number;
   disabled?: boolean;
+  placeholder?: string;
 }
 
 export declare const DayPicker: FunctionComponent<DayPickerProps>;

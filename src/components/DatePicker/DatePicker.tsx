@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import moment, { Moment } from 'moment';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
+import { getMonthOptions, getYearOptions } from '../../utils/helpers';
+import Dropdown from '../Dropdown';
 import DatePickerWrapper from './DatePickerWrapper';
 import { PERIODS } from './periods';
 import { Styled } from './styles';
@@ -9,6 +11,13 @@ import 'react-dates/initialize';
 interface DateChangeArgs {
   startDate: Moment | null;
   endDate: Moment | null;
+}
+
+export interface RenderMonthElementProps {
+  month: Moment;
+  onMonthSelect: (currentMonth: Moment, newMonthVal: string) => void;
+  onYearSelect: (currentMonth: Moment, newYearVal: string) => void;
+  isVisible: boolean;
 }
 
 type Period =
@@ -152,6 +161,25 @@ const DatePicker = ({
     );
   };
 
+  const renderMonthElement = ({ month, onMonthSelect, onYearSelect }: RenderMonthElementProps) => (
+    <Styled.CustomMonthContainer>
+      <Styled.DropdownContainer>
+        <Dropdown
+          options={getMonthOptions()}
+          value={month.month().toString()}
+          onChange={(val: any) => onMonthSelect(month, val)}
+        />
+      </Styled.DropdownContainer>
+      <Styled.DropdownContainer>
+        <Dropdown
+          options={getYearOptions()}
+          value={month.year().toString()}
+          onChange={(val: any) => onYearSelect(month, val)}
+        />
+      </Styled.DropdownContainer>
+    </Styled.CustomMonthContainer>
+  );
+
   const handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {
     setActivePeriod(PERIODS.CUSTOM);
     onDateChange({ startDate, endDate });
@@ -164,6 +192,7 @@ const DatePicker = ({
         onDatesChange={handleDateChange}
         onFocusChange={onFocusChange}
         renderCalendarInfo={renderDatePresets}
+        renderMonthElement={renderMonthElement}
         focusedInput={focusedInput}
         startDate={startDateProp}
         startDateId={startDateId}
