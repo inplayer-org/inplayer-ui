@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/umd.ts',
   mode: 'production',
   optimization: {
     minimize: true,
@@ -21,7 +22,7 @@ module.exports = {
   },
   output: {
     filename: 'inplayer-ui.min.js',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/dist/umd'),
     library: 'InPlayerUI',
     libraryTarget: 'umd',
     publicPath: '/',
@@ -33,6 +34,9 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          cacheDirectory: true,
+        },
       },
       {
         test: /\.(jpe?g|png|gif|ico|svg)$/i,
@@ -69,24 +73,11 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /(en)/),
     new CopyWebpackPlugin([{ from: './src/index.d.ts', to: './index.d.ts' }]),
+    new BundleAnalyzerPlugin(),
   ],
   externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react',
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom',
-    },
-    'styled-components': {
-      commonjs: 'styled-components',
-      commonjs2: 'styled-components',
-      amd: 'styled-components',
-    },
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'styled-components': 'styled-components',
   },
 };
