@@ -7,7 +7,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Added optional placeholder prop to DayPicker
-- Select options for month and year in date and day picker
+- Select options for month and year in DatePicker and DayPicker
+
+### Fixes
+
+- MenuItems options optional
 
 # [2.0.0-beta.62] - 26-05-2020
 
