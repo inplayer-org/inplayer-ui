@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    font-family: ${(props) => props.theme.font.primary};
     -webkit-font-smoothing: antialiased;
   }
 

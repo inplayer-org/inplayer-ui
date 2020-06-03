@@ -26,7 +26,6 @@ declare module 'styled-components' {
       borderRadius: string;
     };
     font: {
-      primary: string;
       weights: {
         thin?: number;
         light?: number;
