@@ -45,7 +45,6 @@ const Paragraph = styled.p<ParagraphProps>`
 `;
 
 const Heading = styled.h1<HeadingProps>`
-  font-family: ${({ theme }) => theme.font.primary};
   font-weight: ${({ theme }) => theme.font.weights.thin};
   color: ${({ color }) => color || colors.blue};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};

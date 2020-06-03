@@ -7,7 +7,6 @@ type BubbleProps = {
   border?: string;
   padding?: number;
   fontSize?: string;
-  fontFamily: string;
 };
 
 const Bubble = styled.div<BubbleProps>`
@@ -23,7 +22,6 @@ const Bubble = styled.div<BubbleProps>`
       : theme.palette.secondary.main};
   padding: ${({ padding }) => `${padding}rem` || 0};
   font-size: ${({ fontSize, theme }) => fontSize || theme.font.sizes.small};
-  font-family: ${({ fontFamily }) => fontFamily};
   line-height: 1.4;
 `;
 
