@@ -1,41 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
+// Global styles but theme- and update-able!
 const GlobalStyle = createGlobalStyle`
-   ${normalize()}
+  ${normalize()}
 
-   html {
-    height: 100%;
+  html,
+  body {
+    font-family: ${(props) => props.theme.font.primary};
+    -webkit-font-smoothing: antialiased;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      color: ${(props) => props.theme.palette.text.main};
-      font-size: ${(props) => props.theme.font.sizes.medium}px;
-      height: 100%;
-      margin: 0;
-    }
-
-    body,
-    input,
-    textarea,
-    select,
-    button {
-      font-family: ${(props) => props.theme.font.primary};
-      font-weight: 300;
-    }
-
-    &.wf-active {
-      body,
-      input,
-      textarea,
-      select {
-        font-family: ${(props) => props.theme.font.primary};
-        font-weight: 300;
-      }
-    }
+  * {
+    box-sizing: border-box;
   }
 `;
 

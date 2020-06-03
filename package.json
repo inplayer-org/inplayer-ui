@@ -5,6 +5,7 @@
   "description": "InPlayer React UI Components",
   "main": "dist/inplayer-ui.min.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/inplayer-org/inplayer-ui"
