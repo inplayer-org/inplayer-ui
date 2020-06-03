@@ -3,7 +3,7 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 
 import { transparentize } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 import { Props as ButtonWrapperProps } from './Button';
 
 const modifiers = {

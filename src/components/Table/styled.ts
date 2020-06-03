@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 import Checkbox from '../Checkbox';
 
 import Button from '../Button';

@@ -3,7 +3,7 @@ import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from 'theme/colors';
 import { transparentize } from 'polished';
+import colors from '../../theme/colors';
 
 const SwitchWrapper = styled.span`
   display: inline-flex;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { transparentize } from 'polished';
 import { switchProp } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const modifiers = {
   primary: () => `

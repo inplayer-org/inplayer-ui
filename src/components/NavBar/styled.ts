@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 export const NavbarContainer = styled.div<{ open: boolean }>`
   background-color: ${colors.darkBlue};

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { switchProp } from 'styled-tools';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 type AccordionWrapperProps = {
   width?: string;

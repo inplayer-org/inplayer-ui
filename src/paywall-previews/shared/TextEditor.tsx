@@ -1,13 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styled, { css } from 'styled-components';
 import ReactQuill from 'react-quill';
-import colors from 'theme/colors';
 
 // editor styles
 import 'react-quill/dist/quill.snow.css';
 
 // utils
 import throttle from 'lodash/throttle';
+
+import colors from '../../theme/colors';
 
 interface EditorContainerProps {
   readOnly?: boolean;
@@ -67,8 +68,8 @@ const EditorContainer = styled.div<EditorContainerProps>`
   .ql-snow .ql-editor h4,
   .ql-snow .ql-editor h5,
   .ql-snow .ql-editor h6 {
-    font-weight: ${({ theme }) => theme.font.weights.light}
-    font-size:${({ theme }) => theme.font.sizes.medium};
+    font-weight: ${({ theme }) => theme.font.weights.light};
+    font-size: ${({ theme }) => theme.font.sizes.medium};
   }
   ${({ isAssetPreviewTitle }) =>
     isAssetPreviewTitle &&

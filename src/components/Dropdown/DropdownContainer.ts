@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
-import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
-import colors from 'theme/colors';
+import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from '../../modifiers';
+import colors from '../../theme/colors';
 
 const fontSizeModifiers = {
   fontSizeExtraSmall,

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
-import { Typography } from 'components';
+import { Typography } from '../../components';
 import {
   PreviewFooter,
   PreviewBox,

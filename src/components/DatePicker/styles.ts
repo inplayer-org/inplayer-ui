@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 import Label from '../Label';
 
 const StyledLabel = styled(Label)<{ active: boolean }>`

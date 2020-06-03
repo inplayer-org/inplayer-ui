@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
-import colors from 'theme/colors';
 import { transparentize } from 'polished';
+import colors from '../../theme/colors';
 
 export const ArrowContainer = styled.div<{ section: string }>`
   width: 18px;

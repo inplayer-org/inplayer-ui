@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import colors from 'theme/colors';
 import { ifProp } from 'styled-tools';
+import colors from '../../theme/colors';
 
 export const PaginationContainer = styled.div`
   display: flex;

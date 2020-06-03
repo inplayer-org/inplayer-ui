@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';

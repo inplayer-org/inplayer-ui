@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
-import GlobalStyles from 'theme/globalStyles';
+import GlobalStyles from './globalStyles';
 import { Theme } from './theme';
 import loadFonts from './loadFonts';
 

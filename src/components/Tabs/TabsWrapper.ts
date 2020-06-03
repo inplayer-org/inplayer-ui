@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const TabsWrapper = styled.div`
   border: 1px solid ${colors.gray};

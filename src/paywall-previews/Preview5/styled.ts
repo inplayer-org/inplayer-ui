@@ -3,7 +3,7 @@ import { GiCutDiamond } from 'react-icons/gi';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/PreviewComponents';
