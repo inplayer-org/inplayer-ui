@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.65] - 03-06-2020
+
+### Fixes
+
+- Add `sideEffects: false` in package.json for webpack
+
+# [2.0.0-beta.64] - 03-06-2020
+
+### Fixes
+
+- Global styles
+
 # [2.0.0-beta.63] - 01-06-2020
 
 ### Added

@@ -38,6 +38,7 @@ export const ImageWrapper = styled(ImageHolder)`
   height: 100%;
   min-height: 310px;
   margin: 0;
+  cursor: pointer;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
