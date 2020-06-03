@@ -1,13 +1,13 @@
 import React from 'react';
-import colors from 'theme/colors';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
-
-// Components
 import { FaLock } from 'react-icons/fa';
 import styled from 'styled-components';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+
+// Components
+import colors from '../../theme/colors';
 import TextEditor from '../shared/TextEditor';
 import {
   StyledPreviewBox,

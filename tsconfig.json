@@ -45,6 +45,6 @@
     "paywall-previews/*": ["./paywall-previews/*"],
     "theme/*": ["./theme/*"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "index.d.ts", "typings.d.ts"],
   "exclude": ["node_modules"]
 }

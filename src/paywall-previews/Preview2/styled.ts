@@ -3,7 +3,7 @@ import { transparentize } from 'polished';
 import { MdStar } from 'react-icons/md';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import {

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import colors from 'theme/colors';
 import { FaLock } from 'react-icons/fa';
+import colors from '../../theme/colors';
 
 interface PreviewBoxProps {
   hasPreviewTopBorder: boolean;

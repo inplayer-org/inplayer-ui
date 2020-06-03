@@ -1,8 +1,8 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
-import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import colors from 'theme/colors';
+import { textPrimary, textDanger, textSuccess, textWarning } from '../../modifiers';
+import colors from '../../theme/colors';
 
 const typographyModifiers = {
   textPrimary,

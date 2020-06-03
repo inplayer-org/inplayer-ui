@@ -1,4 +1,4 @@
-import colors from 'theme/colors';
+import colors from '../theme/colors';
 import { ModifierProps } from './types';
 
 export const textPrimary = ({ theme }: ModifierProps) => `

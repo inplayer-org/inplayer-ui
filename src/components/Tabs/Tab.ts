@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const Tab = styled.div<{ selected: boolean }>`
   margin: 0;

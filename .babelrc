@@ -1,39 +1,17 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false,
-        "targets": {
-          "node": "current",
-          "browsers": ["last 2 versions"]
-        }
-      }
-    ],
+    ["@babel/preset-env", { "loose": true, "modules": false }],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
-    "babel-plugin-styled-components",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-transform-classes",
     [
-      "module-resolver",
+      "@babel/plugin-proposal-optional-chaining",
       {
-        "root": ["./", "./src/**"]
+        "loose": true
       }
-    ],
-    [
-      "babel-plugin-webpack-alias",
-      {
-        "config": "./webpack.config.js"
-      }
-    ],
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "regenerator": true
-      }
-    ],
-    "@babel/plugin-syntax-class-properties",
-    "transform-class-properties"
+    ]
   ]
 }

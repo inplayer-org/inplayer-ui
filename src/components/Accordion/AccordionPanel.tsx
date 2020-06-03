@@ -1,10 +1,10 @@
 import React, { SyntheticEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
-import colors from 'theme/colors';
 import { ifProp, ifNotProp } from 'styled-tools';
 
 // Components
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import colors from '../../theme/colors';
 import Tooltip, { TooltipProps } from '../Tooltip/Tooltip';
 import Typography from '../Typography';
 

@@ -2,12 +2,12 @@ import React from 'react';
 import { transparentize } from 'polished';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
+import { FaLock } from 'react-icons/fa';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 
 // Components
-import colors from 'theme/colors';
-import { FaLock } from 'react-icons/fa';
+import colors from '../../theme/colors';
 import StyledContainer from '../shared/StyledContainer';
 import TextEditor from '../shared/TextEditor';
 import { OverlayLabel } from '../shared/PreviewComponents';

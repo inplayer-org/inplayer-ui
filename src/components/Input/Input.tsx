@@ -1,8 +1,8 @@
 import React, { ChangeEvent, ReactNode, forwardRef, RefObject } from 'react';
 import styled, { css } from 'styled-components';
-import colors from 'theme/colors';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
+import colors from '../../theme/colors';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 import DatePickerWrapper from '../DatePicker/DatePickerWrapper';
 
 const DayPickerWrapper = styled(DatePickerWrapper)`

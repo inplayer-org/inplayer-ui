@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import UserMenu from '../UserMenu';
