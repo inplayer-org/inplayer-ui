@@ -113,7 +113,7 @@ const Preview4 = ({
           </StyledButton>
         )}
       </StyledContainer>
-      <ImageWrapper>
+      <ImageWrapper onClick={handleOpenModal}>
         <StyledIconWrapper
           backgroundColor={buttonBgColor}
           hasProtectedByLabel={hasProtectedByLabel}
