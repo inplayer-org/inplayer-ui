@@ -15,7 +15,6 @@ const TableWithHeaderSectionContainer = styled(Grid.Container)<any>`
 `;
 
 const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
-  font-family: Roboto, sans-serif;
   background: ${colors.white};
   width: 100%;
   text-align: left;

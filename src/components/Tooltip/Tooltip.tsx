@@ -51,10 +51,6 @@ export type TooltipProps = {
    */
   fixed?: boolean;
   /**
-   * CSS font-family
-   */
-  fontFamily?: string;
-  /**
    * CSS font-size
    */
   fontSize?: string;
@@ -97,7 +93,6 @@ const Tooltip = ({
   fadeDuration = 150,
   fadeEasing = 'linear',
   fixed = false,
-  fontFamily = 'inherit',
   fontSize = '',
   offset = 0,
   padding = 0.7,
@@ -138,7 +133,6 @@ const Tooltip = ({
         border={border}
         color={color}
         radius={radius}
-        fontFamily={fontFamily}
         fontSize={fontSize}
         padding={padding}
       >

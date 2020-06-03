@@ -720,7 +720,6 @@ export interface TooltipProps {
   fadeDuration?: number;
   fadeEasing?: FadeEasing;
   fixed?: boolean;
-  fontFamily?: string;
   fontSize?: string;
   offset?: number;
   padding?: number;
