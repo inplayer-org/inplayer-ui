@@ -6,6 +6,7 @@
   "main": "dist/inplayer-ui.cjs.js",
   "module": "dist/inplayer-ui.esm.js",
   "browser": "dist/inplayer-ui.umd.js",
+  "jsnext:main": "dist/inplayer-ui.esm.js",
   "types": "dist/index.d.ts",
   "style": "dist/styles.css",
   "files": [
