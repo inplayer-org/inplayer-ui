@@ -2578,12 +2578,12 @@
     "@types/react" "*"
 
 "@types/react-dates@^17.1.10":
-  version "17.1.10"
-  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-17.1.10.tgz#e85cafa41b16762ef386a1b30fc0928bccebd616"
-  integrity sha512-vMMO4bw88PJ5yLfeo1WR0peR7hkYIsso1wGLiO5Xkpcb/B86LK2P1l3YbNWXD1M7BqFekezkuWaO1qKGf8uX4Q==
+  version "17.1.12"
+  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-17.1.12.tgz#e680c5e67829ce21b81f1e217e287198a573a05a"
+  integrity sha512-YD2lSO+/dwv+Z8CtFWyeUOaSoBHrhxbmLH1Zk/lJ0/H0yzZ146lKyFLJ6kySnqYrVM/TlClTIKaz8ETCLHbsBg==
   dependencies:
     "@types/react" "*"
-    moment ">=2.17.1"
+    moment "^2.26.0"
 
 "@types/react-dom@^16.9.8":
   version "16.9.8"
@@ -9095,7 +9095,7 @@ mkdirp@^1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-moment@>=1.6.0, moment@>=2.17.1, moment@^2.25.3:
+moment@>=1.6.0, moment@^2.25.3, moment@^2.26.0:
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.26.0.tgz#5e1f82c6bafca6e83e808b30c8705eed0dcbd39a"
   integrity sha512-oIixUO+OamkUkwjhAVE18rAMfRJNsNe/Stid/gwHSOfHrOtw9EhAY2AHvdKZ/k/MggcYELFCJz/Sn2pL8b8JMw==
