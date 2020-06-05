@@ -1521,17 +1521,17 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-knobs@^6.0.0-beta.20":
-  version "6.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.20.tgz#173469a17b6e923e464029e9deccbf64ed43c507"
-  integrity sha512-oGlas5lgCpuUPBa6XgVTIfkmf2An5g0jsTKEuZ1FVlJ1wCbWuPvu/adgTxtxIdVvgMtzD1BawfEoSgHveH1QzA==
+  version "6.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.0.0-beta.21.tgz#c0798b5664542187d01938f9059cb894cf9779bf"
+  integrity sha512-h15i1fbV1fNOtqymAozoVrjQK+xeYCu0I+qDI7i3F7phc1C3i6oR+YN2rerv6BdoNEQHVu7jGhzxBiPsTULTpQ==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.20"
-    "@storybook/api" "6.0.0-beta.20"
-    "@storybook/channels" "6.0.0-beta.20"
-    "@storybook/client-api" "6.0.0-beta.20"
-    "@storybook/components" "6.0.0-beta.20"
-    "@storybook/core-events" "6.0.0-beta.20"
-    "@storybook/theming" "6.0.0-beta.20"
+    "@storybook/addons" "6.0.0-beta.21"
+    "@storybook/api" "6.0.0-beta.21"
+    "@storybook/channels" "6.0.0-beta.21"
+    "@storybook/client-api" "6.0.0-beta.21"
+    "@storybook/components" "6.0.0-beta.21"
+    "@storybook/core-events" "6.0.0-beta.21"
+    "@storybook/theming" "6.0.0-beta.21"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
@@ -1685,18 +1685,6 @@
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@6.0.0-beta.20":
-  version "6.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.20.tgz#6ffaaf139743b9f25ec08ed5cb491aa230b65725"
-  integrity sha512-wwoFllBvqvgI2TGWa47WLFK9AUU0MWp2uyicpsnwQKd6zEgNxm2QNTlVzj8EZxLS3b2hIirZDOSJsEZNprOJVg==
-  dependencies:
-    "@storybook/channels" "6.0.0-beta.20"
-    "@storybook/client-logger" "6.0.0-beta.20"
-    "@storybook/core-events" "6.0.0-beta.20"
-    core-js "^3.0.1"
-    global "^4.3.2"
-    telejson "^4.0.0"
-
 "@storybook/channel-postmessage@6.0.0-beta.21":
   version "6.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-6.0.0-beta.21.tgz#20b086405330591e0dfaf0013a7fd4b0fbf10b6e"
@@ -1733,28 +1721,6 @@
     core-js "^3.0.1"
     ts-dedent "^1.1.1"
     util-deprecate "^1.0.2"
-
-"@storybook/client-api@6.0.0-beta.20":
-  version "6.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.0.0-beta.20.tgz#105f728b84382c477775dd1b08d1e7537817346b"
-  integrity sha512-wgtfISFxLoTkKcgoAKNRj6c3nLfYkEJA8zTMJLZaMuG1l3ptW80dktOw4Oj37hNA49q4gvQ2zindtYghptHOUQ==
-  dependencies:
-    "@storybook/addons" "6.0.0-beta.20"
-    "@storybook/channel-postmessage" "6.0.0-beta.20"
-    "@storybook/channels" "6.0.0-beta.20"
-    "@storybook/client-logger" "6.0.0-beta.20"
-    "@storybook/core-events" "6.0.0-beta.20"
-    "@storybook/csf" "0.0.1"
-    "@types/webpack-env" "^1.15.2"
-    core-js "^3.0.1"
-    eventemitter3 "^4.0.0"
-    global "^4.3.2"
-    is-plain-object "^3.0.0"
-    lodash "^4.17.15"
-    memoizerific "^1.11.3"
-    qs "^6.6.0"
-    stable "^0.1.8"
-    ts-dedent "^1.1.1"
 
 "@storybook/client-api@6.0.0-beta.21":
   version "6.0.0-beta.21"
@@ -1826,38 +1792,6 @@
     react-textarea-autosize "^7.1.0"
     simplebar-react "^1.0.0-alpha.6"
     ts-dedent "^1.1.0"
-
-"@storybook/components@6.0.0-beta.20":
-  version "6.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.0.0-beta.20.tgz#c4fcd65c9a79cdf8db1bec528d1d9bc16f9f968d"
-  integrity sha512-Q24LJcwG2HlFRatL6L2RJK7TJnIBDid8HvncMwRPFqMU9jQgjhj7YbYhRBy7HVUi6q/VfKVcqsXthvHINYZ/3g==
-  dependencies:
-    "@storybook/client-logger" "6.0.0-beta.20"
-    "@storybook/csf" "0.0.1"
-    "@storybook/theming" "6.0.0-beta.20"
-    "@types/overlayscrollbars" "^1.9.0"
-    "@types/react-color" "^3.0.1"
-    "@types/react-syntax-highlighter" "11.0.4"
-    "@types/react-textarea-autosize" "^4.3.3"
-    core-js "^3.0.1"
-    fast-deep-equal "^3.1.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
-    markdown-to-jsx "^6.11.4"
-    memoizerific "^1.11.3"
-    overlayscrollbars "^1.10.2"
-    overlayscrollbars-react "^0.2.1"
-    polished "^3.4.4"
-    popper.js "^1.14.7"
-    react "^16.8.3"
-    react-color "^2.17.0"
-    react-dom "^16.8.3"
-    react-helmet-async "^1.0.2"
-    react-popper-tooltip "^2.11.0"
-    react-select "^3.0.8"
-    react-syntax-highlighter "^12.2.1"
-    react-textarea-autosize "^7.1.0"
-    ts-dedent "^1.1.1"
 
 "@storybook/components@6.0.0-beta.21":
   version "6.0.0-beta.21"
