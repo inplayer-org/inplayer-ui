@@ -1430,16 +1430,16 @@
     picomatch "^2.2.2"
 
 "@storybook/addon-actions@^6.0.0-beta.20":
-  version "6.0.0-beta.21"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.21.tgz#598c31f7a34fd051702933ed21da7c0cc15069e0"
-  integrity sha512-FTUqpvad9kJJnFUrDIDwJM/lHt81mgj3toX1GZJpGGjaegDMFXvb1mn05f4qIl4DCjD0LZJl/EjvRpWu40LSJg==
+  version "6.0.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.0-beta.23.tgz#02687ac64bdfe9cda323fe659926b29426bd2e8b"
+  integrity sha512-ULalXqGga5fwvcR2Tv6Jwa9WKtDckLJ5Rmn5/QkVW4dVLVqm0iw5Ogkh3tZDcWWDYok/a2SwOzbzS0I7XOgVaA==
   dependencies:
-    "@storybook/addons" "6.0.0-beta.21"
-    "@storybook/api" "6.0.0-beta.21"
-    "@storybook/client-api" "6.0.0-beta.21"
-    "@storybook/components" "6.0.0-beta.21"
-    "@storybook/core-events" "6.0.0-beta.21"
-    "@storybook/theming" "6.0.0-beta.21"
+    "@storybook/addons" "6.0.0-beta.23"
+    "@storybook/api" "6.0.0-beta.23"
+    "@storybook/client-api" "6.0.0-beta.23"
+    "@storybook/components" "6.0.0-beta.23"
+    "@storybook/core-events" "6.0.0-beta.23"
+    "@storybook/theming" "6.0.0-beta.23"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
