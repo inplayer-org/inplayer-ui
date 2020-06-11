@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
+import { fontSizeExtraSmall, fontSizeSmall, fontSizeMedium, fontSizeLarge } from '../../modifiers';
 
 const typographyModifiers = {
   fontSizeExtraSmall,

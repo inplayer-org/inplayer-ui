@@ -3,7 +3,7 @@ import { transparentize } from 'polished';
 import { MdStar } from 'react-icons/md';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import {
@@ -16,7 +16,7 @@ import {
 export const StyledPreviewBox = styled(PreviewBox)`
   display: flex;
   flex-wrap: wrap;
-  max-width: ${({ width }) => (width ? '' : '70vh')};
+  max-width: ${({ width }) => (width ? '' : '90vh')};
   font-size: ${({ theme }) => theme.font.sizes.large};
   overflow: hidden;
   border-radius: 8px 8px 3px 3px;

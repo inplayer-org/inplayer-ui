@@ -3,7 +3,7 @@ import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import {
@@ -20,7 +20,7 @@ interface Preview3BoxProps extends PreviewBoxProps {
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<Preview3BoxProps>`
-  max-width: ${({ width }) => (width ? '' : '70vh')};
+  max-width: ${({ width }) => (width ? '' : '90vh')};
   ${({ topBorderColor }) => topBorderColor && `border-top: 3px solid ${topBorderColor}`};
   display: block;
   padding: 1% 3% 2% 3%;

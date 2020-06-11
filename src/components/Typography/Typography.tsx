@@ -1,8 +1,8 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
-import { textPrimary, textDanger, textSuccess, textWarning } from 'modifiers';
 import { applyStyleModifiers } from 'styled-components-modifiers';
-import colors from 'theme/colors';
+import { textPrimary, textDanger, textSuccess, textWarning } from '../../modifiers';
+import colors from '../../theme/colors';
 
 const typographyModifiers = {
   textPrimary,
@@ -45,7 +45,6 @@ const Paragraph = styled.p<ParagraphProps>`
 `;
 
 const Heading = styled.h1<HeadingProps>`
-  font-family: ${({ theme }) => theme.font.primary};
   font-weight: ${({ theme }) => theme.font.weights.thin};
   color: ${({ color }) => color || colors.blue};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};

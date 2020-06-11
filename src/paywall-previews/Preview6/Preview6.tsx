@@ -1,13 +1,13 @@
 import React from 'react';
-import colors from 'theme/colors';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
-
-// Components
 import { FaLock } from 'react-icons/fa';
 import styled from 'styled-components';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+
+// Components
+import colors from '../../theme/colors';
 import TextEditor from '../shared/TextEditor';
 import {
   StyledPreviewBox,
@@ -82,7 +82,13 @@ const Preview6 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
+    <StyledPreviewBox
+      id="preview-container"
+      minWidth={minWidth}
+      minHeight={minHeight}
+      width={width}
+      height={height}
+    >
       <ImageWrapper backgroundImage={image} />
       <ItemDetails>
         <TextEditor value={title} readOnly />

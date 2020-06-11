@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { flatMap, range } from 'lodash-es';
+import flatMap from 'lodash-es/flatMap';
+import range from 'lodash-es/range';
 import styled from 'styled-components';
 
 // components

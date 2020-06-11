@@ -17,7 +17,7 @@ const Usage = () => {
       <Dropdown
         options={options}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e: any) => setValue(e.target.value)}
         color="#936"
       />
       <br />
@@ -25,7 +25,7 @@ const Usage = () => {
         defaultOption={defaultOption}
         options={options}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e: any) => setValue(e.target.value)}
       />
       <br />
       <br />

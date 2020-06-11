@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const TextArea = styled.textarea`
   vertical-align: middle;

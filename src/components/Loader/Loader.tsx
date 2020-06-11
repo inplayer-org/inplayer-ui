@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const directions: Record<string, any> = {
   up: '16,0 32,32 0,32',

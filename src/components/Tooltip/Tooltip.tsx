@@ -51,10 +51,6 @@ export type TooltipProps = {
    */
   fixed?: boolean;
   /**
-   * CSS font-family
-   */
-  fontFamily?: string;
-  /**
    * CSS font-size
    */
   fontSize?: string;
@@ -74,6 +70,10 @@ export type TooltipProps = {
    * CSS z-index
    */
   zIndex?: number;
+  /**
+   * External class name
+   */
+  className?: string;
   children?: ReactChild | ReactNode | null;
 };
 
@@ -93,13 +93,13 @@ const Tooltip = ({
   fadeDuration = 150,
   fadeEasing = 'linear',
   fixed = false,
-  fontFamily = 'inherit',
   fontSize = '',
   offset = 0,
   padding = 0.7,
   placement = 'top',
   radius = 0,
   zIndex = 1,
+  className = '',
   durationOnClick = 1000,
 }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,7 +133,6 @@ const Tooltip = ({
         border={border}
         color={color}
         radius={radius}
-        fontFamily={fontFamily}
         fontSize={fontSize}
         padding={padding}
       >
@@ -145,6 +144,7 @@ const Tooltip = ({
 
   return (
     <Container
+      className={className}
       onClick={behavior === 'click' ? flashTooltip : undefined}
       onMouseEnter={behavior === 'hover' && !fixed ? showTooltip : undefined}
       onMouseLeave={behavior === 'hover' && !fixed ? hideTooltip : undefined}

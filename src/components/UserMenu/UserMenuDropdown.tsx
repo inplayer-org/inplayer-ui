@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const Container = styled.div`
   align-items: flex-start;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 
 // utils
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 // Components
 import {
@@ -20,7 +20,7 @@ interface StyledPreviewBoxProps extends PreviewBoxProps {
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
-  max-width: ${({ width }) => (width ? '' : '70vh')};
+  max-width: ${({ width }) => (width ? '' : '90vh')};
   overflow: hidden;
   ${({ topBorderColor }) => topBorderColor && `border-top: 4px solid ${topBorderColor}`};
   display: flex;
@@ -38,6 +38,7 @@ export const ImageWrapper = styled(ImageHolder)`
   height: 100%;
   min-height: 310px;
   margin: 0;
+  cursor: pointer;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 import Checkbox from '../Checkbox';
 
 import Button from '../Button';
@@ -15,7 +15,6 @@ const TableWithHeaderSectionContainer = styled(Grid.Container)<any>`
 `;
 
 const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
-  font-family: Roboto, sans-serif;
   background: ${colors.white};
   width: 100%;
   text-align: left;

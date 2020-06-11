@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const StepNavigation = styled.div`
   margin-bottom: 2rem;

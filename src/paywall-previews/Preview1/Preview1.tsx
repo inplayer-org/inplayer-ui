@@ -1,9 +1,9 @@
 import React from 'react';
-import colors from 'theme/colors';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+import colors from '../../theme/colors';
 
 // Types
 import Branding from '../types/branding';

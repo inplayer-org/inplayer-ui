@@ -1,12 +1,12 @@
 import React from 'react';
-import colors from 'theme/colors';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
+import { GiCutDiamond } from 'react-icons/gi';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 
 // Components
-import { GiCutDiamond } from 'react-icons/gi';
+import colors from '../../theme/colors';
 import TextEditor from '../shared/TextEditor';
 import { StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
@@ -82,6 +82,7 @@ const Preview3 = ({
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
+      id="preview-container"
       minHeight={minHeight}
       minWidth={minWidth}
       topBorderColor={hasPreviewTopBorder ? buttonBgColor : ''}

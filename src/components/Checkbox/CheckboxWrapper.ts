@@ -1,5 +1,5 @@
 import styled, { DefaultTheme } from 'styled-components';
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
   display: flex;

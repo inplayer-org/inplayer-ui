@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
-import colors from 'theme/colors';
 import { FaLock } from 'react-icons/fa';
+import colors from '../../theme/colors';
 
 interface PreviewBoxProps {
   hasPreviewTopBorder: boolean;
@@ -29,7 +29,6 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   color: ${colors.black};
   text-align: left;
   font-weight: 300;
-  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 18px 3%;
 
   @media screen and (max-height: 600px) {
@@ -80,7 +79,6 @@ export const PaywallExplain = styled.div<PaywallExplainProps>`
 export const InplayerWhiteLogo = styled.div`
   position: absolute;
   right: 3%;
-  vertical-align: middle;
   display: block;
   margin: -4px 0 0;
   padding: 0;
@@ -89,7 +87,6 @@ export const InplayerWhiteLogo = styled.div`
   strong {
     vertical-align: middle;
     font-size: 12px;
-    font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
     display: inline-block;
     color: rgba(255, 255, 255, 0.8);
@@ -190,7 +187,6 @@ export const BuyButton = styled.button<ButtonProps>`
   transition: background ease 500ms;
   width: 100%;
   letter-spacing: 0.04em;
-  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   transform: translateY(0);
 
   &:hover,

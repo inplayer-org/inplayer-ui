@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { MdInfoOutline, MdWarning } from 'react-icons/md';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 
-import colors from 'theme/colors';
+import colors from '../../theme/colors';
 
 import NoteWrapper, { NoteType } from './NoteWrapper';
 

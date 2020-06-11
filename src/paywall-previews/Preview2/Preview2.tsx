@@ -1,9 +1,9 @@
 import React from 'react';
-import colors from 'theme/colors';
 
 // Images
-import previewImg from 'assets/images/ip-preview-premium.png';
-import restrictedAssetImg from 'assets/images/restricted-asset.png';
+import previewImg from '../../assets/images/ip-preview-premium.png';
+import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+import colors from '../../theme/colors';
 
 // Types
 import Branding from '../types/branding';
@@ -79,7 +79,13 @@ const Preview2 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
+    <StyledPreviewBox
+      id="preview-container"
+      minHeight={minHeight}
+      minWidth={minWidth}
+      height={height}
+      width={width}
+    >
       <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>

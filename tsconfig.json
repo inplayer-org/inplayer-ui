@@ -6,7 +6,7 @@
     "resolveJsonModule": true,
     "target": "es6",
     // path to output directory
-    "outDir": "./lib/",
+    "outDir": "./dist/",
     // enable strict null checks as a best practice
     "strictNullChecks": true,
     // Search under node_modules for non-relative imports.
@@ -45,6 +45,6 @@
     "paywall-previews/*": ["./paywall-previews/*"],
     "theme/*": ["./theme/*"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "index.d.ts", "typings.d.ts"],
   "exclude": ["node_modules"]
 }
