@@ -39,7 +39,6 @@ export { default as Preview5 } from './paywall-previews/Preview5';
 export { default as Preview6 } from './paywall-previews/Preview6';
 export { default as Preview7 } from './paywall-previews/Preview7';
 
-
 // theme
 export { default as ThemeWrapper } from './theme/ThemeWrapper';
 
