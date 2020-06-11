@@ -79,7 +79,13 @@ const Preview5 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} width={width} height={height}>
+    <StyledPreviewBox
+      id="preview-container"
+      minHeight={minHeight}
+      minWidth={minWidth}
+      width={width}
+      height={height}
+    >
       <ImageWrapper height={height} backgroundImage={image}>
         <Overlay />
         <BuyButtonHolder>

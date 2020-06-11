@@ -95,6 +95,7 @@ const Preview4 = ({
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
+      id="preview-container"
       minWidth={minWidth}
       minHeight={minHeight}
       topBorderColor={hasPreviewTopBorder ? buttonBgColor : ''}
