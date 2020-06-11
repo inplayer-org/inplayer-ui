@@ -9,7 +9,7 @@ import colors from '../../theme/colors';
 import Branding from '../types/branding';
 
 // Components
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import { StyledPaywallDescription, BuyButton, FooterLink } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
@@ -94,8 +94,8 @@ const Preview2 = ({
             {premiumContentLabel}
           </PaywallDescriptionSpan>
         </StyledPaywallDescription>
-        <TextEditor value={previewTitle} readOnly padding="0 0 0.5rem 0" />
-        <TextEditor value={previewDescription} readOnly />
+        <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
+        <PreviewText value={previewDescription} />
         <BuyButtonWrapper>
           <BuyButton
             buttonBgColor={buttonBgColor}
