@@ -9,7 +9,7 @@ import colors from '../../theme/colors';
 import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)<any>`
-  max-width: ${({ width }) => (width ? '' : '80vh')};
+  max-width: ${({ width }) => (width ? '' : '90vh')};
   border: none;
   background: transparent;
   font-size: ${({ theme }) => theme.font.sizes.medium};

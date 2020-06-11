@@ -20,7 +20,7 @@ interface StyledPreviewBoxProps extends PreviewBoxProps {
 }
 
 export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
-  max-width: ${({ width }) => (width ? '' : '70vh')};
+  max-width: ${({ width }) => (width ? '' : '90vh')};
   overflow: hidden;
   ${({ topBorderColor }) => topBorderColor && `border-top: 4px solid ${topBorderColor}`};
   display: flex;

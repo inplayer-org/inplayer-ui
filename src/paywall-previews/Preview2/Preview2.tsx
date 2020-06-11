@@ -79,7 +79,13 @@ const Preview2 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
+    <StyledPreviewBox
+      id="preview-container"
+      minHeight={minHeight}
+      minWidth={minWidth}
+      height={height}
+      width={width}
+    >
       <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
