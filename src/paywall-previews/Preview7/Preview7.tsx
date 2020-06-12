@@ -12,7 +12,7 @@ import Branding from '../types/branding';
 
 // Components
 import { OverlayLabel, PreviewFooterLink } from '../shared/PreviewComponents';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
@@ -102,7 +102,7 @@ const Preview7 = ({
       height={height}
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper>
+      <StyledImageWrapper onClick={handleOpenModal}>
         <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
         <StyledIconWrapper
           backgroundColor={buttonBgColor}
@@ -113,10 +113,10 @@ const Preview7 = ({
       </StyledImageWrapper>
       <ItemDetails>
         <PreviewHeader variant="h4">
-          <TextEditor value={previewTitle} isTextCenter readOnly padding="0 0 0.5rem 0" />
+          <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
         </PreviewHeader>
         <ItemContent variant="p">
-          <TextEditor value={previewDescription} isTextCenter readOnly />
+          <PreviewText value={previewDescription} isTextCenter />
         </ItemContent>
       </ItemDetails>
       {displayBuyButton && (

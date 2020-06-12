@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.68] - 12-06-2020
+
+### Change
+
+- Remove react-quill and use html-react-parser
+- Sanitize html string using dompurify
+- Open paywall modal on preview themes image click
+
 # [2.0.0-beta.67] - 10-06-2020
 
 ### Added

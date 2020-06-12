@@ -8,7 +8,7 @@ import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 
 // Components
 import colors from '../../theme/colors';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -89,10 +89,10 @@ const Preview6 = ({
       width={width}
       height={height}
     >
-      <ImageWrapper backgroundImage={image} />
+      <ImageWrapper backgroundImage={image} onClick={handleOpenModal} />
       <ItemDetails>
-        <TextEditor value={title} readOnly />
-        <TextEditor value={description} readOnly />
+        <PreviewText value={title} />
+        <PreviewText value={description} />
       </ItemDetails>
       <ButtonWrapper>
         <StyledBuyButton
