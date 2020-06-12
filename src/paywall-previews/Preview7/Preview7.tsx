@@ -102,7 +102,7 @@ const Preview7 = ({
       height={height}
     >
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper>
+      <StyledImageWrapper onClick={handleOpenModal}>
         <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
         <StyledIconWrapper
           backgroundColor={buttonBgColor}

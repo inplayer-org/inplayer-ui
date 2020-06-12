@@ -86,7 +86,7 @@ const Preview2 = ({
       height={height}
       width={width}
     >
-      <StyledImageHolder backgroundImage={image} />
+      <StyledImageHolder backgroundImage={image} onClick={handleOpenModal} />
       <AssetDetails>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
           <PaywallDescriptionSpan>
