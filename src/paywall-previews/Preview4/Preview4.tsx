@@ -9,7 +9,7 @@ import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 // Components
 import colors from '../../theme/colors';
 import StyledContainer from '../shared/StyledContainer';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import { OverlayLabel } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
@@ -126,22 +126,20 @@ const Preview4 = ({
         <StyledPreviewImage src={image} />
         <StyledTextWrapper>
           <TextElement width={width}>
-            <TextEditor
+            <PreviewText
               value={previewTitle}
               textBackground={previewTitleText ? transparentize(0.3, colors.black) : 'none'}
               textColor={buttonBgColor}
               padding="0.5rem"
-              readOnly
             />
           </TextElement>
           <TextElement width={width}>
-            <TextEditor
+            <PreviewText
               value={previewDescription}
               textBackground={previewDescriptionText ? transparentize(0.3, colors.black) : 'none'}
               textColor={colors.white}
               lineHeight={1.5}
               padding="0.5rem"
-              readOnly
             />
           </TextElement>
         </StyledTextWrapper>
