@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
+import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 import Checkbox from '../Checkbox';
 
@@ -10,8 +11,8 @@ import Grid from '../Grid';
 const TableWithHeaderSectionContainer = styled(Grid.Container)<any>`
   padding: 1rem;
   background-color: ${colors.white};
-  border: 1px solid ${colors.gray};
-  border-radius: 2px;
+  box-shadow: 0 0 4px 1px ${transparentize(0.87, colors.fontDarkGray)};
+  border-radius: 5px;
 `;
 
 const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
@@ -21,7 +22,7 @@ const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
   color: ${({ theme }) => theme.palette.text.light};
   box-sizing: border-box;
   border: ${ifProp('hasHeaderSection', '0', `1px solid ${colors.gray}`)};
-  border-radius: 3px;
+  border-radius: 5px;
   position: relative;
   font-weight: ${({ theme }) => theme.font.weights.light};
   -webkit-font-smoothing: antialiased;
