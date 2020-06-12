@@ -8,7 +8,7 @@ import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 
 // Components
 import colors from '../../theme/colors';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -82,11 +82,17 @@ const Preview6 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minWidth={minWidth} minHeight={minHeight} width={width} height={height}>
+    <StyledPreviewBox
+      id="preview-container"
+      minWidth={minWidth}
+      minHeight={minHeight}
+      width={width}
+      height={height}
+    >
       <ImageWrapper backgroundImage={image} />
       <ItemDetails>
-        <TextEditor value={title} readOnly />
-        <TextEditor value={description} readOnly />
+        <PreviewText value={title} />
+        <PreviewText value={description} />
       </ItemDetails>
       <ButtonWrapper>
         <StyledBuyButton

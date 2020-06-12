@@ -12,7 +12,7 @@ import Branding from '../types/branding';
 
 // Components
 import { OverlayLabel, PreviewFooterLink } from '../shared/PreviewComponents';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
@@ -93,6 +93,7 @@ const Preview7 = ({
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
+      id="preview-container"
       minWidth={minWidth}
       minHeight={minHeight}
       hasPreviewTopBorder={hasPreviewTopBorder}
@@ -112,10 +113,10 @@ const Preview7 = ({
       </StyledImageWrapper>
       <ItemDetails>
         <PreviewHeader variant="h4">
-          <TextEditor value={previewTitle} isTextCenter readOnly padding="0 0 0.5rem 0" />
+          <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
         </PreviewHeader>
         <ItemContent variant="p">
-          <TextEditor value={previewDescription} isTextCenter readOnly />
+          <PreviewText value={previewDescription} isTextCenter />
         </ItemContent>
       </ItemDetails>
       {displayBuyButton && (

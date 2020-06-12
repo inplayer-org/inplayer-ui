@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
+import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 
@@ -39,6 +40,7 @@ const PLUGINS = [
     extensions,
   }),
   commonjs(),
+  terser(),
   filesize(),
   copy({
     targets: [{ src: './index.d.ts', dest: 'dist' }],

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.68] - 12-06-2020
+
+### Change
+
+- Remove react-quill and use html-react-parser
+- Sanitize html string using dompurify
+
+# [2.0.0-beta.67] - 10-06-2020
+
+### Added
+
+- Add ids to Paywall Previews for easier client manipulation
+
+### Fixes
+
+- UserMenu width and display
+
 # [2.0.0-beta.66] - 03-06-2020
 
 ### Change

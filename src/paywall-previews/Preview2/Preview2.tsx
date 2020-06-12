@@ -9,7 +9,7 @@ import colors from '../../theme/colors';
 import Branding from '../types/branding';
 
 // Components
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import { StyledPaywallDescription, BuyButton, FooterLink } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
@@ -79,7 +79,13 @@ const Preview2 = ({
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
-    <StyledPreviewBox minHeight={minHeight} minWidth={minWidth} height={height} width={width}>
+    <StyledPreviewBox
+      id="preview-container"
+      minHeight={minHeight}
+      minWidth={minWidth}
+      height={height}
+      width={width}
+    >
       <StyledImageHolder backgroundImage={image} />
       <AssetDetails>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
@@ -88,8 +94,8 @@ const Preview2 = ({
             {premiumContentLabel}
           </PaywallDescriptionSpan>
         </StyledPaywallDescription>
-        <TextEditor value={previewTitle} readOnly padding="0 0 0.5rem 0" />
-        <TextEditor value={previewDescription} readOnly />
+        <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
+        <PreviewText value={previewDescription} />
         <BuyButtonWrapper>
           <BuyButton
             buttonBgColor={buttonBgColor}
