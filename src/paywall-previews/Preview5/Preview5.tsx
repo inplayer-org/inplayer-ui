@@ -7,7 +7,7 @@ import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 import colors from '../../theme/colors';
 
 // Types
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import Branding from '../types/branding';
 
 // Components
@@ -109,10 +109,10 @@ const Preview5 = ({
           <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TitleHolder>
-          <TextEditor value={previewTitle} readOnly />
+          <PreviewText value={previewTitle} readOnly />
         </TitleHolder>
         <DescriptionHolder>
-          <TextEditor value={previewDescription} readOnly />
+          <PreviewText value={previewDescription} readOnly />
         </DescriptionHolder>
       </ItemDetails>
     </StyledPreviewBox>

@@ -7,7 +7,7 @@ import restrictedAssetImg from '../../assets/images/restricted-asset.png';
 
 // Components
 import colors from '../../theme/colors';
-import TextEditor from '../shared/TextEditor';
+import PreviewText from '../shared/PreviewText';
 import { StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
@@ -101,12 +101,12 @@ const Preview3 = ({
           </StyledPaywallDescription>
           <TitleWrapper>
             <TitleBorder color={buttonBgColor}>
-              <TextEditor value={previewTitle} textColor={colors.white} readOnly />
+              <PreviewText value={previewTitle} textColor={colors.white} />
             </TitleBorder>
             <StyledIcon color={buttonBgColor} />
           </TitleWrapper>
           <DescriptionWrapper>
-            <TextEditor value={previewDescription} textColor={colors.white} readOnly />
+            <PreviewText value={previewDescription} textColor={colors.white} />
           </DescriptionWrapper>
         </StyledTextWrapper>
       </StyledImageHolder>
