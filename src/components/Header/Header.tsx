@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
+import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 
 // Components
@@ -13,7 +14,7 @@ const Container = styled.header`
   align-items: center;
   padding: 0 2%;
   background: ${colors.white};
-  border-bottom: 1px solid ${colors.gray};
+  box-shadow: 0px 3px 5px ${transparentize(0.87, colors.fontDarkGray)};
   display: flex;
   height: ${prop('height', 50)}px;
   justify-content: space-between;

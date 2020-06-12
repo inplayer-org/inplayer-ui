@@ -1,5 +1,6 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 import Typography, { TypographyVariant } from '../Typography/Typography';
 import CardContent from './CardContent';
@@ -10,7 +11,7 @@ const CardWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  border: 1px solid ${colors.gray};
+  box-shadow: 0 0 4px 1px ${transparentize(0.87, colors.fontDarkGray)};
   border-radius: 3px;
   background: ${colors.white};
   line-height: 1.5;
