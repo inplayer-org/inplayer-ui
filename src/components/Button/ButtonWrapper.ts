@@ -1,98 +1,102 @@
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
-import { transparentize } from 'polished';
+import { transparentize, darken } from 'polished';
 import { ifProp, switchProp } from 'styled-tools';
 import colors from '../../theme/colors';
 import { Props as ButtonWrapperProps } from './Button';
 
 const modifiers = {
   hoverInfo: () => `
+    color: ${colors.blue};
+    background: ${colors.white};
+    box-shadow: none;
+
     &:hover, &:focus {
       color: ${colors.blue};
-      border-color: ${colors.blue};
+      background: ${transparentize(0.9, colors.blue)};
+      box-shadow: none;
     }
   `,
   hoverDanger: () => `
+    color: ${colors.red};
+    background: ${colors.white};
+    box-shadow: none;
+
     &:hover, &:focus {
       color: ${colors.red};
-      border-color: ${colors.red};
+      background: ${transparentize(0.9, colors.red)};
+      box-shadow: none;
     }
   `,
   hoverWarning: () => `
+    color: ${colors.sunFlower};
+    background: ${colors.white};
+    box-shadow: none;
+
     &:hover, &:focus {
-      color: ${colors.yellow};
-      border-color: ${colors.yellow};
+      color: ${colors.sunFlower};
+      background: ${transparentize(0.9, colors.sunFlower)};
+      box-shadow: none;
     }
   `,
   hoverSuccess: () => `
+    color: ${colors.green};
+    background: ${colors.white};
+    box-shadow: none;
+
     &:hover, &:focus {
       color: ${colors.green};
-      border-color: ${colors.green};
+      background: ${transparentize(0.9, colors.green)};
+      box-shadow: none;
     }
   `,
   buttonPrimary: ({ theme }: Record<string, any>) => `
-    color: ${theme.palette.primary.main};
-    border-color: ${theme.palette.primary.main};
-    background: ${transparentize(0.94, theme.palette.primary.main)};
+    background: ${theme.palette.primary.main};
 
     &:hover, &:focus {
-      color: ${colors.white};
-      background: ${theme.palette.primary.main};
+      background: ${darken(0.04, theme.palette.primary.main)};
     }
   `,
   buttonInfo: () => `
-    color: ${colors.blue};
-    border-color: ${colors.blue};
-    background: ${transparentize(0.94, colors.blue)};
+    background: ${colors.blue};
 
     &:hover, &:focus {
-      color: ${colors.white};
-      background: ${colors.blue};
-      border-color: ${colors.blue};
+      background: ${darken(0.04, colors.blue)};
     }
   `,
   buttonWarning: () => `
-    color: ${colors.yellow};
-    border-color: ${colors.yellow};
-    background: ${transparentize(0.94, colors.yellow)};
+    background: ${colors.sunFlower};
 
     &:hover, &:focus {
-      color: ${colors.white};
-      background: ${colors.yellow};
-      border-color: ${colors.yellow};
+      background: ${darken(0.04, colors.sunFlower)};
     }
   `,
   buttonDanger: () => `
-    color: ${colors.red};
-    border-color: ${colors.red};
-    background: ${transparentize(0.94, colors.red)};
+    background: ${colors.red};
 
     &:hover, &:focus {
-      color: ${colors.white};
-      background: ${colors.red};
-      border-color: ${colors.red};
+      background: ${darken(0.04, colors.red)};
     }
   `,
   buttonSuccess: () => `
-    color: ${colors.green};
-    border-color: ${colors.green};
-     background: ${transparentize(0.94, colors.green)};
+     background: ${colors.green};
 
     &:hover, &:focus {
-      color: ${colors.white};
-      background: ${colors.green};
-      border-color: ${colors.green};
+      background: ${darken(0.04, colors.green)};
     }
   `,
   buttonLink: ({ theme }: Record<string, any>) => `
     color: ${theme.palette.primary.main};
     border: none;
     background: transparent;
-    display: inline;
+    box-shadow: none;
+
 
     &:hover, &:focus {
-      color: ${theme.palette.primary.dark};
+      color: ${theme.palette.primary.main};
+      background-color: ${transparentize(0.9, theme.palette.primary.main)};
+      box-shadow: none;
     }
 
     &:disabled {
@@ -109,24 +113,19 @@ type Props = ButtonWrapperProps & {
 };
 
 const ButtonWrapper = styled.button<Props>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${colors.white};
-  color: ${({ theme }) => theme.palette.text.main};
-  font-weight: ${({ theme }) => theme.font.weights.light};
-  border: 1px solid ${colors.gray};
-  border-radius: 3px;
-  font-size: ${({ theme }) => theme.font.sizes.medium};
+  border-radius: 5px;
+  color: ${colors.white};
+  background-color: ${colors.skyBlue};
+  border: none;
+  box-shadow: 0 0 4px 1px ${transparentize(0.87, colors.fontDarkGray)};
+  transition: all 200ms linear;
   cursor: pointer;
-  vertical-align: middle;
-  letter-spacing: 0.015em;
-  line-height: 1;
-  outline: none;
-
-  &:hover {
-    border-color: ${colors.skyBlue};
-    color: ${colors.skyBlue};
+  padding: 0.5rem;
+  text-align: center;
+  :hover {
+    background-color: ${darken(0.04, colors.skyBlue)};
+    box-shadow: 0 0 8px 1px ${transparentize(0.87, colors.fontDarkGray)};
+    color: ${colors.white};
   }
 
   ${switchProp('size', {
