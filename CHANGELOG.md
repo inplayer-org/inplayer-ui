@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Remove react-quill and use html-react-parser
 - Sanitize html string using dompurify
 - Open paywall modal on preview themes image click
+- Redesign of buttons and minor styling changes to Header, Card and Table
 
 # [2.0.0-beta.67] - 10-06-2020
 
