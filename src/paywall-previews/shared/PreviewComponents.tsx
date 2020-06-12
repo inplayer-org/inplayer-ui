@@ -83,6 +83,7 @@ export const ImageHolder = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  cursor: pointer;
 `;
 
 export const PaywallDescription = styled.div`

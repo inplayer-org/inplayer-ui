@@ -89,7 +89,7 @@ const Preview6 = ({
       width={width}
       height={height}
     >
-      <ImageWrapper backgroundImage={image} />
+      <ImageWrapper backgroundImage={image} onClick={handleOpenModal} />
       <ItemDetails>
         <PreviewText value={title} />
         <PreviewText value={description} />

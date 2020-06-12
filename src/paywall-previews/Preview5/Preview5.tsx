@@ -86,7 +86,7 @@ const Preview5 = ({
       width={width}
       height={height}
     >
-      <ImageWrapper height={height} backgroundImage={image}>
+      <ImageWrapper height={height} backgroundImage={image} onClick={handleOpenModal}>
         <Overlay />
         <BuyButtonHolder>
           <BuyButtonBorder>

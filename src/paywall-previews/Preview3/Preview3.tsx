@@ -89,7 +89,7 @@ const Preview3 = ({
       width={width}
       height={height}
     >
-      <StyledImageHolder backgroundImage={image}>
+      <StyledImageHolder backgroundImage={image} onClick={handleOpenModal}>
         <Header onClick={handleOpenModal} color={colors.fontLightGray}>
           {loginFooterLabel}
         </Header>
