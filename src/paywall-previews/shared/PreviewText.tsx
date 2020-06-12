@@ -1,8 +1,7 @@
 import React from 'react';
-import convert from 'htmr';
+import parse from 'html-react-parser';
 import styled from 'styled-components';
 import DOMPurify from 'dompurify';
-
 import colors from '../../theme/colors';
 
 interface EditorContainerProps {
@@ -14,25 +13,25 @@ interface EditorContainerProps {
 }
 
 const TextContainer = styled.div<EditorContainerProps>`
-  color: ${({ textColor }) => textColor || colors.black};
   background: ${({ textBackground }) => textBackground || 'transparent'};
-  text-align: ${({ isTextCenter }) => isTextCenter && 'center'};
   line-height: ${({ lineHeight }) => lineHeight || 1};
   padding: ${({ padding }) => padding};
   margin: 1rem 0;
-  p,
-  ol,
-  ul,
-  pre,
-  blockquote,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
+  /* Increase specificity to override any other styles */
+  && p,
+  && ol,
+  && ul,
+  && pre,
+  && blockquote,
+  && h1,
+  && h2,
+  && h3,
+  && h4,
+  && h5,
+  && h6 {
     margin: 0;
+    text-align: ${({ isTextCenter }) => (isTextCenter ? 'center' : 'left')};
+    color: ${({ textColor }) => textColor || colors.black};
   }
 `;
 
@@ -55,7 +54,7 @@ const PreviewText = ({
     padding={padding}
     lineHeight={lineHeight}
   >
-    {convert(DOMPurify.sanitize(value))}
+    {parse(DOMPurify.sanitize(value))}
   </TextContainer>
 );
 
