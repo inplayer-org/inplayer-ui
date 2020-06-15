@@ -366,6 +366,7 @@ export interface DayPickerProps {
   numberOfMonths?: number;
   disabled?: boolean;
   placeholder?: string;
+  onClose?: () => any;
 }
 
 export declare const DayPicker: FunctionComponent<DayPickerProps>;

@@ -60,6 +60,7 @@ type Props = {
    * Overwrite the default 'Date' placeholder
    */
   placeholder?: string;
+  onClose?: () => any;
 };
 
 const DayPicker = ({
@@ -72,6 +73,7 @@ const DayPicker = ({
   date,
   id,
   placeholder,
+  onClose,
 }: Props) => {
   const renderMonthElement = ({ month, onMonthSelect, onYearSelect }: RenderMonthElementProps) => (
     <CustomMonthContainer>
@@ -104,6 +106,7 @@ const DayPicker = ({
         numberOfMonths={numberOfMonths}
         disabled={disabled}
         placeholder={placeholder}
+        onClose={onClose}
       />
     </DayPickerWrapper>
   );
