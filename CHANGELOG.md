@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.69] - 16-06-2020
+
+### Change
+
+- Added onClose event to SingleDay picker
+
 # [2.0.0-beta.68] - 12-06-2020
 
 ### Change
