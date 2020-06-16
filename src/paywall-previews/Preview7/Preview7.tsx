@@ -1,13 +1,10 @@
 import React from 'react';
 import { FaLock } from 'react-icons/fa';
 
-// Images
-import previewImg from '../../assets/images/ip-preview-premium.png';
-import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+// Clors
 import colors from '../../theme/colors';
 
 // Types
-
 import Branding from '../types/branding';
 
 // Components
@@ -68,6 +65,9 @@ type Props = {
    */
   handleOpenModal?: (e: any) => any;
 };
+
+const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
+const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview7 = ({
   branding: {
