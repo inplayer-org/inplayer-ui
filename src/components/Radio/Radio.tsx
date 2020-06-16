@@ -1,6 +1,5 @@
 import React, { ChangeEvent, InputHTMLAttributes } from 'react';
-import Label from '../Label';
-import { RadioWrapper } from './RadioWrapper';
+import { StyledLabel, Root, Input, Fill } from './RadioWrapper';
 
 type RadioProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -22,19 +21,24 @@ const Radio = ({
   name = '',
   ...rest
 }: RadioProps) => (
-  <RadioWrapper>
-    <input
-      type="radio"
-      id={id}
-      checked={checked}
-      onChange={onChange}
-      onBlur={onBlur}
-      disabled={disabled}
-      name={name}
-      {...rest}
-    />
-    <Label htmlFor={id}>{label}</Label>
-  </RadioWrapper>
+  <StyledLabel disabled={disabled}>
+    <Root disabled={disabled} checked={checked}>
+      <Input
+        id={id}
+        type="radio"
+        onChange={onChange}
+        name={name}
+        checked={checked}
+        value={label}
+        onBlur={onBlur}
+        disabled={disabled}
+        aria-checked={checked}
+        {...rest}
+      />
+      <Fill />
+      <span>{label}</span>
+    </Root>
+  </StyledLabel>
 );
 
 export default Radio;
