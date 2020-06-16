@@ -1,100 +1,99 @@
-import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import Colors from '../../theme/colors';
+import Label from '../Label';
+import colors from '../../theme/colors';
 
-const RadioContainer = styled.div`
-  display: inline-block;
+export const StyledLabel = styled(Label)`
+  white-space: nowrap;
+`;
 
-  > input {
-    opacity: 0;
+interface RootProps {
+  disabled?: boolean;
+  checked: boolean;
+}
+
+export const Root = styled.div<RootProps>`
+  margin: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  span {
+    margin-left: 1.5rem;
+    vertical-align: middle;
   }
 
-  > input + label {
-    position: relative;
-    padding-left: 1.5rem;
-    cursor: pointer;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: -0.61px;
-      top: 1px;
-      width: 1rem;
-      height: 1rem;
-      border: 1px solid ${Colors.gray};
-      background: ${Colors.white};
-      border-radius: 100%;
-    }
-
-    &::after {
-      content: '●';
-      position: absolute;
-      top: -0.22rem;
-      left: 0.125rem;
-      font-size: 1.4rem;
-      color: ${Colors.skyBlue};
-      transition: all 0.2s;
-    }
-  }
-
-  > input:not(:checked) + label {
-    &::after {
-      opacity: 0;
-      transform: scale(0);
-    }
-  }
-
-  > input:checked + label {
-    &::before {
-      border: 1px solid ${Colors.skyBlue};
-    }
-
-    &::after {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  > input:disabled:not(:checked) + label {
-    color: ${({ theme }) => theme.palette.text.disabled};
-
-    &::before {
-      border: 1px solid ${Colors.gray};
-      background: transparent;
-    }
-  }
-
-  > input:disabled:checked + label {
-    color: ${({ theme }) => theme.palette.text.disabled};
-
-    &::before {
-      border: 1px solid ${Colors.gray};
-      background: transparent;
-    }
-
-    &::after {
-      color: ${Colors.gray};
-      background: transparent;
-    }
-  }
-
-  > input:checked:focus + label {
-    &::before {
-      border: 1px solid ${Colors.skyBlue};
-    }
-  }
-
-  > input:not(:checked):focus + label {
-    &::before {
-      border: 1px solid ${Colors.gray};
-    }
+  &::before {
+    content: '';
+    border-radius: 100%;
+    border: ${({ disabled, checked }) =>
+      `1px solid ${disabled || !checked ? colors.gray : colors.skyBlue}`};
+    background: ${colors.lightGray};
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 0;
   }
 `;
 
-type RadioWrapperProps = {
-  children: ReactNode;
-};
+export const Fill = styled.div`
+  background: ${colors.skyBlue};
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease-in, height 0.2s ease-in;
+  pointer-events: none;
+  z-index: 1;
 
-export const RadioWrapper = ({ children }: RadioWrapperProps) => (
-  <RadioContainer> {children} </RadioContainer>
-);
+  &::before {
+    content: '';
+    opacity: 0;
+    width: calc(20px - 4px);
+    position: absolute;
+    height: calc(20px - 4px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid ${colors.skyBlue};
+    border-radius: 100%;
+  }
+`;
+
+export const Input = styled.input`
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked {
+    & ~ ${Fill} {
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      transition: width 0.2s ease-out, height 0.2s ease-out;
+    }
+    &::before {
+      opacity: 1;
+      transition: opacity 1s ease;
+      border: 1px solid ${colors.skyBlue};
+    }
+    &:disabled {
+      & ~ ${Fill} {
+        background: ${colors.gray};
+      }
+    }
+  }
+`;
