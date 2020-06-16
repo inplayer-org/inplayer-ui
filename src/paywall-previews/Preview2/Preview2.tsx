@@ -1,8 +1,6 @@
 import React from 'react';
 
-// Images
-import previewImg from '../../assets/images/ip-preview-premium.png';
-import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+// Colors
 import colors from '../../theme/colors';
 
 // Types
@@ -57,6 +55,9 @@ type Props = {
   // premium content label
   premiumContentLabel?: string;
 };
+
+const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
+const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview2 = ({
   branding: {

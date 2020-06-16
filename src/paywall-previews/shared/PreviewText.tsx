@@ -37,6 +37,7 @@ const TextContainer = styled.div<EditorContainerProps>`
 
 interface Props extends EditorContainerProps {
   value: string | any;
+  readOnly?: boolean;
 }
 
 const PreviewText = ({

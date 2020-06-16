@@ -1,13 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
 // Images
 import { FaLock } from 'react-icons/fa';
-import styled from 'styled-components';
-import previewImg from '../../assets/images/ip-preview-premium.png';
-import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+
+// Colors
+import colors from '../../theme/colors';
 
 // Components
-import colors from '../../theme/colors';
 import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
@@ -61,6 +61,9 @@ type Props = {
    */
   handleOpenModal?: (e: any) => any;
 };
+
+const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
+const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview6 = ({
   branding: {

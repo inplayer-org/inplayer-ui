@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Added onClose event to SingleDay picker
 - Radio button refactor and minor UI change
+- Replace local images with appropriate ones from aws
 
 # [2.0.0-beta.68] - 12-06-2020
 

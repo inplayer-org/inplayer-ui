@@ -3,11 +3,11 @@ import { transparentize } from 'polished';
 
 // Images
 import { FaLock } from 'react-icons/fa';
-import previewImg from '../../assets/images/ip-preview-premium.png';
-import restrictedAssetImg from '../../assets/images/restricted-asset.png';
+
+// Colors
+import colors from '../../theme/colors';
 
 // Components
-import colors from '../../theme/colors';
 import StyledContainer from '../shared/StyledContainer';
 import PreviewText from '../shared/PreviewText';
 import { OverlayLabel } from '../shared/PreviewComponents';
@@ -69,6 +69,8 @@ type Props = {
 };
 
 const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
+const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
+const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview4 = ({
   branding: {
