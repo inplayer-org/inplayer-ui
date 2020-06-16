@@ -3,9 +3,7 @@ import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
-import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
-import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
@@ -23,10 +21,6 @@ const GLOBALS = {
 };
 
 const PLUGINS = [
-  postcss({
-    plugins: [autoprefixer],
-    extract: 'styles.css',
-  }),
   image(),
   babel({
     include: ['src/**/*'],
