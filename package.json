@@ -9,7 +9,6 @@
   "browser": "dist/inplayer-ui.umd.js",
   "jsnext:main": "dist/inplayer-ui.esm.js",
   "types": "dist/index.d.ts",
-  "style": "dist/styles.css",
   "files": [
     "dist"
   ],
