@@ -36,8 +36,8 @@ const Radio = ({
         {...rest}
       />
       <Fill />
-      <span>{label}</span>
     </Root>
+    <span>{label}</span>
   </StyledLabel>
 );
 

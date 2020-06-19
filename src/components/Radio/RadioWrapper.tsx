@@ -3,7 +3,17 @@ import Label from '../Label';
 import colors from '../../theme/colors';
 
 export const StyledLabel = styled(Label)`
-  white-space: nowrap;
+  white-space: break-spaces;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  line-height: 20px;
+
+  & span {
+    width: 80%;
+  }
 `;
 
 interface RootProps {
@@ -17,10 +27,6 @@ export const Root = styled.div<RootProps>`
   width: 20px;
   height: 20px;
   position: relative;
-  span {
-    margin-left: 1.5rem;
-    vertical-align: middle;
-  }
 
   &::before {
     content: '';
