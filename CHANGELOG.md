@@ -3,7 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 # [2.0.0-beta.71] - 23-06-2020
+
 ### Change
+
 - Improve DatePicker to conditionally show presets
 - Highlight today's date on DatePicker
 
