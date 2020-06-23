@@ -598,6 +598,11 @@ const DatePickerWrapper = styled.span`
   .SingleDatePicker_picker {
     z-index: 9;
   }
+
+  .CalendarDay__today {
+    background-color: ${colors.blue};
+    color: white;
+  }
 `;
 
 export default DatePickerWrapper;
