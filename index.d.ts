@@ -396,6 +396,7 @@ export interface DatePickerProps {
   customAllTimeDate?: number;
   activePeriodPreset?: string;
   disabled?: boolean;
+  showPresets?: boolean;
 }
 
 interface DatePickerState {
