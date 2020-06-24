@@ -268,8 +268,9 @@ const DatePicker = ({
       {periodText.toLowerCase() !== 'all' && ' |'}
     </SpanContainer>
   );
-  return (
-    <Container>
+
+  if (showPresets) {
+    return (
       <ContentHolder>
         {showPresets && (
           <AnalyticsPeriods>
@@ -282,29 +283,49 @@ const DatePicker = ({
             {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
           </AnalyticsPeriods>
         )}
-        <DatePickerContainer>
-          <DatePickerWrapper>
-            <DateRangePicker
-              isOutsideRange={isOutsideRange}
-              onDatesChange={handleDateChange}
-              onFocusChange={onFocusChange}
-              renderMonthElement={renderMonthElement}
-              focusedInput={focusedInput}
-              startDate={startDateProp}
-              startDateId={startDateId}
-              endDate={endDateProp}
-              endDateId={endDateId}
-              customArrowIcon="to"
-              calendarInfoPosition="after"
-              minimumNights={minimumNights}
-              enableOutsideDays
-              readOnly
-              renderCalendarInfo={renderDatePresets}
-            />
-          </DatePickerWrapper>
-        </DatePickerContainer>
+        <DatePickerWrapper>
+          <DateRangePicker
+            isOutsideRange={isOutsideRange}
+            onDatesChange={handleDateChange}
+            onFocusChange={onFocusChange}
+            renderMonthElement={renderMonthElement}
+            focusedInput={focusedInput}
+            startDate={startDateProp}
+            startDateId={startDateId}
+            endDate={endDateProp}
+            endDateId={endDateId}
+            customArrowIcon="to"
+            calendarInfoPosition="after"
+            minimumNights={minimumNights}
+            enableOutsideDays
+            readOnly
+            renderCalendarInfo={renderDatePresets}
+          />
+        </DatePickerWrapper>
       </ContentHolder>
-    </Container>
+    );
+  }
+
+  return (
+    <DatePickerWrapper>
+      <DateRangePicker
+        isOutsideRange={isOutsideRange}
+        onDatesChange={handleDateChange}
+        onFocusChange={onFocusChange}
+        renderMonthElement={renderMonthElement}
+        focusedInput={focusedInput}
+        startDate={startDateProp}
+        startDateId={startDateId}
+        endDate={endDateProp}
+        endDateId={endDateId}
+        customArrowIcon="to"
+        calendarInfoPosition="after"
+        minimumNights={minimumNights}
+        enableOutsideDays
+        readOnly
+        renderCalendarInfo={renderDatePresets}
+      />
+    </DatePickerWrapper>
   );
 };
 
