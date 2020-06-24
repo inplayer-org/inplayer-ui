@@ -268,43 +268,62 @@ const DatePicker = ({
       {periodText.toLowerCase() !== 'all' && ' |'}
     </SpanContainer>
   );
-  return (
-    <Container>
+
+  if (showPresets) {
+    return (
       <ContentHolder>
-        {showPresets && (
-          <AnalyticsPeriods>
-            {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
-            {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
-            {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
-            {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
-            {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
-            {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
-            {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
-          </AnalyticsPeriods>
-        )}
-        <DatePickerContainer>
-          <DatePickerWrapper>
-            <DateRangePicker
-              isOutsideRange={isOutsideRange}
-              onDatesChange={handleDateChange}
-              onFocusChange={onFocusChange}
-              renderMonthElement={renderMonthElement}
-              focusedInput={focusedInput}
-              startDate={startDateProp}
-              startDateId={startDateId}
-              endDate={endDateProp}
-              endDateId={endDateId}
-              customArrowIcon="to"
-              calendarInfoPosition="after"
-              minimumNights={minimumNights}
-              enableOutsideDays
-              readOnly
-              renderCalendarInfo={renderDatePresets}
-            />
-          </DatePickerWrapper>
-        </DatePickerContainer>
+        <AnalyticsPeriods>
+          {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
+          {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
+          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
+          {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
+          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
+          {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
+          {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
+        </AnalyticsPeriods>
+        <DatePickerWrapper>
+          <DateRangePicker
+            isOutsideRange={isOutsideRange}
+            onDatesChange={handleDateChange}
+            onFocusChange={onFocusChange}
+            renderMonthElement={renderMonthElement}
+            focusedInput={focusedInput}
+            startDate={startDateProp}
+            startDateId={startDateId}
+            endDate={endDateProp}
+            endDateId={endDateId}
+            customArrowIcon="to"
+            calendarInfoPosition="after"
+            minimumNights={minimumNights}
+            enableOutsideDays
+            readOnly
+            renderCalendarInfo={renderDatePresets}
+          />
+        </DatePickerWrapper>
       </ContentHolder>
-    </Container>
+    );
+  }
+
+  return (
+    <DatePickerWrapper>
+      <DateRangePicker
+        isOutsideRange={isOutsideRange}
+        onDatesChange={handleDateChange}
+        onFocusChange={onFocusChange}
+        renderMonthElement={renderMonthElement}
+        focusedInput={focusedInput}
+        startDate={startDateProp}
+        startDateId={startDateId}
+        endDate={endDateProp}
+        endDateId={endDateId}
+        customArrowIcon="to"
+        calendarInfoPosition="after"
+        minimumNights={minimumNights}
+        enableOutsideDays
+        readOnly
+        renderCalendarInfo={renderDatePresets}
+      />
+    </DatePickerWrapper>
   );
 };
 

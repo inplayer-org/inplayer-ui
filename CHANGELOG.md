@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.72] - 24-06-2020
+
+### Fixes
+
+- Conditionally render DatePicker wrapper classes
+
 # [2.0.0-beta.71] - 23-06-2020
 
 ### Change
