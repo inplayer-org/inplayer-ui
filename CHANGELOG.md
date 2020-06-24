@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Add optional prop to Single Day picker - disable past days
 
+### Fixes
+
+- Conditionally render DatePicker wrapper classes
+
 # [2.0.0-beta.71] - 23-06-2020
 
 ### Change
