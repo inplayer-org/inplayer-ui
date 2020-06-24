@@ -367,6 +367,7 @@ export interface DayPickerProps {
   disabled?: boolean;
   placeholder?: string;
   onClose?: () => any;
+  disablePastDays?: boolean;
 }
 
 export declare const DayPicker: FunctionComponent<DayPickerProps>;
