@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-dates/initialize';
-import { SingleDatePicker } from 'react-dates';
+import { SingleDatePicker, isInclusivelyAfterDay } from 'react-dates';
 import moment, { Moment } from 'moment';
 
 import styled from 'styled-components';
@@ -61,6 +61,7 @@ type Props = {
    */
   placeholder?: string;
   onClose?: () => any;
+  disablePastDays?: boolean;
 };
 
 const DayPicker = ({
@@ -74,7 +75,10 @@ const DayPicker = ({
   id,
   placeholder,
   onClose,
+  disablePastDays = false,
 }: Props) => {
+  const handleDisablePastDays = (days: any) => !isInclusivelyAfterDay(days, moment());
+
   const renderMonthElement = ({ month, onMonthSelect, onYearSelect }: RenderMonthElementProps) => (
     <CustomMonthContainer>
       <DropdownContainer>
@@ -97,7 +101,7 @@ const DayPicker = ({
     <DayPickerWrapper>
       <SingleDatePicker
         id={id}
-        isOutsideRange={isOutsideRange}
+        isOutsideRange={disablePastDays ? handleDisablePastDays : isOutsideRange}
         onDateChange={onDateChange}
         onFocusChange={onFocusChange}
         renderMonthElement={renderMonthElement}
