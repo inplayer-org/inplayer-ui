@@ -272,17 +272,15 @@ const DatePicker = ({
   if (showPresets) {
     return (
       <ContentHolder>
-        {showPresets && (
-          <AnalyticsPeriods>
-            {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
-            {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
-            {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
-            {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
-            {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
-            {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
-            {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
-          </AnalyticsPeriods>
-        )}
+        <AnalyticsPeriods>
+          {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
+          {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
+          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
+          {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
+          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
+          {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
+          {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
+        </AnalyticsPeriods>
         <DatePickerWrapper>
           <DateRangePicker
             isOutsideRange={isOutsideRange}
