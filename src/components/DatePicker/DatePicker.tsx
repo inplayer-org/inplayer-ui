@@ -10,22 +10,12 @@ import { PERIODS, INNERPERIODS } from './periods';
 import { Styled } from './styles';
 import 'react-dates/initialize';
 
-const Container = styled.div`
-  margin-bottom: 1.3rem;
-`;
-
 const ContentHolder = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 86%;
   margin: 0 auto;
   padding: 15px 0 15px;
-`;
-
-const DatePickerContainer = styled.div`
-  display: inline-block;
-  width: auto;
-  min-width: 14%;
 `;
 
 const AnalyticsPeriods = styled.div`
