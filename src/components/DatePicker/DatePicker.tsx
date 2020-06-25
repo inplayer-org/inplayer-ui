@@ -132,7 +132,7 @@ const DatePicker = ({
   isOutsideRange = () => false,
   onFocusChange,
   focusedInput,
-  minimumNights,
+  minimumNights = 0,
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
 
