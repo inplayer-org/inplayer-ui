@@ -19,7 +19,8 @@ const StyledLabel = styled(Label)<{ active: boolean }>`
 
 const DatePresetWrapper = styled.div`
   width: 96px;
-  padding: 3.75rem 1.25rem 0.625rem;
+  text-align: center;
+  padding: 9rem 0 0.625rem 1rem;
 `;
 
 const CustomMonthContainer = styled.div`
