@@ -117,6 +117,10 @@ type Props = {
    * Boolean indicating whether to show inner presets or not
    */
   showInnerPresets?: boolean;
+  /**
+   * External CSS classes
+   */
+  className?: string;
 };
 
 const DatePicker = ({
@@ -133,6 +137,7 @@ const DatePicker = ({
   onFocusChange,
   focusedInput,
   minimumNights,
+  className = '',
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
 
@@ -281,7 +286,7 @@ const DatePicker = ({
           {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
           {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
         </AnalyticsPeriods>
-        <DatePickerWrapper>
+        <DatePickerWrapper className={className}>
           <DateRangePicker
             isOutsideRange={isOutsideRange}
             onDatesChange={handleDateChange}
@@ -293,7 +298,7 @@ const DatePicker = ({
             endDate={endDateProp}
             endDateId={endDateId}
             customArrowIcon="to"
-            calendarInfoPosition="after"
+            calendarInfoPosition="before"
             minimumNights={minimumNights}
             enableOutsideDays
             readOnly
@@ -305,7 +310,7 @@ const DatePicker = ({
   }
 
   return (
-    <DatePickerWrapper>
+    <DatePickerWrapper className={className}>
       <DateRangePicker
         isOutsideRange={isOutsideRange}
         onDatesChange={handleDateChange}
@@ -317,7 +322,7 @@ const DatePicker = ({
         endDate={endDateProp}
         endDateId={endDateId}
         customArrowIcon="to"
-        calendarInfoPosition="after"
+        calendarInfoPosition="before"
         minimumNights={minimumNights}
         enableOutsideDays
         readOnly
