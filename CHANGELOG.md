@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.72] - 25-06-2020
+
+### Change
+
+- Support one day selection on DatePicker
+
 # [2.0.0-beta.72] - 24-06-2020
 
 ### Change
