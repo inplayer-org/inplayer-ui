@@ -8,11 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Show DatePicker's inner presets on the left
 
-# [2.0.0-beta.72] - 24-06-2020
-
 ### Change
 
 - Add optional prop to Single Day picker - disable past days
+- Support one day selection on DatePicker
 
 ### Fixes
 
