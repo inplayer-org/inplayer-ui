@@ -10,22 +10,12 @@ import { PERIODS, INNERPERIODS } from './periods';
 import { Styled } from './styles';
 import 'react-dates/initialize';
 
-const Container = styled.div`
-  margin-bottom: 1.3rem;
-`;
-
 const ContentHolder = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 86%;
   margin: 0 auto;
   padding: 15px 0 15px;
-`;
-
-const DatePickerContainer = styled.div`
-  display: inline-block;
-  width: auto;
-  min-width: 14%;
 `;
 
 const AnalyticsPeriods = styled.div`
@@ -117,6 +107,10 @@ type Props = {
    * Boolean indicating whether to show inner presets or not
    */
   showInnerPresets?: boolean;
+  /**
+   * External CSS classes
+   */
+  className?: string;
 };
 
 const DatePicker = ({
@@ -132,6 +126,7 @@ const DatePicker = ({
   isOutsideRange = () => false,
   onFocusChange,
   focusedInput,
+  className = '',
   minimumNights = 0,
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
@@ -281,7 +276,7 @@ const DatePicker = ({
           {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
           {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
         </AnalyticsPeriods>
-        <DatePickerWrapper>
+        <DatePickerWrapper className={className}>
           <DateRangePicker
             isOutsideRange={isOutsideRange}
             onDatesChange={handleDateChange}
@@ -293,7 +288,7 @@ const DatePicker = ({
             endDate={endDateProp}
             endDateId={endDateId}
             customArrowIcon="to"
-            calendarInfoPosition="after"
+            calendarInfoPosition="before"
             minimumNights={minimumNights}
             enableOutsideDays
             readOnly
@@ -305,7 +300,7 @@ const DatePicker = ({
   }
 
   return (
-    <DatePickerWrapper>
+    <DatePickerWrapper className={className}>
       <DateRangePicker
         isOutsideRange={isOutsideRange}
         onDatesChange={handleDateChange}
@@ -317,7 +312,7 @@ const DatePicker = ({
         endDate={endDateProp}
         endDateId={endDateId}
         customArrowIcon="to"
-        calendarInfoPosition="after"
+        calendarInfoPosition="before"
         minimumNights={minimumNights}
         enableOutsideDays
         readOnly
