@@ -387,7 +387,7 @@ export interface DatePickerProps {
   startDateId?: string;
   endDateId?: string;
   displayPresets?: Array<Period | 'default'>;
-  isOutsideRange?: () => boolean;
+  isOutsideRange?: (day: any) => boolean;
   onDateChange: DatePicker$OnDateChange;
   style?: CSSProperties;
   className?: string;

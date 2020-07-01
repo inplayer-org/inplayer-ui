@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Dropdown improvement
 
+### Fixes
+
+- Fixed isOutsideRange in DatePickerProps type
+
 # [2.0.0-beta.73] - 25-06-2020
 
 ### Change
