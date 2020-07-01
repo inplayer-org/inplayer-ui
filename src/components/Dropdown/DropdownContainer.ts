@@ -31,9 +31,15 @@ const DropdownContainer = styled.select`
   box-sizing: border-box;
   appearance: none;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: ${({ color }) => color || colors.skyBlue};
     border-color: ${({ color }) => color || colors.skyBlue};
+  }
+
+  &:disabled {
+    color: ${({ color }) => color || colors.fontLightGray};
+    border-color: ${({ color }) => color || colors.fontLightGray};
+    cursor: default;
   }
 
   > option {
