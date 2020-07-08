@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "target": "es6",
+    // path to output directory
+    "outDir": "./dist/",
+    // enable strict null checks as a best practice
+    "strictNullChecks": true,
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": false,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // use typescript to transpile jsx to js
+    "jsx": "react",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "module": "esnext",
+    "removeComments": true,
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "paths": {
+    "assets/*": ["./assets/*"],
+    "components/*": ["./components/*"],
+    "modifiers/*": ["./modifiers/*"],
+    "paywall-previews/*": ["./paywall-previews/*"],
+    "theme/*": ["./theme/*"]
+  },
+  "include": ["src/**/*", "index.d.ts", "typings.d.ts"],
+  "exclude": ["node_modules"]
+}

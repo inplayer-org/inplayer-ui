@@ -1,0 +1,53 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import StepWizard from './'
+import { StepOne, StepTwo, StepThree, StepFour, steps } from './steps'
+
+<Meta title="StepWizard" component={<StepWizard/>} />
+
+# StepWizard
+
+A software wizard or setup assistant is a user interface type that presents a user with 
+a sequence of dialog boxes that lead the user through a series of well-defined steps. 
+Tasks that are complex, infrequently performed, or unfamiliar may be easier 
+to perform using a wizard.
+
+It requires `steps` array of object which contain `isDisabled`, `isCompleted` and `component`.
+
+
+```jsx
+import { StepWizard } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+    <StepWizard />
+)
+```
+
+<Props of={StepWizard}/>
+
+### steps example:
+```jsx
+    const steps = [
+        { isDisabled: false, isCompleted: true, component: <StepOne/> },
+        { isDisabled: false, isCompleted: false, component: <StepTwo/> },
+        { isDisabled: true, isCompleted: false, component: <StepThree/> },
+        { isDisabled: true, isCompleted: false, component: <StepFour/> },
+      ];
+```
+
+### StepWizard
+<Preview withSource="open">
+  <Story name="default">
+    {() => {
+      const [activeStep, setActiveStep] = useState(0);
+      return(
+        <StepWizard
+          steps={steps}
+          activeStep={activeStep}
+          onStepChange={(step) => setActiveStep(step)}
+        />
+      )
+    }}
+  </Story>
+</Preview>
+

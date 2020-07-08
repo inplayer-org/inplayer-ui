@@ -1,0 +1,89 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Switch from './'
+
+<Meta title="Switch" component={<Switch/>} />
+
+# Switch
+
+
+```jsx
+import { Switch } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+    <Switch />
+)
+```
+
+<Props of={Switch}/>
+
+### Standard
+<Preview withSource="open">
+  <Story name="standard">
+    {() => {
+        const [checked, setChecked] = useState(false);
+        return (
+            <Switch
+                checked={checked}
+                id="toggle1"
+                label="Swipe me!"
+                onChange={() => setChecked(!checked)}
+            />
+        )
+    }}
+  </Story>
+</Preview>
+
+### Checked
+<Preview withSource="open">
+  <Story name="checked">
+    {() => {
+        const [checked, setChecked] = useState(true);
+        return (
+            <Switch
+                checked={checked}
+                id="toggle1"
+                label="Checked by default!"
+                onChange={() => setChecked(!checked)}
+            />
+        )
+    }}
+  </Story>
+</Preview>
+
+### Disabled and not checked
+<Preview withSource="open">
+  <Story name="disable - not checked">
+    {() => {
+        const [checked, setChecked] = useState(false);
+        return (
+            <Switch
+                checked={checked}
+                id="toggle1"
+                label="Disabled and not checked!"
+                onChange={() => setChecked(!checked)}
+                disabled
+            />
+        )
+    }}
+  </Story>
+</Preview>
+
+### Disabled and checked
+<Preview withSource="open">
+  <Story name="disabled - checked">
+    {() => {
+        const [checked, setChecked] = useState(true);
+        return (
+            <Switch
+                checked={checked}
+                id="toggle1"
+                label="Disabled and checked!"
+                onChange={() => setChecked(!checked)}
+                disabled
+            />
+        )
+    }}
+  </Story>
+</Preview>
+

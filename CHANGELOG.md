@@ -2,6 +2,384 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.0-beta.74] - 01-07-2020
+
+### Change
+
+- Dropdown improvement
+
+### Fixes
+
+- Fixed isOutsideRange in DatePickerProps type
+
+# [2.0.0-beta.73] - 25-06-2020
+
+### Change
+
+- Show DatePicker's inner presets on the left
+
+### Change
+
+- Add optional prop to Single Day picker - disable past days
+- Support one day selection on DatePicker
+
+### Fixes
+
+- Conditionally render DatePicker wrapper classes
+
+# [2.0.0-beta.71] - 23-06-2020
+
+### Change
+
+- Improve DatePicker to conditionally show presets
+- Highlight today's date on DatePicker
+
+# [2.0.0-beta.70] - 19-06-2020
+
+### Fixes
+
+- Fix radio button text wrapping
+
+# [2.0.0-beta.69] - 16-06-2020
+
+### Change
+
+- Added onClose event to SingleDay picker
+- Radio button refactor and minor UI change
+- Replace local images with appropriate ones from aws
+
+# [2.0.0-beta.68] - 12-06-2020
+
+### Change
+
+- Remove react-quill and use html-react-parser
+- Sanitize html string using dompurify
+- Open paywall modal on preview themes image click
+- Redesign of buttons and minor styling changes to Header, Card and Table
+
+# [2.0.0-beta.67] - 10-06-2020
+
+### Added
+
+- Add ids to Paywall Previews for easier client manipulation
+
+### Fixes
+
+- UserMenu width and display
+
+# [2.0.0-beta.66] - 03-06-2020
+
+### Change
+
+- Remove font loading
+
+# [2.0.0-beta.65] - 03-06-2020
+
+### Fixes
+
+- Add `sideEffects: false` in package.json for webpack
+
+# [2.0.0-beta.64] - 03-06-2020
+
+### Fixes
+
+- Global styles
+
+# [2.0.0-beta.63] - 01-06-2020
+
+### Added
+
+- Added optional placeholder prop to DayPicker
+- Select options for month and year in DatePicker and DayPicker
+
+### Fixes
+
+- MenuItems options optional
+
+# [2.0.0-beta.62] - 26-05-2020
+
+### Added
+
+- Webpack component code splitting
+
+### Fixes
+
+- Fix Pagination UI appearance for big numbers
+
+### Changes
+
+- Make all previews centered
+
+# [2.0.0-beta.61] - 20-05-2020
+
+### Fixes
+
+- Use Roboto as primary font
+
+# [2.0.0-beta.60] - 19-05-2020
+
+### Fixes
+
+- Remove format from SingleDatePicker
+- Checkbox css update
+
+# [2.0.0-beta.59] - 18-05-2020
+
+### Fixes
+
+- Preview1 - minor css changes
+
+# [2.0.0-beta.58] - 18-05-2020
+
+### Fixes
+
+- Preview1 branding label
+
+# [2.0.0-beta.57] - 18-05-2020
+
+### Changes
+
+- Reverted design (css and class names) for preview 1
+
+# [2.0.0-beta.56] - 15-05-2020
+
+### Fixes
+
+- Incorrectly published version because of NPM being down
+
+# [2.0.0-beta.55] - 15-05-2020
+
+### Fixes
+
+- Remove margin auto from paywall preview
+
+# [2.0.0-beta.54] - 14-05-2020
+
+### Fixes
+
+- Webpack externals
+
+# [2.0.0-beta.53] - 14-05-2020
+
+### Fixes
+
+- Components layout fixes
+
+# [2.0.0-beta.52] - 13-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.51] - 12-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.50] - 12-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.49] - 11-05-2020
+
+### Fixes
+
+- Paywall previews layout improvements
+
+# [2.0.0-beta.48] - 29-04-2020
+
+### Fixes
+
+- Fix loading fonts on every rerender
+
+## Change
+
+- Remove letter-spacing nad text-transform in Label
+
+# [2.0.0-beta.47] - 28-04-2020
+
+### Fixes
+
+- Preview1 remove fixed 100% height
+
+# [2.0.0-beta.46] - 28-04-2020
+
+### Fixes
+
+- Preview1 flex layout improvements
+
+# [2.0.0-beta.45] - 28-04-2020
+
+### Fixes
+
+- Preview1 layout
+
+### Changes
+
+- Use font-weight 300 for Label
+
+# [2.0.0-beta.44] - 27-04-2020
+
+### Added
+
+- Text editor style changes: Set margin to overwrite browser(user agent) fall-back (browsers defaults)
+
+# [2.0.0-beta.43] - 23-04-2020
+
+### Added
+
+- Preview1 classNames because of client implementations based on this classes and ids
+
+# [2.0.0-beta.42] - 16-04-2020
+
+### Change
+
+- Add fix min-width for all preview boxes
+
+# [2.0.0-beta.41] - 14-04-2020
+
+### Fixes
+
+- Add missing icon prop in type definitions of Input
+
+# [2.0.0-beta.40] - 09-04-2020
+
+### Change
+
+- Improve Paywall Previews look
+
+# [2.0.0-beta.39] - 06-04-2020
+
+### Change
+
+- Change position of buy button and remove bold style for title (it will be set in preview asset section)
+
+# [2.0.0-beta.38] - 31-03-2020
+
+### Fixes
+
+- Font loading
+
+# [2.0.0-beta.37] - 27-03-2020
+
+### Fixes
+
+- Fix icon prop type in AccordionPanel
+
+# [2.0.0-beta.36] - 27-03-2020
+
+### Added
+
+- Added optional disabled prop to DatePicker
+- Added icon boolean prop to Switch
+
+### Fixes
+
+- Use ES exports everywhere
+
+# [2.0.0-beta.35] - 25-03-2020
+
+### Added
+
+- Web fonts loader
+
+# [2.0.0-beta.34] - 25-03-2020
+
+### Change
+
+- Modify eslint, stylelint and prettier rules
+
+### Fixes
+
+- Include types in build folder
+
+# [2.0.0-beta.33] - 24-03-2020
+
+### Chore
+
+- Update all npm libs
+
+# [2.0.0-beta.32] - 24-03-2020
+
+### Added
+
+- Add more colors
+
+# [2.0.0-beta.31] - 06-03-2020
+
+### Change
+
+- Add disabled option to DayPicker component
+
+# [2.0.0-beta.30] - 04-03-2020
+
+### Change
+
+- Add full width and height to Paywall Previews
+
+# [2.0.0-beta.29] - 03-03-2020
+
+### Change
+
+- Improve Paywall Previews look and feel
+
+# [2.0.0-beta.28] - 02-03-2020
+
+### Change
+
+- Redesign the Loader component
+
+# [2.0.0-beta.27] - 28-02-2020
+
+### Change
+
+- Set loginFooterLabel as optional prop and add default value
+
+# [2.0.0-beta.26] - 28-02-2020
+
+### Added
+
+- Paywall Preview Templates
+
+# [2.0.0-beta.25] - 06-02-2020
+
+### Change
+
+- Custom pagination component
+
+# [2.0.0-beta.24] - 05-02-2020
+
+### Fix
+
+- Include react and react-dom as externals in webpack config
+
+# [2.0.0-beta.23] - 05-02-2020
+
+### Fix
+
+- Make table body responsive
+
+# [2.0.0-beta.22] - 24-01-2020
+
+### Fix
+
+- Export not exported interfaces
+
+# [2.0.0-beta.21] - 22-01-2020
+
+### Added
+
+- Re-export FocusedInputShape from react-dates
+
+# [2.0.0-beta.20] - 20-01-2020
+
+### Fix
+
+- Render loader on data fetch in table
+
 # [2.0.0-beta.19] - 25-12-2019
 
 ### Added

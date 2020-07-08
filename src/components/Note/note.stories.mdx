@@ -1,0 +1,76 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Note from './'
+
+<Meta title="Note" component={<Note/>} />
+
+# Note
+
+Note is a component for displaying information for notification. <br/>
+The type attribute can be: `informative`, `success`, `warning`, `danger`. If not of the above is added, the `default` note with white background will be displayed.
+
+```jsx
+import { Note } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Note />
+)
+```
+### Props 
+
+<Props of={Note}/>
+
+### Default
+<Preview withSource="open">
+  <Story name="default">
+    <Note
+        title="Just so you know!"
+        text="This block indicates a neutral informative note."
+        icon="info-circle"
+    />
+  </Story>
+</Preview>
+
+### Informative
+<Preview withSource="open">
+  <Story name="informative">
+    <Note
+        type="informative"
+        title="Just so you know!"
+        text="This is used as a note on white backgrounds to give it a little contrast."
+    />
+  </Story>
+</Preview>
+
+### Success
+<Preview withSource="open">
+  <Story name="success">
+    <Note
+        type="success"
+        title="Done!"
+        text="This box indicates a successful or positive action."
+    />
+  </Story>
+</Preview>
+
+### Warning
+<Preview withSource="open">
+  <Story name="warning">
+    <Note
+        type="warning"
+        title="Important note!"
+        text="This box indicates a warning that might need attention."
+    />
+  </Story>
+</Preview>
+
+### Danger
+<Preview withSource="open">
+  <Story name="danger">
+    <Note
+        type="danger"
+        title="Danger!"
+        text="This box indicates a dangerous or potentially negative action."
+    />
+  </Story>
+</Preview>
+

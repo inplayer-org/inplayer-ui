@@ -1,0 +1,86 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Checkbox from './'
+
+<Meta title="Checkbox" component={<Checkbox/>} />
+
+# Checkbox
+
+```jsx
+import { Checkbox } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+    <Checkbox />
+)
+```
+
+### Unchecked - can be changed
+<Preview withSource="open">
+  <Story name="unchecked - change">
+  {() => {
+      const [checked, setChecked] = useState(false);
+  return (
+        <Checkbox 
+            id="1" 
+            checked={checked} 
+            label="Check me!" 
+            onChange={() => setChecked(!checked)} 
+        />
+    )
+  }}
+  </Story>
+</Preview>
+
+### Checked - can be changed
+<Preview withSource="open">
+  <Story name="checked - change">
+  {() => {
+      const [checkedByDefault, setCheckedByDefault] = useState(true);
+  return (
+        <Checkbox
+            id="2"
+            checked={checkedByDefault}
+            label="Checked by default, can be changed"
+            onChange={() => setCheckedByDefault(!checkedByDefault)}
+        />
+    )
+  }}
+  </Story>
+</Preview>
+
+### Checked - cannot be changed
+<Preview withSource="open">
+  <Story name="checked - cannot change">
+    <Checkbox
+        id="3"
+        checked
+        label="Checked by default, cannot be changed"
+        onChange={(e) => console.log(e)}
+      />
+  </Story>
+</Preview>
+
+### Unchecked - disabled
+<Preview withSource="open">
+  <Story name="unchecked - disabled">
+    <Checkbox
+        disabled
+        id="4"
+        label="Disabled and unchecked!"
+        onChange={(e) => console.log(e)}
+      />
+  </Story>
+</Preview>
+
+### Checked - disabled
+<Preview withSource="open">
+  <Story name="checked - disabled">
+    <Checkbox
+        disabled
+        id="5"
+        checked
+        label="Disabled and checked!"
+        onChange={(e) => console.log(e)}
+      />
+  </Story>
+</Preview>

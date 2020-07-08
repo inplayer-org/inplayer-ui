@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Preview1 from './'
+
+<Meta title="Preview1" component={<Preview1/>} />
+
+# Preview1
+
+```jsx
+import { Preview1 } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Preview1 />
+)
+```
+
+<Props of={Preview1}/>
+
+### Preview1 example
+<Preview withSource="open">
+  <Story name="default">
+    <Preview1 />
+  </Story>
+</Preview>
+

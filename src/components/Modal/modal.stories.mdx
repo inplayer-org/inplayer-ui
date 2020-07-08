@@ -1,0 +1,50 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Modal from './'
+import Button from '../Button'
+import { ModalStyles } from './DocsStyle.ts'
+
+<Meta title="Modal" component={<Modal/>} />
+
+# Modal
+
+```jsx
+import { Modal } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Modal />
+)
+```
+
+### Props
+
+<Props of={Modal}/>
+
+### Modal example
+
+<Preview withSource="open">
+  <Story name="modal">
+    {() => {
+        const [opened, setOpened] = useState(false);
+        const closeModal = () => setOpened(false);
+        const openModal = () => setOpened(true);
+        return (
+            <ModalStyles>
+            <Button onClick={openModal}>Open modal</Button>
+            <Modal title="Modal" isModalOpen={opened} closeModal={closeModal}>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloribus illo aliquid
+                tempora dolore a nam, culpa assumenda iure. Dolorem pariatur quos incidunt ullam, animi at
+                dolore perspiciatis repellendus quaerat ad laborum. Nemo, dolor quia! Dolor inventore
+                officia repellat excepturi cupiditate magni delectus itaque omnis eligendi provident vel
+                animi necessitatibus quam qui autem enim, quo dolorem rem hic voluptates? Tenetur error
+                eius nihil placeat suscipit nemo, obcaecati molestias laborum dignissimos nulla numquam
+                ducimus perferendis libero, debitis sint eum maiores quia.
+                </p>
+            </Modal>
+            </ModalStyles>
+        );
+    }}
+  </Story>
+</Preview>
+

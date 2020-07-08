@@ -1,0 +1,91 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Tooltip from './'
+import { TooltipWrapper } from './DocsStyle'
+import Button from '../Button';
+
+<Meta title="Tooltip" component={<Tooltip/>} />
+
+# Tooltip
+
+Tooltip a is a component for displaying additional information on hover some element.
+The position of the tooltip attribute can be: `up`, `down`, `right`, `left`.
+
+```jsx
+import { Tooltip } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Tooltip />
+)
+```
+
+### Props
+
+<Props of={Tooltip}/>
+
+### Default Tooltip
+<Preview withSource="open">
+  <Story name="default">
+    <TooltipWrapper>
+        <Tooltip content="😎">
+        <Button>Hover me!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+### Left Tooltip
+<Preview withSource="open">
+  <Story name="left">
+    <TooltipWrapper>
+        <Tooltip content="Tooltip at the left" placement="left">
+            <Button>Hover hover!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+### Right Tooltip
+<Preview withSource="open">
+  <Story name="right">
+    <TooltipWrapper>
+        <Tooltip content="Tooltip at the right" placement="right">
+            <Button>Hover me!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+### Bottom Tooltip
+<Preview withSource="open">
+  <Story name="bottom">
+    <TooltipWrapper>
+        <Tooltip content={`Tooltip at the bottom\nTooltip at the bottom`} placement="bottom">
+            <Button>Hover me!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+### Custom color Tooltip
+<Preview withSource="open">
+  <Story name="color">
+    <TooltipWrapper>
+        <Tooltip content="Tooltip at the left" placement="left" background="red">
+            <Button>Hover me!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+### Click Tooltip
+<Preview withSource="open">
+  <Story name="click">
+    <TooltipWrapper>
+        <Tooltip content="Hello!" behavior="click" placement="right">
+            <Button>Click me!</Button>
+        </Tooltip>
+    </TooltipWrapper>
+  </Story>
+</Preview>
+
+

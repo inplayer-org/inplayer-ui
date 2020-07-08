@@ -1,51 +1,59 @@
 {
   "root": true,
-  "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react",
-    "plugin:flowtype/recommended"
-  ],
-  "plugins": [
-    "react",
-    "jest",
-    "prettier",
-    "flowtype"
-  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module",
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "impliedStrict": true,
-      "classes": true
+      "jsx": true
     }
   },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "plugins": ["react-hooks", "@typescript-eslint"],
   "env": {
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true,
-    "jquery": true,
-    "jest": true
+    "node": true
   },
   "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack.config.js"
-      }
+    "react": {
+      "version": "detect"
     }
   },
   "rules": {
+    // plugin:react rules
     "react/sort-comp": 0,
     "react/default-props-match-prop-types": 0,
     "react/no-danger": 0,
-    "react/prop-types": "warn",
+    "react/prop-types": 0,
     "react/no-did-update-set-state": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-curly-newline": 0,
+    "react/display-name": 1,
+    "react/no-array-index-key": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-unescaped-entities": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    // jsx-a11y rules
     "jsx-a11y/mouse-events-have-key-events": 0,
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/label-has-for": 0,
+    // eslint rules
     "import/no-extraneous-dependencies": 0,
     "linebreak-style": "off",
     "no-debugger": 0,
@@ -62,10 +70,7 @@
         "destructuring": "all"
       }
     ],
-    "arrow-body-style": [
-      2,
-      "as-needed"
-    ],
+    "arrow-body-style": [2, "as-needed"],
     "no-unused-expressions": [
       2,
       {
@@ -88,36 +93,13 @@
     "import/extensions": 0,
     "no-underscore-dangle": 0,
     "consistent-return": 0,
-    "react/display-name": 1,
-    "react/no-array-index-key": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/no-unescaped-entities": 0,
     "jsx-a11y/accessible-emoji": 0,
-    "react/state-in-constructor": 0,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
     "radix": 0,
     "no-shadow": [
       2,
       {
         "hoist": "all",
-        "allow": [
-          "resolve",
-          "reject",
-          "done",
-          "next",
-          "err",
-          "error"
-        ]
+        "allow": ["resolve", "reject", "done", "next", "err", "error"]
       }
     ],
     "quotes": [
@@ -128,27 +110,24 @@
         "allowTemplateLiterals": true
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 100,
-        "endOfLine": "auto"
-      }
-    ],
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": [
       "warn",
       {
-        "aspects": [
-          "invalidHref"
-        ]
+        "aspects": ["invalidHref"]
       }
     ],
-    "no-cond-assign": [
-      "error",
-      "except-parens"
-    ]
+    "no-cond-assign": ["error", "except-parens"],
+    "react-hooks/rules-of-hooks": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/no-unresolved": "off",
+    "import/named": "off",
+    "@typescript-eslint/ban-ts-ignore": "warn",
+    "@typescript-eslint/interface-name-prefix": "warn"
   }
 }

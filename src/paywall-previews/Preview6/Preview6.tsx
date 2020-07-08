@@ -1,0 +1,121 @@
+import React from 'react';
+import styled from 'styled-components';
+
+// Images
+import { FaLock } from 'react-icons/fa';
+
+// Colors
+import colors from '../../theme/colors';
+
+// Components
+import PreviewText from '../shared/PreviewText';
+import {
+  StyledPreviewBox,
+  ImageWrapper,
+  ItemDetails,
+  ButtonWrapper,
+  PreviewFooter,
+  IconHolder,
+  StyledBuyButton,
+} from './styled';
+import { PreviewFooterLink } from '../shared/PreviewComponents';
+
+// Types
+import Branding from '../types/branding';
+
+const LockIcon = styled(FaLock)`
+  color: ${({ theme }) => theme.palette.text.light};
+`;
+
+type Props = {
+  /**
+   * Branding type
+   */
+  branding?: Branding;
+  /**
+   * Minimum width
+   */
+  minWidth?: string;
+  /**
+   * Minimum height
+   */
+  minHeight?: string;
+  /**
+   * Preview height
+   */
+  height?: string;
+  /**
+   * Preview width
+   */
+  width?: string;
+  /**
+   * Login footer label
+   */
+  loginFooterLabel?: string;
+  /**
+   * Whether the asset is restricted or not
+   */
+  isRestrictedAsset?: boolean;
+  /**
+   * Function which handles the modal state changes
+   */
+  handleOpenModal?: (e: any) => any;
+};
+
+const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
+const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
+
+const Preview6 = ({
+  branding: {
+    paywall_cover_photo: imageUrl = previewImg,
+    preview_title: title = '<h3>Asset title</h3>',
+    preview_description: description = '<p>Asset description</p>',
+    preview_button_label: buttonLabel = 'Buy',
+    preview_buttons_bg_color: buttonBgColor = colors.green,
+    preview_buttons_text_color: buttonTextColor = colors.white,
+    inplayer_protected_label: hasProtectedByLabel = true,
+  } = {},
+  handleOpenModal,
+  minWidth = '250px',
+  minHeight = '',
+  height = '',
+  width = '',
+  isRestrictedAsset = false,
+  loginFooterLabel = 'Already have access? Login with your InPlayer account',
+}: Props) => {
+  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  return (
+    <StyledPreviewBox
+      id="preview-container"
+      minWidth={minWidth}
+      minHeight={minHeight}
+      width={width}
+      height={height}
+    >
+      <ImageWrapper backgroundImage={image} onClick={handleOpenModal} />
+      <ItemDetails>
+        <PreviewText value={title} />
+        <PreviewText value={description} />
+      </ItemDetails>
+      <ButtonWrapper>
+        <StyledBuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {buttonLabel}
+        </StyledBuyButton>
+      </ButtonWrapper>
+      <PreviewFooter>
+        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+          {loginFooterLabel}
+        </PreviewFooterLink>
+        <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
+          <LockIcon />
+        </IconHolder>
+      </PreviewFooter>
+    </StyledPreviewBox>
+  );
+};
+
+export default Preview6;

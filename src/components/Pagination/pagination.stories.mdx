@@ -1,0 +1,41 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Pagination from './'
+
+<Meta title="Pagination" component={<Pagination/>} />
+
+# Pagination
+
+Very easy to use. Just provide `props` with total amount of things that you want to display on the page.
+
+```jsx
+import { Pagination } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Pagination />
+)
+```
+
+### Props 
+
+<Props of={Pagination}/>
+
+### Pagination example
+<Preview withSource="open">
+  <Story name="pagination">
+    {() => {
+        const [page, setPage] = useState(1);
+        const onPageChange = (data) => setPage(data.selected);
+        return(
+            <Pagination
+                onPageChange={(data) => onPageChange(data)}
+                totalItems={50}
+                itemsPerPage={5}
+                numberOfPagesDisplayed={5}
+                startPage={page}
+            />
+        )
+    }}
+  </Story>
+</Preview>
+
