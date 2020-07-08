@@ -24,7 +24,7 @@
   "scripts": {
     "start": "yarn run storybook",
     "storybook": "start-storybook -p 3001",
-    "builds:torybook": "build-storybook -c .storybook -o build",
+    "build:storybook": "build-storybook -c .storybook -o docs",
     "clean:dist": "rimraf ./dist",
     "build": "yarn run clean:dist && npx rollup -c",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
