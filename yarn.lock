@@ -2354,9 +2354,9 @@
     "@types/react" "*"
 
 "@types/react-dates@^17.1.12":
-  version "17.1.12"
-  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-17.1.12.tgz#e680c5e67829ce21b81f1e217e287198a573a05a"
-  integrity sha512-YD2lSO+/dwv+Z8CtFWyeUOaSoBHrhxbmLH1Zk/lJ0/H0yzZ146lKyFLJ6kySnqYrVM/TlClTIKaz8ETCLHbsBg==
+  version "17.1.13"
+  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-17.1.13.tgz#d09c1cff460d29c216d94ffe33eacba2da3e020e"
+  integrity sha512-vIjerw/GQk9nzcTu2GKDWp8ZGXIKRaK59ioGzK8bCLq696cDxkl91f3sLjSOq6dTXGVB3rDBEpdy8Wiq6C0SMA==
   dependencies:
     "@types/react" "*"
     moment "^2.26.0"
