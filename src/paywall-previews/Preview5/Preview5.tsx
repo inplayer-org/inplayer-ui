@@ -110,10 +110,10 @@ const Preview5 = ({
           <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TitleHolder>
-          <PreviewText value={previewTitle} readOnly />
+          <PreviewText value={previewTitle} />
         </TitleHolder>
         <DescriptionHolder>
-          <PreviewText value={previewDescription} readOnly />
+          <PreviewText value={previewDescription} />
         </DescriptionHolder>
       </ItemDetails>
     </StyledPreviewBox>
