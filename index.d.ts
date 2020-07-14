@@ -146,10 +146,7 @@ export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 export interface NoteProps {
   title: string;
   text: string;
-  icon: string;
   type: NoteType;
-  className?: string;
-  style?: CSSProperties;
 }
 
 export declare const Note: FunctionComponent<NoteProps>;
