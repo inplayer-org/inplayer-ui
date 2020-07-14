@@ -1150,10 +1150,10 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
-  version "7.10.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
-  integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
+  integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -9149,7 +9149,7 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-pacote@^11.1.6:
+pacote@^11.1.10:
   version "11.1.10"
   resolved "https://registry.yarnpkg.com/pacote/-/pacote-11.1.10.tgz#cbd56a5a60c9cf472bc8ea7ba87112d749655dd4"
   integrity sha512-xJSSSxcHLo1CZJESvIZ2hbC5/5WP2oDHeUeTV2FvVDPOZG7+ixbxnV0n3TkdaUqlbC0RwnwMQ3wkJ/YywYM0Cg==
@@ -10913,18 +10913,18 @@ rollup-plugin-copy@^3.3.0:
     is-plain-object "^3.0.0"
 
 rollup-plugin-filesize@^9.0.0:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-filesize/-/rollup-plugin-filesize-9.0.1.tgz#bae2408f008df518ee2bdaab4d234dc4272bc1da"
-  integrity sha512-k25SZsoFTaIwNCSbSU7401OyJIO+98Wa8sKtnUxcDiZgw2wGSSJ7+FhEYRpbIu1c2EXnvHJx/DJYGohG4lOmAw==
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-filesize/-/rollup-plugin-filesize-9.0.2.tgz#1470bb93d40dd0c2a5381cae58b8b7106f13d185"
+  integrity sha512-UB+pMETOAxo79aINL+Lt7NmUJa6x6vJjtlmBco9NhSHhpnYaKdGGSx1QuuUuo5LlBXhQxrUURYJbF/B95Vt6Hg==
   dependencies:
-    "@babel/runtime" "^7.9.6"
+    "@babel/runtime" "^7.10.3"
     boxen "^4.2.0"
     brotli-size "4.0.0"
     colors "^1.4.0"
     filesize "^6.1.0"
     gzip-size "^5.1.1"
-    pacote "^11.1.6"
-    terser "^4.6.12"
+    pacote "^11.1.10"
+    terser "^4.8.0"
 
 rollup-plugin-local-resolve@^1.0.7:
   version "1.0.7"
@@ -12024,10 +12024,10 @@ terser-webpack-plugin@^2.1.2:
     terser "^4.6.12"
     webpack-sources "^1.4.3"
 
-terser@^4.1.2, terser@^4.6.12, terser@^4.6.3, terser@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.7.0.tgz#15852cf1a08e3256a80428e865a2fa893ffba006"
-  integrity sha512-Lfb0RiZcjRDXCC3OSHJpEkxJ9Qeqs6mp2v4jf2MHfy8vGERmVDuvjXdd/EnP5Deme5F2yBRBymKmKHCBg2echw==
+terser@^4.1.2, terser@^4.6.12, terser@^4.6.3, terser@^4.7.0, terser@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.8.0.tgz#63056343d7c70bb29f3af665865a46fe03a0df17"
+  integrity sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
