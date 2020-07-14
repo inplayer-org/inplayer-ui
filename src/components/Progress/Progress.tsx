@@ -26,7 +26,7 @@ type RCProgressProps = {
   /**
    * Stroke color
    */
-  strokeColor?: string | string[] | object;
+  strokeColor?: string | string[] | Record<string, unknown>;
   /**
    * Color for lighter trail stroke underneath the actual progress path
    */
