@@ -172,7 +172,7 @@ const DatePicker = ({
         break;
       case PERIODS.ALL:
       case INNERPERIODS.ALL_TIME:
-        startDate = startDate.subtract(2, 'year');
+        startDate = moment('2012-01-01').startOf('day');
         interval = 'month';
         break;
       case INNERPERIODS.THIS_WEEK:
