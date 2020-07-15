@@ -2,9 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.3] - 15-07-2020
+
+### Fixes
+
+- Use Math.floor instead of Math.ceil in Pagination component
+
 # [2.0.2] - 15-07-2020
 
-### Changes
+### Fixes
 
 - Set items limit to 10.000 in pagination
 
