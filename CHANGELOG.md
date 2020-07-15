@@ -2,6 +2,57 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.1] - 15-07-2020
+
+### Fixes
+
+- ESLint TypeScript errors/warnings
+
+# [2.0.0] - 14-07-2020
+
+### Added
+
+- Paywall Previews Templates
+- Added optional placeholder prop to DayPicker
+- Select options for month and year in DatePicker and DayPicker
+- Added optional disabled prop to DatePicker
+- Added icon boolean prop to Switch
+- Table renderEmptyTable boolean prop
+- Table Header section
+- Avatar component
+- Custom Pagination Component
+- Add more colors
+
+### Change
+
+- Show DatePicker's inner presets on the left
+- Add optional prop to Single Day picker - disable past days
+- Support one day selection on DatePicker
+- Improve DatePicker to conditionally show presets
+- Highlight today's date on DatePicker
+- Added onClose event to SingleDay picker
+- Radio button refactor and minor UI change
+- Replace local images with appropriate ones from aws
+- Remove react-quill and use html-react-parser
+- Sanitize html string using dompurify
+- Open paywall modal on preview themes image click
+- Redesign of buttons and minor styling changes to Header, Card and Table
+- Add ids to Paywall Previews for easier client manipulation
+- UserMenu width and display
+- Remove font loading
+- Add disabled option to DayPicker component
+- Rename InPlayer icons with more meaningful names
+- Added optional activePeriod prop to the date picker where user defines which presets period to be selected
+- Added CUSTOM period which is used when user chose custom dates from date picker
+- Added style for active date preset
+- Availability to add default or custom presets to date picker and customAllTimeDate
+- Removed margin on Typography
+- Added animation on accordion open/close
+- Do not show the arrow on disabled accordion panel
+- Removed padding from Accordion
+- Accordion api change, removed renderActionButton and renderFooterLink options
+- Add arrow up/down in accordion header to show whether accordion is open or close
+
 # [2.0.0-beta.74] - 01-07-2020
 
 ### Change
