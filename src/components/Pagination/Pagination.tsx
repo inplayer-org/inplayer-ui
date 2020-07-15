@@ -39,7 +39,7 @@ const Pagination = ({
   const [visiblePages, setVisiblePages] = useState<number[]>([]);
 
   const totalItemsNumber = Math.min(totalItems, itemsLimit);
-  const totalPages = Math.ceil(totalItemsNumber / itemsPerPage);
+  const totalPages = Math.floor(totalItemsNumber / itemsPerPage);
   const numberOfPagesDisplayedScaled =
     totalPages < numberOfPagesDisplayed ? totalPages : numberOfPagesDisplayed;
   const isVisibleLess = !visiblePages.some((index) => index === 1);
