@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.2] - 15-07-2020
+
+### Changes
+
+- Set items limit to 10.000 in pagination
+
 # [2.0.1] - 15-07-2020
 
 ### Fixes
