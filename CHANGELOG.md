@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.1] - 15-07-2020
+
+### Fixes
+
+- ESLint TypeScript errors/warnings
+
 # [2.0.0] - 14-07-2020
 
 ### Added
