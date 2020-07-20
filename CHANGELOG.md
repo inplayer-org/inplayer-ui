@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.4] - 20-07-2020
+
+### Fixes
+
+- Use Math.floor only if totalItemsNumber is 10.000 in Pagination component
+
 # [2.0.3] - 15-07-2020
 
 ### Fixes
