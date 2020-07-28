@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.0.5] - 28-07-2020
+
+### Changes
+
+- Custom toggle switch component
+- Removed icon prop from toggle switch
+
 # [2.0.4] - 20-07-2020
 
 ### Fixes
