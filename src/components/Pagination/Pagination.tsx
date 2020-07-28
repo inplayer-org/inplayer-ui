@@ -25,8 +25,8 @@ type PaginationProps = {
   itemsPerPage?: number;
 };
 
-// Kibana has limit of 9990 pages
-const pagesLimit = 9990;
+// Kibana has limit of 10000 items
+const itemsLimit = 10000;
 
 const Pagination = ({
   onPageChange,
@@ -38,8 +38,11 @@ const Pagination = ({
   const [activePage, setActivePage] = useState(startPage);
   const [visiblePages, setVisiblePages] = useState<number[]>([]);
 
-  let totalPages = Math.ceil(totalItems / itemsPerPage);
-  totalPages = Math.min(totalPages, pagesLimit);
+  const totalItemsNumber = Math.min(totalItems, itemsLimit);
+  const totalPages =
+    totalItemsNumber === 10000
+      ? Math.floor(totalItemsNumber / itemsPerPage)
+      : Math.ceil(totalItemsNumber / itemsPerPage);
   const numberOfPagesDisplayedScaled =
     totalPages < numberOfPagesDisplayed ? totalPages : numberOfPagesDisplayed;
   const isVisibleLess = !visiblePages.some((index) => index === 1);
@@ -53,7 +56,6 @@ const Pagination = ({
     } else if (startPage - 1 <= 1) {
       minVisiblePage = 1;
     } else minVisiblePage = startPage - 1;
-
     // Create the pages that are visible for selection
     const initialPagesVisible = Array.from(Array(numberOfPagesDisplayedScaled).keys()).map(
       (i) => i + minVisiblePage
@@ -107,7 +109,9 @@ const Pagination = ({
   const goToEnd = () => {
     setActivePage(totalPages);
     const endPages = Array.from(
-      Array(Math.min(Math.ceil(totalItems / itemsPerPage), numberOfPagesDisplayedScaled)).keys()
+      Array(
+        Math.min(Math.ceil(totalItemsNumber / itemsPerPage), numberOfPagesDisplayedScaled)
+      ).keys()
     )
       .map((number) => totalPages - number)
       .reverse();
@@ -118,13 +122,15 @@ const Pagination = ({
   const goToStart = () => {
     setActivePage(1);
     const startPages = Array.from(
-      Array(Math.min(Math.ceil(totalItems / itemsPerPage), numberOfPagesDisplayedScaled)).keys()
+      Array(
+        Math.min(Math.ceil(totalItemsNumber / itemsPerPage), numberOfPagesDisplayedScaled)
+      ).keys()
     ).map((number) => number + 1);
     setVisiblePages(startPages);
     onPageChange(1);
   };
 
-  if (totalItems === 0) {
+  if (totalItemsNumber === 0) {
     return null;
   }
 

@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.0] - 28-07-2020
+
+### Changes
+
+- Custom Toggle/Switch component
+- Removed icon prop from Toggle/Switch
+
+# [2.0.4] - 20-07-2020
+
+### Fixes
+
+- Use Math.floor only if totalItemsNumber is 10.000 in Pagination component
+
+# [2.0.3] - 15-07-2020
+
+### Fixes
+
+- Use Math.floor instead of Math.ceil in Pagination component
+
+# [2.0.2] - 15-07-2020
+
+### Fixes
+
+- Set items limit to 10.000 in pagination
+
 # [2.0.1] - 15-07-2020
 
 ### Fixes
