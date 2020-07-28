@@ -83,7 +83,6 @@ const Slider = styled.span`
 
 const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps) => {
   const onToggleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target, e.target.checked);
     if (e.target) {
       onChange(e.target.checked);
     }
