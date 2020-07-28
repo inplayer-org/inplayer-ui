@@ -546,9 +546,6 @@ export interface SwitchProps {
   id: string;
   label: string;
   onChange: (checked: boolean) => any;
-  className?: string;
-  style?: CSSProperties;
-  icons?: boolean;
 }
 
 export declare const Switch: FunctionComponent<SwitchProps>;
