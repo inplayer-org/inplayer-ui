@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.1] - 29-07-2020
+
+### Changes
+
+- Display next 100 years in date picker select
+
 # [2.1.0] - 28-07-2020
 
 ### Changes
