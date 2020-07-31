@@ -121,6 +121,7 @@ export interface NavbarProps {
   logo?: ReactElement<any> | string;
   className?: string;
   style?: CSSProperties;
+  onLogoClick?: () => any;
 }
 
 interface NavbarState {
