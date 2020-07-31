@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.2] - 31-07-2020
+
+### Changes
+
+- Added optional onLogoClick prop to Navbar
+
 # [2.1.1] - 29-07-2020
 
 ### Changes
