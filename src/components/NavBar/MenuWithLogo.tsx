@@ -5,9 +5,10 @@ type Props = {
   logo?: string;
   children: ReactNode;
   onLogoClick?: () => any;
+  logoTitle?: string;
 };
 
-const MenuWithLogo = ({ logo, children, onLogoClick }: Props) => {
+const MenuWithLogo = ({ logo, children, onLogoClick, logoTitle }: Props) => {
   const onClick = (e: any) => {
     if (onLogoClick) {
       e.stopPropagation();
@@ -16,7 +17,7 @@ const MenuWithLogo = ({ logo, children, onLogoClick }: Props) => {
   };
   return (
     <LogoMenuContainer>
-      <NavbarLogo src={logo} onClick={onClick} />
+      <NavbarLogo src={logo} onClick={onClick} title={logoTitle} />
       <MenuContainer>{children}</MenuContainer>
     </LogoMenuContainer>
   );

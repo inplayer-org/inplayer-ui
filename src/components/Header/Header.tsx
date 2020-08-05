@@ -62,7 +62,7 @@ const Header = ({
   <Container>
     {title && <Title>{title}</Title>}
     {tabNavigationProps && <TabNavigation {...tabNavigationProps} />}
-    <MenuWrapper>
+    <MenuWrapper id="user-menu">
       {additionalUserMenuProps && <UserMenu {...additionalUserMenuProps} />}
       {userMenuProps && <UserMenu {...userMenuProps} />}
     </MenuWrapper>

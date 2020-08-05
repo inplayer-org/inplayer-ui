@@ -122,6 +122,7 @@ export interface NavbarProps {
   className?: string;
   style?: CSSProperties;
   onLogoClick?: () => any;
+  logoTitle?: string;
 }
 
 interface NavbarState {
