@@ -2,11 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.1.2] - 31-07-2020
+# [2.1.2] - 05-08-2020
 
 ### Changes
 
-- Added optional onLogoClick prop to Navbar
+- Added optional onLogoClick and logoTitle props to Navbar
+- Added ids on TabNavigation tabs
 
 # [2.1.1] - 29-07-2020
 
