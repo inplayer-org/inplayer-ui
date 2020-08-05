@@ -59,7 +59,12 @@ export type Props = {
 const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
   <TabContainer>
     {tabs.map((tab, index) => (
-      <Tab key={tab.title} onClick={() => onTabClick(index)} active={selectedTabIndex === index}>
+      <Tab
+        id={tab.title.toLowerCase()}
+        key={tab.title}
+        onClick={() => onTabClick(index)}
+        active={selectedTabIndex === index}
+      >
         {tab.title}
       </Tab>
     ))}
