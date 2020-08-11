@@ -50,7 +50,7 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-docs": "^6.0.0",
     "@storybook/addon-info": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/react": "^5.3.19",
