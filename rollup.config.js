@@ -1,5 +1,5 @@
 import path from 'path';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
@@ -27,19 +27,12 @@ const PLUGINS = [
   }),
   commonjs(),
   babel({
-    exclude: 'node_modules/**',
+    babelrc: false,
+    babelHelpers: 'bundled',
+    include: ['src/**/*'],
+    exclude: /node_modules/,
+    configFile: './babel.config.js',
     extensions,
-    presets: [
-      ['@babel/preset-env', { modules: false }],
-      '@babel/preset-react',
-      '@babel/preset-typescript',
-    ],
-    plugins: [
-      '@babel/plugin-proposal-class-properties',
-      '@babel/plugin-transform-classes',
-      '@babel/plugin-proposal-private-methods',
-      'babel-plugin-styled-components',
-    ],
   }),
   terser(),
   filesize(),
