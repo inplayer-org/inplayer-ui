@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.3] - 11-08-2020
+
+### Fixes
+
+- Fix override of Preview1 styles
+
 # [2.1.2] - 10-08-2020
 
 ### Changes
