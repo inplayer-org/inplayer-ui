@@ -91,6 +91,7 @@
     "react-icons": "^3.10.0",
     "react-paginate": "^6.3.2",
     "rimraf": "^3.0.2",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-filesize": "^9.0.2",
     "rollup-plugin-terser": "^7.0.0",
