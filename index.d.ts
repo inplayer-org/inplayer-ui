@@ -573,7 +573,6 @@ export type TypographyModifier = 'textPrimary' | 'textDanger' | 'textSuccess' | 
 
 export interface TypographyProps {
   variant: TypographyVariant;
-  description?: boolean;
   children: ReactNode;
   className?: string;
   modifiers?: Array<TypographyModifier>;

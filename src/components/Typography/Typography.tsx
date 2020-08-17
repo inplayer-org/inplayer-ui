@@ -2,7 +2,6 @@ import React, { ReactChild } from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 import { textPrimary, textDanger, textSuccess, textWarning } from '../../modifiers';
-import colors from '../../theme/colors';
 
 const typographyModifiers = {
   textPrimary,
@@ -15,7 +14,6 @@ export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
 type ParagraphProps = {
   color: string;
-  description: boolean;
   modifiers: any;
 };
 
@@ -35,18 +33,12 @@ type HeadingProps = {
 const Paragraph = styled.p<ParagraphProps>`
   font-size: ${({ theme }) => theme.font.sizes.medium};
   color: ${({ color, theme }) => color || `${theme.palette.text.main}`};
-  ${({ description, theme: { palette, font } }) =>
-    description &&
-    `
-     color: ${palette.text.light};
-     font-size:${font.sizes.large};
-   `}
   ${applyStyleModifiers(typographyModifiers)}
 `;
 
 const Heading = styled.h1<HeadingProps>`
   font-weight: ${({ theme }) => theme.font.weights.thin};
-  color: ${({ color }) => color || colors.blue};
+  color: ${({ color, theme }) => color || `${theme.palette.text.main}`};
   font-size: ${({ theme, variant }) => theme.font.sizes[variant]};
   ${applyStyleModifiers(typographyModifiers)}
 `;
@@ -78,19 +70,13 @@ export type Props = {
 const Typography = ({
   variant = 'h1',
   children,
-  description = false,
   modifiers = [],
   color = '',
   className = '',
 }: Props) => {
   if (variant === 'p') {
     return (
-      <Paragraph
-        className={className}
-        description={description}
-        modifiers={modifiers}
-        color={color}
-      >
+      <Paragraph className={className} modifiers={modifiers} color={color}>
         {children}
       </Paragraph>
     );
