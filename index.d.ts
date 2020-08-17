@@ -679,6 +679,7 @@ interface IColors {
   emerald: '#2ecc71';
   peterRiver: '#3498db';
   amethyst: '#9b59b6';
+  asphalt: '#282c35',
   wetAsphalt: '#34495e';
   greenSea: '#16a085';
   nephritis: '#27ae60';
