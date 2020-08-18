@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.0] - 18-08-2020
+
+### Added
+
+- Theme background color palette
+
 # [2.1.2] - 10-08-2020
 
 ### Changes
