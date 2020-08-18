@@ -4,7 +4,7 @@ import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
 import colors from '../../theme/colors';
 
-export const InplayerPreviewBox = styled.div`
+export const InPlayerPreviewBox = styled.div`
   background: ${({ theme }) => theme.palette.background.main};
   color: ${({ theme }) => theme.palette.text.main};
   width: 100%;

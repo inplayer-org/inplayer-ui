@@ -10,7 +10,7 @@ import Branding from '../types/branding';
 import { OverlayLabel } from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
 import {
-  InplayerPreviewBox,
+  InPlayerPreviewBox,
   LockIcon,
   ImageHolder,
   PaywallExplain,
@@ -60,7 +60,7 @@ const Preview1 = ({
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
 
   return (
-    <InplayerPreviewBox className="inplayer-preview-box">
+    <InPlayerPreviewBox className="inplayer-preview-box">
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
         <PreviewImage
@@ -104,7 +104,7 @@ const Preview1 = ({
           </a>
         </div>
       </InplayerFooter>
-    </InplayerPreviewBox>
+    </InPlayerPreviewBox>
   );
 };
 
