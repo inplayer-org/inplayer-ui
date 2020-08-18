@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
-import { PreviewBox } from '../shared/PreviewComponents';
 import colors from '../../theme/colors';
 
 export const InplayerPreviewBox1 = styled.div`
