@@ -61,8 +61,7 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
   padding: 1rem 3%;
   width: 100%;
   box-sizing: border-box;
-  background: ${({ theme, disabled }) =>
-    disabled ? colors.lightGray : theme.palette.background.main};
+  background: ${ifProp('disabled', colors.gray, prop('theme.palette.primary.main'))};
   ${prop('imageWidth', '100%')};
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   border-bottom: 1px solid ${colors.lightGray};
