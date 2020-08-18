@@ -71,7 +71,6 @@ const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.
 
 const Preview7 = ({
   branding: {
-    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: hasProtectedByLabel = true,
     paywall_cover_photo: imageUrl = previewImg,
     preview_title: previewTitle = `<h3>Asset title</h3>`,
@@ -91,13 +90,12 @@ const Preview7 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+
   return (
     <StyledPreviewBox
       id="preview-container"
       minWidth={minWidth}
       minHeight={minHeight}
-      hasPreviewTopBorder={hasPreviewTopBorder}
-      circleImage
       width={width}
       height={height}
     >
@@ -130,7 +128,7 @@ const Preview7 = ({
           </StyledBuyButton>
         </ButtonWrapper>
       )}
-      <StyledPreviewFooter color={colors.fontGray}>
+      <StyledPreviewFooter>
         <PreviewFooterLink href="#login" onClick={handleOpenModal}>
           {loginFooterLabel}
         </PreviewFooterLink>

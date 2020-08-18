@@ -16,6 +16,7 @@ import {
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '500px')};
+  padding: 26px 3%;
   border-radius: 8px 8px 3px 3px;
   display: flex;
   flex-direction: column;
