@@ -27,6 +27,7 @@ export const StyledImageWrapper = styled(ImageHolder)`
   max-height: 250px;
   width: 250px;
   margin: auto;
+  background: ${({ theme }) => theme.palette.background.main};
 `;
 
 export const StyledPreviewImage = styled(PreviewImage)<any>`
