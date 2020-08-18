@@ -52,10 +52,10 @@ export const PageBox = styled.button`
   margin: 0 0.2rem;
   text-align: center;
   border: 1px solid ${colors.gray};
-  color: rgba(0, 0, 0, 0.65);
+  color: ${({ theme }) => theme.palette.text.main}
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: ${colors.white};
+  background-color: ${({ theme }) => theme.palette.background.main};
   outline: none;
   ${ifProp(
     'hideBorder',

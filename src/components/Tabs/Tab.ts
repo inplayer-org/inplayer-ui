@@ -26,9 +26,9 @@ const Tab = styled.div<{ selected: boolean }>`
       color: ${({ theme }) => theme.palette.primary.main};
     `,
     css`
-      background: transparent;
+      background: ${({ theme }) => theme.palette.background.main};
 
-      color: ${({ theme }) => theme.palette.text.light};
+      color: ${({ theme }) => theme.palette.text.main};
 
       &:hover {
         color: ${({ theme }) => theme.palette.text.main};

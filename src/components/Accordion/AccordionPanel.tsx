@@ -35,7 +35,7 @@ const AccordionPanelContainer = styled.div<AccordionPanelContainerProps>`
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   transition: ease 500ms height;
   ${ifProp(
     'isActive',
