@@ -12,7 +12,7 @@ export const AccordionWrapper = styled.div<AccordionWrapperProps>`
   ${({ width }) => width && `width: ${width}`};
   margin-left: 0%;
   position: relative;
-  background: ${({ theme }) => theme.palette.background.main};
+  background: ${colors.white};
   border-left: 1px solid ${colors.gray};
   box-sizing: border-box;
   border-top: 1px solid ${colors.gray};
