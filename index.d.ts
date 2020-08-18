@@ -599,6 +599,11 @@ export interface Theme {
       light?: string;
       disabled?: string;
     };
+    background: {
+      main: string;
+      light?: string;
+      disabled?: string;
+    };
   };
   dimensions: {
     baseGrid: number;
