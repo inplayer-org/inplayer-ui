@@ -4,18 +4,11 @@ import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
 import colors from '../../theme/colors';
 
-interface PreviewBoxProps {
-  hasPreviewTopBorder: boolean;
-}
-
-export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
+export const InPlayerPreviewBox = styled.div`
+  background: ${({ theme }) => theme.palette.background.main};
+  color: ${({ theme }) => theme.palette.text.main};
   width: 100%;
   max-width: 100vh;
-  background: ${ifProp(
-    'hasPreviewTopBorder',
-    `url('https://assets.inplayer.com/images/paywall/ip-graphic-border.jpg') top no-repeat ${colors.white}`,
-    `${colors.white}`
-  )};
   margin: 24px auto;
   box-sizing: border-box;
   border: 1px solid #e9edef;
@@ -26,10 +19,8 @@ export const InplayerPreviewBox = styled.div<PreviewBoxProps>`
   overflow: hidden;
   font-size: 16px;
   line-height: 20px;
-  color: ${colors.black};
   text-align: left;
   font-weight: 300;
-  padding: 18px 3%;
 
   @media screen and (max-height: 600px) {
     max-width: 580px;
@@ -122,7 +113,8 @@ export const InplayerWhiteLogo = styled.div`
 export const ItemDetails = styled.div`
   display: inline-block;
   vertical-align: middle;
-  width: 69%;
+  width: 59%;
+  padding: 18px 0 18px 3%;
 
   h1,
   h2,
@@ -133,6 +125,7 @@ export const ItemDetails = styled.div`
   h7 {
     margin: 20px 0;
     color: rgba(0, 0, 0, 0.7);
+    color: ${({ theme }) => theme.palette.text.main};
     text-align: center;
     font-weight: 300;
   }
@@ -155,6 +148,7 @@ export const BuyButtonWrapper = styled.div`
   vertical-align: middle;
   text-align: right;
   width: 30%;
+  padding: 18px 0 18px 3%;
 
   @media screen and (max-width: 600px) {
     width: 100%;

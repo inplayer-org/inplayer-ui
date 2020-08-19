@@ -10,16 +10,16 @@ import Grid from '../Grid';
 
 const TableWithHeaderSectionContainer = styled(Grid.Container)<any>`
   padding: 1rem;
-  background-color: ${colors.white};
+  background-color: ${({ theme }) => theme.palette.background.main};
   box-shadow: 0 0 4px 1px ${transparentize(0.87, colors.fontDarkGray)};
   border-radius: 5px;
 `;
 
 const TableWrapper = styled.table<{ hasHeaderSection: boolean }>`
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   width: 100%;
   text-align: left;
-  color: ${({ theme }) => theme.palette.text.light};
+  color: ${({ theme }) => theme.palette.text.main};
   box-sizing: border-box;
   border: ${ifProp('hasHeaderSection', '0', `1px solid ${colors.gray}`)};
   border-radius: 5px;

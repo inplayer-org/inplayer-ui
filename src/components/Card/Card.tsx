@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
   position: relative;
   box-shadow: 0 0 4px 1px ${transparentize(0.87, colors.fontDarkGray)};
   border-radius: 3px;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   line-height: 1.5;
   box-sizing: border-box;
   margin: 0;

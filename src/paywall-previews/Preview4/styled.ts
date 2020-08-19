@@ -12,17 +12,13 @@ import {
   TextWrapper,
   IconWrapper,
   PreviewImage,
-  PreviewBoxProps,
 } from '../shared/PreviewComponents';
 
-interface StyledPreviewBoxProps extends PreviewBoxProps {
-  topBorderColor?: string;
-}
-
-export const StyledPreviewBox = styled(PreviewBox)<StyledPreviewBoxProps>`
+export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '90vh')};
   overflow: hidden;
-  ${({ topBorderColor }) => topBorderColor && `border-top: 4px solid ${topBorderColor}`};
+  min-height: 0;
+  padding: 0;
   display: flex;
   flex-direction: column-reverse;
   border-radius: 3px 3px 0 0;

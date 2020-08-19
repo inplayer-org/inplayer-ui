@@ -15,9 +15,14 @@ export const Theme: DefaultTheme = {
       dark: colors.darkBlue,
     },
     text: {
-      main: colors.fontDarkGray,
+      main: colors.white,
       light: colors.fontGray,
       disabled: colors.fontLightGray,
+    },
+    background: {
+      main: colors.asphalt,
+      light: colors.gray,
+      dark: colors.asphalt,
     },
   },
   dimensions: {
