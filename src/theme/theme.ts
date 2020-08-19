@@ -15,7 +15,7 @@ export const Theme: DefaultTheme = {
       dark: colors.darkBlue,
     },
     text: {
-      main: colors.white,
+      main: colors.fontDarkGray,
       light: colors.fontGray,
       disabled: colors.fontLightGray,
     },
