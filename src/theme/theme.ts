@@ -20,7 +20,7 @@ export const Theme: DefaultTheme = {
       disabled: colors.fontLightGray,
     },
     background: {
-      main: colors.asphalt,
+      main: colors.white,
       light: colors.gray,
       dark: colors.asphalt,
     },
