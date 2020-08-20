@@ -89,7 +89,6 @@ All notable changes to this project will be documented in this file.
 - Added optional activePeriod prop to the date picker where user defines which presets period to be selected
 - Added CUSTOM period which is used when user chose custom dates from date picker
 - Added style for active date preset
-- Availability to add default or custom presets to date picker and customAllTimeDate
 - Removed margin on Typography
 - Added animation on accordion open/close
 - Do not show the arrow on disabled accordion panel
@@ -567,7 +566,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Availability to add default or custom presets to date picker and customAllTimeDate
+- Availability to add default or custom presets to DatePicker
 
 # [2.0.0-beta.6] - 08-11-2019
 
