@@ -29,7 +29,6 @@ export default {
   emerald: '#2ecc71',
   peterRiver: '#3498db',
   amethyst: '#9b59b6',
-  wetAsphalt: '#34495e',
   greenSea: '#16a085',
   nephritis: '#27ae60',
   belizeHole: '#2980b9',
@@ -45,4 +44,6 @@ export default {
   pomegranate: '#c0392b',
   silver: '#bdc3c7',
   asbestos: '#7f8c8d',
+  asphalt: '#282c35',
+  wetAsphalt: '#34495e',
 };

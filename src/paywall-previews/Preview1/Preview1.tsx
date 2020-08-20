@@ -8,9 +8,10 @@ import Branding from '../types/branding';
 
 // Components
 import { OverlayLabel } from '../shared/PreviewComponents';
+import PreviewText from '../shared/PreviewText';
 import {
+  InPlayerPreviewBox,
   LockIcon,
-  InplayerPreviewBox,
   ImageHolder,
   PaywallExplain,
   InplayerWhiteLogo,
@@ -25,9 +26,6 @@ type Props = {
   branding?: Branding;
   displayBuyButton?: boolean;
   previewUnavailable?: boolean;
-  minWidth?: string;
-  height?: string;
-  width?: string;
   handleOpenModal?: (e: any) => any;
   loginFooterLabel?: string;
   protectedByLabel?: string;
@@ -44,7 +42,6 @@ const Preview1 = ({
     preview_title: previewTitle = '<h3>Asset title</h3>',
     preview_description: previewDescription = '<p>Asset description</p>',
     preview_button_label: previewButtonLabel = 'Buy',
-    preview_top_border: hasPreviewTopBorder = true,
     inplayer_protected_label: hasProtectedByLabel = true,
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
@@ -57,11 +54,10 @@ const Preview1 = ({
   premiumContentLabel = 'Premium content',
   isRestrictedAsset = false,
 }: Props) => {
-  const isHtmlTitle = previewTitle.includes('</');
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
 
   return (
-    <InplayerPreviewBox hasPreviewTopBorder={hasPreviewTopBorder} className="inplayer-preview-box">
+    <InPlayerPreviewBox className="inplayer-preview-box">
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
       <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
         <PreviewImage
@@ -83,21 +79,8 @@ const Preview1 = ({
         </PaywallExplain>
       </ImageHolder>
       <ItemDetails className="inplayer-itemdetails">
-        {isHtmlTitle ? (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: previewTitle,
-            }}
-            className="inplayer-title"
-          />
-        ) : (
-          <h3 className="inplayer-title">{previewTitle}</h3>
-        )}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: previewDescription,
-          }}
-        />
+        <PreviewText value={previewTitle} className="inplayer-title" />
+        <PreviewText value={previewDescription} />
       </ItemDetails>
       {displayBuyButton && (
         <BuyButtonWrapper className="inplayer-buybutton">
@@ -118,7 +101,7 @@ const Preview1 = ({
           </a>
         </div>
       </InplayerFooter>
-    </InplayerPreviewBox>
+    </InPlayerPreviewBox>
   );
 };
 

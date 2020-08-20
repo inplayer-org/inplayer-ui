@@ -19,6 +19,11 @@ export const Theme: DefaultTheme = {
       light: colors.fontGray,
       disabled: colors.fontLightGray,
     },
+    background: {
+      main: colors.white,
+      light: colors.gray,
+      dark: colors.asphalt,
+    },
   },
   dimensions: {
     baseGrid: 8,

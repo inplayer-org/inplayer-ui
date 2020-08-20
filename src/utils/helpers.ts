@@ -5,7 +5,9 @@ export const getMonthOptions = (): Array<any> =>
 
 export const getYearOptions = () => {
   const yearOptions: Array<any> = [];
-  for (let i = moment().year() - 100; i <= moment().year(); i += 1) {
+  const nextYears = moment().add(100, 'years').year();
+
+  for (let i = nextYears - 200; i <= nextYears; i += 1) {
     yearOptions.push({ value: i.toString(), displayName: i.toString() });
   }
 

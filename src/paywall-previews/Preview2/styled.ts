@@ -19,6 +19,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '90vh')};
   font-size: ${({ theme }) => theme.font.sizes.large};
   overflow: hidden;
+  padding: 0;
   border-radius: 8px 8px 3px 3px;
   height: ${({ height }) => height ?? 'auto'};
   min-height: ${({ minHeight }) => minHeight ?? 'auto'};

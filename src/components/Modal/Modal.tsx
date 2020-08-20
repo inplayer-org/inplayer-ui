@@ -4,7 +4,6 @@ import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
 import colors from '../../theme/colors';
-
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 
@@ -25,7 +24,8 @@ const ModalWrapper = styled.div<ModalWrapperProps>`
 `;
 
 const ModalContainer = styled.div<{ isOverflowVisible?: boolean }>`
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
+  color: ${({ theme }) => theme.palette.text.main};
   width: 72%;
   max-width: 980px;
   border-radius: 3px;

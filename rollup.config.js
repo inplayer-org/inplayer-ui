@@ -4,7 +4,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import image from '@rollup/plugin-image';
 import filesize from 'rollup-plugin-filesize';
-import localResolve from 'rollup-plugin-local-resolve';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
@@ -22,18 +21,17 @@ const GLOBALS = {
 
 const PLUGINS = [
   image(),
-  babel({
-    include: ['src/**/*'],
-    exclude: 'node_modules/**',
-    babelHelpers: 'bundled',
-    extensions,
-  }),
-  localResolve(),
   resolve({
     mainFields: ['module', 'main', 'jsnext:main', 'browser'],
     extensions,
   }),
   commonjs(),
+  babel({
+    extensions,
+    exclude: 'node_modules/**',
+    babelHelpers: 'bundled',
+    include: ['src/**/*'],
+  }),
   terser(),
   filesize(),
   copy({

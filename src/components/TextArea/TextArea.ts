@@ -9,7 +9,7 @@ const TextArea = styled.textarea`
   outline: none;
   color: ${({ theme }) => theme.palette.text.main};
   transition: all ease 300ms;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   font-weight: ${({ theme }) => theme.font.weights.light};
   border: 1px solid ${colors.gray};
   border-radius: 3px;

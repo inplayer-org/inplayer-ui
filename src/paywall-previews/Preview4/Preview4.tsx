@@ -55,10 +55,6 @@ type Props = {
    */
   width?: string;
   /**
-   * Login footer label
-   */
-  loginFooterLabel?: string;
-  /**
    * Whether the asset is restricted or not
    */
   isRestrictedAsset?: boolean;
@@ -81,7 +77,6 @@ const Preview4 = ({
     preview_button_label: previewButtonLabel = 'Buy',
     preview_buttons_bg_color: buttonBgColor = colors.green,
     preview_buttons_text_color: buttonTextColor = colors.white,
-    preview_top_border: hasPreviewTopBorder = true,
   } = {},
   displayBuyButton = true,
   previewUnavailable = false,
@@ -95,12 +90,12 @@ const Preview4 = ({
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+
   return (
     <StyledPreviewBox
       id="preview-container"
       minWidth={minWidth}
       minHeight={minHeight}
-      topBorderColor={hasPreviewTopBorder ? buttonBgColor : ''}
       width={width}
       height={height}
     >

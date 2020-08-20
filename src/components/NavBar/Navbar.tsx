@@ -12,16 +12,20 @@ type Props = {
    * Navbar logo
    */
   logo?: string;
+  onLogoClick?: () => any;
+  logoTitle?: string;
 };
 
-const Navbar = ({ children, logo }: Props) => {
+const Navbar = ({ children, logo, onLogoClick, logoTitle }: Props) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => setOpen(!open);
 
   return (
     <NavbarContainer open={open} onClick={toggleOpen}>
-      <MenuWithLogo logo={logo}>{children}</MenuWithLogo>
+      <MenuWithLogo logo={logo} onLogoClick={onLogoClick} logoTitle={logoTitle}>
+        {children}
+      </MenuWithLogo>
       <Arrow open={open} section="navbar" />
     </NavbarContainer>
   );
