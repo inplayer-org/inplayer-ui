@@ -26,9 +26,6 @@ type Props = {
   branding?: Branding;
   displayBuyButton?: boolean;
   previewUnavailable?: boolean;
-  minWidth?: string;
-  height?: string;
-  width?: string;
   handleOpenModal?: (e: any) => any;
   loginFooterLabel?: string;
   protectedByLabel?: string;

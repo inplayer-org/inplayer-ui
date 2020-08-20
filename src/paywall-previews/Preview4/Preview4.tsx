@@ -55,10 +55,6 @@ type Props = {
    */
   width?: string;
   /**
-   * Login footer label
-   */
-  loginFooterLabel?: string;
-  /**
    * Whether the asset is restricted or not
    */
   isRestrictedAsset?: boolean;

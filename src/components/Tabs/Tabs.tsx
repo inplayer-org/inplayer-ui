@@ -2,14 +2,14 @@ import React, { HTMLAttributes, ReactElement } from 'react';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 
-type TabInfo = {
+interface TabInfo {
   name: string;
-};
+}
 
-type ContentProps = TabInfo & {
+interface ContentProps extends TabInfo {
   icon?: ReactElement | null;
   iconPosition?: string;
-};
+}
 
 type TabsProps = HTMLAttributes<HTMLDivElement> &
   ContentProps & {

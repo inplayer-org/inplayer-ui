@@ -796,9 +796,6 @@ interface Preview1Props {
   branding?: Branding;
   displayBuyButton?: boolean;
   previewUnavailable?: boolean;
-  minWidth?: string;
-  height?: string;
-  width?: string;
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
