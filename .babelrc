@@ -10,9 +10,9 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
+    "babel-plugin-styled-components",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-transform-classes",
-    "@babel/plugin-proposal-private-methods",
-    "babel-plugin-styled-components"
+    "@babel/plugin-proposal-private-methods"
   ]
 }
