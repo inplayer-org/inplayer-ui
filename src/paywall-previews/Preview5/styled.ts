@@ -10,7 +10,6 @@ import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/P
 
 export const StyledPreviewBox = styled(PreviewBox)<any>`
   max-width: ${({ width }) => (width ? '' : '90vh')};
-  border: none;
   padding: 0;
   font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1.6em;
