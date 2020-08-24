@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.2] - 24-08-2020
+
+### Fixes
+
+- Preview 4 border styling
+
 # [2.2.1] - 21-08-2020
 
 ### Fixes
