@@ -20,6 +20,11 @@ declare module 'styled-components' {
         light?: string;
         disabled?: string;
       };
+      background: {
+        main: string;
+        light?: string;
+        dark?: string;
+      };
     };
     dimensions: {
       baseGrid: number;

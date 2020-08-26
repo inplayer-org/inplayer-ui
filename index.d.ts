@@ -574,7 +574,6 @@ export type TypographyModifier = 'textPrimary' | 'textDanger' | 'textSuccess' | 
 
 export interface TypographyProps {
   variant: TypographyVariant;
-  description?: boolean;
   children: ReactNode;
   className?: string;
   modifiers?: Array<TypographyModifier>;
@@ -597,6 +596,11 @@ export interface Theme {
       dark?: string;
     };
     text: {
+      main: string;
+      light?: string;
+      disabled?: string;
+    };
+    background: {
       main: string;
       light?: string;
       disabled?: string;
@@ -681,6 +685,7 @@ interface IColors {
   emerald: '#2ecc71';
   peterRiver: '#3498db';
   amethyst: '#9b59b6';
+  asphalt: '#282c35',
   wetAsphalt: '#34495e';
   greenSea: '#16a085';
   nephritis: '#27ae60';
@@ -792,9 +797,6 @@ interface Preview1Props {
   branding?: Branding;
   displayBuyButton?: boolean;
   previewUnavailable?: boolean;
-  minWidth?: string;
-  height?: string;
-  width?: string;
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;

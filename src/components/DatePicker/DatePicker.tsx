@@ -97,7 +97,6 @@ type Props = {
    */
   isOutsideRange?: (day: any) => boolean;
   minimumNights?: number;
-  customAllTimeDate?: Moment;
   activePeriodPreset?: string;
   /**
    * Boolean indicating whether to show presets on the left or not

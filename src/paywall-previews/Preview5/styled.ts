@@ -10,8 +10,7 @@ import { PreviewBox, DescriptionSpan, ImageHolder, BuyButton } from '../shared/P
 
 export const StyledPreviewBox = styled(PreviewBox)<any>`
   max-width: ${({ width }) => (width ? '' : '90vh')};
-  border: none;
-  background: transparent;
+  padding: 0;
   font-size: ${({ theme }) => theme.font.sizes.medium};
   line-height: 1.6em;
   font-weight: ${({ theme }) => theme.font.weights.light};
@@ -69,6 +68,7 @@ export const StyledBuyButton = styled(BuyButton)<any>`
 `;
 
 export const ItemDetails = styled.div<{ height?: any }>`
+  background: ${({ theme }) => theme.palette.background.main};
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -77,7 +77,6 @@ export const ItemDetails = styled.div<{ height?: any }>`
   padding: 1rem 3%;
   box-sizing: border-box;
   position: relative;
-  background: ${transparentize(0.1, colors.gray)};
 `;
 
 export const StyledIcon = styled(GiCutDiamond)`

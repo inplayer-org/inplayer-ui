@@ -12,18 +12,12 @@ import {
   DescriptionSpan,
   ImageHolder,
   TextWrapper,
-  PreviewBoxProps,
 } from '../shared/PreviewComponents';
 
-interface Preview3BoxProps extends PreviewBoxProps {
-  topBorderColor?: string;
-}
-
-export const StyledPreviewBox = styled(PreviewBox)<Preview3BoxProps>`
+export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '90vh')};
-  ${({ topBorderColor }) => topBorderColor && `border-top: 3px solid ${topBorderColor}`};
   display: block;
-  padding: 1% 3% 2% 3%;
+  padding: 0;
   border-radius: 3px 3px 0 0;
 `;
 

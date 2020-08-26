@@ -13,8 +13,6 @@ export interface PreviewBoxProps {
   height?: string;
   minWidth?: string;
   minHeight?: string;
-  circleImage?: boolean;
-  hasPreviewTopBorder?: boolean;
 }
 
 export const PreviewBox = styled.div<PreviewBoxProps>`
@@ -24,11 +22,8 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   min-height: ${({ minHeight }) => minHeight};
   border: 1px solid ${colors.gray};
   clear: both;
-  padding: ${({ circleImage }) => (circleImage ? '26px' : '18px')} 3%;
-  background: ${({ hasPreviewTopBorder }) =>
-    hasPreviewTopBorder
-      ? `${colors.white} url(http://inplayer-paywall-v2.s3.amazonaws.com/images/ip-graphic-border.jpg) top no-repeat`
-      : `${colors.white}`};
+  padding: 18px 0;
+  background: ${({ theme }) => theme.palette.background.main};
   background-size: 100% 4px;
   position: relative;
   transition: all ease 200ms;
@@ -172,5 +167,5 @@ export const PreviewFooterLink = styled(FooterLink)`
   font-size: ${({ theme }) => theme.font.sizes.extraSmall};
   vertical-align: baseline;
   background: transparent;
-  color: ${({ theme }) => theme.palette.text.light};
+  color: ${({ theme }) => theme.palette.text.main};
 `;

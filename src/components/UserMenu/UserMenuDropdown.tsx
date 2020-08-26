@@ -3,14 +3,12 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
-import colors from '../../theme/colors';
-
 const Container = styled.div`
   align-items: flex-start;
   box-shadow: 0 1px 5px 0 ${transparentize(0.8, '#000')};
   z-index: 1000;
   min-width: 15%;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +20,7 @@ const Container = styled.div`
     content: '';
     display: block;
     box-shadow: -1px -1px 1px 0 ${transparentize(0.9, '#000')};
-    background: ${colors.white};
+    background: ${({ theme }) => theme.palette.background.main};
     transform: rotate(45deg);
     width: 10px;
     height: 10px;

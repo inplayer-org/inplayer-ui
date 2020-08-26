@@ -2,7 +2,6 @@ import React from 'react';
 import parse from 'html-react-parser';
 import styled from 'styled-components';
 import DOMPurify from 'dompurify';
-import colors from '../../theme/colors';
 
 interface EditorContainerProps {
   textBackground?: string;
@@ -31,12 +30,13 @@ const TextContainer = styled.div<EditorContainerProps>`
   && h6 {
     margin: 0;
     text-align: ${({ isTextCenter }) => (isTextCenter ? 'center' : 'left')};
-    color: ${({ textColor }) => textColor || colors.black};
+    color: ${({ textColor, theme }) => textColor || theme.palette.text.main};
   }
 `;
 
 interface Props extends EditorContainerProps {
   value: string | any;
+  className?: string;
 }
 
 const PreviewText = ({
@@ -46,6 +46,7 @@ const PreviewText = ({
   isTextCenter = false,
   padding = '',
   lineHeight = 0,
+  className = '',
 }: Props) => (
   <TextContainer
     textBackground={textBackground}
@@ -53,6 +54,7 @@ const PreviewText = ({
     isTextCenter={isTextCenter}
     padding={padding}
     lineHeight={lineHeight}
+    className={className}
   >
     {parse(DOMPurify.sanitize(value))}
   </TextContainer>

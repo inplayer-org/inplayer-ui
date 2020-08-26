@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
-import { ifProp, ifNotProp } from 'styled-tools';
+import { ifProp, ifNotProp, prop } from 'styled-tools';
 
 // Components
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
@@ -35,7 +35,7 @@ const AccordionPanelContainer = styled.div<AccordionPanelContainerProps>`
   box-sizing: border-box;
   overflow: hidden;
   z-index: 10;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.palette.background.main};
   transition: ease 500ms height;
   ${ifProp(
     'isActive',
@@ -61,7 +61,7 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
   padding: 1rem 3%;
   width: 100%;
   box-sizing: border-box;
-  background: ${ifProp('disabled', colors.lightGray, colors.white)};
+  background: ${ifProp('disabled', colors.gray, prop('theme.palette.background.main'))};
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   border-bottom: 1px solid ${colors.lightGray};
   display: flex;
@@ -78,7 +78,7 @@ const AccordionPanelHeader = styled.header<AccordionPanelHeaderProps>`
 
 const AccordionTitle = styled(Typography)<AccordionTitleProps>`
   font-weight: ${({ theme }) => theme.font.weights.thin};
-  color: ${ifProp('disabled', colors.fontLightGray, colors.fontDarkGray)};
+  color: ${({ theme, disabled }) => (disabled ? colors.fontLightGray : theme.font.weights.thin)};
   margin: 0;
   display: inline;
 `;
@@ -97,6 +97,7 @@ const StyledAngleUp = styled(FaAngleUp)`
 `;
 
 const AccordionPanelDetails = styled.div`
+  color: ${({ theme }) => theme.palette.text.main};
   padding: 0;
   height: 100%;
 `;

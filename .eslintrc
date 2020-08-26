@@ -59,6 +59,7 @@
     ],
     "react/require-default-props": "warn",
     "camelcase": "warn",
+    "react/no-unused-prop-types": "warn",
     // jsx-a11y rules
     "jsx-a11y/mouse-events-have-key-events": "off",
     "jsx-a11y/label-has-associated-control": "off",
