@@ -66,6 +66,7 @@ type Props<T = Data> = {
     onClick: (e: SyntheticEvent) => any;
     type: string;
   };
+  actionsRowTitle?: string;
 };
 
 type State = {
@@ -94,6 +95,7 @@ class Table<T> extends Component<Props<T>, State> {
     showLoader: false,
     renderEmptyTable: false,
     tableButton: null,
+    actionsRowTitle: 'Actions',
   };
 
   state: State = {
@@ -169,7 +171,7 @@ class Table<T> extends Component<Props<T>, State> {
 
   generateColumns = (columns: Array<Column>) => {
     const { selectedAll } = this.state;
-    const { options } = this.props;
+    const { options, actionsRowTitle } = this.props;
     const { rowSelection, rowActions } = options;
 
     let newColumns: any = [...columns];
@@ -187,7 +189,7 @@ class Table<T> extends Component<Props<T>, State> {
 
     if (rowActionsExist(rowActions)) {
       const actionsColumn = {
-        title: 'Actions',
+        title: actionsRowTitle || 'Actions',
         key: 'actions',
         alignRight: true,
       };
