@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-private-methods": "^7.10.4",
     "@babel/plugin-transform-classes": "^7.10.4",
@@ -50,13 +50,13 @@
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@storybook/addon-docs": "^6.0.14",
-    "@storybook/addon-info": "^5.3.19",
-    "@storybook/addon-knobs": "^6.0.14",
-    "@storybook/react": "^6.0.14",
+    "@storybook/addon-docs": "^6.0.19",
+    "@storybook/addon-info": "^5.3.20",
+    "@storybook/addon-knobs": "^6.0.19",
+    "@storybook/react": "^6.0.19",
     "@types/dompurify": "^2.0.3",
-    "@types/lodash": "^4.14.159",
-    "@types/react": "^16.9.46",
+    "@types/lodash": "^4.14.160",
+    "@types/react": "^16.9.48",
     "@types/react-dates": "^17.1.14",
     "@types/react-dom": "^16.9.8",
     "@types/react-toggle": "^4.0.2",
@@ -101,7 +101,6 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "typescript": "^3.9.7",
-    "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.1"
+    "typescript": "^3.9.7"
   }
 }
