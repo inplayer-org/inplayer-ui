@@ -293,6 +293,8 @@ export interface AccordionProps {
   width?: string;
   extendWidth?: string;
   onActivePanelChange?: (index: number) => void;
+  shouldClose?: boolean;
+  onRequestClose?: () => void;
 }
 
 export interface AccordionState {
