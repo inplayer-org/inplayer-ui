@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.3] - 27-08-2020
+
+### Changes
+
+- Added shouldClose and onRequestClose optional props to Accordion
+
 # [2.2.2] - 24-08-2020
 
 ### Fixes
