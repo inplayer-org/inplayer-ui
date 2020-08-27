@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes
 
+- Added shouldClose and onRequestClose optional props to Accordion
 - Added actionsRowTitle optional prop to Table
 - Changed Datepicker period labels
 
