@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.3] - 27-08-2020
+
+### Changes
+
+- Added actionsRowTitle optional prop to Table
+- Changed Datepicker period labels
+
 # [2.2.2] - 24-08-2020
 
 ### Fixes
