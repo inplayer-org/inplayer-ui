@@ -189,7 +189,7 @@ class Table<T> extends Component<Props<T>, State> {
 
     if (rowActionsExist(rowActions)) {
       const actionsColumn = {
-        title: actionsRowTitle || 'Actions',
+        title: actionsRowTitle,
         key: 'actions',
         alignRight: true,
       };
