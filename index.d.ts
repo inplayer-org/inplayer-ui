@@ -219,6 +219,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
     onClick: (e: SyntheticEvent) => any;
     type: string;
   };
+  actionsRowTitle?: string;
 }
 
 interface TableState {
