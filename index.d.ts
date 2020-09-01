@@ -219,6 +219,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
     onClick: (e: SyntheticEvent) => any;
     type: string;
   };
+  actionsRowTitle?: string;
 }
 
 interface TableState {
@@ -292,6 +293,8 @@ export interface AccordionProps {
   width?: string;
   extendWidth?: string;
   onActivePanelChange?: (index: number) => void;
+  shouldClose?: boolean;
+  onRequestClose?: () => void;
 }
 
 export interface AccordionState {

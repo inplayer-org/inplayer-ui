@@ -268,12 +268,12 @@ const DatePicker = ({
       <ContentHolder>
         <AnalyticsPeriods>
           {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
-          {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
-          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
-          {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
-          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
-          {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
-          {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
+          {renderPeriodElement(PERIODS.ONE_WEEK, '1 week', 0)}
+          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 weeks', 1)}
+          {renderPeriodElement(PERIODS.ONE_MONTH, '1 month', 2)}
+          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 months', 3)}
+          {renderPeriodElement(PERIODS.ONE_YEAR, '1 year', 4)}
+          {renderPeriodElement(PERIODS.ALL, 'all', 5)}
         </AnalyticsPeriods>
         <DatePickerWrapper className={className}>
           <DateRangePicker
