@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.4] - 07-09-2020
+
+### Changes
+
+- expose the flashTooltip method to parent component when using ref through useImperativeHandle 
+
 # [2.2.3] - 27-08-2020
 
 ### Changes
