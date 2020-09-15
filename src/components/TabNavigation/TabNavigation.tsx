@@ -42,17 +42,8 @@ type NavigationTab = {
 };
 
 export type Props = {
-  /**
-   * Navigation tabs
-   */
   tabs: Array<NavigationTab>;
-  /**
-   * Function which takes as an argument the index of the selected tab
-   */
   onTabClick: (index: number) => void;
-  /**
-   * Selected tab index
-   */
   selectedTabIndex: number;
 };
 

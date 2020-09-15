@@ -16,29 +16,11 @@ type Panel = {
 };
 
 type Props = {
-  /**
-   * Array of objects
-   */
   panels: Array<Panel>;
-  /**
-   * Determines the height of the wrapper
-   */
   contentHeight: string;
-  /**
-   * Sets the width for the Accordion wrapper
-   */
   width?: string;
-  /**
-   * Defines the width the accordion should extend
-   */
   extendWidth?: string;
-  /**
-   * Display arrow and allow the accordion to extend
-   */
   isExtendable?: boolean;
-  /**
-   * Function to be executed when the accordion tab changes
-   */
   onActivePanelChange?: (index: number) => void;
   shouldClose?: boolean;
   onRequestClose?: () => void;

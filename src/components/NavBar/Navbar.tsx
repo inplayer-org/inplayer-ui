@@ -8,9 +8,6 @@ import MenuWithLogo from './MenuWithLogo';
 
 type Props = {
   children: any;
-  /**
-   * Navbar logo
-   */
   logo?: string;
   onLogoClick?: () => any;
   logoTitle?: string;

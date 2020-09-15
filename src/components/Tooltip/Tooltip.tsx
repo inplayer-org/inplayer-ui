@@ -19,70 +19,22 @@ export type Placement = 'left' | 'right' | 'top' | 'bottom';
 export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
 export type TooltipProps = {
-  /**
-   * Tooltip behaviour: `hover` | `click` | `ref`
-   */
   behavior?: TooltipBehavior;
-  /**
-   * How long should the tooltip be present (ms)
-   */
   durationOnClick?: number;
-  /**
-   * Arrow width
-   */
   arrowWidth?: number;
-  /**
-   * Tooltip background color
-   */
   background?: string;
   color?: string;
-  /**
-   * Tooltip content
-   */
   content?: ReactNode;
-  /**
-   * Fade easing type: `linear` | `ease` | `ease-in` | `ease-out` | `ease-in-out`
-   */
   fadeEasing?: FadeEasing;
-  /**
-   * Tooltip placement: `left` | `right` | `top` | `bottom`
-   */
   placement?: Placement;
-  /**
-   * Fade duration in milliseconds
-   */
   fadeDuration?: number;
-  /**
-   * Tooltip border
-   */
   border?: string;
-  /**
-   * Fixed tooltip
-   */
   fixed?: boolean;
-  /**
-   * CSS font-size
-   */
   fontSize?: string;
-  /**
-   * Offset
-   */
   offset?: number;
-  /**
-   * CSS padding
-   */
   padding?: number;
-  /**
-   * Radius
-   */
   radius?: number;
-  /**
-   * CSS z-index
-   */
   zIndex?: number;
-  /**
-   * External class name
-   */
   className?: string;
   children?: ReactChild | ReactNode | null;
   ref: Ref<FlashTooltipRef>;

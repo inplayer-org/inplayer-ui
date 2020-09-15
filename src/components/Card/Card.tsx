@@ -33,13 +33,7 @@ const CardTitle = styled(Typography)`
 `;
 
 interface Props {
-  /**
-   * Title of the Card
-   */
   title?: string;
-  /**
-   * Type of the variant
-   */
   titleVariant?: TypographyVariant;
   className?: string;
   children: ReactChild;

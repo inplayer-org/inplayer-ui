@@ -28,25 +28,10 @@ const StyledSpinner = styled.svg<{
 `;
 
 type Props = {
-  /**
-   * Height of the svg spinner
-   */
   height?: number;
-  /**
-   * Width of the svg spinner
-   */
   width?: number;
-  /**
-   * Defines the color of the spinner
-   */
   color?: string;
-  /**
-   * Defines the width of the lines
-   */
   lineWidth?: number;
-  /**
-   * Direction of the spinner
-   */
   direction?: string;
 };
 

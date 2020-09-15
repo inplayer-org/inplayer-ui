@@ -25,40 +25,14 @@ export interface RenderMonthElementProps {
 }
 
 type Props = {
-  // required
-  /**
-   * DayPicker id
-   */
   id: string;
-  /**
-   * Function which takes `date` as argument and sets the current date
-   */
   onDateChange: (date: Moment | null) => void;
-  /**
-   * Function which takes a boolean argument on whether it is focused or not
-   */
   onFocusChange: (arg: { focused: boolean | null }) => void;
-  /**
-   * Focused DayPicker
-   */
   focused: boolean | null;
-  /**
-   * Date
-   */
   date: Moment | string | null;
-  // input related props
   isOutsideRange?: (day: number) => any;
-  /**
-   * Number of months to show
-   */
   numberOfMonths?: number;
-  /**
-   * Disabled DayPicker
-   */
   disabled?: boolean;
-  /**
-   * Overwrite the default 'Date' placeholder
-   */
   placeholder?: string;
   onClose?: () => any;
   disablePastDays?: boolean;

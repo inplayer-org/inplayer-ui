@@ -5,25 +5,10 @@ import NotificationContainer, { CloseIcon } from './NotificationContainer';
 export type NotificationVariant = 'success' | 'danger' | 'warning' | '';
 
 type Props = {
-  /**
-   * Notification title
-   */
   title: string;
-  /**
-   * Notification content
-   */
   content: string;
-  /**
-   * Variant type
-   */
   variant?: NotificationVariant;
-  /**
-   * Duration (in seconds) of the notification before it disappears
-   */
   duration?: number;
-  /**
-   * Function to close the notification
-   */
   close?: () => void;
 };
 

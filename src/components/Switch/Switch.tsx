@@ -5,25 +5,10 @@ import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
 
 type SwitchProps = {
-  /**
-   * Whether the switch is checked or not
-   */
   checked: boolean;
-  /**
-   * Disable switch
-   */
   disabled?: boolean;
-  /**
-   * Id
-   */
   id: string;
-  /**
-   * Switch label
-   */
   label: string;
-  /**
-   * Function executed when the switch value changes
-   */
   onChange: (checked: boolean) => void;
 };
 
