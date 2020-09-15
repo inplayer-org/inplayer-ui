@@ -34,25 +34,10 @@ const ModalContainer = styled.div<{ isOverflowVisible?: boolean }>`
 `;
 
 type Props = {
-  /**
-   * Modal state
-   */
   isModalOpen: boolean;
-  /**
-   * Close modal
-   */
   closeModal: () => any;
-  /**
-   * Modal title
-   */
   title: string;
-  /**
-   * Modal overflow
-   */
   isOverflowVisible?: boolean;
-  /**
-   * External class name
-   */
   className?: string;
   children: ReactChild;
 };

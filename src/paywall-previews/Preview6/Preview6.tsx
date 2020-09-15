@@ -28,37 +28,13 @@ const LockIcon = styled(FaLock)`
 `;
 
 type Props = {
-  /**
-   * Branding type
-   */
   branding?: Branding;
-  /**
-   * Minimum width
-   */
   minWidth?: string;
-  /**
-   * Minimum height
-   */
   minHeight?: string;
-  /**
-   * Preview height
-   */
   height?: string;
-  /**
-   * Preview width
-   */
   width?: string;
-  /**
-   * Login footer label
-   */
   loginFooterLabel?: string;
-  /**
-   * Whether the asset is restricted or not
-   */
   isRestrictedAsset?: boolean;
-  /**
-   * Function which handles the modal state changes
-   */
   handleOpenModal?: (e: any) => any;
 };
 

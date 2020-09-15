@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.3.0] - 15-09-2020
+
+### Changes
+
+- Remove redundant Header and UserMenu components
+
+# [2.2.4] - 07-09-2020
+
+### Changes
+
+- Expose the flashTooltip method to parent component when using ref through useImperativeHandle
+
+# [2.2.3] - 27-08-2020
+
+### Changes
+
+- Added shouldClose and onRequestClose optional props to Accordion
+- Added actionsRowTitle optional prop to Table
+- Changed Datepicker period labels
+
+# [2.2.2] - 24-08-2020
+
+### Fixes
+
+- Preview 5 border styling
+
+# [2.2.1] - 21-08-2020
+
+### Fixes
+
+- Downgrade babel-plugin-styled-components to version working properly with Rollup
+
 # [2.2.0] - 20-08-2020
 
 ### Added

@@ -68,47 +68,19 @@ export interface RenderMonthElementProps {
 }
 
 type Props = {
-  /**
-   * Start date
-   */
   startDate: Moment | null;
-  /**
-   * End date
-   */
   endDate: Moment | null;
-  /**
-   * Function which takes `startDate` and `endDate` as arguments and sets the date range to the corresponding dates
-   */
   onDateChange: (dateObject: any) => any;
-  /**
-   * It can be either `startDate` or `endDate`
-   */
   focusedInput: FocusedInputShape | null;
-  /**
-   * Function which takes a boolean argument on whether it is focused or not
-   */
   onFocusChange(focused: FocusedInputShape | null): void;
   displayPresets?: Array<string>;
   startDateId?: string;
   endDateId?: string;
-  /**
-   * Function which specifies the days that are not allowed to be choosed
-   * (ex. isOutsideRange={day => day.isBefore(moment())})
-   */
   isOutsideRange?: (day: any) => boolean;
   minimumNights?: number;
   activePeriodPreset?: string;
-  /**
-   * Boolean indicating whether to show presets on the left or not
-   */
   showPresets?: boolean;
-  /**
-   * Boolean indicating whether to show inner presets or not
-   */
   showInnerPresets?: boolean;
-  /**
-   * External CSS classes
-   */
   className?: string;
 };
 
@@ -268,12 +240,12 @@ const DatePicker = ({
       <ContentHolder>
         <AnalyticsPeriods>
           {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
-          {renderPeriodElement(PERIODS.ONE_WEEK, '1 Week', 0)}
-          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 Weeks', 1)}
-          {renderPeriodElement(PERIODS.ONE_MONTH, '1 Month', 2)}
-          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 Months', 3)}
-          {renderPeriodElement(PERIODS.ONE_YEAR, '1 Year', 4)}
-          {renderPeriodElement(PERIODS.ALL, 'ALL', 5)}
+          {renderPeriodElement(PERIODS.ONE_WEEK, '1 week', 0)}
+          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 weeks', 1)}
+          {renderPeriodElement(PERIODS.ONE_MONTH, '1 month', 2)}
+          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 months', 3)}
+          {renderPeriodElement(PERIODS.ONE_YEAR, '1 year', 4)}
+          {renderPeriodElement(PERIODS.ALL, 'all', 5)}
         </AnalyticsPeriods>
         <DatePickerWrapper className={className}>
           <DateRangePicker

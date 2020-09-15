@@ -5,21 +5,9 @@ import Step from './Step';
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
 type StepWizardProps = {
-  /**
-   * Array of objects containing steps information and components
-   */
   steps: Array<StepItem>;
-  /**
-   * Active step of step wizard
-   */
   activeStep: number;
-  /**
-   * Function which runs when the step changes
-   */
   onStepChange?: (activeStep: number) => void;
-  /**
-   * CSS transition type
-   */
   transition?: TransitionVariant;
 };
 
@@ -38,11 +26,9 @@ const StepWizard = ({
       return;
     }
 
-    // User callback
     onStepChange(currentStep);
   };
 
-  /** Go to step index */
   const goToStep = (step: number) => setActiveStep(step);
 
   const renderSteps = steps.map((step, i) => {

@@ -3,25 +3,10 @@ import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from
 import { PageBox, PaginationContainer } from './styled';
 
 type PaginationProps = {
-  /**
-   * Page change handler. Receive pageNumber as arg
-   */
   onPageChange: (pageNumber: number) => void;
-  /**
-   * Total count of items which you are going to display
-   */
   totalItems: number;
-  /**
-   * Start page / Active page
-   */
   startPage?: number;
-  /**
-   * Range of pages in paginator, exclude navigation blocks (prev, next, first, last pages)
-   */
   numberOfPagesDisplayed?: number;
-  /**
-   * Count of items per page
-   */
   itemsPerPage?: number;
 };
 

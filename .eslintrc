@@ -69,6 +69,7 @@
     "linebreak-style": "off",
     "no-debugger": "off",
     "no-alert": "off",
+    "no-use-before-define": "warn",
     "no-unused-vars": [
       "warn",
       {

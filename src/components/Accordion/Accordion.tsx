@@ -16,30 +16,14 @@ type Panel = {
 };
 
 type Props = {
-  /**
-   * Array of objects
-   */
   panels: Array<Panel>;
-  /**
-   * Determines the height of the wrapper
-   */
   contentHeight: string;
-  /**
-   * Sets the width for the Accordion wrapper
-   */
   width?: string;
-  /**
-   * Defines the width the accordion should extend
-   */
   extendWidth?: string;
-  /**
-   * Display arrow and allow the accordion to extend
-   */
   isExtendable?: boolean;
-  /**
-   * Function to be executed when the accordion tab changes
-   */
   onActivePanelChange?: (index: number) => void;
+  shouldClose?: boolean;
+  onRequestClose?: () => void;
 };
 
 export const Accordion = ({
@@ -49,6 +33,8 @@ export const Accordion = ({
   extendWidth = '20%',
   isExtendable = false,
   onActivePanelChange,
+  shouldClose = true,
+  onRequestClose,
 }: Props) => {
   const [activePanel, setActivePanel] = useState(-1);
   const [open, setOpen] = useState(false);
@@ -63,12 +49,17 @@ export const Accordion = ({
   const closePanel = (e?: SyntheticEvent) => {
     if (e) e.stopPropagation();
     setActivePanel(-1);
+    if (onActivePanelChange) onActivePanelChange(-1);
   };
 
   const togglePanel = (panelIndex: number) => (e: any) => {
     e.stopPropagation();
     if (activePanel !== -1) {
-      closePanel();
+      if (shouldClose) {
+        closePanel();
+      } else if (onRequestClose) {
+        onRequestClose();
+      }
     } else {
       openPanel(panelIndex);
     }

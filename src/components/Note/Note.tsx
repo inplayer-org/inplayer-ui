@@ -8,17 +8,8 @@ import colors from '../../theme/colors';
 import NoteWrapper, { NoteType } from './NoteWrapper';
 
 interface Props {
-  /**
-   * Title note
-   */
   title: string;
-  /**
-   * Actual note that is displayed
-   */
   text: string;
-  /**
-   * Note type
-   */
   type: NoteType;
 }
 
