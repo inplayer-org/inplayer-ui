@@ -74,37 +74,6 @@ export interface MenuItem {
   smallSize?: boolean;
 }
 
-export interface UserMenuDropdownProps {
-  menuItems?: Array<MenuItem>;
-  actionItem?: MenuItem;
-}
-
-export interface UserMenuProps extends UserMenuDropdownProps {
-  image?: ReactElement<any> | string;
-  className?: string;
-  style?: CSSProperties;
-  menuTitle?: string;
-}
-
-interface UserMenuState {
-  open: boolean;
-}
-
-export declare class UserMenu extends Component<UserMenuProps, UserMenuState> {
-  toggleMenuOpen: () => any;
-}
-
-export interface HeaderProps {
-  title?: string;
-  userMenuProps?: UserMenuProps;
-  additionalUserMenuProps?: UserMenuProps | boolean;
-  tabNavigationProps?: TabNavigationProps;
-  className?: string;
-  style?: CSSProperties;
-}
-
-export declare const Header: FunctionComponent<HeaderProps>;
-
 export interface ModalProps {
   isModalOpen: boolean;
   closeModal: () => any;
