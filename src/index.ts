@@ -21,7 +21,6 @@ export { default as Tabs } from './components/Tabs';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Tooltip } from './components/Tooltip';
 export { default as Note } from './components/Note';
-export { default as Navbar } from './components/NavBar';
 export { default as TabNavigation } from './components/TabNavigation';
 export { default as Table } from './components/Table';
 export { default as Modal } from './components/Modal';
