@@ -22,7 +22,7 @@ export const ArrowContainer = styled.div<{ section: string }>`
   })};
 `;
 
-export const NavbarArrow = styled.i<{ open: boolean; section: string }>`
+export const AccordionArrow = styled.i<{ open: boolean; section: string }>`
   display: inline-block;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -50,7 +50,7 @@ type Props = {
 
 const Arrow = ({ open, section, onClick }: Props) => (
   <ArrowContainer section={section} onClick={onClick}>
-    <NavbarArrow open={open} section={section} />
+    <AccordionArrow open={open} section={section} />
   </ArrowContainer>
 );
 
