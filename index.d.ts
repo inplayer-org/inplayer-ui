@@ -85,33 +85,6 @@ export interface ModalProps {
 
 export declare const Modal: FunctionComponent<ModalProps>;
 
-export interface NavbarProps {
-  children: ReactNode;
-  logo?: ReactElement<any> | string;
-  className?: string;
-  style?: CSSProperties;
-  onLogoClick?: () => any;
-  logoTitle?: string;
-}
-
-interface NavbarState {
-  open: boolean;
-}
-
-interface Navbar$MenuItemProps {
-  active?: boolean;
-  icon?: string | ReactNode;
-  onClick?: (e: SyntheticEvent<HTMLDivElement>) => any;
-  children?: ReactNode;
-}
-
-export declare class Navbar extends Component<NavbarProps, NavbarState> {
-  static MenuItem: FunctionComponent<Navbar$MenuItemProps>;
-  toggleOpen: () => any;
-}
-
-export type NavbarMenuItemProps = Navbar$MenuItemProps;
-
 export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 
 export interface NoteProps {
