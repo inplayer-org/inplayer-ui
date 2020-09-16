@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.0] - 16-09-2020
+
+### Changes
+
+- Remove redundant NavBar component
+
 # [2.3.0] - 15-09-2020
 
 ### Changes
