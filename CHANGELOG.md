@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.1] - 21-09-2020
+
+### Changes
+
+- Remove box-sizing from globalStyles
+
 # [2.4.0] - 16-09-2020
 
 ### Changes
