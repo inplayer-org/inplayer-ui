@@ -81,7 +81,7 @@
     "html-react-parser": "^0.14.0",
     "lodash-es": "^4.17.15",
     "moment": "^2.28.0",
-    "polished": "^3.6.7",
+    "polished": "^4.0.1",
     "prettier": "^2.1.2",
     "rc-progress": "^3.1.0",
     "react": "^16.13.1",
