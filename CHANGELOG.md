@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.1] - 30-09-2020
+
+- Add className and style props to Tabs component
+
 # [2.4.1] - 21-09-2020
 
 ### Changes
