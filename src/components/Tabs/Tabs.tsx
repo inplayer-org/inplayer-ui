@@ -1,4 +1,5 @@
 import React, { HTMLAttributes, ReactElement } from 'react';
+import { CSSProperties } from 'styled-components';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 
@@ -16,6 +17,8 @@ type TabsProps = HTMLAttributes<HTMLDivElement> &
     tabs: Array<TabInfo>;
     selectedTabIndex: number;
     onTabClick: (index: number) => void;
+    className?: string;
+    style?: CSSProperties;
   };
 
 const Content = ({ icon = null, iconPosition = 'left', name }: ContentProps) =>
@@ -50,7 +53,11 @@ const renderTabs = (
     </Tab>
   ));
 
-const Tabs = ({ tabs, selectedTabIndex, onTabClick }: TabsProps) =>
-  tabs ? <TabsWrapper>{renderTabs(tabs, selectedTabIndex, onTabClick)}</TabsWrapper> : null;
+const Tabs = ({ tabs, selectedTabIndex, onTabClick, className = '', style = {} }: TabsProps) =>
+  tabs ? (
+    <TabsWrapper className={className} style={style}>
+      {renderTabs(tabs, selectedTabIndex, onTabClick)}
+    </TabsWrapper>
+  ) : null;
 
 export default Tabs;
