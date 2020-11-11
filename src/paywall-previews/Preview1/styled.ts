@@ -9,7 +9,7 @@ export const InPlayerPreviewBox = styled.div`
   color: ${({ theme }) => theme.palette.text.main};
   width: 100%;
   max-width: 100vh;
-  margin: 24px auto;
+  margin: 0 auto;
   box-sizing: border-box;
   border: 1px solid #e9edef;
   clear: both;
