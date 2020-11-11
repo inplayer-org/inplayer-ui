@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.2] - 11-11-2020
+
+### Fixes
+
+- Remove polished normalize function from GlobalStyles
+
 # [2.4.1] - 21-09-2020
 
 ### Changes
