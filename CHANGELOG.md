@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Change preview box margin for preview 1
 
+### Fixes
+
+- Remove polished normalize function from GlobalStyles
+
 # [2.4.1] - 21-09-2020
 
 ### Changes
