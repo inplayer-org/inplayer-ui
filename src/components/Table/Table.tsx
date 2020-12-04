@@ -1,8 +1,10 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
-import { CSSProperties } from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import Grid from '../Grid';
 import Loader from '../Loader';
+import { tableSkeleton } from '../../modifiers';
+
 import {
   ButtonTableRow,
   LoaderContainer,
@@ -15,6 +17,28 @@ import {
   TableWithHeaderSectionContainer,
   TableWrapper,
 } from './styled';
+
+const TableSkeleton = () => (
+  <table>
+    <thead>
+      {[...Array(4)].map((_, index) => (
+        <th key={index}>{index}</th>
+      ))}
+    </thead>
+    <tbody>
+      {[...Array(15)].map((_, index) => (
+        <tr key={index}>
+          {[0].map((_, i) => (
+            <td key={i}>{i}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+const TableSkeletonWrapper = styled.div`
+  ${tableSkeleton()}
+`;
 
 interface Data {
   id: string;
@@ -67,6 +91,7 @@ type Props<T = Data> = {
     type: string;
   };
   actionsRowTitle?: string;
+  isLoading?: boolean;
 };
 
 type State = {
@@ -239,6 +264,7 @@ class Table<T> extends Component<Props<T>, State> {
       renderEmptyTable,
       tableButton,
       options: { headerSection },
+      isLoading = false,
     } = this.props;
 
     if (showLoader) {
@@ -257,8 +283,20 @@ class Table<T> extends Component<Props<T>, State> {
 
     const hasHeaderSection = typeof headerSection !== 'undefined';
 
+    if (isLoading) {
+      return (
+        <TableSkeletonWrapper>
+          <TableSkeleton />
+        </TableSkeletonWrapper>
+      );
+    }
     return (
-      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
+      <TableWrapper
+        isLoading={isLoading}
+        className={className}
+        style={style}
+        hasHeaderSection={hasHeaderSection}
+      >
         <thead>
           <TableHeadRow>{columnContent}</TableHeadRow>
         </thead>

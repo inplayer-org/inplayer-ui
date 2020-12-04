@@ -10,3 +10,4 @@ export * from './fontWeights';
 export * from './statusColors';
 export * from './borderColors';
 export * from './backgroundColors';
+export * from './skeleton';
