@@ -3323,9 +3323,9 @@
     "@types/react" "*"
 
 "@types/react-dates@^21.8.0":
-  version "21.8.0"
-  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-21.8.0.tgz#7a708be7a6ccd40622f4480bfcf66f3f450ac84c"
-  integrity sha512-FSvbh8qqz96RK/qfDyJTAyKlcoq5Zv+AAxu26Axdr8+49nquX42GhQ49lKOOQdsJFVqO3fkG4ynDMSAX/9YDBA==
+  version "21.8.1"
+  resolved "https://registry.yarnpkg.com/@types/react-dates/-/react-dates-21.8.1.tgz#f90b30895e22d15f42c64be6bbafb1796b5f05f8"
+  integrity sha512-zgBf0SM6dcDPR29x3bCzSypK0c2+EKDkR4NNyBCwH2GyL/AgIvJ0bQ6n2z1s468SXS2QbzCMJtF831vG7iGkjg==
   dependencies:
     "@types/react" "*"
     "@types/react-outside-click-handler" "*"
@@ -3373,15 +3373,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "16.9.52"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.52.tgz#c46c72d1a1d8d9d666f4dd2066c0e22600ccfde1"
-  integrity sha512-EHRjmnxiNivwhGdMh9sz1Yw9AUxTSZFxKqdBWAAzyZx3sufWwx6ogqHYh/WB1m/I4ZpjkoZLExF5QTy2ekVi/Q==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^3.0.2"
-
-"@types/react@^16.9.56":
+"@types/react@*", "@types/react@^16.9.56":
   version "16.9.56"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.56.tgz#ea25847b53c5bec064933095fc366b1462e2adf0"
   integrity sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
