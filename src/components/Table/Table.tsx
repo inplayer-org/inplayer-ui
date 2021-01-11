@@ -269,9 +269,9 @@ class Table<T> extends Component<Props<T>, State> {
 
     if (showLoader) {
       return (
-        <LoaderContainer>
-          <Loader />
-        </LoaderContainer>
+        <TableSkeletonWrapper>
+          <TableSkeleton />
+        </TableSkeletonWrapper>
       );
     }
 
@@ -283,20 +283,8 @@ class Table<T> extends Component<Props<T>, State> {
 
     const hasHeaderSection = typeof headerSection !== 'undefined';
 
-    if (isLoading) {
-      return (
-        <TableSkeletonWrapper>
-          <TableSkeleton />
-        </TableSkeletonWrapper>
-      );
-    }
     return (
-      <TableWrapper
-        isLoading={isLoading}
-        className={className}
-        style={style}
-        hasHeaderSection={hasHeaderSection}
-      >
+      <TableWrapper className={className} style={style} hasHeaderSection={hasHeaderSection}>
         <thead>
           <TableHeadRow>{columnContent}</TableHeadRow>
         </thead>
