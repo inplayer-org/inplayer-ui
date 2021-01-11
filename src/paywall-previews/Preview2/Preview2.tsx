@@ -7,6 +7,7 @@ import colors from '../../theme/colors';
 import Branding from '../types/branding';
 
 // Components
+import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import { StyledPaywallDescription, BuyButton, FooterLink } from '../shared/PreviewComponents';
 import {
@@ -29,6 +30,7 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
+  isAuthenticated?: boolean;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -52,6 +54,7 @@ const Preview2 = ({
   handleOpenModal,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
+  isAuthenticated = false,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -83,7 +86,7 @@ const Preview2 = ({
         </BuyButtonWrapper>
         <Footer color={colors.fontGray}>
           <FooterLink href="#login" onClick={handleOpenModal}>
-            {loginFooterLabel}
+            <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
           </FooterLink>
         </Footer>
       </AssetDetails>
