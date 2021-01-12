@@ -1,7 +1,9 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
-# [2.4.3] - 12-01-2021
+
+# [2.5.0] - 12-01-2021
+### Changes
 
 - Change footer text depending on user auth state
 
