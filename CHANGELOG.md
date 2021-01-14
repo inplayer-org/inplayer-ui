@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.0] - 12-01-2021
+### Changes
+
+- Change footer text depending on user auth state
+
+# [2.4.2] - 11-11-2020
+
+### Changes
+
+- Change preview box margin for preview 1
+
+### Fixes
+
+- Remove polished normalize function from GlobalStyles
+
 # [2.4.1] - 21-09-2020
 
 ### Changes
