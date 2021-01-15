@@ -4,6 +4,7 @@ import Table from './'
 import { MdDelete, MdErrorOutline } from 'react-icons/md';
 import Pagination from '../Pagination'
 import { columns, data } from './data.tsx'
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
 <Meta title="Table" component={<Table/>} />
 
@@ -32,6 +33,20 @@ const Page = () => (
                       { icon: "trash", onClick: (id) => console.log(id) },
                 ],
             }}
+            tableButton={[
+              {
+                label: 'Table button 1',
+                icon: <IoIosAddCircleOutline />,
+                onClick: () => null,
+                type: 'button',
+              },
+              {
+                label: 'Table button 2',
+                icon: <IoIosAddCircleOutline />,
+                onClick: () => null,
+                type: 'button',
+              }
+            ]}
         />
         <Pagination
             onPageChange={console.log}

@@ -52,6 +52,13 @@ type TableOptions<T> = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
+type TableButtonProps = {
+  label: string;
+  icon?: string | Node;
+  onClick: (e: SyntheticEvent) => any;
+  type: string;
+};
+
 type Props<T = Data> = {
   columns: Array<Column> | any;
   data: Array<any>;
@@ -60,12 +67,7 @@ type Props<T = Data> = {
   options: TableOptions<T>;
   showLoader?: boolean;
   renderEmptyTable?: boolean;
-  tableButton?: {
-    label: string;
-    icon?: string | Node;
-    onClick: (e: SyntheticEvent) => any;
-    type: string;
-  };
+  tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
 };
 
@@ -94,7 +96,7 @@ class Table<T> extends Component<Props<T>, State> {
     },
     showLoader: false,
     renderEmptyTable: false,
-    tableButton: null,
+    tableButton: [],
     actionsRowTitle: 'Actions',
   };
 
@@ -264,23 +266,23 @@ class Table<T> extends Component<Props<T>, State> {
         </thead>
         <tbody>{this.renderData(columns, data)}</tbody>
         <tfoot>
-          {tableButton && (
-            <ButtonTableRow>
+          {tableButton?.map((button: TableButtonProps) => (
+            <ButtonTableRow key={button.label}>
               <TableCell colSpan={columnContent.length}>
                 <TableButton
                   modifiers={['buttonLink']}
                   fullWidth
                   fullHeight
-                  onClick={tableButton.onClick}
-                  icon={tableButton.icon}
+                  onClick={button.onClick}
+                  icon={button.icon}
                   iconPosition="left"
-                  type={tableButton.type}
+                  type={button.type}
                 >
-                  {tableButton.label}
+                  {button.label}
                 </TableButton>
               </TableCell>
             </ButtonTableRow>
-          )}
+          ))}
         </tfoot>
       </TableWrapper>
     );
