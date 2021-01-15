@@ -147,6 +147,13 @@ export interface TableOptions<T extends TableRowData> {
   headerSection?: Node | JSX.Element | null;
 }
 
+export interface TableButtonProps {
+  label: string;
+  icon ?: string | Node;
+  onClick: (e: SyntheticEvent) => any;
+  type: string;
+};
+
 export interface TableProps<TableData extends TableRowData = TableRowData> {
   columns: Array<TableColumn<TableData>>;
   data: Array<TableData>;
@@ -155,12 +162,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> {
   className?: string;
   style?: CSSProperties;
   options?: Partial<TableOptions<TableData>>;
-  tableButton?: {
-    label: string;
-    icon?: string | Node | JSX.Element;
-    onClick: (e: SyntheticEvent) => any;
-    type: string;
-  };
+  tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
 }
 
