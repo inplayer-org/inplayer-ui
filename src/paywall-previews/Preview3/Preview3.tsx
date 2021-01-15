@@ -7,6 +7,7 @@ import { GiCutDiamond } from 'react-icons/gi';
 import colors from '../../theme/colors';
 
 // Components
+import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import { StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
@@ -34,6 +35,7 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
+  isAuthenticated?: boolean;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -55,6 +57,7 @@ const Preview3 = ({
   handleOpenModal,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
+  isAuthenticated = false,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -67,7 +70,7 @@ const Preview3 = ({
     >
       <StyledImageHolder backgroundImage={image} onClick={handleOpenModal}>
         <Header onClick={handleOpenModal} color={colors.fontLightGray}>
-          {loginFooterLabel}
+          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
           <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>

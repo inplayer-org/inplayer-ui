@@ -8,6 +8,7 @@ import colors from '../../theme/colors';
 import Branding from '../types/branding';
 
 // Components
+import FooterText from '../shared/FooterText';
 import { OverlayLabel, PreviewFooterLink } from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
 import {
@@ -34,6 +35,7 @@ type Props = {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  isAuthenticated?: boolean;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -58,6 +60,7 @@ const Preview7 = ({
   width = '',
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
+  isAuthenticated = false,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
 
@@ -100,7 +103,7 @@ const Preview7 = ({
       )}
       <StyledPreviewFooter>
         <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-          {loginFooterLabel}
+          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
         </PreviewFooterLink>
       </StyledPreviewFooter>
     </StyledPreviewBox>

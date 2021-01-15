@@ -9,6 +9,7 @@ import colors from '../../theme/colors';
 
 // Components
 import PreviewText from '../shared/PreviewText';
+import FooterText from '../shared/FooterText';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -36,6 +37,7 @@ type Props = {
   loginFooterLabel?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  isAuthenticated?: boolean;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -58,6 +60,7 @@ const Preview6 = ({
   width = '',
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
+  isAuthenticated = false,
 }: Props) => {
   const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
@@ -84,7 +87,7 @@ const Preview6 = ({
       </ButtonWrapper>
       <PreviewFooter>
         <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-          {loginFooterLabel}
+          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
         </PreviewFooterLink>
         <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
           <LockIcon />
