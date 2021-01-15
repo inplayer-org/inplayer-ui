@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.4.3] - 15-11-2020
-
+# [2.5.1] - 15-11-2020
 ### Changes
 
 - Add the possibility to have more than one table button
