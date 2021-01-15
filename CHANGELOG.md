@@ -3,11 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 # [2.5.1] - 15-11-2020
+
 ### Added
 
 - Add the possibility to have more than one table button
 
 # [2.5.0] - 12-01-2021
+
 ### Changes
 
 - Change footer text depending on user auth state
