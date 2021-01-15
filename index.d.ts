@@ -149,7 +149,7 @@ export interface TableOptions<T extends TableRowData> {
 
 export interface TableButtonProps {
   label: string;
-  icon ?: string | Node;
+  icon?: string | ReactNode;
   onClick: (e: SyntheticEvent) => any;
   type: string;
 };

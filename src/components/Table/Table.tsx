@@ -54,7 +54,7 @@ type TableOptions<T> = {
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
 type TableButtonProps = {
   label: string;
-  icon?: string | Node;
+  icon?: string | ReactNode;
   onClick: (e: SyntheticEvent) => any;
   type: string;
 };
