@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.2] - 22-01-2021
+
+### Change
+
+- Use pixels instead of rem for font sizes
+
 # [2.5.1] - 15-11-2020
 
 ### Added
