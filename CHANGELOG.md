@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Use pixels instead of rem for font sizes
 
-# [2.5.1] - 15-11-2020
+# [2.5.1] - 15-01-2021
 
 ### Added
 
