@@ -63,3 +63,26 @@ const Page = () => {
   </Story>
 </Preview>
 
+### SHow/Hide Password Input
+<Preview withSource="open">
+  <Story name="show/hide password">
+  { ()=> {
+    const [val, setVal] = useState('');
+        return (
+            <div>
+                <p>Input value: {val}</p>
+                <Input
+                    type="password"
+                    onChange={(e) => setVal(e.target.value)}
+                    placeholder="Toggle eye icon"
+                    value={val}
+                    id="1"
+                    sizeProp="md"
+                    showPasswordIcon
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+

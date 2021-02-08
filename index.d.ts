@@ -510,6 +510,7 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
   className?: string;
   iconName?: string;
   icon?: ReactNode;
+  showPasswordIcon?: boolean;
 }
 
 export declare const Input: ForwardRefExoticComponent<InputProps>;

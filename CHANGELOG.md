@@ -1,6 +1,11 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
+# [2.5.3] - 09-02-2021
+
+### Change
+
+- Add (optional) icon to show/hide password on input component
 
 # [2.5.2] - 22-01-2021
 

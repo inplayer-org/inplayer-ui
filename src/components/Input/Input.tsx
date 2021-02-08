@@ -1,7 +1,8 @@
-import React, { ChangeEvent, ReactNode, forwardRef, RefObject } from 'react';
+import React, { ChangeEvent, ReactNode, forwardRef, RefObject, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import colors from '../../theme/colors';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
@@ -10,6 +11,13 @@ type StyledInputProps = {
   sizeProp?: Size;
   icon?: ReactNode | null;
 };
+
+const PasswordEyeWrapper = styled.div`
+  position: absolute;
+  top: 30%;
+  right: 1%;
+  cursor: pointer;
+`;
 
 const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
@@ -73,6 +81,7 @@ const IconContainer = styled.div`
 const InputWrapper = styled.div`
   width: 100%;
   position: relative;
+  display: flex;
 `;
 
 type Props = {
@@ -84,6 +93,7 @@ type Props = {
   sizeProp?: Size;
   icon?: ReactNode;
   className?: string;
+  showPasswordIcon?: boolean;
 };
 
 type RefType =
@@ -94,7 +104,16 @@ type RefType =
 
 const Input = forwardRef(
   (
-    { type, placeholder, onChange, sizeProp, className = '', icon, ...rest }: Props,
+    {
+      type,
+      placeholder,
+      onChange,
+      sizeProp,
+      className = '',
+      icon,
+      showPasswordIcon = false,
+      ...rest
+    }: Props,
     ref: RefType
   ) => {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
@@ -103,6 +122,10 @@ const Input = forwardRef(
         onChange(e);
       }
     };
+
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePasswordVisiblity = () => setPasswordShown(!passwordShown);
 
     if (type === 'search') {
       return (
@@ -128,12 +151,22 @@ const Input = forwardRef(
         <StyledInput
           sizeProp={sizeProp}
           ref={ref}
-          type={type || 'text'}
+          type={passwordShown ? 'text' : type}
           placeholder={placeholder}
           onChange={onInputChange}
           icon={icon}
           {...rest}
         />
+
+        {showPasswordIcon && (
+          <PasswordEyeWrapper>
+            {passwordShown ? (
+              <AiOutlineEye onClick={() => togglePasswordVisiblity()} />
+            ) : (
+              <AiOutlineEyeInvisible onClick={() => togglePasswordVisiblity()} />
+            )}
+          </PasswordEyeWrapper>
+        )}
       </InputWrapper>
     );
   }
@@ -144,6 +177,8 @@ Input.displayName = 'Input';
 Input.defaultProps = {
   sizeProp: 'md',
   icon: null,
+  className: '',
+  showPasswordIcon: false,
 };
 
 export default Input;
