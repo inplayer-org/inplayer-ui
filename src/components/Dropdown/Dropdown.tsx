@@ -1,7 +1,7 @@
 import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
 import DropdownContainer from './DropdownContainer';
 
-type Option = {
+export type Option = {
   value: string;
   displayName: string;
 };
@@ -11,7 +11,9 @@ type DefaultOption = {
   disabled?: boolean;
 };
 
-type Props = SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectHTMLProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>;
+
+type Props = SelectHTMLProps & {
   modifiers?: Array<string>;
   value: string;
   onChange?: (value: string) => void;

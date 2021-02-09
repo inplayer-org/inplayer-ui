@@ -1,21 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import moment, { Moment } from 'moment';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
+import { FaCalendarAlt } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import { getMonthOptions, getYearOptions } from '../../utils/helpers';
 import Dropdown from '../Dropdown';
+import { Option } from '../Dropdown/Dropdown';
 import DatePickerWrapper from './DatePickerWrapper';
 import { PERIODS, INNERPERIODS } from './periods';
 import { Styled } from './styles';
 import 'react-dates/initialize';
 
-const ContentHolder = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 86%;
+const ContentHolder = styled.div<{ isDropdown?: boolean }>`
   margin: 0 auto;
   padding: 15px 0 15px;
+  ${({ isDropdown }) =>
+    !isDropdown &&
+    css`
+      display: flex;
+      justify-content: flex-end;
+      width: 86%;
+    `}
+`;
+
+const StyledDropdown = styled(Dropdown)`
+  margin-right: 1rem;
+  color: ${colors.blue};
+  background-color: transparent;
+  border: 1px solid ${colors.blue};
+  font-size: ${({ theme }) => theme.font.sizes.extraSmall};
+  font-weight: ${({ theme }) => theme.font.weights.bold};
+  border-radius: 5px;
 `;
 
 const AnalyticsPeriods = styled.div`
@@ -82,6 +98,7 @@ type Props = {
   showPresets?: boolean;
   showInnerPresets?: boolean;
   className?: string;
+  showPresetsWithDropdown?: boolean;
 };
 
 const DatePicker = ({
@@ -99,6 +116,7 @@ const DatePicker = ({
   focusedInput,
   className = '',
   minimumNights = 0,
+  showPresetsWithDropdown = false,
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
 
@@ -220,6 +238,23 @@ const DatePicker = ({
 
   const handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {
     onDateChange({ startDate, endDate });
+    setActivePeriod('');
+  };
+
+  const options: Array<Option> = [
+    { value: PERIODS.ONE_MONTH, displayName: '1 month' },
+    { value: PERIODS.ONE_WEEK, displayName: '1 week' },
+    { value: PERIODS.TWO_WEEKS, displayName: '2 weeks' },
+    { value: PERIODS.SIX_MONTHS, displayName: '6 months' },
+    { value: PERIODS.ONE_YEAR, displayName: '1 year' },
+    { value: PERIODS.TODAY, displayName: 'last 24 hours' },
+    { value: PERIODS.ALL, displayName: 'all' },
+  ];
+
+  const defaultOption = { displayName: 'Choose period', disabled: true };
+
+  const handleDropdownChange = (value: string) => {
+    handleRangeClick(value);
   };
 
   const renderPeriodElement = (periodConst: string, periodText: string, key: number) => (
@@ -234,6 +269,39 @@ const DatePicker = ({
       {periodText.toLowerCase() !== 'all' && ' |'}
     </SpanContainer>
   );
+
+  if (showPresetsWithDropdown) {
+    return (
+      <ContentHolder isDropdown>
+        <StyledDropdown
+          defaultOption={defaultOption}
+          options={options}
+          value={activePeriod}
+          onChange={handleDropdownChange}
+        />
+        <DatePickerWrapper showPresetsWithDropdown className={className}>
+          <DateRangePicker
+            isOutsideRange={isOutsideRange}
+            onDatesChange={handleDateChange}
+            onFocusChange={onFocusChange}
+            renderMonthElement={renderMonthElement}
+            focusedInput={focusedInput}
+            startDate={startDateProp}
+            startDateId={startDateId}
+            endDate={endDateProp}
+            endDateId={endDateId}
+            customArrowIcon="-"
+            calendarInfoPosition="before"
+            minimumNights={minimumNights}
+            enableOutsideDays
+            readOnly
+            renderCalendarInfo={renderDatePresets}
+            customInputIcon={<FaCalendarAlt />}
+          />
+        </DatePickerWrapper>
+      </ContentHolder>
+    );
+  }
 
   if (showPresets) {
     return (
