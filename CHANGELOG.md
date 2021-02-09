@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.3] - 10-02-2021
+
+### Added
+
+- Add another type of datepicker component with dropdown presets
 # [2.5.2] - 22-01-2021
 
 ### Change
