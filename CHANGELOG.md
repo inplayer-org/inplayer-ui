@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.3] - 25-02-2021
+
+### Fixes
+
+- Daypicker moment type error
+
 # [2.5.2] - 22-01-2021
 
 ### Change
