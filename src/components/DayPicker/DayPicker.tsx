@@ -80,7 +80,7 @@ const DayPicker = ({
         onFocusChange={onFocusChange}
         renderMonthElement={renderMonthElement}
         focused={focused}
-        date={typeof date === 'string' ? moment(date) : date}
+        date={date ? moment(date) : null}
         numberOfMonths={numberOfMonths}
         disabled={disabled}
         placeholder={placeholder}
