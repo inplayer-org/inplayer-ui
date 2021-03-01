@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 ### Change
 
 - Add missing className for Switch component in order to externaly style it with styled-components
+  
+### Fixes
+
+- Daypicker moment type error
+
 # [2.5.2] - 22-01-2021
 
 ### Change
