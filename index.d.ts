@@ -406,6 +406,15 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement> {
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
+export interface DrawerProps {
+  handleClose: () => void;
+  drawerIsOpen: boolean;
+  width?: string;
+}
+
+export declare const Drawer: FunctionComponent<DrawerProps>;
+
+
 export type LabelModifier =
   | 'fontSizeExtraSmall'
   | 'fontSizeSmall'
