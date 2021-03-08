@@ -17,7 +17,7 @@ export const SideDrawer = styled.div<SideDrawerProps>`
   z-index: 1000;
 
   transform: translateX(100%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.5s ease-out;
 
   ${({ isOpen }) =>
     isOpen &&

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.6.0] - 09-03-2021
+
+### Added
+
+- Add new Drawer component
+
 # [2.5.3] - 25-02-2021
 
 ### Fixes
