@@ -10,6 +10,7 @@ type SwitchProps = {
   id: string;
   label: string;
   onChange: (checked: boolean) => void;
+  className?: string;
 };
 
 const MarginLeftLabel = styled(Label)`
@@ -66,7 +67,7 @@ const Slider = styled.span`
   }
 `;
 
-const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps) => {
+const Switch = ({ id, checked, label, disabled = false, onChange, className }: SwitchProps) => {
   const onToggleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -74,7 +75,7 @@ const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps)
   };
 
   return (
-    <SwitchWrapper>
+    <SwitchWrapper className={className}>
       <MarginLeftLabel disabled={disabled} htmlFor={id}>
         <Span>{label}</Span>
         <Input
