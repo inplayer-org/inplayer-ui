@@ -18,8 +18,9 @@ import {
   PreviewFooter,
   IconHolder,
   StyledBuyButton,
+  StyledRestrictedAssetContainer,
 } from './styled';
-import { PreviewFooterLink } from '../shared/PreviewComponents';
+import { PreviewFooterLink, RestrictedAssetIcon } from '../shared/PreviewComponents';
 
 // Types
 import Branding from '../types/branding';
@@ -38,6 +39,7 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
+  premiumContentLabel?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -61,8 +63,14 @@ const Preview6 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
+  premiumContentLabel = 'Premium content',
 }: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  isRestrictedAsset = true;
+  const image = imageUrl;
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -71,7 +79,14 @@ const Preview6 = ({
       width={width}
       height={height}
     >
-      <ImageWrapper backgroundImage={image} onClick={handleOpenModal} />
+      <ImageWrapper isRestrictedAsset backgroundImage={image} onClick={handleOpenModal} />
+      {isRestrictedAsset && (
+        <StyledRestrictedAssetContainer fontSize="14px">
+          <RestrictedAssetIcon size="5rem" />
+          {premiumContentLabel}
+        </StyledRestrictedAssetContainer>
+      )}
+
       <ItemDetails>
         <PreviewText value={title} />
         <PreviewText value={description} />

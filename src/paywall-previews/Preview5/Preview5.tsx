@@ -9,7 +9,11 @@ import PreviewText from '../shared/PreviewText';
 import Branding from '../types/branding';
 
 // Components
-import { StyledPaywallDescription } from '../shared/PreviewComponents';
+import {
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+  StyledPaywallDescription,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -22,6 +26,7 @@ import {
   PaywallDescriptionSpan,
   TitleHolder,
   DescriptionHolder,
+  RestrictedAssetText,
 } from './styled';
 
 type Props = {
@@ -56,7 +61,15 @@ const Preview5 = ({
   isRestrictedAsset = false,
   premiumContentLabel = 'Premium content',
 }: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  isRestrictedAsset = true;
+  const image = imageUrl;
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  premiumContentLabel = 'This content is not available in your country';
+
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -65,8 +78,14 @@ const Preview5 = ({
       width={width}
       height={height}
     >
-      <ImageWrapper height={height} backgroundImage={image} onClick={handleOpenModal}>
+      <ImageWrapper
+        isRestrictedAsset
+        height={height}
+        backgroundImage={image}
+        onClick={handleOpenModal}
+      >
         <Overlay />
+
         <BuyButtonHolder>
           <BuyButtonBorder>
             <StyledBuyButton
@@ -79,6 +98,9 @@ const Preview5 = ({
           </BuyButtonBorder>
         </BuyButtonHolder>
       </ImageWrapper>
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+      )}
       <ItemDetails height={height}>
         <StyledPaywallDescription
           color={lighten(0.01, buttonBgColor)}

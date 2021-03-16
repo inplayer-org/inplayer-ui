@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Components
-import { PreviewBox, ImageHolder, BuyButton } from '../shared/PreviewComponents';
+import {
+  PreviewBox,
+  ImageHolder,
+  BuyButton,
+  RestrictedAssetContainer,
+} from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
   max-width: ${({ width }) => (width ? '' : '850px')};
@@ -13,13 +18,21 @@ export const StyledPreviewBox = styled(PreviewBox)`
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 1fr auto;
   grid-column-gap: 1rem;
+  position: relative;
   @media screen and (max-width: 1100px) {
     grid-template-columns: 2fr 1fr 1fr;
   }
 `;
 
+export const Container = styled.div`
+  /* @media screen and (max-width: 1100px) {
+    position: relative;
+  } */
+`;
+
 interface ImageWrapperProps {
   backgroundImage: string;
+  isRestrictedAsset?: boolean;
 }
 
 export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
@@ -38,6 +51,12 @@ export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
     margin: 0;
     grid-row: 1;
   }
+
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.2);
+    `}
 `;
 
 export const ItemDetails = styled.div`
@@ -87,4 +106,14 @@ export const IconHolder = styled.div<IconHolderProps>`
   display: ${({ hasProtectedByLabel }) => (hasProtectedByLabel ? 'block' : 'none')};
   font-size: ${({ theme }) => theme.font.sizes.small};
   margin-left: 0.4rem;
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  width: 50%;
+  top: 45%;
+  left: 20%;
+  @media screen and (max-width: 1100px) {
+    left: 25%;
+    top: 32%;
+  }
 `;

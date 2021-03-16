@@ -1,8 +1,9 @@
 import { darken, transparentize } from 'polished';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { prop } from 'styled-tools';
 
 // utils
+import { MdDoNotDisturbAlt } from 'react-icons/md';
 import colors from '../../theme/colors';
 
 // components
@@ -33,6 +34,7 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
 
 type PreviewImageProps = {
   imageBorderRadius?: string;
+  isRestrictedAsset?: boolean;
 };
 
 export const PreviewImage = styled.img<PreviewImageProps>`
@@ -168,4 +170,28 @@ export const PreviewFooterLink = styled(FooterLink)`
   vertical-align: baseline;
   background: transparent;
   color: ${({ theme }) => theme.palette.text.main};
+`;
+
+export const RestrictedAssetIcon = styled(MdDoNotDisturbAlt)<{ size?: string }>`
+  top: 25%;
+  width: ${({ size }) => size || '8rem'};
+  height: ${({ size }) => size || '8rem'};
+`;
+interface RestrictedAssetContainerProps {
+  fontSize?: string;
+}
+export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps>`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: ${({ fontSize }) => fontSize || '18px'};
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

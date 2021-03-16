@@ -9,7 +9,7 @@ import colors from '../../theme/colors';
 // Components
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
-import { StyledPaywallDescription } from '../shared/PreviewComponents';
+import { RestrictedAssetContainer, StyledPaywallDescription } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
@@ -59,7 +59,13 @@ const Preview3 = ({
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
 }: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  isRestrictedAsset = true;
+  const image = imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  premiumContentLabel = 'This content is not available in your country';
+
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -74,9 +80,13 @@ const Preview3 = ({
         </Header>
         <StyledTextWrapper onClick={handleOpenModal}>
           <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-            <PaywallDescriptionSpan>
-              <GiCutDiamond /> {premiumContentLabel}
-            </PaywallDescriptionSpan>
+            {isRestrictedAsset ? (
+              <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+            ) : (
+              <PaywallDescriptionSpan>
+                <GiCutDiamond /> {premiumContentLabel}
+              </PaywallDescriptionSpan>
+            )}
           </StyledPaywallDescription>
           <TitleWrapper>
             <TitleBorder color={buttonBgColor}>

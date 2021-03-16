@@ -8,7 +8,11 @@ import Branding from '../types/branding';
 
 // Components
 import FooterText from '../shared/FooterText';
-import { OverlayLabel } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
 import {
   InPlayerPreviewBox,
@@ -57,8 +61,12 @@ const Preview1 = ({
   isRestrictedAsset = false,
   isAuthenticated = false,
 }: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
+  // eslint-disable-next-line no-param-reassign
+  isRestrictedAsset = true;
+  const image = imageUrl;
+  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
+  // eslint-disable-next-line no-param-reassign
+  premiumContentLabel = 'This content is not available in your country';
   return (
     <InPlayerPreviewBox className="inplayer-preview-box">
       {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
@@ -68,7 +76,14 @@ const Preview1 = ({
           src={image}
           role="presentation"
           className="inplayer-paywall"
+          isRestrictedAsset
         />
+        {isRestrictedAsset && (
+          <RestrictedAssetContainer>
+            <RestrictedAssetIcon />
+            {premiumContentLabel}
+          </RestrictedAssetContainer>
+        )}
         <PaywallExplain
           hasProtectedByLabel={hasProtectedByLabel}
           className="inplayer-paywallexplain"
@@ -78,7 +93,7 @@ const Preview1 = ({
             <a href="https://inplayer.com">InPlayer Paywall</a>
           </InplayerWhiteLogo>
           <LockIcon className="inplayer-lock" />
-          <span>{premiumContentLabel}</span>
+          <span>{!isRestrictedAsset && premiumContentLabel}</span>
         </PaywallExplain>
       </ImageHolder>
       <ItemDetails className="inplayer-itemdetails">
