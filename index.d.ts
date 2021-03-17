@@ -408,7 +408,7 @@ export declare const Dropdown: FunctionComponent<DropdownProps>;
 
 export interface DrawerProps {
   handleClose: () => void;
-  drawerIsOpen: boolean;
+  isOpen: boolean;
   width?: string;
 }
 

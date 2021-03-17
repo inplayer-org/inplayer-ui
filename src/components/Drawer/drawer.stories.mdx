@@ -21,19 +21,19 @@ const Page = () => (
 <Preview withSource="open">
   <Story name="standard">
     { () => {
-        const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+        const [isOpen, setisOpen] = useState(false);
         const handleToggleDrawer = () => {
-          setDrawerIsOpen(!drawerIsOpen);
+          setisOpen(!isOpen);
         };
         const handleClose = () => {
-          setDrawerIsOpen(false);
+          setisOpen(false);
         };
         return (
             <div>
               <button type="button" onClick={handleToggleDrawer}>
                 Open drawer
               </button> 
-              <Drawer drawerIsOpen={drawerIsOpen} handleClose={handleClose}> Hi there! </Drawer>
+              <Drawer isOpen={isOpen} handleClose={handleClose}> Hi there! </Drawer>
             </div>
         )
   }}

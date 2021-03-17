@@ -3,12 +3,12 @@ import DrawerContainer from './DrawerContainer';
 
 interface Props {
   handleClose: () => void;
-  drawerIsOpen: boolean;
+  isOpen: boolean;
   width?: string;
 }
 
-const Drawer: React.FC<Props> = ({ children, handleClose, drawerIsOpen, width = '40%' }) => (
-  <DrawerContainer shouldShowDrawer={drawerIsOpen} closeDrawer={handleClose} width={width}>
+const Drawer: React.FC<Props> = ({ children, handleClose, isOpen, width = '40%' }) => (
+  <DrawerContainer shouldShowDrawer={isOpen} closeDrawer={handleClose} width={width}>
     {children}
   </DrawerContainer>
 );
