@@ -58,49 +58,40 @@ const Preview3 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
-}: Props) => {
-  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  isRestrictedAsset = true;
-  const image = imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  premiumContentLabel = 'This content is not available in your country';
-
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minHeight={minHeight}
-      minWidth={minWidth}
-      width={width}
-      height={height}
-    >
-      <StyledImageHolder backgroundImage={image} onClick={handleOpenModal}>
-        <Header onClick={handleOpenModal} color={colors.fontLightGray}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </Header>
-        <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-            {isRestrictedAsset ? (
-              <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
-            ) : (
-              <PaywallDescriptionSpan>
-                <GiCutDiamond /> {premiumContentLabel}
-              </PaywallDescriptionSpan>
-            )}
-          </StyledPaywallDescription>
-          <TitleWrapper>
-            <TitleBorder color={buttonBgColor}>
-              <PreviewText value={previewTitle} textColor={colors.white} />
-            </TitleBorder>
-            <StyledIcon color={buttonBgColor} />
-          </TitleWrapper>
-          <DescriptionWrapper>
-            <PreviewText value={previewDescription} textColor={colors.white} />
-          </DescriptionWrapper>
-        </StyledTextWrapper>
-      </StyledImageHolder>
-    </StyledPreviewBox>
-  );
-};
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minHeight={minHeight}
+    minWidth={minWidth}
+    width={width}
+    height={height}
+  >
+    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+      <Header onClick={handleOpenModal} color={colors.fontLightGray}>
+        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+      </Header>
+      <StyledTextWrapper onClick={handleOpenModal}>
+        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+          {isRestrictedAsset ? (
+            <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+          ) : (
+            <PaywallDescriptionSpan>
+              <GiCutDiamond /> {premiumContentLabel}
+            </PaywallDescriptionSpan>
+          )}
+        </StyledPaywallDescription>
+        <TitleWrapper>
+          <TitleBorder color={buttonBgColor}>
+            <PreviewText value={previewTitle} textColor={colors.white} />
+          </TitleBorder>
+          <StyledIcon color={buttonBgColor} />
+        </TitleWrapper>
+        <DescriptionWrapper>
+          <PreviewText value={previewDescription} textColor={colors.white} />
+        </DescriptionWrapper>
+      </StyledTextWrapper>
+    </StyledImageHolder>
+  </StyledPreviewBox>
+);
 
 export default Preview3;

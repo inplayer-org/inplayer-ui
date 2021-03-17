@@ -68,13 +68,6 @@ const Preview4 = ({
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  isRestrictedAsset = true;
-  const image = imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  // premiumContentLabel = 'This content is not available in your country';
-
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -104,7 +97,7 @@ const Preview4 = ({
             <FaLock />
           </Icon>
         </StyledIconWrapper>
-        <StyledPreviewImage isRestrictedAsset src={image} />
+        <StyledPreviewImage isRestrictedAsset={isRestrictedAsset} src={imageUrl} />
         {isRestrictedAsset && (
           <RestrictedAssetContainer>
             <RestrictedAssetIcon />

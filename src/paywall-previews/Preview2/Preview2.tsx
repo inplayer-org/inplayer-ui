@@ -69,7 +69,11 @@ const Preview2 = ({
     height={height}
     width={width}
   >
-    <StyledImageHolder isRestrictedAsset backgroundImage={imageUrl} onClick={handleOpenModal} />
+    <StyledImageHolder
+      isRestrictedAsset={isRestrictedAsset}
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
+    />
     {isRestrictedAsset && (
       <StyledRestrictedAssetContainer>
         <RestrictedAssetIcon />

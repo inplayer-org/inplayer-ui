@@ -46,7 +46,7 @@ export const StyledImageHolder = styled(ImageHolder)<StyledImageHolder>`
   ${({ isRestrictedAsset }) =>
     isRestrictedAsset &&
     css`
-      filter: brightness(0.2);
+      filter: brightness(0.3);
     `}
 `;
 

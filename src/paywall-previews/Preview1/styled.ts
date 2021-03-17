@@ -215,7 +215,7 @@ export const PreviewImage = styled.img<{ isRestrictedAsset?: boolean }>`
   ${({ isRestrictedAsset }) =>
     isRestrictedAsset &&
     css`
-      filter: brightness(0.2);
+      filter: brightness(0.3);
       position: absolute;
     `}
 `;

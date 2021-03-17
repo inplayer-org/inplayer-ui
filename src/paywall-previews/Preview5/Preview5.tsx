@@ -60,64 +60,53 @@ const Preview5 = ({
   handleOpenModal,
   isRestrictedAsset = false,
   premiumContentLabel = 'Premium content',
-}: Props) => {
-  // eslint-disable-next-line no-param-reassign
-  isRestrictedAsset = true;
-  const image = imageUrl;
-  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  // const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  // eslint-disable-next-line no-param-reassign
-  premiumContentLabel = 'This content is not available in your country';
-
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minHeight={minHeight}
-      minWidth={minWidth}
-      width={width}
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minHeight={minHeight}
+    minWidth={minWidth}
+    width={width}
+    height={height}
+  >
+    <ImageWrapper
+      isRestrictedAsset={isRestrictedAsset}
       height={height}
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
     >
-      <ImageWrapper
-        isRestrictedAsset
-        height={height}
-        backgroundImage={image}
-        onClick={handleOpenModal}
-      >
-        <Overlay />
+      <Overlay />
 
-        <BuyButtonHolder>
-          <BuyButtonBorder>
-            <StyledBuyButton
-              buttonBgColor={buttonBgColor}
-              buttonTextColor={buttonTextColor}
-              onClick={handleOpenModal}
-            >
-              {previewButtonLabel}
-            </StyledBuyButton>
-          </BuyButtonBorder>
-        </BuyButtonHolder>
-      </ImageWrapper>
-      {isRestrictedAsset && (
-        <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
-      )}
-      <ItemDetails height={height}>
-        <StyledPaywallDescription
-          color={lighten(0.01, buttonBgColor)}
-          hasProtectedByLabel={hasProtectedByLabel}
-        >
-          <StyledIcon />
-          <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
-        </StyledPaywallDescription>
-        <TitleHolder>
-          <PreviewText value={previewTitle} />
-        </TitleHolder>
-        <DescriptionHolder>
-          <PreviewText value={previewDescription} />
-        </DescriptionHolder>
-      </ItemDetails>
-    </StyledPreviewBox>
-  );
-};
+      <BuyButtonHolder>
+        <BuyButtonBorder>
+          <StyledBuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </StyledBuyButton>
+        </BuyButtonBorder>
+      </BuyButtonHolder>
+    </ImageWrapper>
+    {isRestrictedAsset && (
+      <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+    )}
+    <ItemDetails height={height}>
+      <StyledPaywallDescription
+        color={lighten(0.01, buttonBgColor)}
+        hasProtectedByLabel={hasProtectedByLabel}
+      >
+        <StyledIcon />
+        <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
+      </StyledPaywallDescription>
+      <TitleHolder>
+        <PreviewText value={previewTitle} />
+      </TitleHolder>
+      <DescriptionHolder>
+        <PreviewText value={previewDescription} />
+      </DescriptionHolder>
+    </ItemDetails>
+  </StyledPreviewBox>
+);
 
 export default Preview5;

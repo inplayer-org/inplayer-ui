@@ -55,7 +55,7 @@ export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
   ${({ isRestrictedAsset }) =>
     isRestrictedAsset &&
     css`
-      filter: brightness(0.2);
+      filter: brightness(0.3);
     `}
 `;
 

@@ -61,7 +61,7 @@ export const StyledPreviewImage = styled(PreviewImage)<{ isRestrictedAsset?: boo
   ${({ isRestrictedAsset }) =>
     isRestrictedAsset &&
     css`
-      filter: brightness(0.2);
+      filter: brightness(0.3);
     `}
 `;
 
