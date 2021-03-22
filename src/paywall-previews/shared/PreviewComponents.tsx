@@ -176,9 +176,11 @@ export const RestrictedAssetIcon = styled(MdDoNotDisturbAlt)<{ size?: string }>`
   top: 25%;
   width: ${({ size }) => size || '8rem'};
   height: ${({ size }) => size || '8rem'};
+  margin-bottom: 1rem;
 `;
 interface RestrictedAssetContainerProps {
   fontSize?: string;
+  height?: string;
 }
 export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps>`
   z-index: 100;
@@ -188,7 +190,7 @@ export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps
   font-weight: bold;
   text-align: center;
   width: 100%;
-  top: 50%;
+  top: ${({ height }) => height || '50%'};
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;

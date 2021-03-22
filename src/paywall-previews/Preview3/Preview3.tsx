@@ -9,7 +9,11 @@ import colors from '../../theme/colors';
 // Components
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
-import { RestrictedAssetContainer, StyledPaywallDescription } from '../shared/PreviewComponents';
+import {
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+  StyledPaywallDescription,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
@@ -73,7 +77,10 @@ const Preview3 = ({
       <StyledTextWrapper onClick={handleOpenModal}>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
           {isRestrictedAsset ? (
-            <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+            <RestrictedAssetContainer height="40%">
+              <RestrictedAssetIcon />
+              {premiumContentLabel}
+            </RestrictedAssetContainer>
           ) : (
             <PaywallDescriptionSpan>
               <GiCutDiamond /> {premiumContentLabel}
@@ -84,7 +91,7 @@ const Preview3 = ({
           <TitleBorder color={buttonBgColor}>
             <PreviewText value={previewTitle} textColor={colors.white} />
           </TitleBorder>
-          <StyledIcon color={buttonBgColor} />
+          {!isRestrictedAsset && <StyledIcon color={buttonBgColor} />}
         </TitleWrapper>
         <DescriptionWrapper>
           <PreviewText value={previewDescription} textColor={colors.white} />

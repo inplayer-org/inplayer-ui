@@ -76,20 +76,25 @@ const Preview5 = ({
     >
       <Overlay />
 
-      <BuyButtonHolder>
-        <BuyButtonBorder>
-          <StyledBuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </StyledBuyButton>
-        </BuyButtonBorder>
-      </BuyButtonHolder>
+      {!isRestrictedAsset && (
+        <BuyButtonHolder>
+          <BuyButtonBorder>
+            <StyledBuyButton
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </StyledBuyButton>
+          </BuyButtonBorder>
+        </BuyButtonHolder>
+      )}
     </ImageWrapper>
     {isRestrictedAsset && (
-      <RestrictedAssetContainer>{premiumContentLabel}</RestrictedAssetContainer>
+      <RestrictedAssetContainer height="38%">
+        <RestrictedAssetIcon />
+        {premiumContentLabel}
+      </RestrictedAssetContainer>
     )}
     <ItemDetails height={height}>
       <StyledPaywallDescription
