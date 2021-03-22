@@ -1,6 +1,12 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
+
+# [2.5.4] - 22-03-2021
+
+### Change
+
+- Add styling changes for asset restrictions in preview templates
 # [2.5.3] - 23-02-2021
 
 ### Change
