@@ -10643,10 +10643,10 @@ react-outside-click-handler@^1.2.4:
     object.values "^1.1.0"
     prop-types "^15.7.2"
 
-react-paginate@^6.5.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-6.5.0.tgz#b9baf53627b115cfd688afa048776aa45bffda19"
-  integrity sha512-H7xSi9jyiJzgfaj+2nNhQcjZfwzJ/Mxb64V2RiyDctjZyCWojwsaGwMqhLBpQ58iAuMVtBMRQ7ECqMcUKG9QSQ==
+react-paginate@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/react-paginate/-/react-paginate-7.1.1.tgz#9b4e34c8aa0def04fa7bb7e0f939f0d9400e30e9"
+  integrity sha512-LJJUJxThsnIhnpc01ooJHFvbl6+FcNNIQgaiv1cFK15w2tBVp7J42S70YEX/mXwHNOCZCLSTMHsEEAi0gDt2OA==
   dependencies:
     prop-types "^15.6.1"
 
