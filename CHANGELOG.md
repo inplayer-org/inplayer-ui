@@ -2,11 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.5.4] - 22-03-2021
+# [2.5.5] - 22-03-2021
 
 ### Change
 
 - Add styling changes for asset restrictions in preview templates
+
+# [2.5.4] - 12-03-2021
+
+### Change
+
+- Add missing className for Switch component in order to externaly style it with styled-components
+
 # [2.5.3] - 23-02-2021
 
 ### Change
