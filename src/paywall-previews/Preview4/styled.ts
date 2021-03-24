@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 
 // utils
@@ -55,8 +55,14 @@ export const Icon = styled.div`
   transform: rotate(-45deg);
 `;
 
-export const StyledPreviewImage = styled(PreviewImage)`
+export const StyledPreviewImage = styled(PreviewImage)<{ isRestrictedAsset?: boolean }>`
   position: absolute;
+
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const StyledTextWrapper = styled(TextWrapper)`

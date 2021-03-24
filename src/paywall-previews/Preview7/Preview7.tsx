@@ -9,7 +9,12 @@ import Branding from '../types/branding';
 
 // Components
 import FooterText from '../shared/FooterText';
-import { OverlayLabel, PreviewFooterLink } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  PreviewFooterLink,
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
@@ -36,6 +41,7 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
+  premiumContentLabel?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -61,53 +67,58 @@ const Preview7 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minWidth={minWidth}
-      minHeight={minHeight}
-      width={width}
-      height={height}
-    >
-      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper onClick={handleOpenModal}>
-        <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
-        <StyledIconWrapper
-          backgroundColor={buttonBgColor}
-          hasProtectedByLabel={hasProtectedByLabel}
-        >
-          <FaLock />
-        </StyledIconWrapper>
-      </StyledImageWrapper>
-      <ItemDetails>
-        <PreviewHeader variant="h4">
-          <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
-        </PreviewHeader>
-        <ItemContent variant="p">
-          <PreviewText value={previewDescription} isTextCenter />
-        </ItemContent>
-      </ItemDetails>
-      {displayBuyButton && (
-        <ButtonWrapper>
-          <StyledBuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </StyledBuyButton>
-        </ButtonWrapper>
+  premiumContentLabel = 'Premium content',
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minWidth={minWidth}
+    minHeight={minHeight}
+    width={width}
+    height={height}
+  >
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <StyledImageWrapper onClick={handleOpenModal}>
+      <StyledPreviewImage
+        isRestrictedAsset={isRestrictedAsset}
+        src={imageUrl}
+        imageWidth="250px"
+        imageBorderRadius
+      />
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer fontSize="14px">
+          <RestrictedAssetIcon size="4rem" />
+          {premiumContentLabel}
+        </RestrictedAssetContainer>
       )}
-      <StyledPreviewFooter>
-        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </PreviewFooterLink>
-      </StyledPreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+      <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+        <FaLock />
+      </StyledIconWrapper>
+    </StyledImageWrapper>
+    <ItemDetails>
+      <PreviewHeader variant="h4">
+        <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
+      </PreviewHeader>
+      <ItemContent variant="p">
+        <PreviewText value={previewDescription} isTextCenter />
+      </ItemContent>
+    </ItemDetails>
+    {displayBuyButton && (
+      <ButtonWrapper>
+        <StyledBuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </StyledBuyButton>
+      </ButtonWrapper>
+    )}
+    <StyledPreviewFooter>
+      <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+      </PreviewFooterLink>
+    </StyledPreviewFooter>
+  </StyledPreviewBox>
+);
 
 export default Preview7;

@@ -1,15 +1,6 @@
 import React from 'react';
 
 // Colors
-import colors from '../../theme/colors';
-
-// Types
-import Branding from '../types/branding';
-
-// Components
-import FooterText from '../shared/FooterText';
-import PreviewText from '../shared/PreviewText';
-import { StyledPaywallDescription, BuyButton, FooterLink } from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
@@ -18,7 +9,22 @@ import {
   BuyButtonWrapper,
   StyledIcon,
   Footer,
+  StyledRestrictedAssetContainer,
 } from './styled';
+import colors from '../../theme/colors';
+
+// Types
+import Branding from '../types/branding';
+
+// Components
+import FooterText from '../shared/FooterText';
+import PreviewText from '../shared/PreviewText';
+import {
+  StyledPaywallDescription,
+  BuyButton,
+  FooterLink,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 
 type Props = {
   branding?: Branding;
@@ -55,43 +61,50 @@ const Preview2 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minHeight={minHeight}
-      minWidth={minWidth}
-      height={height}
-      width={width}
-    >
-      <StyledImageHolder backgroundImage={image} onClick={handleOpenModal} />
-      <AssetDetails>
-        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-          <PaywallDescriptionSpan>
-            <StyledIcon name="star" />
-            {premiumContentLabel}
-          </PaywallDescriptionSpan>
-        </StyledPaywallDescription>
-        <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
-        <PreviewText value={previewDescription} />
-        <BuyButtonWrapper>
-          <BuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </BuyButton>
-        </BuyButtonWrapper>
-        <Footer color={colors.fontGray}>
-          <FooterLink href="#login" onClick={handleOpenModal}>
-            <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-          </FooterLink>
-        </Footer>
-      </AssetDetails>
-    </StyledPreviewBox>
-  );
-};
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minHeight={minHeight}
+    minWidth={minWidth}
+    height={height}
+    width={width}
+  >
+    <StyledImageHolder
+      isRestrictedAsset={isRestrictedAsset}
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
+    />
+    {isRestrictedAsset && (
+      <StyledRestrictedAssetContainer>
+        <RestrictedAssetIcon />
+        This content is not available in your country
+      </StyledRestrictedAssetContainer>
+    )}
+    <AssetDetails>
+      <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+        <PaywallDescriptionSpan>
+          <StyledIcon name="star" />
+          {!isRestrictedAsset && premiumContentLabel}
+        </PaywallDescriptionSpan>
+      </StyledPaywallDescription>
+      <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
+      <PreviewText value={previewDescription} />
+      <BuyButtonWrapper>
+        <BuyButton
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </BuyButton>
+      </BuyButtonWrapper>
+      <Footer color={colors.fontGray}>
+        <FooterLink href="#login" onClick={handleOpenModal}>
+          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+        </FooterLink>
+      </Footer>
+    </AssetDetails>
+  </StyledPreviewBox>
+);
 
 export default Preview2;

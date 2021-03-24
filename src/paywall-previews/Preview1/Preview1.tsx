@@ -8,7 +8,11 @@ import Branding from '../types/branding';
 
 // Components
 import FooterText from '../shared/FooterText';
-import { OverlayLabel } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
 import {
   InPlayerPreviewBox,
@@ -56,56 +60,56 @@ const Preview1 = ({
   premiumContentLabel = 'Premium content',
   isRestrictedAsset = false,
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
-  return (
-    <InPlayerPreviewBox className="inplayer-preview-box">
-      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
-        <PreviewImage
-          alt="coverPhoto"
-          src={image}
-          role="presentation"
-          className="inplayer-paywall"
-        />
-        <PaywallExplain
-          hasProtectedByLabel={hasProtectedByLabel}
-          className="inplayer-paywallexplain"
-        >
-          <InplayerWhiteLogo id="inplayer-whitelogo">
-            <strong>{protectedByLabel} inplayer</strong>
-            <a href="https://inplayer.com">InPlayer Paywall</a>
-          </InplayerWhiteLogo>
-          <LockIcon className="inplayer-lock" />
-          <span>{premiumContentLabel}</span>
-        </PaywallExplain>
-      </ImageHolder>
-      <ItemDetails className="inplayer-itemdetails">
-        <PreviewText value={previewTitle} className="inplayer-title" />
-        <PreviewText value={previewDescription} />
-      </ItemDetails>
-      {displayBuyButton && (
-        <BuyButtonWrapper className="inplayer-buybutton">
-          <BuyButton
-            className="inplayer-button inplayer-submit-button"
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </BuyButton>
-        </BuyButtonWrapper>
+}: Props) => (
+  <InPlayerPreviewBox className="inplayer-preview-box">
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
+      <PreviewImage
+        alt="coverPhoto"
+        src={imageUrl}
+        role="presentation"
+        className="inplayer-paywall"
+        isRestrictedAsset={isRestrictedAsset}
+      />
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer>
+          <RestrictedAssetIcon />
+          {premiumContentLabel}
+        </RestrictedAssetContainer>
       )}
-      <InplayerFooter className="inplayer-preview-footer">
-        <div className="inplayer-guest-footer">
-          <a href="#login" onClick={handleOpenModal}>
-            <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-          </a>
-        </div>
-      </InplayerFooter>
-    </InPlayerPreviewBox>
-  );
-};
+      <PaywallExplain hasProtectedByLabel={hasProtectedByLabel} className="inplayer-paywallexplain">
+        <InplayerWhiteLogo id="inplayer-whitelogo">
+          <strong>{protectedByLabel} inplayer</strong>
+          <a href="https://inplayer.com">InPlayer Paywall</a>
+        </InplayerWhiteLogo>
+        <LockIcon className="inplayer-lock" />
+        <span>{!isRestrictedAsset && premiumContentLabel}</span>
+      </PaywallExplain>
+    </ImageHolder>
+    <ItemDetails className="inplayer-itemdetails">
+      <PreviewText value={previewTitle} className="inplayer-title" />
+      <PreviewText value={previewDescription} />
+    </ItemDetails>
+    {displayBuyButton && (
+      <BuyButtonWrapper className="inplayer-buybutton">
+        <BuyButton
+          className="inplayer-button inplayer-submit-button"
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </BuyButton>
+      </BuyButtonWrapper>
+    )}
+    <InplayerFooter className="inplayer-preview-footer">
+      <div className="inplayer-guest-footer">
+        <a href="#login" onClick={handleOpenModal}>
+          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+        </a>
+      </div>
+    </InplayerFooter>
+  </InPlayerPreviewBox>
+);
 
 export default Preview1;

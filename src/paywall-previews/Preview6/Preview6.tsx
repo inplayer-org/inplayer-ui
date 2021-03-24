@@ -18,8 +18,9 @@ import {
   PreviewFooter,
   IconHolder,
   StyledBuyButton,
+  StyledRestrictedAssetContainer,
 } from './styled';
-import { PreviewFooterLink } from '../shared/PreviewComponents';
+import { PreviewFooterLink, RestrictedAssetIcon } from '../shared/PreviewComponents';
 
 // Types
 import Branding from '../types/branding';
@@ -38,6 +39,7 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
+  premiumContentLabel?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
@@ -61,40 +63,49 @@ const Preview6 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minWidth={minWidth}
-      minHeight={minHeight}
-      width={width}
-      height={height}
-    >
-      <ImageWrapper backgroundImage={image} onClick={handleOpenModal} />
-      <ItemDetails>
-        <PreviewText value={title} />
-        <PreviewText value={description} />
-      </ItemDetails>
-      <ButtonWrapper>
-        <StyledBuyButton
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
-          onClick={handleOpenModal}
-        >
-          {buttonLabel}
-        </StyledBuyButton>
-      </ButtonWrapper>
-      <PreviewFooter>
-        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </PreviewFooterLink>
-        <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
-          <LockIcon />
-        </IconHolder>
-      </PreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+  premiumContentLabel = 'Premium content',
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minWidth={minWidth}
+    minHeight={minHeight}
+    width={width}
+    height={height}
+  >
+    <ImageWrapper
+      isRestrictedAsset={isRestrictedAsset}
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
+    />
+    {isRestrictedAsset && (
+      <StyledRestrictedAssetContainer fontSize="14px">
+        <RestrictedAssetIcon size="5rem" />
+        {premiumContentLabel}
+      </StyledRestrictedAssetContainer>
+    )}
+
+    <ItemDetails>
+      <PreviewText value={title} />
+      <PreviewText value={description} />
+    </ItemDetails>
+    <ButtonWrapper>
+      <StyledBuyButton
+        buttonBgColor={buttonBgColor}
+        buttonTextColor={buttonTextColor}
+        onClick={handleOpenModal}
+      >
+        {buttonLabel}
+      </StyledBuyButton>
+    </ButtonWrapper>
+    <PreviewFooter>
+      <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+      </PreviewFooterLink>
+      <IconHolder hasProtectedByLabel={hasProtectedByLabel}>
+        <LockIcon />
+      </IconHolder>
+    </PreviewFooter>
+  </StyledPreviewBox>
+);
 
 export default Preview6;
