@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.6] - 09-04-2021
+
+### Fixes
+
+- Changed width, height and padding-left of Checkbox component's top wrapper to be in `em` instead of `rem`
+
 # [2.5.5] - 22-03-2021
 
 ### Change
@@ -19,7 +25,7 @@ All notable changes to this project will be documented in this file.
 ### Change
 
 - Add missing className for Switch component in order to externaly style it with styled-components
-  
+
 ### Fixes
 
 - Daypicker moment type error
