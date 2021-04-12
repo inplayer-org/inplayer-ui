@@ -89,7 +89,7 @@
     "react-dates": "^21.8.0",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-paginate": "^6.5.0",
+    "react-paginate": "^7.1.2",
     "rimraf": "^3.0.2",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-filesize": "^9.1.0",
