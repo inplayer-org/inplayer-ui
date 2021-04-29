@@ -1,0 +1,77 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@storybook/react"
+    versions:
+    - 6.1.15
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.19
+    - 6.1.20
+    - 6.1.21
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.4
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 7.2.0
+    - 8.0.0
+    - 8.1.0
+    - 8.2.0
+  - dependency-name: "@storybook/addon-knobs"
+    versions:
+    - 6.1.15
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.19
+    - 6.1.20
+    - 6.1.21
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.4
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+  - dependency-name: html-react-parser
+    versions:
+    - 1.2.3
+    - 1.2.4
+    - 1.2.5
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.14.1
+    - 4.14.2
+    - 4.15.0
+    - 4.15.1
+    - 4.15.2
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: react-paginate
+    versions:
+    - 7.0.0
+    - 7.1.0
+    - 7.1.1
+  - dependency-name: "@rollup/plugin-commonjs"
+    versions:
+    - 17.0.0
+    - 17.1.0
