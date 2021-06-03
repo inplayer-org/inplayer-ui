@@ -28,7 +28,7 @@ const TableSkeleton = () => (
     <tbody>
       {[...Array(15)].map((_, index) => (
         <tr key={index}>
-          {[0].map((_, i) => (
+          {[0].map((smth, i) => (
             <td key={i}>{i}</td>
           ))}
         </tr>
@@ -267,7 +267,7 @@ class Table<T> extends Component<Props<T>, State> {
       isLoading = false,
     } = this.props;
 
-    if (showLoader) {
+    if (isLoading) {
       return (
         <TableSkeletonWrapper>
           <TableSkeleton />
