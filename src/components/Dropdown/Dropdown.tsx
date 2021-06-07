@@ -1,4 +1,4 @@
-import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
+import React, { SelectHTMLAttributes, ChangeEvent, useState } from 'react';
 import DropdownContainer from './DropdownContainer';
 
 type Option = {
@@ -29,13 +29,21 @@ const Dropdown: React.FC<Props> = ({
   className,
   ...rest
 }) => {
+  const [dropdownChange, setDropdownChange] = useState(false);
+
   const onDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setDropdownChange(true);
     if (typeof onChange === 'function') {
       onChange(e.target.value);
     }
   };
   return (
-    <DropdownContainer onChange={onDropdownChange} className={className} {...rest}>
+    <DropdownContainer
+      hasDropdownChanged={dropdownChange}
+      onChange={onDropdownChange}
+      className={className}
+      {...rest}
+    >
       {defaultOption && (
         <option value="" disabled={defaultOption.disabled}>
           {defaultOption.displayName}

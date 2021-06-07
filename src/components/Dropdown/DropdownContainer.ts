@@ -11,10 +11,15 @@ const fontSizeModifiers = {
   fontSizeLarge,
 };
 
-const DropdownContainer = styled.select`
+type Props = {
+  hasDropdownChanged: boolean;
+};
+
+const DropdownContainer = styled.select<Props>`
   border: 1px solid ${colors.gray};
   border-radius: 0.188em;
-  color: ${({ theme }) => theme.palette.text.light};
+  color: ${({ hasDropdownChanged, theme }) =>
+    hasDropdownChanged ? colors.black : theme.palette.text.light};
   cursor: pointer;
   font-size: ${({ theme }) => theme.font.sizes.small};
   font-weight: ${({ theme }) => theme.font.weights.light};
