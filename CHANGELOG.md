@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.7] - 17-06-2021
+
+### Change
+
+- Changes connected with logo re-branding 
+
 # [2.5.6] - 09-04-2021
 
 ### Fixes
