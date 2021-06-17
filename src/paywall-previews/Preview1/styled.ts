@@ -92,7 +92,7 @@ export const InplayerWhiteLogo = styled.div`
   }
 
   a {
-    background: url('https://assets.inplayer.com/images/paywall/ip-logicon.svg') no-repeat center
+    background: url('https://assets.inplayer.com/images/inplayer_icon-fs.svg') no-repeat center
       center;
     height: 30px;
     width: 30px;
