@@ -1,5 +1,5 @@
 import { darken, transparentize } from 'polished';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { prop } from 'styled-tools';
 
 // utils
