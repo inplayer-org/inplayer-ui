@@ -21,7 +21,7 @@ type Props = {
   width?: string;
   extendWidth?: string;
   isExtendable?: boolean;
-  onActivePanelChange?: (index: number) => void;
+  onActivePanelChange?: (index: number, label: string) => void;
   shouldClose?: boolean;
   onRequestClose?: () => void;
 };
@@ -39,20 +39,20 @@ export const Accordion = ({
   const [activePanel, setActivePanel] = useState(-1);
   const [open, setOpen] = useState(false);
 
-  const openPanel = (panelIndex: number) => {
+  const openPanel = (panelIndex: number, label: string) => {
     if (panelIndex !== activePanel) {
       setActivePanel(panelIndex);
-      if (onActivePanelChange) onActivePanelChange(panelIndex);
+      if (onActivePanelChange) onActivePanelChange(panelIndex, label);
     }
   };
 
   const closePanel = (e?: SyntheticEvent) => {
     if (e) e.stopPropagation();
     setActivePanel(-1);
-    if (onActivePanelChange) onActivePanelChange(-1);
+    if (onActivePanelChange) onActivePanelChange(-1, '');
   };
 
-  const togglePanel = (panelIndex: number) => (e: any) => {
+  const togglePanel = (panelIndex: number, label: string) => (e: any) => {
     e.stopPropagation();
     if (activePanel !== -1) {
       if (shouldClose) {
@@ -61,7 +61,7 @@ export const Accordion = ({
         onRequestClose();
       }
     } else {
-      openPanel(panelIndex);
+      openPanel(panelIndex, label);
     }
   };
 
@@ -95,7 +95,7 @@ export const Accordion = ({
                 isOtherPanelActive={isOtherPanelActive}
                 contentHeight={contentHeight}
                 disabled={disabled}
-                togglePanel={togglePanel(index)}
+                togglePanel={togglePanel(index, label)}
               />
             </div>
           );

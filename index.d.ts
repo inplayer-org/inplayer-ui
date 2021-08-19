@@ -236,7 +236,7 @@ export interface AccordionProps {
   isExtendable?: boolean;
   width?: string;
   extendWidth?: string;
-  onActivePanelChange?: (index: number) => void;
+  onActivePanelChange?: (index: number, label: string) => void;
   shouldClose?: boolean;
   onRequestClose?: () => void;
 }
