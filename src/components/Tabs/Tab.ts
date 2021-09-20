@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 
+import { TrackPage } from '../../analytics';
+
 import colors from '../../theme/colors';
 
-const Tab = styled.div<{ selected: boolean }>`
+const TabWrapper = styled.div<{ selected: boolean }>`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;
@@ -41,5 +43,13 @@ const Tab = styled.div<{ selected: boolean }>`
     `
   )};
 `;
+
+type PropsOf<T> = T extends (props: infer P) => infer R ? P : never;
+
+const Tab = ({ tag, ...rest }: TagProps & PropsOf<typeof TabWrapper>) => (
+  <TrackPage tag={tag}>
+    <TabWrapper {...rest} />
+  </TrackPage>
+);
 
 export default Tab;
