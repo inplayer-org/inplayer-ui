@@ -9,7 +9,11 @@ import PreviewText from '../shared/PreviewText';
 import Branding from '../types/branding';
 
 // Components
-import { StyledPaywallDescription } from '../shared/PreviewComponents';
+import {
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+  StyledPaywallDescription,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   ImageWrapper,
@@ -22,6 +26,7 @@ import {
   PaywallDescriptionSpan,
   TitleHolder,
   DescriptionHolder,
+  RestrictedAssetText,
 } from './styled';
 
 type Props = {
@@ -55,18 +60,23 @@ const Preview5 = ({
   handleOpenModal,
   isRestrictedAsset = false,
   premiumContentLabel = 'Premium content',
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minHeight={minHeight}
-      minWidth={minWidth}
-      width={width}
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minHeight={minHeight}
+    minWidth={minWidth}
+    width={width}
+    height={height}
+  >
+    <ImageWrapper
+      isRestrictedAsset={isRestrictedAsset}
       height={height}
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
     >
-      <ImageWrapper height={height} backgroundImage={image} onClick={handleOpenModal}>
-        <Overlay />
+      <Overlay />
+
+      {!isRestrictedAsset && (
         <BuyButtonHolder>
           <BuyButtonBorder>
             <StyledBuyButton
@@ -78,24 +88,30 @@ const Preview5 = ({
             </StyledBuyButton>
           </BuyButtonBorder>
         </BuyButtonHolder>
-      </ImageWrapper>
-      <ItemDetails height={height}>
-        <StyledPaywallDescription
-          color={lighten(0.01, buttonBgColor)}
-          hasProtectedByLabel={hasProtectedByLabel}
-        >
-          <StyledIcon />
-          <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
-        </StyledPaywallDescription>
-        <TitleHolder>
-          <PreviewText value={previewTitle} />
-        </TitleHolder>
-        <DescriptionHolder>
-          <PreviewText value={previewDescription} />
-        </DescriptionHolder>
-      </ItemDetails>
-    </StyledPreviewBox>
-  );
-};
+      )}
+    </ImageWrapper>
+    {isRestrictedAsset && (
+      <RestrictedAssetContainer height="38%">
+        <RestrictedAssetIcon />
+        {premiumContentLabel}
+      </RestrictedAssetContainer>
+    )}
+    <ItemDetails height={height}>
+      <StyledPaywallDescription
+        color={lighten(0.01, buttonBgColor)}
+        hasProtectedByLabel={hasProtectedByLabel}
+      >
+        <StyledIcon />
+        <PaywallDescriptionSpan>{premiumContentLabel}</PaywallDescriptionSpan>
+      </StyledPaywallDescription>
+      <TitleHolder>
+        <PreviewText value={previewTitle} />
+      </TitleHolder>
+      <DescriptionHolder>
+        <PreviewText value={previewDescription} />
+      </DescriptionHolder>
+    </ItemDetails>
+  </StyledPreviewBox>
+);
 
 export default Preview5;

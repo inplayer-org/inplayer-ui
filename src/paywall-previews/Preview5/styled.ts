@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { GiCutDiamond } from 'react-icons/gi';
 import { transparentize } from 'polished';
 
@@ -21,12 +21,18 @@ export const StyledPreviewBox = styled(PreviewBox)<any>`
 type ImageWrapperProps = {
   height: any;
   backgroundImage: any;
+  isRestrictedAsset?: boolean;
 };
 
 export const ImageWrapper = styled(ImageHolder)<ImageWrapperProps>`
   height: ${({ height }) => (height < 75 ? '45%' : '65%')};
   background-image: url(${({ backgroundImage }) => backgroundImage});
   margin: 0;
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const Overlay = styled.div`
@@ -102,4 +108,14 @@ export const TitleHolder = styled.div`
 
 export const DescriptionHolder = styled.div`
   margin-bottom: 0.6em;
+`;
+export const RestrictedAssetText = styled.p`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  bottom: 25%;
 `;

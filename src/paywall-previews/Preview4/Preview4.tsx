@@ -10,7 +10,11 @@ import colors from '../../theme/colors';
 // Components
 import StyledContainer from '../shared/StyledContainer';
 import PreviewText from '../shared/PreviewText';
-import { OverlayLabel } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledButton,
@@ -35,6 +39,7 @@ type Props = {
   width?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  premiumContentLabel?: string;
 };
 
 const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
@@ -59,11 +64,10 @@ const Preview4 = ({
   width = '',
   isRestrictedAsset = false,
   handleOpenModal,
+  premiumContentLabel = 'Premium content',
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -93,7 +97,14 @@ const Preview4 = ({
             <FaLock />
           </Icon>
         </StyledIconWrapper>
-        <StyledPreviewImage src={image} />
+        <StyledPreviewImage isRestrictedAsset={isRestrictedAsset} src={imageUrl} />
+        {isRestrictedAsset && (
+          <RestrictedAssetContainer>
+            <RestrictedAssetIcon />
+            {premiumContentLabel}
+          </RestrictedAssetContainer>
+        )}
+
         <StyledTextWrapper>
           <TextElement width={width}>
             <PreviewText

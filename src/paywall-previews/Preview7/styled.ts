@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { MdDoNotDisturbAlt } from 'react-icons/md';
 
 // utils
 import colors from '../../theme/colors';
@@ -32,6 +33,11 @@ export const StyledImageWrapper = styled(ImageHolder)`
 
 export const StyledPreviewImage = styled(PreviewImage)<any>`
   height: 250px;
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -79,4 +85,17 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
   text-align: center;
   padding-top: 5px;
   height: 5%;
+`;
+
+export const RestrictedAssetText = styled.p`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

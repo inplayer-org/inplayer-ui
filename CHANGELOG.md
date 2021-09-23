@@ -2,11 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.5.3] - 10-02-2021
+# [2.5.9] - 23-09-2021
 
 ### Added
 
 - Add another type of datepicker component with dropdown presets
+
+# [2.5.8] - 19-08-2021
+
+### Change
+
+- Return Accordion panel label when toggling it.
+
+# [2.5.7] - 17-06-2021
+
+### Change
+
+- Changes connected with logo re-branding 
+
+# [2.5.6] - 09-04-2021
+
+### Fixes
+
+- Changed width, height and padding-left of Checkbox component's top wrapper to be in `em` instead of `rem`
+
+# [2.5.5] - 22-03-2021
+
+### Change
+
+- Add styling changes for asset restrictions in preview templates
+
+# [2.5.4] - 12-03-2021
+
+### Change
+
+- Add missing className for Switch component in order to externaly style it with styled-components
+
+# [2.5.3] - 23-02-2021
+
+### Fixes
+
+- Daypicker moment type error
+
 # [2.5.2] - 22-01-2021
 
 ### Change

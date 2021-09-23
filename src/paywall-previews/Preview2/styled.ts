@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { MdStar } from 'react-icons/md';
 
@@ -11,6 +11,7 @@ import {
   ImageHolder,
   PreviewFooter,
   DescriptionSpan,
+  RestrictedAssetContainer,
 } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
@@ -29,6 +30,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
 
 interface StyledImageHolder {
   backgroundImage: string;
+  isRestrictedAsset?: boolean;
 }
 
 export const StyledImageHolder = styled(ImageHolder)<StyledImageHolder>`
@@ -41,6 +43,11 @@ export const StyledImageHolder = styled(ImageHolder)<StyledImageHolder>`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const AssetDetails = styled.div`
@@ -86,4 +93,12 @@ export const Footer = styled(PreviewFooter)`
   margin-top: 1.6em;
   text-align: left;
   padding-top: 0.5em;
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  left: 25%;
+  @media screen and (max-width: 768px) {
+    left: 50%;
+    top: 30%;
+  }
 `;

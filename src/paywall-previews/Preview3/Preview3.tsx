@@ -9,7 +9,11 @@ import colors from '../../theme/colors';
 // Components
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
-import { StyledPaywallDescription } from '../shared/PreviewComponents';
+import {
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+  StyledPaywallDescription,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
@@ -58,39 +62,43 @@ const Preview3 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minHeight={minHeight}
-      minWidth={minWidth}
-      width={width}
-      height={height}
-    >
-      <StyledImageHolder backgroundImage={image} onClick={handleOpenModal}>
-        <Header onClick={handleOpenModal} color={colors.fontLightGray}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </Header>
-        <StyledTextWrapper onClick={handleOpenModal}>
-          <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minHeight={minHeight}
+    minWidth={minWidth}
+    width={width}
+    height={height}
+  >
+    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+      <Header onClick={handleOpenModal} color={colors.fontLightGray}>
+        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+      </Header>
+      <StyledTextWrapper onClick={handleOpenModal}>
+        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+          {isRestrictedAsset ? (
+            <RestrictedAssetContainer height="40%">
+              <RestrictedAssetIcon />
+              {premiumContentLabel}
+            </RestrictedAssetContainer>
+          ) : (
             <PaywallDescriptionSpan>
               <GiCutDiamond /> {premiumContentLabel}
             </PaywallDescriptionSpan>
-          </StyledPaywallDescription>
-          <TitleWrapper>
-            <TitleBorder color={buttonBgColor}>
-              <PreviewText value={previewTitle} textColor={colors.white} />
-            </TitleBorder>
-            <StyledIcon color={buttonBgColor} />
-          </TitleWrapper>
-          <DescriptionWrapper>
-            <PreviewText value={previewDescription} textColor={colors.white} />
-          </DescriptionWrapper>
-        </StyledTextWrapper>
-      </StyledImageHolder>
-    </StyledPreviewBox>
-  );
-};
+          )}
+        </StyledPaywallDescription>
+        <TitleWrapper>
+          <TitleBorder color={buttonBgColor}>
+            <PreviewText value={previewTitle} textColor={colors.white} />
+          </TitleBorder>
+          {!isRestrictedAsset && <StyledIcon color={buttonBgColor} />}
+        </TitleWrapper>
+        <DescriptionWrapper>
+          <PreviewText value={previewDescription} textColor={colors.white} />
+        </DescriptionWrapper>
+      </StyledTextWrapper>
+    </StyledImageHolder>
+  </StyledPreviewBox>
+);
 
 export default Preview3;
