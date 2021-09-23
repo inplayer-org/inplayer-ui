@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
@@ -92,7 +92,7 @@ export const InplayerWhiteLogo = styled.div`
   }
 
   a {
-    background: url('https://assets.inplayer.com/images/paywall/ip-logicon.svg') no-repeat center
+    background: url('https://assets.inplayer.com/images/inplayer_icon-fs.svg') no-repeat center
       center;
     height: 30px;
     width: 30px;
@@ -206,11 +206,18 @@ export const InplayerFooter = styled.div`
   }
 `;
 
-export const PreviewImage = styled.img`
+export const PreviewImage = styled.img<{ isRestrictedAsset?: boolean }>`
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   cursor: pointer;
+
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+      position: absolute;
+    `}
 `;
 
 export const LockIcon = styled(FaLock)`
