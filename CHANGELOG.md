@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Add another type of datepicker component with dropdown presets
+- Drawer component functionality and design
 
 # [2.5.8] - 19-08-2021
 

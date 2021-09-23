@@ -26,6 +26,7 @@ export { default as Table } from './components/Table';
 export { default as Modal } from './components/Modal';
 export { default as Radio } from './components/Radio';
 export { default as Pagination } from './components/Pagination';
+export { default as Drawer } from './components/Drawer';
 
 // previews
 export { default as Preview1 } from './paywall-previews/Preview1';
