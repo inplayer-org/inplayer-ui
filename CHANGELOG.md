@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.9] - 23-09-2021
+
+### Added
+
+- Add another type of datepicker component with dropdown presets
+
+# [2.5.8] - 19-08-2021
+
+### Change
+
+- Return Accordion panel label when toggling it.
+
 # [2.5.7] - 17-06-2021
 
 ### Change
