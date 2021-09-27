@@ -5,7 +5,7 @@ export type AnalyticsTag = string;
  */
 export interface AnalyticsProps {
   /** Unique identifier of the component within the logical page hierarchy. */
-  tag: AnalyticsTag;
+  tag?: AnalyticsTag;
 
   /** Posiition of the component within a table-like component. */
   position?: {
