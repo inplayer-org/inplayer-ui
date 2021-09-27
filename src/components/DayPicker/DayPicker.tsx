@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import DayPickerWrapper from './DayPickerWrapper';
 import Dropdown from '../Dropdown';
 import { getMonthOptions, getYearOptions } from '../../utils/helpers';
+import { AnalyticsProps } from '../../analytics';
 
 const CustomMonthContainer = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ type Props = {
   placeholder?: string;
   onClose?: () => any;
   disablePastDays?: boolean;
-};
+} & AnalyticsProps;
 
 const DayPicker = ({
   isOutsideRange = () => false,

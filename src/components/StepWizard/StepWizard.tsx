@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav, { StepItem } from './Nav';
 import Step from './Step';
+import { AnalyticsProps } from '../../analytics';
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
@@ -9,7 +10,7 @@ type StepWizardProps = {
   activeStep: number;
   onStepChange?: (activeStep: number) => void;
   transition?: TransitionVariant;
-};
+} & AnalyticsProps;
 
 const StepWizard = ({
   steps,

@@ -1,6 +1,7 @@
 import React, { ChangeEvent, RefObject } from 'react';
 import Label from '../Label';
 import CheckboxWrapper from './CheckboxWrapper';
+import { AnalyticsProps } from '../../analytics';
 
 type Props = {
   label: string;
@@ -10,7 +11,7 @@ type Props = {
   onChange: (checked: boolean) => any;
   containerRef?: RefObject<HTMLDivElement> | null;
   disabled?: boolean;
-};
+} & AnalyticsProps;
 
 const Checkbox: React.FC<Props> = ({
   label,

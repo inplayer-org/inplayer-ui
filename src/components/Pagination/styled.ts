@@ -30,18 +30,18 @@ const getBoxStyles = ({
     `;
   }
   return css`
-  :hover {
-    border: 1px solid ${colors.skyBlue};
-    ${ifProp(
-      'hideBorder',
-      css`
-        border: none;
-      `
-    )}
-    color: ${colors.skyBlue};
-    font-weight: bold;
-  }
-`;
+    :hover {
+      border: 1px solid ${colors.skyBlue};
+      ${ifProp(
+        'hideBorder',
+        css`
+          border: none;
+        `
+      )}
+      color: ${colors.skyBlue};
+      font-weight: bold;
+    }
+  `;
 };
 
 export const PageBox = styled.button`
