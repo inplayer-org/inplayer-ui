@@ -3,6 +3,7 @@ import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { CSSProperties } from 'styled-components';
 import Grid from '../Grid';
 import Loader from '../Loader';
+import { AnalyticsProps } from '../../analytics';
 import {
   ButtonTableRow,
   LoaderContainer,
@@ -69,7 +70,7 @@ type Props<T = Data> = {
   renderEmptyTable?: boolean;
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
-};
+} & AnalyticsProps;
 
 type State = {
   selected: {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { PageBox, PaginationContainer } from './styled';
+import { AnalyticsProps } from '../../analytics';
 
 type PaginationProps = {
   onPageChange: (pageNumber: number) => void;
@@ -8,7 +9,7 @@ type PaginationProps = {
   startPage?: number;
   numberOfPagesDisplayed?: number;
   itemsPerPage?: number;
-};
+} & AnalyticsProps;
 
 // Kibana has limit of 10000 items
 const itemsLimit = 10000;

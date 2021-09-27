@@ -1,11 +1,12 @@
 import React from 'react';
 import DrawerContainer from './DrawerContainer';
+import { AnalyticsProps } from '../../analytics';
 
-interface Props {
+type Props = {
   handleClose: () => void;
   isOpen: boolean;
   width?: string;
-}
+} & AnalyticsProps;
 
 const Drawer: React.FC<Props> = ({ children, handleClose, isOpen, width = '40%' }) => (
   <DrawerContainer shouldShowDrawer={isOpen} closeDrawer={handleClose} width={width}>

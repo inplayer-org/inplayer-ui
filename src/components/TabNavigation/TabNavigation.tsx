@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
+import { AnalyticsProps } from '../../analytics';
 
 const Tab = styled.a<{ active: boolean }>`
   height: 100%;
@@ -39,20 +40,20 @@ const TabContainer = styled.div`
 
 type NavigationTab = {
   title: string;
-};
+} & AnalyticsProps;
 
 export type Props = {
   tabs: Array<NavigationTab>;
   onTabClick: (index: number) => void;
   selectedTabIndex: number;
-};
+} & AnalyticsProps;
 
 const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
   <TabContainer>
     {tabs.map((tab, index) => (
       <Tab
-        id={tab.title.toLowerCase()}
         key={tab.title}
+        id={tab.title.toLowerCase()}
         onClick={() => onTabClick(index)}
         active={selectedTabIndex === index}
       >

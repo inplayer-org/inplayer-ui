@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+import { AnalyticsProps } from '../../analytics';
 import colors from '../../theme/colors';
 
-const TextArea = styled.textarea`
+const TextArea = styled.textarea<AnalyticsProps>`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
