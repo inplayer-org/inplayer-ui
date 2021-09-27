@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, ReactElement } from 'react';
 import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
+import { AnalyticsProps } from '../../analytics';
 
 interface TabInfo {
   name: string;
@@ -16,7 +17,7 @@ type TabsProps = HTMLAttributes<HTMLDivElement> &
     tabs: Array<TabInfo>;
     selectedTabIndex: number;
     onTabClick: (index: number) => void;
-  };
+  } & AnalyticsProps;
 
 const Content = ({ icon = null, iconPosition = 'left', name }: ContentProps) =>
   iconPosition === 'right' ? (

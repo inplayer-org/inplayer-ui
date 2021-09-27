@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
 import colors from '../../theme/colors';
+import { AnalyticsProps } from '../../analytics';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -84,7 +85,7 @@ type Props = {
   sizeProp?: Size;
   icon?: ReactNode;
   className?: string;
-};
+} & AnalyticsProps;
 
 type RefType =
   | ((instance: HTMLInputElement | null) => void)

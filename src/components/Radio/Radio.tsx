@@ -1,5 +1,6 @@
 import React, { ChangeEvent, InputHTMLAttributes } from 'react';
 import { StyledLabel, Root, Input, Fill } from './RadioWrapper';
+import { AnalyticsProps } from '../../analytics';
 
 type RadioProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -9,7 +10,7 @@ type RadioProps = InputHTMLAttributes<HTMLInputElement> & {
   onChange: (e: ChangeEvent<HTMLInputElement>) => any;
   onBlur?: (e: any) => any;
   disabled?: boolean;
-};
+} & AnalyticsProps;
 
 const Radio = ({
   label,

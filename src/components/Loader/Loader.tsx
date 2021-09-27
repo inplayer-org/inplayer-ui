@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import colors from '../../theme/colors';
+import { AnalyticsProps } from '../../analytics';
 
 const directions: Record<string, any> = {
   up: '16,0 32,32 0,32',
@@ -33,7 +34,7 @@ type Props = {
   color?: string;
   lineWidth?: number;
   direction?: string;
-};
+} & AnalyticsProps;
 
 const Loader = ({
   height = 100,

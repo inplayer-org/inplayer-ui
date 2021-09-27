@@ -1,15 +1,16 @@
 import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
 import DropdownContainer from './DropdownContainer';
+import { AnalyticsProps } from '../../analytics';
 
 export type Option = {
   value: string;
   displayName: string;
-};
+} & AnalyticsProps;
 
 type DefaultOption = {
   displayName: string;
   disabled?: boolean;
-};
+} & AnalyticsProps;
 
 type SelectHTMLProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>;
 
@@ -22,7 +23,7 @@ type Props = SelectHTMLProps & {
   disabled?: boolean;
   defaultOption?: DefaultOption;
   className?: string;
-};
+} & AnalyticsProps;
 
 const Dropdown: React.FC<Props> = ({
   options,

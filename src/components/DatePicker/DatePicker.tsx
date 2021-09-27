@@ -10,6 +10,7 @@ import { Option } from '../Dropdown/Dropdown';
 import DatePickerWrapper from './DatePickerWrapper';
 import { PERIODS, INNERPERIODS } from './periods';
 import { Styled } from './styles';
+import { AnalyticsProps } from '../../analytics';
 import 'react-dates/initialize';
 
 const ContentHolder = styled.div<{ isDropdown?: boolean }>`
@@ -99,7 +100,7 @@ type Props = {
   showInnerPresets?: boolean;
   className?: string;
   showPresetsWithDropdown?: boolean;
-};
+} & AnalyticsProps;
 
 const DatePicker = ({
   activePeriodPreset = '',

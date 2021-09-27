@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from '../../theme/colors';
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
+import { AnalyticsProps } from '../../analytics';
 
 type SwitchProps = {
   checked: boolean;
@@ -11,7 +12,7 @@ type SwitchProps = {
   label: string;
   onChange: (checked: boolean) => void;
   className?: string;
-};
+} & AnalyticsProps;
 
 const MarginLeftLabel = styled(Label)`
   margin-right: 0.5rem;

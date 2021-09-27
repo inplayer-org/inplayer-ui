@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
+import { AnalyticsProps } from '../../analytics';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -17,7 +18,7 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
     className?: string;
     fullWidth?: boolean;
     fullHeight?: boolean;
-  };
+  } & AnalyticsProps;
 
 const ContentHolder = styled.span`
   margin-top: 2px;

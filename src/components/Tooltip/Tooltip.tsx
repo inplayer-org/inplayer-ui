@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import Arrow from './Arrow';
 import TooltipWrapper, { FadeEasing } from './TooltipWrapper';
 import Bubble from './Bubble';
+import { AnalyticsProps } from '../../analytics';
 
 export interface FlashTooltipRef {
   flashTooltip: () => Promise<void>;
@@ -38,7 +39,7 @@ export type TooltipProps = {
   className?: string;
   children?: ReactChild | ReactNode | null;
   ref: Ref<FlashTooltipRef>;
-};
+} & AnalyticsProps;
 
 const Container = styled.div`
   position: relative;
