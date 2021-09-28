@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.11] - 28-09-2021
+
+## Added
+
+- Analytics tracking adds forgotten import for React.
+
 # [2.5.10] - 27-09-2021
 
 ### Added
