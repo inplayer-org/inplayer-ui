@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.12] - 28-09-2021
+
+## Added
+
+- Explicit exports for components, types and interfaces from `src/analytics`.
+
 # [2.5.11] - 28-09-2021
 
 ## Added

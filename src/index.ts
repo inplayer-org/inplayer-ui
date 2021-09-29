@@ -44,4 +44,17 @@ export { default as ThemeWrapper } from './theme/ThemeWrapper';
 export { default as Colors } from './theme/colors';
 
 // analytics
-export * from './analytics';
+export type {
+  AnalyticsProps,
+  AnalyticsPageProps,
+  AnalyticsPageType,
+  AnalyticsTag,
+  AnalyticsContextValue
+} from './analytics';
+
+export {
+  AnalyticsPage,
+  AnalyticsContext,
+  AnalyticsTracker,
+  AnalyticsComponent
+} from './analytics';
