@@ -19,7 +19,23 @@ import { FocusedInputShape } from 'react-dates';
 
 export { FocusedInputShape } from 'react-dates';
 
-export interface ContainerProps {
+interface AnalyticsProps {
+  /** Unique identifier of the component within the logical page hierarchy. */
+  tag?: AnalyticsTag;
+
+  /** Posiition of the component within a table-like component. */
+  position?: {
+    /** Unique ID of the row (usually what you would use as a key in react). */
+    id: string;
+
+    /** Row index. */
+    row?: number;
+
+    /** Column index or name. */
+    column?: number | string;
+  };
+}
+export interface ContainerProps extends AnalyticsProps{
   className?: string;
   columns?: number | string;
   gap?: string;
@@ -34,7 +50,7 @@ export interface ContainerProps {
   alignContent?: string;
 }
 
-export interface CellProps {
+export interface CellProps extends AnalyticsProps{
   className?: string;
   width?: number;
   height?: number;
@@ -52,7 +68,7 @@ interface IGrid {
 
 export declare const Grid: IGrid;
 
-export interface CheckboxProps {
+export interface CheckboxProps extends AnalyticsProps{
   label: string;
   id: string;
   name?: string;
@@ -74,7 +90,7 @@ export interface MenuItem {
   smallSize?: boolean;
 }
 
-export interface ModalProps {
+export interface ModalProps extends AnalyticsProps{
   isModalOpen: boolean;
   closeModal: () => any;
   children: ReactNode;
@@ -87,7 +103,7 @@ export declare const Modal: FunctionComponent<ModalProps>;
 
 export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 
-export interface NoteProps {
+export interface NoteProps extends AnalyticsProps{
   title: string;
   text: string;
   type: NoteType;
@@ -95,7 +111,7 @@ export interface NoteProps {
 
 export declare const Note: FunctionComponent<NoteProps>;
 
-export interface RadioProps {
+export interface RadioProps extends AnalyticsProps{
   label: string;
   id: string;
   name?: string;
@@ -154,7 +170,7 @@ export interface TableButtonProps {
   type: string;
 };
 
-export interface TableProps<TableData extends TableRowData = TableRowData> {
+export interface TableProps<TableData extends TableRowData = TableRowData> extends AnalyticsProps{
   columns: Array<TableColumn<TableData>>;
   data: Array<TableData>;
   showLoader?: boolean;
@@ -184,7 +200,7 @@ export declare class Table<TableData extends TableRowData> extends Component<
   renderColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
   renderRows: (data: Array<TableData>) => ReactNodeArray;
 }
-interface NavigationTab {
+interface NavigationTab extends AnalyticsProps{
   title: string;
 }
 
@@ -194,7 +210,7 @@ export interface TabContentProps {
   iconModifiers?: Array<string>;
 }
 
-export interface TabNavigationProps<T> extends DivHTMLAttributes<HTMLDivElement>, TabContentProps {
+export interface TabNavigationProps<T> extends DivHTMLAttributes<HTMLDivElement>, TabContentProps, AnalyticsProps {
   tabs: Array<NavigationTab>;
   onTabClick: (index: number) => any;
   selectedTabIndex: number;
@@ -208,7 +224,7 @@ interface TabInfo {
   name: string;
 }
 
-interface TabsProps {
+interface TabsProps extends AnalyticsProps{
   tabs: Array<TabInfo>;
   selectedTabIndex: number;
   onTabClick: (index: number) => void;
@@ -271,7 +287,7 @@ export type ButtonModifier =
 
 export interface ButtonProps<T>
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonContentProps {
+  ButtonContentProps, AnalyticsProps {
   buttonModifiers?: Array<ButtonModifier>;
   size?: ButtonSize;
   style?: CSSProperties;
@@ -283,7 +299,7 @@ export interface ButtonProps<T>
 
 export declare class Button<T = {}> extends Component<T & ButtonProps<T>> {}
 
-export interface CardProps {
+export interface CardProps extends AnalyticsProps{
   title?: string;
   titleVariant?: string;
   className?: string;
@@ -301,7 +317,7 @@ export type DayPicker$OnDateChange = (values: DayPicker$OnDateChange$Arguments) 
 
 export type DayPicker$OnFocusChange = (focusedInput: boolean) => any;
 
-export interface DayPickerProps {
+export interface DayPickerProps extends AnalyticsProps{
   isOutsideRange?: (day: number) => any;
   onDateChange: (date: Moment) => any;
   onFocusChange: (focused: any) => any;
@@ -327,7 +343,7 @@ export type DatePicker$OnDateChange = (values: DatePicker$OnDateChange$Arguments
 
 export type DatePicker$OnFocusChange = (focusedInput: FocusedInputShape | null) => any;
 
-export interface DatePickerProps {
+export interface DatePickerProps extends AnalyticsProps {
   startDate: Moment;
   endDate?: Moment;
   startDateId?: string;
@@ -377,12 +393,12 @@ export declare class DatePicker extends Component<DatePickerProps, DatePickerSta
   renderDatePresets: () => ReactNode;
 }
 
-export interface Option {
+export interface Option extends AnalyticsProps{
   value: string;
   displayName: string;
 }
 
-export interface DefaultOption {
+export interface DefaultOption extends AnalyticsProps{
   displayName: string;
   disabled?: boolean;
 }
@@ -393,7 +409,7 @@ export type DropdownModifier =
   | 'fontSizeMedium'
   | 'fontSizeLarge';
 
-export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement> {
+export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement>, AnalyticsProps {
   value: string;
   onChange?: (value: string) => any;
   color?: string;
@@ -407,7 +423,7 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement> {
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
-export interface DrawerProps {
+export interface DrawerProps extends AnalyticsProps{
   handleClose: () => void;
   isOpen: boolean;
   width?: string;
@@ -422,14 +438,14 @@ export type LabelModifier =
   | 'fontSizeMedium'
   | 'fontSizeLarge';
 
-export interface LabelProps {
+export interface LabelProps extends AnalyticsProps{
   disabled?: boolean;
   modifiers?: Array<LabelModifier>;
 }
 
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
-export interface LoaderProps {
+export interface LoaderProps extends AnalyticsProps{
   height?: number;
   width?: number;
   color?: string;
@@ -441,7 +457,7 @@ export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
 
 export type NotificationVariant = 'success' | 'danger' | 'warning';
 
-interface NotificationProps {
+interface NotificationProps extends AnalyticsProps{
   title: string;
   content: string;
   variant?: NotificationVariant;
@@ -459,7 +475,7 @@ interface INotification extends FunctionComponent<NotificationProps> {
 
 export declare const Notification: INotification;
 
-export interface PaginationProps {
+export interface PaginationProps extends AnalyticsProps{
   onPageChange: (pageNumber: number) => any;
   totalItems: number;
   startPage?: number;
@@ -473,7 +489,7 @@ export type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'war
 
 export type PillLabelSize = 'xs' | 'sm' | 'md' | 'lg';
 
-interface PillLabelProps {
+interface PillLabelProps extends AnalyticsProps{
   modifiers?: Array<PillLabelModifier>;
   size?: PillLabelSize;
 }
@@ -482,7 +498,7 @@ export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
 
 export type ProgressType = 'circle' | 'line';
 
-export interface ProgressProps {
+export interface ProgressProps extends AnalyticsProps{
   type?: ProgressType;
   strokeWidth?: number;
   strokeColor?: string;
@@ -499,7 +515,7 @@ export interface ProgressProps {
 
 export declare const Progress: FunctionComponent<ProgressProps>;
 
-export interface SwitchProps {
+export interface SwitchProps extends AnalyticsProps{
   checked: boolean;
   disabled?: boolean;
   id: string;
@@ -513,7 +529,7 @@ export declare const TextArea: StyledComponent<'input', Theme>;
 
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 
-export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement>, AnalyticsProps {
   ref?: Ref<HTMLInputElement>;
   size?: InputSize;
   style?: CSSProperties;
@@ -539,7 +555,7 @@ export interface TypographyProps {
 
 export declare const Typography: FunctionComponent<TypographyProps>;
 
-export interface Theme {
+export interface Theme extends AnalyticsProps{
   palette: {
     primary: {
       main: string;
@@ -668,7 +684,7 @@ export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-o
 
 export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
-export interface TooltipProps {
+export interface TooltipProps extends AnalyticsProps{
   behavior?: TooltipBehavior;
   durationOnClick?: number;
   arrowWidth?: number;
@@ -703,13 +719,13 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
-interface Step {
+interface Step extends AnalyticsProps{
   isDisabled: boolean;
   isCompleted: boolean;
   component: ReactNode;
 }
 
-interface StepWizardProps {
+interface StepWizardProps extends AnalyticsProps{
   steps: Array<Step>;
   activeStep: number;
   className?: string;
