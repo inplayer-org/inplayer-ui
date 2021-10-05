@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.13] - 05-10-2021
+
+## Added
+
+- AnalyticsProps type to the components in index.d.ts file.
+
 # [2.5.12] - 28-09-2021
 
 ## Added
