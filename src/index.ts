@@ -49,12 +49,7 @@ export type {
   AnalyticsPageProps,
   AnalyticsPageType,
   AnalyticsTag,
-  AnalyticsContextValue
+  AnalyticsContextValue,
 } from './analytics';
 
-export {
-  AnalyticsPage,
-  AnalyticsContext,
-  AnalyticsTracker,
-  AnalyticsComponent
-} from './analytics';
+export { AnalyticsPage, AnalyticsContext, AnalyticsTracker, AnalyticsComponent } from './analytics';
