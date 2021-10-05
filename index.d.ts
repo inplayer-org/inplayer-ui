@@ -24,7 +24,7 @@ export type AnalyticsTag = string;
 /**
  * Props present on various components which aid in the tracking of analytics events.
  */
-interface AnalyticsProps {
+export interface AnalyticsProps {
   /** Unique identifier of the component within the logical page hierarchy. */
   tag?: AnalyticsTag;
 
