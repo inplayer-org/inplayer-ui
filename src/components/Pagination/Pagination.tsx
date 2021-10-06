@@ -122,10 +122,20 @@ const Pagination = ({
 
   return (
     <PaginationContainer>
-      <PageBox type="button" disabled={activePage === 1} onClick={goToStart}>
+      <PageBox
+        tag="button_page_first"
+        type="button"
+        disabled={activePage === 1}
+        onClick={goToStart}
+      >
         <FaAngleDoubleLeft />
       </PageBox>
-      <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
+      <PageBox
+        tag="button_page_previous"
+        type="button"
+        disabled={activePage === 1}
+        onClick={onPageClick(activePage - 1)}
+      >
         <FaAngleLeft />
       </PageBox>
       {!visiblePages.some((index) => index === 1) && (
@@ -135,6 +145,7 @@ const Pagination = ({
       )}
       {visiblePages.map((index) => (
         <PageBox
+          tag={`button_page_${activePage}`}
           type="button"
           selected={activePage === index}
           key={index}
@@ -149,13 +160,19 @@ const Pagination = ({
         </PageBox>
       )}
       <PageBox
+        tag="button_page_next"
         type="button"
         disabled={activePage === totalPages}
         onClick={onPageClick(activePage + 1)}
       >
         <FaAngleRight />
       </PageBox>
-      <PageBox type="button" disabled={activePage === totalPages} onClick={goToEnd}>
+      <PageBox
+        tag="button_page_last"
+        type="button"
+        disabled={activePage === totalPages}
+        onClick={goToEnd}
+      >
         <FaAngleDoubleRight />
       </PageBox>
     </PaginationContainer>
