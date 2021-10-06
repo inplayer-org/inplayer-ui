@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { AnalyticsProps } from '../../analytics';
 
-const Tab = styled.a<{ active: boolean }>`
+type TabProps = {
+  active: boolean;
+} & AnalyticsProps;
+
+const Tab = styled.a<TabProps>`
   height: 100%;
   display: flex;
   align-items: center;
@@ -40,6 +44,7 @@ const TabContainer = styled.div`
 
 type NavigationTab = {
   title: string;
+  subTag?: string;
 } & AnalyticsProps;
 
 export type Props = {
@@ -56,6 +61,7 @@ const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
         id={tab.title.toLowerCase()}
         onClick={() => onTabClick(index)}
         active={selectedTabIndex === index}
+        tag={tab.subTag || tab.tag}
       >
         {tab.title}
       </Tab>
