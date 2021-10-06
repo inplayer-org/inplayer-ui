@@ -145,7 +145,7 @@ const Pagination = ({
       )}
       {visiblePages.map((index) => (
         <PageBox
-          tag={`button_page_${activePage}`}
+          tag={`button_page_${index}`}
           type="button"
           selected={activePage === index}
           key={index}
