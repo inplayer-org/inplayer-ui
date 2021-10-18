@@ -5,6 +5,7 @@ import Arrow from './Arrow';
 import { TooltipProps } from '../Tooltip/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
+import { AnalyticsProps } from '../../..';
 
 // Types
 type Panel = {
@@ -13,7 +14,7 @@ type Panel = {
   iconTooltip?: TooltipProps;
   renderContent: () => any;
   disabled?: boolean;
-};
+} & AnalyticsProps;
 
 type Props = {
   panels: Array<Panel>;
@@ -78,10 +79,9 @@ export const Accordion = ({
     >
       <div>
         {panels.map((panel, index) => {
-          const { icon, iconTooltip, label, renderContent, disabled = false } = panel;
+          const { icon, iconTooltip, label, renderContent, disabled = false, tag = '' } = panel;
           const isActive = activePanel === index;
           const isOtherPanelActive = !isActive && activePanel !== -1;
-
           return (
             <div key={index}>
               <AccordionPanel
@@ -96,6 +96,7 @@ export const Accordion = ({
                 contentHeight={contentHeight}
                 disabled={disabled}
                 togglePanel={togglePanel(index, label)}
+                tag={tag}
               />
             </div>
           );
