@@ -47,6 +47,6 @@ export type Props = {
   selected: boolean;
 } & AnalyticsProps;
 
-const Tab = ({ tag, ...rest }: Props) => <TabWrapper {...rest} />
+const Tab = ({ tag, ...rest }: Props) => <TabWrapper {...rest} />;
 
 export default Tab;

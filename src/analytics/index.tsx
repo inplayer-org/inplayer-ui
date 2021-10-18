@@ -23,7 +23,23 @@ export interface AnalyticsProps {
 }
 
 /** Receives tracking events and dispatches them to handlers. */
-export class AnalyticsTracker {}
+export class AnalyticsTracker {
+  track = (event: {
+    event: 'click';
+    type: 'button';
+    tag: AnalyticsTag;
+    pages: AnalyticsPage[];
+  }) => {
+    const url = new URL('https://staging-v2.inplayer.com/analytics/track');
+
+    url.append('event', event.event);
+    url.append('type', event.type);
+    url.append('tag', event.tag);
+    url.append('pages', event.pages.map((page) => `${page.type}:${page.tag}`).join('/'));
+
+    fetch(url);
+  };
+}
 
 export type AnalyticsPageType = 'page' | 'modal' | 'tab';
 
