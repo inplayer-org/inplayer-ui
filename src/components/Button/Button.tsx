@@ -78,7 +78,7 @@ const Button = ({
           !tag
             ? onClick
             : (e) => {
-                onClick(e);
+                if (onClick) onClick(e);
 
                 tracker.track({
                   event: 'click',

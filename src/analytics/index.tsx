@@ -32,12 +32,18 @@ export class AnalyticsTracker {
   }) => {
     const url = new URL('https://staging-v2.inplayer.com/analytics/track');
 
-    url.append('event', event.event);
-    url.append('type', event.type);
-    url.append('tag', event.tag);
-    url.append('pages', event.pages.map((page) => `${page.type}:${page.tag}`).join('/'));
+    url.searchParams.append('tag', event.tag);
+    url.searchParams.append('action', event.event);
+    url.searchParams.append('type', event.type);
+    if (event.pages[0]) {
+      url.searchParams.append('page', event.pages[0].tag);
+      if (event.pages[1]) {
+        url.searchParams.append('subpage', event.pages[1].tag);
+      }
+    }
+    url.searchParams.append('timestamp', (Date.now() as unknown) as string);
 
-    fetch(url);
+    fetch(url.href);
   };
 }
 
@@ -73,7 +79,7 @@ export type AnalyticsPageProps = {
 };
 
 export type AnalyticsComponentProps = {
-  children?: (context: AnalyticsContextValue) => React.ReactNode;
+  children: (context: AnalyticsContextValue) => React.ReactNode;
 };
 
 /** A component to wrap other components with to gain access to the AnalyticsContextValue. */
