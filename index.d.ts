@@ -40,6 +40,23 @@ export interface AnalyticsProps {
     column?: number | string;
   };
 }
+
+export type AnalyticsPageProps = {
+  /** Tag of this page. */
+  tag: AnalyticsTag;
+
+  /** Type of this page. */
+  type: AnalyticsPageType;
+
+  /** Children in the page. */
+  children?: React.ReactNode;
+};
+
+export type AnalyticsComponentProps = {
+  children: (context: AnalyticsContextValue) => React.ReactNode;
+};
+
+export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
 export interface ContainerProps extends AnalyticsProps{
   className?: string;
   columns?: number | string;
