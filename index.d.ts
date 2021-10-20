@@ -50,6 +50,12 @@ export type AnalyticsPageProps = {
 
   /** Children in the page. */
   children?: React.ReactNode;
+
+  /** merchant id */
+  merchantId?: number;
+
+  /** user ip address */
+  ip?: string;
 };
 
 export type AnalyticsComponentProps = {

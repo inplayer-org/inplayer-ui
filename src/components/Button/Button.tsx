@@ -67,7 +67,7 @@ const Button = ({
   ...rest
 }: Props) => (
   <AnalyticsComponent>
-    {({ pages, tracker }) => (
+    {({ pages, tracker, merchantId, ip }) => (
       <ButtonWrapper
         className={className}
         size={size}
@@ -85,6 +85,8 @@ const Button = ({
                   type: 'button',
                   tag,
                   pages,
+                  merchantId,
+                  ip,
                 });
               }
         }
