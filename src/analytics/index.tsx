@@ -35,31 +35,33 @@ export interface AnalyticsProps {
     column?: number | string;
   };
 }
+
+export type AnalyticsHandlerFn = (event: {
+  event: 'click';
+  type: 'button';
+  tag: AnalyticsTag;
+  pages: AnalyticsPage[];
+}) => void;
+
 /** Receives tracking events and dispatches them to handlers. */
 export class AnalyticsTracker extends Component<void, void> {
+  handlers: AnalyticsHandlerFn[] = [];
+
+  registerHandler = (fn: AnalyticsHandlerFn) => {
+    this.handlers.push(fn);
+  };
+
+  deregisterHandler = (fn: AnalyticsHandlerFn) => {
+    // TODO
+  };
+
   track = (event: {
     event: 'click';
     type: 'button';
     tag: AnalyticsTag;
     pages: AnalyticsPage[];
-    merchantId: number;
-    ip: string;
   }) => {
-    const url = new URL('https://staging-v2.inplayer.com/analytics/track');
-
-    url.searchParams.append('tag', event.tag);
-    url.searchParams.append('action', event.event);
-    url.searchParams.append('type', event.type);
-    if (event.pages[0]) {
-      url.searchParams.append('page', event.pages[0].tag);
-      if (event.pages[1]) {
-        url.searchParams.append('subpage', event.pages[1].tag);
-      }
-    }
-    url.searchParams.append('timestamp', (Date.now() as unknown) as string);
-    url.searchParams.append('mid', (event.merchantId as unknown) as string);
-    url.searchParams.append('hash', event.ip);
-    fetch(url.href);
+    this.handlers.forEach((handler) => handler(event));
   };
 }
 
