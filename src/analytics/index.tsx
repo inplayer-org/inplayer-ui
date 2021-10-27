@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export type AnalyticsTag = string;
 
@@ -44,7 +44,7 @@ export type AnalyticsHandlerFn = (event: {
 }) => void;
 
 /** Receives tracking events and dispatches them to handlers. */
-export class AnalyticsTracker extends Component<void, void> {
+export class AnalyticsTracker {
   handlers: AnalyticsHandlerFn[] = [];
 
   registerHandler = (fn: AnalyticsHandlerFn) => {
