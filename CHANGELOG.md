@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.14] - 27.10.2021
+
+## Added
+
+- Analytics handler for button component
+
 # [2.5.13] - 05-10-2021
 
 ## Added
