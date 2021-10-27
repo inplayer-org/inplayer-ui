@@ -282,7 +282,7 @@ export interface ActionButtonRenderProps {
   closeAccordion: (e?: SyntheticEvent<*>) => void;
 }
 
-export interface AccordionPanel {
+export interface AccordionPanel extends AnalyticsProps{
   label: string;
   icon?: ReactNode;
   iconTooltip?: TooltipProps;
