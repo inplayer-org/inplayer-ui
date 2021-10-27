@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
-import { AnalyticsProps } from '../../analytics';
+import { AnalyticsProps, AnalyticsComponent } from '../../analytics';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -55,6 +55,7 @@ const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps)
 
 const Button = ({
   size = 'md',
+  tag,
   buttonModifiers,
   className = '',
   icon,
@@ -62,20 +63,41 @@ const Button = ({
   children,
   fullWidth,
   fullHeight,
+  onClick,
   ...rest
 }: Props) => (
-  <ButtonWrapper
-    className={className}
-    size={size}
-    modifiers={buttonModifiers}
-    fullWidth={fullWidth}
-    fullHeight={fullHeight}
-    {...rest}
-  >
-    <Content icon={icon} iconPosition={iconPosition}>
-      {children}
-    </Content>
-  </ButtonWrapper>
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <ButtonWrapper
+        className={className}
+        size={size}
+        modifiers={buttonModifiers}
+        fullWidth={fullWidth}
+        fullHeight={fullHeight}
+        onClick={
+          !tag
+            ? onClick
+            : (e) => {
+                if (onClick) onClick(e);
+
+                tracker.track({
+                  event: 'click',
+                  type: 'button',
+                  tag,
+                  pages,
+                  merchantId,
+                  ip,
+                });
+              }
+        }
+        {...rest}
+      >
+        <Content icon={icon} iconPosition={iconPosition}>
+          {children}
+        </Content>
+      </ButtonWrapper>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Button;

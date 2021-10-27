@@ -40,6 +40,45 @@ export interface AnalyticsProps {
     column?: number | string;
   };
 }
+
+export declare class AnalyticsTracker {
+  registerHandler: (fn: AnalyticsHandlerFn) => void;
+  deregisterHandler: (fn: AnalyticsHandlerFn) => void;
+}
+
+export interface AnalyticsContextValue {
+  pages: AnalyticsPage[];
+  tracker: AnalyticsTracker;
+  merchantId: number;
+  ip: string;
+}
+
+export type AnalyticsPageProps = {
+  /** Tag of this page. */
+  tag: AnalyticsTag;
+
+  /** Type of this page. */
+  type: AnalyticsPageType;
+
+  /** Children in the page. */
+  children?: React.ReactNode;
+
+  /** merchant id */
+  merchantId?: number;
+
+  /** user ip address */
+  ip?: string;
+};
+
+export type AnalyticsComponentProps = {
+  children: (context: AnalyticsContextValue) => React.ReactNode;
+};
+
+export declare const ROOT_ANALYTICS_CONTEXT: AnalyticsContextValue;
+
+export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
+
+export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
 export interface ContainerProps extends AnalyticsProps{
   className?: string;
   columns?: number | string;
@@ -243,7 +282,7 @@ export interface ActionButtonRenderProps {
   closeAccordion: (e?: SyntheticEvent<*>) => void;
 }
 
-export interface AccordionPanel {
+export interface AccordionPanel extends AnalyticsProps{
   label: string;
   icon?: ReactNode;
   iconTooltip?: TooltipProps;
