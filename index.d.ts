@@ -41,6 +41,18 @@ export interface AnalyticsProps {
   };
 }
 
+export declare class AnalyticsTracker {
+  registerHandler: (fn: AnalyticsHandlerFn) => void;
+  deregisterHandler: (fn: AnalyticsHandlerFn) => void;
+}
+
+export interface AnalyticsContextValue {
+  pages: AnalyticsPage[];
+  tracker: AnalyticsTracker;
+  merchantId: number;
+  ip: string;
+}
+
 export type AnalyticsPageProps = {
   /** Tag of this page. */
   tag: AnalyticsTag;
@@ -61,6 +73,10 @@ export type AnalyticsPageProps = {
 export type AnalyticsComponentProps = {
   children: (context: AnalyticsContextValue) => React.ReactNode;
 };
+
+export declare const ROOT_ANALYTICS_CONTEXT: AnalyticsContextValue;
+
+export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
 
 export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
 export interface ContainerProps extends AnalyticsProps{
