@@ -4,7 +4,11 @@ import { ifProp } from 'styled-tools';
 import { AnalyticsProps } from '../../analytics';
 import colors from '../../theme/colors';
 
-const TabWrapper = styled.div<{ selected: boolean }>`
+interface Props extends AnalyticsProps {
+  selected: boolean;
+}
+
+const Tab = styled.div<Props>`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;
@@ -42,11 +46,5 @@ const TabWrapper = styled.div<{ selected: boolean }>`
     `
   )};
 `;
-
-export type Props = {
-  selected: boolean;
-} & AnalyticsProps;
-
-const Tab = ({ tag, ...rest }: Props) => <TabWrapper {...rest} />;
 
 export default Tab;
