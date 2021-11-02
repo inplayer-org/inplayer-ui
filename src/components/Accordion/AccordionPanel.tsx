@@ -7,7 +7,7 @@ import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import Tooltip, { TooltipProps } from '../Tooltip/Tooltip';
 import Typography from '../Typography';
-import { AnalyticsProps } from '../../..';
+import { AnalyticsProps } from '../../analytics';
 
 // Types
 type AccordionPanelContainerProps = {

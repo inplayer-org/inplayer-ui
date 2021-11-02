@@ -5,7 +5,7 @@ import Arrow from './Arrow';
 import { TooltipProps } from '../Tooltip/Tooltip';
 import { AccordionWrapper } from './styled';
 import AccordionPanel from './AccordionPanel';
-import { AnalyticsProps } from '../../..';
+import { AnalyticsProps } from '../../analytics';
 
 // Types
 type Panel = {
