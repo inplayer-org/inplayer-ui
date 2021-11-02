@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.15] - 02.11.2021
+
+## Fixes
+
+- Tab component import bug
+
+### Change
+
+- Accordion component to be analytics ready
+
 # [2.5.14] - 27.10.2021
 
 ## Added

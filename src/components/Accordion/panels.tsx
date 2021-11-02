@@ -16,6 +16,7 @@ export const panels = [
         <h1>Long Content for the accordion1</h1>
       </div>
     ),
+    tag: 'tag1',
   },
   {
     label: 'Disabled Accordion',
@@ -31,6 +32,7 @@ export const panels = [
       </div>
     ),
     disabled: true,
+    tag: 'tag2',
   },
   {
     label: 'Accordion3',
@@ -45,5 +47,6 @@ export const panels = [
         <h1>Long Content for the accordion3</h1>
       </div>
     ),
+    tag: 'tag3',
   },
 ];

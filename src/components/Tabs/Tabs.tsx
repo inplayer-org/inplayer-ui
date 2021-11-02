@@ -3,7 +3,7 @@ import Tab from './Tab';
 import TabsWrapper from './TabsWrapper';
 import { AnalyticsProps } from '../../analytics';
 
-interface TabInfo {
+interface TabInfo extends AnalyticsProps {
   name: string;
 }
 
@@ -37,8 +37,9 @@ const renderTabs = (
   selectedTabIndex: number,
   onTabClick: (index: number) => void
 ) =>
-  tabs.map(({ name, ...rest }, index) => (
+  tabs.map(({ name, tag, ...rest }, index) => (
     <Tab
+      tag={tag}
       selected={selectedTabIndex === index}
       key={name}
       onClick={() => {
