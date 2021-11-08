@@ -37,8 +37,8 @@ export interface AnalyticsProps {
 }
 
 export type AnalyticsHandlerFn = (event: {
-  event: 'click';
-  type: 'button';
+  event: 'click' | 'dropdown_change';
+  type: 'button' | 'dropdown';
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
 }) => void;
@@ -56,10 +56,13 @@ export class AnalyticsTracker {
   };
 
   track = (event: {
-    event: 'click';
-    type: 'button';
+    event: 'click' | 'dropdown_change';
+    type: 'button' | 'dropdown';
     tag: AnalyticsTag;
+    selectedValue?: string;
     pages: AnalyticsPage[];
+    merchantId: number;
+    ip: string;
   }) => {
     this.handlers.forEach((handler) => handler(event));
   };
