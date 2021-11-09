@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import DropdownContainer from './DropdownContainer';
 import { AnalyticsComponent, AnalyticsProps } from '../../analytics';
 
-const StyledOption = styled.option<AnalyticsProps>``;
-
 export type Option = {
   value: string;
   displayName: string;
@@ -35,6 +33,7 @@ const Dropdown: React.FC<Props> = ({
   defaultOption,
   className,
   tag,
+  onClick,
   ...rest
 }) => {
   const onDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -42,6 +41,7 @@ const Dropdown: React.FC<Props> = ({
       onChange(e.target.value);
     }
   };
+
   return (
     <AnalyticsComponent>
       {({ pages, tracker, merchantId, ip }) => (
@@ -56,10 +56,23 @@ const Dropdown: React.FC<Props> = ({
                   tracker.track({
                     event: 'dropdown_change',
                     type: 'dropdown',
+                    tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+          }
+          onClick={
+            !tag
+              ? onClick
+              : (e) => {
+                  if (onClick) onClick(e);
+
+                  tracker.track({
+                    event: 'dropdown_select',
+                    type: 'dropdown',
                     tag,
-                    selectedValue: `dropdown_${snakeCase(
-                      e.currentTarget.options[selectedValue].text
-                    )}`,
                     pages,
                     merchantId,
                     ip,
