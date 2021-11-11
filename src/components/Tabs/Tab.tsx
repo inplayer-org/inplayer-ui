@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-
-import { AnalyticsProps } from '../../analytics';
 import colors from '../../theme/colors';
 
-interface Props extends AnalyticsProps {
+interface Props {
   selected: boolean;
 }
 

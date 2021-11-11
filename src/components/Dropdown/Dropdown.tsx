@@ -1,6 +1,5 @@
 import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
 import { snakeCase } from 'lodash';
-import styled from 'styled-components';
 import DropdownContainer from './DropdownContainer';
 import { AnalyticsComponent, AnalyticsProps } from '../../analytics';
 
