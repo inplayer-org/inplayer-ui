@@ -1,6 +1,7 @@
 import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
+import { snakeCase } from 'lodash';
 import DropdownContainer from './DropdownContainer';
-import { AnalyticsProps } from '../../analytics';
+import { AnalyticsComponent, AnalyticsProps } from '../../analytics';
 
 export type Option = {
   value: string;
@@ -30,6 +31,8 @@ const Dropdown: React.FC<Props> = ({
   onChange = () => null,
   defaultOption,
   className,
+  tag,
+  onClick,
   ...rest
 }) => {
   const onDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -37,19 +40,60 @@ const Dropdown: React.FC<Props> = ({
       onChange(e.target.value);
     }
   };
+
   return (
-    <DropdownContainer onChange={onDropdownChange} className={className} {...rest}>
-      {defaultOption && (
-        <option value="" disabled={defaultOption.disabled}>
-          {defaultOption.displayName}
-        </option>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <DropdownContainer
+          onChange={
+            !tag
+              ? onDropdownChange
+              : (e) => {
+                  if (onDropdownChange) onDropdownChange(e);
+
+                  const selectedValue = e.currentTarget.selectedIndex;
+                  tracker.track({
+                    event: 'dropdown_change',
+                    type: 'dropdown',
+                    tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+          }
+          onClick={
+            !tag
+              ? onClick
+              : (e) => {
+                  if (onClick) onClick(e);
+
+                  tracker.track({
+                    event: 'dropdown_select',
+                    type: 'dropdown',
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+          }
+          className={className}
+          {...rest}
+        >
+          {defaultOption && (
+            <option value="" disabled={defaultOption.disabled}>
+              {defaultOption.displayName}
+            </option>
+          )}
+          {options.map(({ value, displayName }) => (
+            <option value={value} key={value}>
+              {displayName}
+            </option>
+          ))}
+        </DropdownContainer>
       )}
-      {options.map(({ value, displayName }) => (
-        <option value={value} key={value}>
-          {displayName}
-        </option>
-      ))}
-    </DropdownContainer>
+    </AnalyticsComponent>
   );
 };
 
