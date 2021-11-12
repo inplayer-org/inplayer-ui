@@ -37,9 +37,8 @@ const renderTabs = (
   selectedTabIndex: number,
   onTabClick: (index: number) => void
 ) =>
-  tabs.map(({ name, tag, ...rest }, index) => (
+  tabs.map(({ name, ...rest }, index) => (
     <Tab
-      tag={tag}
       selected={selectedTabIndex === index}
       key={name}
       onClick={() => {

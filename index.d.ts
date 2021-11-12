@@ -76,6 +76,24 @@ export type AnalyticsComponentProps = {
 
 export declare const ROOT_ANALYTICS_CONTEXT: AnalyticsContextValue;
 
+export enum AnalyticsEvents {
+  CLICK = 'click',
+  DROPDOWN_CHANGE = 'dropdown_change',
+  DROPDOWN_SELECT = 'dropdown_select',
+}
+
+export enum AnalyticsComponentType {
+  BUTTON = 'button',
+  DROPDOWN = 'dropdown',
+}
+
+export interface Event {
+  event: AnalyticsEvents;
+  type: AnalyticsComponentType;
+  tag: AnalyticsTag;
+  pages: AnalyticsPage[];
+}
+
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
 
 export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>

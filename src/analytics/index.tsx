@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 
 export type AnalyticsTag = string;
@@ -36,12 +37,25 @@ export interface AnalyticsProps {
   };
 }
 
-export type AnalyticsHandlerFn = (event: {
-  event: 'click';
-  type: 'button';
+export enum AnalyticsEvents {
+  CLICK = 'click',
+  DROPDOWN_CHANGE = 'dropdown_change',
+  DROPDOWN_SELECT = 'dropdown_select',
+}
+
+export enum AnalyticsComponentType {
+  BUTTON = 'button',
+  DROPDOWN = 'dropdown',
+}
+
+export interface Event {
+  event: AnalyticsEvents;
+  type: AnalyticsComponentType;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
-}) => void;
+}
+
+export type AnalyticsHandlerFn = (event: Event) => void;
 
 /** Receives tracking events and dispatches them to handlers. */
 export class AnalyticsTracker {
@@ -56,10 +70,12 @@ export class AnalyticsTracker {
   };
 
   track = (event: {
-    event: 'click';
-    type: 'button';
+    event: AnalyticsEvents;
+    type: AnalyticsComponentType;
     tag: AnalyticsTag;
     pages: AnalyticsPage[];
+    merchantId: number;
+    ip: string;
   }) => {
     this.handlers.forEach((handler) => handler(event));
   };
