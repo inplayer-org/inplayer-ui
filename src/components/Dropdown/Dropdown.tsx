@@ -1,7 +1,12 @@
 import React, { SelectHTMLAttributes, ChangeEvent } from 'react';
 import { snakeCase } from 'lodash';
 import DropdownContainer from './DropdownContainer';
-import { AnalyticsComponent, AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsEvents,
+  AnalyticsComponentType,
+  AnalyticsComponent,
+  AnalyticsProps,
+} from '../../analytics';
 
 export type Option = {
   value: string;
@@ -53,8 +58,8 @@ const Dropdown: React.FC<Props> = ({
 
                   const selectedValue = e.currentTarget.selectedIndex;
                   tracker.track({
-                    event: 'dropdown_change',
-                    type: 'dropdown',
+                    event: AnalyticsEvents.DROPDOWN_CHANGE,
+                    type: AnalyticsComponentType.DROPDOWN,
                     tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
                     pages,
                     merchantId,
@@ -69,8 +74,8 @@ const Dropdown: React.FC<Props> = ({
                   if (onClick) onClick(e);
 
                   tracker.track({
-                    event: 'dropdown_select',
-                    type: 'dropdown',
+                    event: AnalyticsEvents.DROPDOWN_SELECT,
+                    type: AnalyticsComponentType.DROPDOWN,
                     tag,
                     pages,
                     merchantId,

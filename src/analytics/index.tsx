@@ -36,9 +36,20 @@ export interface AnalyticsProps {
   };
 }
 
+export enum AnalyticsEvents {
+  CLICK = 'click',
+  DROPDOWN_CHANGE = 'dropdown_change',
+  DROPDOWN_SELECT = 'dropdown_select',
+}
+
+export enum AnalyticsComponentType {
+  BUTTON = 'button',
+  DROPDOWN = 'dropdown',
+}
+
 export type AnalyticsHandlerFn = (event: {
-  event: 'click' | 'dropdown_change' | 'dropdown_select';
-  type: 'button' | 'dropdown';
+  event: AnalyticsEvents;
+  type: AnalyticsComponentType;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
 }) => void;
@@ -56,8 +67,8 @@ export class AnalyticsTracker {
   };
 
   track = (event: {
-    event: 'click' | 'dropdown_change' | 'dropdown_select';
-    type: 'button' | 'dropdown';
+    event: AnalyticsEvents;
+    type: AnalyticsComponentType;
     tag: AnalyticsTag;
     pages: AnalyticsPage[];
     merchantId: number;

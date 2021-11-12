@@ -1,7 +1,12 @@
 import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
-import { AnalyticsProps, AnalyticsComponent } from '../../analytics';
+import {
+  AnalyticsProps,
+  AnalyticsComponent,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -81,8 +86,8 @@ const Button = ({
                 if (onClick) onClick(e);
 
                 tracker.track({
-                  event: 'click',
-                  type: 'button',
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.BUTTON,
                   tag,
                   pages,
                   merchantId,
