@@ -110,8 +110,20 @@
     "consistent-return": "off",
     "jsx-a11y/accessible-emoji": "off",
     "radix": "off",
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"],
+    "no-shadow": [
+      2,
+      {
+        "hoist": "all",
+        "allow": [
+          "resolve",
+          "reject",
+          "done",
+          "next",
+          "err",
+          "error"
+        ]
+      }
+    ],
     "quotes": [
       2,
       "single",
