@@ -47,12 +47,14 @@ export enum AnalyticsComponentType {
   DROPDOWN = 'dropdown',
 }
 
-export type AnalyticsHandlerFn = (event: {
+export interface Event {
   event: AnalyticsEvents;
   type: AnalyticsComponentType;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
-}) => void;
+}
+
+export type AnalyticsHandlerFn = (event: Event) => void;
 
 /** Receives tracking events and dispatches them to handlers. */
 export class AnalyticsTracker {

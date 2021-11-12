@@ -87,6 +87,13 @@ export enum AnalyticsComponentType {
   DROPDOWN = 'dropdown',
 }
 
+export interface Event {
+  event: AnalyticsEvents;
+  type: AnalyticsComponentType;
+  tag: AnalyticsTag;
+  pages: AnalyticsPage[];
+}
+
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
 
 export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
