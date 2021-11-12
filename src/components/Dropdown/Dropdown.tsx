@@ -50,39 +50,35 @@ const Dropdown: React.FC<Props> = ({
     <AnalyticsComponent>
       {({ pages, tracker, merchantId, ip }) => (
         <DropdownContainer
-          onChange={
-            !tag
-              ? onDropdownChange
-              : (e) => {
-                  if (onDropdownChange) onDropdownChange(e);
+          onChange={(e) => {
+            onDropdownChange?.(e);
 
-                  const selectedValue = e.currentTarget.selectedIndex;
-                  tracker.track({
-                    event: AnalyticsEvents.DROPDOWN_CHANGE,
-                    type: AnalyticsComponentType.DROPDOWN,
-                    tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
-                    pages,
-                    merchantId,
-                    ip,
-                  });
-                }
-          }
-          onClick={
-            !tag
-              ? onClick
-              : (e) => {
-                  if (onClick) onClick(e);
+            if (tag) {
+              const selectedValue = e.currentTarget.selectedIndex;
+              tracker.track({
+                event: AnalyticsEvents.DROPDOWN_CHANGE,
+                type: AnalyticsComponentType.DROPDOWN,
+                tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
+                pages,
+                merchantId,
+                ip,
+              });
+            }
+          }}
+          onClick={(e) => {
+            onClick?.(e);
 
-                  tracker.track({
-                    event: AnalyticsEvents.DROPDOWN_SELECT,
-                    type: AnalyticsComponentType.DROPDOWN,
-                    tag,
-                    pages,
-                    merchantId,
-                    ip,
-                  });
-                }
-          }
+            if (tag) {
+              tracker.track({
+                event: AnalyticsEvents.DROPDOWN_SELECT,
+                type: AnalyticsComponentType.DROPDOWN,
+                tag,
+                pages,
+                merchantId,
+                ip,
+              });
+            }
+          }}
           className={className}
           {...rest}
         >
