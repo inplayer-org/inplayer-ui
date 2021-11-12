@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.16] - 12.11.2021
+
+## Added
+
+- Analytics handler for dropdown component
+- Tagging for pagination and navbar
+
 # [2.5.15] - 02.11.2021
 
 ## Fixes
