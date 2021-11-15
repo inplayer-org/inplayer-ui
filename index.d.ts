@@ -44,6 +44,7 @@ export interface AnalyticsProps {
 export declare class AnalyticsTracker {
   registerHandler: (fn: AnalyticsHandlerFn) => void;
   deregisterHandler: (fn: AnalyticsHandlerFn) => void;
+  track: (event: Event) => void;
 }
 
 export interface AnalyticsContextValue {
@@ -88,15 +89,20 @@ export enum AnalyticsComponentType {
 }
 
 export interface Event {
-  event: AnalyticsEvents;
-  type: AnalyticsComponentType;
+  // temporarily mark them as strings
+  event: AnalyticsEvents | string;
+  type: AnalyticsComponentType | string;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
+  merchantId: number;
+  ip: string;
 }
 
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
 
 export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
+
+export declare const AnalyticsComponent: FunctionComponent<AnalyticsComponentProps>
 export interface ContainerProps extends AnalyticsProps{
   className?: string;
   columns?: number | string;
