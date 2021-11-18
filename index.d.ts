@@ -781,7 +781,7 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
-interface Step extends AnalyticsProps{
+export interface Step extends AnalyticsProps{
   isDisabled: boolean;
   isCompleted: boolean;
   component: ReactNode;
