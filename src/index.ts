@@ -50,6 +50,9 @@ export type {
   AnalyticsPageType,
   AnalyticsTag,
   AnalyticsContextValue,
+  AnalyticsComponentProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
 } from './analytics';
 
 export {
