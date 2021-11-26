@@ -86,11 +86,13 @@ export enum AnalyticsEvents {
 export enum AnalyticsComponentType {
   BUTTON = 'button',
   DROPDOWN = 'dropdown',
+  ICON = 'icon',
 }
 
 export interface Event {
-  event: AnalyticsEvents;
-  type: AnalyticsComponentType;
+  // temporarily mark them as strings
+  event: AnalyticsEvents | string;
+  type: AnalyticsComponentType | string;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
   merchantId: number;
