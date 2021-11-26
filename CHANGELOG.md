@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.17] - 12.11.2021
+
+## Added
+
+- Tagging for StepWizard
+
+## Fixes
+
+- Dropdown component tag sent in tracker
+
 # [2.5.16] - 12.11.2021
 
 ## Added
