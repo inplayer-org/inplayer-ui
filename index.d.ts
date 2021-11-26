@@ -89,9 +89,8 @@ export enum AnalyticsComponentType {
 }
 
 export interface Event {
-  // temporarily mark them as strings
-  event: AnalyticsEvents | string;
-  type: AnalyticsComponentType | string;
+  event: AnalyticsEvents;
+  type: AnalyticsComponentType;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
   merchantId: number;
