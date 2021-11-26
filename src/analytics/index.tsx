@@ -46,6 +46,8 @@ export enum AnalyticsEvents {
 export enum AnalyticsComponentType {
   BUTTON = 'button',
   DROPDOWN = 'dropdown',
+  ICON = 'icon',
+  LINK = 'link',
 }
 
 export interface Event {

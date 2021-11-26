@@ -58,7 +58,7 @@ const Dropdown: React.FC<Props> = ({
               tracker.track({
                 event: AnalyticsEvents.DROPDOWN_CHANGE,
                 type: AnalyticsComponentType.DROPDOWN,
-                tag: `dropdown_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
+                tag: `${tag}_${snakeCase(e.currentTarget.options[selectedValue].text)}`,
                 pages,
                 merchantId,
                 ip,
