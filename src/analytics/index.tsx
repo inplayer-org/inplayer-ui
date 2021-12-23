@@ -41,6 +41,9 @@ export enum AnalyticsEvents {
   CLICK = 'click',
   DROPDOWN_CHANGE = 'dropdown_change',
   DROPDOWN_SELECT = 'dropdown_select',
+  CHECKBOX_ON = 'checkbox_on',
+  CHECKBOX_OFF = 'checkbox_off',
+  RADIOBUTTON_SELECT = 'radiobutton_select',
 }
 
 export enum AnalyticsComponentType {
@@ -48,6 +51,7 @@ export enum AnalyticsComponentType {
   DROPDOWN = 'dropdown',
   ICON = 'icon',
   LINK = 'link',
+  CHECKBOX = 'checkbox',
 }
 
 export interface Event {
