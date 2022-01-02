@@ -52,6 +52,8 @@ export enum AnalyticsComponentType {
   ICON = 'icon',
   LINK = 'link',
   CHECKBOX = 'checkbox',
+  DATEPICKER_PRESET = 'datepicker_preset',
+  TAB = 'tab',
 }
 
 export interface Event {

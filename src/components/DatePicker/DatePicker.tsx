@@ -3,6 +3,7 @@ import moment, { Moment } from 'moment';
 import styled, { css } from 'styled-components';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { snakeCase } from 'lodash';
 import colors from '../../theme/colors';
 import { getMonthOptions, getYearOptions } from '../../utils/helpers';
 import Dropdown from '../Dropdown';
@@ -10,7 +11,12 @@ import { Option } from '../Dropdown/Dropdown';
 import DatePickerWrapper from './DatePickerWrapper';
 import { PERIODS, INNERPERIODS } from './periods';
 import { Styled } from './styles';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+  AnalyticsProps,
+} from '../../analytics';
 import 'react-dates/initialize';
 
 const ContentHolder = styled.div<{ isDropdown?: boolean }>`
@@ -191,7 +197,7 @@ const DatePicker = ({
   const renderDatePresets = () => {
     if (!showInnerPresets) return '';
 
-    let presets = [];
+    let presets: string[] = [];
 
     if (displayPresets[0] === 'default') {
       presets = [
@@ -205,23 +211,38 @@ const DatePicker = ({
       presets = [...displayPresets];
     }
     return (
-      <Styled.DatePresetWrapper>
-        {presets.map((text: string) => (
-          <Styled.StyledLabel
-            active={activePeriod === text}
-            key={text}
-            onClick={() => handleRangeClick(text as Period)}
-          >
-            {text}
-          </Styled.StyledLabel>
-        ))}
-      </Styled.DatePresetWrapper>
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <Styled.DatePresetWrapper>
+            {presets.map((text: string) => (
+              <Styled.StyledLabel
+                active={activePeriod === text}
+                key={text}
+                onClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.DATEPICKER_PRESET,
+                    tag: `datepicker_${snakeCase(text)}`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                  handleRangeClick(text as Period);
+                }}
+              >
+                {text}
+              </Styled.StyledLabel>
+            ))}
+          </Styled.DatePresetWrapper>
+        )}
+      </AnalyticsComponent>
     );
   };
   const renderMonthElement = ({ month, onMonthSelect, onYearSelect }: RenderMonthElementProps) => (
     <Styled.CustomMonthContainer>
       <Styled.DropdownContainer>
         <Dropdown
+          tag="dropdown_month"
           options={getMonthOptions()}
           value={month.month().toString()}
           onChange={(val: any) => onMonthSelect(month, val)}
@@ -229,6 +250,7 @@ const DatePicker = ({
       </Styled.DropdownContainer>
       <Styled.DropdownContainer>
         <Dropdown
+          tag="dropdown_year"
           options={getYearOptions()}
           value={month.year().toString()}
           onChange={(val: any) => onYearSelect(month, val)}
@@ -259,22 +281,37 @@ const DatePicker = ({
   };
 
   const renderPeriodElement = (periodConst: string, periodText: string, key: number) => (
-    <SpanContainer>
-      <StyledSpan
-        active={activePeriod === periodConst}
-        key={key}
-        onClick={() => handleRangeClick(periodConst)}
-      >
-        {periodText}
-      </StyledSpan>
-      {periodText.toLowerCase() !== 'all' && ' |'}
-    </SpanContainer>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <SpanContainer>
+          <StyledSpan
+            active={activePeriod === periodConst}
+            key={key}
+            onClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.DATEPICKER_PRESET,
+                tag: `datepicker_${snakeCase(periodConst)}`,
+                pages,
+                merchantId,
+                ip,
+              });
+              handleRangeClick(periodConst);
+            }}
+          >
+            {periodText}
+          </StyledSpan>
+          {periodText.toLowerCase() !== 'all' && ' |'}
+        </SpanContainer>
+      )}
+    </AnalyticsComponent>
   );
 
   if (showPresetsWithDropdown) {
     return (
       <ContentHolder isDropdown>
         <StyledDropdown
+          tag="dropdown_presets"
           defaultOption={defaultOption}
           options={options}
           value={activePeriod}
