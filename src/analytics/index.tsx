@@ -41,6 +41,7 @@ export enum AnalyticsEvents {
   CLICK = 'click',
   DROPDOWN_CHANGE = 'dropdown_change',
   DROPDOWN_SELECT = 'dropdown_select',
+  DATEPICKER_CHANGE = 'datepicker_date_change',
 }
 
 export enum AnalyticsComponentType {
@@ -48,6 +49,7 @@ export enum AnalyticsComponentType {
   DROPDOWN = 'dropdown',
   ICON = 'icon',
   LINK = 'link',
+  DATEPICKER = 'datepicker',
   DATEPICKER_PRESET = 'datepicker_preset',
 }
 
