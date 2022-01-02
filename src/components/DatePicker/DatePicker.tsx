@@ -309,54 +309,164 @@ const DatePicker = ({
 
   if (showPresetsWithDropdown) {
     return (
-      <ContentHolder isDropdown>
-        <StyledDropdown
-          tag="dropdown_presets"
-          defaultOption={defaultOption}
-          options={options}
-          value={activePeriod}
-          onChange={handleDropdownChange}
-        />
-        <DatePickerWrapper showPresetsWithDropdown className={className}>
-          <DateRangePicker
-            isOutsideRange={isOutsideRange}
-            onDatesChange={handleDateChange}
-            onFocusChange={onFocusChange}
-            renderMonthElement={renderMonthElement}
-            focusedInput={focusedInput}
-            startDate={startDateProp}
-            startDateId={startDateId}
-            endDate={endDateProp}
-            endDateId={endDateId}
-            customArrowIcon="-"
-            calendarInfoPosition="before"
-            minimumNights={minimumNights}
-            enableOutsideDays
-            readOnly
-            renderCalendarInfo={renderDatePresets}
-            customInputIcon={<FaCalendarAlt />}
-          />
-        </DatePickerWrapper>
-      </ContentHolder>
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <ContentHolder isDropdown>
+            <StyledDropdown
+              tag="dropdown_presets"
+              defaultOption={defaultOption}
+              options={options}
+              value={activePeriod}
+              onChange={handleDropdownChange}
+            />
+            <DatePickerWrapper showPresetsWithDropdown className={className}>
+              <DateRangePicker
+                isOutsideRange={isOutsideRange}
+                onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
+                  handleDateChange({ startDate, endDate });
+                  tracker.track({
+                    event: AnalyticsEvents.DATEPICKER_CHANGE,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: `startDate: ${moment(startDate).format('DD-MM-YYYY')}_endDate: ${moment(
+                      endDate
+                    ).format('DD-MM-YYYY')}`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                onFocusChange={onFocusChange}
+                renderMonthElement={renderMonthElement}
+                focusedInput={focusedInput}
+                startDate={startDateProp}
+                startDateId={startDateId}
+                endDate={endDateProp}
+                endDateId={endDateId}
+                customArrowIcon="-"
+                calendarInfoPosition="before"
+                minimumNights={minimumNights}
+                enableOutsideDays
+                readOnly
+                renderCalendarInfo={renderDatePresets}
+                customInputIcon={<FaCalendarAlt />}
+                onNextMonthClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: 'datepicker_next_month',
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                onPrevMonthClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: `datepicker_prev_month`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+              />
+            </DatePickerWrapper>
+          </ContentHolder>
+        )}
+      </AnalyticsComponent>
     );
   }
 
   if (showPresets) {
     return (
-      <ContentHolder>
-        <AnalyticsPeriods>
-          {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
-          {renderPeriodElement(PERIODS.ONE_WEEK, '1 week', 0)}
-          {renderPeriodElement(PERIODS.TWO_WEEKS, '2 weeks', 1)}
-          {renderPeriodElement(PERIODS.ONE_MONTH, '1 month', 2)}
-          {renderPeriodElement(PERIODS.SIX_MONTHS, '6 months', 3)}
-          {renderPeriodElement(PERIODS.ONE_YEAR, '1 year', 4)}
-          {renderPeriodElement(PERIODS.ALL, 'all', 5)}
-        </AnalyticsPeriods>
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <ContentHolder>
+            <AnalyticsPeriods>
+              {renderPeriodElement(PERIODS.TODAY, 'last 24 hours', 6)}
+              {renderPeriodElement(PERIODS.ONE_WEEK, '1 week', 0)}
+              {renderPeriodElement(PERIODS.TWO_WEEKS, '2 weeks', 1)}
+              {renderPeriodElement(PERIODS.ONE_MONTH, '1 month', 2)}
+              {renderPeriodElement(PERIODS.SIX_MONTHS, '6 months', 3)}
+              {renderPeriodElement(PERIODS.ONE_YEAR, '1 year', 4)}
+              {renderPeriodElement(PERIODS.ALL, 'all', 5)}
+            </AnalyticsPeriods>
+            <DatePickerWrapper className={className}>
+              <DateRangePicker
+                isOutsideRange={isOutsideRange}
+                onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
+                  handleDateChange({ startDate, endDate });
+                  tracker.track({
+                    event: AnalyticsEvents.DATEPICKER_CHANGE,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: `startDate: ${moment(startDate).format('DD-MM-YYYY')}_endDate: ${moment(
+                      endDate
+                    ).format('DD-MM-YYYY')}`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                onFocusChange={onFocusChange}
+                renderMonthElement={renderMonthElement}
+                focusedInput={focusedInput}
+                startDate={startDateProp}
+                startDateId={startDateId}
+                endDate={endDateProp}
+                endDateId={endDateId}
+                customArrowIcon="to"
+                calendarInfoPosition="before"
+                minimumNights={minimumNights}
+                enableOutsideDays
+                readOnly
+                renderCalendarInfo={renderDatePresets}
+                onNextMonthClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: 'datepicker_next_month',
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                onPrevMonthClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.DATEPICKER,
+                    tag: `datepicker_prev_month`,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+              />
+            </DatePickerWrapper>
+          </ContentHolder>
+        )}
+      </AnalyticsComponent>
+    );
+  }
+
+  return (
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
         <DatePickerWrapper className={className}>
           <DateRangePicker
             isOutsideRange={isOutsideRange}
-            onDatesChange={handleDateChange}
+            onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
+              handleDateChange({ startDate, endDate });
+              tracker.track({
+                event: AnalyticsEvents.DATEPICKER_CHANGE,
+                type: AnalyticsComponentType.DATEPICKER,
+                tag: `startDate: ${moment(startDate).format('DD-MM-YYYY')}_endDate: ${moment(
+                  endDate
+                ).format('DD-MM-YYYY')}`,
+                pages,
+                merchantId,
+                ip,
+              });
+            }}
             onFocusChange={onFocusChange}
             renderMonthElement={renderMonthElement}
             focusedInput={focusedInput}
@@ -370,32 +480,30 @@ const DatePicker = ({
             enableOutsideDays
             readOnly
             renderCalendarInfo={renderDatePresets}
+            onNextMonthClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.DATEPICKER,
+                tag: 'datepicker_next_month',
+                pages,
+                merchantId,
+                ip,
+              });
+            }}
+            onPrevMonthClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.DATEPICKER,
+                tag: `datepicker_prev_month`,
+                pages,
+                merchantId,
+                ip,
+              });
+            }}
           />
         </DatePickerWrapper>
-      </ContentHolder>
-    );
-  }
-
-  return (
-    <DatePickerWrapper className={className}>
-      <DateRangePicker
-        isOutsideRange={isOutsideRange}
-        onDatesChange={handleDateChange}
-        onFocusChange={onFocusChange}
-        renderMonthElement={renderMonthElement}
-        focusedInput={focusedInput}
-        startDate={startDateProp}
-        startDateId={startDateId}
-        endDate={endDateProp}
-        endDateId={endDateId}
-        customArrowIcon="to"
-        calendarInfoPosition="before"
-        minimumNights={minimumNights}
-        enableOutsideDays
-        readOnly
-        renderCalendarInfo={renderDatePresets}
-      />
-    </DatePickerWrapper>
+      )}
+    </AnalyticsComponent>
   );
 };
 
