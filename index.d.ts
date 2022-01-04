@@ -82,6 +82,7 @@ export enum AnalyticsEvents {
   DROPDOWN_CHANGE = 'dropdown_change',
   DROPDOWN_SELECT = 'dropdown_select',
   DATEPICKER_CHANGE = 'datepicker_date_change',
+  DAYPICKER_CHANGE = 'daypicker_date_change',
 }
 
 export enum AnalyticsComponentType {
@@ -90,6 +91,7 @@ export enum AnalyticsComponentType {
   ICON = 'icon',
   LINK = 'link',
   DATEPICKER = 'datepicker',
+  DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
 }
 

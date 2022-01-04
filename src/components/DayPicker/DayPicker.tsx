@@ -7,7 +7,12 @@ import styled from 'styled-components';
 import DayPickerWrapper from './DayPickerWrapper';
 import Dropdown from '../Dropdown';
 import { getMonthOptions, getYearOptions } from '../../utils/helpers';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsComponentType,
+  AnalyticsEvents,
+  AnalyticsProps,
+} from '../../analytics';
 
 const CustomMonthContainer = styled.div`
   display: flex;
@@ -58,6 +63,7 @@ const DayPicker = ({
     <CustomMonthContainer>
       <DropdownContainer>
         <Dropdown
+          tag="dropdown_month"
           options={getMonthOptions()}
           value={month.month().toString()}
           onChange={(val: any) => onMonthSelect(month, val)}
@@ -65,6 +71,7 @@ const DayPicker = ({
       </DropdownContainer>
       <DropdownContainer>
         <Dropdown
+          tag="dropdown_year"
           options={getYearOptions()}
           value={month.year().toString()}
           onChange={(val: any) => onYearSelect(month, val)}
@@ -73,21 +80,55 @@ const DayPicker = ({
     </CustomMonthContainer>
   );
   return (
-    <DayPickerWrapper>
-      <SingleDatePicker
-        id={id}
-        isOutsideRange={disablePastDays ? handleDisablePastDays : isOutsideRange}
-        onDateChange={onDateChange}
-        onFocusChange={onFocusChange}
-        renderMonthElement={renderMonthElement}
-        focused={focused}
-        date={date ? moment(date) : null}
-        numberOfMonths={numberOfMonths}
-        disabled={disabled}
-        placeholder={placeholder}
-        onClose={onClose}
-      />
-    </DayPickerWrapper>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <DayPickerWrapper>
+          <SingleDatePicker
+            id={id}
+            isOutsideRange={disablePastDays ? handleDisablePastDays : isOutsideRange}
+            onDateChange={(dateChanged: Moment | null) => {
+              tracker.track({
+                event: AnalyticsEvents.DATEPICKER_CHANGE,
+                type: AnalyticsComponentType.DATEPICKER,
+                tag: `date: ${moment(dateChanged).format('DD-MM-YYYY')}`,
+                pages,
+                merchantId,
+                ip,
+              });
+              onDateChange(dateChanged);
+            }}
+            onFocusChange={onFocusChange}
+            renderMonthElement={renderMonthElement}
+            focused={focused}
+            date={date ? moment(date) : null}
+            numberOfMonths={numberOfMonths}
+            disabled={disabled}
+            placeholder={placeholder}
+            onClose={onClose}
+            onNextMonthClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.DAYPICKER,
+                tag: 'daypicker_next_month',
+                pages,
+                merchantId,
+                ip,
+              });
+            }}
+            onPrevMonthClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.DAYPICKER,
+                tag: `daypicker_prev_month`,
+                pages,
+                merchantId,
+                ip,
+              });
+            }}
+          />
+        </DayPickerWrapper>
+      )}
+    </AnalyticsComponent>
   );
 };
 

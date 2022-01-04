@@ -67,7 +67,7 @@ const StyledSpan = styled.span<SpanProps>`
   }
 `;
 
-interface DateChangeArgs {
+export interface DateChangeArgs {
   startDate: Moment | null;
   endDate: Moment | null;
 }
