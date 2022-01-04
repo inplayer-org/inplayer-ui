@@ -45,6 +45,7 @@ export enum AnalyticsEvents {
   CHECKBOX_OFF = 'checkbox_off',
   RADIOBUTTON_SELECT = 'radiobutton_select',
   DATEPICKER_CHANGE = 'datepicker_date_change',
+  DAYPICKER_CHANGE = 'daypicker_date_change',
 }
 
 export enum AnalyticsComponentType {
@@ -54,6 +55,7 @@ export enum AnalyticsComponentType {
   LINK = 'link',
   CHECKBOX = 'checkbox',
   DATEPICKER = 'datepicker',
+  DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
   TAB = 'tab',
 }
