@@ -106,8 +106,8 @@ export interface Event {
   type: AnalyticsComponentType | string;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
-  merchantId: number;
-  ip: string;
+  merchantId?: number;
+  ip?: string;
 }
 
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
