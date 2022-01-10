@@ -81,6 +81,11 @@ export enum AnalyticsEvents {
   CLICK = 'click',
   DROPDOWN_CHANGE = 'dropdown_change',
   DROPDOWN_SELECT = 'dropdown_select',
+  CHECKBOX_ON = 'checkbox_on',
+  CHECKBOX_OFF = 'checkbox_off',
+  RADIOBUTTON_SELECT = 'radiobutton_select',
+  DATEPICKER_CHANGE = 'datepicker_date_change',
+  DAYPICKER_CHANGE = 'daypicker_date_change',
 }
 
 export enum AnalyticsComponentType {
@@ -88,6 +93,11 @@ export enum AnalyticsComponentType {
   DROPDOWN = 'dropdown',
   ICON = 'icon',
   LINK = 'link',
+  CHECKBOX = 'checkbox',
+  DATEPICKER = 'datepicker',
+  DAYPICKER = 'daypicker',
+  DATEPICKER_PRESET = 'datepicker_preset',
+  TAB = 'tab',
 }
 
 export interface Event {
@@ -96,8 +106,8 @@ export interface Event {
   type: AnalyticsComponentType | string;
   tag: AnalyticsTag;
   pages: AnalyticsPage[];
-  merchantId: number;
-  ip: string;
+  merchantId?: number;
+  ip?: string;
 }
 
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
@@ -233,12 +243,12 @@ export interface TableOptions<T extends TableRowData> {
   headerSection?: Node | JSX.Element | null;
 }
 
-export interface TableButtonProps {
+interface TableButtonProps extends AnalyticsProps {
   label: string;
   icon?: string | ReactNode;
   onClick: (e: SyntheticEvent) => any;
   type: string;
-};
+}
 
 export interface TableProps<TableData extends TableRowData = TableRowData> extends AnalyticsProps{
   columns: Array<TableColumn<TableData>>;

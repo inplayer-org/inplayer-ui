@@ -53,12 +53,12 @@ type TableOptions<T> = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
-type TableButtonProps = {
+interface TableButtonProps extends AnalyticsProps {
   label: string;
   icon?: string | ReactNode;
   onClick: (e: SyntheticEvent) => any;
   type: string;
-};
+}
 
 type Props<T = Data> = {
   columns: Array<Column> | any;
@@ -271,6 +271,7 @@ class Table<T> extends Component<Props<T>, State> {
             <ButtonTableRow key={button.label}>
               <TableCell colSpan={columnContent.length}>
                 <TableButton
+                  tag={button.tag || ''}
                   modifiers={['buttonLink']}
                   fullWidth
                   fullHeight

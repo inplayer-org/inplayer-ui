@@ -79,22 +79,20 @@ const Button = ({
         modifiers={buttonModifiers}
         fullWidth={fullWidth}
         fullHeight={fullHeight}
-        onClick={
-          !tag
-            ? onClick
-            : (e) => {
-                if (onClick) onClick(e);
+        onClick={(e) => {
+          onClick?.(e);
 
-                tracker.track({
-                  event: AnalyticsEvents.CLICK,
-                  type: AnalyticsComponentType.BUTTON,
-                  tag,
-                  pages,
-                  merchantId,
-                  ip,
-                });
-              }
-        }
+          if (tag) {
+            tracker.track({
+              event: AnalyticsEvents.CLICK,
+              type: AnalyticsComponentType.BUTTON,
+              tag,
+              pages,
+              merchantId,
+              ip,
+            });
+          }
+        }}
         {...rest}
       >
         <Content icon={icon} iconPosition={iconPosition}>

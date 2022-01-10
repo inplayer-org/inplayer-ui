@@ -1,7 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsComponentType,
+  AnalyticsEvents,
+  AnalyticsProps,
+} from '../../analytics';
 
 type TabProps = {
   active: boolean;
@@ -56,15 +61,28 @@ export type Props = {
 const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
   <TabContainer>
     {tabs.map((tab, index) => (
-      <Tab
-        key={tab.title}
-        id={tab.title.toLowerCase()}
-        onClick={() => onTabClick(index)}
-        active={selectedTabIndex === index}
-        tag={tab.subTag || tab.tag}
-      >
-        {tab.title}
-      </Tab>
+      <AnalyticsComponent key={tab.title}>
+        {({ pages, tracker, merchantId, ip }) => (
+          <Tab
+            key={tab.title}
+            id={tab.title.toLowerCase()}
+            onClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.TAB,
+                tag: tab.subTag || tab.tag || '',
+                pages,
+                merchantId,
+                ip,
+              });
+              onTabClick(index);
+            }}
+            active={selectedTabIndex === index}
+          >
+            {tab.title}
+          </Tab>
+        )}
+      </AnalyticsComponent>
     ))}
   </TabContainer>
 );

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.18] - 10.01.2022
+
+## Added
+
+- Handlers for Checkbox, Radiobutton, Daypicker and Datepicker.
+- Handler for selected Tab change.
+
 # [2.5.17] - 12.11.2021
 
 ## Added
