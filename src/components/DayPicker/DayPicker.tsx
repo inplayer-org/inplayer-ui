@@ -56,6 +56,7 @@ const DayPicker = ({
   placeholder,
   onClose,
   disablePastDays = false,
+  tag = '',
 }: Props) => {
   const handleDisablePastDays = (days: any) => !isInclusivelyAfterDay(days, moment());
 
@@ -82,7 +83,18 @@ const DayPicker = ({
   return (
     <AnalyticsComponent>
       {({ pages, tracker, merchantId, ip }) => (
-        <DayPickerWrapper>
+        <DayPickerWrapper
+          onClick={() => {
+            tracker.track({
+              event: AnalyticsEvents.CLICK,
+              type: AnalyticsComponentType.DAYPICKER,
+              tag,
+              pages,
+              merchantId,
+              ip,
+            });
+          }}
+        >
           <SingleDatePicker
             id={id}
             isOutsideRange={disablePastDays ? handleDisablePastDays : isOutsideRange}

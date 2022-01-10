@@ -124,6 +124,7 @@ const DatePicker = ({
   className = '',
   minimumNights = 0,
   showPresetsWithDropdown = false,
+  tag = '',
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
 
@@ -319,7 +320,20 @@ const DatePicker = ({
               value={activePeriod}
               onChange={handleDropdownChange}
             />
-            <DatePickerWrapper showPresetsWithDropdown className={className}>
+            <DatePickerWrapper
+              onClick={() => {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.DATEPICKER,
+                  tag,
+                  pages,
+                  merchantId,
+                  ip,
+                });
+              }}
+              showPresetsWithDropdown
+              className={className}
+            >
               <DateRangePicker
                 isOutsideRange={isOutsideRange}
                 onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
@@ -391,7 +405,19 @@ const DatePicker = ({
               {renderPeriodElement(PERIODS.ONE_YEAR, '1 year', 4)}
               {renderPeriodElement(PERIODS.ALL, 'all', 5)}
             </AnalyticsPeriods>
-            <DatePickerWrapper className={className}>
+            <DatePickerWrapper
+              onClick={() => {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.DATEPICKER,
+                  tag,
+                  pages,
+                  merchantId,
+                  ip,
+                });
+              }}
+              className={className}
+            >
               <DateRangePicker
                 isOutsideRange={isOutsideRange}
                 onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
@@ -451,7 +477,19 @@ const DatePicker = ({
   return (
     <AnalyticsComponent>
       {({ pages, tracker, merchantId, ip }) => (
-        <DatePickerWrapper className={className}>
+        <DatePickerWrapper
+          onClick={() => {
+            tracker.track({
+              event: AnalyticsEvents.CLICK,
+              type: AnalyticsComponentType.DATEPICKER,
+              tag,
+              pages,
+              merchantId,
+              ip,
+            });
+          }}
+          className={className}
+        >
           <DateRangePicker
             isOutsideRange={isOutsideRange}
             onDatesChange={({ startDate, endDate }: DateChangeArgs) => {
