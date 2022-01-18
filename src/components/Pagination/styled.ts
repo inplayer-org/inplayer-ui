@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import colors from '../../theme/colors';
 
-type BoxStyles = {
+export type BoxStyles = {
   disabled?: boolean;
   selected?: boolean;
   hideBorder?: boolean;
