@@ -1,7 +1,6 @@
 import React from 'react';
-
-// Images
 import { GiCutDiamond } from 'react-icons/gi';
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
@@ -63,42 +62,63 @@ const Preview3 = ({
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
 }: Props) => (
-  <StyledPreviewBox
-    id="preview-container"
-    minHeight={minHeight}
-    minWidth={minWidth}
-    width={width}
-    height={height}
-  >
-    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
-      <Header onClick={handleOpenModal} color={colors.fontLightGray}>
-        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-      </Header>
-      <StyledTextWrapper onClick={handleOpenModal}>
-        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-          {isRestrictedAsset ? (
-            <RestrictedAssetContainer height="40%">
-              <RestrictedAssetIcon />
-              {premiumContentLabel}
-            </RestrictedAssetContainer>
-          ) : (
-            <PaywallDescriptionSpan>
-              <GiCutDiamond /> {premiumContentLabel}
-            </PaywallDescriptionSpan>
-          )}
-        </StyledPaywallDescription>
-        <TitleWrapper>
-          <TitleBorder color={buttonBgColor}>
-            <PreviewText value={previewTitle} textColor={colors.white} />
-          </TitleBorder>
-          {!isRestrictedAsset && <StyledIcon color={buttonBgColor} />}
-        </TitleWrapper>
-        <DescriptionWrapper>
-          <PreviewText value={previewDescription} textColor={colors.white} />
-        </DescriptionWrapper>
-      </StyledTextWrapper>
-    </StyledImageHolder>
-  </StyledPreviewBox>
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <StyledPreviewBox
+        id="preview-container"
+        minHeight={minHeight}
+        minWidth={minWidth}
+        width={width}
+        height={height}
+      >
+        <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+          <Header onClick={handleOpenModal} color={colors.fontLightGray}>
+            <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+          </Header>
+          <StyledTextWrapper onClick={handleOpenModal}>
+            <StyledPaywallDescription
+              color={buttonBgColor}
+              hasProtectedByLabel={hasProtectedByLabel}
+            >
+              {isRestrictedAsset ? (
+                <RestrictedAssetContainer height="40%">
+                  <RestrictedAssetIcon />
+                  {premiumContentLabel}
+                </RestrictedAssetContainer>
+              ) : (
+                <PaywallDescriptionSpan>
+                  <GiCutDiamond /> {premiumContentLabel}
+                </PaywallDescriptionSpan>
+              )}
+            </StyledPaywallDescription>
+            <TitleWrapper>
+              <TitleBorder color={buttonBgColor}>
+                <PreviewText value={previewTitle} textColor={colors.white} />
+              </TitleBorder>
+              {!isRestrictedAsset && (
+                <StyledIcon
+                  onClick={() => {
+                    tracker.track({
+                      event: AnalyticsEvents.CLICK,
+                      type: AnalyticsComponentType.ICON,
+                      tag: 'icon_play',
+                      pages,
+                      merchantId,
+                      ip,
+                    });
+                  }}
+                  color={buttonBgColor}
+                />
+              )}
+            </TitleWrapper>
+            <DescriptionWrapper>
+              <PreviewText value={previewDescription} textColor={colors.white} />
+            </DescriptionWrapper>
+          </StyledTextWrapper>
+        </StyledImageHolder>
+      </StyledPreviewBox>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Preview3;
