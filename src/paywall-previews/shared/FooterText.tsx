@@ -16,7 +16,7 @@ const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
             onClick={() => {
               tracker.track({
                 event: AnalyticsEvents.CLICK,
-                type: AnalyticsComponentType.BUTTON,
+                type: AnalyticsComponentType.LINK,
                 tag: 'link_user_email',
                 pages,
                 merchantId,
@@ -34,7 +34,7 @@ const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
           onClick={() => {
             tracker.track({
               event: AnalyticsEvents.CLICK,
-              type: AnalyticsComponentType.BUTTON,
+              type: AnalyticsComponentType.LINK,
               tag: 'link_already_have_access_login_with_your_account',
               pages,
               merchantId,
