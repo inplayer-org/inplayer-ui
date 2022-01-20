@@ -58,6 +58,7 @@ export enum AnalyticsComponentType {
   DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
   TAB = 'tab',
+  TAB_NAVIGATION = 'tab_navigation',
 }
 
 export interface Event {
