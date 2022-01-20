@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.18] - 10.01.2022
+
+## Added
+
+- Handlers for Checkbox, Radiobutton, Daypicker and Datepicker.
+- Handler for selected Tab change.
+
+# [2.5.17] - 12.11.2021
+
+## Added
+
+- Tagging for StepWizard
+
+## Fixes
+
+- Dropdown component tag sent in tracker
+
+# [2.5.16] - 12.11.2021
+
+## Added
+
+- Analytics handler for dropdown component
+- Tagging for pagination and navbar
+
+# [2.5.15] - 02.11.2021
+
+## Fixes
+
+- Tab component import bug
+
+### Change
+
+- Accordion component to be analytics ready
+
+# [2.5.14] - 27.10.2021
+
+## Added
+
+- Analytics handler for button component
+
 # [2.5.13] - 05-10-2021
 
 ## Added

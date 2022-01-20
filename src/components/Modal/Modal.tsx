@@ -44,7 +44,7 @@ type Props = {
 } & AnalyticsProps;
 
 const Modal = ({
-  tag,
+  tag = '',
   isOverflowVisible = false,
   isModalOpen,
   closeModal,

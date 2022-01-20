@@ -1,7 +1,12 @@
 import React, { ChangeEvent, RefObject } from 'react';
 import Label from '../Label';
 import CheckboxWrapper from './CheckboxWrapper';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsComponentType,
+  AnalyticsProps,
+  AnalyticsEvents,
+} from '../../analytics';
 
 type Props = {
   label: string;
@@ -19,15 +24,50 @@ const Checkbox: React.FC<Props> = ({
   onChange,
   containerRef = null,
   disabled = false,
+  tag = '',
   ...rest
 }) => {
   const onCheckboxChange = (e: ChangeEvent<HTMLInputElement>): any => onChange(e.target.checked);
 
   return (
-    <CheckboxWrapper ref={containerRef}>
-      <input disabled={disabled} type="checkbox" id={id} onChange={onCheckboxChange} {...rest} />
-      <Label htmlFor={id}>{label}</Label>
-    </CheckboxWrapper>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <CheckboxWrapper ref={containerRef}>
+          <input
+            disabled={disabled}
+            type="checkbox"
+            id={id}
+            onChange={(e) => {
+              onCheckboxChange(e);
+
+              if (tag) {
+                if (e.target.checked) {
+                  tracker.track({
+                    event: AnalyticsEvents.CHECKBOX_ON,
+                    type: AnalyticsComponentType.CHECKBOX,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                } else {
+                  tracker.track({
+                    event: AnalyticsEvents.CHECKBOX_OFF,
+                    type: AnalyticsComponentType.CHECKBOX,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+              }
+            }}
+            {...rest}
+          />
+          <Label htmlFor={id}>{label}</Label>
+        </CheckboxWrapper>
+      )}
+    </AnalyticsComponent>
   );
 };
 

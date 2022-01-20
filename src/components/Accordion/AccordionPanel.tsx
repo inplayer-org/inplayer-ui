@@ -7,6 +7,7 @@ import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import Tooltip, { TooltipProps } from '../Tooltip/Tooltip';
 import Typography from '../Typography';
+import { AnalyticsProps } from '../../analytics';
 
 // Types
 type AccordionPanelContainerProps = {
@@ -18,7 +19,7 @@ type AccordionPanelHeaderProps = {
   isActive: boolean;
   disabled: boolean;
   onClick: any;
-};
+} & AnalyticsProps;
 
 type AccordionTitleProps = {
   isActive: boolean;
@@ -124,7 +125,7 @@ type Props = {
   renderContent: (actions: { closePanel: (e?: SyntheticEvent) => void }) => any;
   closePanel: (e?: SyntheticEvent) => void;
   disabled: boolean;
-};
+} & AnalyticsProps;
 
 const AccordionPanel = ({
   label,
@@ -137,12 +138,14 @@ const AccordionPanel = ({
   disabled,
   togglePanel,
   closePanel,
+  tag,
 }: Props) => (
   <>
     <AccordionPanelHeader
       disabled={disabled}
       onClick={!disabled ? togglePanel : null}
       isActive={isActive}
+      tag={tag}
     >
       <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
         {label}

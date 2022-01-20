@@ -40,6 +40,81 @@ export interface AnalyticsProps {
     column?: number | string;
   };
 }
+
+export declare class AnalyticsTracker {
+  registerHandler: (fn: AnalyticsHandlerFn) => void;
+  deregisterHandler: (fn: AnalyticsHandlerFn) => void;
+  track: (event: Event) => void;
+}
+
+export interface AnalyticsContextValue {
+  pages: AnalyticsPage[];
+  tracker: AnalyticsTracker;
+  merchantId: number;
+  ip: string;
+}
+
+export type AnalyticsPageProps = {
+  /** Tag of this page. */
+  tag: AnalyticsTag;
+
+  /** Type of this page. */
+  type: AnalyticsPageType;
+
+  /** Children in the page. */
+  children?: React.ReactNode;
+
+  /** merchant id */
+  merchantId?: number;
+
+  /** user ip address */
+  ip?: string;
+};
+
+export type AnalyticsComponentProps = {
+  children: (context: AnalyticsContextValue) => React.ReactNode;
+};
+
+export declare const ROOT_ANALYTICS_CONTEXT: AnalyticsContextValue;
+
+export enum AnalyticsEvents {
+  CLICK = 'click',
+  DROPDOWN_CHANGE = 'dropdown_change',
+  DROPDOWN_SELECT = 'dropdown_select',
+  CHECKBOX_ON = 'checkbox_on',
+  CHECKBOX_OFF = 'checkbox_off',
+  RADIOBUTTON_SELECT = 'radiobutton_select',
+  DATEPICKER_CHANGE = 'datepicker_date_change',
+  DAYPICKER_CHANGE = 'daypicker_date_change',
+}
+
+export enum AnalyticsComponentType {
+  BUTTON = 'button',
+  DROPDOWN = 'dropdown',
+  ICON = 'icon',
+  LINK = 'link',
+  CHECKBOX = 'checkbox',
+  DATEPICKER = 'datepicker',
+  DAYPICKER = 'daypicker',
+  DATEPICKER_PRESET = 'datepicker_preset',
+  TAB = 'tab',
+}
+
+export interface Event {
+  // temporarily mark them as strings
+  event: AnalyticsEvents | string;
+  type: AnalyticsComponentType | string;
+  tag: AnalyticsTag;
+  pages: AnalyticsPage[];
+  merchantId?: number;
+  ip?: string;
+}
+
+export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
+
+export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
+
+export declare const AnalyticsComponent: FunctionComponent<AnalyticsComponentProps>
 export interface ContainerProps extends AnalyticsProps{
   className?: string;
   columns?: number | string;
@@ -168,12 +243,12 @@ export interface TableOptions<T extends TableRowData> {
   headerSection?: Node | JSX.Element | null;
 }
 
-export interface TableButtonProps {
+interface TableButtonProps extends AnalyticsProps {
   label: string;
   icon?: string | ReactNode;
   onClick: (e: SyntheticEvent) => any;
   type: string;
-};
+}
 
 export interface TableProps<TableData extends TableRowData = TableRowData> extends AnalyticsProps{
   columns: Array<TableColumn<TableData>>;
@@ -243,7 +318,7 @@ export interface ActionButtonRenderProps {
   closeAccordion: (e?: SyntheticEvent<*>) => void;
 }
 
-export interface AccordionPanel {
+export interface AccordionPanel extends AnalyticsProps{
   label: string;
   icon?: ReactNode;
   iconTooltip?: TooltipProps;
@@ -724,7 +799,7 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
-interface Step extends AnalyticsProps{
+export interface Step extends AnalyticsProps{
   isDisabled: boolean;
   isCompleted: boolean;
   component: ReactNode;
