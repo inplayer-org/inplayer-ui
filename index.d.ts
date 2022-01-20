@@ -106,6 +106,7 @@ export enum AnalyticsComponentType {
   MODAL = 'modal',
   INPUT = 'input',
   TEXTAREA = 'textarea',
+  TAB_NAVIGATION = 'tab_navigation',
 }
 
 export interface Event {

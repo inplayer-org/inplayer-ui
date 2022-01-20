@@ -69,7 +69,7 @@ const TabNavigation = ({ tabs, onTabClick, selectedTabIndex }: Props) => (
             onClick={() => {
               tracker.track({
                 event: AnalyticsEvents.CLICK,
-                type: AnalyticsComponentType.TAB,
+                type: AnalyticsComponentType.TAB_NAVIGATION,
                 tag: tab.subTag || tab.tag || '',
                 pages,
                 merchantId,
