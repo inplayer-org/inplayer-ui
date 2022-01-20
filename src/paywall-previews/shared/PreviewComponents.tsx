@@ -32,10 +32,10 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   margin: 24px auto;
 `;
 
-type PreviewImageProps = {
-  imageBorderRadius?: string;
-  isRestrictedAsset?: boolean;
-};
+export interface PreviewImageProps {
+  imageBorderRadius?: boolean;
+  imageWidth?: string;
+}
 
 export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};

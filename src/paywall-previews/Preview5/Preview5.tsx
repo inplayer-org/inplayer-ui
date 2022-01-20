@@ -26,7 +26,6 @@ import {
   PaywallDescriptionSpan,
   TitleHolder,
   DescriptionHolder,
-  RestrictedAssetText,
 } from './styled';
 
 type Props = {
@@ -38,10 +37,10 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview5 = ({
   branding: {
@@ -60,6 +59,7 @@ const Preview5 = ({
   handleOpenModal,
   isRestrictedAsset = false,
   premiumContentLabel = 'Premium content',
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -75,25 +75,22 @@ const Preview5 = ({
       onClick={handleOpenModal}
     >
       <Overlay />
-
-      {!isRestrictedAsset && (
-        <BuyButtonHolder>
-          <BuyButtonBorder>
-            <StyledBuyButton
-              buttonBgColor={buttonBgColor}
-              buttonTextColor={buttonTextColor}
-              onClick={handleOpenModal}
-            >
-              {previewButtonLabel}
-            </StyledBuyButton>
-          </BuyButtonBorder>
-        </BuyButtonHolder>
-      )}
+      <BuyButtonHolder>
+        <BuyButtonBorder>
+          <StyledBuyButton
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </StyledBuyButton>
+        </BuyButtonBorder>
+      </BuyButtonHolder>
     </ImageWrapper>
     {isRestrictedAsset && (
       <RestrictedAssetContainer height="38%">
         <RestrictedAssetIcon />
-        {premiumContentLabel}
+        {restrictedMessage}
       </RestrictedAssetContainer>
     )}
     <ItemDetails height={height}>

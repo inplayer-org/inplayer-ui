@@ -40,10 +40,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
   isAuthenticated?: boolean;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview3 = ({
   branding: {
@@ -62,6 +62,7 @@ const Preview3 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -70,34 +71,37 @@ const Preview3 = ({
     width={width}
     height={height}
   >
-    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+    <StyledImageHolder
+      backgroundImage={imageUrl}
+      onClick={handleOpenModal}
+      isRestrictedAsset={isRestrictedAsset}
+    >
       <Header onClick={handleOpenModal} color={colors.fontLightGray}>
         <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
       </Header>
       <StyledTextWrapper onClick={handleOpenModal}>
         <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-          {isRestrictedAsset ? (
-            <RestrictedAssetContainer height="40%">
-              <RestrictedAssetIcon />
-              {premiumContentLabel}
-            </RestrictedAssetContainer>
-          ) : (
-            <PaywallDescriptionSpan>
-              <GiCutDiamond /> {premiumContentLabel}
-            </PaywallDescriptionSpan>
-          )}
+          <PaywallDescriptionSpan>
+            <GiCutDiamond /> {premiumContentLabel}
+          </PaywallDescriptionSpan>
         </StyledPaywallDescription>
         <TitleWrapper>
           <TitleBorder color={buttonBgColor}>
             <PreviewText value={previewTitle} textColor={colors.white} />
           </TitleBorder>
-          {!isRestrictedAsset && <StyledIcon color={buttonBgColor} />}
+          <StyledIcon color={buttonBgColor} />
         </TitleWrapper>
         <DescriptionWrapper>
           <PreviewText value={previewDescription} textColor={colors.white} />
         </DescriptionWrapper>
       </StyledTextWrapper>
     </StyledImageHolder>
+    {isRestrictedAsset && (
+      <RestrictedAssetContainer height="50%">
+        <RestrictedAssetIcon />
+        {restrictedMessage}
+      </RestrictedAssetContainer>
+    )}
   </StyledPreviewBox>
 );
 

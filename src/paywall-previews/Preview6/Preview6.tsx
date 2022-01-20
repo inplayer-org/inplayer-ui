@@ -40,10 +40,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
   premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview6 = ({
   branding: {
@@ -63,7 +63,7 @@ const Preview6 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
-  premiumContentLabel = 'Premium content',
+  restrictedMessage = 'This content is not available in your current location.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -80,7 +80,7 @@ const Preview6 = ({
     {isRestrictedAsset && (
       <StyledRestrictedAssetContainer fontSize="14px">
         <RestrictedAssetIcon size="5rem" />
-        {premiumContentLabel}
+        {restrictedMessage}
       </StyledRestrictedAssetContainer>
     )}
 

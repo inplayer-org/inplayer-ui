@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
 
@@ -23,6 +23,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
 
 type StyledImageHolderProps = {
   backgroundImage: string;
+  isRestrictedAsset?: boolean;
 };
 
 export const StyledImageHolder = styled(ImageHolder)<StyledImageHolderProps>`
@@ -36,6 +37,11 @@ export const StyledImageHolder = styled(ImageHolder)<StyledImageHolderProps>`
       ${transparentize(0.5, colors.black)} 100%
     ),
     url(${({ backgroundImage }) => backgroundImage});
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const Header = styled(PreviewFooter)`

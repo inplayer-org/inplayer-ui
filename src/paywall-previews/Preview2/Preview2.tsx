@@ -1,16 +1,6 @@
 import React from 'react';
 
 // Colors
-import {
-  StyledPreviewBox,
-  StyledImageHolder,
-  AssetDetails,
-  PaywallDescriptionSpan,
-  BuyButtonWrapper,
-  StyledIcon,
-  Footer,
-  StyledRestrictedAssetContainer,
-} from './styled';
 import colors from '../../theme/colors';
 
 // Types
@@ -25,6 +15,16 @@ import {
   FooterLink,
   RestrictedAssetIcon,
 } from '../shared/PreviewComponents';
+import {
+  StyledPreviewBox,
+  StyledImageHolder,
+  AssetDetails,
+  PaywallDescriptionSpan,
+  BuyButtonWrapper,
+  StyledIcon,
+  Footer,
+  StyledRestrictedAssetContainer,
+} from './styled';
 
 type Props = {
   branding?: Branding;
@@ -37,10 +37,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
   isAuthenticated?: boolean;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview2 = ({
   branding: {
@@ -61,6 +61,7 @@ const Preview2 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -77,14 +78,14 @@ const Preview2 = ({
     {isRestrictedAsset && (
       <StyledRestrictedAssetContainer>
         <RestrictedAssetIcon />
-        This content is not available in your country
+        {restrictedMessage}
       </StyledRestrictedAssetContainer>
     )}
     <AssetDetails>
       <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
         <PaywallDescriptionSpan>
           <StyledIcon name="star" />
-          {!isRestrictedAsset && premiumContentLabel}
+          {premiumContentLabel}
         </PaywallDescriptionSpan>
       </StyledPaywallDescription>
       <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
