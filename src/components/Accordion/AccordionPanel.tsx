@@ -1,13 +1,18 @@
 import React, { SyntheticEvent, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, ifNotProp, prop } from 'styled-tools';
+import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import {
+  AnalyticsComponent,
+  AnalyticsProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 // Components
-import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import Tooltip, { TooltipProps } from '../Tooltip/Tooltip';
 import Typography from '../Typography';
-import { AnalyticsProps } from '../../analytics';
 
 // Types
 type AccordionPanelContainerProps = {
@@ -138,23 +143,42 @@ const AccordionPanel = ({
   disabled,
   togglePanel,
   closePanel,
-  tag,
+  tag = '',
 }: Props) => (
   <>
-    <AccordionPanelHeader
-      disabled={disabled}
-      onClick={!disabled ? togglePanel : null}
-      isActive={isActive}
-      tag={tag}
-    >
-      <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
-        {label}
-      </AccordionTitle>
-      <AccordionIconHolder isAccordionDisabled={disabled}>
-        {!isOtherPanelActive && (iconTooltip ? <Tooltip {...iconTooltip}>{icon}</Tooltip> : icon)}
-        {!disabled && (isActive ? <StyledAngleUp /> : <StyledAngleDown />)}
-      </AccordionIconHolder>
-    </AccordionPanelHeader>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <AccordionPanelHeader
+          disabled={disabled}
+          onClick={(e: SyntheticEvent<Element, Event>) => {
+            if (!disabled) {
+              togglePanel(e);
+              if (tag && !isActive) {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.ACCORDION,
+                  tag,
+                  pages,
+                  merchantId,
+                  ip,
+                });
+              }
+            }
+          }}
+          isActive={isActive}
+          tag={tag}
+        >
+          <AccordionTitle variant="h6" isActive={isActive} disabled={disabled}>
+            {label}
+          </AccordionTitle>
+          <AccordionIconHolder isAccordionDisabled={disabled}>
+            {!isOtherPanelActive &&
+              (iconTooltip ? <Tooltip {...iconTooltip}>{icon}</Tooltip> : icon)}
+            {!disabled && (isActive ? <StyledAngleUp /> : <StyledAngleDown />)}
+          </AccordionIconHolder>
+        </AccordionPanelHeader>
+      )}
+    </AnalyticsComponent>
     <AccordionPanelContainer isActive={isActive} contentHeight={contentHeight}>
       <AccordionPanelDetails>{isActive && renderContent({ closePanel })}</AccordionPanelDetails>
     </AccordionPanelContainer>

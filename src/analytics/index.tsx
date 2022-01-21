@@ -63,6 +63,7 @@ export enum AnalyticsComponentType {
   DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
   TAB = 'tab',
+  ACCORDION = 'accordion',
   MODAL = 'modal',
   INPUT = 'input',
   TEXTAREA = 'textarea',
