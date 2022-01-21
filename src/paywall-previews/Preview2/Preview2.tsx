@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
 import {
@@ -62,49 +63,54 @@ const Preview2 = ({
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
 }: Props) => (
-  <StyledPreviewBox
-    id="preview-container"
-    minHeight={minHeight}
-    minWidth={minWidth}
-    height={height}
-    width={width}
-  >
-    <StyledImageHolder
-      isRestrictedAsset={isRestrictedAsset}
-      backgroundImage={imageUrl}
-      onClick={handleOpenModal}
-    />
-    {isRestrictedAsset && (
-      <StyledRestrictedAssetContainer>
-        <RestrictedAssetIcon />
-        This content is not available in your country
-      </StyledRestrictedAssetContainer>
-    )}
-    <AssetDetails>
-      <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-        <PaywallDescriptionSpan>
-          <StyledIcon name="star" />
-          {!isRestrictedAsset && premiumContentLabel}
-        </PaywallDescriptionSpan>
-      </StyledPaywallDescription>
-      <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
-      <PreviewText value={previewDescription} />
-      <BuyButtonWrapper>
-        <BuyButton
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <StyledPreviewBox
+        id="preview-container"
+        minHeight={minHeight}
+        minWidth={minWidth}
+        height={height}
+        width={width}
+      >
+        <StyledImageHolder
+          isRestrictedAsset={isRestrictedAsset}
+          backgroundImage={imageUrl}
           onClick={handleOpenModal}
-        >
-          {previewButtonLabel}
-        </BuyButton>
-      </BuyButtonWrapper>
-      <Footer color={colors.fontGray}>
-        <FooterLink href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </FooterLink>
-      </Footer>
-    </AssetDetails>
-  </StyledPreviewBox>
+        />
+        {isRestrictedAsset && (
+          <StyledRestrictedAssetContainer>
+            <RestrictedAssetIcon />
+            This content is not available in your country
+          </StyledRestrictedAssetContainer>
+        )}
+        <AssetDetails>
+          <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+            <PaywallDescriptionSpan>
+              <StyledIcon name="star" />
+              {!isRestrictedAsset && premiumContentLabel}
+            </PaywallDescriptionSpan>
+          </StyledPaywallDescription>
+          <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
+          <PreviewText value={previewDescription} />
+          <BuyButtonWrapper>
+            <BuyButton
+              tag="button_buy"
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </BuyButton>
+          </BuyButtonWrapper>
+          <Footer color={colors.fontGray}>
+            <FooterLink href="#login" onClick={handleOpenModal}>
+              <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+            </FooterLink>
+          </Footer>
+        </AssetDetails>
+      </StyledPreviewBox>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Preview2;
