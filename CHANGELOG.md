@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.19] - 21.01.2022
+
+## Change
+
+- Styling changes in preview templates for restricted asset
+
 # [2.5.18] - 10.01.2022
 
 ## Added
