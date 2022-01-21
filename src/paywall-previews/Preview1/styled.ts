@@ -28,7 +28,7 @@ export const InPlayerPreviewBox = styled.div`
   }
 `;
 
-export const ImageHolder = styled.div<{ isRestrictedAsset?: boolean }>`
+export const ImageHolder = styled.div<{ isRestrictedAsset: boolean }>`
   width: 100%;
   background: #def;
   height: 0;

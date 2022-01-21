@@ -23,7 +23,7 @@ export const StyledPreviewBox = styled(PreviewBox)`
 
 type StyledImageHolderProps = {
   backgroundImage: string;
-  isRestrictedAsset?: boolean;
+  isRestrictedAsset: boolean;
 };
 
 export const StyledImageHolder = styled(ImageHolder)<StyledImageHolderProps>`
