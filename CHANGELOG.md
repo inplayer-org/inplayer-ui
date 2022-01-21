@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.20] - 21.01.2022
+
 # [2.5.19] - 21.01.2022
+
+## Fixes
+
+- TextArea by providing the required props
 
 ## Added
 
