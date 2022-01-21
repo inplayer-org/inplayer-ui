@@ -58,6 +58,7 @@ export enum AnalyticsComponentType {
   DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
   TAB = 'tab',
+  ACCORDION = 'accordion',
 }
 
 export interface Event {
