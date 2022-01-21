@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.19] - 21.01.2022
+
+## Added
+
+- Handlers for Input, TextArea, Pagination, Accordion and Switch.
+- Tagging Paywall previews
+
+## Fixes
+
+- TabNavigation handler type
+
 # [2.5.18] - 10.01.2022
 
 ## Added
