@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## Fixes
 
 - TextArea by providing the required props
+
 # [2.5.19] - 21.01.2022
 
 ## Added
