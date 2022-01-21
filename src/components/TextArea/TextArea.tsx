@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React, { KeyboardEvent, TextareaHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -9,7 +9,9 @@ import {
 } from '../../analytics';
 import colors from '../../theme/colors';
 
-const TextAreaWrapper = styled.textarea<AnalyticsProps>`
+type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & AnalyticsProps;
+
+const TextAreaWrapper = styled.textarea<Props>`
   vertical-align: middle;
   box-sizing: border-box;
   overflow: hidden;
@@ -32,26 +34,10 @@ const TextAreaWrapper = styled.textarea<AnalyticsProps>`
   }
 `;
 
-type Props = AnalyticsProps;
-
-const TextArea = ({ tag = '' }: Props) => (
+const TextArea = ({ tag = '', ...rest }: Props) => (
   <AnalyticsComponent>
     {({ pages, tracker, merchantId, ip }) => (
       <TextAreaWrapper
-        onKeyDown={(e: KeyboardEvent<HTMLTextAreaElement>) => {
-          if (tag) {
-            if (e.key === 'Enter') {
-              tracker.track({
-                event: AnalyticsEvents.CLICK,
-                type: AnalyticsComponentType.TEXTAREA,
-                tag: `${tag}_enter`,
-                pages,
-                merchantId,
-                ip,
-              });
-            }
-          }
-        }}
         onClick={() => {
           if (tag) {
             tracker.track({
@@ -64,6 +50,7 @@ const TextArea = ({ tag = '' }: Props) => (
             });
           }
         }}
+        {...rest}
       />
     )}
   </AnalyticsComponent>
