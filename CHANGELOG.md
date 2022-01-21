@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ## Added
 
-- Handlers for Input, TextArea, Pagination and Switch.
+- Handlers for Input, TextArea, Pagination, Accordion and Switch.
 - Tagging Paywall previews
 
 ## Fixes
