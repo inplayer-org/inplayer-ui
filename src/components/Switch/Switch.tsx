@@ -101,25 +101,16 @@ const Switch = ({
               checked={checked}
               onChange={(e) => {
                 if (tag) {
-                  if (e.target.checked) {
-                    tracker.track({
-                      event: AnalyticsEvents.SWITCH_ON,
-                      type: AnalyticsComponentType.SWITCH,
-                      tag,
-                      pages,
-                      merchantId,
-                      ip,
-                    });
-                  } else {
-                    tracker.track({
-                      event: AnalyticsEvents.SWITCH_OFF,
-                      type: AnalyticsComponentType.SWITCH,
-                      tag,
-                      pages,
-                      merchantId,
-                      ip,
-                    });
-                  }
+                  tracker.track({
+                    event: e.target.checked
+                      ? AnalyticsEvents.SWITCH_ON
+                      : AnalyticsEvents.SWITCH_OFF,
+                    type: AnalyticsComponentType.SWITCH,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
                 }
                 onToggleChange(e);
               }}
