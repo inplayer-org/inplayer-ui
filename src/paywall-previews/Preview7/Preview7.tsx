@@ -78,13 +78,20 @@ const Preview7 = ({
   >
     {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
     <StyledImageWrapper onClick={handleOpenModal}>
-      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
       {isRestrictedAsset && (
-        <StyledRestrictedAssetContainer fontSize="14px" imageWidth="250px" imageBorderRadius>
+        // Call handleOpenModal here because this div element will be
+        // on the top of image container in case of restricted asset
+        <StyledRestrictedAssetContainer
+          fontSize="14px"
+          imageWidth="250px"
+          imageBorderRadius
+          onClick={handleOpenModal}
+        >
           <RestrictedAssetIcon size="4rem" />
           {restrictedMessage}
         </StyledRestrictedAssetContainer>
       )}
+      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
       <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
         <FaLock />
       </StyledIconWrapper>

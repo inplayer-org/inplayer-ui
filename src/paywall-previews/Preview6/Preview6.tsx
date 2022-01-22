@@ -78,7 +78,7 @@ const Preview6 = ({
       onClick={handleOpenModal}
     />
     {isRestrictedAsset && (
-      <StyledRestrictedAssetContainer fontSize="14px">
+      <StyledRestrictedAssetContainer fontSize="14px" onClick={handleOpenModal}>
         <RestrictedAssetIcon size="5rem" />
         {restrictedMessage}
       </StyledRestrictedAssetContainer>

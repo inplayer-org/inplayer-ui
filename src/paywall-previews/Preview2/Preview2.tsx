@@ -76,7 +76,9 @@ const Preview2 = ({
       onClick={handleOpenModal}
     />
     {isRestrictedAsset && (
-      <StyledRestrictedAssetContainer>
+      // Call handleOpenModal here because this div element will be
+      // on the top of image container in case of restricted asset
+      <StyledRestrictedAssetContainer onClick={handleOpenModal}>
         <RestrictedAssetIcon />
         {restrictedMessage}
       </StyledRestrictedAssetContainer>

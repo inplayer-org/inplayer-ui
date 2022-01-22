@@ -99,9 +99,14 @@ export const Footer = styled(PreviewFooter)`
 `;
 
 export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  width: 50%;
   left: 25%;
   @media screen and (max-width: 768px) {
+    width: 100%;
     left: 50%;
-    top: 30%;
+    top: 25%;
+  }
+  @media screen and (max-width: 480px) {
+    top: 20%;
   }
 `;

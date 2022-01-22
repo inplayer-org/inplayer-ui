@@ -28,7 +28,7 @@ export const InPlayerPreviewBox = styled.div`
   }
 `;
 
-export const ImageHolder = styled.div<{ isRestrictedAsset: boolean }>`
+export const ImageHolder = styled.div`
   width: 100%;
   background: #def;
   height: 0;
@@ -36,11 +36,6 @@ export const ImageHolder = styled.div<{ isRestrictedAsset: boolean }>`
   overflow: hidden;
   display: block;
   position: relative;
-  ${({ isRestrictedAsset }) =>
-    isRestrictedAsset &&
-    css`
-      filter: brightness(0.3);
-    `}
 `;
 
 interface PaywallExplainProps {
@@ -217,14 +212,4 @@ export const LockIcon = styled(FaLock)`
   margin: 0px 0.4em 0px 0px;
   position: relative;
   vertical-align: middle;
-`;
-
-export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
-  height: 50%;
-  @media screen and (max-width: 768px) {
-    height: 75%;
-  }
-  @media screen and (max-width: 480px) {
-    height: 100%;
-  }
 `;

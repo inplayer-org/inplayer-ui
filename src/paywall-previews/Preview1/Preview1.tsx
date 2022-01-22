@@ -9,7 +9,11 @@ import Branding from '../types/branding';
 // Components
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
-import { OverlayLabel, RestrictedAssetIcon } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  RestrictedAssetIcon,
+  StyledRestrictedAssetContainer,
+} from '../shared/PreviewComponents';
 import {
   InPlayerPreviewBox,
   LockIcon,
@@ -22,7 +26,6 @@ import {
   BuyButton,
   InplayerFooter,
   PreviewImage,
-  StyledRestrictedAssetContainer,
 } from './styled';
 
 type Props = {
@@ -62,11 +65,15 @@ const Preview1 = ({
 }: Props) => (
   <InPlayerPreviewBox className="inplayer-preview-box">
     {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-    <ImageHolder
-      className="inplayer-imageholder"
-      onClick={handleOpenModal}
-      isRestrictedAsset={isRestrictedAsset}
-    >
+    <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        // Call handleOpenModal here because this div element will be
+        // on the top of all image elements in case of restricted asset
+        <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
+      )}
       <PreviewImage
         alt="coverPhoto"
         src={imageUrl}
@@ -84,12 +91,6 @@ const Preview1 = ({
         </InplayerPremiumLabel>
       </PaywallExplain>
     </ImageHolder>
-    {isRestrictedAsset && (
-      <StyledRestrictedAssetContainer>
-        <RestrictedAssetIcon />
-        {restrictedMessage}
-      </StyledRestrictedAssetContainer>
-    )}
     <ItemDetails className="inplayer-itemdetails">
       <PreviewText value={previewTitle} className="inplayer-title" />
       <PreviewText value={previewDescription} />

@@ -197,3 +197,9 @@ export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps
   flex-direction: column;
   align-items: center;
 `;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  height: 100%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
+`;

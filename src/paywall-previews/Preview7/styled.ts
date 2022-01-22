@@ -93,7 +93,7 @@ export const RestrictedAssetText = styled.p`
 
 export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)<PreviewImageProps>`
   height: 100%;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
 `;

@@ -10,7 +10,7 @@ import colors from '../../theme/colors';
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import {
-  RestrictedAssetContainer,
+  StyledRestrictedAssetContainer,
   RestrictedAssetIcon,
   StyledPaywallDescription,
 } from '../shared/PreviewComponents';
@@ -71,11 +71,15 @@ const Preview3 = ({
     width={width}
     height={height}
   >
-    <StyledImageHolder
-      backgroundImage={imageUrl}
-      onClick={handleOpenModal}
-      isRestrictedAsset={isRestrictedAsset}
-    >
+    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        // Call handleOpenModal here because this div element will be
+        // on the top of all image elements in case of restricted asset
+        <StyledRestrictedAssetContainer height="50%" onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
+      )}
       <Header onClick={handleOpenModal} color={colors.fontLightGray}>
         <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
       </Header>
@@ -96,12 +100,6 @@ const Preview3 = ({
         </DescriptionWrapper>
       </StyledTextWrapper>
     </StyledImageHolder>
-    {isRestrictedAsset && (
-      <RestrictedAssetContainer height="50%">
-        <RestrictedAssetIcon />
-        {restrictedMessage}
-      </RestrictedAssetContainer>
-    )}
   </StyledPreviewBox>
 );
 

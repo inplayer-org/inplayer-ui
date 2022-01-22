@@ -10,7 +10,7 @@ import Branding from '../types/branding';
 
 // Components
 import {
-  RestrictedAssetContainer,
+  StyledRestrictedAssetContainer,
   RestrictedAssetIcon,
   StyledPaywallDescription,
 } from '../shared/PreviewComponents';
@@ -68,12 +68,15 @@ const Preview5 = ({
     width={width}
     height={height}
   >
-    <ImageWrapper
-      isRestrictedAsset={isRestrictedAsset}
-      height={height}
-      backgroundImage={imageUrl}
-      onClick={handleOpenModal}
-    >
+    <ImageWrapper height={height} backgroundImage={imageUrl} onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        // Call handleOpenModal here because this div element will be
+        // on the top of all image elements in case of restricted asset
+        <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
+      )}
       <Overlay />
       <BuyButtonHolder>
         <BuyButtonBorder>
@@ -87,12 +90,6 @@ const Preview5 = ({
         </BuyButtonBorder>
       </BuyButtonHolder>
     </ImageWrapper>
-    {isRestrictedAsset && (
-      <RestrictedAssetContainer height="38%">
-        <RestrictedAssetIcon />
-        {restrictedMessage}
-      </RestrictedAssetContainer>
-    )}
     <ItemDetails height={height}>
       <StyledPaywallDescription
         color={lighten(0.01, buttonBgColor)}

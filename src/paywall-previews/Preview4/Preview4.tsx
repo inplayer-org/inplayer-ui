@@ -87,6 +87,12 @@ const Preview4 = ({
           </StyledButton>
         )}
       </StyledContainer>
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </RestrictedAssetContainer>
+      )}
       <ImageWrapper onClick={handleOpenModal} isRestrictedAsset={isRestrictedAsset}>
         <StyledIconWrapper
           backgroundColor={buttonBgColor}
@@ -117,12 +123,6 @@ const Preview4 = ({
           </TextElement>
         </StyledTextWrapper>
       </ImageWrapper>
-      {isRestrictedAsset && (
-        <RestrictedAssetContainer>
-          <RestrictedAssetIcon />
-          {restrictedMessage}
-        </RestrictedAssetContainer>
-      )}
     </StyledPreviewBox>
   );
 };
