@@ -1,9 +1,14 @@
-import React, { ChangeEvent, ReactNode, forwardRef, RefObject } from 'react';
+import React, { ChangeEvent, ReactNode, forwardRef, RefObject, KeyboardEvent } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp, switchProp } from 'styled-tools';
 import { MdSearch } from 'react-icons/md';
 import colors from '../../theme/colors';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -95,7 +100,7 @@ type RefType =
 
 const Input = forwardRef(
   (
-    { type, placeholder, onChange, sizeProp, className = '', icon, ...rest }: Props,
+    { type, placeholder, onChange, sizeProp, className = '', icon, tag = '', ...rest }: Props,
     ref: RefType
   ) => {
     const onInputChange = (e: ChangeEvent<HTMLInputElement>): any => {
@@ -107,35 +112,95 @@ const Input = forwardRef(
 
     if (type === 'search') {
       return (
-        <InputWrapper>
-          <IconContainer>
-            <MdSearch />
-          </IconContainer>
-          <StyledInput
-            sizeProp={sizeProp}
-            ref={ref}
-            type={type}
-            placeholder={placeholder}
-            {...rest}
-            onChange={onInputChange}
-          />
-        </InputWrapper>
+        <AnalyticsComponent>
+          {({ pages, tracker, merchantId, ip }) => (
+            <InputWrapper>
+              <IconContainer>
+                <MdSearch />
+              </IconContainer>
+              <StyledInput
+                sizeProp={sizeProp}
+                ref={ref}
+                type={type}
+                placeholder={placeholder}
+                onChange={onInputChange}
+                onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+                  if (e.key === 'Enter') {
+                    if (tag) {
+                      tracker.track({
+                        event: AnalyticsEvents.KEYBOARD_EVENT,
+                        type: AnalyticsComponentType.INPUT,
+                        tag: `${tag}_enter`,
+                        pages,
+                        merchantId,
+                        ip,
+                      });
+                    }
+                  }
+                }}
+                onClick={() => {
+                  if (tag) {
+                    tracker.track({
+                      event: AnalyticsEvents.CLICK,
+                      type: AnalyticsComponentType.INPUT,
+                      tag,
+                      pages,
+                      merchantId,
+                      ip,
+                    });
+                  }
+                }}
+                {...rest}
+              />
+            </InputWrapper>
+          )}
+        </AnalyticsComponent>
       );
     }
 
     return (
-      <InputWrapper className={className}>
-        <IconContainer>{icon}</IconContainer>
-        <StyledInput
-          sizeProp={sizeProp}
-          ref={ref}
-          type={type || 'text'}
-          placeholder={placeholder}
-          onChange={onInputChange}
-          icon={icon}
-          {...rest}
-        />
-      </InputWrapper>
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <InputWrapper className={className}>
+            <IconContainer>{icon}</IconContainer>
+            <StyledInput
+              sizeProp={sizeProp}
+              ref={ref}
+              type={type || 'text'}
+              placeholder={placeholder}
+              onChange={onInputChange}
+              icon={icon}
+              onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+                if (tag) {
+                  if (e.key === 'Enter') {
+                    tracker.track({
+                      event: AnalyticsEvents.KEYBOARD_EVENT,
+                      type: AnalyticsComponentType.INPUT,
+                      tag: `${tag}_enter`,
+                      pages,
+                      merchantId,
+                      ip,
+                    });
+                  }
+                }
+              }}
+              onClick={() => {
+                if (tag) {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.INPUT,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+              }}
+              {...rest}
+            />
+          </InputWrapper>
+        )}
+      </AnalyticsComponent>
     );
   }
 );

@@ -80,17 +80,22 @@ export declare const ROOT_ANALYTICS_CONTEXT: AnalyticsContextValue;
 export enum AnalyticsEvents {
   CLICK = 'click',
   DROPDOWN_CHANGE = 'dropdown_change',
+  SWITCH_ON = 'switch_on',
+  SWITCH_OFF = 'switch_off',
   DROPDOWN_SELECT = 'dropdown_select',
   CHECKBOX_ON = 'checkbox_on',
   CHECKBOX_OFF = 'checkbox_off',
   RADIOBUTTON_SELECT = 'radiobutton_select',
   DATEPICKER_CHANGE = 'datepicker_date_change',
   DAYPICKER_CHANGE = 'daypicker_date_change',
+  KEYBOARD_EVENT = 'keyboard_event',
 }
 
 export enum AnalyticsComponentType {
   BUTTON = 'button',
   DROPDOWN = 'dropdown',
+  SWITCH = 'switch',
+  PAGINATION = 'pagination',
   ICON = 'icon',
   LINK = 'link',
   CHECKBOX = 'checkbox',
@@ -98,6 +103,11 @@ export enum AnalyticsComponentType {
   DAYPICKER = 'daypicker',
   DATEPICKER_PRESET = 'datepicker_preset',
   TAB = 'tab',
+  ACCORDION = 'accordion',
+  MODAL = 'modal',
+  INPUT = 'input',
+  TEXTAREA = 'textarea',
+  TAB_NAVIGATION = 'tab_navigation',
 }
 
 export interface Event {

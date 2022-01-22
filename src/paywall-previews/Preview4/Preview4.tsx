@@ -79,6 +79,7 @@ const Preview4 = ({
       <StyledContainer columns="1fr">
         {displayBuyButton && (
           <StyledButton
+            tag="button_buy"
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}

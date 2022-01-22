@@ -1,7 +1,6 @@
 import React from 'react';
-
-// Images
 import { GiCutDiamond } from 'react-icons/gi';
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
@@ -64,43 +63,62 @@ const Preview3 = ({
   isAuthenticated = false,
   restrictedMessage = 'This content is not available.',
 }: Props) => (
-  <StyledPreviewBox
-    id="preview-container"
-    minHeight={minHeight}
-    minWidth={minWidth}
-    width={width}
-    height={height}
-  >
-    <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
-      {isRestrictedAsset && (
-        // Call handleOpenModal here because this div element will be
-        // on the top of all image elements in case of restricted asset
-        <StyledRestrictedAssetContainer height="50%" onClick={handleOpenModal}>
-          <RestrictedAssetIcon />
-          {restrictedMessage}
-        </StyledRestrictedAssetContainer>
-      )}
-      <Header onClick={handleOpenModal} color={colors.fontLightGray}>
-        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-      </Header>
-      <StyledTextWrapper onClick={handleOpenModal}>
-        <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-          <PaywallDescriptionSpan>
-            <GiCutDiamond /> {premiumContentLabel}
-          </PaywallDescriptionSpan>
-        </StyledPaywallDescription>
-        <TitleWrapper>
-          <TitleBorder color={buttonBgColor}>
-            <PreviewText value={previewTitle} textColor={colors.white} />
-          </TitleBorder>
-          <StyledIcon color={buttonBgColor} />
-        </TitleWrapper>
-        <DescriptionWrapper>
-          <PreviewText value={previewDescription} textColor={colors.white} />
-        </DescriptionWrapper>
-      </StyledTextWrapper>
-    </StyledImageHolder>
-  </StyledPreviewBox>
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <StyledPreviewBox
+        id="preview-container"
+        minHeight={minHeight}
+        minWidth={minWidth}
+        width={width}
+        height={height}
+      >
+        <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+          {isRestrictedAsset && (
+            // Call handleOpenModal here because this div element will be
+            // on the top of all image elements in case of restricted asset
+            <StyledRestrictedAssetContainer height="50%" onClick={handleOpenModal}>
+              <RestrictedAssetIcon />
+              {restrictedMessage}
+            </StyledRestrictedAssetContainer>
+          )}
+          <Header onClick={handleOpenModal} color={colors.fontLightGray}>
+            <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+          </Header>
+          <StyledTextWrapper onClick={handleOpenModal}>
+            <StyledPaywallDescription
+              color={buttonBgColor}
+              hasProtectedByLabel={hasProtectedByLabel}
+            >
+              <PaywallDescriptionSpan>
+                <GiCutDiamond /> {premiumContentLabel}
+              </PaywallDescriptionSpan>
+            </StyledPaywallDescription>
+            <TitleWrapper>
+              <TitleBorder color={buttonBgColor}>
+                <PreviewText value={previewTitle} textColor={colors.white} />
+              </TitleBorder>
+              <StyledIcon
+                onClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.ICON,
+                    tag: 'icon_play',
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                color={buttonBgColor}
+              />
+            </TitleWrapper>
+            <DescriptionWrapper>
+              <PreviewText value={previewDescription} textColor={colors.white} />
+            </DescriptionWrapper>
+          </StyledTextWrapper>
+        </StyledImageHolder>
+      </StyledPreviewBox>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Preview3;

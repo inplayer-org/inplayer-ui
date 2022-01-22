@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnalyticsComponent } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
@@ -63,51 +64,56 @@ const Preview2 = ({
   isAuthenticated = false,
   restrictedMessage = 'This content is not available.',
 }: Props) => (
-  <StyledPreviewBox
-    id="preview-container"
-    minHeight={minHeight}
-    minWidth={minWidth}
-    height={height}
-    width={width}
-  >
-    <StyledImageHolder
-      isRestrictedAsset={isRestrictedAsset}
-      backgroundImage={imageUrl}
-      onClick={handleOpenModal}
-    />
-    {isRestrictedAsset && (
-      // Call handleOpenModal here because this div element will be
-      // on the top of image container in case of restricted asset
-      <StyledRestrictedAssetContainer onClick={handleOpenModal}>
-        <RestrictedAssetIcon />
-        {restrictedMessage}
-      </StyledRestrictedAssetContainer>
-    )}
-    <AssetDetails>
-      <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
-        <PaywallDescriptionSpan>
-          <StyledIcon name="star" />
-          {premiumContentLabel}
-        </PaywallDescriptionSpan>
-      </StyledPaywallDescription>
-      <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
-      <PreviewText value={previewDescription} />
-      <BuyButtonWrapper>
-        <BuyButton
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
+  <AnalyticsComponent>
+    {() => (
+      <StyledPreviewBox
+        id="preview-container"
+        minHeight={minHeight}
+        minWidth={minWidth}
+        height={height}
+        width={width}
+      >
+        <StyledImageHolder
+          isRestrictedAsset={isRestrictedAsset}
+          backgroundImage={imageUrl}
           onClick={handleOpenModal}
-        >
-          {previewButtonLabel}
-        </BuyButton>
-      </BuyButtonWrapper>
-      <Footer color={colors.fontGray}>
-        <FooterLink href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </FooterLink>
-      </Footer>
-    </AssetDetails>
-  </StyledPreviewBox>
+        />
+        {isRestrictedAsset && (
+          // Call handleOpenModal here because this div element will be
+          // on the top of image container in case of restricted asset
+          <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+            <RestrictedAssetIcon />
+            {restrictedMessage}
+          </StyledRestrictedAssetContainer>
+        )}
+        <AssetDetails>
+          <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+            <PaywallDescriptionSpan>
+              <StyledIcon name="star" />
+              {premiumContentLabel}
+            </PaywallDescriptionSpan>
+          </StyledPaywallDescription>
+          <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />
+          <PreviewText value={previewDescription} />
+          <BuyButtonWrapper>
+            <BuyButton
+              tag="button_buy"
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={handleOpenModal}
+            >
+              {previewButtonLabel}
+            </BuyButton>
+          </BuyButtonWrapper>
+          <Footer color={colors.fontGray}>
+            <FooterLink href="#login" onClick={handleOpenModal}>
+              <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+            </FooterLink>
+          </Footer>
+        </AssetDetails>
+      </StyledPreviewBox>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Preview2;

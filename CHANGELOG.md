@@ -2,11 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.5.19] - 21.01.2022
+# [2.5.21] - 21.01.2022
 
 ## Change
 
 - Styling changes in preview templates for restricted asset
+
+# [2.5.20] - 21.01.2022
+
+## Fixes
+
+- TextArea by providing the required props
+
+# [2.5.19] - 21.01.2022
+
+## Added
+
+- Handlers for Input, TextArea, Pagination, Accordion and Switch.
+- Tagging Paywall previews
+
+## Fixes
+
+- TabNavigation handler type
 
 # [2.5.18] - 10.01.2022
 

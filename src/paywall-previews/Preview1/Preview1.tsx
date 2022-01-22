@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Colors
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import colors from '../../theme/colors';
 
 // Types
@@ -63,58 +64,89 @@ const Preview1 = ({
   isAuthenticated = false,
   restrictedMessage = 'This content is not available.',
 }: Props) => (
-  <InPlayerPreviewBox className="inplayer-preview-box">
-    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-    <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
-      {isRestrictedAsset && (
-        // Call handleOpenModal here because this div element will be
-        // on the top of all image elements in case of restricted asset
-        <StyledRestrictedAssetContainer onClick={handleOpenModal}>
-          <RestrictedAssetIcon />
-          {restrictedMessage}
-        </StyledRestrictedAssetContainer>
-      )}
-      <PreviewImage
-        alt="coverPhoto"
-        src={imageUrl}
-        role="presentation"
-        className="inplayer-paywall"
-      />
-      <PaywallExplain hasProtectedByLabel={hasProtectedByLabel} className="inplayer-paywallexplain">
-        <InplayerWhiteLogo id="inplayer-whitelogo">
-          <strong>{protectedByLabel} inplayer</strong>
-          <a href="https://inplayer.com">InPlayer Paywall</a>
-        </InplayerWhiteLogo>
-        <InplayerPremiumLabel>
-          <LockIcon className="inplayer-lock" />
-          <div>{premiumContentLabel}</div>
-        </InplayerPremiumLabel>
-      </PaywallExplain>
-    </ImageHolder>
-    <ItemDetails className="inplayer-itemdetails">
-      <PreviewText value={previewTitle} className="inplayer-title" />
-      <PreviewText value={previewDescription} />
-    </ItemDetails>
-    {displayBuyButton && (
-      <BuyButtonWrapper className="inplayer-buybutton">
-        <BuyButton
-          className="inplayer-button inplayer-submit-button"
-          buttonBgColor={buttonBgColor}
-          buttonTextColor={buttonTextColor}
-          onClick={handleOpenModal}
-        >
-          {previewButtonLabel}
-        </BuyButton>
-      </BuyButtonWrapper>
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <InPlayerPreviewBox className="inplayer-preview-box">
+        {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+        <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
+          {isRestrictedAsset && (
+            // Call handleOpenModal here because this div element will be
+            // on the top of all image elements in case of restricted asset
+            <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+              <RestrictedAssetIcon />
+              {restrictedMessage}
+            </StyledRestrictedAssetContainer>
+          )}
+          <PreviewImage
+            alt="coverPhoto"
+            src={imageUrl}
+            role="presentation"
+            className="inplayer-paywall"
+          />
+          <PaywallExplain
+            hasProtectedByLabel={hasProtectedByLabel}
+            className="inplayer-paywallexplain"
+          >
+            <InplayerWhiteLogo id="inplayer-whitelogo">
+              <strong>{protectedByLabel} inplayer</strong>
+              <a
+                onClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.ICON,
+                    tag: 'icon_inplayer',
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                href="https://inplayer.com"
+              >
+                InPlayer Paywall
+              </a>
+            </InplayerWhiteLogo>
+            <InplayerPremiumLabel>
+              <LockIcon className="inplayer-lock" />
+              <div>{premiumContentLabel}</div>
+            </InplayerPremiumLabel>
+          </PaywallExplain>
+        </ImageHolder>
+        <ItemDetails className="inplayer-itemdetails">
+          <PreviewText value={previewTitle} className="inplayer-title" />
+          <PreviewText value={previewDescription} />
+        </ItemDetails>
+        {displayBuyButton && (
+          <BuyButtonWrapper className="inplayer-buybutton">
+            <BuyButton
+              className="inplayer-button inplayer-submit-button"
+              buttonBgColor={buttonBgColor}
+              buttonTextColor={buttonTextColor}
+              onClick={(e) => {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.BUTTON,
+                  tag: 'button_buy',
+                  pages,
+                  merchantId,
+                  ip,
+                });
+                handleOpenModal?.(e);
+              }}
+            >
+              {previewButtonLabel}
+            </BuyButton>
+          </BuyButtonWrapper>
+        )}
+        <InplayerFooter className="inplayer-preview-footer">
+          <div className="inplayer-guest-footer">
+            <a href="#login" onClick={handleOpenModal}>
+              <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+            </a>
+          </div>
+        </InplayerFooter>
+      </InPlayerPreviewBox>
     )}
-    <InplayerFooter className="inplayer-preview-footer">
-      <div className="inplayer-guest-footer">
-        <a href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </a>
-      </div>
-    </InplayerFooter>
-  </InPlayerPreviewBox>
+  </AnalyticsComponent>
 );
 
 export default Preview1;

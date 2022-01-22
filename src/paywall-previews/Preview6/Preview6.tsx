@@ -90,6 +90,7 @@ const Preview6 = ({
     </ItemDetails>
     <ButtonWrapper>
       <StyledBuyButton
+        tag="button_buy"
         buttonBgColor={buttonBgColor}
         buttonTextColor={buttonTextColor}
         onClick={handleOpenModal}
