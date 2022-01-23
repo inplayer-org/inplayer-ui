@@ -1,4 +1,6 @@
 import React from 'react';
+
+// components
 import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 type Props = {
@@ -7,45 +9,32 @@ type Props = {
 };
 const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
   <AnalyticsComponent>
-    {({ pages, tracker, merchantId, ip }) =>
-      isAuthenticated ? (
-        <span>
-          Welcome back{' '}
-          <strong
-            aria-hidden="true"
-            onClick={() => {
-              tracker.track({
-                event: AnalyticsEvents.CLICK,
-                type: AnalyticsComponentType.LINK,
-                tag: 'link_user_email',
-                pages,
-                merchantId,
-                ip,
-              });
-            }}
-          >
-            {loginFooterLabel}
-          </strong>{' '}
-          Access this content!
+    {({ pages, tracker, merchantId, ip }) => {
+      const onClick = () => {
+        tracker.track({
+          event: AnalyticsEvents.CLICK,
+          type: AnalyticsComponentType.LINK,
+          tag: 'link_user_email',
+          pages,
+          merchantId,
+          ip,
+        });
+      };
+
+      const elementProps = {
+        'aria-hidden': true,
+        onClick,
+      };
+
+      const authText = `Welcome back <strong {...${elementProps}}>${loginFooterLabel}</strong> Access this content!`;
+      const noAuthText = loginFooterLabel;
+
+      return (
+        <span {...(isAuthenticated && { ...elementProps })}>
+          {isAuthenticated ? authText : noAuthText}
         </span>
-      ) : (
-        <span
-          aria-hidden="true"
-          onClick={() => {
-            tracker.track({
-              event: AnalyticsEvents.CLICK,
-              type: AnalyticsComponentType.LINK,
-              tag: 'link_already_have_access_login_with_your_account',
-              pages,
-              merchantId,
-              ip,
-            });
-          }}
-        >
-          {loginFooterLabel}
-        </span>
-      )
-    }
+      );
+    }}
   </AnalyticsComponent>
 );
 

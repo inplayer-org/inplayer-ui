@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { GiCutDiamond } from 'react-icons/gi';
 import { transparentize } from 'polished';
 

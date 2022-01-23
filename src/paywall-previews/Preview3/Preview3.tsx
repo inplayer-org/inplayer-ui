@@ -1,11 +1,11 @@
 import React from 'react';
 import { GiCutDiamond } from 'react-icons/gi';
-import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
 
 // Components
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import {

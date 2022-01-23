@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnalyticsComponent } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
@@ -8,6 +7,7 @@ import colors from '../../theme/colors';
 import Branding from '../types/branding';
 
 // Components
+import { AnalyticsComponent } from '../../analytics';
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import {

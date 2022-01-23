@@ -1,13 +1,13 @@
 import React from 'react';
 
 // Colors
-import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import colors from '../../theme/colors';
 
 // Types
 import Branding from '../types/branding';
 
 // Components
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import {
