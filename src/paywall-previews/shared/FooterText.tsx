@@ -14,7 +14,9 @@ const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
         tracker.track({
           event: AnalyticsEvents.CLICK,
           type: AnalyticsComponentType.LINK,
-          tag: 'link_user_email',
+          tag: isAuthenticated
+            ? 'link_user_email'
+            : 'link_already_have_access_login_with_your_account',
           pages,
           merchantId,
           ip,
@@ -26,11 +28,13 @@ const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
         onClick,
       };
 
-      const authText = `Welcome back <strong {...${elementProps}}>${loginFooterLabel}</strong> Access this content!`;
+      const authText = `Welcome back ${(
+        <strong {...elementProps}>loginFooterLabel</strong>
+      )} Access this content!`;
       const noAuthText = loginFooterLabel;
 
       return (
-        <span {...(isAuthenticated && { ...elementProps })}>
+        <span {...(!isAuthenticated && { ...elementProps })}>
           {isAuthenticated ? authText : noAuthText}
         </span>
       );
