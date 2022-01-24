@@ -28,9 +28,11 @@ const FooterText = ({ isAuthenticated, loginFooterLabel }: Props) => (
         onClick,
       };
 
-      const authText = `Welcome back ${(
-        <strong {...elementProps}>loginFooterLabel</strong>
-      )} Access this content!`;
+      const authText = (
+        <>
+          Welcome back <strong {...elementProps}>{loginFooterLabel}</strong> Access this content!
+        </>
+      );
       const noAuthText = loginFooterLabel;
 
       return (
