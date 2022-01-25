@@ -1,7 +1,21 @@
 import React from 'react';
-import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
+import colors from '../../theme/colors';
+
+// Types
+import Branding from '../types/branding';
+
+// Components
+import { AnalyticsComponent } from '../../analytics';
+import FooterText from '../shared/FooterText';
+import PreviewText from '../shared/PreviewText';
+import {
+  StyledPaywallDescription,
+  BuyButton,
+  FooterLink,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageHolder,
@@ -12,20 +26,6 @@ import {
   Footer,
   StyledRestrictedAssetContainer,
 } from './styled';
-import colors from '../../theme/colors';
-
-// Types
-import Branding from '../types/branding';
-
-// Components
-import FooterText from '../shared/FooterText';
-import PreviewText from '../shared/PreviewText';
-import {
-  StyledPaywallDescription,
-  BuyButton,
-  FooterLink,
-  RestrictedAssetIcon,
-} from '../shared/PreviewComponents';
 
 type Props = {
   branding?: Branding;
@@ -38,10 +38,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
   isAuthenticated?: boolean;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview2 = ({
   branding: {
@@ -62,9 +62,10 @@ const Preview2 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <AnalyticsComponent>
-    {({ pages, tracker, merchantId, ip }) => (
+    {() => (
       <StyledPreviewBox
         id="preview-container"
         minHeight={minHeight}
@@ -78,16 +79,18 @@ const Preview2 = ({
           onClick={handleOpenModal}
         />
         {isRestrictedAsset && (
-          <StyledRestrictedAssetContainer>
+          // Call handleOpenModal here because this div element will be
+          // on the top of image container in case of restricted asset
+          <StyledRestrictedAssetContainer onClick={handleOpenModal}>
             <RestrictedAssetIcon />
-            This content is not available in your country
+            {restrictedMessage}
           </StyledRestrictedAssetContainer>
         )}
         <AssetDetails>
           <StyledPaywallDescription color={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
             <PaywallDescriptionSpan>
               <StyledIcon name="star" />
-              {!isRestrictedAsset && premiumContentLabel}
+              {premiumContentLabel}
             </PaywallDescriptionSpan>
           </StyledPaywallDescription>
           <PreviewText value={previewTitle} padding="0 0 0.5rem 0" />

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
 

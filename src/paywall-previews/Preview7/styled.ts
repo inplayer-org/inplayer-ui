@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { MdDoNotDisturbAlt } from 'react-icons/md';
+import styled from 'styled-components';
 
 // utils
 import colors from '../../theme/colors';
@@ -12,7 +11,8 @@ import {
   ImageHolder,
   BuyButton,
   IconWrapper,
-  PreviewImage,
+  PreviewImageProps,
+  RestrictedAssetContainer,
 } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
@@ -29,15 +29,6 @@ export const StyledImageWrapper = styled(ImageHolder)`
   width: 250px;
   margin: auto;
   background: ${({ theme }) => theme.palette.background.main};
-`;
-
-export const StyledPreviewImage = styled(PreviewImage)<any>`
-  height: 250px;
-  ${({ isRestrictedAsset }) =>
-    isRestrictedAsset &&
-    css`
-      filter: brightness(0.3);
-    `}
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -98,4 +89,11 @@ export const RestrictedAssetText = styled.p`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)<PreviewImageProps>`
+  height: 100%;
+  border-radius: 50%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
 `;

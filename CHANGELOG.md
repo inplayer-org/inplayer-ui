@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.21] - 24.01.2022
+
+## Change
+
+- Styling changes in preview templates for restricted asset
+- FooterText component refactored
+
 # [2.5.20] - 21.01.2022
 
 ## Fixes

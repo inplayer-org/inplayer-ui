@@ -3,6 +3,7 @@ import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
 import colors from '../../theme/colors';
+import { RestrictedAssetContainer } from '../shared/PreviewComponents';
 
 export const InPlayerPreviewBox = styled.div`
   background: ${({ theme }) => theme.palette.background.main};
@@ -46,32 +47,25 @@ export const PaywallExplain = styled.div<PaywallExplainProps>`
   box-sizing: border-box;
   padding: 2vh 3%;
   color: ${colors.white};
-  display: ${ifProp('hasProtectedByLabel', 'block', 'none')};
+  display: ${ifProp('hasProtectedByLabel', 'flex', 'none')};
   position: absolute;
   bottom: 0;
   width: 100%;
   font-size: 13px;
   line-height: 15px;
   text-align: left;
-
-  span {
-    vertical-align: middle;
-    max-width: calc(100% - 150px);
-    display: inline-block;
-    text-align: left;
-    margin: 0;
-    position: relative;
-    font-size: 13px;
-    padding: 0;
-    line-height: 15px;
-  }
+  ${ifProp(
+    'hasProtectedByLabel',
+    css`
+      align-items: center;
+    `
+  )}
 `;
 
 export const InplayerWhiteLogo = styled.div`
   position: absolute;
   right: 3%;
   display: block;
-  margin: -4px 0 0;
   padding: 0;
   line-height: 15px;
 
@@ -87,7 +81,7 @@ export const InplayerWhiteLogo = styled.div`
     line-height: 15px;
 
     @media screen and (max-width: 600px) {
-      max-width: 73px;
+      max-width: 80px;
     }
   }
 
@@ -104,10 +98,11 @@ export const InplayerWhiteLogo = styled.div`
     margin-bottom: 2px;
     line-height: 15px;
   }
+`;
 
-  @media screen and (max-width: 476px) {
-    margin: 0px 0 0 0;
-  }
+export const InplayerPremiumLabel = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const ItemDetails = styled.div`
@@ -206,18 +201,11 @@ export const InplayerFooter = styled.div`
   }
 `;
 
-export const PreviewImage = styled.img<{ isRestrictedAsset?: boolean }>`
+export const PreviewImage = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   cursor: pointer;
-
-  ${({ isRestrictedAsset }) =>
-    isRestrictedAsset &&
-    css`
-      filter: brightness(0.3);
-      position: absolute;
-    `}
 `;
 
 export const LockIcon = styled(FaLock)`

@@ -1,15 +1,15 @@
 import React from 'react';
 import { GiCutDiamond } from 'react-icons/gi';
-import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 // Colors
 import colors from '../../theme/colors';
 
 // Components
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import FooterText from '../shared/FooterText';
 import PreviewText from '../shared/PreviewText';
 import {
-  RestrictedAssetContainer,
+  StyledRestrictedAssetContainer,
   RestrictedAssetIcon,
   StyledPaywallDescription,
 } from '../shared/PreviewComponents';
@@ -39,10 +39,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
   isAuthenticated?: boolean;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview3 = ({
   branding: {
@@ -61,6 +61,7 @@ const Preview3 = ({
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   premiumContentLabel = 'Premium content',
   isAuthenticated = false,
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <AnalyticsComponent>
     {({ pages, tracker, merchantId, ip }) => (
@@ -72,6 +73,14 @@ const Preview3 = ({
         height={height}
       >
         <StyledImageHolder backgroundImage={imageUrl} onClick={handleOpenModal}>
+          {isRestrictedAsset && (
+            // Call handleOpenModal here because this div element will be
+            // on the top of all image elements in case of restricted asset
+            <StyledRestrictedAssetContainer height="50%" onClick={handleOpenModal}>
+              <RestrictedAssetIcon />
+              {restrictedMessage}
+            </StyledRestrictedAssetContainer>
+          )}
           <Header onClick={handleOpenModal} color={colors.fontLightGray}>
             <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
           </Header>
@@ -80,36 +89,27 @@ const Preview3 = ({
               color={buttonBgColor}
               hasProtectedByLabel={hasProtectedByLabel}
             >
-              {isRestrictedAsset ? (
-                <RestrictedAssetContainer height="40%">
-                  <RestrictedAssetIcon />
-                  {premiumContentLabel}
-                </RestrictedAssetContainer>
-              ) : (
-                <PaywallDescriptionSpan>
-                  <GiCutDiamond /> {premiumContentLabel}
-                </PaywallDescriptionSpan>
-              )}
+              <PaywallDescriptionSpan>
+                <GiCutDiamond /> {premiumContentLabel}
+              </PaywallDescriptionSpan>
             </StyledPaywallDescription>
             <TitleWrapper>
               <TitleBorder color={buttonBgColor}>
                 <PreviewText value={previewTitle} textColor={colors.white} />
               </TitleBorder>
-              {!isRestrictedAsset && (
-                <StyledIcon
-                  onClick={() => {
-                    tracker.track({
-                      event: AnalyticsEvents.CLICK,
-                      type: AnalyticsComponentType.ICON,
-                      tag: 'icon_play',
-                      pages,
-                      merchantId,
-                      ip,
-                    });
-                  }}
-                  color={buttonBgColor}
-                />
-              )}
+              <StyledIcon
+                onClick={() => {
+                  tracker.track({
+                    event: AnalyticsEvents.CLICK,
+                    type: AnalyticsComponentType.ICON,
+                    tag: 'icon_play',
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }}
+                color={buttonBgColor}
+              />
             </TitleWrapper>
             <DescriptionWrapper>
               <PreviewText value={previewDescription} textColor={colors.white} />

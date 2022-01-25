@@ -1,26 +1,27 @@
 import React from 'react';
 
 // Colors
-import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import colors from '../../theme/colors';
 
 // Types
 import Branding from '../types/branding';
 
 // Components
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 import FooterText from '../shared/FooterText';
+import PreviewText from '../shared/PreviewText';
 import {
   OverlayLabel,
-  RestrictedAssetContainer,
   RestrictedAssetIcon,
+  StyledRestrictedAssetContainer,
 } from '../shared/PreviewComponents';
-import PreviewText from '../shared/PreviewText';
 import {
   InPlayerPreviewBox,
   LockIcon,
   ImageHolder,
   PaywallExplain,
   InplayerWhiteLogo,
+  InplayerPremiumLabel,
   ItemDetails,
   BuyButtonWrapper,
   BuyButton,
@@ -38,10 +39,10 @@ type Props = {
   premiumContentLabel?: string;
   isRestrictedAsset?: boolean;
   isAuthenticated?: boolean;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview1 = ({
   branding: {
@@ -61,25 +62,27 @@ const Preview1 = ({
   premiumContentLabel = 'Premium content',
   isRestrictedAsset = false,
   isAuthenticated = false,
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <AnalyticsComponent>
     {({ pages, tracker, merchantId, ip }) => (
       <InPlayerPreviewBox className="inplayer-preview-box">
         {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
         <ImageHolder className="inplayer-imageholder" onClick={handleOpenModal}>
+          {isRestrictedAsset && (
+            // Call handleOpenModal here because this div element will be
+            // on the top of all image elements in case of restricted asset
+            <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+              <RestrictedAssetIcon />
+              {restrictedMessage}
+            </StyledRestrictedAssetContainer>
+          )}
           <PreviewImage
             alt="coverPhoto"
             src={imageUrl}
             role="presentation"
             className="inplayer-paywall"
-            isRestrictedAsset={isRestrictedAsset}
           />
-          {isRestrictedAsset && (
-            <RestrictedAssetContainer>
-              <RestrictedAssetIcon />
-              {premiumContentLabel}
-            </RestrictedAssetContainer>
-          )}
           <PaywallExplain
             hasProtectedByLabel={hasProtectedByLabel}
             className="inplayer-paywallexplain"
@@ -102,8 +105,10 @@ const Preview1 = ({
                 InPlayer Paywall
               </a>
             </InplayerWhiteLogo>
-            <LockIcon className="inplayer-lock" />
-            <span>{!isRestrictedAsset && premiumContentLabel}</span>
+            <InplayerPremiumLabel>
+              <LockIcon className="inplayer-lock" />
+              <div>{premiumContentLabel}</div>
+            </InplayerPremiumLabel>
           </PaywallExplain>
         </ImageHolder>
         <ItemDetails className="inplayer-itemdetails">

@@ -65,7 +65,7 @@ export const AssetDetails = styled.div`
 `;
 
 export const PaywallDescriptionSpan = styled(DescriptionSpan)`
-  padding-bottom: 20px;
+  padding: 20px 0;
 `;
 
 export const BuyButtonWrapper = styled.div`
@@ -93,12 +93,20 @@ export const Footer = styled(PreviewFooter)`
   margin-top: 1.6em;
   text-align: left;
   padding-top: 0.5em;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  width: 50%;
   left: 25%;
   @media screen and (max-width: 768px) {
+    width: 100%;
     left: 50%;
-    top: 30%;
+    top: 25%;
+  }
+  @media screen and (max-width: 480px) {
+    top: 20%;
   }
 `;

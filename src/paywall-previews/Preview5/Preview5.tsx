@@ -10,7 +10,7 @@ import Branding from '../types/branding';
 
 // Components
 import {
-  RestrictedAssetContainer,
+  StyledRestrictedAssetContainer,
   RestrictedAssetIcon,
   StyledPaywallDescription,
 } from '../shared/PreviewComponents';
@@ -26,7 +26,6 @@ import {
   PaywallDescriptionSpan,
   TitleHolder,
   DescriptionHolder,
-  RestrictedAssetText,
 } from './styled';
 
 type Props = {
@@ -38,10 +37,10 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview5 = ({
   branding: {
@@ -60,6 +59,7 @@ const Preview5 = ({
   handleOpenModal,
   isRestrictedAsset = false,
   premiumContentLabel = 'Premium content',
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -68,35 +68,29 @@ const Preview5 = ({
     width={width}
     height={height}
   >
-    <ImageWrapper
-      isRestrictedAsset={isRestrictedAsset}
-      height={height}
-      backgroundImage={imageUrl}
-      onClick={handleOpenModal}
-    >
-      <Overlay />
-
-      {!isRestrictedAsset && (
-        <BuyButtonHolder>
-          <BuyButtonBorder>
-            <StyledBuyButton
-              tag="button_buy"
-              buttonBgColor={buttonBgColor}
-              buttonTextColor={buttonTextColor}
-              onClick={handleOpenModal}
-            >
-              {previewButtonLabel}
-            </StyledBuyButton>
-          </BuyButtonBorder>
-        </BuyButtonHolder>
+    <ImageWrapper height={height} backgroundImage={imageUrl} onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        // Call handleOpenModal here because this div element will be
+        // on the top of all image elements in case of restricted asset
+        <StyledRestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
       )}
+      <Overlay />
+      <BuyButtonHolder>
+        <BuyButtonBorder>
+          <StyledBuyButton
+            tag="button_buy"
+            buttonBgColor={buttonBgColor}
+            buttonTextColor={buttonTextColor}
+            onClick={handleOpenModal}
+          >
+            {previewButtonLabel}
+          </StyledBuyButton>
+        </BuyButtonBorder>
+      </BuyButtonHolder>
     </ImageWrapper>
-    {isRestrictedAsset && (
-      <RestrictedAssetContainer height="38%">
-        <RestrictedAssetIcon />
-        {premiumContentLabel}
-      </RestrictedAssetContainer>
-    )}
     <ItemDetails height={height}>
       <StyledPaywallDescription
         color={lighten(0.01, buttonBgColor)}

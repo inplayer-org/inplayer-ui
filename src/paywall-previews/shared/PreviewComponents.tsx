@@ -32,10 +32,10 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   margin: 24px auto;
 `;
 
-type PreviewImageProps = {
-  imageBorderRadius?: string;
-  isRestrictedAsset?: boolean;
-};
+export interface PreviewImageProps {
+  imageBorderRadius?: boolean;
+  imageWidth?: string;
+}
 
 export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};
@@ -196,4 +196,10 @@ export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  height: 100%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
 `;

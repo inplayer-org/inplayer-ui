@@ -9,17 +9,16 @@ import Branding from '../types/branding';
 
 // Components
 import FooterText from '../shared/FooterText';
+import PreviewText from '../shared/PreviewText';
 import {
   OverlayLabel,
-  PreviewFooterLink,
-  RestrictedAssetContainer,
   RestrictedAssetIcon,
+  PreviewFooterLink,
+  PreviewImage,
 } from '../shared/PreviewComponents';
-import PreviewText from '../shared/PreviewText';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
-  StyledPreviewImage,
   StyledIconWrapper,
   ItemDetails,
   PreviewHeader,
@@ -27,6 +26,7 @@ import {
   ButtonWrapper,
   StyledBuyButton,
   StyledPreviewFooter,
+  StyledRestrictedAssetContainer,
 } from './styled';
 
 type Props = {
@@ -42,10 +42,10 @@ type Props = {
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
   premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview7 = ({
   branding: {
@@ -67,7 +67,7 @@ const Preview7 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
-  premiumContentLabel = 'Premium content',
+  restrictedMessage = 'This content is not available.',
 }: Props) => (
   <StyledPreviewBox
     id="preview-container"
@@ -78,18 +78,20 @@ const Preview7 = ({
   >
     {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
     <StyledImageWrapper onClick={handleOpenModal}>
-      <StyledPreviewImage
-        isRestrictedAsset={isRestrictedAsset}
-        src={imageUrl}
-        imageWidth="250px"
-        imageBorderRadius
-      />
       {isRestrictedAsset && (
-        <RestrictedAssetContainer fontSize="14px">
+        // Call handleOpenModal here because this div element will be
+        // on the top of image container in case of restricted asset
+        <StyledRestrictedAssetContainer
+          fontSize="14px"
+          imageWidth="250px"
+          imageBorderRadius
+          onClick={handleOpenModal}
+        >
           <RestrictedAssetIcon size="4rem" />
-          {premiumContentLabel}
-        </RestrictedAssetContainer>
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
       )}
+      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
       <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
         <FaLock />
       </StyledIconWrapper>

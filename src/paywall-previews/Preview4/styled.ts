@@ -30,11 +30,16 @@ export const StyledButton = styled(BuyButton)`
   height: 3rem;
 `;
 
-export const ImageWrapper = styled(ImageHolder)`
+export const ImageWrapper = styled(ImageHolder)<{ isRestrictedAsset: boolean }>`
   height: 100%;
   min-height: 310px;
   margin: 0;
   cursor: pointer;
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -55,14 +60,8 @@ export const Icon = styled.div`
   transform: rotate(-45deg);
 `;
 
-export const StyledPreviewImage = styled(PreviewImage)<{ isRestrictedAsset?: boolean }>`
+export const StyledPreviewImage = styled(PreviewImage)`
   position: absolute;
-
-  ${({ isRestrictedAsset }) =>
-    isRestrictedAsset &&
-    css`
-      filter: brightness(0.3);
-    `}
 `;
 
 export const StyledTextWrapper = styled(TextWrapper)`

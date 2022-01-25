@@ -24,12 +24,6 @@ export const StyledPreviewBox = styled(PreviewBox)`
   }
 `;
 
-export const Container = styled.div`
-  /* @media screen and (max-width: 1100px) {
-    position: relative;
-  } */
-`;
-
 interface ImageWrapperProps {
   backgroundImage: string;
   isRestrictedAsset?: boolean;
@@ -84,8 +78,6 @@ export const StyledBuyButton = styled(BuyButton)`
 `;
 
 export const PreviewFooter = styled.div`
-  float: right;
-  text-align: right;
   display: flex;
   align-items: flex-end;
   @media screen and (max-width: 1100px) {
@@ -109,11 +101,20 @@ export const IconHolder = styled.div<IconHolderProps>`
 `;
 
 export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
-  width: 50%;
-  top: 45%;
+  width: 35%;
+  top: 50%;
   left: 20%;
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    svg {
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 0rem;
+    }
+  }
   @media screen and (max-width: 1100px) {
+    height: 50%;
     left: 25%;
-    top: 32%;
+    top: 35%;
   }
 `;

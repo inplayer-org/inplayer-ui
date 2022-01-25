@@ -39,12 +39,11 @@ type Props = {
   width?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
-  premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview4 = ({
   branding: {
@@ -64,7 +63,7 @@ const Preview4 = ({
   width = '',
   isRestrictedAsset = false,
   handleOpenModal,
-  premiumContentLabel = 'Premium content',
+  restrictedMessage = 'This content is not available.',
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
@@ -89,7 +88,13 @@ const Preview4 = ({
           </StyledButton>
         )}
       </StyledContainer>
-      <ImageWrapper onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </RestrictedAssetContainer>
+      )}
+      <ImageWrapper onClick={handleOpenModal} isRestrictedAsset={isRestrictedAsset}>
         <StyledIconWrapper
           backgroundColor={buttonBgColor}
           hasProtectedByLabel={hasProtectedByLabel}
@@ -98,14 +103,7 @@ const Preview4 = ({
             <FaLock />
           </Icon>
         </StyledIconWrapper>
-        <StyledPreviewImage isRestrictedAsset={isRestrictedAsset} src={imageUrl} />
-        {isRestrictedAsset && (
-          <RestrictedAssetContainer>
-            <RestrictedAssetIcon />
-            {premiumContentLabel}
-          </RestrictedAssetContainer>
-        )}
-
+        <StyledPreviewImage src={imageUrl} />
         <StyledTextWrapper>
           <TextElement width={width}>
             <PreviewText
