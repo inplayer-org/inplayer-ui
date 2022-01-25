@@ -14,10 +14,12 @@ export const columns = [
   {
     title: 'Name',
     key: 'name',
+    editable: true,
   },
   {
     title: 'Date Created',
     key: 'dateCreated',
+    render: ({ value }: any) => value.dt,
   },
   {
     title: 'Director',
@@ -32,14 +34,14 @@ export const data = [
     icon: <FaMusic />,
     name: "Won't You Be My Neighbour?",
     director: 'Morgan Neville',
-    dateCreated: '2018/07/24',
+    dateCreated: { dt: '2018/07/24' },
   },
   {
     id: 8,
     icon: <FaCode />,
     name: 'Soundtrack: No Country',
     director: 'Coen Brothers',
-    dateCreated: '2018/07/21',
+    dateCreated: { dt: '2018/07/24' },
   },
 ];
 

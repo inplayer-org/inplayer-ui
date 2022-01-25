@@ -1,6 +1,10 @@
 import 'react-dates/initialize';
-import React, { ReactNode, SyntheticEvent, Component } from 'react';
-import { CSSProperties } from 'styled-components';
+import React, { ReactNode, SyntheticEvent, Component, ChangeEvent } from 'react';
+import styled, { CSSProperties } from 'styled-components';
+import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
+import { FaRegEdit } from 'react-icons/fa';
+import colors from '../../theme/colors';
+import Input from '../Input';
 import Grid from '../Grid';
 import Loader from '../Loader';
 import { AnalyticsProps } from '../../analytics';
@@ -16,6 +20,23 @@ import {
   TableWithHeaderSectionContainer,
   TableWrapper,
 } from './styled';
+
+interface StyledReactIconProps {
+  color: string;
+}
+
+export const StyledReactIcon = styled(IoIosCheckmark)<StyledReactIconProps>`
+  width: 2.2rem;
+  height: 2.2rem;
+  color: ${({ color }) => color};
+  cursor: pointer;
+`;
+
+const StyledIcon = styled(FaRegEdit)`
+  font-size: 1.3rem;
+  cursor: pointer;
+  align-self: flex-end;
+`;
 
 interface Data {
   id: string;
@@ -33,6 +54,8 @@ type Column = {
   render: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight?: any;
+  editable?: boolean;
+  fn?: () => void;
 };
 
 type RowActions<T> =
@@ -62,7 +85,7 @@ interface TableButtonProps extends AnalyticsProps {
 
 type Props<T = Data> = {
   columns: Array<Column> | any;
-  data: Array<any>;
+  data: Array<Data>;
   className?: string;
   style?: CSSProperties;
   options: TableOptions<T>;
@@ -70,6 +93,8 @@ type Props<T = Data> = {
   renderEmptyTable?: boolean;
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
+  editableId?: string | number;
+  editableBy?: string;
 } & AnalyticsProps;
 
 type State = {
@@ -77,6 +102,7 @@ type State = {
     [key in number | string]: any;
   };
   selectedAll: boolean;
+  inputStates: any;
 };
 
 const rowActionsExist = (actions: RowActions<any>) =>
@@ -104,7 +130,22 @@ class Table<T> extends Component<Props<T>, State> {
   state: State = {
     selected: {},
     selectedAll: false,
+    inputStates: {},
   };
+
+  componentDidMount() {
+    const { data, editableBy = '', editableId = '' } = this.props;
+    const { inputStates } = this.state;
+    console.log(data);
+    console.log(editableBy, editableId);
+    if (editableBy) {
+      const inputs = data.reduce(
+        (obj, item) => ({ ...obj, [item[editableId]]: item[editableBy] }),
+        {}
+      );
+      this.setState({ inputStates: inputs }, () => console.log(inputStates));
+    }
+  }
 
   toggleRow = (id: number | string) => () => {
     const { selected } = this.state;
@@ -209,25 +250,95 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
+  renderEditIcons = (field: string, id: string, fn: any) => {
+    const { inputStates } = this.state;
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      this.setState({
+        inputStates: {
+          ...inputStates,
+          [id]: e.target.value,
+        },
+      });
+    };
+    console.log(inputStates);
+    if (inputStates.currentlyModifiyng === id) {
+      return (
+        <>
+          <Input
+            id={id}
+            onChange={handleChange}
+            placeholder=""
+            type="input"
+            value={inputStates[id]}
+          />
+          <StyledReactIcon
+            data-testid="save"
+            color={colors.green}
+            onClick={() => {
+              fn?.();
+              this.setState({
+                inputStates: {
+                  ...inputStates,
+                  currentlyModifiyng: null,
+                },
+              });
+            }}
+          />
+          <StyledReactIcon
+            data-testid="cancel"
+            as={IoIosClose}
+            color={colors.red}
+            onClick={() =>
+              this.setState({
+                inputStates: {
+                  ...inputStates,
+                  currentlyModifiyng: null,
+                },
+              })
+            }
+          />
+        </>
+      );
+    }
+    return (
+      <>
+        {field}
+        <StyledIcon
+          onClick={() =>
+            this.setState({
+              inputStates: {
+                ...inputStates,
+                currentlyModifiyng: id,
+              },
+            })
+          }
+        />
+      </>
+    );
+  };
+
   renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
-    const { tableButton } = this.props;
+    const { tableButton, editableId = 0 } = this.props;
 
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
-        {newColumns.map((column: Column, index: number) => (
-          <TableCell
-            key={index}
-            isActionsCell={column.key === 'actions'}
-            style={column.style || {}}
-          >
-            {column.render
-              ? column.render({ value: row[column.key], rowValues: row })
-              : row[column.key]}
-          </TableCell>
-        ))}
+        {newColumns.map((column: Column, index: number) => {
+          const cond = column.editable
+            ? this.renderEditIcons(row[column.key], row[editableId], column.fn)
+            : row[column.key];
+          return (
+            <TableCell
+              key={index}
+              isActionsCell={column.key === 'actions'}
+              style={column.style || {}}
+            >
+              {column.render ? column.render({ value: row[column.key], rowValues: row }) : cond}
+            </TableCell>
+          );
+        })}
       </TableRow>
     ));
   };
