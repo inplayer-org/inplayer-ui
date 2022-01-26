@@ -14,8 +14,6 @@ export const columns = [
   {
     title: 'Name',
     key: 'name',
-    editable: true,
-    fn: (value: string, currentValue: string) => console.log('CLG', value, currentValue),
   },
   {
     title: 'Date Created',

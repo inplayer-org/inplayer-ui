@@ -93,7 +93,7 @@ type Props<T = Data> = {
   renderEmptyTable?: boolean;
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
-  editableId?: string | number;
+  editableId?: string;
   editableBy?: string;
 } & AnalyticsProps;
 
@@ -272,7 +272,7 @@ class Table<T> extends Component<Props<T>, State> {
             data-testid="save"
             color={colors.green}
             onClick={() => {
-              fn?.(field, inputStates[id]);
+              fn?.(field, inputStates[id], id);
               this.setState({
                 inputStates: {
                   ...inputStates,
