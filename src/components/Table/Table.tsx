@@ -55,7 +55,7 @@ type Column = {
   style?: CSSProperties;
   alignRight?: any;
   editable?: boolean;
-  fn?: () => void;
+  fn: (inputValue: string) => void;
 };
 
 type RowActions<T> =
@@ -134,10 +134,8 @@ class Table<T> extends Component<Props<T>, State> {
   };
 
   componentDidMount() {
-    const { data, editableBy = '', editableId = '' } = this.props;
     const { inputStates } = this.state;
-    console.log(data);
-    console.log(editableBy, editableId);
+    const { data, editableBy = '', editableId = '' } = this.props;
     if (editableBy) {
       const inputs = data.reduce(
         (obj, item) => ({ ...obj, [item[editableId]]: item[editableBy] }),
@@ -260,7 +258,6 @@ class Table<T> extends Component<Props<T>, State> {
         },
       });
     };
-    console.log(inputStates);
     if (inputStates.currentlyModifiyng === id) {
       return (
         <>
@@ -275,7 +272,7 @@ class Table<T> extends Component<Props<T>, State> {
             data-testid="save"
             color={colors.green}
             onClick={() => {
-              fn?.();
+              fn?.(field, inputStates[id]);
               this.setState({
                 inputStates: {
                   ...inputStates,
@@ -326,16 +323,27 @@ class Table<T> extends Component<Props<T>, State> {
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map((column: Column, index: number) => {
-          const cond = column.editable
+          const isEditble = column.editable
             ? this.renderEditIcons(row[column.key], row[editableId], column.fn)
             : row[column.key];
+
+          const hasRenderFn = column.render
+            ? column.render({ value: row[column.key], rowValues: row })
+            : isEditble;
+
+          const hasRenderAndEnable =
+            column.render && column.editable
+              ? column.render({ value: row[column.key], rowValues: row }) &&
+                this.renderEditIcons(row[column.key], row[editableId], column.fn)
+              : hasRenderFn;
+
           return (
             <TableCell
               key={index}
               isActionsCell={column.key === 'actions'}
               style={column.style || {}}
             >
-              {column.render ? column.render({ value: row[column.key], rowValues: row }) : cond}
+              {hasRenderAndEnable}
             </TableCell>
           );
         })}
