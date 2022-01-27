@@ -234,6 +234,12 @@ export interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   rowValues: T;
 }
 
+export interface ColumnFunctionProps {
+  value: string;
+  currentValue: string;
+  id: number;
+}
+
 export interface RowAction<T extends TableRowData> {
   icon?: string;
   onClick?: (id: number | string) => any;

@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaMusic, FaCode } from 'react-icons/fa';
+import { ColumnFunctionProps } from '../Table/Table';
+import { TableColumn } from '../../..';
 
-export const columns = [
+export const columns: Array<TableColumn<any>> = [
   {
     title: 'ID',
     key: 'id',
@@ -14,6 +16,8 @@ export const columns = [
   {
     title: 'Name',
     key: 'name',
+    // editable: true,
+    // fn: ({ value, currentValue, id }: ColumnFunctionProps) => console.log(value, currentValue, id),
   },
   {
     title: 'Date Created',
@@ -21,7 +25,7 @@ export const columns = [
     render: ({ value }: any) => value.dt,
   },
   {
-    title: 'Director',
+    title: 'Directsor',
     key: 'director',
     render: ({ value, rowValues }: any) => `${value} - ${rowValues.dateCreated}`,
   },

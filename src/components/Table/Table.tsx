@@ -48,14 +48,20 @@ type Render = {
   rowValues: Data;
 };
 
+export interface ColumnFunctionProps {
+  value: string;
+  currentValue: string;
+  id: string;
+}
+
 type Column = {
   title: string;
   key: string;
-  render: ({ value, rowValues }: Render) => ReactNode;
+  render?: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight?: any;
   editable?: boolean;
-  fn: (inputValue: string) => void;
+  fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
 };
 
 type RowActions<T> =
@@ -248,31 +254,35 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
-  renderEditIcons = (field: string, id: string, fn: any) => {
+  renderEditIcons = (
+    field: string,
+    rowId: string,
+    fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any
+  ) => {
     const { inputStates } = this.state;
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       this.setState({
         inputStates: {
           ...inputStates,
-          [id]: e.target.value,
+          [rowId]: e.target.value,
         },
       });
     };
-    if (inputStates.currentlyModifiyng === id) {
+    if (inputStates.currentlyModifiyng === rowId) {
       return (
         <>
           <Input
-            id={id}
+            id={rowId}
             onChange={handleChange}
             placeholder=""
             type="input"
-            value={inputStates[id]}
+            value={inputStates[rowId]}
           />
           <StyledReactIcon
             data-testid="save"
             color={colors.green}
             onClick={() => {
-              fn?.(field, inputStates[id], id);
+              fn?.({ value: field, currentValue: inputStates[rowId], id: rowId });
               this.setState({
                 inputStates: {
                   ...inputStates,
@@ -305,7 +315,7 @@ class Table<T> extends Component<Props<T>, State> {
             this.setState({
               inputStates: {
                 ...inputStates,
-                currentlyModifiyng: id,
+                currentlyModifiyng: rowId,
               },
             })
           }
