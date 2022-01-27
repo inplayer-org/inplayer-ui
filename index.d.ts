@@ -222,7 +222,7 @@ export interface TableColumn<T extends TableRowData> {
   render?: (props: TableColumn$RenderProps<T>) => ReactNode;
   style?: CSSProperties;
   editable?: boolean;
-  fn?: (value: string, currentValue: string) => void;
+  fn?: (props: ColumnFunctionProps) => void;
 }
 
 export interface TableRowData extends Object {
