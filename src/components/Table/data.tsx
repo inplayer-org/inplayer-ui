@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaMusic, FaCode } from 'react-icons/fa';
-import { ColumnFunctionProps } from '../Table/Table';
 import { TableColumn } from '../../..';
 
 export const columns: Array<TableColumn<any>> = [
@@ -16,8 +15,8 @@ export const columns: Array<TableColumn<any>> = [
   {
     title: 'Name',
     key: 'name',
-    // editable: true,
-    // fn: ({ value, currentValue, id }: ColumnFunctionProps) => console.log(value, currentValue, id),
+    editable: true,
+    fn: ({ value, currentValue, id }) => console.log(value, currentValue, id),
   },
   {
     title: 'Date Created',
@@ -25,7 +24,7 @@ export const columns: Array<TableColumn<any>> = [
     render: ({ value }: any) => value.dt,
   },
   {
-    title: 'Directsor',
+    title: 'Director',
     key: 'director',
     render: ({ value, rowValues }: any) => `${value} - ${rowValues.dateCreated}`,
   },
@@ -37,14 +36,14 @@ export const data = [
     icon: <FaMusic />,
     name: "Won't You Be My Neighbour?",
     director: 'Morgan Neville',
-    dateCreated: { dt: '2018/07/24' },
+    dateCreated: '2018/07/24',
   },
   {
     id: 8,
     icon: <FaCode />,
     name: 'Soundtrack: No Country',
     director: 'Coen Brothers',
-    dateCreated: { dt: '2018/07/24' },
+    dateCreated: '2018/07/24',
   },
 ];
 

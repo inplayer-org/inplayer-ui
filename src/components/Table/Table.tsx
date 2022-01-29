@@ -3,6 +3,9 @@ import React, { ReactNode, SyntheticEvent, Component, ChangeEvent } from 'react'
 import styled, { CSSProperties } from 'styled-components';
 import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
 import { FaRegEdit } from 'react-icons/fa';
+import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
+import { object, string } from 'yup';
+import FormikInput from '../Input/FormikInput';
 import colors from '../../theme/colors';
 import Input from '../Input';
 import Grid from '../Grid';
@@ -63,6 +66,14 @@ type Column = {
   editable?: boolean;
   fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
 };
+
+interface FormValues {
+  field: string;
+}
+
+const validationSchema = object().shape({
+  field: string().required('*Required'),
+});
 
 type RowActions<T> =
   | Array<{
@@ -271,13 +282,28 @@ class Table<T> extends Component<Props<T>, State> {
     if (inputStates.currentlyModifiyng === rowId) {
       return (
         <>
-          <Input
-            id={rowId}
-            onChange={handleChange}
-            placeholder=""
-            type="input"
-            value={inputStates[rowId]}
-          />
+          <Formik
+            initialValues={{ field }}
+            onSubmit={(values) => {
+              this.setState({
+                inputStates: {
+                  ...inputStates,
+                  currentlyModifiyng: null,
+                },
+              });
+              fn?.({ value: field, currentValue: values.field, id: rowId });
+            }}
+            validationSchema={validationSchema}
+          >
+            <Form>
+              <Field type="text" name="field">
+                {(params: FieldProps) => {
+                  console.log(params);
+                  return <FormikInput {...params} />;
+                }}
+              </Field>
+            </Form>
+          </Formik>
           <StyledReactIcon
             data-testid="save"
             color={colors.green}
