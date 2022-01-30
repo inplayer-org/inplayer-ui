@@ -216,14 +216,18 @@ export interface RadioProps extends AnalyticsProps{
 
 export declare const Radio: FunctionComponent<RadioProps>;
 
+export interface EditableFields {
+  fn: (props: ColumnFunctionProps) => void;
+  validationSchema: ObjectSchema<any>;
+  formikComponentField: () => ReactNode;
+}
+
 export interface TableColumn<T extends TableRowData> {
   title: string;
   key: string;
   render?: (props: TableColumn$RenderProps<T>) => ReactNode;
   style?: CSSProperties;
-  editable?: boolean;
-  fn?: (props: ColumnFunctionProps) => void;
-  validationSchema?: ObjectSchema<any>;
+  editable?: EditableFields;
 }
 
 export interface TableRowData extends Object {

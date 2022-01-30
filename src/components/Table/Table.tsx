@@ -3,9 +3,8 @@ import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
 import { FaRegEdit } from 'react-icons/fa';
-import { Field, Form, Formik, FormikProps } from 'formik';
+import { Form, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
-import FormikInput from '../FormikInput/FormikInput';
 import colors from '../../theme/colors';
 import Grid from '../Grid';
 import Loader from '../Loader';
@@ -56,15 +55,19 @@ export interface ColumnFunctionProps {
   id: string;
 }
 
+export interface EditableFields {
+  fn: (props: ColumnFunctionProps) => void;
+  validationSchema: ObjectSchema<any>;
+  formikComponentField: () => ReactNode;
+}
+
 export type Column = {
   title: string;
   key: string;
   render?: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight?: any;
-  editable?: boolean;
-  fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
-  validationSchema?: ObjectSchema<any>;
+  editable?: EditableFields;
 };
 
 interface FormValeus {
@@ -75,6 +78,7 @@ interface EditIconsProps {
   rowId: string;
   fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
   validationSchema?: ObjectSchema<any>;
+  componentToRender?: () => ReactNode;
 }
 
 type RowActions<T> =
@@ -255,7 +259,13 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
-  renderEditIcons = ({ field, rowId, fn, validationSchema }: EditIconsProps) => {
+  renderEditIcons = ({
+    field,
+    rowId,
+    fn,
+    validationSchema,
+    componentToRender = () => null,
+  }: EditIconsProps) => {
     const { currentlyModifyingRowId } = this.state;
     if (currentlyModifyingRowId === rowId) {
       return (
@@ -269,11 +279,10 @@ class Table<T> extends Component<Props<T>, State> {
               fn?.({ value: field, currentValue: rowField, id: rowId });
             }}
             validationSchema={validationSchema}
-            validateOnMount
           >
             {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
               <Form>
-                <Field type="text" name="rowField" component={FormikInput} />
+                {componentToRender()}
                 <StyledReactIcon
                   data-testid="save"
                   color={colors.green}
@@ -320,41 +329,41 @@ class Table<T> extends Component<Props<T>, State> {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
-    const { tableButton, editableId = 0 } = this.props;
+    const { tableButton, editableId = '0' } = this.props;
 
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
-        {newColumns.map(
-          ({ render, validationSchema, key, fn, editable, style }: Column, index: number) => {
-            const isEditble = editable
-              ? this.renderEditIcons({
+        {newColumns.map(({ render, key, editable, style }: Column, index: number) => {
+          const isEditble = editable
+            ? this.renderEditIcons({
+                field: row[key],
+                rowId: row[editableId],
+                fn: editable.fn,
+                validationSchema: editable.validationSchema,
+                componentToRender: editable.formikComponentField,
+              })
+            : row[key];
+
+          const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditble;
+
+          const hasRenderAndEnable =
+            render && editable
+              ? render({ value: row[key], rowValues: row }) &&
+                this.renderEditIcons({
                   field: row[key],
                   rowId: row[editableId],
-                  fn,
-                  validationSchema,
+                  fn: editable.fn,
+                  validationSchema: editable.validationSchema,
+                  componentToRender: editable.formikComponentField,
                 })
-              : row[key];
+              : hasRenderFn;
 
-            const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditble;
-
-            const hasRenderAndEnable =
-              render && editable
-                ? render({ value: row[key], rowValues: row }) &&
-                  this.renderEditIcons({
-                    field: row[key],
-                    rowId: row[editableId],
-                    fn,
-                    validationSchema,
-                  })
-                : hasRenderFn;
-
-            return (
-              <TableCell key={index} isActionsCell={key === 'actions'} style={style || {}}>
-                {hasRenderAndEnable}
-              </TableCell>
-            );
-          }
-        )}
+          return (
+            <TableCell key={index} isActionsCell={key === 'actions'} style={style || {}}>
+              {hasRenderAndEnable}
+            </TableCell>
+          );
+        })}
       </TableRow>
     ));
   };
