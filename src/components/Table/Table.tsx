@@ -1,13 +1,12 @@
 import 'react-dates/initialize';
-import React, { ReactNode, SyntheticEvent, Component, ChangeEvent } from 'react';
+import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
 import { FaRegEdit } from 'react-icons/fa';
-import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
-import { object, string } from 'yup';
-import FormikInput from '../Input/FormikInput';
+import { Field, Form, Formik, FormikProps } from 'formik';
+import { ObjectSchema } from 'yup';
+import FormikInput from '../FormikInput/FormikInput';
 import colors from '../../theme/colors';
-import Input from '../Input';
 import Grid from '../Grid';
 import Loader from '../Loader';
 import { AnalyticsProps } from '../../analytics';
@@ -57,7 +56,7 @@ export interface ColumnFunctionProps {
   id: string;
 }
 
-type Column = {
+export type Column = {
   title: string;
   key: string;
   render?: ({ value, rowValues }: Render) => ReactNode;
@@ -65,15 +64,18 @@ type Column = {
   alignRight?: any;
   editable?: boolean;
   fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
+  validationSchema?: ObjectSchema<any>;
 };
 
-interface FormValues {
-  field: string;
+interface FormValeus {
+  rowField: string;
 }
-
-const validationSchema = object().shape({
-  field: string().required('*Required'),
-});
+interface EditIconsProps {
+  field: string;
+  rowId: string;
+  fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
+  validationSchema?: ObjectSchema<any>;
+}
 
 type RowActions<T> =
   | Array<{
@@ -119,7 +121,7 @@ type State = {
     [key in number | string]: any;
   };
   selectedAll: boolean;
-  inputStates: any;
+  currentlyModifyingRowId?: string | null;
 };
 
 const rowActionsExist = (actions: RowActions<any>) =>
@@ -147,20 +149,8 @@ class Table<T> extends Component<Props<T>, State> {
   state: State = {
     selected: {},
     selectedAll: false,
-    inputStates: {},
+    currentlyModifyingRowId: null,
   };
-
-  componentDidMount() {
-    const { inputStates } = this.state;
-    const { data, editableBy = '', editableId = '' } = this.props;
-    if (editableBy) {
-      const inputs = data.reduce(
-        (obj, item) => ({ ...obj, [item[editableId]]: item[editableBy] }),
-        {}
-      );
-      this.setState({ inputStates: inputs }, () => console.log(inputStates));
-    }
-  }
 
   toggleRow = (id: number | string) => () => {
     const { selected } = this.state;
@@ -265,71 +255,50 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
-  renderEditIcons = (
-    field: string,
-    rowId: string,
-    fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any
-  ) => {
-    const { inputStates } = this.state;
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      this.setState({
-        inputStates: {
-          ...inputStates,
-          [rowId]: e.target.value,
-        },
-      });
-    };
-    if (inputStates.currentlyModifiyng === rowId) {
+  renderEditIcons = ({ field, rowId, fn, validationSchema }: EditIconsProps) => {
+    const { currentlyModifyingRowId } = this.state;
+    if (currentlyModifyingRowId === rowId) {
       return (
         <>
           <Formik
-            initialValues={{ field }}
-            onSubmit={(values) => {
+            initialValues={{ rowField: field }}
+            onSubmit={({ rowField }) => {
               this.setState({
-                inputStates: {
-                  ...inputStates,
-                  currentlyModifiyng: null,
-                },
+                currentlyModifyingRowId: null,
               });
-              fn?.({ value: field, currentValue: values.field, id: rowId });
+              fn?.({ value: field, currentValue: rowField, id: rowId });
             }}
             validationSchema={validationSchema}
+            validateOnMount
           >
-            <Form>
-              <Field type="text" name="field">
-                {(params: FieldProps) => {
-                  console.log(params);
-                  return <FormikInput {...params} />;
-                }}
-              </Field>
-            </Form>
+            {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
+              <Form>
+                <Field type="text" name="rowField" component={FormikInput} />
+                <StyledReactIcon
+                  data-testid="save"
+                  color={colors.green}
+                  onClick={() => {
+                    if (isValid) {
+                      fn?.({ value: field, currentValue: rowField, id: rowId });
+                      this.setState({
+                        currentlyModifyingRowId: null,
+                      });
+                    }
+                  }}
+                />
+                <StyledReactIcon
+                  data-testid="cancel"
+                  as={IoIosClose}
+                  color={colors.red}
+                  onClick={() =>
+                    this.setState({
+                      currentlyModifyingRowId: null,
+                    })
+                  }
+                />
+              </Form>
+            )}
           </Formik>
-          <StyledReactIcon
-            data-testid="save"
-            color={colors.green}
-            onClick={() => {
-              fn?.({ value: field, currentValue: inputStates[rowId], id: rowId });
-              this.setState({
-                inputStates: {
-                  ...inputStates,
-                  currentlyModifiyng: null,
-                },
-              });
-            }}
-          />
-          <StyledReactIcon
-            data-testid="cancel"
-            as={IoIosClose}
-            color={colors.red}
-            onClick={() =>
-              this.setState({
-                inputStates: {
-                  ...inputStates,
-                  currentlyModifiyng: null,
-                },
-              })
-            }
-          />
         </>
       );
     }
@@ -339,10 +308,7 @@ class Table<T> extends Component<Props<T>, State> {
         <StyledIcon
           onClick={() =>
             this.setState({
-              inputStates: {
-                ...inputStates,
-                currentlyModifiyng: rowId,
-              },
+              currentlyModifyingRowId: rowId,
             })
           }
         />
@@ -358,31 +324,37 @@ class Table<T> extends Component<Props<T>, State> {
 
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
-        {newColumns.map((column: Column, index: number) => {
-          const isEditble = column.editable
-            ? this.renderEditIcons(row[column.key], row[editableId], column.fn)
-            : row[column.key];
+        {newColumns.map(
+          ({ render, validationSchema, key, fn, editable, style }: Column, index: number) => {
+            const isEditble = editable
+              ? this.renderEditIcons({
+                  field: row[key],
+                  rowId: row[editableId],
+                  fn,
+                  validationSchema,
+                })
+              : row[key];
 
-          const hasRenderFn = column.render
-            ? column.render({ value: row[column.key], rowValues: row })
-            : isEditble;
+            const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditble;
 
-          const hasRenderAndEnable =
-            column.render && column.editable
-              ? column.render({ value: row[column.key], rowValues: row }) &&
-                this.renderEditIcons(row[column.key], row[editableId], column.fn)
-              : hasRenderFn;
+            const hasRenderAndEnable =
+              render && editable
+                ? render({ value: row[key], rowValues: row }) &&
+                  this.renderEditIcons({
+                    field: row[key],
+                    rowId: row[editableId],
+                    fn,
+                    validationSchema,
+                  })
+                : hasRenderFn;
 
-          return (
-            <TableCell
-              key={index}
-              isActionsCell={column.key === 'actions'}
-              style={column.style || {}}
-            >
-              {hasRenderAndEnable}
-            </TableCell>
-          );
-        })}
+            return (
+              <TableCell key={index} isActionsCell={key === 'actions'} style={style || {}}>
+                {hasRenderAndEnable}
+              </TableCell>
+            );
+          }
+        )}
       </TableRow>
     ));
   };

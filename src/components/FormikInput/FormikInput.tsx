@@ -1,7 +1,8 @@
 import React, { FunctionComponent, InputHTMLAttributes } from 'react';
 import { FieldProps } from 'formik';
 import styled from 'styled-components';
-import { Input, AnalyticsProps } from '../../index';
+import { AnalyticsProps } from '../../analytics/index';
+import Input from '../Input/Input';
 
 interface OwnProps extends AnalyticsProps {
   label?: string;
@@ -24,7 +25,6 @@ type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'form'> & FieldProps & 
 const FormikInput: FunctionComponent<Props> = ({
   id,
   field,
-  disabled = false,
   value,
   form: _,
   tag = '',
@@ -41,7 +41,6 @@ const FormikInput: FunctionComponent<Props> = ({
         type="text"
         id={id || fieldName}
         name={fieldName}
-        // disabled={disabled}
         {...fieldRest}
         {...rest}
         value={value ?? fieldRest.value}

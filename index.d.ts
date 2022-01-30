@@ -223,6 +223,7 @@ export interface TableColumn<T extends TableRowData> {
   style?: CSSProperties;
   editable?: boolean;
   fn?: (props: ColumnFunctionProps) => void;
+  validationSchema?: ObjectSchema<any>;
 }
 
 export interface TableRowData extends Object {
