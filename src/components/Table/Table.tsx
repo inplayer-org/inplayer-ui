@@ -1,8 +1,7 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
-import styled, { CSSProperties } from 'styled-components';
-import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
-import { FaRegEdit } from 'react-icons/fa';
+import { CSSProperties } from 'styled-components';
+import { IoIosClose } from 'react-icons/io';
 import { Field, Form, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
 import FieldError from '../Input/FieldError';
@@ -22,24 +21,9 @@ import {
   TableHeaderCell,
   TableWithHeaderSectionContainer,
   TableWrapper,
+  StyledReactIcon,
+  StyledIcon,
 } from './styled';
-
-interface StyledReactIconProps {
-  color: string;
-}
-
-export const StyledReactIcon = styled(IoIosCheckmark)<StyledReactIconProps>`
-  width: 2.2rem;
-  height: 2.2rem;
-  color: ${({ color }) => color};
-  cursor: pointer;
-`;
-
-const StyledIcon = styled(FaRegEdit)`
-  font-size: 1.3rem;
-  cursor: pointer;
-  align-self: flex-end;
-`;
 
 interface Data {
   id: string;

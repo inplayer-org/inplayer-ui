@@ -2,6 +2,8 @@ import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
+import { IoIosCheckmark } from 'react-icons/io';
+import { FaRegEdit } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import Checkbox from '../Checkbox';
 
@@ -111,6 +113,23 @@ const TableButton = styled(Button)<ButtonProps>`
   &:hover {
     color: ${({ theme }) => theme.palette.primary.main};
   }
+`;
+
+interface StyledReactIconProps {
+  color: string;
+}
+
+export const StyledReactIcon = styled(IoIosCheckmark)<StyledReactIconProps>`
+  width: 2.2rem;
+  height: 2.2rem;
+  color: ${({ color }) => color};
+  cursor: pointer;
+`;
+
+export const StyledIcon = styled(FaRegEdit)`
+  font-size: 1.3rem;
+  cursor: pointer;
+  align-self: flex-end;
 `;
 
 export {
