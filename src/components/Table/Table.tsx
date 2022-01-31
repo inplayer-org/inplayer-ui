@@ -3,8 +3,10 @@ import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
 import { FaRegEdit } from 'react-icons/fa';
-import { Form, Formik, FormikProps } from 'formik';
+import { Field, Form, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
+import FieldError from '../Input/FIeldError';
+import FormikInput from '../Input/FormikInput';
 import colors from '../../theme/colors';
 import Grid from '../Grid';
 import Loader from '../Loader';
@@ -58,7 +60,6 @@ export interface ColumnFunctionProps {
 export interface EditableFields {
   fn: (props: ColumnFunctionProps) => void;
   validationSchema: ObjectSchema<any>;
-  formikComponentField: () => ReactNode;
 }
 
 export type Column = {
@@ -78,7 +79,6 @@ interface EditIconsProps {
   rowId: string;
   fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
   validationSchema?: ObjectSchema<any>;
-  componentToRender?: () => ReactNode;
 }
 
 type RowActions<T> =
@@ -259,13 +259,7 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
-  renderEditIcons = ({
-    field,
-    rowId,
-    fn,
-    validationSchema,
-    componentToRender = () => null,
-  }: EditIconsProps) => {
+  renderEditIcons = ({ field, rowId, fn, validationSchema }: EditIconsProps) => {
     const { currentlyModifyingRowId } = this.state;
     if (currentlyModifyingRowId === rowId) {
       return (
@@ -282,7 +276,8 @@ class Table<T> extends Component<Props<T>, State> {
           >
             {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
               <Form>
-                {componentToRender()}
+                <Field type="text" name="rowField" component={FormikInput} />
+                <FieldError name="rowField" />
                 <StyledReactIcon
                   data-testid="save"
                   color={colors.green}
@@ -340,7 +335,6 @@ class Table<T> extends Component<Props<T>, State> {
                 rowId: row[editableId],
                 fn: editable.fn,
                 validationSchema: editable.validationSchema,
-                componentToRender: editable.formikComponentField,
               })
             : row[key];
 
@@ -354,7 +348,6 @@ class Table<T> extends Component<Props<T>, State> {
                   rowId: row[editableId],
                   fn: editable.fn,
                   validationSchema: editable.validationSchema,
-                  componentToRender: editable.formikComponentField,
                 })
               : hasRenderFn;
 

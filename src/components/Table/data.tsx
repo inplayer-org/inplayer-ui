@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import { FaMusic, FaCode } from 'react-icons/fa';
+import { object, string } from 'yup';
 import { TableColumn } from '../../..';
 
 export const columns: Array<TableColumn<any>> = [
@@ -16,6 +17,14 @@ export const columns: Array<TableColumn<any>> = [
   {
     title: 'Name',
     key: 'name',
+    editable: {
+      fn: ({ value, currentValue, id }) => console.log(value, currentValue, id),
+      validationSchema: object().shape({
+        rowField: string()
+          .required('*Required')
+          .matches(/[a-zA-Z0-9_]+\.csv/, 'Filename must end with .csv'),
+      }),
+    },
   },
   {
     title: 'Date Created',

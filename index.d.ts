@@ -219,7 +219,6 @@ export declare const Radio: FunctionComponent<RadioProps>;
 export interface EditableFields {
   fn: (props: ColumnFunctionProps) => void;
   validationSchema: ObjectSchema<any>;
-  formikComponentField: () => ReactNode;
 }
 
 export interface TableColumn<T extends TableRowData> {
