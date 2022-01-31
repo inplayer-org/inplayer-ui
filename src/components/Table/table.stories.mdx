@@ -20,8 +20,6 @@ const Page = () => (
   <Story name="default">
     <>
     <Table
-            editableBy="name"
-            editableId="id"
             columns={columns}
             data={data}
             options={{
@@ -30,9 +28,9 @@ const Page = () => (
                     action: (data) => console.log(data),
                 },
                 rowActions: [
-                    { icon: <MdDelete />, onClick: (id) => console.log(id), render: () => <MdDelete />},
-                      { icon: "cog", onClick: (id) => console.log(id), render: () => <MdDelete />},
-                      { icon: "trash", onClick: (id) => console.log(id), render: () => <MdDelete /> },
+                    { icon: <MdDelete />, onClick: (id) => console.log(id), render: () => (<p>render</p>)},
+                      { icon: "cog", onClick: (id) => console.log(id), render: () => <p>render</p>},
+                      { icon: "trash", onClick: (id) => console.log(id) },
                 ],
             }}
             tableButton={[
