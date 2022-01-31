@@ -5,7 +5,7 @@ import { IoIosCheckmark, IoIosClose } from 'react-icons/io';
 import { FaRegEdit } from 'react-icons/fa';
 import { Field, Form, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
-import FieldError from '../Input/FIeldError';
+import FieldError from '../Input/FieldError';
 import FormikInput from '../Input/FormikInput';
 import colors from '../../theme/colors';
 import Grid from '../Grid';
