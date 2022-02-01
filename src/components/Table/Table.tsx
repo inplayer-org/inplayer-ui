@@ -4,7 +4,7 @@ import { CSSProperties } from 'styled-components';
 import { IoIosClose } from 'react-icons/io';
 import { Field, Form, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
-import FieldError from '../Input/FieldError';
+import ErrorField from '../Input/ErrorField';
 import FormikInput from '../Input/FormikInput';
 import colors from '../../theme/colors';
 import Grid from '../Grid';
@@ -263,7 +263,7 @@ class Table<T> extends Component<Props<T>, State> {
             {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
               <Form>
                 <Field type="text" name="rowField" component={FormikInput} />
-                <FieldError name="rowField" />
+                <ErrorField name="rowField" />
                 <StyledReactIcon
                   data-testid="save"
                   color={colors.green}

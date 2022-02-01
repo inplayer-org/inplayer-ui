@@ -9,8 +9,8 @@ const ErrorMessageWrapper = styled(ErrorMessage)<ErrorMessageProps>`
   color: ${colors.red};
 `;
 
-const FieldError: FunctionComponent<ErrorMessageProps> = ({ className, ...rest }) => (
+const ErrorField: FunctionComponent<ErrorMessageProps> = ({ className, ...rest }) => (
   <ErrorMessageWrapper component="span" className={className} {...rest} />
 );
 
-export default FieldError;
+export default ErrorField;
