@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-# [2.5.21] - 24.01.2022
+# [2.5.22] - 04.02.2022
+
+## Added
+
+- Option in column table to make fields(columns) editable
+
+# [2.5.21] - 25.01.2022
 
 ## Change
 
