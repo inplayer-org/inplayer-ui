@@ -10,6 +10,8 @@ import colors from '../../theme/colors';
 import Grid from '../Grid';
 import Loader from '../Loader';
 import { AnalyticsProps } from '../../analytics';
+
+// styled components
 import {
   ButtonTableRow,
   LoaderContainer,
