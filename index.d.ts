@@ -282,6 +282,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> exten
   options?: Partial<TableOptions<TableData>>;
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
+  editableById?: string;
 }
 
 interface TableState {

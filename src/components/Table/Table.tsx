@@ -25,6 +25,8 @@ import {
   TableWrapper,
   StyledReactIcon,
   StyledIcon,
+  StyledForm,
+  FormWrapper,
 } from './styled';
 
 interface Data {
@@ -103,7 +105,6 @@ type Props<T = Data> = {
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
   editableId?: string;
-  editableBy?: string;
 } & AnalyticsProps;
 
 type State = {
@@ -249,21 +250,20 @@ class Table<T> extends Component<Props<T>, State> {
     const { currentlyModifyingRowId } = this.state;
     if (currentlyModifyingRowId === rowId) {
       return (
-        <>
-          <Formik
-            initialValues={{ rowField: field }}
-            onSubmit={({ rowField }) => {
-              this.setState({
-                currentlyModifyingRowId: null,
-              });
-              fn?.({ value: field, currentValue: rowField, id: rowId });
-            }}
-            validationSchema={validationSchema}
-          >
-            {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
-              <Form>
+        <Formik
+          initialValues={{ rowField: field }}
+          onSubmit={({ rowField }) => {
+            this.setState({
+              currentlyModifyingRowId: null,
+            });
+            fn?.({ value: field, currentValue: rowField, id: rowId });
+          }}
+          validationSchema={validationSchema}
+        >
+          {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
+            <StyledForm>
+              <FormWrapper>
                 <Field type="text" name="rowField" component={FormikInput} />
-                <ErrorField name="rowField" />
                 <StyledReactIcon
                   data-testid="save"
                   color={colors.green}
@@ -286,10 +286,11 @@ class Table<T> extends Component<Props<T>, State> {
                     })
                   }
                 />
-              </Form>
-            )}
-          </Formik>
-        </>
+              </FormWrapper>
+              <ErrorField name="rowField" />
+            </StyledForm>
+          )}
+        </Formik>
       );
     }
     return (
@@ -315,7 +316,7 @@ class Table<T> extends Component<Props<T>, State> {
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
         {newColumns.map(({ render, key, editable, style }: Column, index: number) => {
-          const isEditble = editable
+          const isEditable = editable
             ? this.renderEditIcons({
                 field: row[key],
                 rowId: row[editableId],
@@ -324,13 +325,12 @@ class Table<T> extends Component<Props<T>, State> {
               })
             : row[key];
 
-          const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditble;
+          const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditable;
 
-          const hasRenderAndEnable =
+          const hasRenderAndEditable =
             render && editable
-              ? render({ value: row[key], rowValues: row }) &&
-                this.renderEditIcons({
-                  field: row[key],
+              ? this.renderEditIcons({
+                  field: render({ value: row[key], rowValues: row }) as string,
                   rowId: row[editableId],
                   fn: editable.fn,
                   validationSchema: editable.validationSchema,
@@ -338,8 +338,13 @@ class Table<T> extends Component<Props<T>, State> {
               : hasRenderFn;
 
           return (
-            <TableCell key={index} isActionsCell={key === 'actions'} style={style || {}}>
-              {hasRenderAndEnable}
+            <TableCell
+              isEditableCell={!!editable}
+              key={index}
+              isActionsCell={key === 'actions'}
+              style={style || {}}
+            >
+              {hasRenderAndEditable}
             </TableCell>
           );
         })}

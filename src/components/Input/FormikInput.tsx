@@ -10,6 +10,7 @@ const InputContainer = styled.div`
   align-items: center;
   grid-column-end: span 12;
   grid-row-end: span 1;
+  flex: 1;
 `;
 
 type Props = Omit<InputHTMLAttributes<HTMLInputElement>, 'form'> & FieldProps & AnalyticsProps;
