@@ -9,7 +9,12 @@ import FormikInput from '../Input/FormikInput';
 import colors from '../../theme/colors';
 import Grid from '../Grid';
 import Loader from '../Loader';
-import { AnalyticsProps } from '../../analytics';
+import {
+  AnalyticsComponent,
+  AnalyticsProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 // styled components
 import {
@@ -262,31 +267,56 @@ class Table<T> extends Component<Props<T>, State> {
         >
           {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
             <StyledForm>
-              <FormWrapper>
-                <Field type="text" name="rowField" component={FormikInput} />
-                <StyledReactIcon
-                  data-testid="save"
-                  color={colors.green}
-                  onClick={() => {
-                    if (isValid) {
-                      fn?.({ value: field, currentValue: rowField, id: rowId });
-                      this.setState({
-                        currentlyModifyingRowId: null,
-                      });
-                    }
-                  }}
-                />
-                <StyledReactIcon
-                  data-testid="cancel"
-                  as={IoIosClose}
-                  color={colors.red}
-                  onClick={() =>
-                    this.setState({
-                      currentlyModifyingRowId: null,
-                    })
-                  }
-                />
-              </FormWrapper>
+              <AnalyticsComponent>
+                {({ pages, tracker, merchantId, ip }) => (
+                  <FormWrapper>
+                    <Field
+                      tag="editable_text_input"
+                      type="text"
+                      name="rowField"
+                      component={FormikInput}
+                    />
+                    <StyledReactIcon
+                      data-testid="save"
+                      color={colors.green}
+                      onClick={() => {
+                        tracker.track({
+                          event: AnalyticsEvents.CLICK,
+                          type: AnalyticsComponentType.ICON,
+                          tag: 'icon_save',
+                          pages,
+                          merchantId,
+                          ip,
+                        });
+                        if (isValid) {
+                          fn?.({ value: field, currentValue: rowField, id: rowId });
+                          this.setState({
+                            currentlyModifyingRowId: null,
+                          });
+                        }
+                      }}
+                    />
+                    <StyledReactIcon
+                      data-testid="cancel"
+                      as={IoIosClose}
+                      color={colors.red}
+                      onClick={() => {
+                        tracker.track({
+                          event: AnalyticsEvents.CLICK,
+                          type: AnalyticsComponentType.ICON,
+                          tag: 'icon_cancel',
+                          pages,
+                          merchantId,
+                          ip,
+                        });
+                        this.setState({
+                          currentlyModifyingRowId: null,
+                        });
+                      }}
+                    />
+                  </FormWrapper>
+                )}
+              </AnalyticsComponent>
               <ErrorField name="rowField" />
             </StyledForm>
           )}
@@ -294,16 +324,28 @@ class Table<T> extends Component<Props<T>, State> {
       );
     }
     return (
-      <>
-        {field}
-        <StyledIcon
-          onClick={() =>
-            this.setState({
-              currentlyModifyingRowId: rowId,
-            })
-          }
-        />
-      </>
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <>
+            {field}
+            <StyledIcon
+              onClick={() => {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.ICON,
+                  tag: 'icon_edit',
+                  pages,
+                  merchantId,
+                  ip,
+                });
+                this.setState({
+                  currentlyModifyingRowId: rowId,
+                });
+              }}
+            />
+          </>
+        )}
+      </AnalyticsComponent>
     );
   };
 
