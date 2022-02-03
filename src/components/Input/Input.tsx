@@ -182,6 +182,18 @@ const Input = forwardRef(
               placeholder={placeholder}
               onChange={onInputChange}
               icon={icon}
+              onBlur={() => {
+                if (tag) {
+                  tracker.track({
+                    event: AnalyticsEvents.FOCUS_OUT,
+                    type: AnalyticsComponentType.INPUT,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+              }}
               onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
                 if (tag) {
                   if (e.key === 'Enter') {
