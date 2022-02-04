@@ -2,7 +2,7 @@ import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { CSSProperties } from 'styled-components';
 import { IoIosClose } from 'react-icons/io';
-import { Field, Form, Formik, FormikProps } from 'formik';
+import { Field, Formik, FormikProps } from 'formik';
 import { ObjectSchema } from 'yup';
 import ErrorField from '../Input/ErrorField';
 import FormikInput from '../Input/FormikInput';
