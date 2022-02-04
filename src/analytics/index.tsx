@@ -49,6 +49,7 @@ export enum AnalyticsEvents {
   DATEPICKER_CHANGE = 'datepicker_date_change',
   DAYPICKER_CHANGE = 'daypicker_date_change',
   KEYBOARD_EVENT = 'keyboard_event',
+  FOCUS_OUT = 'focus_out',
 }
 
 export enum AnalyticsComponentType {
@@ -68,6 +69,7 @@ export enum AnalyticsComponentType {
   INPUT = 'input',
   TEXTAREA = 'textarea',
   TAB_NAVIGATION = 'tab_navigation',
+  RADIO = 'radio',
 }
 
 export interface Event {
