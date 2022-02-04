@@ -50,6 +50,18 @@ const TextArea = ({ tag = '', ...rest }: Props) => (
             });
           }
         }}
+        onBlur={() => {
+          if (tag) {
+            tracker.track({
+              event: AnalyticsEvents.FOCUS_OUT,
+              type: AnalyticsComponentType.TEXTAREA,
+              tag,
+              pages,
+              merchantId,
+              ip,
+            });
+          }
+        }}
         {...rest}
       />
     )}

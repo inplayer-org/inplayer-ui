@@ -40,7 +40,7 @@ const Radio = ({
               if (tag) {
                 tracker.track({
                   event: AnalyticsEvents.RADIOBUTTON_SELECT,
-                  type: AnalyticsComponentType.CHECKBOX,
+                  type: AnalyticsComponentType.RADIO,
                   tag,
                   pages,
                   merchantId,
