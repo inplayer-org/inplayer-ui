@@ -216,11 +216,17 @@ export interface RadioProps extends AnalyticsProps{
 
 export declare const Radio: FunctionComponent<RadioProps>;
 
+export interface EditableFields {
+  fn: (props: ColumnFunctionProps) => void;
+  validationSchema: ObjectSchema<any>;
+}
+
 export interface TableColumn<T extends TableRowData> {
   title: string;
   key: string;
   render?: (props: TableColumn$RenderProps<T>) => ReactNode;
   style?: CSSProperties;
+  editable?: EditableFields;
 }
 
 export interface TableRowData extends Object {
@@ -230,6 +236,12 @@ export interface TableRowData extends Object {
 export interface TableColumn$RenderProps<T extends TableRowData, V = any> {
   value: V;
   rowValues: T;
+}
+
+export interface ColumnFunctionProps {
+  value: string;
+  currentValue: string;
+  id: number;
 }
 
 export interface RowAction<T extends TableRowData> {
@@ -270,6 +282,7 @@ export interface TableProps<TableData extends TableRowData = TableRowData> exten
   options?: Partial<TableOptions<TableData>>;
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
+  editableById?: string;
 }
 
 interface TableState {
