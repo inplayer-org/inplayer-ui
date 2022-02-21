@@ -125,7 +125,7 @@ const Preview1 = ({
                 tracker.track({
                   event: AnalyticsEvents.CLICK,
                   type: AnalyticsComponentType.BUTTON,
-                  tag: 'button_buy',
+                  tag: 'button_buy_preview',
                   pages,
                   merchantId,
                   ip,
