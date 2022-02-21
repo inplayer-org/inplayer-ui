@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.23] - 21.02.2022
+
+## Change
+
+- Buy button tag name on paywall previews
+
 # [2.5.22] - 04.02.2022
 
 ## Added
