@@ -81,7 +81,7 @@ const Preview5 = ({
       <BuyButtonHolder>
         <BuyButtonBorder>
           <StyledBuyButton
-            tag="button_buy"
+            tag="button_buy_preview"
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
