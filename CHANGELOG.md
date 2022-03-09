@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.24] - 09.03.2022
+
+## Added
+
+- New `useAnalytics` hook as an alternative to `AnalyticsComponent`
+
 # [2.5.23] - 21.02.2022
 
 ## Change
