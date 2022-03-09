@@ -61,4 +61,5 @@ export {
   AnalyticsTracker,
   AnalyticsComponent,
   ROOT_ANALYTICS_CONTEXT,
+  useAnalytics,
 } from './analytics';

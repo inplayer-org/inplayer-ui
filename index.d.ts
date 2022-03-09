@@ -140,6 +140,13 @@ export interface ContainerProps extends AnalyticsProps{
   alignContent?: string;
 }
 
+declare type TrackParams = Pick<Event, 'event' | 'type' | 'tag'> & Partial<Pick<Event, 'pages' | 'merchantId' | 'ip'>>;
+
+export declare const useAnalytics: () => {
+  track: (trackParams: TrackParams) => void;
+  trackCallback: (trackParams: TrackParams) => () => void;
+};
+
 export interface CellProps extends AnalyticsProps{
   className?: string;
   width?: number;
