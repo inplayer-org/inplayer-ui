@@ -42,6 +42,7 @@ type Props = {
   placeholder?: string;
   onClose?: () => any;
   disablePastDays?: boolean;
+  displayFormat?: string;
 } & AnalyticsProps;
 
 const DayPicker = ({
@@ -56,6 +57,7 @@ const DayPicker = ({
   placeholder,
   onClose,
   disablePastDays = false,
+  displayFormat = 'DD/MM/YYYY',
   tag = '',
 }: Props) => {
   const handleDisablePastDays = (days: any) => !isInclusivelyAfterDay(days, moment());
@@ -96,6 +98,7 @@ const DayPicker = ({
           }}
         >
           <SingleDatePicker
+            displayFormat={displayFormat}
             id={id}
             isOutsideRange={disablePastDays ? handleDisablePastDays : isOutsideRange}
             onDateChange={(dateChanged: Moment | null) => {

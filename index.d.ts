@@ -440,6 +440,7 @@ export interface DayPickerProps extends AnalyticsProps{
   placeholder?: string;
   onClose?: () => any;
   disablePastDays?: boolean;
+  displayFormat?: string;
 }
 
 export declare const DayPicker: FunctionComponent<DayPickerProps>;
