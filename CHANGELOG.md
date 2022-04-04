@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.25] - 04.04.2022
+
+## Added
+
+- Add `displayFormat` prop for DayPicker component
+
 # [2.5.24] - 09.03.2022
 
 ## Added
