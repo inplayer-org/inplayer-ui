@@ -59,6 +59,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dates": "^21.8.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-time-picker": "^4.0.2",
     "@types/react-toggle": "^4.0.2",
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "4.3.0",
@@ -105,6 +106,7 @@
   },
   "dependencies": {
     "formik": "^2.1.5",
+    "react-time-picker": "^4.5.0",
     "yup": "^0.32.11"
   }
 }

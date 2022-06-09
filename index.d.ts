@@ -473,6 +473,7 @@ export interface DatePickerProps extends AnalyticsProps {
   showPresets?: boolean;
   showPresetsWithDropdown?: boolean;
   showInnerPresets?: boolean;
+  hasTimeInterval?: boolean;
 }
 
 interface DatePickerState {
