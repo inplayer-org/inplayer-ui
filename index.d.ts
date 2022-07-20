@@ -122,10 +122,10 @@ export interface Event {
 
 export type AnalyticsHandlerFn = (event: Record<string, any>) => void;
 
-export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>
+export declare const AnalyticsPage: FunctionComponent<AnalyticsPageProps>;
 
-export declare const AnalyticsComponent: FunctionComponent<AnalyticsComponentProps>
-export interface ContainerProps extends AnalyticsProps{
+export declare const AnalyticsComponent: FunctionComponent<AnalyticsComponentProps>;
+export interface ContainerProps extends AnalyticsProps {
   className?: string;
   columns?: number | string;
   gap?: string;
@@ -140,14 +140,15 @@ export interface ContainerProps extends AnalyticsProps{
   alignContent?: string;
 }
 
-declare type TrackParams = Pick<Event, 'event' | 'type' | 'tag'> & Partial<Pick<Event, 'pages' | 'merchantId' | 'ip'>>;
+declare type TrackParams = Pick<Event, 'event' | 'type' | 'tag'> &
+  Partial<Pick<Event, 'pages' | 'merchantId' | 'ip'>>;
 
 export declare const useAnalytics: () => {
   track: (trackParams: TrackParams) => void;
   trackCallback: (trackParams: TrackParams) => () => void;
 };
 
-export interface CellProps extends AnalyticsProps{
+export interface CellProps extends AnalyticsProps {
   className?: string;
   width?: number;
   height?: number;
@@ -165,7 +166,7 @@ interface IGrid {
 
 export declare const Grid: IGrid;
 
-export interface CheckboxProps extends AnalyticsProps{
+export interface CheckboxProps extends AnalyticsProps {
   label: string;
   id: string;
   name?: string;
@@ -187,7 +188,7 @@ export interface MenuItem {
   smallSize?: boolean;
 }
 
-export interface ModalProps extends AnalyticsProps{
+export interface ModalProps extends AnalyticsProps {
   isModalOpen: boolean;
   closeModal: () => any;
   children: ReactNode;
@@ -200,7 +201,7 @@ export declare const Modal: FunctionComponent<ModalProps>;
 
 export type NoteType = 'informative' | 'success' | 'warning' | 'danger';
 
-export interface NoteProps extends AnalyticsProps{
+export interface NoteProps extends AnalyticsProps {
   title: string;
   text: string;
   type: NoteType;
@@ -208,7 +209,7 @@ export interface NoteProps extends AnalyticsProps{
 
 export declare const Note: FunctionComponent<NoteProps>;
 
-export interface RadioProps extends AnalyticsProps{
+export interface RadioProps extends AnalyticsProps {
   label: string;
   id: string;
   name?: string;
@@ -279,7 +280,7 @@ interface TableButtonProps extends AnalyticsProps {
   type: string;
 }
 
-export interface TableProps<TableData extends TableRowData = TableRowData> extends AnalyticsProps{
+export interface TableProps<TableData extends TableRowData = TableRowData> extends AnalyticsProps {
   columns: Array<TableColumn<TableData>>;
   data: Array<TableData>;
   showLoader?: boolean;
@@ -290,6 +291,8 @@ export interface TableProps<TableData extends TableRowData = TableRowData> exten
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
   editableById?: string;
+  hasItemEntries?: boolean;
+  totalItems?: number;
 }
 
 interface TableState {
@@ -310,7 +313,7 @@ export declare class Table<TableData extends TableRowData> extends Component<
   renderColumns: (data: Array<TableColumn<TableData>>) => ReactNodeArray;
   renderRows: (data: Array<TableData>) => ReactNodeArray;
 }
-interface NavigationTab extends AnalyticsProps{
+interface NavigationTab extends AnalyticsProps {
   title: string;
 }
 
@@ -320,7 +323,10 @@ export interface TabContentProps {
   iconModifiers?: Array<string>;
 }
 
-export interface TabNavigationProps<T> extends DivHTMLAttributes<HTMLDivElement>, TabContentProps, AnalyticsProps {
+export interface TabNavigationProps<T>
+  extends DivHTMLAttributes<HTMLDivElement>,
+    TabContentProps,
+    AnalyticsProps {
   tabs: Array<NavigationTab>;
   onTabClick: (index: number) => any;
   selectedTabIndex: number;
@@ -334,7 +340,7 @@ interface TabInfo {
   name: string;
 }
 
-interface TabsProps extends AnalyticsProps{
+interface TabsProps extends AnalyticsProps {
   tabs: Array<TabInfo>;
   selectedTabIndex: number;
   onTabClick: (index: number) => void;
@@ -348,7 +354,7 @@ export interface ActionButtonRenderProps {
   closeAccordion: (e?: SyntheticEvent<*>) => void;
 }
 
-export interface AccordionPanel extends AnalyticsProps{
+export interface AccordionPanel extends AnalyticsProps {
   label: string;
   icon?: ReactNode;
   iconTooltip?: TooltipProps;
@@ -397,7 +403,8 @@ export type ButtonModifier =
 
 export interface ButtonProps<T>
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-  ButtonContentProps, AnalyticsProps {
+    ButtonContentProps,
+    AnalyticsProps {
   buttonModifiers?: Array<ButtonModifier>;
   size?: ButtonSize;
   style?: CSSProperties;
@@ -409,7 +416,7 @@ export interface ButtonProps<T>
 
 export declare class Button<T = {}> extends Component<T & ButtonProps<T>> {}
 
-export interface CardProps extends AnalyticsProps{
+export interface CardProps extends AnalyticsProps {
   title?: string;
   titleVariant?: string;
   className?: string;
@@ -427,7 +434,7 @@ export type DayPicker$OnDateChange = (values: DayPicker$OnDateChange$Arguments) 
 
 export type DayPicker$OnFocusChange = (focusedInput: boolean) => any;
 
-export interface DayPickerProps extends AnalyticsProps{
+export interface DayPickerProps extends AnalyticsProps {
   isOutsideRange?: (day: number) => any;
   onDateChange: (date: Moment) => any;
   onFocusChange: (focused: any) => any;
@@ -504,12 +511,12 @@ export declare class DatePicker extends Component<DatePickerProps, DatePickerSta
   renderDatePresets: () => ReactNode;
 }
 
-export interface Option extends AnalyticsProps{
+export interface Option extends AnalyticsProps {
   value: string;
   displayName: string;
 }
 
-export interface DefaultOption extends AnalyticsProps{
+export interface DefaultOption extends AnalyticsProps {
   displayName: string;
   disabled?: boolean;
 }
@@ -534,7 +541,7 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLSelectElement>, Ana
 
 export declare const Dropdown: FunctionComponent<DropdownProps>;
 
-export interface DrawerProps extends AnalyticsProps{
+export interface DrawerProps extends AnalyticsProps {
   handleClose: () => void;
   isOpen: boolean;
   width?: string;
@@ -542,21 +549,20 @@ export interface DrawerProps extends AnalyticsProps{
 
 export declare const Drawer: FunctionComponent<DrawerProps>;
 
-
 export type LabelModifier =
   | 'fontSizeExtraSmall'
   | 'fontSizeSmall'
   | 'fontSizeMedium'
   | 'fontSizeLarge';
 
-export interface LabelProps extends AnalyticsProps{
+export interface LabelProps extends AnalyticsProps {
   disabled?: boolean;
   modifiers?: Array<LabelModifier>;
 }
 
 export declare const Label: StyledComponent<'label', Theme, LabelProps>;
 
-export interface LoaderProps extends AnalyticsProps{
+export interface LoaderProps extends AnalyticsProps {
   height?: number;
   width?: number;
   color?: string;
@@ -568,7 +574,7 @@ export declare const Loader: StyledComponent<'div', Theme, LoaderProps>;
 
 export type NotificationVariant = 'success' | 'danger' | 'warning';
 
-interface NotificationProps extends AnalyticsProps{
+interface NotificationProps extends AnalyticsProps {
   title: string;
   content: string;
   variant?: NotificationVariant;
@@ -586,7 +592,7 @@ interface INotification extends FunctionComponent<NotificationProps> {
 
 export declare const Notification: INotification;
 
-export interface PaginationProps extends AnalyticsProps{
+export interface PaginationProps extends AnalyticsProps {
   onPageChange: (pageNumber: number) => any;
   totalItems: number;
   startPage?: number;
@@ -600,7 +606,7 @@ export type PillLabelModifier = 'primary' | 'info' | 'success' | 'danger' | 'war
 
 export type PillLabelSize = 'xs' | 'sm' | 'md' | 'lg';
 
-interface PillLabelProps extends AnalyticsProps{
+interface PillLabelProps extends AnalyticsProps {
   modifiers?: Array<PillLabelModifier>;
   size?: PillLabelSize;
 }
@@ -609,7 +615,7 @@ export declare const PillLabel: StyledComponent<'span', Theme, PillLabelProps>;
 
 export type ProgressType = 'circle' | 'line';
 
-export interface ProgressProps extends AnalyticsProps{
+export interface ProgressProps extends AnalyticsProps {
   type?: ProgressType;
   strokeWidth?: number;
   strokeColor?: string;
@@ -626,7 +632,7 @@ export interface ProgressProps extends AnalyticsProps{
 
 export declare const Progress: FunctionComponent<ProgressProps>;
 
-export interface SwitchProps extends AnalyticsProps{
+export interface SwitchProps extends AnalyticsProps {
   checked: boolean;
   disabled?: boolean;
   id: string;
@@ -666,7 +672,7 @@ export interface TypographyProps {
 
 export declare const Typography: FunctionComponent<TypographyProps>;
 
-export interface Theme extends AnalyticsProps{
+export interface Theme extends AnalyticsProps {
   palette: {
     primary: {
       main: string;
@@ -768,7 +774,7 @@ interface IColors {
   emerald: '#2ecc71';
   peterRiver: '#3498db';
   amethyst: '#9b59b6';
-  asphalt: '#282c35',
+  asphalt: '#282c35';
   wetAsphalt: '#34495e';
   greenSea: '#16a085';
   nephritis: '#27ae60';
@@ -795,7 +801,7 @@ export type FadeEasing = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-o
 
 export type TooltipBehavior = 'hover' | 'click' | 'ref';
 
-export interface TooltipProps extends AnalyticsProps{
+export interface TooltipProps extends AnalyticsProps {
   behavior?: TooltipBehavior;
   durationOnClick?: number;
   arrowWidth?: number;
@@ -830,13 +836,13 @@ export declare class Tooltip extends Component<TooltipProps, TooltipState> {
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
-export interface Step extends AnalyticsProps{
+export interface Step extends AnalyticsProps {
   isDisabled: boolean;
   isCompleted: boolean;
   component: ReactNode;
 }
 
-interface StepWizardProps extends AnalyticsProps{
+interface StepWizardProps extends AnalyticsProps {
   steps: Array<Step>;
   activeStep: number;
   className?: string;
