@@ -32,6 +32,7 @@ import {
   StyledIcon,
   StyledForm,
   FormWrapper,
+  ItemEntriesTypography,
 } from './styled';
 
 interface Data {
@@ -110,6 +111,8 @@ type Props<T = Data> = {
   tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
   editableId?: string;
+  hasItemEntries?: boolean;
+  totalItems?: number;
 } & AnalyticsProps;
 
 type State = {
@@ -140,6 +143,7 @@ class Table<T> extends Component<Props<T>, State> {
     renderEmptyTable: false,
     tableButton: [],
     actionsRowTitle: 'Actions',
+    hasItemEntries: false,
   };
 
   state: State = {
@@ -403,6 +407,8 @@ class Table<T> extends Component<Props<T>, State> {
       showLoader,
       renderEmptyTable,
       tableButton,
+      hasItemEntries,
+      totalItems,
       options: { headerSection },
     } = this.props;
 
@@ -448,6 +454,11 @@ class Table<T> extends Component<Props<T>, State> {
             </ButtonTableRow>
           ))}
         </tfoot>
+        {hasItemEntries && (
+          <ItemEntriesTypography>
+            Showing 1 - {totalItems} of {totalItems} items
+          </ItemEntriesTypography>
+        )}
       </TableWrapper>
     );
   };

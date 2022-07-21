@@ -153,6 +153,11 @@ export const StyledReactIcon = styled(IoIosCheckmark)<StyledReactIconProps>`
   cursor: pointer;
 `;
 
+const ItemEntriesTypography = styled.p`
+  color: #475467;
+  padding: 12px 32px;
+`;
+
 export {
   TableWithHeaderSectionContainer,
   TableWrapper,
@@ -166,4 +171,5 @@ export {
   TableButton,
   StyledForm,
   FormWrapper,
+  ItemEntriesTypography,
 };
