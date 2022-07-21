@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.26] - 21.07.2022
+
+## Added
+
+- Add `hasItemEntries` prop for Table component
+
 # [2.5.25] - 04.04.2022
 
 ## Added
@@ -132,7 +138,7 @@ All notable changes to this project will be documented in this file.
 
 ### Change
 
-- Changes connected with logo re-branding 
+- Changes connected with logo re-branding
 
 # [2.5.6] - 09-04-2021
 
