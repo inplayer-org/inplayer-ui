@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.27] - 04.08.2022
+
+## Added
+
+- Changed the color of the text in the footer for Previews from fixed value to a value from the theme colors
+
 # [2.5.26] - 21.07.2022
 
 ## Added
