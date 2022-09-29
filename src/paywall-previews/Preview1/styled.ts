@@ -3,7 +3,6 @@ import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
 import { FaLock } from 'react-icons/fa';
 import colors from '../../theme/colors';
-import { RestrictedAssetContainer } from '../shared/PreviewComponents';
 
 export const InPlayerPreviewBox = styled.div`
   background: ${({ theme }) => theme.palette.background.main};
@@ -195,7 +194,7 @@ export const InplayerFooter = styled.div`
 
   a {
     text-decoration: none;
-    color: #aaa;
+    color: ${({ theme }) => theme.palette.text.light};
     font-size: 14px;
     line-height: 18px;
   }
