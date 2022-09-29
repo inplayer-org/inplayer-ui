@@ -11,6 +11,7 @@ import {
 export type Option = {
   value: string;
   displayName: string;
+  disabled?: boolean;
 } & AnalyticsProps;
 
 type DefaultOption = {
@@ -87,8 +88,8 @@ const Dropdown: React.FC<Props> = ({
               {defaultOption.displayName}
             </option>
           )}
-          {options.map(({ value, displayName }) => (
-            <option value={value} key={value}>
+          {options.map(({ value, displayName, disabled = false }) => (
+            <option disabled={disabled} value={value} key={value}>
               {displayName}
             </option>
           ))}

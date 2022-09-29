@@ -514,6 +514,7 @@ export declare class DatePicker extends Component<DatePickerProps, DatePickerSta
 export interface Option extends AnalyticsProps {
   value: string;
   displayName: string;
+  disabled?: boolean;
 }
 
 export interface DefaultOption extends AnalyticsProps {
