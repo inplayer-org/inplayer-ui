@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.28] - 29.09.2022
+
+## Added
+
+- Add `disabled` for Dropdown options
 # [2.5.27] - 04.08.2022
 
 ## Added
