@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Label from '../Label';
 import colors from '../../theme/colors';
 
-export const StyledLabel = styled(Label)`
+export const StyledLabel = styled(Label)<{ disabled: boolean }>`
   white-space: break-spaces;
   display: flex;
   flex-wrap: wrap;

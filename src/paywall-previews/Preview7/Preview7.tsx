@@ -9,12 +9,16 @@ import Branding from '../types/branding';
 
 // Components
 import FooterText from '../shared/FooterText';
-import { OverlayLabel, PreviewFooterLink } from '../shared/PreviewComponents';
 import PreviewText from '../shared/PreviewText';
+import {
+  OverlayLabel,
+  RestrictedAssetIcon,
+  PreviewFooterLink,
+  PreviewImage,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledImageWrapper,
-  StyledPreviewImage,
   StyledIconWrapper,
   ItemDetails,
   PreviewHeader,
@@ -22,6 +26,7 @@ import {
   ButtonWrapper,
   StyledBuyButton,
   StyledPreviewFooter,
+  StyledRestrictedAssetContainer,
 } from './styled';
 
 type Props = {
@@ -36,10 +41,11 @@ type Props = {
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
   isAuthenticated?: boolean;
+  premiumContentLabel?: string;
+  restrictedMessage?: string;
 };
 
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview7 = ({
   branding: {
@@ -61,53 +67,61 @@ const Preview7 = ({
   isRestrictedAsset = false,
   loginFooterLabel = 'Already have access? Login with your InPlayer account',
   isAuthenticated = false,
-}: Props) => {
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
-  return (
-    <StyledPreviewBox
-      id="preview-container"
-      minWidth={minWidth}
-      minHeight={minHeight}
-      width={width}
-      height={height}
-    >
-      {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
-      <StyledImageWrapper onClick={handleOpenModal}>
-        <StyledPreviewImage src={image} imageWidth="250px" imageBorderRadius />
-        <StyledIconWrapper
-          backgroundColor={buttonBgColor}
-          hasProtectedByLabel={hasProtectedByLabel}
+  restrictedMessage = 'This content is not available.',
+}: Props) => (
+  <StyledPreviewBox
+    id="preview-container"
+    minWidth={minWidth}
+    minHeight={minHeight}
+    width={width}
+    height={height}
+  >
+    {previewUnavailable && <OverlayLabel variant="h5">Preview not available yet</OverlayLabel>}
+    <StyledImageWrapper onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        // Call handleOpenModal here because this div element will be
+        // on the top of image container in case of restricted asset
+        <StyledRestrictedAssetContainer
+          fontSize="14px"
+          imageWidth="250px"
+          imageBorderRadius
+          onClick={handleOpenModal}
         >
-          <FaLock />
-        </StyledIconWrapper>
-      </StyledImageWrapper>
-      <ItemDetails>
-        <PreviewHeader variant="h4">
-          <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
-        </PreviewHeader>
-        <ItemContent variant="p">
-          <PreviewText value={previewDescription} isTextCenter />
-        </ItemContent>
-      </ItemDetails>
-      {displayBuyButton && (
-        <ButtonWrapper>
-          <StyledBuyButton
-            buttonBgColor={buttonBgColor}
-            buttonTextColor={buttonTextColor}
-            onClick={handleOpenModal}
-          >
-            {previewButtonLabel}
-          </StyledBuyButton>
-        </ButtonWrapper>
+          <RestrictedAssetIcon size="4rem" />
+          {restrictedMessage}
+        </StyledRestrictedAssetContainer>
       )}
-      <StyledPreviewFooter>
-        <PreviewFooterLink href="#login" onClick={handleOpenModal}>
-          <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
-        </PreviewFooterLink>
-      </StyledPreviewFooter>
-    </StyledPreviewBox>
-  );
-};
+      <PreviewImage src={imageUrl} imageWidth="250px" imageBorderRadius />
+      <StyledIconWrapper backgroundColor={buttonBgColor} hasProtectedByLabel={hasProtectedByLabel}>
+        <FaLock />
+      </StyledIconWrapper>
+    </StyledImageWrapper>
+    <ItemDetails>
+      <PreviewHeader variant="h4">
+        <PreviewText value={previewTitle} isTextCenter padding="0 0 0.5rem 0" />
+      </PreviewHeader>
+      <ItemContent variant="p">
+        <PreviewText value={previewDescription} isTextCenter />
+      </ItemContent>
+    </ItemDetails>
+    {displayBuyButton && (
+      <ButtonWrapper>
+        <StyledBuyButton
+          tag="button_buy_preview"
+          buttonBgColor={buttonBgColor}
+          buttonTextColor={buttonTextColor}
+          onClick={handleOpenModal}
+        >
+          {previewButtonLabel}
+        </StyledBuyButton>
+      </ButtonWrapper>
+    )}
+    <StyledPreviewFooter>
+      <PreviewFooterLink href="#login" onClick={handleOpenModal}>
+        <FooterText isAuthenticated={isAuthenticated} loginFooterLabel={loginFooterLabel} />
+      </PreviewFooterLink>
+    </StyledPreviewFooter>
+  </StyledPreviewBox>
+);
 
 export default Preview7;

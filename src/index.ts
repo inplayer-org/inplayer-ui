@@ -26,6 +26,7 @@ export { default as Table } from './components/Table';
 export { default as Modal } from './components/Modal';
 export { default as Radio } from './components/Radio';
 export { default as Pagination } from './components/Pagination';
+export { default as Drawer } from './components/Drawer';
 
 // previews
 export { default as Preview1 } from './paywall-previews/Preview1';
@@ -41,3 +42,24 @@ export { default as ThemeWrapper } from './theme/ThemeWrapper';
 
 // colors
 export { default as Colors } from './theme/colors';
+
+// analytics
+export type {
+  AnalyticsProps,
+  AnalyticsPageProps,
+  AnalyticsPageType,
+  AnalyticsTag,
+  AnalyticsContextValue,
+  AnalyticsComponentProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from './analytics';
+
+export {
+  AnalyticsPage,
+  AnalyticsContext,
+  AnalyticsTracker,
+  AnalyticsComponent,
+  ROOT_ANALYTICS_CONTEXT,
+  useAnalytics,
+} from './analytics';

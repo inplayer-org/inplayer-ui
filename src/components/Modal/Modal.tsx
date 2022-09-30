@@ -6,6 +6,7 @@ import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
+import { AnalyticsProps, AnalyticsPage } from '../../analytics';
 
 interface ModalWrapperProps {
   isOpen: boolean;
@@ -40,9 +41,10 @@ type Props = {
   isOverflowVisible?: boolean;
   className?: string;
   children: ReactChild;
-};
+} & AnalyticsProps;
 
 const Modal = ({
+  tag = '',
   isOverflowVisible = false,
   isModalOpen,
   closeModal,
@@ -50,16 +52,18 @@ const Modal = ({
   title,
   className = '',
 }: Props) => (
-  <ModalWrapper
-    className={className}
-    isOpen={isModalOpen}
-    onClick={isModalOpen ? closeModal : undefined}
-  >
-    <ModalContainer isOverflowVisible={isOverflowVisible} onClick={(e) => e.stopPropagation()}>
-      <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
-      <ModalContent>{children}</ModalContent>
-    </ModalContainer>
-  </ModalWrapper>
+  <AnalyticsPage tag={tag} type="modal">
+    <ModalWrapper
+      className={className}
+      isOpen={isModalOpen}
+      onClick={isModalOpen ? closeModal : undefined}
+    >
+      <ModalContainer isOverflowVisible={isOverflowVisible} onClick={(e) => e.stopPropagation()}>
+        <ModalHeader closeModal={closeModal}>{title}</ModalHeader>
+        <ModalContent>{children}</ModalContent>
+      </ModalContainer>
+    </ModalWrapper>
+  </AnalyticsPage>
 );
 
 export default Modal;

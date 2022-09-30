@@ -1,9 +1,12 @@
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
-
 import colors from '../../theme/colors';
 
-const Tab = styled.div<{ selected: boolean }>`
+interface Props {
+  selected: boolean;
+}
+
+const Tab = styled.div<Props>`
   margin: 0;
   padding: 0.5rem 0;
   display: flex;

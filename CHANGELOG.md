@@ -2,7 +2,193 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.28] - 29.09.2022
+
+## Added
+
+- Add `disabled` for Dropdown options
+# [2.5.27] - 04.08.2022
+
+## Added
+
+- Changed the color of the text in the footer for Previews from fixed value to a value from the theme colors
+
+# [2.5.26] - 21.07.2022
+
+## Added
+
+- Add `hasItemEntries` prop for Table component
+
+# [2.5.25] - 04.04.2022
+
+## Added
+
+- Add `displayFormat` prop for DayPicker component
+
+# [2.5.24] - 09.03.2022
+
+## Added
+
+- New `useAnalytics` hook as an alternative to `AnalyticsComponent`
+
+# [2.5.23] - 21.02.2022
+
+## Change
+
+- Buy button tag name on paywall previews
+
+# [2.5.22] - 04.02.2022
+
+## Added
+
+- Option in column table to make fields(columns) editable
+- onBlur function to trigger persa when input and textarea are focused-out
+
+# [2.5.21] - 25.01.2022
+
+## Change
+
+- Styling changes in preview templates for restricted asset
+- FooterText component refactored
+
+# [2.5.20] - 21.01.2022
+
+## Fixes
+
+- TextArea by providing the required props
+
+# [2.5.19] - 21.01.2022
+
+## Added
+
+- Handlers for Input, TextArea, Pagination, Accordion and Switch.
+- Tagging Paywall previews
+
+## Fixes
+
+- TabNavigation handler type
+
+# [2.5.18] - 10.01.2022
+
+## Added
+
+- Handlers for Checkbox, Radiobutton, Daypicker and Datepicker.
+- Handler for selected Tab change.
+
+# [2.5.17] - 12.11.2021
+
+## Added
+
+- Tagging for StepWizard
+
+## Fixes
+
+- Dropdown component tag sent in tracker
+
+# [2.5.16] - 12.11.2021
+
+## Added
+
+- Analytics handler for dropdown component
+- Tagging for pagination and navbar
+
+# [2.5.15] - 02.11.2021
+
+## Fixes
+
+- Tab component import bug
+
+### Change
+
+- Accordion component to be analytics ready
+
+# [2.5.14] - 27.10.2021
+
+## Added
+
+- Analytics handler for button component
+
+# [2.5.13] - 05-10-2021
+
+## Added
+
+- AnalyticsProps type to the components in index.d.ts file.
+
+# [2.5.12] - 28-09-2021
+
+## Added
+
+- Explicit exports for components, types and interfaces from `src/analytics`.
+
+# [2.5.11] - 28-09-2021
+
+## Added
+
+- Analytics tracking adds forgotten import for React.
+
+# [2.5.10] - 27-09-2021
+
+### Added
+
+- Analytics tracking props for all components.
+
+# [2.5.9] - 23-09-2021
+
+### Added
+
+- Add another type of datepicker component with dropdown presets
+- Drawer component functionality and design
+
+# [2.5.8] - 19-08-2021
+
+### Change
+
+- Return Accordion panel label when toggling it.
+
+# [2.5.7] - 17-06-2021
+
+### Change
+
+- Changes connected with logo re-branding
+
+# [2.5.6] - 09-04-2021
+
+### Fixes
+
+- Changed width, height and padding-left of Checkbox component's top wrapper to be in `em` instead of `rem`
+
+# [2.5.5] - 22-03-2021
+
+### Change
+
+- Add styling changes for asset restrictions in preview templates
+
+# [2.5.4] - 12-03-2021
+
+### Change
+
+- Add missing className for Switch component in order to externaly style it with styled-components
+
+# [2.5.3] - 23-02-2021
+
+### Fixes
+
+- Daypicker moment type error
+
+# [2.5.2] - 22-01-2021
+
+### Change
+
+- Use pixels instead of rem for font sizes
+
+# [2.5.1] - 15-01-2021
+
+### Added
+
+- Add the possibility to have more than one table button
+
 # [2.5.0] - 12-01-2021
+
 ### Changes
 
 - Change footer text depending on user auth state

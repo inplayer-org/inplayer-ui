@@ -46,7 +46,6 @@ const Page = () => (
         return (
             <div style={{ height: '330px'}}>
                 <DatePicker
-                    showPresets
                     showInnerPresets
                     startDate={startDate}
                     startDateId="startDate"
@@ -62,3 +61,72 @@ const Page = () => (
   </Story>
 </Preview>
 
+<Preview withSource="open">
+  <Story name="with presets">
+    { ()=> {
+    const initialStartDate = moment().subtract(1, 'month');
+    const initialEndDate = moment();
+    const [startDate, setStartDate] = useState(initialStartDate);
+    const [endDate, setEndDate] = useState(initialEndDate);
+    const [focusedInput, setFocusedInput] = useState(null);
+    const onDateChange = ({startDate, endDate}) => {
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+    const onFocusChange = (fInput) => {
+        setFocusedInput(fInput);
+    }
+        return (
+            <div style={{ height: '330px'}}>
+                <DatePicker
+                    showPresets
+                    showInnerPresets
+                    startDate={startDate}
+                    startDateId="startDate"
+                    endDate={endDate}
+                    endDateId="endDate"
+                    onDateChange={onDateChange}
+                    focusedInput={focusedInput}
+                    onFocusChange={onFocusChange}
+                    showPresets      
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="with dropdown presets">
+    { ()=> {
+    const initialStartDate = moment().subtract(1, 'month');
+    const initialEndDate = moment();
+    const [startDate, setStartDate] = useState(initialStartDate);
+    const [endDate, setEndDate] = useState(initialEndDate);
+    const [focusedInput, setFocusedInput] = useState(null);
+    const onDateChange = ({startDate, endDate}) => {
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+    const onFocusChange = (fInput) => {
+        setFocusedInput(fInput);
+    }
+        return (
+            <div style={{ height: '330px'}}>
+                <DatePicker
+                    showPresets
+                    showInnerPresets
+                    startDate={startDate}
+                    startDateId="startDate"
+                    endDate={endDate}
+                    endDateId="endDate"
+                    onDateChange={onDateChange}
+                    focusedInput={focusedInput}
+                    onFocusChange={onFocusChange}
+                    showPresetsWithDropdown      
+                />
+            </div>
+        )
+  }}
+  </Story>
+</Preview>

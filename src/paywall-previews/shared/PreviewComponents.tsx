@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { prop } from 'styled-tools';
 
 // utils
+import { MdDoNotDisturbAlt } from 'react-icons/md';
 import colors from '../../theme/colors';
 
 // components
@@ -31,9 +32,10 @@ export const PreviewBox = styled.div<PreviewBoxProps>`
   margin: 24px auto;
 `;
 
-type PreviewImageProps = {
-  imageBorderRadius?: string;
-};
+export interface PreviewImageProps {
+  imageBorderRadius?: boolean;
+  imageWidth?: string;
+}
 
 export const PreviewImage = styled.img<PreviewImageProps>`
   width: ${prop('imageWidth', '100%')};
@@ -168,4 +170,36 @@ export const PreviewFooterLink = styled(FooterLink)`
   vertical-align: baseline;
   background: transparent;
   color: ${({ theme }) => theme.palette.text.main};
+`;
+
+export const RestrictedAssetIcon = styled(MdDoNotDisturbAlt)<{ size?: string }>`
+  top: 25%;
+  width: ${({ size }) => size || '8rem'};
+  height: ${({ size }) => size || '8rem'};
+  margin-bottom: 1rem;
+`;
+interface RestrictedAssetContainerProps {
+  fontSize?: string;
+  height?: string;
+}
+export const RestrictedAssetContainer = styled.div<RestrictedAssetContainerProps>`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: ${({ fontSize }) => fontSize || '18px'};
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  top: ${({ height }) => height || '50%'};
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)`
+  height: 100%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
 `;

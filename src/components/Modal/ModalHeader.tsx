@@ -1,5 +1,6 @@
 import React, { ReactChild } from 'react';
 import styled from 'styled-components';
+import { AnalyticsComponent, AnalyticsEvents, AnalyticsComponentType } from '../../analytics';
 
 import colors from '../../theme/colors';
 import Typography from '../Typography';
@@ -36,8 +37,26 @@ const IconClose = styled.span`
 
 const ModalHeader = ({ children, closeModal }: Props) => (
   <HeaderWrapper>
-    <Title variant="h4">{children}</Title>
-    <IconClose onClick={closeModal} />
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <>
+          <Title variant="h4">{children}</Title>
+          <IconClose
+            onClick={() => {
+              tracker.track({
+                event: AnalyticsEvents.CLICK,
+                type: AnalyticsComponentType.MODAL,
+                tag: 'icon_close',
+                pages,
+                merchantId,
+                ip,
+              });
+              closeModal();
+            }}
+          />
+        </>
+      )}
+    </AnalyticsComponent>
   </HeaderWrapper>
 );
 

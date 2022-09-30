@@ -1,4 +1,5 @@
 import styled, { CSSProperties } from 'styled-components';
+import { AnalyticsProps } from '../../analytics';
 
 type CellProps = {
   width?: CSSProperties;
@@ -8,7 +9,7 @@ type CellProps = {
   center?: CSSProperties;
   area?: CSSProperties;
   middle?: CSSProperties;
-};
+} & AnalyticsProps;
 
 const Cell = styled.div<CellProps>`
   height: 100%;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav, { StepItem } from './Nav';
 import Step from './Step';
+import { AnalyticsPage, AnalyticsProps } from '../../analytics';
 
 type TransitionVariant = 'fadeInLeft' | 'fadeInRight' | 'fadeOutLeft' | 'fadeOutRight';
 
@@ -9,7 +10,7 @@ type StepWizardProps = {
   activeStep: number;
   onStepChange?: (activeStep: number) => void;
   transition?: TransitionVariant;
-};
+} & AnalyticsProps;
 
 const StepWizard = ({
   steps,
@@ -46,10 +47,10 @@ const StepWizard = ({
   });
 
   return (
-    <>
+    <AnalyticsPage tag={steps[activeStep].tag || ''} type="page">
       <Nav steps={steps} activeStep={activeStep} goToStep={goToStep} />
       <div>{renderSteps}</div>
-    </>
+    </AnalyticsPage>
   );
 };
 

@@ -1,8 +1,22 @@
 import 'react-dates/initialize';
 import React, { ReactNode, SyntheticEvent, Component } from 'react';
 import { CSSProperties } from 'styled-components';
+import { IoIosClose } from 'react-icons/io';
+import { Field, Formik, FormikProps } from 'formik';
+import { ObjectSchema } from 'yup';
+import ErrorField from '../Input/ErrorField';
+import FormikInput from '../Input/FormikInput';
+import colors from '../../theme/colors';
 import Grid from '../Grid';
 import Loader from '../Loader';
+import {
+  AnalyticsComponent,
+  AnalyticsProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
+
+// styled components
 import {
   ButtonTableRow,
   LoaderContainer,
@@ -14,6 +28,11 @@ import {
   TableHeaderCell,
   TableWithHeaderSectionContainer,
   TableWrapper,
+  StyledReactIcon,
+  StyledIcon,
+  StyledForm,
+  FormWrapper,
+  ItemEntriesTypography,
 } from './styled';
 
 interface Data {
@@ -26,13 +45,35 @@ type Render = {
   rowValues: Data;
 };
 
-type Column = {
+export interface ColumnFunctionProps {
+  value: string;
+  currentValue: string;
+  id: string;
+}
+
+export interface EditableFields {
+  fn: (props: ColumnFunctionProps) => void;
+  validationSchema: ObjectSchema<any>;
+}
+
+export type Column = {
   title: string;
   key: string;
-  render: ({ value, rowValues }: Render) => ReactNode;
+  render?: ({ value, rowValues }: Render) => ReactNode;
   style?: CSSProperties;
   alignRight?: any;
+  editable?: EditableFields;
 };
+
+interface FormValeus {
+  rowField: string;
+}
+interface EditIconsProps {
+  field: string;
+  rowId: string;
+  fn?: ({ value, currentValue, id }: ColumnFunctionProps) => any;
+  validationSchema?: ObjectSchema<any>;
+}
 
 type RowActions<T> =
   | Array<{
@@ -52,28 +93,34 @@ type TableOptions<T> = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
+interface TableButtonProps extends AnalyticsProps {
+  label: string;
+  icon?: string | ReactNode;
+  onClick: (e: SyntheticEvent) => any;
+  type: string;
+}
+
 type Props<T = Data> = {
   columns: Array<Column> | any;
-  data: Array<any>;
+  data: Array<Data>;
   className?: string;
   style?: CSSProperties;
   options: TableOptions<T>;
   showLoader?: boolean;
   renderEmptyTable?: boolean;
-  tableButton?: {
-    label: string;
-    icon?: string | Node;
-    onClick: (e: SyntheticEvent) => any;
-    type: string;
-  };
+  tableButton?: Array<TableButtonProps>;
   actionsRowTitle?: string;
-};
+  editableId?: string;
+  hasItemEntries?: boolean;
+  totalItems?: number;
+} & AnalyticsProps;
 
 type State = {
   selected: {
     [key in number | string]: any;
   };
   selectedAll: boolean;
+  currentlyModifyingRowId?: string | null;
 };
 
 const rowActionsExist = (actions: RowActions<any>) =>
@@ -94,13 +141,15 @@ class Table<T> extends Component<Props<T>, State> {
     },
     showLoader: false,
     renderEmptyTable: false,
-    tableButton: null,
+    tableButton: [],
     actionsRowTitle: 'Actions',
+    hasItemEntries: false,
   };
 
   state: State = {
     selected: {},
     selectedAll: false,
+    currentlyModifyingRowId: null,
   };
 
   toggleRow = (id: number | string) => () => {
@@ -206,25 +255,145 @@ class Table<T> extends Component<Props<T>, State> {
       </TableHeaderCell>
     ));
 
+  renderEditIcons = ({ field, rowId, fn, validationSchema }: EditIconsProps) => {
+    const { currentlyModifyingRowId } = this.state;
+    if (currentlyModifyingRowId === rowId) {
+      return (
+        <Formik
+          initialValues={{ rowField: field }}
+          onSubmit={({ rowField }) => {
+            this.setState({
+              currentlyModifyingRowId: null,
+            });
+            fn?.({ value: field, currentValue: rowField, id: rowId });
+          }}
+          validationSchema={validationSchema}
+        >
+          {({ isValid, values: { rowField } }: FormikProps<FormValeus>) => (
+            <StyledForm>
+              <AnalyticsComponent>
+                {({ pages, tracker, merchantId, ip }) => (
+                  <FormWrapper>
+                    <Field
+                      tag="editable_text_input"
+                      type="text"
+                      name="rowField"
+                      component={FormikInput}
+                    />
+                    <StyledReactIcon
+                      data-testid="save"
+                      color={colors.green}
+                      onClick={() => {
+                        tracker.track({
+                          event: AnalyticsEvents.CLICK,
+                          type: AnalyticsComponentType.ICON,
+                          tag: 'icon_save',
+                          pages,
+                          merchantId,
+                          ip,
+                        });
+                        if (isValid) {
+                          fn?.({ value: field, currentValue: rowField, id: rowId });
+                          this.setState({
+                            currentlyModifyingRowId: null,
+                          });
+                        }
+                      }}
+                    />
+                    <StyledReactIcon
+                      data-testid="cancel"
+                      as={IoIosClose}
+                      color={colors.red}
+                      onClick={() => {
+                        tracker.track({
+                          event: AnalyticsEvents.CLICK,
+                          type: AnalyticsComponentType.ICON,
+                          tag: 'icon_cancel',
+                          pages,
+                          merchantId,
+                          ip,
+                        });
+                        this.setState({
+                          currentlyModifyingRowId: null,
+                        });
+                      }}
+                    />
+                  </FormWrapper>
+                )}
+              </AnalyticsComponent>
+              <ErrorField name="rowField" />
+            </StyledForm>
+          )}
+        </Formik>
+      );
+    }
+    return (
+      <AnalyticsComponent>
+        {({ pages, tracker, merchantId, ip }) => (
+          <>
+            {field}
+            <StyledIcon
+              onClick={() => {
+                tracker.track({
+                  event: AnalyticsEvents.CLICK,
+                  type: AnalyticsComponentType.ICON,
+                  tag: 'icon_edit',
+                  pages,
+                  merchantId,
+                  ip,
+                });
+                this.setState({
+                  currentlyModifyingRowId: rowId,
+                });
+              }}
+            />
+          </>
+        )}
+      </AnalyticsComponent>
+    );
+  };
+
   renderData = (columns: Array<Column>, data: Array<Data>) => {
     const newColumns = this.generateColumns(columns);
     const newData = this.generateRows(data);
 
-    const { tableButton } = this.props;
+    const { tableButton, editableId = '0' } = this.props;
 
     return newData.map((row) => (
       <TableRow key={row.id} noBottomBorder={!tableButton}>
-        {newColumns.map((column: Column, index: number) => (
-          <TableCell
-            key={index}
-            isActionsCell={column.key === 'actions'}
-            style={column.style || {}}
-          >
-            {column.render
-              ? column.render({ value: row[column.key], rowValues: row })
-              : row[column.key]}
-          </TableCell>
-        ))}
+        {newColumns.map(({ render, key, editable, style }: Column, index: number) => {
+          const isEditable = editable
+            ? this.renderEditIcons({
+                field: row[key],
+                rowId: row[editableId],
+                fn: editable.fn,
+                validationSchema: editable.validationSchema,
+              })
+            : row[key];
+
+          const hasRenderFn = render ? render({ value: row[key], rowValues: row }) : isEditable;
+
+          const hasRenderAndEditable =
+            render && editable
+              ? this.renderEditIcons({
+                  field: render({ value: row[key], rowValues: row }) as string,
+                  rowId: row[editableId],
+                  fn: editable.fn,
+                  validationSchema: editable.validationSchema,
+                })
+              : hasRenderFn;
+
+          return (
+            <TableCell
+              isEditableCell={!!editable}
+              key={index}
+              isActionsCell={key === 'actions'}
+              style={style || {}}
+            >
+              {hasRenderAndEditable}
+            </TableCell>
+          );
+        })}
       </TableRow>
     ));
   };
@@ -238,6 +407,8 @@ class Table<T> extends Component<Props<T>, State> {
       showLoader,
       renderEmptyTable,
       tableButton,
+      hasItemEntries,
+      totalItems,
       options: { headerSection },
     } = this.props;
 
@@ -264,24 +435,30 @@ class Table<T> extends Component<Props<T>, State> {
         </thead>
         <tbody>{this.renderData(columns, data)}</tbody>
         <tfoot>
-          {tableButton && (
-            <ButtonTableRow>
+          {tableButton?.map((button: TableButtonProps) => (
+            <ButtonTableRow key={button.label}>
               <TableCell colSpan={columnContent.length}>
                 <TableButton
+                  tag={button.tag || ''}
                   modifiers={['buttonLink']}
                   fullWidth
                   fullHeight
-                  onClick={tableButton.onClick}
-                  icon={tableButton.icon}
+                  onClick={button.onClick}
+                  icon={button.icon}
                   iconPosition="left"
-                  type={tableButton.type}
+                  type={button.type}
                 >
-                  {tableButton.label}
+                  {button.label}
                 </TableButton>
               </TableCell>
             </ButtonTableRow>
-          )}
+          ))}
         </tfoot>
+        {hasItemEntries && (
+          <ItemEntriesTypography>
+            Showing 1 - {totalItems} of {totalItems} items
+          </ItemEntriesTypography>
+        )}
       </TableWrapper>
     );
   };

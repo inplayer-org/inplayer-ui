@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { AnalyticsProps } from '../../analytics';
 
 type ArrowsProps = {
   width: number;
@@ -59,7 +60,7 @@ type Props = {
   border: string;
   placement: string;
   width: number;
-};
+} & AnalyticsProps;
 
 const Arrow = ({ background, border, placement, width }: Props) => {
   const Component = arrows[placement] || arrows.top;

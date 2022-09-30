@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import NotificationContainer, { CloseIcon } from './NotificationContainer';
+import { AnalyticsProps } from '../../analytics';
 
 export type NotificationVariant = 'success' | 'danger' | 'warning' | '';
 
@@ -10,7 +11,7 @@ type Props = {
   variant?: NotificationVariant;
   duration?: number;
   close?: () => void;
-};
+} & AnalyticsProps;
 
 const divs: Array<HTMLDivElement> = [];
 

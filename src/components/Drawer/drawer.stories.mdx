@@ -1,0 +1,43 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Drawer from './'
+
+<Meta title="Drawer" component={<Drawer/>} />
+
+# Drawer
+
+A simple Drawer controlled component
+
+```jsx
+import { Drawer } from '@inplayer-org/inplayer-ui';
+
+const Page = () => (
+  <Drawer />
+)
+```
+
+
+### Standard drawer
+<Preview withSource="open">
+  <Story name="standard">
+    { () => {
+        const [isOpen, setisOpen] = useState(false);
+        const handleToggleDrawer = () => {
+          setisOpen(!isOpen);
+        };
+        const handleClose = () => {
+          setisOpen(false);
+        };
+        return (
+            <div>
+              <button type="button" onClick={handleToggleDrawer}>
+                Open drawer
+              </button> 
+              <Drawer isOpen={isOpen} handleClose={handleClose}> Hi there! </Drawer>
+            </div>
+        )
+  }}
+  </Story>
+</Preview>
+
+

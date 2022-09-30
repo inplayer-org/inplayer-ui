@@ -3,6 +3,7 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 import { transparentize } from 'polished';
 import { switchProp } from 'styled-tools';
 import colors from '../../theme/colors';
+import { AnalyticsProps } from '../../analytics';
 
 const modifiers = {
   primary: () => `
@@ -32,7 +33,7 @@ const modifiers = {
   `,
 };
 
-const PillLabel = styled.span<{ size?: string; modifiers?: Array<string> }>`
+const PillLabel = styled.span<{ size?: string; modifiers?: Array<string> } & AnalyticsProps>`
   display: inline-block;
   background: ${colors.white};
   color: ${({ theme }) => theme.palette.text.main};

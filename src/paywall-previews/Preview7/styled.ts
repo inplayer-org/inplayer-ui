@@ -11,7 +11,8 @@ import {
   ImageHolder,
   BuyButton,
   IconWrapper,
-  PreviewImage,
+  PreviewImageProps,
+  RestrictedAssetContainer,
 } from '../shared/PreviewComponents';
 
 export const StyledPreviewBox = styled(PreviewBox)`
@@ -28,10 +29,6 @@ export const StyledImageWrapper = styled(ImageHolder)`
   width: 250px;
   margin: auto;
   background: ${({ theme }) => theme.palette.background.main};
-`;
-
-export const StyledPreviewImage = styled(PreviewImage)<any>`
-  height: 250px;
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`
@@ -79,4 +76,24 @@ export const StyledPreviewFooter = styled(PreviewFooter)`
   text-align: center;
   padding-top: 5px;
   height: 5%;
+`;
+
+export const RestrictedAssetText = styled.p`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const StyledRestrictedAssetContainer = styled(RestrictedAssetContainer)<PreviewImageProps>`
+  height: 100%;
+  border-radius: 50%;
+  backdrop-filter: brightness(0.3);
+  justify-content: center;
 `;

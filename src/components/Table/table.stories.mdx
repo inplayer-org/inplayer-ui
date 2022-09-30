@@ -1,45 +1,59 @@
 import { useState } from 'react';
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import Table from './'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Table from './';
 import { MdDelete, MdErrorOutline } from 'react-icons/md';
-import Pagination from '../Pagination'
-import { columns, data } from './data.tsx'
+import Pagination from '../Pagination';
+import { columns, data } from './data.tsx';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
-<Meta title="Table" component={<Table/>} />
-
+<Meta title="Table" component={<Table />} />
 
 ```jsx
 import { Table } from '@inplayer-org/inplayer-ui';
-const Page = () => (
-  <Table />
-)
+const Page = () => <Table />;
 ```
 
 <Preview withSource="open">
   <Story name="default">
     <>
-    <Table
-            columns={columns}
-            data={data}
-            options={{
-                rowSelection: {
-                    active: true,
-                    action: (data) => console.log(data),
-                },
-                rowActions: [
-                    { icon: <MdDelete />, onClick: (id) => console.log(id), render: () => (<p>render</p>)},
-                      { icon: "cog", onClick: (id) => console.log(id), render: () => <p>render</p>},
-                      { icon: "trash", onClick: (id) => console.log(id) },
-                ],
-            }}
-        />
-        <Pagination
-            onPageChange={console.log}
-            totalItems={50}
-            startPage={4}
-            numberOfPagesDisplayed={10}
-            itemsPerPage={12}
-        />
-      </>
+      <Table
+        columns={columns}
+        data={data}
+        options={{
+          rowSelection: {
+            active: true,
+            action: (data) => console.log(data),
+          },
+          rowActions: [
+            { icon: <MdDelete />, onClick: (id) => console.log(id), render: () => <p>render</p> },
+            { icon: 'cog', onClick: (id) => console.log(id), render: () => <p>render</p> },
+            { icon: 'trash', onClick: (id) => console.log(id) },
+          ],
+        }}
+        tableButton={[
+          {
+            label: 'Table button 1',
+            icon: <IoIosAddCircleOutline />,
+            onClick: () => null,
+            type: 'button',
+          },
+          {
+            label: 'Table button 2',
+            icon: <IoIosAddCircleOutline />,
+            onClick: () => null,
+            type: 'button',
+          },
+        ]}
+        hasItemEntries
+        totalItems={10}
+      />
+      <Pagination
+        onPageChange={console.log}
+        totalItems={50}
+        startPage={4}
+        numberOfPagesDisplayed={10}
+        itemsPerPage={12}
+      />
+    </>
   </Story>
 </Preview>

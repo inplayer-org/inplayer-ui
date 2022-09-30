@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 
+import { AnalyticsProps } from '../../analytics';
 import colors from '../../theme/colors';
 
 const StepNavigation = styled.div`
@@ -50,13 +51,13 @@ export type StepItem = {
   isDisabled: boolean;
   isCompleted: boolean;
   component: React.ReactChild;
-};
+} & AnalyticsProps;
 
 type Props = {
   steps: Array<StepItem>;
   activeStep: number;
   goToStep: (activeStep: number) => void;
-};
+} & AnalyticsProps;
 
 const Nav = ({ steps, goToStep, activeStep }: Props) => (
   <StepNavigation>

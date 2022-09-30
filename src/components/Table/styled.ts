@@ -1,7 +1,10 @@
 import { ButtonHTMLAttributes } from 'react';
+import { Form } from 'formik';
 import styled, { css } from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { transparentize } from 'polished';
+import { IoIosCheckmark } from 'react-icons/io';
+import { FaRegEdit } from 'react-icons/fa';
 import colors from '../../theme/colors';
 import Checkbox from '../Checkbox';
 
@@ -40,6 +43,13 @@ const TableHeadRow = styled.tr`
   width: 100%;
 `;
 
+export const StyledIcon = styled(FaRegEdit)`
+  display: none;
+  position: absolute;
+  margin-left: 0.5rem;
+  cursor: pointer;
+`;
+
 const TableRow = styled.tr<{ noBottomBorder?: boolean }>`
   border-bottom: 1px solid ${colors.lightGray};
   width: 100%;
@@ -59,7 +69,13 @@ const ButtonTableRow = styled(TableRow)`
   border-top: 1px solid ${colors.gray};
 `;
 
-const TableCell = styled.td<{ isActionsCell?: boolean }>`
+interface TableCellProps {
+  isActionsCell?: boolean;
+  isEditableCell?: boolean;
+}
+
+const TableCell = styled.td<TableCellProps>`
+  ${({ isEditableCell }) => isEditableCell && 'width: 330px'};
   font-size: ${({ theme }) => theme.font.sizes.medium};
   padding: 0.4375rem 1%;
   vertical-align: middle;
@@ -76,6 +92,19 @@ const TableCell = styled.td<{ isActionsCell?: boolean }>`
       color: ${({ theme }) => theme.palette.text.main};
     }
   }
+
+  &:hover ${StyledIcon} {
+    display: inline-block;
+  }
+`;
+
+const StyledForm = styled(Form)`
+  width: 100% !important;
+  width: fit-content;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
 `;
 
 const TableHeaderCell = styled.th<any>`
@@ -113,6 +142,22 @@ const TableButton = styled(Button)<ButtonProps>`
   }
 `;
 
+interface StyledReactIconProps {
+  color: string;
+}
+
+export const StyledReactIcon = styled(IoIosCheckmark)<StyledReactIconProps>`
+  width: 2.2rem;
+  height: 2.2rem;
+  color: ${({ color }) => color};
+  cursor: pointer;
+`;
+
+const ItemEntriesTypography = styled.p`
+  color: #475467;
+  padding: 12px 32px;
+`;
+
 export {
   TableWithHeaderSectionContainer,
   TableWrapper,
@@ -124,4 +169,7 @@ export {
   LoaderContainer,
   TableCheckbox,
   TableButton,
+  StyledForm,
+  FormWrapper,
+  ItemEntriesTypography,
 };

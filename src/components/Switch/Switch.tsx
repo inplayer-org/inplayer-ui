@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import colors from '../../theme/colors';
 import SwitchWrapper from './SwitchWrapper';
 import Label from '../Label';
+import {
+  AnalyticsComponent,
+  AnalyticsProps,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 type SwitchProps = {
   checked: boolean;
@@ -10,7 +16,8 @@ type SwitchProps = {
   id: string;
   label: string;
   onChange: (checked: boolean) => void;
-};
+  className?: string;
+} & AnalyticsProps;
 
 const MarginLeftLabel = styled(Label)`
   margin-right: 0.5rem;
@@ -66,7 +73,15 @@ const Slider = styled.span`
   }
 `;
 
-const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps) => {
+const Switch = ({
+  id,
+  checked,
+  label,
+  disabled = false,
+  onChange,
+  className,
+  tag = '',
+}: SwitchProps) => {
   const onToggleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
       onChange(e.target.checked);
@@ -74,19 +89,37 @@ const Switch = ({ id, checked, label, disabled = false, onChange }: SwitchProps)
   };
 
   return (
-    <SwitchWrapper>
-      <MarginLeftLabel disabled={disabled} htmlFor={id}>
-        <Span>{label}</Span>
-        <Input
-          type="checkbox"
-          id={id}
-          disabled={disabled}
-          checked={checked}
-          onChange={onToggleChange}
-        />
-        <Slider />
-      </MarginLeftLabel>
-    </SwitchWrapper>
+    <AnalyticsComponent>
+      {({ pages, tracker, merchantId, ip }) => (
+        <SwitchWrapper className={className}>
+          <MarginLeftLabel disabled={disabled} htmlFor={id}>
+            <Span>{label}</Span>
+            <Input
+              type="checkbox"
+              id={id}
+              disabled={disabled}
+              checked={checked}
+              onChange={(e) => {
+                if (tag) {
+                  tracker.track({
+                    event: e.target.checked
+                      ? AnalyticsEvents.SWITCH_ON
+                      : AnalyticsEvents.SWITCH_OFF,
+                    type: AnalyticsComponentType.SWITCH,
+                    tag,
+                    pages,
+                    merchantId,
+                    ip,
+                  });
+                }
+                onToggleChange(e);
+              }}
+            />
+            <Slider />
+          </MarginLeftLabel>
+        </SwitchWrapper>
+      )}
+    </AnalyticsComponent>
   );
 };
 
