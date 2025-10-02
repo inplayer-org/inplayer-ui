@@ -10,7 +10,7 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
 
   > input + label {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.5em;
     cursor: pointer;
 
     &::before {
@@ -18,8 +18,8 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
       position: absolute;
       left: 0;
       top: 0;
-      width: 1rem;
-      height: 1rem;
+      width: 1em;
+      height: 1em;
       border: 1px solid ${colors.gray};
       background: ${colors.white};
       border-radius: 2px;
@@ -44,8 +44,8 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
       border: 2px solid ${colors.skyBlue};
       border-top: none;
       border-right: none;
-      width: 0.5rem;
-      height: 0.25rem;
+      width: 0.5em;
+      height: 0.25em;
       opacity: 1;
       transform: scale(1) rotate(-45deg);
     }
@@ -56,8 +56,8 @@ const CheckboxWrapper = styled.div<{ theme: DefaultTheme }>`
       border: 2px solid ${colors.white};
       border-top: none;
       border-right: none;
-      width: 0.5rem;
-      height: 0.25rem;
+      width: 0.5em;
+      height: 0.25em;
       opacity: 1;
       transform: scale(0);
     }

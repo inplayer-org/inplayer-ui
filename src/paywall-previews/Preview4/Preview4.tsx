@@ -10,7 +10,11 @@ import colors from '../../theme/colors';
 // Components
 import StyledContainer from '../shared/StyledContainer';
 import PreviewText from '../shared/PreviewText';
-import { OverlayLabel } from '../shared/PreviewComponents';
+import {
+  OverlayLabel,
+  RestrictedAssetContainer,
+  RestrictedAssetIcon,
+} from '../shared/PreviewComponents';
 import {
   StyledPreviewBox,
   StyledButton,
@@ -35,11 +39,11 @@ type Props = {
   width?: string;
   isRestrictedAsset?: boolean;
   handleOpenModal?: (e: any) => any;
+  restrictedMessage?: string;
 };
 
 const removeTags = (str: string) => str.replace(/<.*?>/g, ' ').replace(/ +/g, ' ').trim();
 const previewImg = 'https://assets.inplayer.com/images/preview-premium.jpg';
-const restrictedAssetImg = 'https://assets.inplayer.com/images/restricted-asset.png';
 
 const Preview4 = ({
   branding: {
@@ -59,11 +63,10 @@ const Preview4 = ({
   width = '',
   isRestrictedAsset = false,
   handleOpenModal,
+  restrictedMessage = 'This content is not available.',
 }: Props) => {
   const previewTitleText = removeTags(previewTitle);
   const previewDescriptionText = removeTags(previewDescription);
-  const image = isRestrictedAsset ? restrictedAssetImg : imageUrl;
-
   return (
     <StyledPreviewBox
       id="preview-container"
@@ -76,6 +79,7 @@ const Preview4 = ({
       <StyledContainer columns="1fr">
         {displayBuyButton && (
           <StyledButton
+            tag="button_buy_preview"
             buttonBgColor={buttonBgColor}
             buttonTextColor={buttonTextColor}
             onClick={handleOpenModal}
@@ -84,7 +88,13 @@ const Preview4 = ({
           </StyledButton>
         )}
       </StyledContainer>
-      <ImageWrapper onClick={handleOpenModal}>
+      {isRestrictedAsset && (
+        <RestrictedAssetContainer onClick={handleOpenModal}>
+          <RestrictedAssetIcon />
+          {restrictedMessage}
+        </RestrictedAssetContainer>
+      )}
+      <ImageWrapper onClick={handleOpenModal} isRestrictedAsset={isRestrictedAsset}>
         <StyledIconWrapper
           backgroundColor={buttonBgColor}
           hasProtectedByLabel={hasProtectedByLabel}
@@ -93,7 +103,7 @@ const Preview4 = ({
             <FaLock />
           </Icon>
         </StyledIconWrapper>
-        <StyledPreviewImage src={image} />
+        <StyledPreviewImage src={imageUrl} />
         <StyledTextWrapper>
           <TextElement width={width}>
             <PreviewText

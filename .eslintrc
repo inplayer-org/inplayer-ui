@@ -69,11 +69,15 @@
     "linebreak-style": "off",
     "no-debugger": "off",
     "no-alert": "off",
-    "no-use-before-define": "warn",
-    "no-unused-vars": [
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
       "warn",
       {
-        "argsIgnorePattern": "res|next|^err"
+        "argsIgnorePattern": "res|next|^err|^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
       }
     ],
     "prefer-const": [
@@ -110,20 +114,8 @@
     "consistent-return": "off",
     "jsx-a11y/accessible-emoji": "off",
     "radix": "off",
-    "no-shadow": [
-      2,
-      {
-        "hoist": "all",
-        "allow": [
-          "resolve",
-          "reject",
-          "done",
-          "next",
-          "err",
-          "error"
-        ]
-      }
-    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["warn"],
     "quotes": [
       2,
       "single",

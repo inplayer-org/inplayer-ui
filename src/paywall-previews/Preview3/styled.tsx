@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { transparentize } from 'polished';
 
@@ -63,13 +63,16 @@ export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  justify-content: center;
+  position: relative;
 `;
 
 export const TitleBorder = styled.div`
   margin-bottom: 2%;
-  width: 300px;
+  left: 0;
+  position: absolute;
   background: linear-gradient(${({ color }) => `${color},${color}`}) bottom left no-repeat;
-  background-size: 35% 4px;
+  background-size: 100% 4px;
 `;
 
 export const StyledIcon = styled(FaRegPlayCircle)`

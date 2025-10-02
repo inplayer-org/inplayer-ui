@@ -56,7 +56,7 @@ export const BuyButtonBorder = styled.div`
   overflow: hidden;
 `;
 
-export const StyledBuyButton = styled(BuyButton)<any>`
+export const StyledBuyButton = styled(BuyButton)`
   background-color: ${({ buttonBgColor }) => transparentize(0.2, buttonBgColor)};
   font-size: ${({ theme }) => theme.font.sizes.large};
   margin: 0;
@@ -102,4 +102,14 @@ export const TitleHolder = styled.div`
 
 export const DescriptionHolder = styled.div`
   margin-bottom: 0.6em;
+`;
+export const RestrictedAssetText = styled.p`
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  bottom: 25%;
 `;

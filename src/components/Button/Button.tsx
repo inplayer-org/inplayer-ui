@@ -1,6 +1,12 @@
 import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 import ButtonWrapper from './ButtonWrapper';
+import {
+  AnalyticsProps,
+  AnalyticsComponent,
+  AnalyticsEvents,
+  AnalyticsComponentType,
+} from '../../analytics';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
@@ -17,7 +23,7 @@ export type Props = ButtonHTMLAttributes<HTMLButtonElement> &
     className?: string;
     fullWidth?: boolean;
     fullHeight?: boolean;
-  };
+  } & AnalyticsProps;
 
 const ContentHolder = styled.span`
   margin-top: 2px;
@@ -54,6 +60,7 @@ const Content = ({ icon = null, iconPosition = 'left', children }: ContentProps)
 
 const Button = ({
   size = 'md',
+  tag,
   buttonModifiers,
   className = '',
   icon,
@@ -61,20 +68,39 @@ const Button = ({
   children,
   fullWidth,
   fullHeight,
+  onClick,
   ...rest
 }: Props) => (
-  <ButtonWrapper
-    className={className}
-    size={size}
-    modifiers={buttonModifiers}
-    fullWidth={fullWidth}
-    fullHeight={fullHeight}
-    {...rest}
-  >
-    <Content icon={icon} iconPosition={iconPosition}>
-      {children}
-    </Content>
-  </ButtonWrapper>
+  <AnalyticsComponent>
+    {({ pages, tracker, merchantId, ip }) => (
+      <ButtonWrapper
+        className={className}
+        size={size}
+        modifiers={buttonModifiers}
+        fullWidth={fullWidth}
+        fullHeight={fullHeight}
+        onClick={(e) => {
+          onClick?.(e);
+
+          if (tag) {
+            tracker.track({
+              event: AnalyticsEvents.CLICK,
+              type: AnalyticsComponentType.BUTTON,
+              tag,
+              pages,
+              merchantId,
+              ip,
+            });
+          }
+        }}
+        {...rest}
+      >
+        <Content icon={icon} iconPosition={iconPosition}>
+          {children}
+        </Content>
+      </ButtonWrapper>
+    )}
+  </AnalyticsComponent>
 );
 
 export default Button;

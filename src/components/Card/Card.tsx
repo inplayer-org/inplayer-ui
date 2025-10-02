@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 import Typography, { TypographyVariant } from '../Typography/Typography';
 import CardContent from './CardContent';
+import { AnalyticsProps } from '../../analytics';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -32,12 +33,12 @@ const CardTitle = styled(Typography)`
   display: inline-block;
 `;
 
-interface Props {
+type Props = {
   title?: string;
   titleVariant?: TypographyVariant;
   className?: string;
   children: ReactChild;
-}
+} & AnalyticsProps;
 
 const Card = ({ title, titleVariant = 'h1', className = '', children }: Props) => (
   <CardWrapper className={className}>

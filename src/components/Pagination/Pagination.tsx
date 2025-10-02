@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
-import { PageBox, PaginationContainer } from './styled';
+import { PaginationContainer } from './styled';
+import { AnalyticsProps } from '../../analytics';
+import PageBoxContainer from './PageBoxContainer';
 
 type PaginationProps = {
   onPageChange: (pageNumber: number) => void;
@@ -8,7 +10,7 @@ type PaginationProps = {
   startPage?: number;
   numberOfPagesDisplayed?: number;
   itemsPerPage?: number;
-};
+} & AnalyticsProps;
 
 // Kibana has limit of 10000 items
 const itemsLimit = 10000;
@@ -121,42 +123,59 @@ const Pagination = ({
 
   return (
     <PaginationContainer>
-      <PageBox type="button" disabled={activePage === 1} onClick={goToStart}>
+      <PageBoxContainer
+        tag="button_page_first"
+        type="button"
+        disabled={activePage === 1}
+        onClick={goToStart}
+      >
         <FaAngleDoubleLeft />
-      </PageBox>
-      <PageBox type="button" disabled={activePage === 1} onClick={onPageClick(activePage - 1)}>
+      </PageBoxContainer>
+      <PageBoxContainer
+        tag="button_page_previous"
+        type="button"
+        disabled={activePage === 1}
+        onClick={onPageClick(activePage - 1)}
+      >
         <FaAngleLeft />
-      </PageBox>
+      </PageBoxContainer>
       {!visiblePages.some((index) => index === 1) && (
-        <PageBox type="button" hideBorder onClick={onDotsClick(false)}>
+        <PageBoxContainer type="button" hideBorder onClick={onDotsClick(false)}>
           •••
-        </PageBox>
+        </PageBoxContainer>
       )}
       {visiblePages.map((index) => (
-        <PageBox
+        <PageBoxContainer
+          tag={`button_page_${index}`}
           type="button"
           selected={activePage === index}
           key={index}
           onClick={onPageClick(index)}
         >
           {index}
-        </PageBox>
+        </PageBoxContainer>
       ))}
       {!visiblePages.some((index) => index === totalPages) && (
-        <PageBox type="button" hideBorder onClick={onDotsClick(true)}>
+        <PageBoxContainer type="button" hideBorder onClick={onDotsClick(true)}>
           •••
-        </PageBox>
+        </PageBoxContainer>
       )}
-      <PageBox
+      <PageBoxContainer
+        tag="button_page_next"
         type="button"
         disabled={activePage === totalPages}
         onClick={onPageClick(activePage + 1)}
       >
         <FaAngleRight />
-      </PageBox>
-      <PageBox type="button" disabled={activePage === totalPages} onClick={goToEnd}>
+      </PageBoxContainer>
+      <PageBoxContainer
+        tag="button_page_last"
+        type="button"
+        disabled={activePage === totalPages}
+        onClick={goToEnd}
+      >
         <FaAngleDoubleRight />
-      </PageBox>
+      </PageBoxContainer>
     </PaginationContainer>
   );
 };

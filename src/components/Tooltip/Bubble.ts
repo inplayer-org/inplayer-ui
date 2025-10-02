@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../theme/colors';
+import { AnalyticsProps } from '../../analytics';
 
 type BubbleProps = {
   background?: string;
@@ -7,7 +8,7 @@ type BubbleProps = {
   border?: string;
   padding?: number;
   fontSize?: string;
-};
+} & AnalyticsProps;
 
 const Bubble = styled.div<BubbleProps>`
   color: ${colors.white};

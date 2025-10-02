@@ -1,4 +1,5 @@
 import styled, { CSSProperties, CSSObject } from 'styled-components';
+import { AnalyticsProps } from '../../analytics';
 
 const autoRows = ({ minRowHeight = '20px' }) => `minmax(${minRowHeight}, auto)`;
 
@@ -18,7 +19,7 @@ type GridContainerProps = {
   areas?: any;
   justifyContent?: CSSProperties;
   alignContent?: CSSProperties;
-};
+} & AnalyticsProps;
 
 const GridContainer = styled.div<GridContainerProps>`
   display: grid;

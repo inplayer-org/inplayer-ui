@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line, Circle } from 'rc-progress';
+import { AnalyticsProps } from '../../analytics';
 
 type ProgressType = 'circle' | 'line';
 
@@ -19,7 +20,7 @@ type RCProgressProps = {
   gapPosition?: 'top' | 'right' | 'bottom' | 'left';
 };
 
-type Props = Type & RCProgressProps;
+type Props = Type & RCProgressProps & AnalyticsProps;
 
 const Progress = ({ type, ...rest }: Props) =>
   type === 'circle' ? <Circle {...rest} /> : <Line {...rest} />;

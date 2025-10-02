@@ -4,14 +4,15 @@ import { MdInfoOutline, MdWarning } from 'react-icons/md';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 
 import colors from '../../theme/colors';
+import { AnalyticsProps } from '../../analytics';
 
 import NoteWrapper, { NoteType } from './NoteWrapper';
 
-interface Props {
+type Props = {
   title: string;
   text: string;
   type: NoteType;
-}
+} & AnalyticsProps;
 
 interface IconProps {
   color?: string;

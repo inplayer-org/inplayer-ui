@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 
 // utils
@@ -30,11 +30,16 @@ export const StyledButton = styled(BuyButton)`
   height: 3rem;
 `;
 
-export const ImageWrapper = styled(ImageHolder)`
+export const ImageWrapper = styled(ImageHolder)<{ isRestrictedAsset: boolean }>`
   height: 100%;
   min-height: 310px;
   margin: 0;
   cursor: pointer;
+  ${({ isRestrictedAsset }) =>
+    isRestrictedAsset &&
+    css`
+      filter: brightness(0.3);
+    `}
 `;
 
 export const StyledIconWrapper = styled(IconWrapper)`

@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import colors from '../../theme/colors';
 
-const DatePickerWrapper = styled.span`
+interface Props {
+  showPresetsWithDropdown?: boolean;
+}
+const DatePickerAnalyticsWrapper = styled.span<Props>`
   .PresetDateRangePicker_panel {
     padding: 0 1.375rem 0.6875rem;
   }
@@ -253,7 +256,7 @@ const DatePickerWrapper = styled.span`
     position: absolute;
     top: 18px;
     line-height: 0.78;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 0.375rem 0.5625rem;
   }
 
@@ -334,7 +337,7 @@ const DatePickerWrapper = styled.span`
 
   .DayPicker__withBorder {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
+    border-radius: 5px;
   }
 
   .DayPicker_portal__horizontal {
@@ -408,7 +411,7 @@ const DatePickerWrapper = styled.span`
   .DayPicker_transitionContainer {
     position: relative;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 5px;
   }
 
   .DayPicker_transitionContainer__horizontal {
@@ -433,10 +436,9 @@ const DatePickerWrapper = styled.span`
   .DateInput {
     margin: 0;
     padding: 0;
-    background: ${colors.white};
     position: relative;
     display: inline-block;
-    width: 85px;
+    width: ${({ showPresetsWithDropdown }) => (showPresetsWithDropdown ? '70px' : '85px')};
     vertical-align: middle;
   }
 
@@ -465,12 +467,21 @@ const DatePickerWrapper = styled.span`
     border-radius: 0;
     display: inline-block;
     font-size: ${({ theme }) => theme.font.sizes.medium};
-    line-height: 28px;
+    line-height: 29px;
     cursor: pointer;
     color: ${({ theme }) => theme.palette.text.main};
     text-align: center;
     padding: 0;
     outline: none;
+
+    ${({ showPresetsWithDropdown, theme }) =>
+      showPresetsWithDropdown &&
+      css`
+        font-size: ${theme.font.sizes.small};
+        font-weight: ${theme.font.weights.bold};
+        color: ${colors.blue};
+        background-color: transparent;
+      `}
   }
 
   .DateInput_input__small {
@@ -517,10 +528,17 @@ const DatePickerWrapper = styled.span`
     box-sizing: border-box;
     background: ${colors.white};
     border: 1px solid ${colors.gray};
-    border-radius: 3px;
+    border-radius: 5px;
     display: inline-block;
     cursor: pointer;
     position: relative;
+
+    ${({ showPresetsWithDropdown }) =>
+      showPresetsWithDropdown &&
+      css`
+        padding: 0 0.25rem;
+        background: transparent;
+      `}
   }
 
   .DateRangePickerInput__disabled {
@@ -528,8 +546,10 @@ const DatePickerWrapper = styled.span`
   }
 
   .DateRangePickerInput__withBorder {
-    border-radius: 3px;
-    border: 1px solid ${colors.gray};
+    border-radius: 5px;
+    border: 1px solid
+      ${({ showPresetsWithDropdown }) =>
+        showPresetsWithDropdown ? `   ${colors.blue};` : `${colors.gray}`};
   }
 
   .DateRangePickerInput__rtl {
@@ -550,8 +570,14 @@ const DatePickerWrapper = styled.span`
     padding: 0.3125rem 0.625rem;
     font-size: ${({ theme }) => theme.font.sizes.small};
     line-height: 1rem;
-    color: ${({ theme }) => theme.palette.text.light};
     font-weight: ${({ theme }) => theme.font.weights.light};
+
+    ${({ showPresetsWithDropdown }) =>
+      showPresetsWithDropdown &&
+      css`
+        padding: 0.12rem;
+        color: ${colors.blue};
+      `}
   }
 
   .DateRangePicker {
@@ -603,6 +629,17 @@ const DatePickerWrapper = styled.span`
     background-color: ${colors.blue};
     color: white;
   }
+
+  .DateRangePickerInput_calendarIcon {
+    border: none;
+    background: none;
+    color: ${colors.blue};
+    padding: 1px 6px 1px 3px;
+
+    :focus {
+      outline: none;
+    }
+  }
 `;
 
-export default DatePickerWrapper;
+export default DatePickerAnalyticsWrapper;
