@@ -78,7 +78,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-watch": "^7.0.0",
-    "html-react-parser": "^0.14.3",
+    "html-react-parser": "^1.2.7",
     "lodash-es": "^4.17.15",
     "moment": "^2.29.1",
     "polished": "^4.0.5",
