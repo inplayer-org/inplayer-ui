@@ -4,8 +4,15 @@ import styled, { css } from 'styled-components';
 import { FocusedInputShape, DateRangePicker } from 'react-dates';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { snakeCase } from 'lodash';
+import TimePicker from 'react-time-picker';
+// import StyledTimePicker from '../TimeHourPicker/TimeHourPicker';
 import colors from '../../theme/colors';
-import { getMonthOptions, getYearOptions } from '../../utils/helpers';
+import {
+  addCustomTimeToDate,
+  getMonthOptions,
+  getYearOptions,
+  timeMinutesSplitter,
+} from '../../utils/helpers';
 import Dropdown from '../Dropdown';
 import { Option } from '../Dropdown/Dropdown';
 import DatePickerWrapper from './DatePickerWrapper';
@@ -18,6 +25,11 @@ import {
   AnalyticsProps,
 } from '../../analytics';
 import 'react-dates/initialize';
+
+const TimeIntervalContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
 const ContentHolder = styled.div<{ isDropdown?: boolean }>`
   margin: 0 auto;
@@ -106,6 +118,7 @@ type Props = {
   showInnerPresets?: boolean;
   className?: string;
   showPresetsWithDropdown?: boolean;
+  hasTimeInterval?: boolean;
 } & AnalyticsProps;
 
 const DatePicker = ({
@@ -124,9 +137,23 @@ const DatePicker = ({
   className = '',
   minimumNights = 0,
   showPresetsWithDropdown = false,
+  hasTimeInterval = false,
   tag = '',
 }: Props) => {
   const [activePeriod, setActivePeriod] = useState('');
+
+  const [startHour, setStartHour] = useState('00:00');
+  const [endHour, setEndHour] = useState('23:59');
+
+  const [startHours, startMinutes] = timeMinutesSplitter(startHour);
+  const [endHours, endMinutes] = timeMinutesSplitter(endHour);
+
+  const [startDateTime, setStartDateTime] = useState(
+    addCustomTimeToDate(startDateProp, startHours, startMinutes)
+  );
+  const [endDateTime, setEndDateTime] = useState(
+    addCustomTimeToDate(endDateProp, endHours, endMinutes)
+  );
 
   useEffect(() => {
     setActivePeriod(activePeriodPreset);
@@ -195,7 +222,57 @@ const DatePicker = ({
     onPeriodChange(period);
   };
 
+  const renderTimeIntervals = () => {
+    const onTimePickerChange = (newValue: string, isStartTimePicker?: boolean) => {
+      const [hour, minutes] = timeMinutesSplitter(newValue);
+
+      let modifiedStartDate = startDateTime;
+      let modifiedEndDate = endDateTime;
+
+      if (isStartTimePicker) {
+        setStartHour(newValue);
+        modifiedStartDate = addCustomTimeToDate(startDateTime, hour, minutes);
+      } else {
+        setEndHour(newValue);
+        modifiedEndDate = addCustomTimeToDate(endDateTime, hour, minutes);
+      }
+
+      onDateChange({ startDate: modifiedStartDate, endDate: modifiedEndDate });
+    };
+    return (
+      <TimeIntervalContainer>
+        <TimePicker
+          disableClock
+          value={startHour}
+          onChange={(newValue: any) => onTimePickerChange(newValue, true)}
+        />
+        <TimePicker
+          disableClock
+          value={endHour}
+          onChange={(newValue: any) => onTimePickerChange(newValue)}
+          minTime={startHour}
+        />
+      </TimeIntervalContainer>
+    );
+  };
+
   const renderDatePresets = () => {
+    if (hasTimeInterval)
+      return (
+        <TimeIntervalContainer>
+          <TimePicker
+            disableClock
+            value={startHour}
+            onChange={(newValue: any) => setStartHour(newValue)}
+          />
+          <TimePicker
+            disableClock
+            value={endHour}
+            onChange={(newValue: any) => setEndHour(newValue)}
+            minTime={startHour}
+          />
+        </TimeIntervalContainer>
+      );
     if (!showInnerPresets) return '';
 
     let presets: string[] = [];
@@ -261,7 +338,16 @@ const DatePicker = ({
   );
 
   const handleDateChange = ({ startDate, endDate }: DateChangeArgs) => {
-    onDateChange({ startDate, endDate });
+    setStartDateTime(startDate as Moment);
+    setEndDateTime(endDate as Moment);
+
+    const [hourStart, minutesStart] = timeMinutesSplitter(startHour);
+    const [hourEnd, minutesEnd] = timeMinutesSplitter(endHour);
+
+    const modifiedStartDate = addCustomTimeToDate(startDate, hourStart, minutesStart);
+    const modifiedEndDate = addCustomTimeToDate(endDate, hourEnd, minutesEnd);
+
+    onDateChange({ startDate: modifiedStartDate, endDate: modifiedEndDate });
     setActivePeriod('');
   };
 
@@ -513,11 +599,11 @@ const DatePicker = ({
             endDate={endDateProp}
             endDateId={endDateId}
             customArrowIcon="to"
-            calendarInfoPosition="before"
+            calendarInfoPosition={hasTimeInterval ? 'bottom' : 'before'}
             minimumNights={minimumNights}
             enableOutsideDays
             readOnly
-            renderCalendarInfo={renderDatePresets}
+            renderCalendarInfo={hasTimeInterval ? renderTimeIntervals : renderDatePresets}
             onNextMonthClick={() => {
               tracker.track({
                 event: AnalyticsEvents.CLICK,
